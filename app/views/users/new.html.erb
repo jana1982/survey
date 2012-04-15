@@ -4,5 +4,5 @@
   <%= f.error_messages %>
   <%= render "#{@user.current_step}_step", :f => f %>
   <p><%= f.submit "Continue" %></p>
-  <p><%= f.submit "Back", :name => "back_button" unless @user.first_step? %></p>
+  <p><%= f.submit "Back", :name => "back_button" unless @user.first_step?  %></p>
 <% end %>

@@ -9,12 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412165835) do
+ActiveRecord::Schema.define(:version => 20120415165225) do
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",         :limit => 255
     t.integer  "alter"
-    t.boolean  "retweed_clicked"
+    t.integer  "retweet_clicked"
     t.boolean  "at_clicked"
     t.integer  "geschlecht",      :limit => 255
     t.datetime "created_at"
