@@ -3,8 +3,21 @@ class User < ActiveRecord::Base
 			:martial_status, :language, :country, :years, :twitter_account
   attr_writer :current_step
 
+  validates_presence_of :language, :if => :selection?
+  validates_presence_of :twitter_account, :if => :selection?
   def current_step
       @current_step || steps.first
+  end
+  
+  def selection?
+    current_step == "selection"
+  end
+  
+  def all_valid?
+    steps.all? do |step|
+      self.current_step = step
+      valid?
+    end
   end
   
   def steps
