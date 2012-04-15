@@ -1,0 +1,37 @@
+<% title "User" %>
+
+<p>
+  <strong>Bildung:</strong>
+  <%=h @user.bildung %>
+</p>
+<p>
+  <strong>Alter:</strong>
+  <%=h @user.alter %>
+</p>
+<p>
+  <strong>Retweed Clicked:</strong>
+  <%=h @user.retweed_clicked %>
+</p>
+<p>
+  <strong>At Clicked:</strong>
+  <%=h @user.at_clicked %>
+</p>
+<p>
+  <strong>Geschlecht:</strong>
+  <%=h @user.geschlecht %>
+</p>
+<p>
+  <strong>Familienstand:</strong>
+  <%=h @user.martial_status %>
+</p>
+<p>
+  <strong>Englisch:</strong>
+  <%=h @user.language %>
+</p>
+<p>
+  <strong>Land:</strong>
+  <%=h @user.country %>
+</p>
+<p>
+  <%= link_to "View All", users_path %>
+</p>

@@ -1,0 +1,72 @@
+<h2>Part I: Reqirements</h2>
+<hr>
+<p>
+  <h3>How would you describe your english skills?</h3>
+<p><i> For further explanations move your courser to the particular expression </i></p>
+<table>
+
+    <tr>
+      <td><%= f.radio_button :language, 1  %></td>
+      <td  	onmouseover="this.innerHTML = 'I do not speak English'"
+ 		onmouseout="this.innerHTML = 'Beginner'">Beginner</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 2 %></td>
+      <td 	onmouseover="this.innerHTML = 'I can say and understand a few things in English'"
+ 		onmouseout="this.innerHTML = 'Elementary'">Elementary</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 3 %></td>
+      <td   	onmouseover="this.innerHTML = 'I can communicate simply and understand in familiar situations but only with some difficulty'"
+ 		onmouseout="this.innerHTML = 'Pre-Intermediate'">Pre-Intermediate</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 4 %></td>
+      <td   	onmouseover="this.innerHTML = 'I can make simple sentences and can understand the main points of a conversation but need much more vocabulary'"
+ 		onmouseout="this.innerHTML = 'Low Intermediate'">Low Intermediate</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 5 %></td>
+      <td   	onmouseover="this.innerHTML = 'I can speak and understand reasonably well and can use basic tenses but have problems with more complex grammar and vocabulary'"
+ 		onmouseout="this.innerHTML = 'Intermediate'">Intermediate</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 6 %></td>
+      <td   	onmouseover="this.innerHTML = 'I can communicate without much difficulty but still make quite a lot of mistakes and misunderstand sometimes'"
+ 		onmouseout="this.innerHTML = 'Upper Intermediate'">Upper Intermediate</td> 
+   </tr>   
+   <tr>
+      <td><%= f.radio_button :language, 7 %></td>
+      <td   	onmouseover="this.innerHTML = 'I speak and understand well but still make mistakes and fail to make myself understood occasionally'"
+ 		onmouseout="this.innerHTML = 'Pre-advanced'">Pre-advanced</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 8 %></td>
+      <td   	onmouseover="this.innerHTML = 'I speak and understand very well but sometimes have problems with unfamiliar situations and vocabulary'"
+ 		onmouseout="this.innerHTML = 'Advanced'">Advanced</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 9 %></td>
+      <td   	onmouseover="this.innerHTML = 'I speak and understand English completely fluently'"
+ 		onmouseout="this.innerHTML = 'Very Advanced'">Very Advanced</td> 
+   </tr>
+   <tr>
+      <td><%= f.radio_button :language, 10 %></td>
+      <td   	onmouseover="this.innerHTML = 'I am a native English speaker'"
+ 		onmouseout="this.innerHTML = 'First language'">First language</td> 
+   </tr>
+</table>
+  
+<hr>
+<p>
+  <h3>Do you have an active Twitter-account?</h3>
+  <%= f.radio_button :twitter_account, 0 %>
+  <%= f.label :no, "No, I don't have a Twitter-account." %><br>
+  <%= f.radio_button :twitter_account, 1 %>
+  <%= f.label :inaktiv, "I do have an Twitter-account, but I don't use it anymore." %><br>
+  <%= f.radio_button :twitter_account, 2 %>
+  <%= f.label :active, "Yes, I do have a Twitter-account to participate on Twitter." %><br>
+
+</p>
+<hr>
+
