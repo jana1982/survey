@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   end
   
   def steps
-      %w[introduction filter2 demographic twitter target confirm]
+      %w[introduction selection demographic twitter target confirm]
   end
   
   def first_step?

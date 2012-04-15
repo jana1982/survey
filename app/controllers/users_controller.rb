@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     if @user.new_record?
       render 'new'
     else
+      session[:user_step] = session[:user_params] = nil
       flash[:notice] = "User saved."
       redirect_to @user
     end
