@@ -14,7 +14,6 @@
     <th>Einkommen</th>
     <th>Region</th>
     <th>Kinder</th>
-    <th>Anstellung</th>
   </tr>
   <% for user in @users %>
     <tr>
@@ -30,7 +29,6 @@
       <td><%=h user.income %></td>
       <td><%=h user.area %></td>
       <td><%=h user.children %></td>
-      <td><%=h user.employment %></td>
       <td><%= link_to "Show", user %></td>
     </tr>
   <% end %>

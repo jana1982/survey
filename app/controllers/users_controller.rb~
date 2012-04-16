@@ -53,6 +53,11 @@ class UsersController < ApplicationController
       flash[:notice] = "User saved."
       render 'confirm_step'
     end
+  if params[:option1_id] == "" #params[:option1_id].nil? #params.has_key?(:option1_id) #Take your pick
+    @user.attribute = params[:option2_id]
+  else
+    @user.attribute = params[:option1_id]
 
+end
   end
 end

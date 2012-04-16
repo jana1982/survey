@@ -45,9 +45,5 @@
   <%=h @user.area %>
 </p>
 <p>
-  <strong>Kinder:</strong>
-  <%=h @user.children %>
-</p>
-<p>
   <%= link_to "View All", users_path %>
 </p>

@@ -7,5 +7,3 @@
     <%= link_to_remote "Retweet", :url => {:action => "retweet", :id => @user.id} %>
   </div>
 </p>
-
-

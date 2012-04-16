@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415165225) do
+ActiveRecord::Schema.define(:version => 20120416100531) do
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",         :limit => 255
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20120415165225) do
     t.integer  "country"
     t.integer  "years"
     t.integer  "twitter_account"
+    t.integer  "income"
+    t.integer  "area"
+    t.integer  "children"
+    t.integer  "employment"
+    t.string   "employment_text"
   end
 
 end
