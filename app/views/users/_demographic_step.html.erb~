@@ -285,16 +285,29 @@
   <%= select(:user, :income, [['<choose option>', 0], ['Under $10,000', 1], ['$10,000-$19,999', 2], ['$20,000-$29,999', 3], ['$30,000 - $39,999', 4], ['$40,000 - $49,999', 5], ['$50,000 - $74,999', 6], ['$75,000 - $99,999', 7], ['$100,000 - $150,000', 8], ['Over $150,000', 9], ['Would rather not say', 10]]) %>
 </p>
 <hr>
+
+
 <p>
-  <h3>Which of the following categories best describes your primarily area of employment (regardless of your actual position)?</h3>
-  <%= select(:user, :employment, [['<choose option>', 0], ['Homemaker', 1], ['Retired', 2], ['Student', 3], ['Unemployed', 4], ['Agriculture, Forestry, Fishing, or Hunting', 5], ['Arts, Entertainment, or Recreation', 6], ['Broadcasting', 7], ['Education - College, University, or Adult', 8], ['Education - Primary/Secondary (K-12)', 9], ['Education - Other', 10], ['Construction', 11], ['Finance and Insurance', 12], ['Government and Public Administration', 13], ['Health Care and Social Assistance', 14], ['Hotel and Food Services', 15], ['Information - Services and Data', 16], ['Information - Other', 17], ['Processing', 18], ['Legal Services', 19], ['Manufacturing - Computer and Electronics', 20], ['Manufacturing - Other', 21], ['Military', 22], ['Mining', 23], ['Publishing', 24], ['Real Estate, Rental, or Leasing', 25], ['Religious', 26], ['Retail', 27], ['Scientific or Technical Services', 28], ['Software', 29], ['Telecommunications', 30], ['Transportation and Warehousing', 31], ['Utilities', 32], ['Wholesale', 33], [ 'Others', 34]]) %>
-<div class="field">
-  <%= f.label :employment %><br />
-  <%= select_tag "count", "<option>None</option><option>8.5x11</option><option>shells</option>".html_safe %>
+  <h3>Which of the following categories best describes your primarily area of employment (regardless 
+of your actual position)?</h3>
+ 
+
+<div id = "others"> <%= select(:user, :employment, [['<choose option>', 0], ['Homemaker', 1], ['Retired', 2], ['Student', 3], ['Unemployed', 4], ['Agriculture, Forestry, Fishing, or Hunting', 5], ['Arts, Entertainment, or Recreation', 6], ['Broadcasting', 7], ['Education - College, University, or Adult', 8], ['Education - Primary/Secondary (K-12)', 9], ['Education - Other', 10], ['Construction', 11], ['Finance and Insurance', 12], ['Government and Public Administration', 13], ['Health Care and Social Assistance', 14], ['Hotel and Food Services', 15], ['Information - Services and Data', 16], ['Information - Other', 17], ['Processing', 18], ['Legal Services', 19], ['Manufacturing - Computer and Electronics', 20], ['Manufacturing - Other', 21], ['Military', 22], ['Mining', 23], ['Publishing', 24], ['Real Estate, Rental, or Leasing', 25], ['Religious', 26], ['Retail', 27], ['Scientific or Technical Services', 28], ['Software', 29], ['Telecommunications', 30], ['Transportation and Warehousing', 31], ['Utilities', 32], ['Wholesale', 33], [ 'Others', 34]])  %> 
 </div>
-<div class="field">
-  <%= f.label :employment %><br />
-  <%= text_field_tag "users" %>
-</div>
+
+<select id="employment">
+   <option value=1>Stiefmütterchen</option>
+   <option value=2>Primeln</option>
+   <option value=3>Tulpen</option>
+</select>
+
+<script type="text/javascript">
+   var employment = document.getElementById('employment');
+   employment.onchange = displayResult()
+	{
+	document.getElementById("p1").style.visibility="hidden";
+	}
+</script>
+
 
 <hr>

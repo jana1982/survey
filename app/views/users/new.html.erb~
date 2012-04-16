@@ -1,6 +1,6 @@
 <% title "" %>
 
-<% form_for @user do |f| %>
+<% form_for name= form0 @user do |f| %>
   <%= f.error_messages %>
   <%= render "#{@user.current_step}_step", :f => f %>
   <p><%= f.submit "Continue" %></p>

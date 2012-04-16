@@ -55,6 +55,13 @@ class User < ActiveRecord::Base
       end
   end
 
+  def others_selected?
+      if (employment != nil && employment = 34) 
+        return true
+      else
+        return false
+      end
+  end
 
 
 

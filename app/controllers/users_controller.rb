@@ -25,7 +25,8 @@ class UsersController < ApplicationController
     end
     
   end
-  
+
+
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
