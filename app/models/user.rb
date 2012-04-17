@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible 	:bildung, :alter, :retweet_clicked, :at_clicked, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
-			:area, :children, :employment, :employment_text
+			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
+			:organization, :organization_text
 			
   attr_writer :current_step
 
@@ -55,13 +56,6 @@ class User < ActiveRecord::Base
       end
   end
 
-  def others_selected?
-      if (employment != nil && employment = 34) 
-        return true
-      else
-        return false
-      end
-  end
 
 
 
