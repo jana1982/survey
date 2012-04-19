@@ -1,3 +1,4 @@
+
 <p>
   <TABLE width="100%">
 <TR>
@@ -9,7 +10,14 @@
 
 
 <TD ALIGN="RIGHT" width=400px>
-<%= progress_bar("my_sixty_percent_progress_bar",0.60,true,true) %>
+  
+
+
+            
+           <%= progress_bar("my_sixty_percent_progress_bar",0.20,true,true) %>
+            
+
+
 </TD>
 
 </TR>
@@ -168,4 +176,51 @@ of your actual position)?</h3>
 <div id="employment_sub_selection" style="display:none;">
   <%= render "employment_sub_selection", :f => f%>
 </div>
+<hr>
+  <p>
+  <h3>How frequently do you access the web from the following devices</h3>
+  <table width="100%">
+    <tr>
+      <td></td>
+      <td width="15%">Daily</td>
+      <td width="15%">Several days a week</td>
+      <td width="15%">Weekly</td>
+      <td width="15%">Less than weekly</td>
+    </tr>
+    <tr>
+      <td>private netbook/laptop/PC</td>
+      <td><%= f.radio_button :private_pc, 1 %></td>
+      <td><%= f.radio_button :private_pc, 2 %></td>
+      <td><%= f.radio_button :private_pc, 3 %></td>
+      <td><%= f.radio_button :private_pc, 4 %></td>
+    </tr>
+    <tr>   
+      <td>private mobile device</td>
+      <td><%= f.radio_button :private_mobile, 1 %></td>
+      <td><%= f.radio_button :private_mobile, 2 %></td>
+      <td><%= f.radio_button :private_mobile, 3 %></td>
+      <td><%= f.radio_button :private_mobile, 4 %></td>
+    </tr>
+    <tr> 
+      <td>Netbook/laptop/PC related to work</td>
+      <td><%= f.radio_button :work_pc, 1 %></td>
+      <td><%= f.radio_button :work_pc, 2 %></td>
+      <td><%= f.radio_button :work_pc, 3 %></td>
+      <td><%= f.radio_button :work_pc, 4 %></td>
+    </tr>
+    <tr> 
+      <td>Mobile device related to work</td>
+      <td><%= f.radio_button :work_mobile, 1 %></td>
+      <td><%= f.radio_button :work_mobile, 2 %></td>
+      <td><%= f.radio_button :work_mobile, 3 %></td>
+      <td><%= f.radio_button :work_mobile, 4 %></td>
+    </tr>
+    <tr> 
+      <td>Public Terminal (e.g. library, cybercafe, etc.)</td>
+      <td><%= f.radio_button :public, 1 %></td>
+      <td><%= f.radio_button :public, 2 %></td>
+      <td><%= f.radio_button :public, 3 %></td>
+      <td><%= f.radio_button :public, 4 %></td>
+    </tr>
+  </table>
 <hr>

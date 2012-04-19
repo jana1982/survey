@@ -1,0 +1,52 @@
+body {
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+
+#seite_plane {
+    background-image:url('../images/Twitter_hintergrund.png');
+    background-repeat: repeat-x;
+    background-position: left 67px;
+    padding-top:0px;
+    margin-bottom:50px;
+    width:100%;
+    heigth:1500px;
+}
+
+
+#seite_twitter {
+    background-image:url('../images/Twitter_page.png');
+    background-repeat:no-repeat;
+    background-position: left top;
+    position:relative;
+    left:0px; top:0px;
+
+}
+#container{
+    
+}
+#retweet_buttons{
+
+    position:relative;
+    left:580px; top:100px
+}
+
+#message{
+ position:relative;
+ left:405px; top:82px; width:400px; height:50px;
+ font-size: 0.95em;
+}
+
+#buttons {
+  width: 75%;
+
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: double 4px #bfbfbf;
+  margin-top: 20px;
+
+  border-radius:10px;
+}
+
