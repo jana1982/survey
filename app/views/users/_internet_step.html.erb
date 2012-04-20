@@ -1,0 +1,29 @@
+<p>
+  <TABLE width="100%">
+<TR>
+
+<TD ALIGN="LEFT">
+<h2>Part II: Twitter usage</h2>
+
+</TD>
+
+
+<TD ALIGN="RIGHT" width=400px>
+  
+<%= progress_bar("my_sixty_percent_progress_bar",0.35,true,true) %>
+
+</TD>
+
+</TR>
+</TABLE>
+
+</p>
+<hr>
+<p>
+  <h3>What is your gender?</h3>
+  <%= f.radio_button :geschlecht, 1 %>
+  <%= f.label :female, "female" %>
+  <%= f.radio_button :geschlecht, 0 %>
+  <%= f.label :male, "male" %>
+</p>
+<hr>

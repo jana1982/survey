@@ -1,11 +1,52 @@
-<h2>Twitter Simulation</h2>
+<div id="seite_plane">
+   <TABLE width="100%">
+  <TR>
+  
+  <TD ALIGN="LEFT" nowrap>
+  <h2>Twitter Simulation</h2>
+  
+  </TD>
+  
+  
+  <TD ALIGN="RIGHT" width=400px >
+  <%= progress_bar("my_sixty_percent_progress_bar",0.80,true,true) %>
+  </TD>
+  
+  </TR>
+  </TABLE>
+   
+<div align="center">
+   
+  <TABLE width="100%" height=830px >
+  <TR>
+ 
+  
+  <TD width="15%">
+  </TD>
+  <td  id="seite_twitter" valign="top">
 
-<h2>Message</h2>
-<p>Tweet: "My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
-<p>
-  <div id = "retweet">
-    <%= link_to_remote "Retweet", :url => {:action => "retweet", :id => @user.id} %>
-  </div>
-</p>
+    <div id="retweet_buttons"><a href=""
+    
+          onmouseover="austausch1.src='../images/retweet_buttons.png';"
+          onmouseout="austausch1.src='../images/platzhalter.png';">
+          
+          <img src="../images/platzhalter.png"
+          
+          name="austausch1">
+        </a>
+    </div>
+    <div id="message">
+      <p>"My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
+      <p>
+      <div id = "retweet">
+        <%= link_to_remote "Retweet", :url => {:action => "retweet", :id => @user.id} %>
+      </div>
+    </div> 
+  </TD>
+  <TD >
+  </TD>
+  </TR>
+  </TABLE>
 
-
+</div>
+</div>

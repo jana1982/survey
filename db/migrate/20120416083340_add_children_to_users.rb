@@ -4,5 +4,6 @@ class AddChildrenToUsers < ActiveRecord::Migration
   end
 
   def self.down
+    
   end
 end

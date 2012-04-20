@@ -1,0 +1,41 @@
+<h3>Which of the following categories best describes your role in industry?</h3>   
+<%= select(:user, :position, [['<choose option>', 0], ['Upper management', 1], ['Middle management', 2], ['Junior management', 3], ['Administrative staff', 4], ['Support staff', 5],          ['Student', 6], ['Trained professional', 7], ['Skilled laborer', 8], ['Consultant', 9], ['Temporary employee', 10], ['Researcher', 11], ['Self-employed', 12], ['Other', 13]])  %>  
+
+          <script type="text/javascript">
+          //<![CDATA[
+           new Form.Element.Observer($('user_position'), 0.3, function(form, value){
+                if (value == 13) {
+                 Effect.SlideDown('others_position')
+                }
+                else {
+                document.getElementById('others_position').style.display='none';
+                }
+            });
+          //]]>
+          </script>
+
+          <div id = "others_position" style="display:none; left:20px, width:400px; height:40px;">
+              Please fill in your role in industry.<%= f.text_field :position_text %>
+          </div>
+          
+
+<h3>The organization you work for is in which of the following:</h3>
+<%= select(:user, :organization, [['<choose option>', 0], ['Public sector', 1], ['Private sector', 2],['Not-for-profit', 3], ['Do not know', 4], ['Other', 5]])  %> 
+
+          <script type="text/javascript">
+          //<![CDATA[
+           new Form.Element.Observer($('user_organization'), 0.3, function(form, value){
+                if (value == 5) {
+                 Effect.SlideDown('others_organization')
+                }
+                else {
+                document.getElementById('others_organization').style.display='none';
+                }
+            });
+          //]]>
+          </script>
+
+          <div id = "others_organization" style="display:none; left:20px, width:400px; height:40px;">
+            Please fill in the sector of your work.
+            <%= f.text_field :organization_text %>
+          </div>
