@@ -19,7 +19,20 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'retweet', "Retweeted"
+                page.replace_html 'retweet', image_tag('../images/retweet_nachklick.png')
+              end
+            }
+    end
+    
+  end
+  
+  def favorite
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:favorite_clicked => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.replace_html 'favorite',  image_tag('../images/favorite_nachklick.png')
               end
             }
     end

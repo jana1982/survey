@@ -25,22 +25,36 @@
   </TD>
   <td  id="seite_twitter" valign="top">
 
-    <div id="retweet_buttons"><a href=""
-    
-          onmouseover="austausch1.src='../images/retweet_buttons.png';"
-          onmouseout="austausch1.src='../images/platzhalter.png';">
-          
-          <img src="../images/platzhalter.png"
-          
-          name="austausch1">
-        </a>
     </div>
+
     <div id="message">
+      <table >
+         <tr >
+            <td valign="middle">
+
+               <div id = "retweet">
+               <%= link_to_remote image_tag('../images/retweet_ununterstrichen.png',
+               :mouseover => '../images/retweet_einzeln.png'),
+                  :url => {:action => "retweet", :id => @user.id} %>
+               </div>
+
+
+            </td>
+            <td valign="middle">
+
+               <div id = "favorite">
+               <%= link_to_remote image_tag('../images/favorite_ununterstrichen.png',
+               :mouseover => '../images/favorite_einzeln.png'),
+                  :url => {:action => "favorite", :id => @user.id} %>
+               </div>
+
+
+            </td>
+         </tr>
+      </table>
       <p>"My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
       <p>
-      <div id = "retweet">
-        <%= link_to_remote "Retweet", :url => {:action => "retweet", :id => @user.id} %>
-      </div>
+     
     </div> 
   </TD>
   <TD >

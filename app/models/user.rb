@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible 	:bildung, :alter, :retweet_clicked, :at_clicked, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
-			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile, :public
+			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
+			:public, :favorite_clicked
 			
   attr_writer :current_step
 

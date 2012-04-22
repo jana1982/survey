@@ -29,7 +29,23 @@ body {
 #retweet_buttons{
 
     position:relative;
-    left:580px; top:100px
+    left:580px; top:110px
+}
+
+#reply_buttons{
+
+    position:relative;
+    left:560px; top:100px
+}
+#open_buttons{
+
+    position:relative;
+    left:640px; top:100px
+}
+#favorite_buttons{
+
+    position:relative;
+    left:600px; top:100px
 }
 
 #message{
@@ -37,6 +53,8 @@ body {
  left:405px; top:82px; width:400px; height:50px;
  font-size: 0.95em;
 }
+
+
 
 #buttons {
   width: 75%;
