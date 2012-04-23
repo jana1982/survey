@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
-			:public, :favorite_clicked
+			:public, :favorite_clicked, :leader_text
 			
   attr_writer :current_step
 
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[introduction selection demographic twitter target]
+      %w[introduction selection demographic opinionleader twitter target]
   end
   
   def first_step?

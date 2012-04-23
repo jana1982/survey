@@ -13,7 +13,10 @@
   <div id="left_twitter"></div>
   <div id="seite_twitter">
     <div id="message" onMouseover="document.getElementById ('actions').style.display='table';" onMouseout="document.getElementById('actions').style.display='none';">
-      <div id="tweeter_name">Opion Leader Name</div>
+      <div id="tweeterer">
+         <div id="tweeter_name"> <%=h @user.leader_text %> </div>
+         <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
+      </div>
       <div id="actions">
         <div id="reply">
           Reply

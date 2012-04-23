@@ -33,58 +33,57 @@ body {
   float: left;
 }
 #tweet{
-  position: absolute; bottom: 0;
+  position: absolute;
+  top:20px;
+  bottom: 0;
+  text-align: left;
 }
 
 #container{
     
 }
-#retweet_buttons{
-
-    position:relative;
-    left:580px; top:110px
-}
-
-#reply_buttons{
-
-    position:relative;
-    left:560px; top:100px
-}
-#open_buttons{
-
-    position:relative;
-    left:640px; top:100px
-}
-#favorite_buttons{
-
-    position:relative;
-    left:600px; top:100px
-}
 
 #message{
  position:relative;
  left:405px;
- top:105px;
- width:400px;
- height:90px;
- font-size: 0.95em;
+ top:98px;
+ width:450px;
+ height:87px;
+ font-size: 1.0em;
 }
-
+#tweeterer{
+  width: 270px;
+  height: 93px;
+  float: left;
+ 
+  position: absolute;
+  left: 0px;
+  top: 10px;
+}
 #actions{
   width: 270px;
   height: 93px;
   display:none;
   float: right;
+  position: absolute;
+  right: 0px;
+
 }
 
 #retweet{
   float: left;
 }
+#tweeter_name_at{
+   float: left;
 
+  font-weight: lighter;
+  color: grey;
+}
+  
 #tweeter_name{
   float: left;
-  height: 93px;
-  position: absolute;
+
+  font-weight: bold;
 }
 #open{
   float: left;
