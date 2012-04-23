@@ -1,66 +1,45 @@
+<TABLE width="100%">
+  <TR>    
+    <TD ALIGN="LEFT" nowrap>
+      <h2>Twitter Simulation</h2>    
+    </TD>        
+    <TD ALIGN="RIGHT" width=400px >
+      <%= progress_bar("my_sixty_percent_progress_bar",0.80,true,true) %>
+    </TD>  
+  </TR>
+</TABLE>
+  
 <div id="seite_plane">
-   <TABLE width="100%">
-  <TR>
-  
-  <TD ALIGN="LEFT" nowrap>
-  <h2>Twitter Simulation</h2>
-  
-  </TD>
-  
-  
-  <TD ALIGN="RIGHT" width=400px >
-  <%= progress_bar("my_sixty_percent_progress_bar",0.80,true,true) %>
-  </TD>
-  
-  </TR>
-  </TABLE>
-   
-<div align="center">
-   
-  <TABLE width="100%" height=830px >
-  <TR>
- 
-  
-  <TD width="15%">
-  </TD>
-  <td  id="seite_twitter" valign="top">
-
-    </div>
-
-    <div id="message">
-      <table >
-         <tr >
-            <td valign="middle">
-
-               <div id = "retweet">
-               <%= link_to_remote image_tag('../images/retweet_ununterstrichen.png',
-               :mouseover => '../images/retweet_einzeln.png'),
-                  :url => {:action => "retweet", :id => @user.id} %>
-               </div>
-
-
-            </td>
-            <td valign="middle">
-
-               <div id = "favorite">
-               <%= link_to_remote image_tag('../images/favorite_ununterstrichen.png',
-               :mouseover => '../images/favorite_einzeln.png'),
-                  :url => {:action => "favorite", :id => @user.id} %>
-               </div>
-
-
-            </td>
-         </tr>
-      </table>
-      <p>"My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
-      <p>
-     
-    </div> 
-  </TD>
-  <TD >
-  </TD>
-  </TR>
-  </TABLE>
-
-</div>
+  <div id="left_twitter"></div>
+  <div id="seite_twitter">
+    <div id="message" onMouseover="document.getElementById ('actions').style.display='table';" onMouseout="document.getElementById('actions').style.display='none';">
+      <div id="tweeter_name">Opion Leader Name</div>
+      <div id="actions">
+        <div id="reply">
+          Reply
+        </div>
+        <div id = "retweet">
+          <%= link_to_remote image_tag('../images/retweet_einzeln.png',
+               :mouseover => '../images/retweet_unterstrichen.png'),
+                :url => {:action => "retweet", :id => @user.id}
+          %>
+        </div>
+        <div id = "favorite">
+          <%= link_to_remote image_tag('../images/favorite_einzeln.png',
+              :mouseover => '../images/favorite_unterstrichen.png'),
+              :url => {:action => "favorite", :id => @user.id}
+          %>
+        </div>
+        <div id="open">
+          Open
+        </div>        
+      </div>                
+      <div id="tweet">
+        <p>
+          "My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
+        <p>
+      </div>           
+    </div>       
+  </div>
+  <div id="right_twitter" ></div>
 </div>
