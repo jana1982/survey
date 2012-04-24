@@ -10,39 +10,48 @@
 </TABLE>
   
 <div id="seite_plane">
-  <div id="left_twitter"></div>
-  <div id="seite_twitter">
-    <div id="message" onMouseover="document.getElementById ('actions').style.display='table';" onMouseout="document.getElementById('actions').style.display='none';">
-      <div id="tweeterer">
-         <div id="tweeter_name"> <%=h @user.leader_text %> </div>
-         <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
-      </div>
-      <div id="actions">
-        <div id="reply">
-          Reply
+    <div id="left_twitter"></div>
+    <div id="seite_twitter">
+  
+      <div id="message" onMouseover="document.getElementById ('actions').style.display='table';" onMouseout="document.getElementById('actions').style.display='none';">
+        <div id="tweeterer">
+           <div id="tweeter_name"> <%=h @user.leader_text %> </div>
+           <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
         </div>
-        <div id = "retweet">
-          <%= link_to_remote image_tag('../images/retweet_einzeln.png',
-               :mouseover => '../images/retweet_unterstrichen.png'),
-                :url => {:action => "retweet", :id => @user.id}
-          %>
-        </div>
-        <div id = "favorite">
-          <%= link_to_remote image_tag('../images/favorite_einzeln.png',
-              :mouseover => '../images/favorite_unterstrichen.png'),
-              :url => {:action => "favorite", :id => @user.id}
-          %>
-        </div>
-        <div id="open">
-          Open
-        </div>        
-      </div>                
-      <div id="tweet">
-        <p>
-          "My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
-        <p>
-      </div>           
-    </div>       
-  </div>
-  <div id="right_twitter" ></div>
+        <div id="actions">
+          <div id="reply">
+            <%= link_to_remote image_tag('../images/reply_einzeln.png',
+                 :mouseover => '../images/reply_unterstrichen.png'),
+                  :url => {:action => "reply", :id => @user.id}
+            %>
+          </div>
+          <div id = "retweet">
+            <%= link_to_remote image_tag('../images/retweet_einzeln.png',
+                 :mouseover => '../images/retweet_unterstrichen.png'),
+                  :url => {:action => "retweet", :id => @user.id}
+            %>
+          </div>
+          <div id = "favorite">
+            <%= link_to_remote image_tag('../images/favorite_einzeln.png',
+                :mouseover => '../images/favorite_unterstrichen.png'),
+                :url => {:action => "favorite", :id => @user.id}
+            %>
+          </div>
+          <div id="open">
+            Open
+          </div>        
+        </div>                
+        <div id="tweet">
+          <p>
+            "My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
+          <p>
+        </div>           
+      </div>       
+    </div>
+    <div id="right_twitter"></div>  
+    <div id="reply_seite" style="display: none;">
+      <%= render "reply_seite", :f => f  %> 
+    </div>
 </div>
+<div id="hinweis_back">If you press 'Back', all your actions within the Twitter simulation will be saved, but eventually not displayed anymore<p></p></div>
+<div id="hinweis_continue">Please press only 'Continue', if you would like to close the Twitter simulation<p></p></div>

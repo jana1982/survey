@@ -49,5 +49,17 @@
   <%=h @user.children %>
 </p>
 <p>
+  <strong>Retweet:</strong>
+  <%=h @user.retweet_clicked %>
+</p>
+<p>
+  <strong>Favorite:</strong>
+  <%=h @user.favorite_clicked %>
+</p>
+<p>
+  <strong>Reply:</strong>
+  <%=h @user.reply_clicked %>
+</p>
+<p>
   <%= link_to "View All", users_path %>
 </p>

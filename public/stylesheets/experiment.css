@@ -42,6 +42,16 @@ body {
 #container{
     
 }
+#reply_seite{
+
+  background-color:rgba(0,0,0,0.6);
+  width:100%;
+  height: 830px;  
+  left:7px; top:83px;
+  margin:0 auto;
+  position: absolute;
+
+}
 
 #message{
  position:relative;
@@ -61,7 +71,7 @@ body {
   top: 10px;
 }
 #actions{
-  width: 270px;
+  white-space:nowrap;
   height: 93px;
   display:none;
   float: right;
@@ -104,8 +114,40 @@ body {
   background-color: #FFF;
   padding: 20px 40px;
   border: double 4px #bfbfbf;
-  margin-top: 20px;
+  margin-top: 10px;
 
   border-radius:10px;
 }
+#hinweis_continue {
+  font-style: italic;
+  float: right;
+  color: red;
+}
 
+#hinweis_back {
+  font-style: italic;
+  float: left;
+  color: red;
+}
+
+#reply_field{
+
+
+  background-image:url('../images/reply_seite.png');
+  background-repeat:no-repeat;
+  background-position: left top;
+  position:relative;
+  left:150px; top:90px;
+  width: 860px;
+  height: 100%;
+  margin:0 auto;
+}
+
+#reply_text{
+ position:relative;
+ left:50px;
+ top:98px;
+ width:450px;
+ height:87px;
+ font-size: 1.0em;
+}

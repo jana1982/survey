@@ -12,6 +12,19 @@ class UsersController < ApplicationController
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
   end
+
+  def reply
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:reply_clicked => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.show 'reply_seite'
+              end
+            }
+    end
+    
+  end 
   
   def retweet
     puts session[:user_params]
