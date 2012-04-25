@@ -83,7 +83,8 @@ class UsersController < ApplicationController
             }
     end
     
-  end 
+  end
+  
 
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]

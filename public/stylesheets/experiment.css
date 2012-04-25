@@ -244,3 +244,45 @@ textarea#user_tweet_text{
   left:47px;
   top:12px;
 }
+
+#tweet_button_change{
+  position:relative;
+  left:27px;
+  top:43px;
+}
+#reply_button_change{
+  position:relative;
+  left:27px;
+  top:27px;
+}
+
+#search{
+
+  width:100%;
+  height: 100%;  
+  left:400px; top:-27px;
+  margin:0 auto;
+  position: absolute;
+
+}
+
+
+textarea#user_search{
+  outline: none;
+  -webkit-appearance: textarea;
+  background-color: transparent;
+  border-style: hidden;
+  border-radius: 6px;
+  border-bottom-right-radius:29px;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  -webkit-box-orient: vertical;
+  resize: auto;
+  cursor: auto;
+  padding: 2px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  position:relative;
+  left:-180px;
+  top:35px;
+}

@@ -12,6 +12,12 @@
     <%= character_count('reply_text','char_count', :frequency => 0.10) %>
 
 
+    <div id="reply_button_change">
+            <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
+                :mouseover => '../images/Tweetbutton_mouseover.png'),
+                  :url => {:action => "close", :id => @user.id}
+            %>
+  </div>
 </div>
   
 
