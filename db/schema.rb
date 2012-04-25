@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120424125048) do
+ActiveRecord::Schema.define(:version => 20120425153640) do
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",           :limit => 255
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20120424125048) do
     t.integer  "favorite_clicked"
     t.string   "leader_text"
     t.integer  "reply_clicked"
+    t.string   "reply_text"
+    t.string   "tweet_text"
   end
 
 end

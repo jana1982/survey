@@ -1,0 +1,15 @@
+
+<div id="new_tweet_field">
+
+  <div id="close_tweet">
+            <%= link_to_remote image_tag('../images/close.png'),
+                  :url => {:action => "close_tweet", :id => @user.id}
+            %>
+  </div>
+    <%= f.text_area :tweet_text, :cols => 56, :rows => 4, :maxlength => 140 %>
+    
+    <%= character_count('reply_text','char_count', :frequency => 0.10) %>
+
+
+</div>
+  

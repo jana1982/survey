@@ -12,13 +12,18 @@
 <div id="seite_plane">
     <div id="left_twitter"></div>
     <div id="seite_twitter">
-  
-      <div id="message" onMouseover="document.getElementById ('actions').style.display='table';" onMouseout="document.getElementById('actions').style.display='none';">
+      <div id="new_tweet">
+            <%= link_to_remote image_tag('../images/new_tweet_0.png',
+                :mouseover => '../images/new_tweet.png'),
+                :url => {:action => "new_tweet", :id => @user.id}
+            %>
+    </div>
+      <div id="message" onMouseover="document.getElementById ('actions').style.display='block';" onMouseout="document.getElementById('actions').style.display='none';">
         <div id="tweeterer">
            <div id="tweeter_name"> <%=h @user.leader_text %> </div>
            <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
         </div>
-        <div id="actions">
+        <div id="actions" >
           <div id="reply">
             <%= link_to_remote image_tag('../images/reply_einzeln.png',
                  :mouseover => '../images/reply_unterstrichen.png'),
@@ -46,9 +51,14 @@
             "My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
           <p>
         </div>           
-      </div>       
+      </div>
+
     </div>
-    <div id="right_twitter"></div>  
+    <div id="right_twitter"></div>
+
+    <div id="new_tweet_seite" style="display: none;">
+      <%= render "new_tweet_seite", :f => f  %> 
+    </div>
     <div id="reply_seite" style="display: none;">
       <%= render "reply_seite", :f => f  %> 
     </div>

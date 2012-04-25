@@ -51,7 +51,39 @@ class UsersController < ApplicationController
     end
     
   end
-
+  
+  def close
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.hide 'reply_seite'
+              end
+            }
+    end
+    
+  end
+  
+  def close_tweet
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.hide 'new_tweet_seite'
+              end
+            }
+    end
+    
+  end
+  
+  def new_tweet
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.show 'new_tweet_seite'
+              end
+            }
+    end
+    
+  end 
 
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]

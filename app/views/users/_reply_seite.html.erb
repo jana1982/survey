@@ -1,8 +1,17 @@
 
 <div id="reply_field">
-  <div id="reply_text">
-    <%= f.text_field :bildung_text %>
-  </div>
 
-  
+  <div id="tweeter_name_groß"> <%=h @user.leader_text %> </div>
+  <div id="close">
+            <%= link_to_remote image_tag('../images/close.png'),
+                  :url => {:action => "close", :id => @user.id}
+            %>
+  </div>
+    <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{@user.leader_text} " %>
+    
+    <%= character_count('reply_text','char_count', :frequency => 0.10) %>
+
+
 </div>
+  
+
