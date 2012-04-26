@@ -85,6 +85,42 @@ class UsersController < ApplicationController
     
   end
   
+  def compose_tweet
+      respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.show 'compose_tweet_seite'
+              end
+            }
+    end
+    
+  end
+  
+  include ActionView::Helpers::RawOutputHelper
+  def fading_flash_message(text, seconds=3)
+    raw text +
+      <<-EOJS
+        <script type='text/javascript'>
+          Event.observe(window, 'load',function() { 
+            setTimeout(function() {
+              message_id = $('tweet') ? 'tweet' : 'warning';
+              new Effect.Fade(message_id);
+            }, #{seconds*1000});
+          }, false);
+        </script>
+      EOJS
+  end
+    
+  def close_compose
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.hide 'compose_tweet_seite'
+              end
+            }
+    end
+    flash[:tweet] = fading_flash_message("Your Tweet has been sent", 5)
+  end
 
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]

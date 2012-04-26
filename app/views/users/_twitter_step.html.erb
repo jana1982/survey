@@ -12,15 +12,44 @@
 <div id="seite_plane">
     <div id="left_twitter"></div>
     <div id="seite_twitter">
+
       <div id="new_tweet">
             <%= link_to_remote image_tag('../images/new_tweet_0.png',
                 :mouseover => '../images/new_tweet.png'),
                 :url => {:action => "new_tweet", :id => @user.id}
             %>
-      </div>
-            <div id="search">
-            <%= f.text_area :search , :rows => 1, :cols => 12%>
 
+      </div>
+      <div id="compose_tweet">
+            <%= link_to_remote image_tag('../images/compose_inactive.png',
+                :mouseover => '../images/compose_mouseover.png'),
+                :url => {:action => "compose_tweet", :id => @user.id}
+            %>
+
+      </div>
+      <div id="search">
+      <script type="text/javascript" src="jquery.js">
+        //<![CDATA[
+              jQuery('.new-reply-text').keypress(function(e) {
+              var code = (e.keyCode ? e.keyCode : e.which);
+              if(code == 13) {
+             Effect.SlideDown('employment_sub_selection')
+              }
+            });
+        //]]>
+      </script>
+      <script type="text/javascript">
+      //<![CDATA[
+       new Form.Element.Observer($('search'), 0.3, function(form, char){
+            if (characterCode == 13) {
+             Effect.SlideDown('employment_sub_selection')
+            }
+        });
+      //]]>
+      </script>
+      <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
+
+  
       </div>
       <div id="message" onMouseover="document.getElementById ('actions').style.display='block';" onMouseout="document.getElementById('actions').style.display='none';">
         <div id="tweeterer">
@@ -56,10 +85,14 @@
           <p>
         </div>           
       </div>
-
+    <div id="compose_tweet_seite" style="display: none;">
+      <%= render "compose_tweet_seite", :f => f  %> 
+    </div>
     </div>
     <div id="right_twitter"></div>
 
+
+    
     <div id="new_tweet_seite" style="display: none;">
       <%= render "new_tweet_seite", :f => f  %> 
     </div>
