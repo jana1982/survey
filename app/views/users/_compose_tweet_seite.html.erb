@@ -5,12 +5,14 @@
       
     <%= f.text_area :tweet_text, :cols => 32, :rows => 5, :maxlength => 140 %>
     </div>
-    <%= character_count('reply_text','char_count', :frequency => 0.10) %>
+
 
     <div id="tweet_button_change_compose">
             <%= link_to_remote image_tag('../images/compose_tweet_button.png',
                 :mouseover => '../images/compose_tweet_button_mouseover.png'),
+                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
                   :url => {:action => "close_compose", :id => @user.id}
             %>
+
   </div>
 </div>

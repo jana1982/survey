@@ -6,10 +6,9 @@
                   :url => {:action => "close_tweet", :id => @user.id}
             %>
   </div>
-
+  
     <%= f.text_area :tweet_text, :cols => 56, :rows => 4, :maxlength => 140 %>
     
-    <%= character_count('reply_text','char_count', :frequency => 0.10) %>
 
     <div id="tweet_button_change">
             <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',

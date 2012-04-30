@@ -205,7 +205,7 @@ textarea#user_reply_text{
 
 
   background-image:url('../images/new_tweet_seite.png');
-  background-repeat:no-repeat;
+  background-repeat:no-repeat; 
   background-position: left top;
   position:relative;
   left:150px; top:90px;
@@ -330,9 +330,13 @@ textarea#user_search{
   top:18px;
 }
 
-#flash_tweet {
-  background-color: black;
+#tweet_sent{
+  background-color:black;
   color: white;
-  border: solid 1px black;
-
+  width:300px;
+  height: 25px;  
+  top:-40px;
+  margin:0 auto;
+  position: relative;
+  border-radius: 10px;
 }
