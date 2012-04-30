@@ -9,12 +9,12 @@
   </div>
     <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{@user.leader_text} " %>
     
-    <%= character_count('reply_text','char_count', :frequency => 0.10) %>
 
 
     <div id="reply_button_change">
             <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
                 :mouseover => '../images/Tweetbutton_mouseover.png'),
+                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>

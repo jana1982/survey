@@ -2,7 +2,8 @@
 <div id="compose_tweet_field">
 
     <div id="text_compose">
-      
+    <%= observe_field :tweet_text, :frequency => 1,
+      :function => "$('tweet_text').value.length" %> 
     <%= f.text_area :tweet_text, :cols => 32, :rows => 5, :maxlength => 140 %>
     </div>
 

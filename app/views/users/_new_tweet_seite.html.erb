@@ -13,6 +13,7 @@
     <div id="tweet_button_change">
             <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
                 :mouseover => '../images/Tweetbutton_mouseover.png'),
+                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
                   :url => {:action => "close_tweet", :id => @user.id}
             %>
   </div>
