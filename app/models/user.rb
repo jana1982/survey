@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
-			:public, :favorite_clicked, :leader_text, :reply_clicked, :reply_text, :tweet_text, :search
+			:public, :favorite_clicked, :leader_text, :reply_clicked, :reply_text, :tweet_text, :search,
+			:retweet_time, :favorite_time, :message_hover_time, :reply_time, :new_tweet_time, :retweet_importance
 			
   attr_writer :current_step
 

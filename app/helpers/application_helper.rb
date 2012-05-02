@@ -8,3 +8,4 @@ def character_count(field_id, update_id, options = {})
 end
   
 end
+

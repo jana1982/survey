@@ -48,8 +48,28 @@ class UsersController < ApplicationController
                 page.replace_html 'favorite',  image_tag('../images/favorite_nachklick.png')
               end
             }
+    end    
+  end
+  
+  def start_measure    
+    session[:user_params].deep_merge!({:in_time => Time.now})    
+    render :nothing => true
+  end
+  
+  def end_measure    
+    @end_time = Time.now
+    @type = params[:type]
+    @in_time = session[:user_params][:in_time]
+    if session[:user_params][@type] == nil      
+      @delta = @end_time - @in_time
+      session[:user_params].deep_merge!({@type => @delta})    
+    else
+      @delta = session[:user_params][@type] + (@end_time - @in_time)
+      session[:user_params].deep_merge!({@type => @delta})
     end
-    
+    puts "Type:#{@type} , Dauer: #{@delta}"
+    session[:user_params].deep_merge!({:in_time => nil})   
+    render :nothing => true
   end
   
   def close

@@ -9,14 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425232815) do
+ActiveRecord::Schema.define(:version => 20120502142551) do
 
   create_table "users", :force => true do |t|
-    t.integer  "bildung",           :limit => 255
+    t.integer  "bildung",            :limit => 255
     t.integer  "alter"
     t.integer  "retweet_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",        :limit => 255
+    t.integer  "geschlecht",         :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -45,6 +45,12 @@ ActiveRecord::Schema.define(:version => 20120425232815) do
     t.string   "reply_text"
     t.string   "tweet_text"
     t.string   "search"
+    t.float    "retweet_time"
+    t.float    "favorite_time"
+    t.float    "message_hover_time"
+    t.float    "reply_time"
+    t.float    "new_tweet_time"
+    t.integer  "retweet_importance"
   end
 
 end
