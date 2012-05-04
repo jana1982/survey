@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @histogram = {
+      'Foo' => 13,
+      'Bar' => 15,
+      'Trouble' => 5,
+      'Braids' => 1,
+      'Something' => 9,
+      'Else' => 13,
+      'Many' => 20,
+      'Zombies' => 7,
+      'nothing' => 0
+    }
   end
   
   def show

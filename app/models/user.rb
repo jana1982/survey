@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[introduction selection demographic opinionleader twitter target]
+      %w[introduction selection demographic opinionleader interest twitter target]
   end
   
   def first_step?

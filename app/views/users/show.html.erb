@@ -1,20 +1,19 @@
 <% title "User" %>
-
+<p>
+  <strong>Twitter account:</strong>
+  <%=h @user.twitter_account %>
+</p>
 <p>
   <strong>Bildung:</strong>
   <%=h @user.bildung %>
 </p>
 <p>
+  <strong>Bildung Others:</strong>
+  <%=h @user.bildung_text %>
+</p>
+<p>
   <strong>Alter:</strong>
   <%=h @user.alter %>
-</p>
-<p>
-  <strong>Retweed Clicked:</strong>
-  <%=h @user.retweet_clicked %>
-</p>
-<p>
-  <strong>At Clicked:</strong>
-  <%=h @user.at_clicked %>
 </p>
 <p>
   <strong>Geschlecht:</strong>
@@ -36,6 +35,7 @@
   <strong>Jahre:</strong>
   <%=h @user.years %>
 </p>
+
 <p>
   <strong>Einkommen:</strong>
   <%=h @user.income %>
@@ -47,6 +47,54 @@
 <p>
   <strong>Kinder:</strong>
   <%=h @user.children %>
+</p>
+<p>
+  <strong>Employment:</strong>
+  <%=h @user.employment %>
+</p>
+<p>
+  <strong>Employment others:</strong>
+  <%=h @user.employment_text %>
+</p>
+<p>
+  <strong>Potition:</strong>
+  <%=h @user.position %>
+</p>
+<p>
+  <strong>Position others:</strong>
+  <%=h @user.position_text %>
+</p>
+<p>
+  <strong>organization:</strong>
+  <%=h @user.organization %>
+</p>
+<p>
+  <strong>organization others:</strong>
+  <%=h @user.organization_text %>
+</p>
+<p>
+  <strong>Private PC:</strong>
+  <%=h @user.private_pc %>
+</p>
+<p>
+  <strong>Private Mobile:</strong>
+  <%=h @user.private_mobile %>
+</p>
+<p>
+  <strong>Work PC:</strong>
+  <%=h @user.work_pc %>
+</p>
+<p>
+  <strong>Work mobile:</strong>
+  <%=h @user.work_mobile %>
+</p>
+<p>
+  <strong>Public Terminal:</strong>
+  <%=h @user.public %>
+</p>
+<p>
+  <strong>Opinion Leader:</strong>
+  <%=h @user.leader_text %>
 </p>
 <p>
   <strong>Retweet:</strong>
@@ -63,13 +111,40 @@
 <p>
   <strong>reply_text:</strong>
   <%=h @user.reply_text %>
-<p>
+</p>
     <strong>new_tweet_text:</strong>
   <%=h @user.tweet_text %>
+</p>
+<p>
+    <strong>search:</strong>
+  <%=h @user.search %>
+</p>
+<p>
+  <strong>intention to retweet:</strong>
+  <%=h @user.retweet_time %>
+</p>
 <p>
 
-    <strong>intention to retweet:</strong>
-  <%=h @user.retweet_time %>
+  <strong>intention to favorite:</strong>
+  <%=h @user.favorite_time %>
+</p>
 <p>
+
+  <strong>intention to reply:</strong>
+  <%=h @user.reply_time%>
+</p>
+
+<p>
+
+  <strong>Cursor auf Message:</strong>
+  <%=h @user.message_hover_time%>
+</p>
+<p>
+
+  <strong>intention to sent a tweet:</strong>
+  <%=h @user.new_tweet_time%>
+</p>
+
+
   <%= link_to "View All", users_path %>
 </p>
