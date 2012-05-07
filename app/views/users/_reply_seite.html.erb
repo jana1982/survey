@@ -1,4 +1,5 @@
 
+
 <div id="reply_field">
 
   <div id="tweeter_name_groß"> <%=h @user.leader_text %> </div>
@@ -7,9 +8,24 @@
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
-    <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{@user.leader_text} " %>
-    
+  
 
+<script type="text/javascript" src="prototype.js">
+<!--
+ 
+Event.observe('user_reply_text', 'keyup', textChanged);
+Event.observe('user_reply_text', 'keydown', textChanged);
+function textChanged() {
+    var maxLen = 140;
+    var left = maxLen - this.getValue().length;
+    $('char-count').update(left);
+}
+//-->
+</script>
+
+    <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{@user.leader_text}" %>
+
+    <div id="charcount">Characters left: <span id="char-count">140</span></div>
 
     <div id="reply_button_change">
             <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',

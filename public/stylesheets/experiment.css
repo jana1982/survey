@@ -166,7 +166,7 @@ textarea#user_reply_text{
   word-wrap: break-word;
   position:relative;
   left:-180px;
-  top:12px;
+  top:33px;
 }
 
 #tweeter_name_groß{
@@ -180,7 +180,7 @@ textarea#user_reply_text{
 #close{
   position:relative;
   left:46px;
-  top:-11px;
+  top:10px;
 }
 
 #new_tweet{
@@ -251,7 +251,7 @@ textarea#user_tweet_text{
 #reply_button_change{
   position:relative;
   left:27px;
-  top:27px;
+  top:43px;
 }
 
 #search{
@@ -349,5 +349,11 @@ textarea#user_search{
   margin:0 auto;
   position: absolute;
 
+}
+
+#charcount{
+    position:relative;
+  left:10px;
+  top:43px;
 }
 
