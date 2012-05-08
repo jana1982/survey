@@ -14,7 +14,7 @@
     <div id="seite_twitter">
 
       <div id="new_tweet"
-              onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "new_tweet_time"}) %>"
+              onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => 'new_tweet_time'}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
       >
             <%= link_to_remote image_tag('../images/new_tweet_0.png',
@@ -115,8 +115,9 @@
     </div>
     
     <div id="new_tweet_seite" style="display: none;">
-      <%= render "new_tweet_seite", :f => f  %> 
-    </div>
+      <%= render "new_tweet_seite", :f => f  %>
+    </div> 
+
     <div id="reply_seite" style="display: none;">
       <%= render "reply_seite", :f => f  %> 
     </div>

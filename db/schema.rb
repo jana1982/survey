@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502142551) do
+ActiveRecord::Schema.define(:version => 20120508141333) do
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",            :limit => 255
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20120502142551) do
     t.float    "reply_time"
     t.float    "new_tweet_time"
     t.integer  "retweet_importance"
+    t.string   "tweet_text_n"
   end
 
 end

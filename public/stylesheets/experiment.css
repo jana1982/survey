@@ -136,7 +136,7 @@ body {
 #reply_field{
 
 
-  background-image:url('../images/reply_seite.png');
+  background-image:url('../images/reply_seite1.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
@@ -147,6 +147,11 @@ body {
   color: black;
 }
 
+#reply_text{
+    position:relative;
+  left:-178px;
+  top:14px;
+}
 
 
 textarea#user_reply_text{
@@ -164,23 +169,21 @@ textarea#user_reply_text{
   padding: 2px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  position:relative;
-  left:-180px;
-  top:33px;
+
 }
 
 #tweeter_name_groß{
   position:relative;
-  left:-300px;
-  top:15px;
+  left:-310px;
+  top:17px;
   font-size: 1.3em;
   font-weight: bold;
 }
 
 #close{
   position:relative;
-  left:46px;
-  top:10px;
+  left:48px;
+  top:-7px;
 }
 
 #new_tweet{
@@ -215,7 +218,25 @@ textarea#user_reply_text{
   color: black;
 }
 
-
+textarea#user_tweet_text_n{
+  outline: none;
+  -webkit-appearance: textarea;
+  background-color: white;
+  border-style: hidden;
+  border-radius: 6px;
+  border-bottom-right-radius:29px;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  -webkit-box-orient: vertical;
+  resize: auto;
+  cursor: auto;
+  padding: 2px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  position:relative;
+  left:-180px;
+  top:35px;
+}
 
 textarea#user_tweet_text{
   outline: none;
@@ -245,13 +266,14 @@ textarea#user_tweet_text{
 
 #tweet_button_change{
   position:relative;
-  left:27px;
-  top:43px;
+  left:14px;
+  top:41px;
 }
 #reply_button_change{
+  float: right;
   position:relative;
-  left:27px;
-  top:43px;
+  left:-369px;
+  top:22px;
 }
 
 #search{
@@ -326,8 +348,8 @@ textarea#user_search{
 
 #tweet_button_change_compose{
   position:relative;
-  left:106px;
-  top:18px;
+  left:95px;
+  top:17px;
 }
 
 #tweet_sent{
@@ -352,8 +374,26 @@ textarea#user_search{
 }
 
 #charcount{
-    position:relative;
-  left:10px;
-  top:43px;
+  color: grey;
+  float: left; 
+  position:relative;
+  left:390px;
+  top:33px;
+}
+
+#charcount_t{
+  color: grey;
+  float: left; 
+  position:relative;
+  left:390px;
+  top:50px;
+}
+
+#charcount_c{
+  color: grey;
+  float: left; 
+  position:relative;
+  left:194px;
+  top:28px;
 }
 

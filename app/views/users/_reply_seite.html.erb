@@ -2,32 +2,19 @@
 
 <div id="reply_field">
 
-  <div id="tweeter_name_groß"> <%=h @user.leader_text %> </div>
+  <div id="tweeter_name_groß">&nbsp;@<%=h @user.leader_text %> </div>
   <div id="close">
             <%= link_to_remote image_tag('../images/close.png'),
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
-  
-
-<script type="text/javascript" src="prototype.js">
-<!--
- 
-Event.observe('user_reply_text', 'keyup', textChanged);
-Event.observe('user_reply_text', 'keydown', textChanged);
-function textChanged() {
-    var maxLen = 140;
-    var left = maxLen - this.getValue().length;
-    $('char-count').update(left);
-}
-//-->
-</script>
-
+  <div id="reply_text">
     <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{@user.leader_text}" %>
+  </div>
 
-    <div id="charcount">Characters left: <span id="char-count">140</span></div>
+    <div id="charcount"> <span id="char-count">140</span></div>
 
-    <div id="reply_button_change">
+    <div id="reply_button_change" style="display: none;">
             <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
                 :mouseover => '../images/Tweetbutton_mouseover.png'),
                 :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
@@ -35,5 +22,6 @@ function textChanged() {
             %>
   </div>
 </div>
-  
+
+
 
