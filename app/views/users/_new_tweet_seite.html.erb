@@ -1,23 +1,25 @@
 
 <div id="new_tweet_field">
 
-  <div id="close_tweet">
-            <%= link_to_remote image_tag('../images/close.png'),
-                  :url => {:action => "close_tweet", :id => @user.id}
-            %>
-  </div>
-  <div id="tweet_text"> 
-   <%= f.text_area :tweet_text_n, :cols => 56, :rows => 4, :maxlength => 140 %>
-  </div>
-    
-  <div id="charcount_t"> <span id="char-countt">140</span></div>
-    
-  <div id="tweet_button_change" style="display: none;">
-            <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
-                :mouseover => '../images/Tweetbutton_mouseover.png'),
-                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
-                  :url => {:action => "close_tweet", :id => @user.id}
-            %>
-  </div>
+
+    <div id="close_tweet">
+              <%= link_to_remote image_tag('../images/close.png'),
+                    :url => {:action => "close_tweet", :id => @user.id}
+              %>
+    </div>
+    <div id="tweet_text"> 
+     <%= f.text_area :tweet_text_n, :cols => 56, :rows => 4, :maxlength => 140 %>
+    </div>
+      
+    <div id="charcount_t"> <span id="char-countt">140</span></div>
+      
+    <div id="tweet_button_change" style="display: none;">
+              <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
+                  :mouseover => '../images/Tweetbutton_mouseover.png'),
+                  :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
+                    :url => {:action => "close_tweet", :id => @user.id}
+              %>
+    </div>
+
 </div>
   

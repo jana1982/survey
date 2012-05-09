@@ -99,7 +99,15 @@
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_time"}) %>"
              >
           <p>
-            "My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there." 
+
+            <%=  message = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
+                puts message[0] # Message: Schaden 0, Einfluss 0
+                puts message[1] # Message: Schaden 1, Einfluss 0
+                puts message[2] # Message: Schaden 0, Einfluss 1
+                puts message[3] # Message: Schaden 1, Einfluss 1
+                random_message = message[rand(message.length)]
+                random_message.inspect%>
+
           <p>
         </div>           
       </div>
@@ -116,6 +124,7 @@
     
     <div id="new_tweet_seite" style="display: none;">
       <%= render "new_tweet_seite", :f => f  %>
+      
     </div> 
 
     <div id="reply_seite" style="display: none;">

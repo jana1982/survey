@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     @users = User.all
     @histogram = {
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
+    
   end
 
   def reply
@@ -136,6 +138,22 @@ class UsersController < ApplicationController
               end
             }
       end
+  end
+  
+  def set_cookie
+    
+  end
+  def message
+    @message = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
+    puts message[0] # Message: Schaden 0, Einfluss 0
+    puts message[1] #Message: Schaden 1, Einfluss 0
+    puts message[2] #Message: Schaden 0, Einfluss 1
+    puts message[3] #Message: Schaden 1, Einfluss 1
+  end
+  
+  def random_message
+    @random_message = @message[rand(message.length)]
+ 
   end
 
   def create

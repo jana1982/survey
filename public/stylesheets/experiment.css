@@ -397,3 +397,10 @@ textarea#user_search{
   top:28px;
 }
 
+#click_outside{
+  color: red;
+  float: left; 
+  position:relative;
+  left:12px;
+  top:28px;
+}
