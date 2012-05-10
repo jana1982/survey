@@ -98,17 +98,9 @@
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_time"}) %>"
              >
-          <p>
-
-            <%=  message = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
-                puts message[0] # Message: Schaden 0, Einfluss 0
-                puts message[1] # Message: Schaden 1, Einfluss 0
-                puts message[2] # Message: Schaden 0, Einfluss 1
-                puts message[3] # Message: Schaden 1, Einfluss 1
-                random_message = message[rand(message.length)]
-                random_message.inspect%>
-
-          <p>
+          <p>            
+            <%=  write_random_message  %>
+          </p>
         </div>           
       </div>
     <div id="tweet_sent" style="display: none;">Your Tweet has been sent!</div>
