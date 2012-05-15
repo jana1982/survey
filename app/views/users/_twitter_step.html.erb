@@ -81,7 +81,7 @@
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_time"}) %>"
              >
           <p>            
-            <% :write_tweet %>
+            <%= @user.seen_message %>
           </p>
         </div>           
       </div>
