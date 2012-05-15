@@ -140,11 +140,10 @@ class UsersController < ApplicationController
       end
   end
   
-  def write_random_message
-  message = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
-  random_message = message[rand(message.length)]
-  return random_message
+  def write_tweet
+   
   end
+
   
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
@@ -167,13 +166,25 @@ class UsersController < ApplicationController
         session[:user_step] = session[:user_params] = nil
         flash[:notice] = "Thank you for your participation, but you did not qualify for this study."
         render 'confirm_step'
-    elsif @user.new_record? && @user.does_qualify? && @user.current_step == @user.twitter_step
-      write_random_message
+        
+    elsif @user. current_step == 'twitter_step'
+      render 'reply_seite'
+      #respond_to do |format|
+      #format.js {
+      #        render(:update) do |page|
+      #          page.insert_html(:top,'tweet',write_random_message)
+      #          
+      #        end
+      #      }
+      #
+      #end
+      #
     else
       session[:user_step] = session[:user_params] = nil
       flash[:notice] = "User saved."
       render 'confirm_step'
     end
-
+  
   end
+  
 end

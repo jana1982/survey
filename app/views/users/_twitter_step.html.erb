@@ -34,25 +34,7 @@
 
       </div>
       <div id="search">
-<!--      <script type="text/javascript" src="jquery.js">
-        //<![CDATA[
-              jQuery('.new-reply-text').keypress(function(e) {
-              var code = (e.keyCode ? e.keyCode : e.which);
-              if(code == 13) {
-             Effect.SlideDown('employment_sub_selection')
-              }
-            });
-        //]]>
-      </script>
-      <script type="text/javascript">
-      //<![CDATA[
-       new Form.Element.Observer($('search'), 0.3, function(form, char){
-            if (characterCode == 13) {
-             Effect.SlideDown('employment_sub_selection')
-            }
-        });
-      //]]>
-      </script>-->
+
       <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
 
   
@@ -99,7 +81,7 @@
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_time"}) %>"
              >
           <p>            
-            <%=  write_random_message  %>
+            <% :write_tweet %>
           </p>
         </div>           
       </div>
