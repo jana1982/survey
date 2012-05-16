@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120515113237) do
+ActiveRecord::Schema.define(:version => 20120516093945) do
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",            :limit => 255
@@ -53,6 +53,18 @@ ActiveRecord::Schema.define(:version => 20120515113237) do
     t.integer  "retweet_importance"
     t.string   "tweet_text_n"
     t.string   "seen_message"
+    t.string   "ol_1"
+    t.string   "ol_2"
+    t.string   "ol_3"
+    t.string   "ol_4"
+    t.string   "ol_5"
+    t.string   "ol_6"
+    t.string   "ol_7"
+    t.string   "ol_8"
+    t.string   "ol_9"
+    t.string   "ol_10"
+    t.string   "ol_11"
+    t.string   "ol_12"
   end
 
 end
