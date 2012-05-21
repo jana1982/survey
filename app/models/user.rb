@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 			:ol_list
 			
   attr_writer :current_step
+  has_many :ol_list
+  accepts_nested_attributes_for :ol_list
 
   validates_presence_of :language, :if => :selection?
   validates_presence_of :twitter_account, :if => :selection?

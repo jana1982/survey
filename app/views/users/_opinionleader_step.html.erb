@@ -21,7 +21,7 @@
 </TR>
 </TABLE>
 
-<%= f.fields_for @user.ol_list do |ol_fields| %>
+<%= f.fields_for :ol_list do |ol_list_form| %>
 
            <p>
            Please read the following items and think about your followed accounts at Twitter.
@@ -38,11 +38,11 @@
                  <tr>
                    <td>Account name: </td>
                     
-                   <td> <%= ol_fields.text_field :ol_1 %></td>
+                   <td> <%= ol_list_form.text_field :ol_1 %></td>
                  </tr>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= ol_fields.text_field :ol_2 %> </td>
+                   <td><%= ol_list_form.text_field :ol_2 %> </td>
                  </tr>
                </table>
                </div>
@@ -54,11 +54,11 @@
                  <table>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= ol_fields.text_field :ol_3 %> </td>
+                   <td><%= ol_list_form.text_field :ol_3 %> </td>
                  </tr>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= ol_fields.text_field  :ol_4 %> </td>
+                   <td><%= ol_list_form.text_field  :ol_4 %> </td>
                  </tr>
                </table>
                </div>
@@ -70,11 +70,11 @@
                  <table>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= ol_fields.text_field  :ol_5 %> </td>
+                   <td><%= ol_list_form.text_field  :ol_5 %> </td>
                  </tr>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= ol_fields.text_field  :ol_6 %> </td>
+                   <td><%= ol_list_form.text_field  :ol_6 %> </td>
                  </tr>
                </table>
                </div>
@@ -84,11 +84,11 @@
              <table>
              <tr>
                <td>Account name: </td>
-               <td><%= ol_fields.text_field :ol_7 %> </td>
+               <td><%= ol_list_form.text_field :ol_7 %> </td>
              </tr>
              <tr>
                <td>Account name: </td>
-               <td><%= ol_fields.text_field  :ol_8 %> </td>
+               <td><%= ol_list_form.text_field  :ol_8 %> </td>
              </tr>
            </table>
            </div>
@@ -98,11 +98,11 @@
              <table>
              <tr>
                <td>Account name: </td>
-               <td><%= ol_fields.text_field  :ol_9 %> </td>
+               <td><%= ol_list_form.text_field  :ol_9 %> </td>
              </tr>
              <tr>
                <td>Account name: </td>
-               <td><%= ol_fields.text_field  :ol_10 %> </td>
+               <td><%= ol_list_form.text_field  :ol_10 %> </td>
              </tr>
            </table>
            </div>
@@ -112,11 +112,11 @@
            <table>
              <tr>
                <td>In General: </td>
-               <td><%= ol_fields.text_field :ol_11 %> </td>
+               <td><%= ol_list_form.text_field :ol_11 %> </td>
              </tr>
              <tr>
                <td>News related: </td>
-               <td><%= ol_fields.text_field  :ol_12 %> </td>
+               <td><%= ol_list_form.text_field  :ol_12 %> </td>
              </tr>
            </table>
            </div>
