@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120516093945) do
+ActiveRecord::Schema.define(:version => 20120520091314) do
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",            :limit => 255
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20120516093945) do
     t.string   "ol_10"
     t.string   "ol_11"
     t.string   "ol_12"
+    t.string   "ol_list"
   end
 
 end

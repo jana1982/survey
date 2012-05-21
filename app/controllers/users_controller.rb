@@ -25,12 +25,7 @@ class UsersController < ApplicationController
     return random_message   
   end
   
-  def opinion_leader
-    
-    if @user.ol_1 == @user.ol_2
-    session[:user_params].deep_merge!({:leader_text => @user.ol_1})
-    end
-  end
+
   
   def new
     session[:user_params] ||= {}

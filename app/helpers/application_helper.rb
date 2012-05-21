@@ -7,5 +7,20 @@ module ApplicationHelper
       out += observe_field(field_id, options.merge(:function => function)) # and observe it
   end
 
-  
+    def opinion_leader
+    a = Hash.new(0)
+    
+    ol_fields.each do |v|
+    a[v] += 1
+    end
+    
+    b.each do |k, v|
+    puts "#{k} appears #{v} times"
+    end
+    
+    #if @user.ol_1 == @user.ol_2
+    #session[:user_params].deep_merge!({:leader_text => @user.ol_1})
+    #end
+    end
+    
 end
