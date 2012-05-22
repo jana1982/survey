@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120520091314) do
+ActiveRecord::Schema.define(:version => 20120522153757) do
+
+  create_table "opinionleaders", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "ol"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",            :limit => 255
@@ -66,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20120520091314) do
     t.string   "ol_11"
     t.string   "ol_12"
     t.string   "ol_list"
+    t.string   "seen_person"
   end
 
 end

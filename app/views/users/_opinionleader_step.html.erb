@@ -21,7 +21,6 @@
 </TR>
 </TABLE>
 
-<%= f.fields_for :ol_list do |builder| %>
 
            <p>
            Please read the following items and think about your followed accounts at Twitter.
@@ -38,11 +37,11 @@
                  <tr>
                    <td>Account name: </td>
                     
-                   <td> <%= builder.text_field :ol %></td>
+                   <td> <%= f.text_field :ol_1 %></td>
                  </tr>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= builder.text_field :ol %> </td>
+                   <td><%= f.text_field :ol_2 %> </td>
                  </tr>
                </table>
                </div>
@@ -54,11 +53,11 @@
                  <table>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= builder.text_field :ol %> </td>
+                   <td><%= f.text_field :ol_3 %> </td>
                  </tr>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= builder.text_field  :ol %> </td>
+                   <td><%= f.text_field  :ol_4 %> </td>
                  </tr>
                </table>
                </div>
@@ -70,11 +69,11 @@
                  <table>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= builder.text_field  :ol %> </td>
+                   <td><%= f.text_field  :ol_5 %> </td>
                  </tr>
                  <tr>
                    <td>Account name: </td>
-                   <td><%= builder.text_field  :ol %> </td>
+                   <td><%= f.text_field  :ol_6 %> </td>
                  </tr>
                </table>
                </div>
@@ -84,11 +83,11 @@
              <table>
              <tr>
                <td>Account name: </td>
-               <td><%= builder.text_field :ol %> </td>
+               <td><%= f.text_field :ol_7 %> </td>
              </tr>
              <tr>
                <td>Account name: </td>
-               <td><%= builder.text_field  :ol %> </td>
+               <td><%= f.text_field  :ol_8 %> </td>
              </tr>
            </table>
            </div>
@@ -98,11 +97,11 @@
              <table>
              <tr>
                <td>Account name: </td>
-               <td><%= builder.text_field  :ol %> </td>
+               <td><%= f.text_field  :ol_9 %> </td>
              </tr>
              <tr>
                <td>Account name: </td>
-               <td><%= builder.text_field  :ol %> </td>
+               <td><%= f.text_field  :ol_10 %> </td>
              </tr>
            </table>
            </div>
@@ -112,16 +111,16 @@
            <table>
              <tr>
                <td>In General: </td>
-               <td><%= builder.text_field :ol %> </td>
+               <td><%= f.text_field :ol_11 %> </td>
              </tr>
              <tr>
                <td>News related: </td>
-               <td><%= builder.text_field  :ol %> </td>
+               <td><%= f.text_field  :ol_12 %> </td>
              </tr>
            </table>
            </div>
-<% end %>
+
 <hr>
-   <%= opinion_leader %>        
+    
 
   

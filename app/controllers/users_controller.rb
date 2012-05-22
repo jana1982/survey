@@ -25,12 +25,17 @@ class UsersController < ApplicationController
     return random_message   
   end
   
-
+  def generate_random_person       
+    person = [@user.leader_text, 'Friend']
+    random_person = person[rand(person.length)]
+    return random_person   
+  end    
   
+
   def new
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
-    12.times { @user.ol_list.build }
+    1.times { @user.opinionleaders.build }
     
     #Generate a random message for the user if he has'nt one yet
     if @user.seen_message == nil
@@ -38,6 +43,11 @@ class UsersController < ApplicationController
       session[:user_params].deep_merge!({:seen_message => @user.seen_message})
     end
     
+    #Generate a random person for the user if he has'nt one yet
+    if @user.seen_person == nil
+      @user.seen_person = generate_random_person
+      session[:user_params].deep_merge!({:seen_person => @user.seen_person})
+    end
     
     @user.current_step = session[:user_step]    
   end
@@ -79,6 +89,8 @@ class UsersController < ApplicationController
             }
     end    
   end
+  
+  
   
   def start_measure    
     session[:user_params].deep_merge!({:in_time => Time.now})    

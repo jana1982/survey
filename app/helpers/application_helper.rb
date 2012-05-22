@@ -8,19 +8,21 @@ module ApplicationHelper
   end
 
     def opinion_leader
-    a = Hash.new(0)
+    a = [@user.ol_1, @user.ol_2, @user.ol_3, @user.ol_4, @user.ol_5, @user.ol_6, @user.ol_7, @user.ol_8, @user.ol_9, @user.ol_10, @user.ol_11, @user.ol_12 ]
+    b = Hash.new(0)
     
-    ol_list_form.each do |v|
-    a[v] += 1
+    a.each do |v|
+    b[v] += 1
     end
     
-    a.each do |k, v|
+    b.each do |k, v|
     puts "#{k} appears #{v} times"
     end
     
-    #if @user.ol_1 == @user.ol_2
-    #session[:user_params].deep_merge!({:leader_text => @user.ol_1})
-    #end
+    c= b.max { |a,b| a.last <=> b.last }.first
+    session[:user_params].deep_merge!({:leader_text => c})
+    
     end
     
+
 end

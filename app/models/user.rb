@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
 			:public, :favorite_clicked, :leader_text, :reply_clicked, :reply_text, :tweet_text, :search,
 			:retweet_time, :favorite_time, :message_hover_time, :reply_time, :new_tweet_time, :retweet_importance,
 			:tweet_text_n, :seen_message, :ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12,
-			:ol_list
+			:ol_list, :seen_person
 			
   attr_writer :current_step
-  has_many :ol_list
-  accepts_nested_attributes_for :ol_list
+  has_many :opinionleaders
+  accepts_nested_attributes_for :opinionleaders
 
   validates_presence_of :language, :if => :selection?
   validates_presence_of :twitter_account, :if => :selection?
@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[selection opinionleader twitter target]
+      %w[selection opinionleader test twitter target]
       #introduction demographic  interest 
   end
   
