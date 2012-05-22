@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def new
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
+    12.times { @user.ol_list.build }
     
     #Generate a random message for the user if he has'nt one yet
     if @user.seen_message == nil

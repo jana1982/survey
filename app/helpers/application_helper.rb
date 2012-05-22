@@ -10,11 +10,11 @@ module ApplicationHelper
     def opinion_leader
     a = Hash.new(0)
     
-    ol_fields.each do |v|
+    ol_list_form.each do |v|
     a[v] += 1
     end
     
-    b.each do |k, v|
+    a.each do |k, v|
     puts "#{k} appears #{v} times"
     end
     
