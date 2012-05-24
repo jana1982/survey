@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     return random_person   
   end    
   
+  def generate_random_retweet       
+    retweet = ['retweet', 'no_retweet']
+    random_retweet = retweet[rand(retweet.length)]
+    return random_retweet   
+  end    
 
   def new
     session[:user_params] ||= {}
@@ -47,6 +52,12 @@ class UsersController < ApplicationController
     if @user.seen_person == nil
       @user.seen_person = generate_random_person
       session[:user_params].deep_merge!({:seen_person => @user.seen_person})
+    end
+    
+    #Generate random retweet for the user if he has'nt one yet
+    if @user.seen_retweet == nil
+      @user.seen_retweet = generate_random_retweet
+      session[:user_params].deep_merge!({:seen_retweet => @user.seen_retweet})
     end
     
     @user.current_step = session[:user_step]    
@@ -71,7 +82,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'retweet', image_tag('../images/retweet_nachklick.png')
+                page.replace_html 'retweet', image_tag('../images/retweet_clicked_g.png')
               end
             }
     end
@@ -84,9 +95,27 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'favorite',  image_tag('../images/favorite_nachklick.png')
+                page.replace_html 'favorite',  image_tag('../images/favorite_clicked_g.png')
               end
             }
+    end    
+  end
+  
+  def open
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:open_clicked => 1})
+    respond_to do |format|
+      format.js {
+         if session[:user_params][:seen_retweet] == 'retweet'
+            render(:update) do |page|
+                page.show 'expand_seite'
+              end;
+         else
+           render(:update) do |page|
+                  page.show 'expand_seite2'
+           end; 
+          end
+         }
     end    
   end
   
@@ -164,6 +193,16 @@ class UsersController < ApplicationController
               
                 page.hide'compose_tweet_seite'
               end
+            }
+      end
+  end
+  
+  def suche
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.alert'Thank you very much for your search request. Unfortunately this simulation can not respond to your search request.'
+               end
             }
       end
   end

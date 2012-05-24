@@ -36,11 +36,18 @@ body {
 #tweet{
   position: absolute;
   top:20px;
+  height: 50px;
   bottom: 0;
   text-align: left;
 }
 
 #container{ 
+}
+
+#search_symbol{
+  position: absolute;
+  top: 4px;
+  left:525px;
 }
 
 #reply_seite{
@@ -65,7 +72,7 @@ body {
 
 #tweeterer{
   width: 270px;
-  height: 93px;
+  height: 20px;
   float: left;
  
   position: absolute;
@@ -75,17 +82,55 @@ body {
 
 #actions{
   white-space:nowrap;
-  height: 93px;
+  background-color: #f2f2f2;
+  height: 92px;
+  width: 520px;
   display:none;
   float: right;
   position: absolute;
-  right: 0px;
+  right: 5px;
 
+}
+#inactive_expand{
+  position:absolute;
+
+  left:-19px; top:65px;
+
+}
+#twitter_bild{
+  float: left;
+  position:absolute;
+  left:-63px; top:9px;
+}
+#expand{
+  float: left;
+  position: absolute;
+
+  left:56px; top:65px;
+
+}
+
+#reply{
+  float: left;
+  position: absolute;
+  left: 125px;
+  top: 65px;
 }
 
 #retweet{
   float: left;
+  position: absolute;
+  left: 185px;
+  top: 65px;
 }
+
+#favorite{
+  float: left;
+  position: absolute;
+  left: 264px;
+  top: 65px;
+}
+
 #tweeter_name_at{
    float: left;
 
@@ -97,17 +142,6 @@ body {
   float: left;
 
   font-weight: bold;
-}
-#open{
-  float: left;
-}
-
-#reply{
-  float: left;
-}
-
-#favorite{
-  float: left;  
 }
 
 #buttons {
@@ -403,4 +437,61 @@ textarea#user_search{
   position:relative;
   left:12px;
   top:28px;
+}
+
+#expand_seite{
+
+  background-color:transparent;
+  width:525px;
+  height: 250px;  
+  left:327px; top:100px;
+  margin:0 auto;
+  position: absolute;
+
+
+}
+
+#expand_field{
+
+
+  background-image:url('../images/expand_seite_RT.png');
+  background-repeat:no-repeat;
+  background-position: left top;
+  position:relative;
+  left:3px; top: 66px;
+  width: 100%;
+  height: 81%;
+  margin:0 auto;
+  color: black;
+}
+#expand_seite2{
+
+  background-color:transparent;
+  width:525px;
+  height: 250px;  
+  left:327px; top:100px;
+  margin:0 auto;
+  position: absolute;
+
+}
+
+#expand_field2{
+
+
+  background-image:url('../images/expand_seite_ohne_rt.png');
+  background-repeat:no-repeat;
+  background-position: left top;
+  position:relative;
+  left:3px; top: 66px;
+  width: 100%;
+  height: 81%;
+  margin:0 auto;
+  color: black;
+}
+
+#tweet2{
+  position:relative;
+  left:0px; top: -46px;
+  width: 100%;
+  height: 40px;
 }
