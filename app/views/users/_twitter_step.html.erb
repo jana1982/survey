@@ -1,4 +1,7 @@
-<TABLE width="100%">
+<div
+     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "experiment_time"}) %>"
+     onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "experiment_time"}) %>">
+     <TABLE width="100%">
   <TR>    
     <TD ALIGN="LEFT" nowrap>
       <h2>Twitter Simulation</h2>    
@@ -81,6 +84,7 @@
            <div id="tweeter_name"> <%= h @user.seen_person  %> </div>
           
            <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
+           <div id="minutes"><%= minutes %></div>
         </div>
         <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
         <div id="tweet"
@@ -139,3 +143,4 @@
 </div>
 <div id="hinweis_back">If you press 'Back', all your actions within the Twitter simulation will be saved, but eventually not displayed anymore<p></p></div>
 <div id="hinweis_continue">Please press only 'Continue', if you would like to close the Twitter simulation<p></p></div>
+</div>

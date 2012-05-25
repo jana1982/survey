@@ -24,5 +24,8 @@ module ApplicationHelper
     
     end
     
+    def minutes
+      @user.experiment_time
+    end
 
 end

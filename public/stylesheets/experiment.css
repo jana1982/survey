@@ -443,8 +443,8 @@ textarea#user_search{
 
   background-color:transparent;
   width:525px;
-  height: 250px;  
-  left:327px; top:100px;
+  height: 252px;  
+  left:327px; top:98px;
   margin:0 auto;
   position: absolute;
 
@@ -458,12 +458,51 @@ textarea#user_search{
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:3px; top: 66px;
+  left:2px; top: 68px;
   width: 100%;
-  height: 81%;
+  height: 100%;
   margin:0 auto;
   color: black;
 }
+
+#collapse{
+  float: left;
+  position: absolute;
+  left: 50px;
+  top: 00px;
+}
+
+#reply2{
+  float: left;
+  position: absolute;
+  left: 125px;
+  top: 0px;
+}
+
+#retweet2{
+  float: left;
+  position: absolute;
+  left: 185px;
+  top: 0px;
+}
+
+#favorite2{
+  float: left;
+  position: absolute;
+  left: 264px;
+  top: 0px;
+
+}
+
+#time{
+  color: #969696;
+  font-size: 0.9em;
+  background-color: white;
+  position: absolute;
+  left: 70px;
+  top: 93px;
+}
+
 #expand_seite2{
 
   background-color:transparent;

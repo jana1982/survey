@@ -82,7 +82,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'retweet', image_tag('../images/retweet_clicked_g.png')
+                page.replace_html 'retweet', image_tag('../images/retweet_clicked_g.png');
+                page.replace_html 'retweet2', image_tag('../images/retweet_clicked.png');
               end
             }
     end
@@ -95,7 +96,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'favorite',  image_tag('../images/favorite_clicked_g.png')
+                page.replace_html 'favorite',  image_tag('../images/favorite_clicked_g.png');
+                page.replace_html 'favorite2',  image_tag('../images/favorite_clicked.png');
               end
             }
     end    
@@ -118,7 +120,6 @@ class UsersController < ApplicationController
          }
     end    
   end
-  
   
   
   def start_measure    
@@ -146,23 +147,18 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.hide 'reply_seite'
+                page.hide 'reply_seite';
+                page.hide 'new_tweet_seite';
+                page.hide 'compose_tweet_seite';
+                page.hide 'expand_seite';
+                page.hide 'expand_seite2';
               end
             }
     end
     
   end
   
-  def close_tweet
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-                page.hide 'new_tweet_seite'
-              end
-            }
-    end
-    
-  end
+
   
   def new_tweet
     respond_to do |format|
@@ -186,16 +182,7 @@ class UsersController < ApplicationController
     
   end
   
-  def close_compose
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-              
-                page.hide'compose_tweet_seite'
-              end
-            }
-      end
-  end
+
   
   def suche
     respond_to do |format|
