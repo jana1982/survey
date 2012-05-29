@@ -534,3 +534,35 @@ textarea#user_search{
   width: 100%;
   height: 40px;
 }
+
+#connect_button{
+
+  left:758px; top:0px;
+  margin:0 auto;
+  position: absolute;
+
+}
+#connect_seite{
+
+  background-image: url('../images/connect.png');
+  width:100%;
+  height: 830px;  
+  left:0px; top:0px;
+  margin:0 auto;
+  position: absolute;
+
+}
+
+#connect_field{
+
+
+  background-image:url('../images/new_tweet_seite.png');
+  background-repeat:no-repeat; 
+  background-position: left top;
+  position:relative;
+  left:150px; top:90px;
+  width: 860px;
+  height: 100%;
+  margin:0 auto;
+  color: black;
+}

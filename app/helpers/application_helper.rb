@@ -24,8 +24,10 @@ module ApplicationHelper
     
     end
     
-    def minutes
-      @user.experiment_time
-    end
-
+   
+  def minutes
+ 
+  @user.experiment_time.to_i/60
+   
+  end
 end

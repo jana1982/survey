@@ -26,6 +26,13 @@
             %>
 
       </div>
+      <div id="connect_button">
+            <%= link_to_remote image_tag('../images/connect_einzeln.png',
+                :mouseover => '../images/connect_hover.png'),
+                :url => {:action => "connect", :id => @user.id}
+            %>
+
+      </div>
       <div id="compose_tweet"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "new_tweet_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
@@ -84,7 +91,11 @@
            <div id="tweeter_name"> <%= h @user.seen_person  %> </div>
           
            <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
-           <div id="minutes"><%= minutes %></div>
+                     
+           
+          
+
+          <div id="minutes"><%= minutes %></div>
         </div>
         <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
         <div id="tweet"
@@ -124,6 +135,9 @@
     </div>
     <div id="compose_tweet_seite" style="display: none;">
       <%= render "compose_tweet_seite", :f => f  %> 
+    </div>
+    <div id="connect_seite" style="display: none;">
+      <%= render "connect_seite", :f => f  %> 
     </div>
     </div>
     <div id="right_twitter"></div>

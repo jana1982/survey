@@ -60,6 +60,8 @@ class UsersController < ApplicationController
       session[:user_params].deep_merge!({:seen_retweet => @user.seen_retweet})
     end
     
+    
+    
     @user.current_step = session[:user_step]    
   end
 
@@ -120,7 +122,7 @@ class UsersController < ApplicationController
          }
     end    
   end
-  
+
   
   def start_measure    
     session[:user_params].deep_merge!({:in_time => Time.now})    
@@ -158,6 +160,15 @@ class UsersController < ApplicationController
     
   end
   
+  def minutes_update
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.replace_html 'minutes', 'minutes'
+              end
+            }
+    end    
+  end
 
   
   def new_tweet
@@ -165,6 +176,18 @@ class UsersController < ApplicationController
       format.js {
               render(:update) do |page|
                 page.show 'new_tweet_seite'
+              end
+            }
+    end
+    
+  end
+  
+  def connect
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.replace_html 'connect_button',  image_tag('../images/connect_clicked.png');
+                page.show 'connect_seite'
               end
             }
     end
