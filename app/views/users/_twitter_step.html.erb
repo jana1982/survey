@@ -14,7 +14,19 @@
   
 <div id="seite_plane">
     <div id="left_twitter"></div>
+    
+<!--Mittlere Twitterseite-->
+    
     <div id="seite_twitter">
+
+
+      <div id="connect_button">
+            <%= link_to_remote image_tag('../images/connect_einzeln.png',
+                :mouseover => '../images/connect_hover.png'),
+                :url => {:action => "connect", :id => @user.id}
+            %>
+
+      </div>
 
       <div id="new_tweet"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => 'new_tweet_time'}) %>"
@@ -26,13 +38,21 @@
             %>
 
       </div>
-      <div id="connect_button">
-            <%= link_to_remote image_tag('../images/connect_einzeln.png',
-                :mouseover => '../images/connect_hover.png'),
-                :url => {:action => "connect", :id => @user.id}
+    <div id="search_symbol"
+           onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
+           onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
+        <%= link_to_remote image_tag('../images/suchsymbol.png'),
+                :url => {:action => "suche", :id => @user.id}
             %>
+    </div>
+    <div id="search"
+           onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
+           onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
 
-      </div>
+      <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
+
+  
+    </div>
       <div id="compose_tweet"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "new_tweet_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
@@ -95,7 +115,7 @@
            
           
 
-          <div id="minutes"><%= minutes %></div>
+          <div id="minutes">0m</div>
         </div>
         <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
         <div id="tweet"
@@ -106,42 +126,37 @@
             <%= @user.seen_message %>
           </p>
         </div>
-        
+
       </div>
-       <div id="expand_seite" style="display: none;">
+      
+<!--Layer über der Twitterseite-->      
+      
+      <div id="expand_seite" style="display: none;">
       <%= render "expand_seite", :f => f  %>
-      
-    </div>
+      </div>
     
-    <div id="expand_seite2" style="display: none;">
-      <%= render "expand_seite2", :f => f  %>
-      
-    </div> 
-    <div id="tweet_sent" style="display: none;">Your Tweet has been sent!</div>
-    <div id="search_symbol"
-           onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
-           onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
-        <%= link_to_remote image_tag('../images/suchsymbol.png'),
-                :url => {:action => "suche", :id => @user.id}
-            %>
-    </div>
-    <div id="search"
-           onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
-           onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
-
-      <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
-
+      <div id="expand_seite2" style="display: none;">
+        <%= render "expand_seite2", :f => f  %>
+      </div> 
   
-    </div>
-    <div id="compose_tweet_seite" style="display: none;">
-      <%= render "compose_tweet_seite", :f => f  %> 
-    </div>
-    <div id="connect_seite" style="display: none;">
-      <%= render "connect_seite", :f => f  %> 
-    </div>
+      <div id="compose_tweet_seite" style="display: none;">
+        <%= render "compose_tweet_seite", :f => f  %> 
+      </div>
+      
+      <div id="connect_seite" style="display: none;">
+        <%= render "connect_seite", :f => f  %> 
+      </div>
+      
+      
+    
+<!--Obere Leiste/ immer sichtbare Teile-->
+    
+
     </div>
     <div id="right_twitter"></div>
-
+    </div>
+<!--Gesamter Twitter Screen-->
+    <div id="tweet_sent" style="display: none;">Your Tweet has been sent!</div>
     <div id="request_retweet_intensity" style="display: none;">
       <%= render "request_retweet_intensity_seite", :f => f  %> 
     </div>
@@ -155,6 +170,9 @@
       <%= render "reply_seite", :f => f  %> 
     </div>
 </div>
+
+<!--Über Buttons-->
+
 <div id="hinweis_back">If you press 'Back', all your actions within the Twitter simulation will be saved, but eventually not displayed anymore<p></p></div>
 <div id="hinweis_continue">Please press only 'Continue', if you would like to close the Twitter simulation<p></p></div>
 </div>

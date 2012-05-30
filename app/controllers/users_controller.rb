@@ -35,7 +35,13 @@ class UsersController < ApplicationController
     retweet = ['retweet', 'no_retweet']
     random_retweet = retweet[rand(retweet.length)]
     return random_retweet   
-  end    
+  end
+  
+    def generate_random_at     
+    at = ['at', 'no_at']
+    random_at = at[rand(at.length)]
+    return random_at   
+  end
 
   def new
     session[:user_params] ||= {}
@@ -60,7 +66,11 @@ class UsersController < ApplicationController
       session[:user_params].deep_merge!({:seen_retweet => @user.seen_retweet})
     end
     
-    
+    #Generate random at for the user if he has'nt one yet
+    if @user.seen_at == nil
+      @user.seen_at = generate_random_at
+      session[:user_params].deep_merge!({:seen_at => @user.seen_at})
+    end
     
     @user.current_step = session[:user_step]    
   end
@@ -86,6 +96,7 @@ class UsersController < ApplicationController
               render(:update) do |page|
                 page.replace_html 'retweet', image_tag('../images/retweet_clicked_g.png');
                 page.replace_html 'retweet2', image_tag('../images/retweet_clicked.png');
+                page.replace_html 'retweet3', image_tag('../images/retweet_clicked.png');
               end
             }
     end
@@ -100,10 +111,12 @@ class UsersController < ApplicationController
               render(:update) do |page|
                 page.replace_html 'favorite',  image_tag('../images/favorite_clicked_g.png');
                 page.replace_html 'favorite2',  image_tag('../images/favorite_clicked.png');
+                page.replace_html 'favorite3',  image_tag('../images/favorite_clicked.png');
               end
             }
     end    
   end
+  
   
   def open
     puts session[:user_params]
@@ -154,11 +167,14 @@ class UsersController < ApplicationController
                 page.hide 'compose_tweet_seite';
                 page.hide 'expand_seite';
                 page.hide 'expand_seite2';
+                page.hide 'connect_seite';
               end
             }
     end
     
   end
+  
+
   
   def minutes_update
     respond_to do |format|
@@ -183,16 +199,25 @@ class UsersController < ApplicationController
   end
   
   def connect
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:connect_clicked => 1})
     respond_to do |format|
       format.js {
-              render(:update) do |page|
-                page.replace_html 'connect_button',  image_tag('../images/connect_clicked.png');
+         if session[:user_params][:seen_at] == 'at'
+            render(:update) do |page|
                 page.show 'connect_seite'
-              end
-            }
-    end
-    
+                page.show 'view_field'
+            end;
+        else
+           render(:update) do |page|
+                  page.show 'connect_seite'
+                  page.show 'view_no_field'
+           end; 
+          end
+         }
+    end    
   end
+ 
   
   def compose_tweet
       respond_to do |format|

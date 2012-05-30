@@ -144,6 +144,15 @@ body {
   font-weight: bold;
 }
 
+#minutes{
+  color: grey;
+  font-size: 0.9em;
+  position: absolute;
+  left: 415px;
+
+  
+}
+
 #buttons {
   width: 75%;
 
@@ -227,6 +236,8 @@ textarea#user_reply_text{
   position: absolute;
 
 }
+
+
 #new_tweet_seite{
 
   background-color:rgba(0,0,0,0.6);
@@ -287,9 +298,7 @@ textarea#user_tweet_text{
   padding: 2px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  position:relative;
-  left:-180px;
-  top:35px;
+
 }
 
 #close_tweet{
@@ -312,13 +321,13 @@ textarea#user_tweet_text{
 
 #search{
 
-  left:725px; top:-27px;
+  left:544px; top:6px;
   margin:0 auto;
   position: absolute;
  
 }
 
- input#user_search:focus, textarea#user_search:focus{
+input#user_search:focus, textarea#user_search:focus{
 background-color: #EEEEEE;
 }
 
@@ -337,9 +346,7 @@ textarea#user_search{
   padding: 2px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  position:relative;
-  left:-180px;
-  top:35px;
+
 }
 
 #compose_tweet{
@@ -376,8 +383,8 @@ textarea#user_search{
 
 #text_compose{
   position:relative;
-  left:180px;
-  top:-19px;
+  left:0px;
+  top:16px;
 }
 
 #tweet_button_change_compose{
@@ -391,7 +398,7 @@ textarea#user_search{
   color: white;
   width:300px;
   height: 25px;  
-  top:-40px;
+  top:-781px;
   margin:0 auto;
   position: relative;
   border-radius: 5px;
@@ -493,6 +500,20 @@ textarea#user_search{
   top: 0px;
 
 }
+#retweet3{
+  float: left;
+  position: absolute;
+  left: 185px;
+  top: 0px;
+}
+
+#favorite3{
+  float: left;
+  position: absolute;
+  left: 264px;
+  top: 0px;
+
+}
 
 #time{
   color: #969696;
@@ -502,13 +523,20 @@ textarea#user_search{
   left: 70px;
   top: 93px;
 }
-
+#time2{
+  color: #969696;
+  font-size: 0.9em;
+  background-color: white;
+  position: absolute;
+  left: 70px;
+  top: 31px;
+}
 #expand_seite2{
 
   background-color:transparent;
   width:525px;
   height: 250px;  
-  left:327px; top:100px;
+  left:327px; top:98px;
   margin:0 auto;
   position: absolute;
 
@@ -537,16 +565,15 @@ textarea#user_search{
 
 #connect_button{
 
-  left:758px; top:0px;
+  left:86px; top:0px;
   margin:0 auto;
   position: absolute;
 
 }
 #connect_seite{
 
-  background-image: url('../images/connect.png');
   width:100%;
-  height: 830px;  
+  height: 790px;  
   left:0px; top:0px;
   margin:0 auto;
   position: absolute;
@@ -556,13 +583,121 @@ textarea#user_search{
 #connect_field{
 
 
-  background-image:url('../images/new_tweet_seite.png');
+  background-image:url('../images/connect_leer.png');
   background-repeat:no-repeat; 
   background-position: left top;
   position:relative;
-  left:150px; top:90px;
+  left:0px; top:38px;
   width: 860px;
   height: 100%;
   margin:0 auto;
   color: black;
+}
+
+#home_button{
+
+  left:5px; top:-38px;
+  margin:0 auto;
+  position: absolute;
+  heigth: -20%;
+
+}
+
+#connect_button2{
+
+  left:0px; top:-38px;
+  margin:0 auto;
+  position: absolute;
+  heigth: -20%;
+
+
+}
+
+#new_tweet2{
+
+  left:758px; top:-38px;
+  margin:0 auto;
+  position: absolute;
+
+}
+#search2{
+  left:544px; top:-33px;
+  margin:0 auto;
+  position: absolute; 
+}
+
+#search_symbol2{
+  position: absolute;
+  top: -34px;
+  left:525px;
+}
+
+#view_field{
+
+  left:0px; top:-40px;
+  margin:0 auto;
+  position: absolute;}
+
+#no_ats{
+  color: grey;
+  font-size: 0.9em;
+}
+
+/*at seite message*/
+
+#message_at{
+ position:relative;
+ left:405px;
+ top:98px;
+ width:450px;
+ height:87px;
+ font-size: 1.0em;
+}
+
+
+#actions_at{
+  white-space:nowrap;
+  background-color: #f2f2f2;
+  height: 92px;
+  width: 520px;
+  display:none;
+  float: right;
+  position: absolute;
+  right: 5px;
+
+}
+#inactive_expand_at{
+  position:absolute;
+
+  left:-19px; top:65px;
+
+}
+
+#expand_at{
+  float: left;
+  position: absolute;
+
+  left:56px; top:65px;
+
+}
+
+#reply_at{
+  float: left;
+  position: absolute;
+  left: 125px;
+  top: 65px;
+}
+
+#retweet_at{
+  float: left;
+  position: absolute;
+  left: 185px;
+  top: 65px;
+}
+
+#favorite_at{
+  float: left;
+  position: absolute;
+  left: 264px;
+  top: 65px;
 }
