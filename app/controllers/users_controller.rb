@@ -37,10 +37,16 @@ class UsersController < ApplicationController
     return random_retweet   
   end
   
-    def generate_random_at     
+  def generate_random_at     
     at = ['at', 'no_at']
     random_at = at[rand(at.length)]
     return random_at   
+  end
+  
+  def generate_random_at_rt    
+    at_rt = ['at_rt', 'no_rt']
+    random_at_rt = at_rt[rand(at_rt.length)]
+    return random_at_rt   
   end
 
   def new
@@ -70,6 +76,12 @@ class UsersController < ApplicationController
     if @user.seen_at == nil
       @user.seen_at = generate_random_at
       session[:user_params].deep_merge!({:seen_at => @user.seen_at})
+    end
+    
+    #Generate random at_rt for the user if he has'nt one yet
+    if @user.seen_at_rt == nil
+      @user.seen_at_rt = generate_random_at_rt
+      session[:user_params].deep_merge!({:seen_at_rt => @user.seen_at_rt})
     end
     
     @user.current_step = session[:user_step]    
@@ -116,7 +128,53 @@ class UsersController < ApplicationController
             }
     end    
   end
+
+  def retweet2
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:retweet_at_clicked => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.replace_html 'retweet_at', image_tag('../images/retweet_clicked_g.png');
+                page.replace_html 'retweet2_at', image_tag('../images/retweet_clicked.png');
+                page.replace_html 'retweet3_at', image_tag('../images/retweet_clicked.png');
+              end
+            }
+    end
+    
+  end
   
+  def favorite2
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:favorite_at_clicked => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.replace_html 'favorite_at',  image_tag('../images/favorite_clicked_g.png');
+                page.replace_html 'favorite2_at',  image_tag('../images/favorite_clicked.png');
+                page.replace_html 'favorite3_at',  image_tag('../images/favorite_clicked.png');
+              end
+            }
+    end    
+  end
+
+  def open2
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:open_clicked_at => 1})
+    respond_to do |format|
+      format.js {
+         if session[:user_params][:seen_at_rt] == 'at_rt'
+            render(:update) do |page|
+                page.show 'expand_seite_at'
+              end;
+         else
+           render(:update) do |page|
+                  page.show 'expand_seite2_at'
+           end; 
+          end
+         }
+    end    
+  end  
   
   def open
     puts session[:user_params]

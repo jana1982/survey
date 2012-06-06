@@ -13,7 +13,7 @@
                 :url => {:action => "close", :id => @user.id}
             %>
           </div> 
-          <div id="reply2"
+          <div id="reply3"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time"}) %>"          
           >
@@ -22,7 +22,7 @@
                   :url => {:action => "reply", :id => @user.id}
             %>
           </div>
-          <div id = "retweet2"          
+          <div id = "retweet3"          
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "retweet_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "retweet_time"}) %>"
           >
@@ -31,7 +31,7 @@
                  :url => {:action => "retweet", :id => @user.id}
             %>
           </div>
-          <div id = "favorite2"
+          <div id = "favorite3"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "favorite_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "favorite_time"}) %>"
           >

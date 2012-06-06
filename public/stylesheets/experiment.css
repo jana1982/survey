@@ -641,6 +641,9 @@ textarea#user_search{
 #no_ats{
   color: grey;
   font-size: 0.9em;
+  position:relative;
+  left:155px;
+  top:98px;
 }
 
 /*at seite message*/

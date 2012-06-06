@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530134919) do
+ActiveRecord::Schema.define(:version => 20120606154405) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(:version => 20120530134919) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "bildung",            :limit => 255
+    t.integer  "bildung",               :limit => 255
     t.integer  "alter"
     t.integer  "retweet_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",         :limit => 255
+    t.integer  "geschlecht",            :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -81,6 +81,15 @@ ActiveRecord::Schema.define(:version => 20120530134919) do
     t.float    "experiment_time"
     t.string   "seen_at"
     t.integer  "connect_clicked"
+    t.integer  "favorite_at_clicked"
+    t.integer  "retweet_at_clicked"
+    t.string   "seen_at_rt"
+    t.float    "open_time_at"
+    t.float    "reply_time_at"
+    t.float    "retweet_time_at"
+    t.float    "favorite_time_at"
+    t.float    "message_hover_time_at"
+    t.integer  "open_clicked_at"
   end
 
 end
