@@ -49,6 +49,12 @@ class UsersController < ApplicationController
     return random_at_rt   
   end
 
+  def generate_random_themen    
+    themen = ['one', 'more']
+    random_themen = themen[rand(themen.length)]
+    return random_themen  
+  end
+
   def new
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
@@ -84,6 +90,12 @@ class UsersController < ApplicationController
       session[:user_params].deep_merge!({:seen_at_rt => @user.seen_at_rt})
     end
     
+    #Generate random themen for the user if he has'nt one yet
+    if @user.seen_themen == nil
+      @user.seen_themen = generate_random_themen
+      session[:user_params].deep_merge!({:seen_themen => @user.seen_themen})
+    end
+    
     @user.current_step = session[:user_step]    
   end
 
@@ -94,6 +106,19 @@ class UsersController < ApplicationController
       format.js {
               render(:update) do |page|
                 page.show 'reply_seite'
+              end
+            }
+    end
+    
+  end
+  
+  def reply_at
+    puts session[:user_params]
+    session[:user_params].deep_merge!({:reply_clicked_at => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.show 'reply_seite_at'
               end
             }
     end
@@ -129,9 +154,9 @@ class UsersController < ApplicationController
     end    
   end
 
-  def retweet2
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:retweet_at_clicked => 1})
+  def retweet_at
+   puts session[:user_params]
+    session[:user_params].deep_merge!({:retweet_clicked => 1})
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -144,7 +169,7 @@ class UsersController < ApplicationController
     
   end
   
-  def favorite2
+  def favorite_at
     puts session[:user_params]
     session[:user_params].deep_merge!({:favorite_at_clicked => 1})
     respond_to do |format|
@@ -158,7 +183,7 @@ class UsersController < ApplicationController
     end    
   end
 
-  def open2
+  def open_at
     puts session[:user_params]
     session[:user_params].deep_merge!({:open_clicked_at => 1})
     respond_to do |format|
@@ -174,8 +199,8 @@ class UsersController < ApplicationController
           end
          }
     end    
-  end  
-  
+  end
+    
   def open
     puts session[:user_params]
     session[:user_params].deep_merge!({:open_clicked => 1})
@@ -232,7 +257,18 @@ class UsersController < ApplicationController
     
   end
   
-
+  def close_at
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.hide 'reply_seite_at';
+                page.hide 'expand_seite_at';
+                page.hide 'expand_seite2_at';
+              end
+            }
+    end
+    
+  end
   
   def minutes_update
     respond_to do |format|
@@ -275,7 +311,26 @@ class UsersController < ApplicationController
          }
     end    
   end
- 
+  
+  def themen
+   puts session[:user_params]
+    session[:user_params].deep_merge!({:seen_themen => 1})
+    respond_to do |format|
+      format.js {
+         if ((session[:user_params][:seen_themen] == 'more') && (session[:user_params][:seen_at] == 'at'))
+            render(:update) do |page|
+                page.show 'message'
+                page.show 'view_field'
+                page.show 'end_of_tweets'
+              end;
+         else
+           render(:update) do |page|
+                  page.show 'expand_seite2'
+           end; 
+          end
+         }
+    end    
+  end
   
   def compose_tweet
       respond_to do |format|

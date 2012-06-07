@@ -63,9 +63,10 @@ body {
 
 #message{
  position:relative;
+ background-color: #fcfcfc;
  left:405px;
  top:98px;
- width:450px;
+ width:445px;
  height:87px;
  font-size: 1.0em;
 }
@@ -88,7 +89,7 @@ body {
   display:none;
   float: right;
   position: absolute;
-  right: 5px;
+  right: 0px;
 
 }
 #inactive_expand{
@@ -374,7 +375,7 @@ textarea#user_search{
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:6px; top: 73px;
+  left:158px; top: 156px;
   width: 100%;
   height: 81%;
   margin:0 auto;
@@ -383,13 +384,13 @@ textarea#user_search{
 
 #text_compose{
   position:relative;
-  left:0px;
-  top:16px;
+  left:12px;
+  top:17px;
 }
 
 #tweet_button_change_compose{
   position:relative;
-  left:95px;
+  left:200px;
   top:17px;
 }
 
@@ -549,7 +550,7 @@ textarea#user_search{
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:3px; top: 66px;
+  left:2px; top: 66px;
   width: 100%;
   height: 81%;
   margin:0 auto;
@@ -587,7 +588,7 @@ textarea#user_search{
   background-repeat:no-repeat; 
   background-position: left top;
   position:relative;
-  left:0px; top:38px;
+  left:0px; top:121px;
   width: 860px;
   height: 100%;
   margin:0 auto;
@@ -596,7 +597,7 @@ textarea#user_search{
 
 #home_button{
 
-  left:5px; top:-38px;
+  left:154px; top:84px;
   margin:0 auto;
   position: absolute;
   heigth: -20%;
@@ -605,7 +606,7 @@ textarea#user_search{
 
 #connect_button2{
 
-  left:0px; top:-38px;
+  left:152px; top:-83px;
   margin:0 auto;
   position: absolute;
   heigth: -20%;
@@ -615,21 +616,21 @@ textarea#user_search{
 
 #new_tweet2{
 
-  left:758px; top:-38px;
+  left:911px; top:84px;
   margin:0 auto;
   position: absolute;
 
 }
 #search2{
-  left:544px; top:-33px;
+  left:696px; top:90px;
   margin:0 auto;
   position: absolute; 
 }
 
 #search_symbol2{
   position: absolute;
-  top: -34px;
-  left:525px;
+  top: 87px;
+  left:676px;
 }
 
 #view_field{
@@ -650,10 +651,11 @@ textarea#user_search{
 
 #message_at{
  position:relative;
+ background-color: #fcfcfc;
  left:405px;
- top:98px;
- width:450px;
- height:87px;
+ top:104px;
+ width:445px;
+ height:97px;
  font-size: 1.0em;
 }
 
@@ -666,7 +668,7 @@ textarea#user_search{
   display:none;
   float: right;
   position: absolute;
-  right: 5px;
+  right: 0px;
 
 }
 #inactive_expand_at{
@@ -703,4 +705,184 @@ textarea#user_search{
   position: absolute;
   left: 264px;
   top: 65px;
+}
+
+#expand_seite_at{
+
+  background-color:transparent;
+  width:525px;
+  height: 252px;  
+  left:327px; top:98px;
+  margin:0 auto;
+  position: absolute;
+
+
+}
+
+#expand_field_at{
+
+
+  background-image:url('../images/expand_seite_RT.png');
+  background-repeat:no-repeat;
+  background-position: left top;
+  position:relative;
+  left:2px; top: 68px;
+  width: 100%;
+  height: 100%;
+  margin:0 auto;
+  color: black;
+}
+
+#collapse_at{
+  float: left;
+  position: absolute;
+  left: 50px;
+  top: 00px;
+}
+
+#reply2_at{
+  float: left;
+  position: absolute;
+  left: 125px;
+  top: 0px;
+}
+
+#retweet2_at{
+  float: left;
+  position: absolute;
+  left: 185px;
+  top: 0px;
+}
+
+#favorite2_at{
+  float: left;
+  position: absolute;
+  left: 264px;
+  top: 0px;
+
+}
+#retweet3_at{
+  float: left;
+  position: absolute;
+  left: 185px;
+  top: 0px;
+}
+
+#favorite3_at{
+  float: left;
+  position: absolute;
+  left: 264px;
+  top: 0px;
+
+}
+
+#time_at{
+  color: #969696;
+  font-size: 0.9em;
+  background-color: white;
+  position: absolute;
+  left: 70px;
+  top: 32px;
+}
+#time2_at{
+  color: #969696;
+  font-size: 0.9em;
+  background-color: white;
+  position: absolute;
+  left: 70px;
+  top: 31px;
+}
+#expand_seite2_at{
+
+  background-color:transparent;
+  width:525px;
+  height: 250px;  
+  left:327px; top:98px;
+  margin:0 auto;
+  position: absolute;
+
+}
+
+#expand_field2_at{
+
+
+  background-image:url('../images/expand_seite_ohne_rt.png');
+  background-repeat:no-repeat;
+  background-position: left top;
+  position:relative;
+  left:1px; top: 66px;
+  width: 100%;
+  height: 81%;
+  margin:0 auto;
+  color: black;
+}
+
+#reply_seite_at{
+
+  background-color:rgba(0,0,0,0.6);
+  width:100%;
+  height: 830px;  
+  left:7px; top:83px;
+  margin:0 auto;
+  position: absolute;
+
+}
+
+#reply_field_at{
+
+
+  background-image:url('../images/reply_seite1.png');
+  background-repeat:no-repeat;
+  background-position: left top;
+  position:relative;
+  left:150px; top:90px;
+  width: 860px;
+  height: 100%;
+  margin:0 auto;
+  color: black;
+}
+
+#reply_text_at{
+    position:relative;
+  left:-178px;
+  top:14px;
+}
+
+
+textarea#user_reply_text_at{
+  outline: none;
+  -webkit-appearance: textarea;
+  background-color: white;
+  border-style: hidden;
+  border-radius: 6px;
+  border-bottom-right-radius:29px;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  -webkit-box-orient: vertical;
+  resize: auto;
+  cursor: auto;
+  padding: 2px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+}
+
+#reply_button_change_at{
+  float: right;
+  position:relative;
+  left:-369px;
+  top:22px;
+}
+
+#close_at{
+  position:relative;
+  left:48px;
+  top:-7px;
+}
+
+#ende{
+  position:relative;
+  left:146px;
+  top: 99px;
+  
 }

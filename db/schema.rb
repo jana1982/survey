@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606154405) do
+ActiveRecord::Schema.define(:version => 20120607155001) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -90,6 +90,9 @@ ActiveRecord::Schema.define(:version => 20120606154405) do
     t.float    "favorite_time_at"
     t.float    "message_hover_time_at"
     t.integer  "open_clicked_at"
+    t.string   "reply_text_at"
+    t.integer  "reply_clicked_at"
+    t.string   "seen_themen"
   end
 
 end
