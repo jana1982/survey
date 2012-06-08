@@ -30,4 +30,5 @@ module ApplicationHelper
   @user.experiment_time.to_i/60
    
   end
+
 end

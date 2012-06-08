@@ -1,0 +1,15 @@
+<div id="compose_tweet"
+              onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "new_tweet_time"}) %>"
+              onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
+      >
+            <%= link_to_remote image_tag('../images/compose_inactive.png',
+                :mouseover => '../images/compose_mouseover.png'),
+                :url => {:action => "compose_tweet", :id => @user.id}
+            %>
+</div>
+
+      
+      <div id="compose_tweet_seite" style="display: none;">
+        <%= render "compose_tweet_seite", :f => f  %> 
+      </div>
+      

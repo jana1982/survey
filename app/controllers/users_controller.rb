@@ -313,20 +313,31 @@ class UsersController < ApplicationController
   end
   
   def themen
-   puts session[:user_params]
-    session[:user_params].deep_merge!({:seen_themen => 1})
+
     respond_to do |format|
       format.js {
-         if ((session[:user_params][:seen_themen] == 'more') && (session[:user_params][:seen_at] == 'at'))
+         if (session[:user_params][:seen_themen] == 'more' && session[:user_params][:seen_at] == 'at')
             render(:update) do |page|
                 page.show 'message'
                 page.show 'view_field'
-                page.show 'end_of_tweets'
-              end;
-         else
+                #page.show 'end_of_tweets'
+           end;
+         elsif (session[:user_params][:seen_themen] == 'more' && session[:user_params][:seen_at] == 'no_at')
            render(:update) do |page|
-                  page.show 'expand_seite2'
-           end; 
+                page.show 'message2'
+                page.show 'message'
+                #page.show 'end_of_tweets'
+           end;
+        elsif (session[:user_params][:seen_themen] == 'one' && session[:user_params][:seen_at] == 'no_at')
+           render(:update) do |page|
+                page.show 'message'
+                #page.show 'end_of_tweets'
+           end;
+         elsif (session[:user_params][:seen_themen] == 'one' && session[:user_params][:seen_at] == 'at')
+           render(:update) do |page|
+                page.show 'view_field'
+                #page.show 'end_of_tweets'
+           end;
           end
          }
     end    
@@ -383,6 +394,7 @@ class UsersController < ApplicationController
       render 'confirm_step'
     end
   
+    
   end
 
   

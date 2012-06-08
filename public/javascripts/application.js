@@ -116,7 +116,7 @@ document.observe('click', function(e, el) {
             }
         });
 
-//new PeriodicalExecuter(function()
-  // {new Ajax.Updater('minutes', 'minutes_update')}, 5)
+
+
 
 
