@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607155001) do
+ActiveRecord::Schema.define(:version => 20120610160932) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(:version => 20120607155001) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "bildung",               :limit => 255
+    t.integer  "bildung",                :limit => 255
     t.integer  "alter"
-    t.integer  "retweet_clicked"
+    t.integer  "retweet_2_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",            :limit => 255
+    t.integer  "geschlecht",             :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(:version => 20120607155001) do
     t.integer  "work_pc"
     t.integer  "work_mobile"
     t.integer  "public"
-    t.integer  "favorite_clicked"
+    t.integer  "favorite_2_clicked"
     t.string   "leader_text"
-    t.integer  "reply_clicked"
+    t.integer  "reply_2_clicked"
     t.string   "reply_text"
     t.string   "tweet_text"
     t.string   "search"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20120607155001) do
     t.float    "new_tweet_time"
     t.integer  "retweet_importance"
     t.string   "tweet_text_n"
-    t.string   "seen_message"
+    t.string   "seen_message_1"
     t.string   "ol_1"
     t.string   "ol_2"
     t.string   "ol_3"
@@ -76,14 +76,14 @@ ActiveRecord::Schema.define(:version => 20120607155001) do
     t.string   "seen_person"
     t.float    "open_time"
     t.float    "search_time"
-    t.string   "seen_retweet"
-    t.integer  "open_clicked"
+    t.boolean  "seen_retweet_message1",  :limit => 255
+    t.integer  "expand_2_clicked"
     t.float    "experiment_time"
-    t.string   "seen_at"
+    t.boolean  "seen_at",                :limit => 255
     t.integer  "connect_clicked"
     t.integer  "favorite_at_clicked"
     t.integer  "retweet_at_clicked"
-    t.string   "seen_at_rt"
+    t.boolean  "seen_retweet_message2",  :limit => 255
     t.float    "open_time_at"
     t.float    "reply_time_at"
     t.float    "retweet_time_at"
@@ -92,7 +92,12 @@ ActiveRecord::Schema.define(:version => 20120607155001) do
     t.integer  "open_clicked_at"
     t.string   "reply_text_at"
     t.integer  "reply_clicked_at"
-    t.string   "seen_themen"
+    t.boolean  "seen_multiple_messages", :limit => 255
+    t.string   "seen_message_2"
+    t.integer  "reply_1_clicked"
+    t.integer  "favorite_1_clicked"
+    t.integer  "retweet_1_clicked"
+    t.integer  "expand_1_clicked"
   end
 
 end

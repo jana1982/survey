@@ -1,0 +1,11 @@
+<div id="expand_page<%= @number%>" class="expand_page" style="display: none;">
+  <div id="expand_field<%= @retweet_status %><%=@number%>" class="expand_field<%= @retweet_status %>">
+    <% @message_commands = false %>
+    <div class="expanded_actions">
+      <%= render :partial => "actions", :locals => {:number => @number, :message_commands => @message_commands} %>
+    </div>
+    <div id="time" class="time">
+      <%= Time.now.strftime("%I:%M %p - %d %b %y via web") %>
+    </div>
+  </div>
+</div>

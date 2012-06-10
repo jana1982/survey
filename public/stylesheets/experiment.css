@@ -64,11 +64,21 @@ body {
 #message{
  position:relative;
  background-color: #fcfcfc;
- left:405px;
- top:98px;
+ left:0px;
+ top:0px;
  width:445px;
  height:87px;
  font-size: 1.0em;
+}
+#tweet1{
+	position:relative;
+ left:400px;
+ top:100px;
+}
+#tweet2{
+	position:relative;
+ left:400px;
+ top:150px;	
 }
 
 #tweeterer{
@@ -81,20 +91,21 @@ body {
   top: 10px;
 }
 
-#actions{
-  white-space:nowrap;
+.actions{
   background-color: #f2f2f2;
-  height: 92px;
-  width: 520px;
-  display:none;
-  float: right;
-  position: absolute;
-  right: 0px;
-
+  position: relative;
+  left: -75px;
+	width: 500px;
 }
+
+.expanded_actions{
+	position: relative;
+	top:-63px;
+	left:72px;
+}
+
 #inactive_expand{
   position:absolute;
-
   left:-19px; top:65px;
 
 }
@@ -103,38 +114,51 @@ body {
   position:absolute;
   left:-63px; top:9px;
 }
-#expand{
+.collapse{
+	  float: left;
+		position:relative;
+	  left:56px; 
+		top:65px;
+		width: 10px;	
+}
+.expand{
   float: left;
-  position: absolute;
-
-  left:56px; top:65px;
-
+	position:relative;
+  left:56px; 
+	top:65px;
+	width: 10px;	
+	
 }
 
-#reply{
+.reply{
+	position:relative;
   float: left;
-  position: absolute;
   left: 125px;
   top: 65px;
+	width: 10px;	
+
 }
 
-#retweet{
+.retweet{
+	position:relative;
   float: left;
-  position: absolute;
   left: 185px;
   top: 65px;
+	width: 10px;	
+
 }
 
-#favorite{
+.favorite{
+	position:relative;
   float: left;
-  position: absolute;
   left: 264px;
   top: 65px;
+	width: 10px;	
+
 }
 
 #tweeter_name_at{
    float: left;
-
   font-weight: lighter;
   color: grey;
 }
@@ -192,9 +216,9 @@ body {
 }
 
 #reply_text{
-    position:relative;
-  left:-178px;
+  position:relative;
   top:14px;
+	left:20px	;
 }
 
 
@@ -226,7 +250,7 @@ textarea#user_reply_text{
 
 #close{
   position:relative;
-  left:48px;
+  left:481px;
   top:-7px;
 }
 
@@ -251,8 +275,6 @@ textarea#user_reply_text{
 }
 
 #new_tweet_field{
-
-
   background-image:url('../images/new_tweet_seite.png');
   background-repeat:no-repeat; 
   background-position: left top;
@@ -447,129 +469,45 @@ textarea#user_search{
   top:28px;
 }
 
-#expand_seite{
-
+.expand_page{
   background-color:transparent;
   width:525px;
-  height: 252px;  
-  left:327px; top:98px;
-  margin:0 auto;
-  position: absolute;
-
-
+  height: 140px;  
+  left:-73px; 
+  top:-27px;
+  position: relative;
 }
 
-#expand_field{
-
-
+.expand_field_with_retweet{
   background-image:url('../images/expand_seite_RT.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:2px; top: 68px;
+  left:2px; top: 5px;
   width: 100%;
   height: 100%;
   margin:0 auto;
   color: black;
 }
 
-#collapse{
-  float: left;
-  position: absolute;
-  left: 50px;
-  top: 00px;
-}
-
-#reply2{
-  float: left;
-  position: absolute;
-  left: 125px;
-  top: 0px;
-}
-
-#reply3{
-  float: left;
-  position: absolute;
-  left: 125px;
-  top: 0px;
-}
-
-
-#retweet2{
-  float: left;
-  position: absolute;
-  left: 185px;
-  top: 0px;
-}
-
-#favorite2{
-  float: left;
-  position: absolute;
-  left: 264px;
-  top: 0px;
-
-}
-#retweet3{
-  float: left;
-  position: absolute;
-  left: 185px;
-  top: 0px;
-}
-
-#favorite3{
-  float: left;
-  position: absolute;
-  left: 264px;
-  top: 0px;
-
-}
-
-#time{
-  color: #969696;
-  font-size: 0.9em;
-  background-color: white;
-  position: absolute;
-  left: 70px;
-  top: 93px;
-}
-#time2{
-  color: #969696;
-  font-size: 0.9em;
-  background-color: white;
-  position: absolute;
-  left: 70px;
-  top: 31px;
-}
-#expand_seite2{
-
-  background-color:transparent;
-  width:525px;
-  height: 250px;  
-  left:327px; top:98px;
-  margin:0 auto;
-  position: absolute;
-
-}
-
-#expand_field2{
-
-
-  background-image:url('../images/expand_seite_ohne_rt.png');
+.expand_field{
+  background-image:url('../images/expand_seite_ohne_RT.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:2px; top: 66px;
+  left:2px; top: 5px;
   width: 100%;
-  height: 81%;
+  height: 100%;
   margin:0 auto;
   color: black;
 }
 
-#tweet2{
-  position:relative;
-  left:0px; top: -46px;
-  width: 100%;
-  height: 40px;
+.time{
+  color: #969696;
+  font-size: 0.9em;
+  background-color: white;
+  position: relative;
+	top:96px;
 }
 
 #connect_button{
@@ -590,8 +528,6 @@ textarea#user_search{
 }
 
 #connect_field{
-
-
   background-image:url('../images/connect_leer.png');
   background-repeat:no-repeat; 
   background-position: left top;
@@ -653,239 +589,6 @@ textarea#user_search{
   position:relative;
   left:155px;
   top:98px;
-}
-
-/*at seite message*/
-
-#message_at{
- position:relative;
- background-color: #fcfcfc;
- left:405px;
- top:104px;
- width:445px;
- height:97px;
- font-size: 1.0em;
-}
-
-
-#actions_at{
-  white-space:nowrap;
-  background-color: #f2f2f2;
-  height: 92px;
-  width: 520px;
-  display:none;
-  float: right;
-  position: absolute;
-  right: 0px;
-
-}
-#inactive_expand_at{
-  position:absolute;
-
-  left:-19px; top:65px;
-
-}
-
-#expand_at{
-  float: left;
-  position: absolute;
-
-  left:56px; top:65px;
-
-}
-
-#reply_at{
-  float: left;
-  position: absolute;
-  left: 125px;
-  top: 65px;
-}
-
-#retweet_at{
-  float: left;
-  position: absolute;
-  left: 185px;
-  top: 65px;
-}
-
-#favorite_at{
-  float: left;
-  position: absolute;
-  left: 264px;
-  top: 65px;
-}
-
-#expand_seite_at{
-
-  background-color:transparent;
-  width:525px;
-  height: 252px;  
-  left:327px; top:98px;
-  margin:0 auto;
-  position: absolute;
-
-
-}
-
-#expand_field_at{
-
-
-  background-image:url('../images/expand_seite_RT.png');
-  background-repeat:no-repeat;
-  background-position: left top;
-  position:relative;
-  left:2px; top: 68px;
-  width: 100%;
-  height: 100%;
-  margin:0 auto;
-  color: black;
-}
-
-#collapse_at{
-  float: left;
-  position: absolute;
-  left: 50px;
-  top: 00px;
-}
-
-#reply2_at{
-  float: left;
-  position: absolute;
-  left: 125px;
-  top: 0px;
-}
-
-#retweet2_at{
-  float: left;
-  position: absolute;
-  left: 185px;
-  top: 0px;
-}
-
-#favorite2_at{
-  float: left;
-  position: absolute;
-  left: 264px;
-  top: 0px;
-
-}
-#retweet3_at{
-  float: left;
-  position: absolute;
-  left: 185px;
-  top: 0px;
-}
-
-#favorite3_at{
-  float: left;
-  position: absolute;
-  left: 264px;
-  top: 0px;
-
-}
-
-#time_at{
-  color: #969696;
-  font-size: 0.9em;
-  background-color: white;
-  position: absolute;
-  left: 70px;
-  top: 32px;
-}
-#time2_at{
-  color: #969696;
-  font-size: 0.9em;
-  background-color: white;
-  position: absolute;
-  left: 70px;
-  top: 31px;
-}
-#expand_seite2_at{
-
-  background-color:transparent;
-  width:525px;
-  height: 250px;  
-  left:328px; top:195px;
-  margin:0 auto;
-  position: absolute;
-
-}
-
-#expand_field2_at{
-
-
-  background-image:url('../images/expand_seite_ohne_rt.png');
-  background-repeat:no-repeat;
-  background-position: left top;
-  position:relative;
-  left:1px; top: 66px;
-  width: 100%;
-  height: 81%;
-  margin:0 auto;
-  color: black;
-}
-
-#reply_seite_at{
-
-  background-color:rgba(0,0,0,0.6);
-  width:100%;
-  height: 830px;  
-  left:7px; top:83px;
-  margin:0 auto;
-  position: absolute;
-
-}
-
-#reply_field_at{
-
-
-  background-image:url('../images/reply_seite1.png');
-  background-repeat:no-repeat;
-  background-position: left top;
-  position:relative;
-  left:150px; top:90px;
-  width: 860px;
-  height: 100%;
-  margin:0 auto;
-  color: black;
-}
-
-#reply_text_at{
-    position:relative;
-  left:-178px;
-  top:14px;
-}
-
-
-textarea#user_reply_text_at{
-  outline: none;
-  -webkit-appearance: textarea;
-  background-color: white;
-  border-style: hidden;
-  border-radius: 6px;
-  border-bottom-right-radius:29px;
-  -webkit-rtl-ordering: logical;
-  -webkit-user-select: text;
-  -webkit-box-orient: vertical;
-  resize: auto;
-  cursor: auto;
-  padding: 2px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-
-}
-
-#reply_button_change_at{
-  float: right;
-  position:relative;
-  left:-369px;
-  top:22px;
-}
-
-#close_at{
-  position:relative;
-  left:48px;
-  top:-7px;
 }
 
 #ende{

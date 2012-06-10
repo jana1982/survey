@@ -1,0 +1,1100 @@
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20120402193826)
+Migrating to AddMartialStatusToUser (20120412115209)
+Migrating to AddLanguageToUsers (20120412132138)
+Migrating to AddCountryToUsers (20120412154409)
+Migrating to AddYearsToUsers (20120412162715)
+Migrating to AddTwitterAccountToUsers (20120412165835)
+Migrating to ChangeRetweetCodingtoIntegers (20120415165225)
+Migrating to AddIncomeToUsers (20120416081106)
+Migrating to AddAreaToUsers (20120416082352)
+Migrating to AddChildrenToUsers (20120416083340)
+Migrating to AddEmploymentToUsers (20120416094507)
+Migrating to AddEmploymentTextToUsers (20120416100531)
+Migrating to AddPositionAndTextToUsers (20120417095249)
+Migrating to AddEducationTextToUsers (20120417100836)
+Migrating to AddOrganizationAndTextToUsers (20120417115523)
+Migrating to AddInternetUsageToUsers (20120418095948)
+Migrating to AddFavoriteToUsers (20120420140403)
+Migrating to AddOlToUser (20120423230113)
+Migrating to AddReplyClickedToUsers (20120424125048)
+Migrating to AddReplyTextToUsers (20120425093452)
+Migrating to AddTweetTextToUsers (20120425153640)
+Migrating to AddSearchToUser (20120425232815)
+Migrating to AddHoverTimestoUser (20120502133109)
+Migrating to AddFurtherHoverTimesToUsers (20120502135213)
+Migrating to AddRetweetImportanceToUsers (20120502142551)
+Migrating to AddNewTweet2ToUsers (20120508141333)
+Migrating to AddSeenMessageToUser (20120515113237)
+Migrating to Add12OlToUser (20120516093945)
+Migrating to AddOlListToUser (20120520091314)
+Migrating to CreateOpinionleaders (20120522112855)
+Migrating to AddSeenPersonToUser (20120522153757)
+Migrating to AddHoverTimeOpenToUser (20120524091120)
+Migrating to AddHoverTimeSearchToUser (20120524115103)
+Migrating to AddRandomRetweetToUser (20120524143901)
+Migrating to AddOpenClickedToUser (20120524145435)
+Migrating to AddExperimentTimeToUser (20120525101054)
+Migrating to AddSeenAtToUser (20120530134523)
+Migrating to AddConnectClickedToUser (20120530134919)
+Migrating to AddFavoriteUndRetweetClicked2ToUser (20120606133201)
+Migrating to AddSeenAtRtToUser (20120606134856)
+Migrating to AddTimeMeasureAtToUser (20120606141545)
+Migrating to AddOpenClickedAtToUser (20120606154405)
+Migrating to AddReplyAtToUser (20120607133347)
+Migrating to AddThemenToUser (20120607155001)
+Migrating to AddMessage2toUser (20120610123611)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("opinionleaders")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20120402193826)
+Migrating to AddMartialStatusToUser (20120412115209)
+Migrating to AddLanguageToUsers (20120412132138)
+Migrating to AddCountryToUsers (20120412154409)
+Migrating to AddYearsToUsers (20120412162715)
+Migrating to AddTwitterAccountToUsers (20120412165835)
+Migrating to ChangeRetweetCodingtoIntegers (20120415165225)
+Migrating to AddIncomeToUsers (20120416081106)
+Migrating to AddAreaToUsers (20120416082352)
+Migrating to AddChildrenToUsers (20120416083340)
+Migrating to AddEmploymentToUsers (20120416094507)
+Migrating to AddEmploymentTextToUsers (20120416100531)
+Migrating to AddPositionAndTextToUsers (20120417095249)
+Migrating to AddEducationTextToUsers (20120417100836)
+Migrating to AddOrganizationAndTextToUsers (20120417115523)
+Migrating to AddInternetUsageToUsers (20120418095948)
+Migrating to AddFavoriteToUsers (20120420140403)
+Migrating to AddOlToUser (20120423230113)
+Migrating to AddReplyClickedToUsers (20120424125048)
+Migrating to AddReplyTextToUsers (20120425093452)
+Migrating to AddTweetTextToUsers (20120425153640)
+Migrating to AddSearchToUser (20120425232815)
+Migrating to AddHoverTimestoUser (20120502133109)
+Migrating to AddFurtherHoverTimesToUsers (20120502135213)
+Migrating to AddRetweetImportanceToUsers (20120502142551)
+Migrating to AddNewTweet2ToUsers (20120508141333)
+Migrating to AddSeenMessageToUser (20120515113237)
+Migrating to Add12OlToUser (20120516093945)
+Migrating to AddOlListToUser (20120520091314)
+Migrating to CreateOpinionleaders (20120522112855)
+Migrating to AddSeenPersonToUser (20120522153757)
+Migrating to AddHoverTimeOpenToUser (20120524091120)
+Migrating to AddHoverTimeSearchToUser (20120524115103)
+Migrating to AddRandomRetweetToUser (20120524143901)
+Migrating to AddOpenClickedToUser (20120524145435)
+Migrating to AddExperimentTimeToUser (20120525101054)
+Migrating to AddSeenAtToUser (20120530134523)
+Migrating to AddConnectClickedToUser (20120530134919)
+Migrating to AddFavoriteUndRetweetClicked2ToUser (20120606133201)
+Migrating to AddSeenAtRtToUser (20120606134856)
+Migrating to AddTimeMeasureAtToUser (20120606141545)
+Migrating to AddOpenClickedAtToUser (20120606154405)
+Migrating to AddReplyAtToUser (20120607133347)
+Migrating to AddThemenToUser (20120607155001)
+Migrating to AddMessage2toUser (20120610123611)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("opinionleaders")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20120402193826)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120402193826')[0m
+Migrating to AddMartialStatusToUser (20120412115209)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "martial_status" integer[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" varchar(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412115209')[0m
+Migrating to AddLanguageToUsers (20120412132138)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "language" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412132138')[0m
+Migrating to AddCountryToUsers (20120412154409)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "country" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412154409')[0m
+Migrating to AddYearsToUsers (20120412162715)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "years" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412162715')[0m
+Migrating to AddTwitterAccountToUsers (20120412165835)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "twitter_account" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412165835')[0m
+Migrating to ChangeRetweetCodingtoIntegers (20120415165225)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120415165225')[0m
+Migrating to AddIncomeToUsers (20120416081106)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "income" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416081106')[0m
+Migrating to AddAreaToUsers (20120416082352)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "area" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416082352')[0m
+Migrating to AddChildrenToUsers (20120416083340)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "children" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416083340')[0m
+Migrating to AddEmploymentToUsers (20120416094507)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "employment" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416094507')[0m
+Migrating to AddEmploymentTextToUsers (20120416100531)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "employment_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416100531')[0m
+Migrating to AddPositionAndTextToUsers (20120417095249)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "position" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "position_text" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120417095249')[0m
+Migrating to AddEducationTextToUsers (20120417100836)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "bildung_text" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120417100836')[0m
+Migrating to AddOrganizationAndTextToUsers (20120417115523)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "organization" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "organization_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120417115523')[0m
+Migrating to AddInternetUsageToUsers (20120418095948)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "private_pc" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "private_mobile" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "work_pc" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "work_mobile" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "public" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120418095948')[0m
+Migrating to AddFavoriteToUsers (20120420140403)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "favorite_clicked" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120420140403')[0m
+Migrating to AddOlToUser (20120423230113)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "users" ADD "leader_text" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120423230113')[0m
+Migrating to AddReplyClickedToUsers (20120424125048)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "reply_clicked" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120424125048')[0m
+Migrating to AddReplyTextToUsers (20120425093452)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "reply_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120425093452')[0m
+Migrating to AddTweetTextToUsers (20120425153640)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "tweet_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120425153640')[0m
+Migrating to AddSearchToUser (20120425232815)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "search" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120425232815')[0m
+Migrating to AddHoverTimestoUser (20120502133109)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "retweet_time" float[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "favorite_time" float[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120502133109')[0m
+Migrating to AddFurtherHoverTimesToUsers (20120502135213)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "message_hover_time" float[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "reply_time" float[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "new_tweet_time" float[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120502135213')[0m
+Migrating to AddRetweetImportanceToUsers (20120502142551)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "retweet_importance" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120502142551')[0m
+Migrating to AddNewTweet2ToUsers (20120508141333)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "tweet_text_n" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120508141333')[0m
+Migrating to AddSeenMessageToUser (20120515113237)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "seen_message" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120515113237')[0m
+Migrating to Add12OlToUser (20120516093945)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "ol_1" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_2" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "ol_3" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_4" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "ol_5" varchar(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "ol_6" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "ol_7" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_8" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "ol_9" varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "ol_10" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "ol_11" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_12" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120516093945')[0m
+Migrating to AddOlListToUser (20120520091314)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "ol_list" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120520091314')[0m
+Migrating to CreateOpinionleaders (20120522112855)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "opinionleaders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ol" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120522112855')[0m
+Migrating to AddSeenPersonToUser (20120522153757)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "seen_person" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120522153757')[0m
+Migrating to AddHoverTimeOpenToUser (20120524091120)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "open_time" float[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524091120')[0m
+Migrating to AddHoverTimeSearchToUser (20120524115103)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "search_time" float[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524115103')[0m
+Migrating to AddRandomRetweetToUser (20120524143901)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "seen_retweet" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524143901')[0m
+Migrating to AddOpenClickedToUser (20120524145435)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "open_clicked" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524145435')[0m
+Migrating to AddExperimentTimeToUser (20120525101054)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "experiment_time" float[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120525101054')[0m
+Migrating to AddSeenAtToUser (20120530134523)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "seen_at" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120530134523')[0m
+Migrating to AddConnectClickedToUser (20120530134919)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "connect_clicked" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120530134919')[0m
+Migrating to AddFavoriteUndRetweetClicked2ToUser (20120606133201)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "favorite_at_clicked" integer[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "retweet_at_clicked" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606133201')[0m
+Migrating to AddSeenAtRtToUser (20120606134856)
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "users" ADD "seen_at_rt" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606134856')[0m
+Migrating to AddTimeMeasureAtToUser (20120606141545)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "open_time_at" float[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "reply_time_at" float[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "retweet_time_at" float[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "favorite_time_at" float[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "message_hover_time_at" float[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606141545')[0m
+Migrating to AddOpenClickedAtToUser (20120606154405)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "open_clicked_at" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606154405')[0m
+Migrating to AddReplyAtToUser (20120607133347)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "reply_text_at" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "reply_clicked_at" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120607133347')[0m
+Migrating to AddThemenToUser (20120607155001)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "seen_themen" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120607155001')[0m
+Migrating to AddMessage2toUser (20120610123611)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "users" ADD "seen_message_2" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer, "income" integer, "area" integer, "children" integer, "employment" integer, "employment_text" varchar(255), "position" integer, "position_text" varchar(255), "bildung_text" varchar(255), "organization" integer, "organization_text" varchar(255), "private_pc" integer, "private_mobile" integer, "work_pc" integer, "work_mobile" integer, "public" integer, "favorite_clicked" integer, "leader_text" varchar(255), "reply_clicked" integer, "reply_text" varchar(255), "tweet_text" varchar(255), "search" varchar(255), "retweet_time" float, "favorite_time" float, "message_hover_time" float, "reply_time" float, "new_tweet_time" float, "retweet_importance" integer, "tweet_text_n" varchar(255), "seen_message_1" varchar(255), "ol_1" varchar(255), "ol_2" varchar(255), "ol_3" varchar(255), "ol_4" varchar(255), "ol_5" varchar(255), "ol_6" varchar(255), "ol_7" varchar(255), "ol_8" varchar(255), "ol_9" varchar(255), "ol_10" varchar(255), "ol_11" varchar(255), "ol_12" varchar(255), "ol_list" varchar(255), "seen_person" varchar(255), "open_time" float, "search_time" float, "seen_retweet" varchar(255), "open_clicked" integer, "experiment_time" float, "seen_at" varchar(255), "connect_clicked" integer, "favorite_at_clicked" integer, "retweet_at_clicked" integer, "seen_at_rt" varchar(255), "open_time_at" float, "reply_time_at" float, "retweet_time_at" float, "favorite_time_at" float, "message_hover_time_at" float, "open_clicked_at" integer, "reply_text_at" varchar(255), "reply_clicked_at" integer, "seen_themen" varchar(255), "seen_message_2" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer, "income" integer, "area" integer, "children" integer, "employment" integer, "employment_text" varchar(255), "position" integer, "position_text" varchar(255), "bildung_text" varchar(255), "organization" integer, "organization_text" varchar(255), "private_pc" integer, "private_mobile" integer, "work_pc" integer, "work_mobile" integer, "public" integer, "favorite_clicked" integer, "leader_text" varchar(255), "reply_clicked" integer, "reply_text" varchar(255), "tweet_text" varchar(255), "search" varchar(255), "retweet_time" float, "favorite_time" float, "message_hover_time" float, "reply_time" float, "new_tweet_time" float, "retweet_importance" integer, "tweet_text_n" varchar(255), "seen_message_1" varchar(255), "ol_1" varchar(255), "ol_2" varchar(255), "ol_3" varchar(255), "ol_4" varchar(255), "ol_5" varchar(255), "ol_6" varchar(255), "ol_7" varchar(255), "ol_8" varchar(255), "ol_9" varchar(255), "ol_10" varchar(255), "ol_11" varchar(255), "ol_12" varchar(255), "ol_list" varchar(255), "seen_person" varchar(255), "open_time" float, "search_time" float, "seen_retweet" varchar(255), "open_clicked" integer, "experiment_time" float, "seen_at" varchar(255), "connect_clicked" integer, "favorite_at_clicked" integer, "retweet_at_clicked" integer, "seen_at_rt" varchar(255), "open_time_at" float, "reply_time_at" float, "retweet_time_at" float, "favorite_time_at" float, "message_hover_time_at" float, "open_clicked_at" integer, "reply_text_at" varchar(255), "reply_clicked_at" integer, "seen_themen" varchar(255), "seen_message_2" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120610123611')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("opinionleaders")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "opinionleaders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ol" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer, "income" integer, "area" integer, "children" integer, "employment" integer, "employment_text" varchar(255), "position" integer, "position_text" varchar(255), "bildung_text" varchar(255), "organization" integer, "organization_text" varchar(255), "private_pc" integer, "private_mobile" integer, "work_pc" integer, "work_mobile" integer, "public" integer, "favorite_clicked" integer, "leader_text" varchar(255), "reply_clicked" integer, "reply_text" varchar(255), "tweet_text" varchar(255), "search" varchar(255), "retweet_time" float, "favorite_time" float, "message_hover_time" float, "reply_time" float, "new_tweet_time" float, "retweet_importance" integer, "tweet_text_n" varchar(255), "seen_message_1" varchar(255), "ol_1" varchar(255), "ol_2" varchar(255), "ol_3" varchar(255), "ol_4" varchar(255), "ol_5" varchar(255), "ol_6" varchar(255), "ol_7" varchar(255), "ol_8" varchar(255), "ol_9" varchar(255), "ol_10" varchar(255), "ol_11" varchar(255), "ol_12" varchar(255), "ol_list" varchar(255), "seen_person" varchar(255), "open_time" float, "search_time" float, "seen_retweet" varchar(255), "open_clicked" integer, "experiment_time" float, "seen_at" varchar(255), "connect_clicked" integer, "favorite_at_clicked" integer, "retweet_at_clicked" integer, "seen_at_rt" varchar(255), "open_time_at" float, "reply_time_at" float, "retweet_time_at" float, "favorite_time_at" float, "message_hover_time_at" float, "open_clicked_at" integer, "reply_text_at" varchar(255), "reply_clicked_at" integer, "seen_themen" varchar(255), "seen_message_2" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120610123611')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120402193826')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120412115209')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120412132138')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120412154409')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120412162715')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120412165835')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120415165225')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120416081106')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120416082352')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120416083340')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120416094507')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120416100531')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120417095249')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120417100836')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120417115523')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120418095948')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120420140403')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120423230113')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120424125048')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120425093452')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120425153640')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120425232815')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120502133109')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120502135213')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120502142551')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120508141333')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120515113237')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120516093945')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120520091314')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120522112855')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120522153757')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120524091120')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120524115103')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120524143901')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120524145435')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120525101054')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120530134523')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120530134919')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120606133201')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120606134856')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120606141545')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120606154405')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120607133347')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120607155001')[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20120402193826)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120402193826')[0m
+Migrating to AddMartialStatusToUser (20120412115209)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "martial_status" integer[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" varchar(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" varchar(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweed_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412115209')[0m
+Migrating to AddLanguageToUsers (20120412132138)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "language" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412132138')[0m
+Migrating to AddCountryToUsers (20120412154409)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "country" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412154409')[0m
+Migrating to AddYearsToUsers (20120412162715)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "years" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412162715')[0m
+Migrating to AddTwitterAccountToUsers (20120412165835)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "twitter_account" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120412165835')[0m
+Migrating to ChangeRetweetCodingtoIntegers (20120415165225)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" boolean, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120415165225')[0m
+Migrating to AddIncomeToUsers (20120416081106)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "income" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416081106')[0m
+Migrating to AddAreaToUsers (20120416082352)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "area" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416082352')[0m
+Migrating to AddChildrenToUsers (20120416083340)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "children" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416083340')[0m
+Migrating to AddEmploymentToUsers (20120416094507)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "employment" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416094507')[0m
+Migrating to AddEmploymentTextToUsers (20120416100531)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "employment_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120416100531')[0m
+Migrating to AddPositionAndTextToUsers (20120417095249)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "position" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "position_text" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120417095249')[0m
+Migrating to AddEducationTextToUsers (20120417100836)
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "bildung_text" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120417100836')[0m
+Migrating to AddOrganizationAndTextToUsers (20120417115523)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "organization" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "organization_text" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120417115523')[0m
+Migrating to AddInternetUsageToUsers (20120418095948)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "private_pc" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "private_mobile" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "work_pc" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "work_mobile" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "public" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120418095948')[0m
+Migrating to AddFavoriteToUsers (20120420140403)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "favorite_clicked" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120420140403')[0m
+Migrating to AddOlToUser (20120423230113)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "leader_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120423230113')[0m
+Migrating to AddReplyClickedToUsers (20120424125048)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "users" ADD "reply_clicked" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120424125048')[0m
+Migrating to AddReplyTextToUsers (20120425093452)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "reply_text" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120425093452')[0m
+Migrating to AddTweetTextToUsers (20120425153640)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "tweet_text" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120425153640')[0m
+Migrating to AddSearchToUser (20120425232815)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "search" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120425232815')[0m
+Migrating to AddHoverTimestoUser (20120502133109)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "retweet_time" float[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "favorite_time" float[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120502133109')[0m
+Migrating to AddFurtherHoverTimesToUsers (20120502135213)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "message_hover_time" float[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "reply_time" float[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "new_tweet_time" float[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120502135213')[0m
+Migrating to AddRetweetImportanceToUsers (20120502142551)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "retweet_importance" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120502142551')[0m
+Migrating to AddNewTweet2ToUsers (20120508141333)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "tweet_text_n" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120508141333')[0m
+Migrating to AddSeenMessageToUser (20120515113237)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "seen_message" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120515113237')[0m
+Migrating to Add12OlToUser (20120516093945)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "ol_1" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_2" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "ol_3" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "ol_4" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "ol_5" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_6" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "ol_7" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_8" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "ol_9" varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "ol_10" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "ol_11" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "ol_12" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120516093945')[0m
+Migrating to AddOlListToUser (20120520091314)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "ol_list" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120520091314')[0m
+Migrating to CreateOpinionleaders (20120522112855)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "opinionleaders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ol" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120522112855')[0m
+Migrating to AddSeenPersonToUser (20120522153757)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "seen_person" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120522153757')[0m
+Migrating to AddHoverTimeOpenToUser (20120524091120)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "open_time" float[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524091120')[0m
+Migrating to AddHoverTimeSearchToUser (20120524115103)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "search_time" float[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524115103')[0m
+Migrating to AddRandomRetweetToUser (20120524143901)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "seen_retweet" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524143901')[0m
+Migrating to AddOpenClickedToUser (20120524145435)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "open_clicked" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120524145435')[0m
+Migrating to AddExperimentTimeToUser (20120525101054)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "experiment_time" float[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120525101054')[0m
+Migrating to AddSeenAtToUser (20120530134523)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "seen_at" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120530134523')[0m
+Migrating to AddConnectClickedToUser (20120530134919)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "connect_clicked" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120530134919')[0m
+Migrating to AddFavoriteUndRetweetClicked2ToUser (20120606133201)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "favorite_at_clicked" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "retweet_at_clicked" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606133201')[0m
+Migrating to AddSeenAtRtToUser (20120606134856)
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "seen_at_rt" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606134856')[0m
+Migrating to AddTimeMeasureAtToUser (20120606141545)
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "users" ADD "open_time_at" float[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "reply_time_at" float[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "retweet_time_at" float[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "users" ADD "favorite_time_at" float[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "message_hover_time_at" float[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606141545')[0m
+Migrating to AddOpenClickedAtToUser (20120606154405)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "open_clicked_at" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120606154405')[0m
+Migrating to AddReplyAtToUser (20120607133347)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "reply_text_at" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "reply_clicked_at" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120607133347')[0m
+Migrating to AddThemenToUser (20120607155001)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "seen_themen" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120607155001')[0m
+Migrating to AddMessage2toUser (20120610123611)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "seen_message_2" varchar(255)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer, "income" integer, "area" integer, "children" integer, "employment" integer, "employment_text" varchar(255), "position" integer, "position_text" varchar(255), "bildung_text" varchar(255), "organization" integer, "organization_text" varchar(255), "private_pc" integer, "private_mobile" integer, "work_pc" integer, "work_mobile" integer, "public" integer, "favorite_clicked" integer, "leader_text" varchar(255), "reply_clicked" integer, "reply_text" varchar(255), "tweet_text" varchar(255), "search" varchar(255), "retweet_time" float, "favorite_time" float, "message_hover_time" float, "reply_time" float, "new_tweet_time" float, "retweet_importance" integer, "tweet_text_n" varchar(255), "seen_message_1" varchar(255), "ol_1" varchar(255), "ol_2" varchar(255), "ol_3" varchar(255), "ol_4" varchar(255), "ol_5" varchar(255), "ol_6" varchar(255), "ol_7" varchar(255), "ol_8" varchar(255), "ol_9" varchar(255), "ol_10" varchar(255), "ol_11" varchar(255), "ol_12" varchar(255), "ol_list" varchar(255), "seen_person" varchar(255), "open_time" float, "search_time" float, "seen_retweet" varchar(255), "open_clicked" integer, "experiment_time" float, "seen_at" varchar(255), "connect_clicked" integer, "favorite_at_clicked" integer, "retweet_at_clicked" integer, "seen_at_rt" varchar(255), "open_time_at" float, "reply_time_at" float, "retweet_time_at" float, "favorite_time_at" float, "message_hover_time_at" float, "open_clicked_at" integer, "reply_text_at" varchar(255), "reply_clicked_at" integer, "seen_themen" varchar(255), "seen_message_2" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bildung" integer(255), "alter" integer, "retweet_clicked" integer, "at_clicked" boolean, "geschlecht" integer(255), "created_at" datetime, "updated_at" datetime, "martial_status" integer, "language" integer, "country" integer, "years" integer, "twitter_account" integer, "income" integer, "area" integer, "children" integer, "employment" integer, "employment_text" varchar(255), "position" integer, "position_text" varchar(255), "bildung_text" varchar(255), "organization" integer, "organization_text" varchar(255), "private_pc" integer, "private_mobile" integer, "work_pc" integer, "work_mobile" integer, "public" integer, "favorite_clicked" integer, "leader_text" varchar(255), "reply_clicked" integer, "reply_text" varchar(255), "tweet_text" varchar(255), "search" varchar(255), "retweet_time" float, "favorite_time" float, "message_hover_time" float, "reply_time" float, "new_tweet_time" float, "retweet_importance" integer, "tweet_text_n" varchar(255), "seen_message_1" varchar(255), "ol_1" varchar(255), "ol_2" varchar(255), "ol_3" varchar(255), "ol_4" varchar(255), "ol_5" varchar(255), "ol_6" varchar(255), "ol_7" varchar(255), "ol_8" varchar(255), "ol_9" varchar(255), "ol_10" varchar(255), "ol_11" varchar(255), "ol_12" varchar(255), "ol_list" varchar(255), "seen_person" varchar(255), "open_time" float, "search_time" float, "seen_retweet" varchar(255), "open_clicked" integer, "experiment_time" float, "seen_at" varchar(255), "connect_clicked" integer, "favorite_at_clicked" integer, "retweet_at_clicked" integer, "seen_at_rt" varchar(255), "open_time_at" float, "reply_time_at" float, "retweet_time_at" float, "favorite_time_at" float, "message_hover_time_at" float, "open_clicked_at" integer, "reply_text_at" varchar(255), "reply_clicked_at" integer, "seen_themen" varchar(255), "seen_message_2" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120610123611')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("opinionleaders")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/Users/plotti/.rvm/gems/ruby-1.8.7-p352@global/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+test/unit/user_test.rb:1

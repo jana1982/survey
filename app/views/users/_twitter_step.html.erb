@@ -1,76 +1,54 @@
+
+<!--
 <div
      onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "experiment_time"}) %>"
-     onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "experiment_time"}) %>">
+     onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "experiment_time"}) %>"
+>
+-->
      
-     <TABLE width="100%">
-        <TR>    
-          <TD ALIGN="LEFT" nowrap>
-            <h2>Twitter Simulation</h2>    
-          </TD>        
-          <TD ALIGN="RIGHT" width=400px >
-            <%= progress_bar("my_sixty_percent_progress_bar",0.80,true,true) %>
-          </TD>  
-        </TR>
-      </TABLE>
+ <TABLE width="100%">
+    <TR>    
+      <TD ALIGN="LEFT" nowrap>
+        <h2>Twitter Simulation</h2>    
+      </TD>        
+      <TD ALIGN="RIGHT" width=400px >
+        <%= progress_bar("my_sixty_percent_progress_bar",0.80,true,true) %>
+      </TD>  
+    </TR>
+  </TABLE>
   
   <div id="seite_plane">
-    <div id="left_twitter"></div>
-    
-<!--Mittlere Twitterseite-->
-    
+    <div id="left_twitter"></div>  
+    <!--Mittlere Twitterseite-->
     <div id="seite_twitter">
-
       <%= render "leiste_oben", :f => f  %>
       <%= render "leiste_links", :f => f  %>
-
+      <!--In der Message werden die Tweets Angezeigt -->      
       <%= render "message_box", :f => f  %>
       <!--<%= render "end_of_tweets"  %>-->
-      
-      
-      
-
-
-<!--Layer über der Twitterseite-->      
-      
-
-
+      <!--Layer über der Twitterseite-->      
       <div id="connect_seite" style="display: none;">
         <%= render "connect_seite", :f => f  %> 
       </div>
-      
     </div>
-<!--Obere Leiste/ immer sichtbare Teile-->
-    
-
-
-    
+    <!--Obere Leiste/ immer sichtbare Teile-->
     <div id="right_twitter"></div>
-    
   </div>
   
-<!--Gesamter Twitter Screen-->
+  <!--Gesamter Twitter Screen-->
   <div id="tweet_sent" style="display: none;">Your Tweet has been sent!</div>
-  
-  <div id="request_retweet_intensity" style="display: none;">
-    <%= render "request_retweet_intensity_seite", :f => f  %> 
-  </div>
-
   <div id="new_tweet_seite" style="display: none;">
     <%= render "new_tweet_seite", :f => f  %>
-    
-  </div> 
- 
+  </div>
   <div id="reply_seite" style="display: none;">
     <%= render "reply_seite", :f => f  %> 
-  </div>
-  
-  <div id="reply_seite_at" style="display: none;">
-    <%= render "reply_seite_at", :f => f  %> 
-  </div>        
-
+  </div>       
+<!-->
 </div>
+-->
 
 <!--Über Buttons-->
-
-<div id="hinweis_back">If you press 'Back', all your actions within the Twitter simulation will be saved, but eventually not displayed anymore<p></p></div>
-<div id="hinweis_continue">Please press only 'Continue', if you would like to close the Twitter simulation<p></p></div>
+<div id="hinweis_back">If you press 'Back', all your actions within the Twitter simulation will be saved, but eventually not displayed anymore<p></p>
+</div>
+<div id="hinweis_continue">Please press only 'Continue', if you would like to close the Twitter simulation<p></p>
+</div>

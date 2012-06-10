@@ -1,20 +1,85 @@
 class User < ActiveRecord::Base
-  attr_accessible 	:bildung, :alter, :retweet_clicked, :at_clicked, :geschlecht, 
+  attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
-			:public, :favorite_clicked, :leader_text, :reply_clicked, :reply_text, :tweet_text, :search,
+			:public, :leader_text, :reply_text, :tweet_text, :search,
 			:retweet_time, :favorite_time, :message_hover_time, :reply_time, :new_tweet_time, :retweet_importance,
-			:tweet_text_n, :seen_message, :ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12,
-			:ol_list, :seen_person, :open_time, :search_time, :seen_retweet, :open_clicked, :experiment_time, :seen_at,:connect_clicked,
-			:retweet_at_clicked, :favorite_at_clicked, :seen_at_rt, :open_clicked_at, :reply_text_at, :reply_clicked_at, :seen_themen
+			:tweet_text_n, 
+			:seen_message_1,:seen_message_2,
+			:seen_multiple_messages,:seen_at,
+			:seen_retweet_message1, :seen_retweet_message2,
+			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12, :ol_list, 
+			:seen_person, :open_time, :search_time,  :experiment_time, :connect_clicked,
+			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
+			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked
 			
   attr_writer :current_step
-  has_many :opinionleaders
-  accepts_nested_attributes_for :opinionleaders
-
+  attr_accessor :username
+  
+  def setup
+    if first_step?
+      username = "plotti"
+      self.seen_retweet_message1 = generate_random_retweet
+      self.seen_retweet_message2 = generate_random_retweet
+      self.seen_multiple_messages = generate_random_themes
+      self.seen_at = generate_random_at
+      self.seen_person = generate_random_person
+      generate_messages
+    end
+  end
+  
+  def to_hash
+    hash = {}; self.attributes.each { |k,v| hash[k] = v }
+  end
+  
   validates_presence_of :language, :if => :selection?
   validates_presence_of :twitter_account, :if => :selection?
+  
+  def generate_messages   
+    messages1 = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 
+      'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
+    messages2 = ['Message2: Schaden 0, Einfluss 0', 'Message2: Schaden 1, Einfluss 0', 
+      'Message2: Schaden 0, Einfluss 1', 'Message2: Schaden 1, Einfluss 1']
+    message1 = messages1[rand(messages1.length)]
+    message2 = messages2[messages1.index(message1)]
+    if !self.seen_multiple_messages && self.seen_at
+      self.seen_message_1 = "@#{self.username} " + message1
+      self.seen_message_2 = ""
+    elsif self.seen_multiple_messages && self.seen_at
+      self.seen_message_1 = "@#{self.username} " + message1
+      self.seen_message_2  = message1
+    elsif self.seen_multiple_messages && !self.seen_at
+      self.seen_message_1 = message1
+      self.seen_message_2  = message2
+    elsif !self.seen_multiple_messages && !self.seen_at
+      self.seen_message_1 = message1
+      self.seen_message_2  = ""
+    end
+  end
+  
+  def generate_random_person       
+    if self.leader_text == nil
+      self.leader_text = ""
+    end
+    person = [self.leader_text, 'Friend']
+    person[rand(person.length)]
+  end
+  
+  def generate_random_retweet  
+    retweet = [true, false]
+    retweet[rand(retweet.length)]
+  end
+  
+  def generate_random_at     
+    at = [true, false]
+    at[rand(at.length)]
+  end
+  
+  def generate_random_themes    
+    themen = ['one', 'more']
+    themen[rand(themen.length)]
+  end
   
   def current_step
       @current_step || steps.first
@@ -32,7 +97,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[selection opinionleader test twitter target]
+      %w[demographic selection opinionleader test twitter target]
       #introduction demographic  interest 
   end
   

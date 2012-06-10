@@ -1,4 +1,5 @@
-<% title "User" %>
+<div style="float:left; position:relative; top:0px;">
+  <% title "User" %>
 <p>
   <strong>Twitter account:</strong>
   <%=h @user.twitter_account %>
@@ -57,7 +58,7 @@
   <%=h @user.employment_text %>
 </p>
 <p>
-  <strong>Potition:</strong>
+  <strong>Position:</strong>
   <%=h @user.position %>
 </p>
 <p>
@@ -92,21 +93,35 @@
   <strong>Public Terminal:</strong>
   <%=h @user.public %>
 </p>
+</div>
+<div style="float:right; position:relative; top:0px;">
 <p>
   <strong>Opinion Leader:</strong>
   <%=h @user.leader_text %>
 </p>
 <p>
-  <strong>Retweet:</strong>
-  <%=h @user.retweet_clicked %>
+  <strong>Retweet 1 Clicked:</strong>
+  <%=h @user.retweet_1_clicked %>
 </p>
 <p>
-  <strong>Favorite:</strong>
-  <%=h @user.favorite_clicked %>
+  <strong>Retweet 2 Clicked:</strong>
+  <%=h @user.retweet_2_clicked %>
 </p>
 <p>
-  <strong>Reply:</strong>
-  <%=h @user.reply_clicked %>
+  <strong>Favorite 1 Clicked:</strong>
+  <%=h @user.favorite_1_clicked %>
+</p>
+<p>
+  <strong>Favorite 2 Clicked:</strong>
+  <%=h @user.favorite_2_clicked %>
+</p>
+<p>
+  <strong>Reply 1 Clicked:</strong>
+  <%=h @user.reply_1_clicked %>
+</p>
+<p>
+  <strong>Reply 2 Clicked:</strong>
+  <%=h @user.reply_2_clicked %>
 </p>
 <p>
   <strong>reply_text:</strong>
@@ -145,22 +160,18 @@
   <%=h @user.new_tweet_time%>
 </p>
 <p>
-
-  <strong>shown message:</strong>
-  <%=h @user.seen_message%>
+  <strong>shown message 1:</strong>
+  <%=h @user.seen_message_1%>
 </p>
 <p>
-
+  <strong>shown message 2:</strong>
+  <%=h @user.seen_message_1%>
+</p>
+<p>
   <strong>shown person:</strong>
   <%=h @user.seen_person%>
 </p>
 
-<p>
-
-  <strong>shown retweet:</strong>
-  <%=h @user.seen_retweet%>
-</p>
-
-
   <%= link_to "View All", users_path %>
 </p>
+</div>

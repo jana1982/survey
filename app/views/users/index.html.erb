@@ -2,35 +2,27 @@
 
 <table>
   <tr>
-    <th>Bildung</th>
-    <th>Alter</th>
-    <th>Retweet Clicked</th>
-    <th>At Clicked</th>
-    <th>Geschlecht</th>
-    <th>Familienstand</th>
-    <th>Englisch</th>
-    <th>Land</th>
-    <th>Jahre</th>
-    <th>Einkommen</th>
-    <th>Region</th>
-    <th>Kinder</th>
-    <th>Anstellung</th>
+    <th>User ID</th>
+    <th>Retweet 1 Clicked</th>
+    <th>Retweet 2 Clicked</th>
+    <th>Favorite 1 Clicked</th>
+    <th>Favorite 2 Clicked</th>
+    <th>Expand 1 Clicked</th>
+    <th>Expand 2 Clicked</th>
+    <th>Reply 1 Clicked</th>
+    <th>Reply 2 Clicked</th>
   </tr>
   <% for user in @users %>
     <tr>
-      <td><%=h user.bildung %></td>
-      <td><%=h user.alter %></td>
-      <td><%=h user.retweet_clicked %></td>
-      <td><%=h user.at_clicked %></td>
-      <td><%=h user.geschlecht %></td>
-      <td><%=h user.martial_status %></td>
-      <td><%=h user.language %></td>
-      <td><%=h user.country %></td>
-      <td><%=h user.years %></td>
-      <td><%=h user.income %></td>
-      <td><%=h user.area %></td>
-      <td><%=h user.children %></td>
-      <td><%=h user.employment %></td>
+      <td><%=h user.id %></td>
+      <td><%=h user.retweet_1_clicked %></td>
+      <td><%=h user.retweet_2_clicked %></td>
+      <td><%=h user.favorite_1_clicked %></td>
+      <td><%=h user.favorite_2_clicked %></td>
+      <td><%=h user.expand_1_clicked %></td>
+      <td><%=h user.expand_2_clicked %></td>
+      <td><%=h user.reply_1_clicked %></td>
+      <td><%=h user.reply_2_clicked %></td>
       <td><%= link_to "Show", user %></td>
     </tr>
   <% end %>

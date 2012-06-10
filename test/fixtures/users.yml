@@ -1,13 +1,13 @@
 one:
   bildung: MyString
   alter: 1
-  retweed_clicked: false
+  retweet_clicked: false
   at_clicked: false
   geschlecht: MyString
 
 two:
   bildung: MyString
   alter: 1
-  retweed_clicked: false
+  retweet_clicked: false
   at_clicked: false
   geschlecht: MyString

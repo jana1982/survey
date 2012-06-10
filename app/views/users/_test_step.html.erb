@@ -1,11 +1,21 @@
+   <p>Opinion Leader: 
    <%= opinion_leader %>
-   <p>
+   </p>
+   <p>User gets to see an at message:
    <%= h @user.seen_at %>
    </p>
-   <p>
-   <%= h @user.seen_at_rt%>
-    
+   <p> User gets to see a retweet of message1: 
+   <%= h @user.seen_retweet_message1%>
    </p>
-   <p>
-   <%= h @user.seen_themen %>
+   <p> User gets to see a retweet of message2: 
+   <%= h @user.seen_retweet_message2%>
    </p>
+   <p> User gets to see multiple messages: 
+   <%= h @user.seen_multiple_messages %>
+   </p>
+   <p> User gets to see the following message1: 
+    <%= h @user.seen_message_1 %>
+   </p>
+   <p> User gets to see the following message2: 
+     <%= h @user.seen_message_2 %>
+    </p>

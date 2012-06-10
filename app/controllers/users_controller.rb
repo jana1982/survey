@@ -18,90 +18,19 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  
-  def generate_random_message       
-    message = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
-    random_message = message[rand(message.length)]
-    return random_message   
-  end
-  
-  def generate_random_person       
-    person = [@user.leader_text, 'Friend']
-    random_person = person[rand(person.length)]
-    return random_person   
-  end    
-  
-  def generate_random_retweet       
-    retweet = ['retweet', 'no_retweet']
-    random_retweet = retweet[rand(retweet.length)]
-    return random_retweet   
-  end
-  
-  def generate_random_at     
-    at = ['at', 'no_at']
-    random_at = at[rand(at.length)]
-    return random_at   
-  end
-  
-  def generate_random_at_rt    
-    at_rt = ['at_rt', 'no_rt']
-    random_at_rt = at_rt[rand(at_rt.length)]
-    return random_at_rt   
-  end
-
-  def generate_random_themen    
-    themen = ['one', 'more']
-    random_themen = themen[rand(themen.length)]
-    return random_themen  
-  end
 
   def new
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
-    1.times { @user.opinionleaders.build }
-    
-    #Generate a random message for the user if he has'nt one yet
-    if @user.seen_message == nil
-      @user.seen_message = generate_random_message
-      session[:user_params].deep_merge!({:seen_message => @user.seen_message})
-    end
-    
-    #Generate a random person for the user if he has'nt one yet
-    if @user.seen_person == nil
-      @user.seen_person = generate_random_person
-      session[:user_params].deep_merge!({:seen_person => @user.seen_person})
-    end
-    
-    #Generate random retweet for the user if he has'nt one yet
-    if @user.seen_retweet == nil
-      @user.seen_retweet = generate_random_retweet
-      session[:user_params].deep_merge!({:seen_retweet => @user.seen_retweet})
-    end
-    
-    #Generate random at for the user if he has'nt one yet
-    if @user.seen_at == nil
-      @user.seen_at = generate_random_at
-      session[:user_params].deep_merge!({:seen_at => @user.seen_at})
-    end
-    
-    #Generate random at_rt for the user if he has'nt one yet
-    if @user.seen_at_rt == nil
-      @user.seen_at_rt = generate_random_at_rt
-      session[:user_params].deep_merge!({:seen_at_rt => @user.seen_at_rt})
-    end
-    
-    #Generate random themen for the user if he has'nt one yet
-    if @user.seen_themen == nil
-      @user.seen_themen = generate_random_themen
-      session[:user_params].deep_merge!({:seen_themen => @user.seen_themen})
-    end
-    
-    @user.current_step = session[:user_step]    
+    @user.current_step = session[:user_step]
+    @user.setup
+    session[:user_params] = @user.to_hash  
   end
 
   def reply
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:reply_clicked => 1})
+    number = params[:number].to_i
+    session[:user_params].deep_merge!({:reply_1_clicked => 1}) if number == 1
+    session[:user_params].deep_merge!({:reply_2_clicked => 1}) if number == 2
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -109,112 +38,47 @@ class UsersController < ApplicationController
               end
             }
     end
-    
   end
   
-  def reply_at
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:reply_clicked_at => 1})
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-                page.show 'reply_seite_at'
-              end
-            }
-    end
-    
-  end 
-  
   def retweet
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:retweet_clicked => 1})
+    number = params[:number].to_i
+    session[:user_params].deep_merge!({:retweet_1_clicked => 1}) if number == 1
+    session[:user_params].deep_merge!({:retweet_2_clicked => 1}) if number == 2
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'retweet', image_tag('../images/retweet_clicked_g.png');
-                page.replace_html 'retweet2', image_tag('../images/retweet_clicked.png');
-                page.replace_html 'retweet3', image_tag('../images/retweet_clicked.png');
+                page.replace_html "retweet#{number}", image_tag('../images/retweet_clicked_g.png');
+                page.replace_html "retweetexpand#{number}", image_tag('../images/retweet_clicked.png');
               end
             }
     end
-    
   end
   
   def favorite
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:favorite_clicked => 1})
+    number = params[:number].to_i
+    session[:user_params].deep_merge!({:favorite_1_clicked => 1}) if number == 1
+    session[:user_params].deep_merge!({:favorite_2_clicked => 1}) if number == 2
     respond_to do |format|
       format.js {
               render(:update) do |page|
-                page.replace_html 'favorite',  image_tag('../images/favorite_clicked_g.png');
-                page.replace_html 'favorite2',  image_tag('../images/favorite_clicked.png');
-                page.replace_html 'favorite3',  image_tag('../images/favorite_clicked.png');
+                page.replace_html "favorite#{number}",  image_tag('../images/favorite_clicked_g.png');
+                page.replace_html "favoriteexpand#{number}",  image_tag('../images/favorite_clicked.png');
               end
             }
     end    
   end
 
-  def retweet_at
-   puts session[:user_params]
-    session[:user_params].deep_merge!({:retweet_clicked => 1})
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-                page.replace_html 'retweet_at', image_tag('../images/retweet_clicked_g.png');
-                page.replace_html 'retweet2_at', image_tag('../images/retweet_clicked.png');
-                page.replace_html 'retweet3_at', image_tag('../images/retweet_clicked.png');
-              end
-            }
-    end
-    
-  end
-  
-  def favorite_at
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:favorite_at_clicked => 1})
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-                page.replace_html 'favorite_at',  image_tag('../images/favorite_clicked_g.png');
-                page.replace_html 'favorite2_at',  image_tag('../images/favorite_clicked.png');
-                page.replace_html 'favorite3_at',  image_tag('../images/favorite_clicked.png');
-              end
-            }
-    end    
-  end
 
-  def open_at
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:open_clicked_at => 1})
-    respond_to do |format|
-      format.js {
-         if session[:user_params][:seen_at_rt] == 'at_rt'
-            render(:update) do |page|
-                page.show 'expand_seite_at'
-              end;
-         else
-           render(:update) do |page|
-                  page.show 'expand_seite2_at'
-           end; 
-          end
-         }
-    end    
-  end
     
-  def open
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:open_clicked => 1})
+  def expand_message
+    number = params[:number].to_i
+    session[:user_params].deep_merge!({:expand_1_clicked => 1}) if number == 1
+    session[:user_params].deep_merge!({:expand_2_clicked => 1}) if number == 2
     respond_to do |format|
       format.js {
-         if session[:user_params][:seen_retweet] == 'retweet'
             render(:update) do |page|
-                page.show 'expand_seite'
+                page.show "expand_page#{number}"
               end;
-         else
-           render(:update) do |page|
-                  page.show 'expand_seite2'
-           end; 
-          end
          }
     end    
   end
@@ -242,32 +106,19 @@ class UsersController < ApplicationController
   end
   
   def close
+    number = params[:number].to_i
     respond_to do |format|
       format.js {
               render(:update) do |page|
                 page.hide 'reply_seite';
                 page.hide 'new_tweet_seite';
                 page.hide 'compose_tweet_seite';
-                page.hide 'expand_seite';
-                page.hide 'expand_seite2';
+                page.hide "expand_page1" if number == 1
+                page.hide "expand_page2" if number == 2
                 page.hide 'connect_seite';
               end
             }
     end
-    
-  end
-  
-  def close_at
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-                page.hide 'reply_seite_at';
-                page.hide 'expand_seite_at';
-                page.hide 'expand_seite2_at';
-              end
-            }
-    end
-    
   end
   
   def minutes_update
@@ -289,7 +140,6 @@ class UsersController < ApplicationController
               end
             }
     end
-    
   end
   
   def connect
@@ -311,37 +161,7 @@ class UsersController < ApplicationController
          }
     end    
   end
-  
-  def themen
 
-    respond_to do |format|
-      format.js {
-         if (session[:user_params][:seen_themen] == 'more' && session[:user_params][:seen_at] == 'at')
-            render(:update) do |page|
-                page.show 'message'
-                page.show 'view_field'
-                #page.show 'end_of_tweets'
-           end;
-         elsif (session[:user_params][:seen_themen] == 'more' && session[:user_params][:seen_at] == 'no_at')
-           render(:update) do |page|
-                page.show 'message2'
-                page.show 'message'
-                #page.show 'end_of_tweets'
-           end;
-        elsif (session[:user_params][:seen_themen] == 'one' && session[:user_params][:seen_at] == 'no_at')
-           render(:update) do |page|
-                page.show 'message'
-                #page.show 'end_of_tweets'
-           end;
-         elsif (session[:user_params][:seen_themen] == 'one' && session[:user_params][:seen_at] == 'at')
-           render(:update) do |page|
-                page.show 'view_field'
-                #page.show 'end_of_tweets'
-           end;
-          end
-         }
-    end    
-  end
   
   def compose_tweet
       respond_to do |format|
@@ -350,11 +170,9 @@ class UsersController < ApplicationController
                 page.show 'compose_tweet_seite'
               end
             }
-    end
-    
+    end  
   end
   
-
   
   def suche
     respond_to do |format|
@@ -393,9 +211,6 @@ class UsersController < ApplicationController
       flash[:notice] = "User saved."
       render 'confirm_step'
     end
-  
-    
   end
-
   
 end

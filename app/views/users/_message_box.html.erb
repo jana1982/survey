@@ -1,41 +1,17 @@
-
-<script type="text/javascript">
-Event.observe(window, 'load', function() {
-document.observe('dom:loaded', function() {
-    if ($('seen_themen') == 'more' && $('seen_at') == 'at')
-            {document.getElementById('message').style.display='block';
-            document.getElementById('view_field').style.display='block'}
-    else if($('seen_themen') == 'more' && $('seen_at') == 'no_at')
-            {document.getElementById('message2').style.display='block';
-             document.getElementById('message').style.display='block'}
-    else if($('seen_themen') == 'one' && $('seen_at') == 'no_at')
-            {document.getElementById('message').style.display='block'}
-    else if($('seen_themen') == 'one' && $('seen_at') == 'at')
-            {document.getElementById('view_field').style.display='block'};
- });
-});
-</script>
-
-<div id="message" style="display: none;">
-  <%= render "message", :f => f  %>
+<% if @user.seen_message_1 != "" %>
+<div id="tweet1">
+  <% @number = 1 %>
+  <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
+  <% @retweet_status = "with_retweet" if @user.seen_retweet_message1 %>
+  <%= render :partial => "expand_page",  :locals => {:f => f, :retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status} %>
 </div>
+<% end %>
 
-<div id="expand_seite" style="display: none;">
-  <%= render "expand_seite", :f => f  %>
+<% if @user.seen_message_2 != "" %>
+<div id="tweet2">
+  <% @number = 2 %>
+  <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_2, :number => 2} %>
+  <% @retweet_status = "_with_retweet" if @user.seen_retweet_message2 %>
+  <%= render :partial => "expand_page", :locals => {:f => f, :retweet => @user.seen_retweet_message2, :number => @number, :retweet_status => @retweet_status} %>
 </div>
-
-<div id="expand_seite2" style="display: none;">
-  <%= render "expand_seite2", :f => f  %>
-</div>
-
-<div id="view_field" style="display: none;">
-  <%= render "view_field", :f => f  %>
-</div>
-
-<div id="expand_seite_at" style="display: none;">
-    <%= render "expand_seite_at", :f => f  %>
-</div>
-
-<div id="expand_seite2_at" style="display: none;">
-    <%= render "expand_seite2_at", :f => f  %>
-</div>
+<% end %>
