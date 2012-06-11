@@ -6,7 +6,7 @@ else
 end
 %>
 
-<div id="actions<%= @number %>" class="actions">
+<div id="actions<%= @number %>" class="actions" >
   <%if @message_commands %>
     <div id="expand<%= @number %>" class="expand"
          onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "open_time"}) %>"
@@ -28,34 +28,70 @@ end
         %>
     </div>
   <% end %>
+    
+  <%if @message_commands %>  
+    <div id="reply<%=expand %><%= @number %>" class="reply"
+        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time"}) %>"
+        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time"}) %>"          
+    >
+      <%= link_to_remote image_tag('../images/reply_einzeln_g.png',
+           :mouseover => '../images/reply_unterstrichen_g.png'),
+            :url => {:action => "reply", :id => @user.id,   :number => @number}
+      %>
+    </div>
+  <% else %>
+        <div id="reply<%=expand %><%= @number %>" class="reply"
+        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time"}) %>"
+        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time"}) %>"          
+    >
+      <%= link_to_remote image_tag('../images/reply_einzeln.png',
+           :mouseover => '../images/reply_unterstrichen.png'),
+            :url => {:action => "reply", :id => @user.id,   :number => @number}
+      %>
+    </div>
+  <% end %>
   
-  <div id="reply<%=expand %><%= @number %>" class="reply"
-      onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time"}) %>"
-      onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time"}) %>"          
-  >
-    <%= link_to_remote image_tag('../images/reply_einzeln_g.png',
-         :mouseover => '../images/reply_unterstrichen_g.png'),
-          :url => {:action => "reply", :id => @user.id,   :number => @number}
-    %>
-  </div>
-
-  <div id = "retweet<%=expand %><%= @number %>" class="retweet"     
-      onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "retweet_time"}) %>"
-      onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "retweet_time"}) %>"
-  >
-    <%= link_to_remote image_tag('../images/retweet_einzeln_g.png',
-         :mouseover => '../images/retweet_unterstrichen_g.png'),
-         :url => {:action => "retweet", :id => @user.id,   :number => @number}
-    %>
-  </div>
+  <%if @message_commands %> 
+    <div id = "retweet<%=expand %><%= @number %>" class="retweet"     
+        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "retweet_time"}) %>"
+        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "retweet_time"}) %>"
+    >
+      <%= link_to_remote image_tag('../images/retweet_einzeln_g.png',
+           :mouseover => '../images/retweet_unterstrichen_g.png'),
+           :url => {:action => "retweet", :id => @user.id,   :number => @number}
+      %>
+    </div>
+  <% else %>
+        <div id = "retweet<%=expand %><%= @number %>" class="retweet"     
+        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "retweet_time"}) %>"
+        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "retweet_time"}) %>"
+    >
+      <%= link_to_remote image_tag('../images/retweet_einzeln.png',
+           :mouseover => '../images/retweet_unterstrichen.png'),
+           :url => {:action => "retweet", :id => @user.id,   :number => @number}
+      %>
+    </div>
+  <% end %>
   
-  <div id = "favorite<%=expand %><%= @number %>" class="favorite"
-      onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "favorite_time"}) %>"
-      onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "favorite_time"}) %>"
-  >
-    <%= link_to_remote image_tag('../images/favorite_einzeln_g.png',
-        :mouseover => '../images/favorite_unterstrichen_g.png'),
-        :url => {:action => "favorite", :id => @user.id,  :number => @number}
-    %>
-  </div>
+  <%if @message_commands %>  
+    <div id = "favorite<%=expand %><%= @number %>" class="favorite"
+        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "favorite_time"}) %>"
+        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "favorite_time"}) %>"
+    >
+      <%= link_to_remote image_tag('../images/favorite_einzeln_g.png',
+          :mouseover => '../images/favorite_unterstrichen_g.png'),
+          :url => {:action => "favorite", :id => @user.id,  :number => @number}
+      %>
+    </div>
+  <% else %>
+      <div id = "favorite<%=expand %><%= @number %>" class="favorite"
+        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "favorite_time"}) %>"
+        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "favorite_time"}) %>"
+    >
+      <%= link_to_remote image_tag('../images/favorite_einzeln.png',
+          :mouseover => '../images/favorite_unterstrichen.png'),
+          :url => {:action => "favorite", :id => @user.id,  :number => @number}
+      %>
+    </div>
+  <% end %>     
 </div>

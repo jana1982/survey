@@ -5,12 +5,13 @@ class User < ActiveRecord::Base
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
 			:public, :leader_text, :reply_text, :tweet_text, :search,
 			:retweet_time, :favorite_time, :message_hover_time, :reply_time, :new_tweet_time, :retweet_importance,
-			:tweet_text_n, 
+			:tweet_text_n,
+			:seen_person,
 			:seen_message_1,:seen_message_2,
 			:seen_multiple_messages,:seen_at,
 			:seen_retweet_message1, :seen_retweet_message2,
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12, :ol_list, 
-			:seen_person, :open_time, :search_time,  :experiment_time, :connect_clicked,
+			:open_time, :search_time,  :experiment_time, :connect_clicked,
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
 			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked
 			
@@ -59,9 +60,7 @@ class User < ActiveRecord::Base
   end
   
   def generate_random_person       
-    if self.leader_text == nil
-      self.leader_text = ""
-    end
+
     person = [self.leader_text, 'Friend']
     person[rand(person.length)]
   end
@@ -97,7 +96,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[demographic selection opinionleader test twitter target]
+      %w[selection opinionleader test twitter target]
       #introduction demographic  interest 
   end
   
