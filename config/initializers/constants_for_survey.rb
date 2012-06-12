@@ -1,3 +1,4 @@
+ 
  COUNTRIES = [["<choose option>", 0], ["Afghanistan", 1], ["Albania", 2], ["Algeria", 3], ["Andorra", 4], ["Angola", 5], ["Antigua Barbuda", 6], ["Argentina", 7], ["Armenia", 8], ["Australia", 9], ["Austria", 10], ["Azerbaijan", 11], ["The Bahamas", 12], ["Bahrain", 13], ["Bangladesh", 14], ["Barbados", 15], ["Belarus", 16], ["Belgium", 17], ["Belize", 18], ["Benin", 19], ["Bhutan", 20], ["Bolivia", 21], ["Bosnia Herzegovina", 22], ["Botswana", 23], ["Brazil", 24], ["Brunei", 25], ["Bulgaria", 26], ["Burkina Faso", 27], ["Burundi", 28], ["Cambodia", 29], ["Cameroon", 30], ["Canada", 31], ["Cape Verde", 32], ["Central African Republic", 33], ["Chad", 34], ["Chile", 35], ["China", 36], ["Colombia", 37], ["Comoros", 38], ["Republic of the Congo ", 39], ["Democratic Republic of the Congo", 40], ["Costa Rica", 41], ["Cote d\302\264Ivoire", 42], ["Croatia", 43], ["Cuba", 44], ["Cyprus", 45], ["Czech Republic", 46], ["Denmark", 47], ["Djibouti", 48], ["Dominica", 49], ["Dominican Republic", 50], ["East Timor", 51], ["Ecuador", 52], ["Egypt", 53], ["El Salvador", 54], ["Equatorial Guinea", 55], ["Eritrea", 56], ["Estonia", 57], ["Ethiopia", 58], ["Fiji", 59], ["Finland", 60], ["France", 61], ["Gabon", 62], ["The Gambia", 63], ["Georgia", 64], ["Germany", 65], ["Ghana", 66], ["Greece", 67], ["Grenada", 68], ["Guatemala", 69], ["Guinea", 70], ["Guinea Bissau", 71], ["Guyana", 72], ["Haiti", 73], ["Honduras", 74], ["Hungary", 75], ["Iceland", 76], ["India", 77], ["Indonesia", 78], ["Iran", 79], ["Iraq", 80], ["Ireland", 81], ["Israel", 82], ["Italy", 83], ["Jamaica", 84], ["Japan", 85], ["Jordan", 86], ["Kazakhstan", 87], ["Kenya", 88], ["Kiribati", 89], ["North Korea", 90], ["South Korea", 91], ["Kosovo", 92], ["Kuwait", 93], ["Kyrgyzstan", 94], ["Laos", 95], ["Latvia", 96], ["Lebanon", 97], ["Lesotho", 98], ["Liberia", 99], ["Libya", 100], ["Liechtenstein", 101], ["Lithuania", 102], ["Luxembourg", 103], ["Macedonia", 104], ["Madagascar", 105], ["Malawi", 106], ["Malaysia", 107], ["Maldives", 108], ["Mali", 109], ["Malta", 110], ["Marshall Islands", 111], ["Mauritania", 112], ["Mauritius", 113], ["Mexico", 114], ["Micronesia", 115], ["Moldova", 116], ["Monaco", 117], ["Mongolia", 118], ["Montenegro", 119], ["Morocco", 120], ["Mozambique", 121], ["Myanmar", 122], ["Namibia", 123], ["Nauru", 124], ["Nepal", 125], ["Netherlands", 126], ["New Zealand", 127], ["Nicaragua", 128], ["Niger", 129], ["Nigeria", 130], ["Norway", 131], ["Oman", 132], ["Pakistan", 133], ["Palau", 134], ["Panama", 135], ["Papua New Guinea", 136], ["Paraguay", 137], ["Peru", 138], ["Philippines", 139], ["Poland", 140], ["Portugal", 141], ["Qatar", 142], ["Romania", 143], ["Russia", 144], ["Rwanda", 145], ["Saint Kitts Nevis", 146], ["Saint Lucia", 147], ["Saint Vincent the Grenadines", 148], ["Samoa", 149], ["San Marino", 150], ["Sao Tome Principe", 151], ["Saudi Arabia", 152], ["Senegal", 153], ["Serbia", 154], ["Seychelles", 155], ["Sierra Leone", 156], ["Singapore", 157], ["Slovakia", 158], ["Slovenia", 159], ["Solomon Islands", 160], ["Somalia", 161], ["South Africa", 162], ["South Sudan", 163], ["Spain", 164], ["Sri Lanka", 165], ["Sudan", 166], ["Suriname", 167], ["Swaziland", 168], ["Sweden", 169], ["Switzerland", 170], ["Syria", 171], ["Taiwan", 172], ["Tajikistan", 173], ["Tanzania", 174], ["Thailand", 175], ["Togo", 176], ["Tonga", 177], ["Trinidad Tobago", 178], ["Tunisia", 179], ["Turkey", 180], ["Turkmenistan", 181], ["Tuvalu", 182], ["Uganda", 183], ["Ukraine", 184], ["United Arab Emirates", 185], ["United Kingdom", 186], ["United States of America", 187], ["Uruguay", 188], ["Uzbekistan", 189], ["Vanuatu", 190], ["Vatican City", 191], ["Venezuela", 192], ["Vietnam", 193], ["Yemen", 194], ["Zambia", 195], ["Zimbabwe", 196]]
  
  
@@ -9,3 +10,89 @@
  
  EDUCATIONS = [['<choose option>', 0], ['Grammar school', 1], ['High school or eqivalent', 2], ['Vocational/technical school', 3], ['College', 4], ['Bachelor`s degree', 5], ['Master`s degree', 6], ['Doctoral degree', 7], ['Professional degree (MC, JD, ect.)', 8], ['Other', 9]]
  
+ 
+ @@retweets_message1 = false
+ @@retweets_message2 = false
+ 
+ rt_1 = 0
+ no_rt1 = 0
+ rt_2 = 0
+ no_rt2 = 0
+ 
+ n = []
+ r = []
+ def permute(n,r)
+  (0..1).each do |t|
+    length = n.length
+    n[length] << 0
+    n[length] << 1    
+    if n.length  6    
+    permute(n,r)    
+  end
+ end
+ permute(n,r)
+ 
+ n = []
+ def permute(n)
+  n.each do |t|
+    a=[0,1]
+    n = a.permutation.to_a
+
+    if n.length  6    
+    permute(n)    
+  end
+  end
+ permute(n)
+ 
+  (0..1).each do |p1|
+   (0..1).each do |p2|
+     
+   end
+  end
+  
+  out = []
+  (0..1).each do |a|
+    (0..1).each do |b|
+      (0..1).each do |c|
+        (0..1).each do |d|
+          (0..1).each do |e|
+            (0..3).each do |f|
+              out << [a,b,c,d,e,f]
+            end
+          end
+        end
+      end
+    end
+  end
+  
+ seen_no_retweets = 0
+ 
+ 800.times do
+   u = User.new
+   u.setup
+   if u.seen_retweet_message1
+    rt_1 += 1
+   else
+     no_rt1 += 1
+   end
+   
+   if u.seen_retweet_message2
+     rt_2 += 1
+   else
+     no_rt2 += 1
+   end   
+ end
+ puts "rt #{rt_1}, no_rt1: #{no_rt1}, rt2: #{rt_2}, no_rt2:#{no_rt2}"
+
+batch = 0
+while true
+  if b == [] or b == nil
+      puts "Generation of new batch"
+      batch += 1
+      a = [1,2,3,4]
+      b = a.permutation.to_a
+  end
+  show = b[rand(b.length)]
+  puts "Batch #{batch} The user sees #{show}"
+  b.delete_at(b.index(show))  
+end

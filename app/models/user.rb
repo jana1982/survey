@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   
   def setup
     if first_step?
-      username = "plotti"
+      self.username = "plotti"
       self.seen_retweet_message1 = generate_random_retweet
       self.seen_retweet_message2 = generate_random_retweet
       self.seen_multiple_messages = generate_random_themes
@@ -62,12 +62,13 @@ class User < ActiveRecord::Base
   def generate_random_person       
 
     person = [self.leader_text, 'Friend']
-    person[rand(person.length)]
+    
   end
+
   
-  def generate_random_retweet  
-    retweet = [true, false]
-    retweet[rand(retweet.length)]
+  def generate_random_retweet
+    rt = [true, false]
+    rt[rand(rt.length)]
   end
   
   def generate_random_at     

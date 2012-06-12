@@ -115,7 +115,7 @@ class UsersController < ApplicationController
                 page.hide 'compose_tweet_seite';
                 page.hide "expand_page1" if number == 1
                 page.hide "expand_page2" if number == 2
-                page.hide 'connect_seite';
+                page.hide 'connect_page';
               end
             }
     end
@@ -147,16 +147,8 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:connect_clicked => 1})
     respond_to do |format|
       format.js {
-         if session[:user_params][:seen_at] == 'at'
             render(:update) do |page|
-                page.show 'connect_seite'
-                page.show 'view_field'
-            end;
-        else
-           render(:update) do |page|
-                  page.show 'connect_seite'
-                  page.show 'view_no_field'
-           end; 
+            page.show 'connect_page'
           end
          }
     end    

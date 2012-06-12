@@ -8,9 +8,10 @@ end
 
 <div id="actions<%= @number %>" class="actions" >
   <%if @message_commands %>
-    <div id="expand<%= @number %>" class="expand"
+    <div id="expand<%= @number %>" class="expand" 
          onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "open_time"}) %>"
          onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "open_time"}) %>"
+         
     >
       <%= link_to_remote image_tag('../images/open_einzeln_g.png',
           :mouseover => '../images/open_unterstrichen_g.png'),
@@ -30,7 +31,7 @@ end
   <% end %>
     
   <%if @message_commands %>  
-    <div id="reply<%=expand %><%= @number %>" class="reply"
+    <div id="reply<%=expand %><%= @number %>" class="reply" 
         onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time"}) %>"
         onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time"}) %>"          
     >

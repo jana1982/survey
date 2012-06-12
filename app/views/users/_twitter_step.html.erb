@@ -27,15 +27,16 @@
       <%= render "message_box", :f => f  %>
       <!--<%= render "end_of_tweets"  %>-->
       <!--Layer über der Twitterseite-->      
-      <div id="connect_seite" style="display: none;">
-        <%= render "connect_seite", :f => f  %> 
-      </div>
+
     </div>
-    <!--Obere Leiste/ immer sichtbare Teile-->
+
     <div id="right_twitter"></div>
   </div>
   
   <!--Gesamter Twitter Screen-->
+  <div id="connect_page" style="display: none;">
+        <%= render "connect_page", :f => f  %> 
+  </div>
   <div id="tweet_sent" style="display: none;">Your Tweet has been sent!</div>
   <div id="new_tweet_seite" style="display: none;">
     <%= render "new_tweet_seite", :f => f  %>
