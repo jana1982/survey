@@ -13,60 +13,42 @@
  
  @@retweets_message1 = false
  @@retweets_message2 = false
- 
- rt_1 = 0
- no_rt1 = 0
- rt_2 = 0
- no_rt2 = 0
- 
- n = []
- r = []
- def permute(n,r)
-  (0..1).each do |t|
-    length = n.length
-    n[length] << 0
-    n[length] << 1    
-    if n.length  6    
-    permute(n,r)    
-  end
- end
- permute(n,r)
- 
- n = []
- def permute(n)
-  n.each do |t|
-    a=[0,1]
-    n = a.permutation.to_a
-
-    if n.length  6    
-    permute(n)    
-  end
-  end
- permute(n)
- 
-  (0..1).each do |p1|
-   (0..1).each do |p2|
-     
-   end
-  end
   
-  out = []
-  (0..1).each do |a|
-    (0..1).each do |b|
-      (0..1).each do |c|
-        (0..1).each do |d|
-          (0..1).each do |e|
-            (0..3).each do |f|
-              out << [a,b,c,d,e,f]
+  def generate_batch
+    out = []
+    (0..1).each do |a|
+      (0..1).each do |b|
+        (0..1).each do |c|
+          (0..1).each do |d|
+            (0..1).each do |e|
+              (0..3).each do |f|
+                out << [a,b,c,d,e,f]
+              end
             end
           end
         end
       end
     end
+    return  out 
   end
   
- seen_no_retweets = 0
- 
+  batch = 0
+  while true
+    if b == [] or b == nil
+        puts "Generation of new batch"
+        batch += 1   
+        b = generate_batch
+    end
+    show = b[rand(b.length)]
+    puts "Batch #{batch} The user sees #{show}"
+    b.delete_at(b.index(show))  
+  end
+
+ rt_1 = 0
+ no_rt1 = 0
+ rt_2 = 0
+ no_rt2 = 0
+
  800.times do
    u = User.new
    u.setup
@@ -84,15 +66,4 @@
  end
  puts "rt #{rt_1}, no_rt1: #{no_rt1}, rt2: #{rt_2}, no_rt2:#{no_rt2}"
 
-batch = 0
-while true
-  if b == [] or b == nil
-      puts "Generation of new batch"
-      batch += 1
-      a = [1,2,3,4]
-      b = a.permutation.to_a
-  end
-  show = b[rand(b.length)]
-  puts "Batch #{batch} The user sees #{show}"
-  b.delete_at(b.index(show))  
-end
+
