@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+  
+
 
   def new
     session[:user_params] ||= {}
@@ -175,6 +177,45 @@ class UsersController < ApplicationController
             }
       end
   end
+  
+  #def generate_batch
+  #  out = []
+  #  (0..1).each do |a|
+  #    (0..1).each do |b|
+  #      (0..1).each do |c|
+  #        (0..1).each do |d|
+  #          (0..1).each do |e|
+  #            (0..3).each do |f|
+  #              out << [a,b,c,d,e,f]
+  #            end
+  #          end
+  #        end
+  #      end
+  #    end
+  #  end
+  #  return  out 
+  #end
+  #
+  #def last_user
+  #  @last_user = User.last
+  #end
+  #
+  #def batch
+  #   batch = 0
+  #  while true
+  #      if b == [] or b == nil
+  #        puts "Generation of new batch"
+  #        batch += 1   
+  #        b = generate_batch
+  #      end
+  #    show = b[rand(b.length)]
+  #    puts "Batch #{batch} The user sees #{show}"
+  #    b.delete_at(b.index(show))  
+  #  end
+  #    if e
+  #    end
+  #end
+ 
 
   
   def create

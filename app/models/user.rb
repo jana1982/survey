@@ -13,22 +13,37 @@ class User < ActiveRecord::Base
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12, :ol_list, 
 			:open_time, :search_time,  :experiment_time, :connect_clicked,
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
-			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked
-			
+			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked,
+			:results
   attr_writer :current_step
   attr_accessor :username
   
   def setup
     if first_step?
       self.username = "plotti"
+      #self.seen_situation = show
       self.seen_retweet_message1 = generate_random_retweet
       self.seen_retweet_message2 = generate_random_retweet
       self.seen_multiple_messages = generate_random_themes
-      self.seen_at = generate_random_at
+      self.seen_at = true
       self.seen_person = generate_random_person
       generate_messages
     end
   end
+  
+  #def batch
+  #   batch = 0
+  #  while true
+  #      if b == [] or b == nil
+  #        puts "Generation of new batch"
+  #        batch += 1   
+  #        b = generate_batch
+  #      end
+  #    show = b[rand(b.length)]
+  #    puts "Batch #{batch} The user sees #{show}"
+  #    b.delete_at(b.index(show))  
+  #  end
+  #end
   
   def to_hash
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
@@ -80,6 +95,8 @@ class User < ActiveRecord::Base
     themen = ['one', 'more']
     themen[rand(themen.length)]
   end
+  
+
   
   def current_step
       @current_step || steps.first

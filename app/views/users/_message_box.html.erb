@@ -5,6 +5,7 @@
   <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
 
   <%= render :partial => "expand_page",  :locals => {:f => f, :retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status} %>
+
 </div>
 <% end %>
 
@@ -17,3 +18,4 @@
   <%= render :partial => "expand_page", :locals => {:f => f, :retweet => @user.seen_retweet_message2, :number => @number, :retweet_status => @retweet_status} %>
 </div>
 <% end %>
+<%= render :partial => "end_of_tweets" %>

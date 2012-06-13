@@ -43,5 +43,26 @@ class UserTest < ActiveSupport::TestCase
     assert !user.seen_message_2.include?("@")
   end
   
+ rt_1 = 0
+ no_rt1 = 0
+ rt_2 = 0
+ no_rt2 = 0
+
+ 800.times do
+   u = User.new
+   u.setup
+   if u.seen_retweet_message1
+    rt_1 += 1
+   else
+     no_rt1 += 1
+   end
+   
+   if u.seen_retweet_message2
+     rt_2 += 1
+   else
+     no_rt2 += 1
+   end   
+ end
+ puts "rt #{rt_1}, no_rt1: #{no_rt1}, rt2: #{rt_2}, no_rt2:#{no_rt2}"
   
 end

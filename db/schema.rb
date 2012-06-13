@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610160932) do
+ActiveRecord::Schema.define(:version => 20120613114001) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20120610160932) do
     t.integer  "favorite_1_clicked"
     t.integer  "retweet_1_clicked"
     t.integer  "expand_1_clicked"
+    t.integer  "results"
   end
 
 end

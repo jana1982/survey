@@ -11,59 +11,8 @@
  EDUCATIONS = [['<choose option>', 0], ['Grammar school', 1], ['High school or eqivalent', 2], ['Vocational/technical school', 3], ['College', 4], ['Bachelor`s degree', 5], ['Master`s degree', 6], ['Doctoral degree', 7], ['Professional degree (MC, JD, ect.)', 8], ['Other', 9]]
  
  
- @@retweets_message1 = false
- @@retweets_message2 = false
   
-  def generate_batch
-    out = []
-    (0..1).each do |a|
-      (0..1).each do |b|
-        (0..1).each do |c|
-          (0..1).each do |d|
-            (0..1).each do |e|
-              (0..3).each do |f|
-                out << [a,b,c,d,e,f]
-              end
-            end
-          end
-        end
-      end
-    end
-    return  out 
-  end
-  
-  batch = 0
-  while true
-    if b == [] or b == nil
-        puts "Generation of new batch"
-        batch += 1   
-        b = generate_batch
-    end
-    show = b[rand(b.length)]
-    puts "Batch #{batch} The user sees #{show}"
-    b.delete_at(b.index(show))  
-  end
 
- rt_1 = 0
- no_rt1 = 0
- rt_2 = 0
- no_rt2 = 0
 
- 800.times do
-   u = User.new
-   u.setup
-   if u.seen_retweet_message1
-    rt_1 += 1
-   else
-     no_rt1 += 1
-   end
-   
-   if u.seen_retweet_message2
-     rt_2 += 1
-   else
-     no_rt2 += 1
-   end   
- end
- puts "rt #{rt_1}, no_rt1: #{no_rt1}, rt2: #{rt_2}, no_rt2:#{no_rt2}"
 
 
