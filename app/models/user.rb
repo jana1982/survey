@@ -24,8 +24,8 @@ class User < ActiveRecord::Base
       #self.seen_situation = show
       self.seen_retweet_message1 = generate_random_retweet
       self.seen_retweet_message2 = generate_random_retweet
-      self.seen_multiple_messages = generate_random_themes
-      self.seen_at = true
+      self.seen_multiple_messages = true
+      self.seen_at = generate_random_at
       self.seen_person = generate_random_person
       generate_messages
     end

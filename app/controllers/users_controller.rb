@@ -33,6 +33,7 @@ class UsersController < ApplicationController
     number = params[:number].to_i
     session[:user_params].deep_merge!({:reply_1_clicked => 1}) if number == 1
     session[:user_params].deep_merge!({:reply_2_clicked => 1}) if number == 2
+    session[:user_params].deep_merge!({:reply_1_clicked => 1}) if number == 3
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
   def retweet
     number = params[:number].to_i
     session[:user_params].deep_merge!({:retweet_1_clicked => 1}) if number == 1
+    session[:user_params].deep_merge!({:retweet_1_clicked => 1}) if number == 3
     session[:user_params].deep_merge!({:retweet_2_clicked => 1}) if number == 2
     respond_to do |format|
       format.js {
@@ -59,6 +61,7 @@ class UsersController < ApplicationController
   def favorite
     number = params[:number].to_i
     session[:user_params].deep_merge!({:favorite_1_clicked => 1}) if number == 1
+    session[:user_params].deep_merge!({:favorite_1_clicked => 1}) if number == 3
     session[:user_params].deep_merge!({:favorite_2_clicked => 1}) if number == 2
     respond_to do |format|
       format.js {
@@ -76,6 +79,7 @@ class UsersController < ApplicationController
     number = params[:number].to_i
     session[:user_params].deep_merge!({:expand_1_clicked => 1}) if number == 1
     session[:user_params].deep_merge!({:expand_2_clicked => 1}) if number == 2
+    session[:user_params].deep_merge!({:expand_1_clicked => 1}) if number == 3
     respond_to do |format|
       format.js {
             render(:update) do |page|
@@ -117,6 +121,7 @@ class UsersController < ApplicationController
                 page.hide 'compose_tweet_seite';
                 page.hide "expand_page1" if number == 1
                 page.hide "expand_page2" if number == 2
+                page.hide "expand_page3" if number == 3
                 page.hide 'connect_page';
               end
             }

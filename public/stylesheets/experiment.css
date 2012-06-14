@@ -42,6 +42,14 @@ body {
   text-align: left;
 }
 
+#tweet3{
+  position: relative;
+  top:-150px;
+  left: 399px;
+  height: 50px;
+  text-align: left;
+}
+
 #container{ 
 }
 
@@ -233,21 +241,22 @@ textarea#user_reply_text{
   background-color: white;
   border-style: hidden;
   border-radius: 6px;
-  border-bottom-right-radius:29px;
+
   -webkit-rtl-ordering: logical;
   -webkit-user-select: text;
   -webkit-box-orient: vertical;
   resize: auto;
   cursor: auto;
-  padding: 2px;
+
   white-space: pre-wrap;
   word-wrap: break-word;
+  width: 462px;
 
 }
 
 #tweeter_name_groß{
   position:relative;
-  left:-301px;
+  left:92px;
   top:17px;
   font-size: 1.3em;
   font-weight: bold;
@@ -255,7 +264,7 @@ textarea#user_reply_text{
 
 #close{
   position:relative;
-  left:481px;
+  left:472px;
   top:-7px;
 }
 
@@ -297,18 +306,18 @@ textarea#user_tweet_text_n{
   background-color: white;
   border-style: hidden;
   border-radius: 6px;
-  border-bottom-right-radius:29px;
+
   -webkit-rtl-ordering: logical;
   -webkit-user-select: text;
   -webkit-box-orient: vertical;
   resize: auto;
   cursor: auto;
-  padding: 2px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  position:relative;
-  left:-180px;
-  top:35px;
+  position:absolute;
+  left:17px;
+  top:57px;
+  width: 463px;
 }
 
 textarea#user_tweet_text{
@@ -331,14 +340,14 @@ textarea#user_tweet_text{
 
 #close_tweet{
   position:relative;
-  left:47px;
+  left:467px;
   top:12px;
 }
 
 #tweet_button_change{
   position:relative;
-  left:14px;
-  top:41px;
+  left:396px;
+  top:110px;
 }
 #reply_button_change{
   float: right;
@@ -455,7 +464,7 @@ textarea#user_search{
   float: left; 
   position:relative;
   left:390px;
-  top:50px;
+  top:119px;
 }
 
 #charcount_c{
@@ -603,10 +612,15 @@ textarea#user_search{
   left:405px;
   top:-90px;
 }
-
 #ende{
   position:relative;
   left:160px;
   top: 97px;
+  
+}
+#ende2{
+  position:relative;
+  left:-73px;
+  top: -7px;
   
 }

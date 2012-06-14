@@ -35,15 +35,15 @@
       <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
 </div>
 <% if @user.seen_at %>
-<div id="tweet1">
-  <% @number = 1 %>
+<div id="tweet3">
+  <% @number = 3 %>
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
   <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
 
   <%= render :partial => "expand_page",  :locals => {:f => f, :retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status} %>
-
+ <div id="ende2"> <%= render :partial => "end_of_tweets" %></div>
 </div>
-    <div id="ende"> <%= render :partial => "end_of_tweets" %></div>
+   
   <% else %>
     <%= render "view_no_field", :f => f  %>
   <% end %>
