@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  belongs_to :seed
   attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
@@ -14,14 +15,20 @@ class User < ActiveRecord::Base
 			:open_time, :search_time,  :experiment_time, :connect_clicked,
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
 			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked,
-			:results
+			:results, :situation,
+			:account_name, :number_followers, :number_followeees, :number_messages,
+			:avg_tweet_number, :avg_at_replies, :avg_read_tweets, :avg_stories, :avg_trend, :avg_retweet, :avg_follow,
+			:avg_login, :avg_search_keywords, :avg_search_accounts, :avg_activities_friends, :avg_who_to_follow,
+			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists,
+			:avg_delete_accounts_lists, :avg_unfollow_account, :avg_favorite_tweets,
+			:surf_twitter_week, :surf_twitter_weekend, :surf_twitter_when
+  
   attr_writer :current_step
   attr_accessor :username
   
   def setup
     if first_step?
-      self.username = "plotti"
-      #self.seen_situation = show
+      #self.situation = show
       self.seen_retweet_message1 = generate_random_retweet
       self.seen_retweet_message2 = generate_random_retweet
       self.seen_multiple_messages = true
@@ -31,19 +38,6 @@ class User < ActiveRecord::Base
     end
   end
   
-  #def batch
-  #   batch = 0
-  #  while true
-  #      if b == [] or b == nil
-  #        puts "Generation of new batch"
-  #        batch += 1   
-  #        b = generate_batch
-  #      end
-  #    show = b[rand(b.length)]
-  #    puts "Batch #{batch} The user sees #{show}"
-  #    b.delete_at(b.index(show))  
-  #  end
-  #end
   
   def to_hash
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
@@ -60,10 +54,10 @@ class User < ActiveRecord::Base
     message1 = messages1[rand(messages1.length)]
     message2 = messages2[messages1.index(message1)]
     if !self.seen_multiple_messages && self.seen_at
-      self.seen_message_1 = "@#{self.username} " + message1
+      self.seen_message_1 = "@#{self.account_name} " + message1
       self.seen_message_2 = ""
     elsif self.seen_multiple_messages && self.seen_at
-      self.seen_message_1 = "@#{self.username} " + message1
+      self.seen_message_1 = "@#{self.account_name} " + message1
       self.seen_message_2  = message1
     elsif self.seen_multiple_messages && !self.seen_at
       self.seen_message_1 = message1
@@ -114,8 +108,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[selection opinionleader test twitter target]
-      #introduction demographic  interest 
+      %w[selection internet opinionleader test twitter target]
+      #introduction demographic interest   
   end
   
   def first_step?

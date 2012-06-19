@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613114001) do
+ActiveRecord::Schema.define(:version => 20120618122555) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -18,12 +18,19 @@ ActiveRecord::Schema.define(:version => 20120613114001) do
     t.datetime "updated_at"
   end
 
+  create_table "seeds", :force => true do |t|
+    t.integer  "survey_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
-    t.integer  "bildung",                :limit => 255
+    t.integer  "bildung",                   :limit => 255
     t.integer  "alter"
     t.integer  "retweet_2_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",             :limit => 255
+    t.integer  "geschlecht",                :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -76,14 +83,14 @@ ActiveRecord::Schema.define(:version => 20120613114001) do
     t.string   "seen_person"
     t.float    "open_time"
     t.float    "search_time"
-    t.boolean  "seen_retweet_message1",  :limit => 255
+    t.boolean  "seen_retweet_message1",     :limit => 255
     t.integer  "expand_2_clicked"
     t.float    "experiment_time"
-    t.boolean  "seen_at",                :limit => 255
+    t.boolean  "seen_at",                   :limit => 255
     t.integer  "connect_clicked"
     t.integer  "favorite_at_clicked"
     t.integer  "retweet_at_clicked"
-    t.boolean  "seen_retweet_message2",  :limit => 255
+    t.boolean  "seen_retweet_message2",     :limit => 255
     t.float    "open_time_at"
     t.float    "reply_time_at"
     t.float    "retweet_time_at"
@@ -92,13 +99,41 @@ ActiveRecord::Schema.define(:version => 20120613114001) do
     t.integer  "open_clicked_at"
     t.string   "reply_text_at"
     t.integer  "reply_clicked_at"
-    t.boolean  "seen_multiple_messages", :limit => 255
+    t.boolean  "seen_multiple_messages",    :limit => 255
     t.string   "seen_message_2"
     t.integer  "reply_1_clicked"
     t.integer  "favorite_1_clicked"
     t.integer  "retweet_1_clicked"
     t.integer  "expand_1_clicked"
     t.integer  "results"
+    t.integer  "situation"
+    t.string   "account_name"
+    t.integer  "number_followers"
+    t.integer  "number_followeees"
+    t.integer  "number_messages"
+    t.integer  "avg_tweet_number"
+    t.integer  "avg_at_replies"
+    t.integer  "avg_read_tweets"
+    t.integer  "avg_stories"
+    t.integer  "avg_trend"
+    t.integer  "avg_retweet"
+    t.integer  "avg_follow"
+    t.integer  "avg_login"
+    t.integer  "avg_search_keywords"
+    t.integer  "avg_search_accounts"
+    t.integer  "avg_activities_friends"
+    t.integer  "avg_who_to_follow"
+    t.integer  "avg_browse_categories"
+    t.integer  "avg_find_friends"
+    t.integer  "avg_create_lists"
+    t.integer  "avg_add_accounts_lists"
+    t.integer  "avg_subscribe_lists"
+    t.integer  "avg_delete_accounts_lists"
+    t.integer  "avg_unfollow_account"
+    t.integer  "avg_favorite_tweets"
+    t.integer  "surf_twitter_week"
+    t.integer  "surf_twitter_weekend"
+    t.integer  "surf_twitter_when"
   end
 
 end

@@ -20,10 +20,227 @@
 </p>
 <hr>
 <p>
-  <h3>What is your gender?</h3>
-  <%= f.radio_button :geschlecht, 1 %>
-  <%= f.label :female, "female" %>
-  <%= f.radio_button :geschlecht, 0 %>
-  <%= f.label :male, "male" %>
+  <h3>What is your Twitter account name?</h3>
+   Please fill in your account name here:
+   <%= f.text_field :account_name %>
+</p>
+<hr>
+
+<p>
+  <h3>What are your Twitter account measures?</h3>
+  Please fill in your Follower number here:
+    <%= f.text_field :number_followers %>
+</p>
+
+    Please fill in your Followee number here:
+    <%= f.text_field :number_followeees %>
+</p>
+
+    Please fill in the amount of your messages here:
+    <%= f.text_field :number_messages %>
+</p>
+<hr>
+
+  <p>
+  <h3>How frequently do you do the following actions on Twitter?</h3>
+  <table width="100%">
+    <tr>
+      <td width="40%"></td>
+      <td width="10%">Several times a day</td>
+      <td width="10%">Daily</td>
+      <td width="10%">Several days a week</td>
+      <td width="10%">Weekly</td>
+      <td width="10%">Less than weekly</td>
+      <td width="10%">Never</td>
+    </tr>
+    <tr>
+      <td>Writing Tweets:</td>
+      <td><%= f.radio_button :avg_tweet_number, 1 %></td>
+      <td><%= f.radio_button :avg_tweet_number, 2 %></td>
+      <td><%= f.radio_button :avg_tweet_number, 3 %></td>
+      <td><%= f.radio_button :avg_tweet_number, 4 %></td>
+      <td><%= f.radio_button :avg_tweet_number, 5 %></td>
+      <td><%= f.radio_button :avg_tweet_number, 6 %></td>
+    </tr>
+    <tr>   
+      <td>Use @Replies to adress other Twitter accounts:</td>
+      <td><%= f.radio_button :avg_at_replies, 1 %></td>
+      <td><%= f.radio_button :avg_at_replies, 2 %></td>
+      <td><%= f.radio_button :avg_at_replies, 3 %></td>
+      <td><%= f.radio_button :avg_at_replies, 4 %></td>
+      <td><%= f.radio_button :avg_at_replies, 5 %></td>
+      <td><%= f.radio_button :avg_at_replies, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Read Tweets on your wall:</td>
+      <td><%= f.radio_button :avg_read_tweets, 1 %></td>
+      <td><%= f.radio_button :avg_read_tweets, 2 %></td>
+      <td><%= f.radio_button :avg_read_tweets, 3 %></td>
+      <td><%= f.radio_button :avg_read_tweets, 4 %></td>
+      <td><%= f.radio_button :avg_read_tweets, 5 %></td>
+      <td><%= f.radio_button :avg_read_tweets, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Discover stories:</td>
+      <td><%= f.radio_button :avg_stories, 1 %></td>
+      <td><%= f.radio_button :avg_stories, 2 %></td>
+      <td><%= f.radio_button :avg_stories, 3 %></td>
+      <td><%= f.radio_button :avg_stories, 4 %></td>
+      <td><%= f.radio_button :avg_stories, 5 %></td>
+      <td><%= f.radio_button :avg_stories, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Discover trends:</td>
+      <td><%= f.radio_button :avg_trend, 1 %></td>
+      <td><%= f.radio_button :avg_trend, 2 %></td>
+      <td><%= f.radio_button :avg_trend, 3 %></td>
+      <td><%= f.radio_button :avg_trend, 4 %></td>
+      <td><%= f.radio_button :avg_trend, 5 %></td>
+      <td><%= f.radio_button :avg_trend, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Retweet Tweet:</td>
+      <td><%= f.radio_button :avg_retweet, 1 %></td>
+      <td><%= f.radio_button :avg_retweet, 2 %></td>
+      <td><%= f.radio_button :avg_retweet, 3 %></td>
+      <td><%= f.radio_button :avg_retweet, 4 %></td>
+      <td><%= f.radio_button :avg_retweet, 5 %></td>
+      <td><%= f.radio_button :avg_retweet, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Following new accounts:</td>
+      <td><%= f.radio_button :avg_follow, 1 %></td>
+      <td><%= f.radio_button :avg_follow, 2 %></td>
+      <td><%= f.radio_button :avg_follow, 3 %></td>
+      <td><%= f.radio_button :avg_follow, 4 %></td>
+      <td><%= f.radio_button :avg_follow, 5 %></td>
+      <td><%= f.radio_button :avg_follow, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Login to Twitter:</td>
+      <td><%= f.radio_button :avg_login, 1 %></td>
+      <td><%= f.radio_button :avg_login, 2 %></td>
+      <td><%= f.radio_button :avg_login, 3 %></td>
+      <td><%= f.radio_button :avg_login, 4 %></td>
+      <td><%= f.radio_button :avg_login, 5 %></td>
+      <td><%= f.radio_button :avg_login, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Searching keywords:</td>
+      <td><%= f.radio_button :avg_search_keywords, 1 %></td>
+      <td><%= f.radio_button :avg_search_keywords, 2 %></td>
+      <td><%= f.radio_button :avg_search_keywords, 3 %></td>
+      <td><%= f.radio_button :avg_search_keywords, 4 %></td>
+      <td><%= f.radio_button :avg_search_keywords, 5 %></td>
+      <td><%= f.radio_button :avg_search_keywords, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Searching account names:</td>
+      <td><%= f.radio_button :avg_search_accounts, 1 %></td>
+      <td><%= f.radio_button :avg_search_accounts, 2 %></td>
+      <td><%= f.radio_button :avg_search_accounts, 3 %></td>
+      <td><%= f.radio_button :avg_search_accounts, 4 %></td>
+      <td><%= f.radio_button :avg_search_accounts, 5 %></td>
+      <td><%= f.radio_button :avg_search_accounts, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Looking for recent activities of friends:</td>
+      <td><%= f.radio_button :avg_activities_friends, 1 %></td>
+      <td><%= f.radio_button :avg_activities_friends, 2 %></td>
+      <td><%= f.radio_button :avg_activities_friends, 3 %></td>
+      <td><%= f.radio_button :avg_activities_friends, 4 %></td>
+      <td><%= f.radio_button :avg_activities_friends, 5 %></td>
+      <td><%= f.radio_button :avg_activities_friends, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Exploring the "Who to follow" category:</td>
+      <td><%= f.radio_button :avg_who_to_follow, 1 %></td>
+      <td><%= f.radio_button :avg_who_to_follow, 2 %></td>
+      <td><%= f.radio_button :avg_who_to_follow, 3 %></td>
+      <td><%= f.radio_button :avg_who_to_follow, 4 %></td>
+      <td><%= f.radio_button :avg_who_to_follow, 5 %></td>
+      <td><%= f.radio_button :avg_who_to_follow, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Browse thrue categories:</td>
+      <td><%= f.radio_button :avg_browse_categories, 1 %></td>
+      <td><%= f.radio_button :avg_browse_categories, 2 %></td>
+      <td><%= f.radio_button :avg_browse_categories, 3 %></td>
+      <td><%= f.radio_button :avg_browse_categories, 4 %></td>
+      <td><%= f.radio_button :avg_browse_categories, 5 %></td>
+      <td><%= f.radio_button :avg_browse_categories, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Find friends (e.g. search them in Twitter or invite them to Twitter):</td>
+      <td><%= f.radio_button :avg_find_friends, 1 %></td>
+      <td><%= f.radio_button :avg_find_friends, 2 %></td>
+      <td><%= f.radio_button :avg_find_friends, 3 %></td>
+      <td><%= f.radio_button :avg_find_friends, 4 %></td>
+      <td><%= f.radio_button :avg_find_friends, 5 %></td>
+      <td><%= f.radio_button :avg_find_friends, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Create lists:</td>
+      <td><%= f.radio_button :avg_create_lists, 1 %></td>
+      <td><%= f.radio_button :avg_create_lists, 2 %></td>
+      <td><%= f.radio_button :avg_create_lists, 3 %></td>
+      <td><%= f.radio_button :avg_create_lists, 4 %></td>
+      <td><%= f.radio_button :avg_create_lists, 5 %></td>
+      <td><%= f.radio_button :avg_create_lists, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Add accounts to lists:</td>
+      <td><%= f.radio_button :avg_add_accounts_lists, 1 %></td>
+      <td><%= f.radio_button :avg_add_accounts_lists, 2 %></td>
+      <td><%= f.radio_button :avg_add_accounts_lists, 3 %></td>
+      <td><%= f.radio_button :avg_add_accounts_lists, 4 %></td>
+      <td><%= f.radio_button :avg_add_accounts_lists, 5 %></td>
+      <td><%= f.radio_button :avg_add_accounts_lists, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Subscribe to lists:</td>
+      <td><%= f.radio_button :avg_subscribe_lists, 1 %></td>
+      <td><%= f.radio_button :avg_subscribe_lists, 2 %></td>
+      <td><%= f.radio_button :avg_subscribe_lists, 3 %></td>
+      <td><%= f.radio_button :avg_subscribe_lists, 4 %></td>
+      <td><%= f.radio_button :avg_subscribe_lists, 5 %></td>
+      <td><%= f.radio_button :avg_subscribe_lists, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Delete accounts from lists:</td>
+      <td><%= f.radio_button :avg_delete_accounts_lists, 1 %></td>
+      <td><%= f.radio_button :avg_delete_accounts_lists, 2 %></td>
+      <td><%= f.radio_button :avg_delete_accounts_lists, 3 %></td>
+      <td><%= f.radio_button :avg_delete_accounts_lists, 4 %></td>
+      <td><%= f.radio_button :avg_delete_accounts_lists, 5 %></td>
+      <td><%= f.radio_button :avg_delete_accounts_lists, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Unfollow accounts:</td>
+      <td><%= f.radio_button :avg_unfollow_account, 1 %></td>
+      <td><%= f.radio_button :avg_unfollow_account, 2 %></td>
+      <td><%= f.radio_button :avg_unfollow_account, 3 %></td>
+      <td><%= f.radio_button :avg_unfollow_account, 4 %></td>
+      <td><%= f.radio_button :avg_unfollow_account, 5 %></td>
+      <td><%= f.radio_button :avg_unfollow_account, 6 %></td>
+    </tr>
+    <tr> 
+      <td>Favorite Tweets:</td>
+      <td><%= f.radio_button :avg_favorite_tweets, 1 %></td>
+      <td><%= f.radio_button :avg_favorite_tweets, 2 %></td>
+      <td><%= f.radio_button :avg_favorite_tweets, 3 %></td>
+      <td><%= f.radio_button :avg_favorite_tweets, 4 %></td>
+      <td><%= f.radio_button :avg_favorite_tweets, 5 %></td>
+      <td><%= f.radio_button :avg_favorite_tweets, 6 %></td>
+    </tr>
+  </table>
+<hr>
+  
+  <p>
+  <h3>How long do you surf on Twitter on average per day?</h3>
+  Please fill in the amount of hours of an average weekday:
+    <%= f.text_field :surf_twitter_week %><br>
+  Please fill in the amount of hours of an average day of your weekend:
+    <%= f.text_field :surf_twitter_weekend %>
 </p>
 <hr>

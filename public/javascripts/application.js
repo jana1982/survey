@@ -105,9 +105,11 @@ Event.observe(window, 'load', function() {
         // stop processing the event
         Event.stop(event);
         document.getElementById('search').style.display='none';
+        document.getElementById('search2').style.display='none';
     }
     });
 });
+
 
 //Ausblendung compose Tweet bei click außerhalb
 document.observe('click', function(e, el) {

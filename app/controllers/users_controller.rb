@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
+    
     @user.setup
     session[:user_params] = @user.to_hash  
   end
@@ -183,46 +184,7 @@ class UsersController < ApplicationController
       end
   end
   
-  #def generate_batch
-  #  out = []
-  #  (0..1).each do |a|
-  #    (0..1).each do |b|
-  #      (0..1).each do |c|
-  #        (0..1).each do |d|
-  #          (0..1).each do |e|
-  #            (0..3).each do |f|
-  #              out << [a,b,c,d,e,f]
-  #            end
-  #          end
-  #        end
-  #      end
-  #    end
-  #  end
-  #  return  out 
-  #end
-  #
-  #def last_user
-  #  @last_user = User.last
-  #end
-  #
-  #def batch
-  #   batch = 0
-  #  while true
-  #      if b == [] or b == nil
-  #        puts "Generation of new batch"
-  #        batch += 1   
-  #        b = generate_batch
-  #      end
-  #    show = b[rand(b.length)]
-  #    puts "Batch #{batch} The user sees #{show}"
-  #    b.delete_at(b.index(show))  
-  #  end
-  #    if e
-  #    end
-  #end
  
-
-  
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
