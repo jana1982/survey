@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618122555) do
+ActiveRecord::Schema.define(:version => 20120619134338) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(:version => 20120618122555) do
     t.integer  "avg_favorite_tweets"
     t.integer  "surf_twitter_week"
     t.integer  "surf_twitter_weekend"
-    t.integer  "surf_twitter_when"
+    t.integer  "avg_private_replies"
   end
 
 end

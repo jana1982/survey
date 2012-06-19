@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
 			:avg_tweet_number, :avg_at_replies, :avg_read_tweets, :avg_stories, :avg_trend, :avg_retweet, :avg_follow,
 			:avg_login, :avg_search_keywords, :avg_search_accounts, :avg_activities_friends, :avg_who_to_follow,
 			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists,
-			:avg_delete_accounts_lists, :avg_unfollow_account, :avg_favorite_tweets,
-			:surf_twitter_week, :surf_twitter_weekend, :surf_twitter_when
+			:avg_delete_accounts_lists, :avg_unfollow_account, :avg_favorite_tweets, :avg_private_replies,
+			:surf_twitter_week, :surf_twitter_weekend
   
   attr_writer :current_step
   attr_accessor :username
@@ -108,8 +108,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[selection internet opinionleader test twitter target]
-      #introduction demographic interest   
+      %w[introduction selection demographic internet opinionleader test twitter target]
+      #  interest   
   end
   
   def first_step?
