@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   def setup
     if first_step?
       seed = Seed.get_random_from_last_batch
+      seed.dirty = true
+      seed.save
       self.situation = seed.id
       self.seen_retweet_message1 = seed.content[0]
       self.seen_retweet_message2 = seed.content[0] == 0 ? 1 : 0 #immer das gegenteil von retweet message 1

@@ -17,7 +17,7 @@ def generate_batch(batch_id)
         (0..1).each do |d| # Trend or not
           (0..1).each do |e| # At reply or not
             (0..3).each do |f| #Message 1-4
-              s = Seed.new(:content =>  [a,b,c,d,e,f], :batch_id => batch_id)
+              s = Seed.new(:content =>  [a,b,c,d,e,f], :batch_id => batch_id, :dirty => false)
               s.save!
             end
           end
