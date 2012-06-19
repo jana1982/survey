@@ -193,7 +193,10 @@ class UsersController < ApplicationController
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
-        @user.save if @user.all_valid?
+        if @user.all_valid?
+          @user.save
+          Seed.delete(@user.situation)
+        end
       else
         @user.next_step
       end

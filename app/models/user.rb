@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  belongs_to :seed
   attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
@@ -28,16 +27,23 @@ class User < ActiveRecord::Base
   
   def setup
     if first_step?
-      #self.situation = show
-      self.seen_retweet_message1 = generate_random_retweet
-      self.seen_retweet_message2 = generate_random_retweet
-      self.seen_multiple_messages = true
-      self.seen_at = generate_random_at
-      self.seen_person = generate_random_person
-      generate_messages
+      seed = Seed.get_random_from_last_batch
+      self.situation = seed.id
+      self.seen_retweet_message1 = seed.content[0]
+      self.seen_retweet_message2 = seed.content[0] == 0 ? 1 : 0 #immer das gegenteil von retweet message 1
+      self.seen_multiple_messages = seed.content[1]
+      self.seen_person = generate_person(seed)
+      #TODO
+      #sef.seen_trend = seed[3]
+      self.seen_at = seed.content[4]
+      generate_messages(seed.content[5])
     end
   end
   
+  def generate_person(seed)
+      person = [self.leader_text, 'Friend']
+      person[seed.content[2]]
+  end
   
   def to_hash
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
@@ -46,19 +52,19 @@ class User < ActiveRecord::Base
   validates_presence_of :language, :if => :selection?
   validates_presence_of :twitter_account, :if => :selection?
   
-  def generate_messages   
+  def generate_messages(message_type)
     messages1 = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 
       'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
     messages2 = ['Message2: Schaden 0, Einfluss 0', 'Message2: Schaden 1, Einfluss 0', 
       'Message2: Schaden 0, Einfluss 1', 'Message2: Schaden 1, Einfluss 1']
-    message1 = messages1[rand(messages1.length)]
-    message2 = messages2[messages1.index(message1)]
+    message1 = messages1[message_type]
+    message2 = messages2[message_type]
     if !self.seen_multiple_messages && self.seen_at
       self.seen_message_1 = "@#{self.account_name} " + message1
       self.seen_message_2 = ""
     elsif self.seen_multiple_messages && self.seen_at
       self.seen_message_1 = "@#{self.account_name} " + message1
-      self.seen_message_2  = message1
+      self.seen_message_2  = message1 # TODO Warum nehmen wir hier nicht message 2? Klären
     elsif self.seen_multiple_messages && !self.seen_at
       self.seen_message_1 = message1
       self.seen_message_2  = message2
@@ -67,29 +73,6 @@ class User < ActiveRecord::Base
       self.seen_message_2  = ""
     end
   end
-  
-  def generate_random_person       
-
-    person = [self.leader_text, 'Friend']
-    
-  end
-
-  
-  def generate_random_retweet
-    rt = [true, false]
-    rt[rand(rt.length)]
-  end
-  
-  def generate_random_at     
-    at = [true, false]
-    at[rand(at.length)]
-  end
-  
-  def generate_random_themes    
-    themen = ['one', 'more']
-    themen[rand(themen.length)]
-  end
-  
 
   
   def current_step
