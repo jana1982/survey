@@ -1,18 +1,23 @@
 class User < ActiveRecord::Base
+  serialize :seen_seed
+  
   attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
 			:public, :leader_text, :reply_text, :tweet_text, :search,
-			:retweet_time, :favorite_time, :message_hover_time, :reply_time, :new_tweet_time, :retweet_importance,
+			:retweet_time_m1, :favorite_time_m1, :message_hover_time_m1, :open_time_m1, :reply_time_m1,
+			:retweet_time_m2, :favorite_time_m2, :message_hover_time_m2, :open_time_m2, :reply_time_m2, 
+			:new_tweet_time, :search_time,
+			:experiment_time,
+			:retweet_importance,
 			:tweet_text_n,
 			:seen_person,
 			:seen_message_1,:seen_message_2,
 			:seen_multiple_messages,:seen_at,
 			:seen_retweet_message1, :seen_retweet_message2,
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12, :ol_list, 
-			:open_time, :search_time,  :experiment_time, :connect_clicked,
-			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
+			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,:connect_clicked,
 			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked,
 			:results, :situation,
 			:account_name, :number_followers, :number_followeees, :number_messages,
@@ -20,7 +25,8 @@ class User < ActiveRecord::Base
 			:avg_login, :avg_search_keywords, :avg_search_accounts, :avg_activities_friends, :avg_who_to_follow,
 			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists,
 			:avg_delete_accounts_lists, :avg_unfollow_account, :avg_favorite_tweets, :avg_private_replies,
-			:surf_twitter_week, :surf_twitter_weekend
+			:surf_twitter_week, :surf_twitter_weekend,
+			:seen_seed, :batch_id
   
   attr_writer :current_step
   attr_accessor :username
@@ -31,8 +37,9 @@ class User < ActiveRecord::Base
       seed.dirty = true
       seed.save
       self.situation = seed.id
+      self.batch_id = seed.batch_id
+      self.seen_seed = seed.content[0..5]
       self.seen_retweet_message1 = seed.content[0]
-      self.seen_retweet_message2 = seed.content[0] == 0 ? 1 : 0 #immer das gegenteil von retweet message 1
       self.seen_multiple_messages = seed.content[1]
       self.seen_person = generate_person(seed)
       #TODO
@@ -66,7 +73,7 @@ class User < ActiveRecord::Base
       self.seen_message_2 = ""
     elsif self.seen_multiple_messages && self.seen_at
       self.seen_message_1 = "@#{self.account_name} " + message1
-      self.seen_message_2  = message1 # TODO Warum nehmen wir hier nicht message 2? Klären
+      self.seen_message_2  = message2 
     elsif self.seen_multiple_messages && !self.seen_at
       self.seen_message_1 = message1
       self.seen_message_2  = message2
@@ -93,8 +100,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[introduction selection demographic internet opinionleader test twitter target]
-      #  interest   
+      %w[ selection opinionleader test twitter target]
+      # introduction demographic internet interest   
   end
   
   def first_step?

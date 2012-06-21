@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619225642) do
+ActiveRecord::Schema.define(:version => 20120620161521) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20120619225642) do
     t.string   "reply_text"
     t.string   "tweet_text"
     t.string   "search"
-    t.float    "retweet_time"
-    t.float    "favorite_time"
-    t.float    "message_hover_time"
-    t.float    "reply_time"
+    t.float    "retweet_time_m1"
+    t.float    "favorite_time_m1"
+    t.float    "message_hover_m1"
+    t.float    "reply_time_m1"
     t.float    "new_tweet_time"
     t.integer  "retweet_importance"
     t.string   "tweet_text_n"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20120619225642) do
     t.string   "ol_12"
     t.string   "ol_list"
     t.string   "seen_person"
-    t.float    "open_time"
+    t.float    "open_time_m1"
     t.float    "search_time"
     t.boolean  "seen_retweet_message1",     :limit => 255
     t.integer  "expand_2_clicked"
@@ -135,6 +135,13 @@ ActiveRecord::Schema.define(:version => 20120619225642) do
     t.integer  "surf_twitter_week"
     t.integer  "surf_twitter_weekend"
     t.integer  "avg_private_replies"
+    t.integer  "seen_seed"
+    t.integer  "batch_id"
+    t.float    "retweet_time_m2"
+    t.float    "favorite_time_m2"
+    t.float    "message_hover_m2"
+    t.float    "reply_time_m2"
+    t.float    "open_time_m2"
   end
 
 end

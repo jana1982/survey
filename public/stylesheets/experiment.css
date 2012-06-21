@@ -85,9 +85,10 @@ body {
  top:100px;
 }
 #tweet2{
-	position:relative;
- left:400px;
- top:150px;	
+  position:relative;
+  left:400px;
+  top:150px;
+  heigth: 100px;
 }
 
 #tweeterer{
@@ -96,7 +97,7 @@ body {
   float: left;
  
   position: absolute;
-  left: 73px;
+  left:0px;
   top: 5px;
 }
 
@@ -124,7 +125,7 @@ body {
 #twitter_bild{
   float: left;
   position:absolute;
-  left:15px; top:6px;
+  left:-59px; top:6px;
 }
 .collapse{
 	  float: left;
@@ -512,7 +513,7 @@ textarea#user_search{
   position:relative;
   left:2px; top: 71px;
   width: 100%;
-  height: 100%;
+  height: 39%;
   margin:0 auto;
   color: black;
 }
@@ -522,16 +523,12 @@ textarea#user_search{
   font-size: 0.9em;
   background-color: white;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
 
         width: 227px;
         left: 42px;
 }
 
-#time2{
-  position: relative;
-	top:9px;
-}
 
 #connect_button{
 
@@ -613,7 +610,7 @@ textarea#user_search{
   top:-90px;
 }
 #ende{
-  position:relative;
+  position: relative;
   left:160px;
   top: 146px;
   

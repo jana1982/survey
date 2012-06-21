@@ -9,12 +9,7 @@
   </div>
   <% @message_commands = true %>
   <%= render :partial => "actions", :locals => {:number => @number, :message_commands => @message_commands} %>
-  <div id="tweeterer">
-    <div id="tweeter_name"> <%= h @user.seen_person  %> </div>
-    <div id="tweeter_name_at">&nbsp;@<%=h @user.leader_text %></div>
-    <div id="minutes">0m</div>
-  </div>
-  <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
+
   <div id="tweet"
         onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_time"}) %>"
         onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_time"}) %>"

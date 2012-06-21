@@ -1,5 +1,12 @@
+
+  <p>Used Seed.id: 
+  <%= h @user.situation %>
+  </p>
   <p>Used Seed: 
-  <%= Seed.find(@user.situation).content %>
+  <%= @user.seen_seed %>
+  </p>
+  <p>Used Batch_id: 
+  <%= h @user.batch_id %>
   </p>
    <p>Opinion Leader: 
    <%= opinion_leader %>
@@ -12,9 +19,6 @@
    </p>
    <p> User gets to see a retweet of message1: 
    <%= h @user.seen_retweet_message1%>
-   </p>
-   <p> User gets to see a retweet of message2: 
-   <%= h @user.seen_retweet_message2%>
    </p>
    <p> User gets to see multiple messages: 
    <%= h @user.seen_multiple_messages %>

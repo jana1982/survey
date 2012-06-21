@@ -1,8 +1,16 @@
 <% if @user.seen_message_1 != "" %>
+
 <div id="tweet1">
+
   <% @number = 1 %>
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
   <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
+        <div id="tweeterer">
+    <div id="tweeter_name"> <%= h @user.seen_person  %> </div>
+    <div id="tweeter_name_at">&nbsp;@<%=h @user.seen_person %></div>
+    <div id="minutes">0m</div>
+    </div>
+  <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
 
   <%= render :partial => "expand_page",  :locals => {:f => f, :retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status} %>
 
@@ -10,10 +18,25 @@
 <% end %>
 
 <% if @user.seen_message_2 != "" %>
+
+
 <div id="tweet2">
+
   <% @number = 2 %>
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_2, :number => 2} %>
-  <% @retweet_status = "_with_retweet" if @user.seen_retweet_message2 %>
+  <% @retweet_status = "" %>
+  
+      <div id="tweeterer">
+    <% if @user.seen_person == "Friend" %>   
+    <div id="tweeter_name"> Second_Friend </div>
+    <div id="tweeter_name_at">&nbsp;@Second_Friend</div>
+    <% else %>
+    <div id="tweeter_name"> Friend </div>
+    <div id="tweeter_name_at">&nbsp;@Friend</div>
+    <% end %>
+    <div id="minutes">0m</div>
+    </div>
+  <div id="twitter_bild"><img src='../images/tweeter_picture.png'></div>
 
   <%= render :partial => "expand_page", :locals => {:f => f, :retweet => @user.seen_retweet_message2, :number => @number, :retweet_status => @retweet_status} %>
 </div>
