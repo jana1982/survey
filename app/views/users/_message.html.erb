@@ -9,14 +9,23 @@
   </div>
   <% @message_commands = true %>
   <%= render :partial => "actions", :locals => {:number => @number, :message_commands => @message_commands} %>
-
-  <div id="tweet"
-        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_time"}) %>"
-        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_time"}) %>"
-        >
-        <p>            
-          <%= message %>
-        </p>
-  </div>
-
+    <%if @number == 2 %>  
+      <div id="tweet"
+            onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m2"}) %>"
+            onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>"
+            >
+            <p>            
+              <%= message %>
+            </p>
+      </div>
+    <% else %>
+      <div id="tweet"
+            onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m1"}) %>"
+            onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m1"}) %>"
+            >
+            <p>            
+              <%= message %>
+            </p>
+      </div>
+    <% end %>
 </div>
