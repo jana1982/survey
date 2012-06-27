@@ -35,24 +35,27 @@ class User < ActiveRecord::Base
     if first_step?
       seed = Seed.get_random_from_last_batch
       seed.dirty = true
-      seed.save
+      seed.time_setup = Time.now
+      seed.save!
       self.situation = seed.id
       self.batch_id = seed.batch_id
-      self.seen_seed = seed.content[0..5]
+      self.seen_seed = seed.content
       self.seen_retweet_message1 = seed.content[0]
       self.seen_multiple_messages = seed.content[1]
-      self.seen_person = generate_person(seed)
+      self.seen_person = seed.content[2]
       #TODO
-      #sef.seen_trend = seed[3]
+      #self.seen_trend = seed[3]
       self.seen_at = seed.content[4]
       generate_messages(seed.content[5])
     end
   end
   
-  def generate_person(seed)
-      person = [self.leader_text, 'Friend']
-      person[seed.content[2]]
-  end
+  #def generate_person(seed)
+  #    person = ['Friend', self.leader_text]
+  #    person[seed.content[2]]
+  #end
+
+
   
   def to_hash
     hash = {}; self.attributes.each { |k,v| hash[k] = v }

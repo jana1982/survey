@@ -119,26 +119,25 @@ document.observe('click', function(e, el) {
             }
         });
 
-//Alarm bei Schließen der Anwendung
-Event.observe(window, 'load', function() {
-      var button = 0;
-    Event.observe('back_button', 'click', changeBackButtonItem)
-  function changeBackButtonItem(){
-    var button = 1;};
-    Event.observe('commit', 'click', changeButtonItem)
-  function changeButtonItem(){
-    var button = 1;};
-window.onbeforeunload = function (evt) {  
-  var message = 'Are you sure you want to leave?';
-
-  if (typeof evt == 'undefined' ) {  
-    evt = window.event;
-    
-
-  }  
-  if (evt && button == 0) {  
-    evt.returnValue = message;  
-  }  
-  return message;  
-    }
-    });   
+////Alarm bei Schließen der Anwendung
+//
+//weggelasen, weil eventuell fehleranfällig und nach gewissen stundenanzahl hinfällig
+//
+//window.onbeforeunload = function (evt) {  
+//  var message = 'Are you sure you want to leave?';
+//  var button = false;
+//  if (typeof evt == 'undefined') {  
+//    evt = window.event;
+//    $('user_submit').observe('click', this.changeBackButtonItem);
+//    function changeBackButtonItem(event){
+//        button = true;};
+//    $('commit').observe('click', this.changeButtonItem);
+//    function changeButtonItem(event){
+//        button = true;};
+//  }
+//  
+//  if (evt & !button) {  
+//    evt.returnValue = message;  
+//  }  
+//  return message;  
+//    };   

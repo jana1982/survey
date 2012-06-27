@@ -23,7 +23,14 @@ module ApplicationHelper
     session[:user_params].deep_merge!({:leader_text => c})
     return c
   end
-    
+  
+  def generate_person
+    if @user.seen_person == 0
+      person = 'Friend'
+    else
+      person = @user.leader_text
+    end
+  end  
    
   def minutes
     @user.experiment_time.to_i/60
