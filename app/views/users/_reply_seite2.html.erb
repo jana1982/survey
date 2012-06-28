@@ -1,0 +1,31 @@
+<div id="reply_field">
+
+    <% if @user.seen_person == 0 %>
+    <div id="tweeter_name_groß">&nbsp;@Second_Friend</div>
+    <% else %>
+    <div id="tweeter_name_groß">&nbsp;@Friend </div>
+    <% end %>
+  
+  <div id="close">
+            <%= link_to_remote image_tag('../images/close.png'),
+                  :url => {:action => "close", :id => @user.id}
+            %>
+  </div>
+  <div id="reply_text">
+    <% if @user.seen_person == 0 %>
+      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Second_Friend" %>
+    <% else %>
+      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Friend" %>
+    <% end %>
+    
+  </div>
+
+    <div id="charcount"> <span id="char-count2">140</span></div>
+
+    <div id="reply_button_change2" style="display: none;">
+            <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
+                :mouseover => '../images/Tweetbutton_mouseover.png'),
+                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
+                  :url => {:action => "close", :id => @user.id}
+            %>
+  </div>

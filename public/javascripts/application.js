@@ -10,6 +10,15 @@ Event.observe(window, 'load', function() {
       $('char-count').update(left);
   });
 });
+
+// Function to observe the reply window and change the number of characters left
+Event.observe(window, 'load', function() {
+  Event.observe('user_reply_text2', 'keyup', function(event){
+      var maxLen = 140;
+      var left = maxLen - this.getValue().length;
+      $('char-count2').update(left);
+  });
+});
 // Function to observe the reply_at window and change the number of characters left
 Event.observe(window, 'load', function() {
   Event.observe('user_reply_text_at', 'keyup', function(event){
@@ -33,20 +42,34 @@ Event.observe(window, 'load', function() {
     };
     });
 });
-// Funktion to load button_at
+
 Event.observe(window, 'load', function() {
-  Event.observe('user_reply_text_at', 'keyup', function(event){
+  Event.observe('user_reply_text2', 'keyup', function(event){
       var maxLen = 140;
       var left = maxLen - this.getValue().length;
       //var replytxt = maxLen- Form.Element.getValue('user_leader_text').length;
     if (left < 136) {
-    Effect.Appear('reply_button_change_at')
+    Effect.Appear('reply_button_change2')
     }
     else if (left > 136) {
-    document.getElementById('reply_button_change_at').style.display='none';
+    document.getElementById('reply_button_change2').style.display='none';
     };
     });
 });
+////Funktion to load button_at
+//Event.observe(window, 'load', function() {
+//  Event.observe('user_reply_text_at', 'keyup', function(event){
+//      var maxLen = 140;
+//      var left = maxLen - this.getValue().length;
+//      var replytxt = maxLen- Form.Element.getValue('user_leader_text').length;
+//    if (left < 136) {
+//    Effect.Appear('reply_button_change_at')
+//    }
+//    else if (left > 136) {
+//    document.getElementById('reply_button_change_at').style.display='none';
+//    };
+//    });
+//});
 
 // Function to observe the reply window and change the number of characters left
 Event.observe(window, 'load', function() {

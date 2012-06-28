@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
-			:public, :leader_text, :reply_text, :tweet_text, :search,
+			:public, :leader_text, :reply_text, :reply_text2, :tweet_text, :search,
 			:retweet_time_m1, :favorite_time_m1, :message_hover_m1, :open_time_m1, :reply_time_m1,
 			:retweet_time_m2, :favorite_time_m2, :message_hover_m2, :open_time_m2, :reply_time_m2, 
 			:new_tweet_time, :search_time,

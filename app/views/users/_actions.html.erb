@@ -63,7 +63,7 @@ end
                 >
               <%= link_to_remote image_tag('../images/reply_einzeln_g.png',
                    :mouseover => '../images/reply_unterstrichen_g.png'),
-                    :url => {:action => "reply", :id => @user.id,   :number => @number}
+                    :url => {:action => "reply#{ @number}", :id => @user.id,   :number => @number}
               %>
             </div>
         <% else %>
@@ -73,7 +73,7 @@ end
                 >
               <%= link_to_remote image_tag('../images/reply_einzeln_g.png',
                    :mouseover => '../images/reply_unterstrichen_g.png'),
-                    :url => {:action => "reply", :id => @user.id,   :number => @number}
+                    :url => {:action => "reply#{ @number}", :id => @user.id,   :number => @number}
               %>
             </div>
         <% end %>
@@ -85,7 +85,7 @@ end
                 >
             <%= link_to_remote image_tag('../images/reply_einzeln.png',
                  :mouseover => '../images/reply_unterstrichen.png'),
-                  :url => {:action => "reply", :id => @user.id,   :number => @number}
+                  :url => {:action => "reply#{ @number}", :id => @user.id,   :number => @number}
             %>
             </div>
         <% else %>
@@ -95,7 +95,7 @@ end
                 >
             <%= link_to_remote image_tag('../images/reply_einzeln.png',
                  :mouseover => '../images/reply_unterstrichen.png'),
-                  :url => {:action => "reply", :id => @user.id,   :number => @number}
+                  :url => {:action => "reply#{ @number}", :id => @user.id,   :number => @number}
             %>
             </div>
         <% end %>

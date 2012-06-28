@@ -30,11 +30,30 @@ class UsersController < ApplicationController
     session[:user_params] = @user.to_hash  
   end
 
-  def reply
-    number = params[:number].to_i
-    session[:user_params].deep_merge!({:reply_1_clicked => 1}) if number == 1
-    session[:user_params].deep_merge!({:reply_2_clicked => 1}) if number == 2
-    session[:user_params].deep_merge!({:reply_1_clicked => 1}) if number == 3
+  def reply1
+    session[:user_params].deep_merge!({:reply_1_clicked => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.show 'reply_seite'
+              end
+            }
+    end
+  end
+  
+  def reply2
+    session[:user_params].deep_merge!({:reply_2_clicked => 1})
+    respond_to do |format|
+      format.js {
+              render(:update) do |page|
+                page.show 'reply_seite2'
+              end
+            }
+    end
+  end
+  
+  def reply3
+    session[:user_params].deep_merge!({:reply_1_clicked => 1})
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -58,6 +77,7 @@ class UsersController < ApplicationController
             }
     end
   end
+  
   
   def favorite
     number = params[:number].to_i
@@ -118,6 +138,7 @@ class UsersController < ApplicationController
       format.js {
               render(:update) do |page|
                 page.hide 'reply_seite';
+                page.hide 'reply_seite2';
                 page.hide 'new_tweet_seite';
                 page.hide 'compose_tweet_seite';
                 page.hide "expand_page1" if number == 1

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627135722) do
+ActiveRecord::Schema.define(:version => 20120628101326) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(:version => 20120627135722) do
     t.float    "message_hover_m2"
     t.float    "reply_time_m2"
     t.float    "open_time_m2"
+    t.string   "reply_text2"
   end
 
 end
