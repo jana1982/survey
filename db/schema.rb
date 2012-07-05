@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704142352) do
+ActiveRecord::Schema.define(:version => 20120705133015) do
+
+  create_table "no_retweet_reasons", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "reasons"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nrreasons", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"

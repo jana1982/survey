@@ -39,8 +39,8 @@
   <% @number = 3 %>
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
     <div id="tweeterer">
-    <div id="tweeter_name"> <%= h @user.seen_person  %> </div>
-    <div id="tweeter_name_at">&nbsp;@<%=h @user.seen_person %></div>
+    <div id="tweeter_name"> <%= displayed_person  %> </div>
+    <div id="tweeter_name_at">&nbsp;@<%= displayed_person %></div>
     <div id="minutes">0m</div>
     </div>
   <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>

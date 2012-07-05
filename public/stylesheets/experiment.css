@@ -581,9 +581,12 @@ textarea#user_search{
   position: absolute;
 
 }
-
+#kasten{
+  position:relative;
+  left:326px; top:-59px;
+}
 #connect_field{
-  background-image:url('../images/connect_leer.png');
+  background-image:url('../images/connect_grundseite.png');
   background-repeat:no-repeat; 
   background-position: left top;
   position:relative;

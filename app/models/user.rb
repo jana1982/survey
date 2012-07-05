@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :nrreasons, :dependent => :destroy
+  accepts_nested_attributes_for :nrreasons, :allow_destroy => true
+
   serialize :seen_seed
   
   attr_accessible 	:bildung, :alter, :geschlecht, 
@@ -63,8 +66,9 @@ class User < ActiveRecord::Base
       self.seen_retweet_message1 = seed.content[0]
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
-      generate_messages(seed.content[4])
+    
     end
+
   end
   
   def to_hash
@@ -74,27 +78,6 @@ class User < ActiveRecord::Base
   validates_presence_of :language, :if => :selection?
   validates_presence_of :twitter_account, :if => :selection?
   
-  def generate_messages(message_type)
-    messages1 = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 
-      'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
-    messages2 = ['Message2: Schaden 0, Einfluss 0', 'Message2: Schaden 1, Einfluss 0', 
-      'Message2: Schaden 0, Einfluss 1', 'Message2: Schaden 1, Einfluss 1']
-    message1 = messages1[message_type]
-    message2 = messages2[message_type]
-    if !self.seen_multiple_messages && self.seen_at
-      self.seen_message_1 = "@#{self.account_name} " + message1
-      self.seen_message_2 = ""
-    elsif self.seen_multiple_messages && self.seen_at
-      self.seen_message_1 = "@#{self.account_name} " + message1
-      self.seen_message_2  = message2 
-    elsif self.seen_multiple_messages && !self.seen_at
-      self.seen_message_1 = message1
-      self.seen_message_2  = message2
-    elsif !self.seen_multiple_messages && !self.seen_at
-      self.seen_message_1 = message1
-      self.seen_message_2  = ""
-    end
-  end
 
   
   def current_step

@@ -863,5 +863,28 @@
 </p>
 
 <hr>
+  <% if @user.retweet_1_clicked !=1 && @user.retweet_2_clicked !=1%>
+     
+<div id="no_retweet">
+<p>
+  <h3>Why didn't you retweet a message in the simulation?</h3>
+    <div id="opinion_leader_text">
+      Please fill in possible reasons why you didn't retweet the seen message. It could help to reflect what messages you normally retweet and why:
+    <% f.fields_for :nrreasons do |builder| %>
+  <p>
+    <%= builder.label :reason, "Reason:" %>
+    <%= builder.text_field :reason%>
+    <%= builder.check_box :_destroy %>
+    <%= builder.label :_destroy, "Remove Reason" %>
+    
+  </p>
+  <% end %>
+    </div>
+</p>
+<hr>
+</div>
+<% else%>
+<div id="no_retweet" style="display: none;"></div>
+<%end%>
 
   

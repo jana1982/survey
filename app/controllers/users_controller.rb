@@ -25,8 +25,9 @@ class UsersController < ApplicationController
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
-    
+    3.times { @user.nrreasons.build }
     @user.setup
+    
     session[:user_params] = @user.to_hash  
   end
 
@@ -222,6 +223,28 @@ class UsersController < ApplicationController
     return c
   end
  
+  def generate_messages(message_type)
+    messages1 = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 
+      'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
+    messages2 = ['Message2: Schaden 0, Einfluss 0', 'Message2: Schaden 1, Einfluss 0', 
+      'Message2: Schaden 0, Einfluss 1', 'Message2: Schaden 1, Einfluss 1']
+    message1 = messages1[message_type]
+    message2 = messages2[message_type]
+    if !@user.seen_multiple_messages && @user.seen_at
+      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} " + message1})
+      session[:user_params].deep_merge!({:seen_message_2 => "" })
+    elsif @user.seen_multiple_messages && @user.seen_at
+      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} " + message1})
+      session[:user_params].deep_merge!({:seen_message_2 => message2 })
+    elsif @user.seen_multiple_messages && !@user.seen_at
+      session[:user_params].deep_merge!({:seen_message_1 => message1})
+      session[:user_params].deep_merge!({:seen_message_2 => message2})
+    elsif !@user.seen_multiple_messages && !@user.seen_at
+      session[:user_params].deep_merge!({:seen_message_1 => message1})
+      session[:user_params].deep_merge!({:seen_message_2 => ""})
+    end
+  end
+ 
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
@@ -229,13 +252,16 @@ class UsersController < ApplicationController
     if @user.current_step == "opinionleader"
       set_opinion_leader_text
     end
-    
+    if @user.current_step == "internet"
+       generate_messages(@user.seen_seed[4])
+    end
     if @user.valid?
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
         if @user.all_valid?
           @user.save
+          #@nrreasons.save
           Seed.delete(@user.situation)
         end
       else

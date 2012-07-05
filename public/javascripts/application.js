@@ -133,7 +133,19 @@ Event.observe(window, 'load', function() {
     });
 });
 
-
+//Search: Press Enter to submit
+Event.observe(window, 'load', function() {
+ Event.observe('textarea#user_search.new-reply-text', 'keypress', function(event){
+    if(event.keyCode == Event.KEY_RETURN) {
+        // do something useful
+        alert('Thank you very much for your search request. Unfortunately this simulation can not respond to your search request.');
+        // stop processing the event
+        Event.stop(event);
+        document.getElementById('search').style.display='none';
+        document.getElementById('search2').style.display='none';
+    }
+    });
+});
 
 //Ausblendung compose Tweet bei click außerhalb
 document.observe('click', function(e, el) {
@@ -164,3 +176,11 @@ document.observe('click', function(e, el) {
 //  }  
 //  return message;  
 //    };   
+
+//remove nested form fields
+Event.observe(window, 'load', function() {
+function remove_fields(link) {
+        $(link).previous("input[type=hidden]").value = "1";
+        $(link).up(".fields").hide();
+}
+});
