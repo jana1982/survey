@@ -24,8 +24,9 @@ class UsersController < ApplicationController
   def new
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
+    @user.build_nrreason
     @user.current_step = session[:user_step]
-    3.times { @user.nrreasons.build }
+    
     @user.setup
     
     session[:user_params] = @user.to_hash  
