@@ -205,11 +205,31 @@ class UsersController < ApplicationController
       end
   end
   
+  def set_opinion_leader_text
+    a = [@user.ol_1, @user.ol_2, @user.ol_3, @user.ol_4, @user.ol_5, @user.ol_6, 
+      @user.ol_7, @user.ol_8, @user.ol_9, @user.ol_10, @user.ol_11, @user.ol_12]
+    b = Hash.new(0)
+    a.each do |v|
+      if v != ""
+        b[v] += 1
+      end
+    end
+    b.each do |k, v|
+      puts "#{k} appears #{v} times"
+    end
+    c = b.max { |a,b| a.last <=> b.last }.first
+    session[:user_params].deep_merge!({:leader_text => c})
+    return c
+  end
  
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
+    if @user.current_step == "opinionleader"
+      set_opinion_leader_text
+    end
+    
     if @user.valid?
       if params[:back_button]
         @user.previous_step

@@ -17,7 +17,7 @@ body {
 
 
 #seite_twitter {
-    background-image:url('../images/Twitter_page.png');
+    background-image:url('../images/Twitter_page_ot.png');
     background-repeat:no-repeat;
     background-position: left top;
     position:relative;
@@ -444,7 +444,7 @@ textarea#user_search{
 #compose_tweet_field{
 
 
-  background-image:url('../images/compose_tweet.png');
+  background-image:url('../images/compose_tweet_ot.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;

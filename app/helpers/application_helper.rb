@@ -6,31 +6,15 @@ module ApplicationHelper
       out = javascript_tag(function) # set current length
       out += observe_field(field_id, options.merge(:function => function)) # and observe it
   end
-
-  def opinion_leader
-    a = [@user.ol_1, @user.ol_2, @user.ol_3, @user.ol_4, @user.ol_5, @user.ol_6, 
-      @user.ol_7, @user.ol_8, @user.ol_9, @user.ol_10, @user.ol_11, @user.ol_12]
-    b = Hash.new(0)
-    a.each do |v|
-      if v != ""
-        b[v] += 1
-      end
-    end
-    b.each do |k, v|
-      puts "#{k} appears #{v} times"
-    end
-    c = b.max { |a,b| a.last <=> b.last }.first
-    session[:user_params].deep_merge!({:leader_text => c})
-    return c
-  end
   
-  def generate_person
-    if @user.seen_person == 0
-      person = 'Friend'
-    else
-      person = @user.leader_text
-    end
-  end  
+  def displayed_person
+        text = ""
+        if !@user.seen_person 
+            text = 'Friend'
+        else
+            text = @user.leader_text
+        end
+  end
    
   def minutes
     @user.experiment_time.to_i/60

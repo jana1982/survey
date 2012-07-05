@@ -9,10 +9,10 @@
   <%= h @user.batch_id %>
   </p>
    <p>Opinion Leader: 
-   <%= opinion_leader %>
+   <%= h @user.leader_text %>
    </p>
-   <p> Seen person: 
-   <%= generate_person %>
+   <p> Seen person:
+ <%= h displayed_person %>
    </p>
    <p>User gets to see an at message:
    <%= h @user.seen_at %>

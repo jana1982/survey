@@ -6,8 +6,11 @@
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
   <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
         <div id="tweeterer">
-    <div id="tweeter_name"> <%= generate_person %> </div>
-    <div id="tweeter_name_at">&nbsp;@<%= generate_person %></div>
+    <div id="tweeter_name"> <%= displayed_person %>
+    </div>
+    <div id="tweeter_name_at">&nbsp;@<%= displayed_person %>
+
+    </div>
     <div id="minutes">0m</div>
     </div>
   <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
@@ -27,7 +30,7 @@
   <% @retweet_status = "" %>
   
       <div id="tweeterer">
-    <% if @user.seen_person == 0 %>   
+    <% if !@user.seen_person %>   
     <div id="tweeter_name"> Second_Friend </div>
     <div id="tweeter_name_at">&nbsp;@Second_Friend</div>
     <% else %>

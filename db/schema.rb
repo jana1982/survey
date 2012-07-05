@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628101326) do
+ActiveRecord::Schema.define(:version => 20120704142352) do
 
   create_table "opinionleaders", :force => true do |t|
     t.integer  "user_id"
@@ -27,12 +27,22 @@ ActiveRecord::Schema.define(:version => 20120628101326) do
     t.datetime "time_setup"
   end
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "users", :force => true do |t|
-    t.integer  "bildung",                   :limit => 255
+    t.integer  "bildung",                      :limit => 255
     t.integer  "alter"
     t.integer  "retweet_2_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",                :limit => 255
+    t.integer  "geschlecht",                   :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -82,17 +92,17 @@ ActiveRecord::Schema.define(:version => 20120628101326) do
     t.string   "ol_11"
     t.string   "ol_12"
     t.string   "ol_list"
-    t.string   "seen_person"
+    t.boolean  "seen_person",                  :limit => 255
     t.float    "open_time_m1"
     t.float    "search_time"
-    t.boolean  "seen_retweet_message1",     :limit => 255
+    t.boolean  "seen_retweet_message1",        :limit => 255
     t.integer  "expand_2_clicked"
     t.float    "experiment_time"
-    t.boolean  "seen_at",                   :limit => 255
+    t.boolean  "seen_at",                      :limit => 255
     t.integer  "connect_clicked"
     t.integer  "favorite_at_clicked"
     t.integer  "retweet_at_clicked"
-    t.boolean  "seen_retweet_message2",     :limit => 255
+    t.boolean  "seen_retweet_message2",        :limit => 255
     t.float    "open_time_at"
     t.float    "reply_time_at"
     t.float    "retweet_time_at"
@@ -101,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20120628101326) do
     t.integer  "open_clicked_at"
     t.string   "reply_text_at"
     t.integer  "reply_clicked_at"
-    t.boolean  "seen_multiple_messages",    :limit => 255
+    t.boolean  "seen_multiple_messages",       :limit => 255
     t.string   "seen_message_2"
     t.integer  "reply_1_clicked"
     t.integer  "favorite_1_clicked"
@@ -144,6 +154,45 @@ ActiveRecord::Schema.define(:version => 20120628101326) do
     t.float    "reply_time_m2"
     t.float    "open_time_m2"
     t.string   "reply_text2"
+    t.integer  "message_important"
+    t.integer  "message_meaningful"
+    t.integer  "message_for_me"
+    t.integer  "message_remember"
+    t.integer  "message_value"
+    t.integer  "message_relevant"
+    t.integer  "message_useful"
+    t.integer  "message_attention"
+    t.integer  "message_interest"
+    t.integer  "message_ideas"
+    t.integer  "message_helpful"
+    t.integer  "message_informative"
+    t.integer  "intention1_write"
+    t.integer  "intention2_write"
+    t.integer  "intention3_write"
+    t.integer  "intention1_discover_stories"
+    t.integer  "intention2_discover_stories"
+    t.integer  "intention3_discover_stories"
+    t.integer  "intention1_discover_trends"
+    t.integer  "intention2_discover_trends"
+    t.integer  "intention3_discover_trends"
+    t.integer  "intention1_follow"
+    t.integer  "intention2_follow"
+    t.integer  "intention3_follow"
+    t.integer  "intention1_unfollow"
+    t.integer  "intention2_unfollow"
+    t.integer  "intention3_unfollow"
+    t.integer  "intention1_create_lists"
+    t.integer  "intention2_create_lists"
+    t.integer  "intention3_create_lists"
+    t.integer  "intention1_add_to_lists"
+    t.integer  "intention2_add_to_lists"
+    t.integer  "intention3_add_to_lists"
+    t.integer  "intention1_unsubscribe_lists"
+    t.integer  "intention2_unsubscribe_lists"
+    t.integer  "intention3_unsubscribe_lists"
+    t.integer  "intention1_subscribe_lists"
+    t.integer  "intention2_subscribe_lists"
+    t.integer  "intention3_subscribe_lists"
   end
 
 end

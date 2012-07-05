@@ -1,12 +1,13 @@
 <div id="reply_field">
-    <div id="tweeter_name_groß">&nbsp;@<%=generate_person%> </div>
+    <div id="tweeter_name_groß">&nbsp;@<%= displayed_person %>
+    </div>
   <div id="close">
             <%= link_to_remote image_tag('../images/close.png'),
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
   <div id="reply_text">
-    <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{generate_person}" %>
+    <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{displayed_person}" %>
   </div>
 
     <div id="charcount"> <span id="char-count">140</span></div>

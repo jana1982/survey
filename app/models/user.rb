@@ -26,7 +26,26 @@ class User < ActiveRecord::Base
 			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists,
 			:avg_delete_accounts_lists, :avg_unfollow_account, :avg_favorite_tweets, :avg_private_replies,
 			:surf_twitter_week, :surf_twitter_weekend,
-			:seen_seed, :batch_id
+			:seen_seed, :batch_id,
+			
+			:message_important, :message_meaningful, :message_for_me, :message_remember,:message_value,
+			:message_relevant, :message_useful, :message_attention, :message_interest, :message_ideas, :message_helpful,
+			:message_informative, 
+			
+			:intention1_write, :intention2_write, :intention3_write,
+			:intention1_discover_stories, :intention2_discover_stories,:intention3_discover_stories,
+			:intention1_discover_trends, :intention2_discover_trends, :intention3_discover_trends,
+		        :intention1_follow, :intention2_follow, :intention3_follow, 
+			:intention1_unfollow, :intention2_unfollow, :intention3_unfollow,
+			:intention1_create_lists, :intention2_create_lists, :intention3_create_lists,
+			:intention1_add_to_lists, :intention2_add_to_lists, :intention3_add_to_lists,
+			:intention1_unsubscribe_lists, :intention2_unsubscribe_lists, :intention3_unsubscribe_lists,
+			:intention1_subscribe_lists, :intention2_subscribe_lists,:intention3_subscribe_lists,
+  
+			:retweet_time_at, :message_hover_time_at, :open_time_at, :favorite_time_at, :reply_time_at,
+			:open_clicked_at, :reply_clicked_at, :created_at, :updated_at, :reply_text_at, :favorite_at_clicked,
+			:at_clicked, :retweet_at_clicked
+
   
   attr_writer :current_step
   attr_accessor :username
@@ -40,22 +59,13 @@ class User < ActiveRecord::Base
       self.situation = seed.id
       self.batch_id = seed.batch_id
       self.seen_seed = seed.content
+      self.seen_person = seed.content[2]
       self.seen_retweet_message1 = seed.content[0]
       self.seen_multiple_messages = seed.content[1]
-      self.seen_person = seed.content[2]
-      #TODO
-      #self.seen_trend = seed[3]
-      self.seen_at = seed.content[4]
-      generate_messages(seed.content[5])
+      self.seen_at = seed.content[3]
+      generate_messages(seed.content[4])
     end
   end
-  
-  #def generate_person(seed)
-  #    person = ['Friend', self.leader_text]
-  #    person[seed.content[2]]
-  #end
-
-
   
   def to_hash
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
@@ -103,8 +113,9 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ selection opinionleader test twitter target]
-      # introduction demographic internet interest   
+      %w[ introduction  selection demographic internet opinionleader
+	  test twitter message_relevance target]
+      #   interest         
   end
   
   def first_step?
