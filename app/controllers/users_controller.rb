@@ -24,11 +24,8 @@ class UsersController < ApplicationController
   def new
     session[:user_params] ||= {}
     @user = User.new(session[:user_params])
-    @user.build_nrreason
     @user.current_step = session[:user_step]
-    
     @user.setup
-    
     session[:user_params] = @user.to_hash  
   end
 
@@ -262,7 +259,6 @@ class UsersController < ApplicationController
       elsif @user.last_step?
         if @user.all_valid?
           @user.save
-          #@nrreasons.save
           Seed.delete(@user.situation)
         end
       else

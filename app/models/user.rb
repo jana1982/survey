@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :nrreasons, :dependent => :destroy
-  accepts_nested_attributes_for :nrreasons, :allow_destroy => true
 
   serialize :seen_seed
   
@@ -47,7 +45,12 @@ class User < ActiveRecord::Base
   
 			:retweet_time_at, :message_hover_time_at, :open_time_at, :favorite_time_at, :reply_time_at,
 			:open_clicked_at, :reply_clicked_at, :created_at, :updated_at, :reply_text_at, :favorite_at_clicked,
-			:at_clicked, :retweet_at_clicked
+			:at_clicked, :retweet_at_clicked,
+			
+			:reason_nrt, :reason_nfav, :reason_nrep, :reason_nexp,
+			:further_things_to_do, :further_things_in_simmulation
+			
+		
 
   
   attr_writer :current_step
@@ -64,9 +67,9 @@ class User < ActiveRecord::Base
       self.seen_seed = seed.content
       self.seen_person = seed.content[2]
       self.seen_retweet_message1 = seed.content[0]
-      self.seen_multiple_messages = seed.content[1]
-      self.seen_at = seed.content[3]
-    
+	self.seen_multiple_messages = seed.content[1]
+	self.seen_at = seed.content[3]
+      #self.nrreasons.build 
     end
 
   end

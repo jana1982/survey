@@ -106,3 +106,17 @@ a {
     margin-left: 20px;
 
 }
+
+textarea#user_reason_nrt{
+  outline: none;
+  -webkit-appearance: textarea;
+  background-color: white;
+  border-style: double;
+  border-color: grey;
+  border-radius: 3px;
+  resize: auto;
+  cursor: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+}

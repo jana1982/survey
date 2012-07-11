@@ -177,10 +177,8 @@ document.observe('click', function(e, el) {
 //  return message;  
 //    };   
 
-//remove nested form fields
-Event.observe(window, 'load', function() {
-function remove_fields(link) {
-        $(link).previous("input[type=hidden]").value = "1";
-        $(link).up(".fields").hide();
+function livesync() {
+  beschreibung = document.getElementById('beschreibung').value;
+  document.getElementById('beschreibungvorschau').innerHTML = beschreibung;
+  beschreibung = beschreibung.replace(/\n/g,"<br/>");
 }
-});

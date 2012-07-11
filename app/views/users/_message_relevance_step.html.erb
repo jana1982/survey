@@ -869,16 +869,14 @@
 <p>
   <h3>Why didn't you retweet a message in the simulation?</h3>
     <div id="opinion_leader_text">
-      Please fill in possible reasons why you didn't retweet the seen message. It could help to reflect what messages you normally retweet and why:
-    <% f.fields_for :nrreasons do |builder| %>
-  <p>
-    <%= builder.label :reason, "Reason:" %>
-    <%= builder.text_field :reason%>
-    <%= builder.check_box :_destroy %>
-    <%= builder.label :_destroy, "Remove Reason" %>
+      Please fill in possible reasons why you didn't retweet
+      the seen message. It could help to reflect what messages
+      you normally retweet and why:<br>
+<!--:, :reason_nfav, :reason_nrep, :reason_nexp-->
+    <%= f.text_area :reason_nrt, :rows => 4, :value =>text %>
     
   </p>
-  <% end %>
+  
     </div>
 </p>
 <hr>

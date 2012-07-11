@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705133015) do
+ActiveRecord::Schema.define(:version => 20120707052345) do
 
   create_table "no_retweet_reasons", :force => true do |t|
     t.integer  "user_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20120705133015) do
 
   create_table "nrreasons", :force => true do |t|
     t.integer  "user_id"
-    t.text     "reason"
+    t.string   "reason"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(:version => 20120705133015) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.integer  "bildung",                      :limit => 255
+    t.integer  "bildung",                       :limit => 255
     t.integer  "alter"
     t.integer  "retweet_2_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",                   :limit => 255
+    t.integer  "geschlecht",                    :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -106,17 +106,17 @@ ActiveRecord::Schema.define(:version => 20120705133015) do
     t.string   "ol_11"
     t.string   "ol_12"
     t.string   "ol_list"
-    t.boolean  "seen_person",                  :limit => 255
+    t.boolean  "seen_person",                   :limit => 255
     t.float    "open_time_m1"
     t.float    "search_time"
-    t.boolean  "seen_retweet_message1",        :limit => 255
+    t.boolean  "seen_retweet_message1",         :limit => 255
     t.integer  "expand_2_clicked"
     t.float    "experiment_time"
-    t.boolean  "seen_at",                      :limit => 255
+    t.boolean  "seen_at",                       :limit => 255
     t.integer  "connect_clicked"
     t.integer  "favorite_at_clicked"
     t.integer  "retweet_at_clicked"
-    t.boolean  "seen_retweet_message2",        :limit => 255
+    t.boolean  "seen_retweet_message2",         :limit => 255
     t.float    "open_time_at"
     t.float    "reply_time_at"
     t.float    "retweet_time_at"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(:version => 20120705133015) do
     t.integer  "open_clicked_at"
     t.string   "reply_text_at"
     t.integer  "reply_clicked_at"
-    t.boolean  "seen_multiple_messages",       :limit => 255
+    t.boolean  "seen_multiple_messages",        :limit => 255
     t.string   "seen_message_2"
     t.integer  "reply_1_clicked"
     t.integer  "favorite_1_clicked"
@@ -207,6 +207,12 @@ ActiveRecord::Schema.define(:version => 20120705133015) do
     t.integer  "intention1_subscribe_lists"
     t.integer  "intention2_subscribe_lists"
     t.integer  "intention3_subscribe_lists"
+    t.string   "reason_nrt"
+    t.string   "reason_nfav"
+    t.string   "reason_nrep"
+    t.string   "reason_nexp"
+    t.string   "further_things_to_do"
+    t.string   "further_things_in_simmulation"
   end
 
 end
