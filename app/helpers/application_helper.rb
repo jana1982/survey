@@ -23,4 +23,6 @@ module ApplicationHelper
   def text
     text = %Q<1.\n2.\n3.\n...>
   end
+  
+
 end

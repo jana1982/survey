@@ -176,9 +176,14 @@ document.observe('click', function(e, el) {
 //  }  
 //  return message;  
 //    };   
-
-function livesync() {
-  beschreibung = document.getElementById('beschreibung').value;
-  document.getElementById('beschreibungvorschau').innerHTML = beschreibung;
-  beschreibung = beschreibung.replace(/\n/g,"<br/>");
-}
+Event.observe(window, 'load', function() {
+  Event.observe('retweet', 'click', function(event){
+    var retweet1 = $(@user.retweet_1_clicked)
+    if (retweet1%2 == 0){
+    Effect.Appear('tweet_button_change')    
+    }
+    
+    document.getElementById('tweet_button_change').style.display='none';
+    };
+    });
+});

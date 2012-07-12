@@ -120,3 +120,31 @@ textarea#user_reason_nrt{
   word-wrap: break-word;
 
 }
+
+textarea#user_reason_nfav{
+  outline: none;
+  -webkit-appearance: textarea;
+  background-color: white;
+  border-style: double;
+  border-color: grey;
+  border-radius: 3px;
+  resize: auto;
+  cursor: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+}
+
+textarea#user_reason_nexp{
+  outline: none;
+  -webkit-appearance: textarea;
+  background-color: white;
+  border-style: double;
+  border-color: grey;
+  border-radius: 3px;
+  resize: auto;
+  cursor: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+}

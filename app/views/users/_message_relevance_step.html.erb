@@ -867,13 +867,18 @@
      
 <div id="no_retweet">
 <p>
-  <h3>Why didn't you retweet a message in the simulation?</h3>
+<% if @user.seen_multiple_messages !=1 %>
+  <h3>Why didn't you retweet the message in the simulation?</h3>
+<% else%>
+  <h3>Why didn't you retweet one of the messages in the simulation?</h3>
+<%end%>
     <div id="opinion_leader_text">
       Please fill in possible reasons why you didn't retweet
       the seen message. It could help to reflect what messages
       you normally retweet and why:<br>
 <!--:, :reason_nfav, :reason_nrep, :reason_nexp-->
-    <%= f.text_area :reason_nrt, :rows => 4, :value =>text %>
+    <%= f.text_area :reason_nrt, :rows => 4, :value =>text, :style => 'color:grey;',
+    :onclick =>"this.style.color='black'" %>
     
   </p>
   
@@ -885,4 +890,56 @@
 <div id="no_retweet" style="display: none;"></div>
 <%end%>
 
+<% if @user.favorite_1_clicked !=1 && @user.favorite_2_clicked !=1%>
+     
+<div id="no_favorite">
+<p>
+<% if @user.seen_multiple_messages !=1 %>
+  <h3>Why didn't you favorite the message in the simulation?</h3>
+<% else%>
+  <h3>Why didn't you favorite one of the messages in the simulation?</h3>
+<%end%>
+    <div id="opinion_leader_text">
+      Please fill in possible reasons why you didn't favorite
+      the seen message. It could help to reflect what messages
+      you normally retweet and why:<br>
+<!--:reason_nrep, :reason_nexp-->
+    <%= f.text_area :reason_nfav, :rows => 4, :value =>text, :style => 'color:grey;',
+    :onclick =>"this.style.color='black'" %>
+    
+  </p>
   
+    </div>
+</p>
+<hr>
+</div>
+<% else%>
+<div id="no_favorite" style="display: none;"></div>
+<%end%>
+
+<% if @user.expand_1_clicked !=1 && @user.expand_2_clicked !=1%>
+     
+<div id="no_open">
+<p>
+<% if @user.seen_multiple_messages !=1 %>
+  <h3>Why didn't you open the message in the simulation?</h3>
+<% else%>
+  <h3>Why didn't you open one of the messages in the simulation?</h3>
+<%end%>
+    <div id="opinion_leader_text">
+      Please fill in possible reasons why you didn't open
+      the seen message. It could help to reflect what messages
+      you normally retweet and why:<br>
+<!--:reason_nrep, :-->
+    <%= f.text_area :reason_nexp  , :rows => 4, :value =>text, :style => 'color:grey;',
+    :onclick =>"this.style.color='black'" %>
+    
+  </p>
+  
+    </div>
+</p>
+<hr>
+</div>
+<% else%>
+<div id="no_open" style="display: none;"></div>
+<%end%>

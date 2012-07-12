@@ -1,0 +1,28 @@
+ <% 
+if @message_commands
+    expand = ""
+    grey = "_g"
+    visible = "none"
+else
+  expand = "expand"
+  grey = ""
+  visible = "block"
+end
+%>
+<%if @number == 2
+  number = 2
+else
+  number = 1
+end
+%>
+
+
+ <div id = "retweet<%=expand %><%= number %>" class="retweet"    
+    onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "retweet_time_m#{number}"}) %>"
+    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "retweet_time_m#{number}"}) %>"
+    >
+  <%= link_to_remote image_tag("../images/retweet_clicked#{grey}.png",
+       :mouseover => "../images/retweet_unterstrichen#{grey}.png"),
+       :url => {:action => "retweet",    :number => number}
+  %>
+ </div>
