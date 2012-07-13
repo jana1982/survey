@@ -1,6 +1,6 @@
 <div id="reply_field">
 
-    <% if @user.seen_person == 0 %>
+    <% if !@user.seen_person %>
     <div id="tweeter_name_groß">&nbsp;@Second_Friend</div>
     <% else %>
     <div id="tweeter_name_groß">&nbsp;@Friend </div>
@@ -12,7 +12,7 @@
             %>
   </div>
   <div id="reply_text">
-    <% if @user.seen_person == 0 %>
+    <% if !@user.seen_person %>
       <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Second_Friend" %>
     <% else %>
       <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Friend" %>

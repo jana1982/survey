@@ -15,21 +15,7 @@ else
   number = 1
 end
 %>
-<%if @user.retweet_1_clicked.even?
-    undo = ""
-    clicked = "_einzeln"
-else
-    undo = "undo_"
-    clicked = "_clicked"
-end
-%>
-<%if @user.retweet_2_clicked.even?
-    clicked = "_einzeln"
-else
-    clicked = "_clicked"
-  
-end
-%>
+
 
 <div id="actions<%=@number%>" class="actions" style="display:<%=visible%>;">
 
@@ -71,28 +57,59 @@ end
     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "retweet_time_m#{number}"}) %>"
     onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "retweet_time_m#{number}"}) %>"
     >
-  <%= link_to_remote image_tag("../images/retweet_einzeln#{grey}.png",
-       :mouseover => "../images/retweet_unterstrichen#{grey}.png"),
-       :url => {:action => "retweet", :id => @user.id, :number => number}
+<%=  if number == 2
+        if ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?))
+            link_to_remote image_tag("../images/retweet_einzeln#{grey}.png",
+            :mouseover => "../images/retweet_unterstrichen#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
+            :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
+        else
+            link_to_remote image_tag("../images/retweet_clicked#{grey}.png",
+            :mouseover => "../images/retweet_unterstrichen_clicked#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
+            :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
+         end
+    else
+        if ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?))
+            link_to_remote image_tag("../images/retweet_einzeln#{grey}.png",
+            :mouseover => "../images/retweet_unterstrichen#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
+            :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
+        else
+            link_to_remote image_tag("../images/retweet_clicked#{grey}.png",
+            :mouseover => "../images/retweet_unterstrichen_clicked#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
+            :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
+         end
+  end
   %>
  </div>
   
-<!--<%= if @user.retweet_1_clicked.even?
- render :partial => "retweet",  :locals => {:retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status, :message_commands => @message_commands}
-else
-render :partial => "retweeted",  :locals => {:retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status, :message_commands => @message_commands}
-end%>-->
-  
-
  <div id = "favorite<%=expand %><%= number %>" class="favorite"    
     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "favorite_time_m#{number}"}) %>"
     onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "favorite_time_m#{number}"}) %>"
     >
-  <%= link_to_remote image_tag("../images/favorite#{clicked}#{grey}.png",
-       :mouseover => "../images/favorite_unterstrichen#{grey}.png"),
-       :url => {:action => "favorite", :id => @user.id,   :number => number}
+<%= if number ==2
+        if ((@user.favorite_2_clicked==nil)||(@user.favorite_2_clicked.even?))
+            link_to_remote image_tag("../images/favorite_einzeln#{grey}.png",
+            :mouseover => "../images/favorite_unterstrichen#{grey}.png", :id => "favorite_picture_#{expand}#{number}"),
+            :url => {:action => "favorite#{number}", :id => @user.id, :number => number}
+        else
+            link_to_remote image_tag("../images/favorite_clicked#{grey}.png",
+            :mouseover => "../images/favorite_unterstrichen_clicked#{grey}.png", :id => "favorite_picture_#{expand}#{number}"),
+            :url => {:action => "favorite#{number}", :id => @user.id, :number => number}
+        end
+    else
+        if ((@user.favorite_1_clicked==nil)||(@user.favorite_1_clicked.even?))
+        link_to_remote image_tag("../images/favorite_einzeln#{grey}.png",
+        :mouseover => "../images/favorite_unterstrichen#{grey}.png", :id => "favorite_picture_#{expand}#{number}"),
+        :url => {:action => "favorite#{number}", :id => @user.id, :number => number}
+        else
+        link_to_remote image_tag("../images/favorite_clicked#{grey}.png",
+        :mouseover => "../images/favorite_unterstrichen_clicked#{grey}.png", :id => "favorite_picture_#{expand}#{number}"),
+        :url => {:action => "favorite#{number}", :id => @user.id, :number => number}
+        end
+    end
   %>
  </div>
+
+
 
            
 </div>

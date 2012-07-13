@@ -690,3 +690,8 @@ table.hovertable td {
 	border-style: solid;
 	border-color: #a9c6c9;
 }
+.marker{
+  position: absolute;
+  left: 426px;
+  top: -7px;
+}

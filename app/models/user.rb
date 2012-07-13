@@ -69,10 +69,10 @@ class User < ActiveRecord::Base
       self.seen_retweet_message1 = seed.content[0]
 	self.seen_multiple_messages = seed.content[1]
 	self.seen_at = seed.content[3]
-      #self.nrreasons.build 
     end
 
   end
+  
   
   def to_hash
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
