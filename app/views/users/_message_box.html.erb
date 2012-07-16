@@ -13,14 +13,14 @@
     </div>
     <div id="minutes">0m</div>
 
-    <% if (((@user.favorite_1_clicked==nil)||(@user.favorite_1_clicked.even?)) && ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?)))%>
+    <% if (@user.favorite_1_clicked.nil? || @user.favorite_1_clicked.even?) && (@user.retweet_1_clicked.nil? || @user.retweet_1_clicked.even?)%>       
     <div id="marker1" class="marker"><img src='../images/platzhalter1_ecke.png'></div>
-    <% elsif (!@user.favorite_1_clicked.even? && !@user.retweet_1_clicked.even?)%>
-     <div id="marker1" class="marker"><img src='../images/retweet_favorite_ecke.png'></div>
-    <% elsif (((@user.favorite_1_clicked==nil)||(@user.favorite_1_clicked.even?)) && !@user.retweet_1_clicked.even?)%>
+    <% elsif (@user.favorite_1_clicked.nil? || @user.favorite_1_clicked.even?) && (!@user.retweet_1_clicked.nil? || !@user.retweet_1_clicked.even?)%>
      <div id="marker1" class="marker"><img src='../images/retweet1_ecke.png'></div>
-    <% elsif (!@user.favorite_1_clicked.even? && ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?)))%>
-     <div id="marker1" class="marker"><img src='../images/favorite_ecke.png'></div>
+    <% elsif (!@user.favorite_1_clicked.nil? || !@user.favorite_1_clicked.even?) && (@user.retweet_1_clicked.nil? || @user.retweet_1_clicked.even?)%>
+     <div id="marker1" class="marker"><img src='../images/favorite_ecke.png'></div> 
+    <% elsif (!@user.favorite_1_clicked.nil? || !@user.favorite_1_clicked.even?) && (!@user.retweet_1_clicked.nil? || !@user.retweet_1_clicked.even?)%>
+     <div id="marker1" class="marker"><img src='../images/retweet_favorite_ecke.png'></div>
     <% end %>
     
     </div>
@@ -49,15 +49,17 @@
     <div id="tweeter_name_at">&nbsp;@Friend</div>
     <% end %>
     <div id="minutes">0m</div>
-    <% if (((@user.favorite_2_clicked==nil)||(@user.favorite_2_clicked.even?)) && ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?)))%>
+    <% if (@user.favorite_2_clicked.nil? || @user.favorite_2_clicked.even?) && (@user.retweet_2_clicked.nil? || @user.retweet_2_clicked.even?)%>       
     <div id="marker2" class="marker"><img src='../images/platzhalter1_ecke.png'></div>
-    <% elsif (!@user.favorite_2_clicked.even? && !@user.retweet_2_clicked.even?)%>
-     <div id="marker2" class="marker"><img src='../images/retweet_favorite_ecke.png'></div>
-    <% elsif (((@user.favorite_2_clicked==nil)||(@user.favorite_2_clicked.even?)) && !@user.retweet_2_clicked.even?)%>
+    <% elsif (@user.favorite_2_clicked.nil? || @user.favorite_2_clicked.even?) && (!@user.retweet_2_clicked.nil? || !@user.retweet_2_clicked.even?)%>
      <div id="marker2" class="marker"><img src='../images/retweet1_ecke.png'></div>
-    <% elsif (!@user.favorite_2_clicked.even? && ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?)))%>
-     <div id="marker2" class="marker"><img src='../images/favorite_ecke.png'></div>
+    <% elsif (!@user.favorite_2_clicked.nil? || !@user.favorite_2_clicked.even?) && (@user.retweet_2_clicked.nil? || @user.retweet_2_clicked.even?)%>
+     <div id="marker2" class="marker"><img src='../images/favorite_ecke.png'></div> 
+    <% elsif (!@user.favorite_2_clicked.nil? || !@user.favorite_2_clicked.even?) && (!@user.retweet_2_clicked.nil? || !@user.retweet_2_clicked.even?)%>
+     <div id="marker2" class="marker"><img src='../images/retweet_favorite_ecke.png'></div>
     <% end %>
+    
+
   </div>
   <div id="twitter_bild"><img src='../images/tweeter_picture.png'></div>
 

@@ -50,7 +50,6 @@ class User < ActiveRecord::Base
 			:reason_nrt, :reason_nfav, :reason_nrep, :reason_nexp,
 			:further_things_to_do, :further_things_in_simmulation
 			
-		
 
   
   attr_writer :current_step

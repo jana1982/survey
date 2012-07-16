@@ -868,10 +868,8 @@
 <%= h @user.reply_text %>
 <%= h @user.reply_text2 %>
 <hr>
-<% if (!@user.retweet_1_clicked.even?||!@user.retweet_2_clicked.even?) %>
-  <div id="no_retweet" style="display: none;"></div>   
-<% else%>
-  <div id="no_retweet">
+<% if (@user.retweet_1_clicked.nil? && @user.retweet_2_clicked.nil?) ||  (@user.retweet_1_clicked.even? && @user.retweet_2_clicked.even? ) %>
+    <div id="no_retweet">
     <p>
       <% if !@user.seen_multiple_messages %>
         <h3>Could you please mention some reasons why you didn't retweet the message in the simulation?</h3>
@@ -887,11 +885,11 @@
     </p>
     <hr>
   </div>
+<% else%>
+  <div id="no_retweet" style="display: none;"></div> 
 <%end%>
 
-<% if (!@user.favorite_1_clicked.even? || !@user.favorite_2_clicked.even?)%>
-  <div id="no_favorite" style="display: none;"></div>
-<% else%>
+<% if (@user.favorite_1_clicked.nil? && @user.favorite_2_clicked.nil?) || (@user.favorite_1_clicked.even? && @user.favorite_2_clicked.even? ) %>
   <div id="no_favorite">
     <p>
     <% if !@user.seen_multiple_messages %>
@@ -908,6 +906,8 @@
     </p>
     <hr>
   </div>
+<% else%>
+  <div id="no_favorite" style="display: none;"></div>
 <%end%>
 
 <% if @user.expand_1_clicked !=1 && @user.expand_2_clicked !=1%>
