@@ -927,7 +927,7 @@
         Please fill in possible reasons why you didn't open
         the seen message. It could help to reflect what messages
         you normally retweet and why:<br>
-      <%= f.text_area :reason_nexp  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+      <%= f.text_area :reason_nrep  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
       </div>
     </p>
     <hr>
@@ -950,7 +950,7 @@
         Please fill in possible reasons why you didn't reply to
         the seen message. It could help to reflect what messages
         you normally retweet and why:<br>
-      <%= f.text_area :reason_nrep  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+      <%= f.text_area :reason_nexp  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
       </div>
     </p>
     <hr>
@@ -958,3 +958,6 @@
 <% else%>
   <div id="no_open" style="display: none;"></div>
 <%end%>
+
+
+

@@ -380,6 +380,7 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:favorite_1_clicked => 0})
     session[:user_params].deep_merge!({:favorite_2_clicked => 0})
   end
+
  
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
@@ -394,6 +395,9 @@ class UsersController < ApplicationController
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
     end
+    #if @user.current_step == "twitter"
+    #  render :js => "alert('Please remember! This is a simulation. None of your actions will be transmitted to your Twitter account. Please act as if you would be on Twitter. Thank you');"
+    #end
     if @user.valid?
       if params[:back_button]
         @user.previous_step
