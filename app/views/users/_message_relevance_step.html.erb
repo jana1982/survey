@@ -868,7 +868,9 @@
 <%= h @user.reply_text %>
 <%= h @user.reply_text2 %>
 <hr>
-<% if (@user.retweet_1_clicked.nil? && @user.retweet_2_clicked.nil?) ||  (@user.retweet_1_clicked.even? && @user.retweet_2_clicked.even? ) %>
+  
+    
+    <% if(@user.retweet_1_clicked.even? && @user.retweet_2_clicked.even? ) %>
     <div id="no_retweet">
     <p>
       <% if !@user.seen_multiple_messages %>
@@ -889,7 +891,9 @@
   <div id="no_retweet" style="display: none;"></div> 
 <%end%>
 
-<% if (@user.favorite_1_clicked.nil? && @user.favorite_2_clicked.nil?) || (@user.favorite_1_clicked.even? && @user.favorite_2_clicked.even? ) %>
+
+  
+  <% if (@user.favorite_1_clicked.even? && @user.favorite_2_clicked.even? ) %>
   <div id="no_favorite">
     <p>
     <% if !@user.seen_multiple_messages %>
