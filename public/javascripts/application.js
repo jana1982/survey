@@ -177,17 +177,67 @@ document.observe('click', function(e, el) {
 //  return message;  
 //    };
 
+
 window.onload = init;
-function init() {
+var user_mouse = new Array();
+var delta = 0;
+var old_delta = 0;
+var time_new = 0; 
+var time_old = 0; 
+
+function init() {        
 	if (window.Event) {
-	document.captureEvents(Event.MOUSEMOVE);
+          document.captureEvents(Event.MOUSEMOVE);
 	}
+        time_new = new Date().getTime();
+        time_old = new Date().getTime();
 	document.onmousemove = getCursorXY;
+        
 }
 
 function getCursorXY(e) {
-	document.getElementById('cursorX').value = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-	document.getElementById('cursorY').value = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+  time_new = new Date().getTime();
+  delta = time_new - time_old
+  
+  document.getElementById('cursorX').value = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+  document.getElementById('cursorY').value = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+  document.getElementById('Time_passed').value = delta
+
+  var cursorX = document.getElementById('cursorX').value;
+  var cursorY = document.getElementById('cursorY').value;
+  user_mouse.push(new Array(cursorX,cursorY,old_delta)); 
+  
+  time_old = time_new
+  old_delta = delta
 }
 
-Event.observe(document, 'mousemove', function(event){$('mouse').value = "X: " + Event.pointerX(event) + "px Y: " + Event.pointerY(event) + "px";});
+var isIE = document.all?true:false;
+if (!isIE) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove = getMousePosition;
+function getMousePosition(mp) {
+var _x;
+var _y;
+if (!isIE) {
+      _x = mp.pageX;
+      _y = mp.pageY;
+}
+if (isIE) {
+      _x = event.clientX + document.body.scrollLeft;
+      _y = event.clientY + document.body.scrollTop;
+}
+document.thisform.x.value=_x;
+document.thisform.y.value=_y;
+return true;
+}
+
+////
+//Event.observe(document, 'mousemove',
+//    function(event){
+//      $('mouse').value = "X: " + Event.pointerX(event) + "px Y: " + Event.pointerY(event) + "px";});
+//
+//function getcords(e){
+//  mouseX = Event.pointerX(e);
+//  mouseY = Event.pointerY(e);
+//  $('versuch').innerHTML = 'mouseX:'+mouseX+'--mouseY:' + mouseY;
+//  Event.observe(document, 'mousemove', getcords);
+//}
