@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707052345) do
+ActiveRecord::Schema.define(:version => 20120723150542) do
 
   create_table "no_retweet_reasons", :force => true do |t|
     t.integer  "user_id"
@@ -213,6 +213,7 @@ ActiveRecord::Schema.define(:version => 20120707052345) do
     t.string   "reason_nexp"
     t.string   "further_things_to_do"
     t.string   "further_things_in_simmulation"
+    t.text     "mousetracks"
   end
 
 end

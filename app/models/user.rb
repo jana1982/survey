@@ -1,7 +1,8 @@
+require "csv"
 class User < ActiveRecord::Base
 
   serialize :seen_seed
-  
+    
   attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
 			:area, :children, :employment, :employment_text, :bildung_text, :position, :position_text,
@@ -48,7 +49,8 @@ class User < ActiveRecord::Base
 			:at_clicked, :retweet_at_clicked,
 			
 			:reason_nrt, :reason_nfav, :reason_nrep, :reason_nexp,
-			:further_things_to_do, :further_things_in_simmulation
+			:further_things_to_do, :further_things_in_simmulation,
+			:mousetracks
 			
 
   
@@ -135,5 +137,16 @@ class User < ActiveRecord::Base
     current_step == 'twitter'
   end
 
-
+  def write_mousetracks
+    outfile = File.open(RAILS_ROOT + "/log/" + self.id.to_s + ".csv", "w")
+    CSV::Writer.generate(outfile) do |csv|
+      mousetracks = self.mousetracks.split(";")
+      mousetracks.each do |entry|
+        points = entry.split(",")
+        csv << [points[0],points[1],points[2]]
+      end
+    end
+    outfile.close
+  end  
+    
 end

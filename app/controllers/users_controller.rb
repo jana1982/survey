@@ -184,13 +184,13 @@ class UsersController < ApplicationController
   
   def favorite2
     number = params[:number].to_i
-      if session[:user_params][:favorite_2_clicked] == nil
-        session[:user_params].deep_merge!({:favorite_2_clicked => 1})
-      else
-        dummy_f2 = session[:user_params][:favorite_2_clicked]
-        dummy_f2 += 1
-        session[:user_params].deep_merge!({:favorite_2_clicked => dummy_f2})
-      end
+    if session[:user_params][:favorite_2_clicked] == nil
+      session[:user_params].deep_merge!({:favorite_2_clicked => 1})
+    else
+      dummy_f2 = session[:user_params][:favorite_2_clicked]
+      dummy_f2 += 1
+      session[:user_params].deep_merge!({:favorite_2_clicked => dummy_f2})
+    end
     
     respond_to do |format|
       
