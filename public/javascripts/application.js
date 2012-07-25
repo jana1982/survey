@@ -186,12 +186,12 @@ var time_new = 0;
 var time_old = 0; 
 
 function init() {
-		if (window.Event) {
-	          document.captureEvents(Event.MOUSEMOVE);
+		if ($('seite_twitter').Event) {
+	          $('seite_twitter').captureEvents(Event.MOUSEMOVE);
 		}
 	 	time_new = new Date().getTime();
    	time_old = new Date().getTime();
-	 	document.onmousemove = getCursorXY;
+	 	$('seite_twitter').onmousemove = getCursorXY;
 }
 
 function getCursorXY(e) {
