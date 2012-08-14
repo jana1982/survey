@@ -10,7 +10,7 @@
  
  EDUCATIONS = [['<choose option>', 0], ['Grammar school', 1], ['High school or eqivalent', 2], ['Vocational/technical school', 3], ['College', 4], ['Bachelor`s degree', 5], ['Master`s degree', 6], ['Doctoral degree', 7], ['Professional degree (MC, JD, ect.)', 8], ['Other', 9]]
  
- 
+ topic = [['Local topics', 0], ['Economy', 1], ['Politics', 2], ['Culture', 3], ['Further topics', 4]]
   
 
 

@@ -84,3 +84,43 @@
   <%= f.label :active, "Yes, I do have a Twitter-account to participate on Twitter." %><br>
 </p>
 <hr>
+ 
+  <h3>What are the most relevant topics on Twitter for you?</h3>
+  <h4><i>Please rank the following Items per drag and drop.</i></h4>
+  
+ <p id="list-info">
+ <ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
+   <li class="secondlist_secondlist" id="secondlist_1">
+     <span class="handle">Politics.</span>
+   </li>
+   <li class="secondlist_secondlist" id="secondlist_2">
+     <span class="handle">Economics.</span> 
+   </li>
+   <li class="secondlist_secondlist" id="secondlist_3">
+     <span class="handle"> Cultural topics.</span>
+   </li>
+
+ </ul>
+
+ </p>
+
+<%= sortable_element :secondlist,
+		     :handle => 'handle',
+		     :url => { :action => 'repeat'}
+%>
+
+
+<!--<script type="text/javascript">
+ // <![CDATA[
+
+
+   Sortable.create("secondlist",
+     {dropOnEmpty:true,handle:'handle',containment:["firstlist","secondlist"],constraint:false});
+ // ]]>
+</script>
+      -->
+
+<hr>
+  
+ 
+  

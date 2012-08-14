@@ -19,6 +19,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def repeat
+    #a = params.inspect
+    #b = a.slice!(25..37)
+    #b = a.slice(25..37)
+    session[:user_params].deep_merge!({:interest_list => params[:secondlist]})
+    #c = b.to_a
+    #pos1 = c[1]
+    #pos2 = c[2]
+    #pos3 = c[3]
+  end
 
 
   def new
@@ -28,6 +38,8 @@ class UsersController < ApplicationController
     @user.setup
     session[:user_params] = @user.to_hash  
   end
+  
+  
 
   def reply1
     session[:user_params].deep_merge!({:reply_1_clicked => 1})
@@ -381,7 +393,6 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:favorite_2_clicked => 0})
   end
 
- 
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])

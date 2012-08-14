@@ -1,6 +1,7 @@
 require "csv"
 class User < ActiveRecord::Base
-
+  has_many :topics
+  accepts_nested_attributes_for :topics
   serialize :seen_seed
     
   attr_accessible 	:bildung, :alter, :geschlecht, 
@@ -50,7 +51,15 @@ class User < ActiveRecord::Base
 			
 			:reason_nrt, :reason_nfav, :reason_nrep, :reason_nexp,
 			:further_things_to_do, :further_things_in_simmulation,
-			:mousetracks
+			:mousetracks,
+			
+			:pass_time, :entertain_myself , :occupy_time, :time_bored, :forget_worries,
+			:help_others, :support_others, :show_encouragement, :contribute,
+			:new_friends, :new_people, :get_know_other, :keep_in_touch , :find_people, :communicate,
+			:gather_information, :find_out_things, :look_for_information, :knowledgeable_individual, :answers_questions, 
+			:keep_connect, :find_out, :deepen_relationships, :far_away,
+			
+			:interest_list
 			
 
   
@@ -100,8 +109,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ introduction  selection demographic internet opinionleader
-	  test twitter message_relevance target]
+      %w[ introduction  selection  internet twitter_motivation opinionleader
+	  test twitter message_relevance demographic target]
       #   interest         
   end
   

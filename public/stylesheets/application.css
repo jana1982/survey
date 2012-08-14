@@ -148,3 +148,29 @@ textarea#user_reason_nexp{
   word-wrap: break-word;
 
 }
+
+li .handle {
+  cursor: move;
+  border: medium;
+  width: 300px;
+  line-height: 40px;
+  
+  }
+
+
+.secondlist_secondlist{
+  border: solid;
+  border-color: white;
+  background-color:#f2f2f2;
+  height: 30px;
+  width: 300px;
+  text-align: center;
+}
+.secondlist_secondlist:hover{
+
+  background-color:#e2e2e2;
+
+}
+
+#sortable_list {margin:0;margin-top:10px;padding:0;list-style-type: none;width:250px;}
+#sortable_list li {margin:0;margin-bottom:4px;padding:5px;border:1px solid #888;cursor:move;}

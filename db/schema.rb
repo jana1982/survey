@@ -9,28 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723150542) do
-
-  create_table "no_retweet_reasons", :force => true do |t|
-    t.integer  "user_id"
-    t.text     "reasons"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "nrreasons", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "reason"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "opinionleaders", :force => true do |t|
-    t.integer  "user_id"
-    t.text     "ol"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20120813161018) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -50,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20120723150542) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "topics", :force => true do |t|
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "link"
+  end
 
   create_table "users", :force => true do |t|
     t.integer  "bildung",                       :limit => 255
@@ -214,6 +201,31 @@ ActiveRecord::Schema.define(:version => 20120723150542) do
     t.string   "further_things_to_do"
     t.string   "further_things_in_simmulation"
     t.text     "mousetracks"
+    t.integer  "pass_time"
+    t.integer  "entertain_myself"
+    t.integer  "occupy_time"
+    t.integer  "time_bored"
+    t.integer  "forget_worries"
+    t.integer  "help_others"
+    t.integer  "support_others"
+    t.integer  "show_encouragement"
+    t.integer  "contribute"
+    t.integer  "new_friends"
+    t.integer  "new_people"
+    t.integer  "get_know_other"
+    t.integer  "keep_in_touch"
+    t.integer  "find_people"
+    t.integer  "communicate"
+    t.integer  "gather_information"
+    t.integer  "find_out_things"
+    t.integer  "look_for_information"
+    t.integer  "knowledgeable_individual"
+    t.integer  "answers_questions"
+    t.integer  "keep_connect"
+    t.integer  "find_out"
+    t.integer  "deepen_relationships"
+    t.integer  "far_away"
+    t.string   "interest_list"
   end
 
 end

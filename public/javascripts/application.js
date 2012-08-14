@@ -208,7 +208,14 @@ function getCursorXY(e) {
   old_delta = delta
 }
 
-
+//Sortable.create('floating-images', {tag: 'div', overlap: 'horizontal', constraint: false});
+//
+//Sortable.create('firstlist',{containment:['firstlist','secondlist'],
+//    onUpdate:function(element){alert('The first list was affected during the last drag.')}});
+//
+//Sortable.create('secondlist',{containment:['firstlist','secondlist'],
+//    onUpdate:function(element){alert('The second list was affected during the last drag.')}});
+//Sortable.serialize('mylist',{tag:'li',name:'mylist'});
 ////
 //Event.observe(document, 'mousemove',
 //    function(event){

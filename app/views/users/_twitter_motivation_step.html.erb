@@ -1,0 +1,426 @@
+
+<p>
+  <TABLE width="100%">
+<TR>
+
+<TD ALIGN="LEFT">
+<h2>Part V: Motivation for Twitter usage</h2>
+
+</TD>
+
+
+<TD ALIGN="RIGHT" width=400px>
+  
+
+
+            
+           <%= progress_bar("my_sixty_percent_progress_bar",0.50,true,true) %>
+            
+
+
+</TD>
+
+</TR>
+</TABLE>
+
+</p>
+    
+
+<hr>
+
+  <p>
+  <h3>Why do you use Twitter?<br></br>
+  <i>Please rate your degree of agreement to each statement.</i>
+  </h3>
+  <table width="100%" class="hovertable">
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td align="left">
+         Strongly disagree
+      </td>
+      <td colspan="3" align="center">
+         Neither agree nor disagree
+      </td>
+      <td align="right">
+         Strongly agree
+      </td>
+    </tr>
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td width="10%">-2</td>
+      <td width="10%">-1</td>
+      <td width="10%">0</td>
+      <td width="10%">1</td>
+      <td width="10%">2</td>
+    </tr>
+    
+    
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to pass time</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :pass_time, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :pass_time, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :pass_time, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :pass_time, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :pass_time, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to entertain myself</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :entertain_myself, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :entertain_myself, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :entertain_myself, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :entertain_myself, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :entertain_myself, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to occupy my time </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :occupy_time, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :occupy_time, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :occupy_time, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :occupy_time, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :occupy_time, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to spend time when I am bored </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :time_bored, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :time_bored, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :time_bored, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :time_bored, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :time_bored, 5 %></td>
+    </tr>
+    
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        to forget my worries </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :forget_worries, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :forget_worries, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :forget_worries, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :forget_worries, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :forget_worries, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to help others</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :help_others, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :help_others, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :help_others, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :help_others, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :help_others, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to provide support to others</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :support_others, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :support_others, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :support_others, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :support_others, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :support_others, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to show others encouragement</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :show_encouragement, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :show_encouragement, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :show_encouragement, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :show_encouragement, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :show_encouragement, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+       to contribute to discussions</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :contribute, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :contribute, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :contribute, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :contribute, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :contribute, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to make new friends with similar interests </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_friends, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_friends, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_friends, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_friends, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_friends, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to meet new people with similar interests</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_people, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_people, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_people, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_people, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :new_people, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to get to know other people</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :get_know_other, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :get_know_other, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :get_know_other, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :get_know_other, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :get_know_other, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to keep in touch with people I have met through Twitter </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_in_touch, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_in_touch, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_in_touch, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_in_touch, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_in_touch, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to find people like me</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_people, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_people, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_people, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_people, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_people, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+       to communicate with like-minded people </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :communicate, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :communicate, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :communicate, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :communicate, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :communicate, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to gather information</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :gather_information, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :gather_information, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :gather_information, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :gather_information, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :gather_information, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to find out things that I need to know </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out_things, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out_things, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out_things, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out_things, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out_things, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to look for information I need </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :look_for_information, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :look_for_information, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :look_for_information, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :look_for_information, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :look_for_information, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to talk to a knowledgeable individual about political topics</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :knowledgeable_individual, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :knowledgeable_individual, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :knowledgeable_individual, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :knowledgeable_individual, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :knowledgeable_individual, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+       to get answers to specific questions </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :answers_questions, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :answers_questions, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :answers_questions, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :answers_questions, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :answers_questions, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to keep connect with people who I otherwise would have lost contact with  </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_connect, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_connect, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_connect, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_connect, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :keep_connect, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+        to find out what old friends are doing now </td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :find_out, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       to deepen relationships with people that I have met offline</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :deepen_relationships, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :deepen_relationships, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :deepen_relationships, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :deepen_relationships, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :deepen_relationships, 5 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+      to keep in touch with people who live far away</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :far_away , 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :far_away , 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :far_away , 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :far_away , 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :far_away , 5 %></td>
+    </tr>
+    
+    </p>
+  </table>
+    
+  <hr>
+    <p>
+      
+    </p>
