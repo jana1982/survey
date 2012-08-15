@@ -20,14 +20,7 @@ class UsersController < ApplicationController
   end
   
   def repeat
-    #a = params.inspect
-    #b = a.slice!(25..37)
-    #b = a.slice(25..37)
     session[:user_params].deep_merge!({:interest_list => params[:secondlist]})
-    #c = b.to_a
-    #pos1 = c[1]
-    #pos2 = c[2]
-    #pos3 = c[3]
   end
 
 
@@ -359,7 +352,7 @@ class UsersController < ApplicationController
     b.each do |k, v|
       puts "#{k} appears #{v} times"
     end
-    c = b.max { |a,b| a.last <=> b.last }.first
+    c = b.max { |a,b| a.last <=> b.last }.first rescue ""
     session[:user_params].deep_merge!({:leader_text => c})
     return c
   end

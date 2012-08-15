@@ -85,29 +85,80 @@
 </p>
 <hr>
  
-  <h3>What are the most relevant topics on Twitter for you?</h3>
-  <h4><i>Please rank the following Items per drag and drop.</i></h4>
-  
- <p id="list-info">
+ <h3>What are the most relevant topics on Twitter for you?</h3>
+<table>
+  <tr>
+    <td>
+	
+	<h4><i>Please rank the following Items per drag and drop.</i></h4>
+    </td>
+    <td style="padding-left: 100px;color: green;">
+	<% if !@user.interest_list.nil? %>
+	 <p><i>Your former ranking was saved. <br>
+	   You ordered the topics as follows:</i></p>
+	 <% end %>
+    </td>
+  </tr>
+
+    <tr>
+      <td>
+	<p id="list-info">
  <ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
-   <li class="secondlist_secondlist" id="secondlist_1">
-     <span class="handle">Politics.</span>
-   </li>
-   <li class="secondlist_secondlist" id="secondlist_2">
-     <span class="handle">Economics.</span> 
-   </li>
-   <li class="secondlist_secondlist" id="secondlist_3">
-     <span class="handle"> Cultural topics.</span>
-   </li>
-
+  <li class="secondlist_secondlist" id="secondlist_1" >
+     <div class="handle" style="width: 300px;"> Service/Guides.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_2">
+     <div class="handle" style="width: 300px;"> Science/Environmental/Technical topics.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_3">
+     <div class="handle" style="width: 300px;"> Media/TV/Radio.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_4">
+     <div class="handle" style="width: 300px;"> Travel.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_5">
+     <div class="handle" style="width: 300px;"> Automotive/Traffic.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_6">
+     <div class="handle" style="width: 300px;"> Local/Regional topics.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_7">
+     <div class="handle" style="width: 300px;">Sports.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_8">
+    <div class="handle" style="width: 300px;"> Cultural topics.</div>
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_9">
+     <div class="handle" style="width: 300px;">Economics.</div> 
+  </li>
+  <li class="secondlist_secondlist" id="secondlist_10">
+     <div class="handle" style="width: 300px;">Politics.</div>
+  </li> 
  </ul>
+ </p></td>
 
- </p>
+ <td style="padding-left: 100px;color: green;">
+    <% if !@user.interest_list.nil? %>
+
+      <%    
+	topics = {"10" => "Politics", "9" => "Economics", "8" => "Cultural Topics", "7" => "Sports", "6" => "Local/Regional topics",
+		  "5" => "Automotive/Traffic", "4" => "Travel", "3" => "Media/TV/Radio", "2" => "Science/Environmental/Technical topics", "1" => "Service/Guides."}
+	selection_of_rankings = ""
+	@user.interest_list.each {|list_number| selection_of_rankings += "<ol>" + topics[list_number] + "<br>" + "</ol>"}
+      %>
+      <%= selection_of_rankings  %>  
+    <% end %>
+ </td>
+     
+    </tr>
+</table>
 
 <%= sortable_element :secondlist,
 		     :handle => 'handle',
 		     :url => { :action => 'repeat'}
 %>
+
+
 
 
 <!--<script type="text/javascript">

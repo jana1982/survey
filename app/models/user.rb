@@ -1,7 +1,5 @@
 require "csv"
 class User < ActiveRecord::Base
-  has_many :topics
-  accepts_nested_attributes_for :topics
   serialize :seen_seed
     
   attr_accessible 	:bildung, :alter, :geschlecht, 
