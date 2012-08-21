@@ -1,6 +1,7 @@
 require "csv"
 class User < ActiveRecord::Base
   serialize :seen_seed
+  serialize :interest_list
     
   attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
@@ -75,8 +76,8 @@ class User < ActiveRecord::Base
       self.seen_seed = seed.content
       self.seen_person = seed.content[2]
       self.seen_retweet_message1 = seed.content[0]
-	self.seen_multiple_messages = seed.content[1]
-	self.seen_at = seed.content[3]
+      self.seen_multiple_messages = seed.content[1]
+      self.seen_at = seed.content[3]
     end
 
   end
@@ -133,7 +134,29 @@ class User < ActiveRecord::Base
   end
   
   def does_qualify?
-      if (language != nil && language < 5) || (twitter_account != nil && twitter_account < 2)
+      
+      does_not_qualify = false
+      
+      # If the user does not seak english good enough
+      if language != nil && language < 5
+	does_not_qualify = true
+      end
+      
+      # If the user does not have an active twitter account
+      if twitter_account != nil && twitter_account < 2
+	does_not_qualify = true
+      end
+      
+      # If the user has not selected politcs as the first or second choice
+      if interest_list != nil
+	if interest_list[0] == "10" || interest_list[1] == "10"
+	  print "User did not qualify"
+	else	  
+	  does_not_qualify = true
+	end
+      end
+      
+      if does_not_qualify
         return false
       else
         return true

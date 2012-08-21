@@ -20,7 +20,16 @@ class UsersController < ApplicationController
   end
   
   def repeat
+    #puts params["secondlist"][0]
+    #result = params["secondlist"].to_a.collect{|e| e.match(/\d+/)[0] rescue ""} #De-serialize the output from the list
+    #puts result
+    #puts params["secondlist"].class
     session[:user_params].deep_merge!({:interest_list => params[:secondlist]})
+    respond_to do |format|
+      format.js {
+        render :nothing => true
+      }
+    end      
   end
 
 
