@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 			:gather_information, :find_out_things, :look_for_information, :knowledgeable_individual, :answers_questions, 
 			:keep_connect, :find_out, :deepen_relationships, :far_away,
 			
-			:interest_list
+			:interest_list, :rank
 			
 
   

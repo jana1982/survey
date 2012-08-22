@@ -25,12 +25,24 @@ class UsersController < ApplicationController
     #puts result
     #puts params["secondlist"].class
     session[:user_params].deep_merge!({:interest_list => params[:secondlist]})
-    respond_to do |format|
-      format.js {
-        render :nothing => true
-      }
-    end      
+#    selection_of_rankings = ""
+#    topics = {"10" => "Politics", "9" => "Economics", "8" => "Cultural Topics", "7" => "Sports", "6" => "Local/Regional topics",
+#		     "5" => "Automotive/Traffic", "4" => "Travel", "3" => "Media/TV/Radio", "2" => "Science/Environmental/Technical topics", "1" => "Service/Guides."}
+#    puts params[:interest_list].each {|list_number| selection_of_rankings += topics[list_number] }
+#    session[:user_params].deep_merge!({:interest_list => params[:secondlist]})
+#    #respond_to do |format|
+#    #  format.js {
+#    #    render :nothing => true
+#    #  }
+#    #end
+
+    params[:secondlist].each_with_index do |id, position|
+    
+    @ItemList.update(id, :position => position)
+    end
+    render :nothing => true
   end
+
 
 
   def new
@@ -394,6 +406,10 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:favorite_1_clicked => 0})
     session[:user_params].deep_merge!({:favorite_2_clicked => 0})
   end
+  
+  def generate_unchanged_list
+    session[:user_params].deep_merge!({:interest_list => ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]})
+  end
 
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
@@ -407,6 +423,11 @@ class UsersController < ApplicationController
     end
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
+    end
+    if @user.current_step == "introduction"
+      if (session[:user_params][:interest_list].nil?)
+        generate_unchanged_list
+      end
     end
     #if @user.current_step == "twitter"
     #  render :js => "alert('Please remember! This is a simulation. None of your actions will be transmitted to your Twitter account. Please act as if you would be on Twitter. Thank you');"

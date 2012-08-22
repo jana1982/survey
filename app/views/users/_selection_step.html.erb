@@ -85,8 +85,8 @@
 </p>
 <hr>
  
- <h3>What are the most relevant topics on Twitter for you?</h3>
-<table>
+ <h3>What are the most relevant topics on Twitter for you (1: very relevant, 10: not relevant at all)?</h3>
+<table >
   <tr >
     <td colspan="2"> 
 	
@@ -100,75 +100,78 @@
     </td>
   </tr>
 
-    <tr>
-    <td width=10px valign="top"  >
-    1.
-    2.
-    3.
-    4.
-    5.
-    6.
-    7.
-    8.
-    9.
-    10.
-
+  <tr>
+    <td  >
+      <ul style="list-style-type: none;">
+	<li class="listnummern">1.</li>
+	<li class="listnummern">2.</li>
+	<li class="listnummern">3.</li>
+	<li class="listnummern">4.</li>
+	<li class="listnummern">5.</li>
+	<li class="listnummern">6.</li>
+	<li class="listnummern">7.</li>
+	<li class="listnummern">8.</li>
+	<li class="listnummern">9.</li>
+	<li class="listnummern">10.</li>
+      </ul>
     </td>
-      <td>
-	<p id="list-info">
- <ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
-  <li class="secondlist_secondlist" id="secondlist_1" >
-     <div class="handle" style="width: 300px;"> Service/Guides.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_2">
-     <div class="handle" style="width: 300px;"> Science/Environmental/Technical topics.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_3">
-     <div class="handle" style="width: 300px;"> Media/TV/Radio.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_4">
-     <div class="handle" style="width: 300px;"> Travel.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_5">
-     <div class="handle" style="width: 300px;"> Automotive/Traffic.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_6">
-     <div class="handle" style="width: 300px;"> Local/Regional topics.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_7">
-     <div class="handle" style="width: 300px;">Sports.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_8">
-    <div class="handle" style="width: 300px;"> Cultural topics.</div>
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_9">
-     <div class="handle" style="width: 300px;">Economics.</div> 
-  </li>
-  <li class="secondlist_secondlist" id="secondlist_10">
-     <div class="handle" style="width: 300px;">Politics.</div>
-  </li> 
- </ul>
- </p></td>
+    <td>
+      <div id="list_info">
+	<ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
+	      <% TOPICS.each do |value, topic| %>
+	      <li class="secondlist_secondlist" id="item_<%= topic.id %>">
+		<div class="handle" style="width: 300px;">
+		  
+		  <%= TOPICS[value]%>
+		</div>
+	      </li>
+	      <% end %>
 
- <td style="padding-left: 100px;color: green;">
-    <% if !@user.interest_list.nil? %>
+	    <!--
+	    <li class="secondlist_secondlist" id="secondlist_1" >
+	       <div class="handle" style="width: 300px;"> Service/Guides.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_2">
+	       <div class="handle" style="width: 300px;"> Science/Environmental/Technical topics.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_3">
+	       <div class="handle" style="width: 300px;"> Media/TV/Radio.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_4">
+	       <div class="handle" style="width: 300px;"> Travel.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_5">
+	       <div class="handle" style="width: 300px;"> Automotive/Traffic.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_6">
+	       <div class="handle" style="width: 300px;"> Local/Regional topics.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_7">
+	       <div class="handle" style="width: 300px;">Sports.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_8">
+	      <div class="handle" style="width: 300px;"> Cultural topics.</div>
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_9">
+	       <div class="handle" style="width: 300px;">Economics.</div> 
+	    </li>
+	    <li class="secondlist_secondlist" id="secondlist_10">
+	       <div class="handle" style="width: 300px;">Politics and News.</div>
+	    </li> -->
+	</ul>
+      </div>
+    </td>
 
-      <%    
-	topics = {"10" => "Politics", "9" => "Economics", "8" => "Cultural Topics", "7" => "Sports", "6" => "Local/Regional topics",
-		  "5" => "Automotive/Traffic", "4" => "Travel", "3" => "Media/TV/Radio", "2" => "Science/Environmental/Technical topics", "1" => "Service/Guides."}
-	selection_of_rankings = ""
-	@user.interest_list.each {|list_number| selection_of_rankings += "<ol>" + topics[list_number] + "<br>" + "</ol>"}
-      %>
-      <%= selection_of_rankings  %>  
-    <% end %>
- </td>
+
      
-    </tr>
+  </tr>
 </table>
+	
 
 <%= sortable_element :secondlist,
+		     #:update => 'list_info',
 		     :handle => 'handle',
-		     :url => { :action => 'repeat'}
+		     :url => { :action => 'repeat', :id => @ItemList}
 %>
 
 
@@ -182,7 +185,7 @@
      {dropOnEmpty:true,handle:'handle',containment:["firstlist","secondlist"],constraint:false});
  // ]]>
 </script>
-      -->
+    -->
 
 <hr>
   
