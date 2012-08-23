@@ -10,7 +10,25 @@
  
  EDUCATIONS = [['<choose option>', 0], ['Grammar school', 1], ['High school or eqivalent', 2], ['Vocational/technical school', 3], ['College', 4], ['Bachelor`s degree', 5], ['Master`s degree', 6], ['Doctoral degree', 7], ['Professional degree (MC, JD, ect.)', 8], ['Other', 9]]
  
- TOPICS = {"10" => "Politics", "9" => "Economics", "8" => "Cultural Topics", "7" => "Sports", "6" => "Local/Regional topics", "5" => "Automotive/Traffic", "4" => "Travel", "3" => "Media/TV/Radio", "2" => "Science/Environmental/Technical topics", "1" => "Service/Guides."}
+ TOPICS = {
+   "1" => "Arts, Culture & Entertainment",
+   "2" => "Crime, Law & Justice",
+   "3" => "Disasters & Accidents",
+   "4" => "Economy, Business & Finance",
+   "5" => "Education",
+   "6" => "Environmental Issues",
+   "7" => "Health",
+   "8" => "Human Interest",
+   "9" => "Labour",
+   "10" => "Lifestyle & Leisure",
+   "11" => "Politics",
+   "12" => "Religion & Belief",
+   "13" => "Science & Technology",
+   "14" => "Social Issues",
+   "15" => "Sport",
+   "16" => "Unrest, Conflicts & War",
+   "17" => "Weather"
+   }
   
 
 

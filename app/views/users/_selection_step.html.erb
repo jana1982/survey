@@ -1,26 +1,19 @@
-  <TABLE width="100%">
-<TR>
-
-<TD ALIGN="LEFT">
-<h2>Part I: Reqirements</h2>
-
-</TD>
-
-
-<TD ALIGN="RIGHT" width=400px>
-<%= progress_bar("my_sixty_percent_progress_bar",0.40,true,true) %>
-</TD>
-
-</TR>
+<TABLE width="100%">
+  <TR>
+    <TD ALIGN="LEFT">
+      <h2>Part I: Reqirements</h2>
+    </TD>
+    <TD ALIGN="RIGHT" width=400px>
+      <%= progress_bar("my_sixty_percent_progress_bar",0.40,true,true) %>
+    </TD>
+  </TR>
 </TABLE>
-
-
 <hr>
 <p>
   <h3>How would you describe your english skills?</h3>
-<p><i> For further explanations move your courser to the particular expression </i></p>
+  <i> For further explanations move your courser to the particular expression </i>
+</p>
 <table>
-
     <tr>
       <td><%= f.radio_button :language, 1  %></td>
       <td  	onmouseover="this.innerHTML = 'I do not speak English'"
@@ -71,8 +64,7 @@
       <td   	onmouseover="this.innerHTML = 'I am a native English speaker'"
  		onmouseout="this.innerHTML = 'First language'">First language</td> 
    </tr>
-</table>
-  
+</table>  
 <hr>
 <p>
   <h3>Do you have an active Twitter-account?</h3>
@@ -84,26 +76,17 @@
   <%= f.label :active, "Yes, I do have a Twitter-account to participate on Twitter." %><br>
 </p>
 <hr>
- 
- <h3>What are the most relevant topics on Twitter for you (1: very relevant, 10: not relevant at all)?</h3>
+<h3>What are the most relevant news topics on Twitter for you (1: very relevant, 10: not relevant at all)?</h3>
 <table >
-  <tr >
-    <td colspan="2"> 
-	
-	<h4><i>Please rank the following Items per drag and drop.</i></h4>
-    </td>
-    <td  style="padding-left: 100px;color: green;">
-	<% if !@user.interest_list.nil? %>
-	 <p><i>Your former ranking was saved. <br>
-	   You ordered the topics as follows:</i></p>
-	 <% end %>
-    </td>
-  </tr>
-
   <tr>
-    <td  >
-      <ul style="list-style-type: none;">
-	<li class="listnummern">1.</li>
+    <td colspan="2"> 	
+	<h4><i>Please rank the following Items per drag and drop.</i></h4>
+    </td>    
+  </tr>
+  <tr>
+    <td >
+      <ul style="list-style-type: none; vertical-align: text-bottom;">
+	<li class="listnummern" >1.</li>
 	<li class="listnummern">2.</li>
 	<li class="listnummern">3.</li>
 	<li class="listnummern">4.</li>
@@ -113,81 +96,253 @@
 	<li class="listnummern">8.</li>
 	<li class="listnummern">9.</li>
 	<li class="listnummern">10.</li>
+	<li class="listnummern">11.</li>
+	<li class="listnummern">12.</li>
+	<li class="listnummern">13.</li>
+	<li class="listnummern">14.</li>
+	<li class="listnummern">15.</li>
+	<li class="listnummern">16.</li>
+	<li class="listnummern">17.</li>
       </ul>
     </td>
     <td>
-      <div id="list_info">
-	<ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
-	      <% TOPICS.each do |value, topic| %>
-	      <li class="secondlist_secondlist" id="item_<%= topic.id %>">
-		<div class="handle" style="width: 300px;">
-		  
-		  <%= TOPICS[value]%>
-		</div>
-	      </li>
-	      <% end %>
-
-	    <!--
-	    <li class="secondlist_secondlist" id="secondlist_1" >
-	       <div class="handle" style="width: 300px;"> Service/Guides.</div>
+      <div id="list_info">      
+	<ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >	  
+	  <% @user.interest_list.each do |interest| %>
+	    <li class="secondlist_secondlist" id="secondlist_<%= interest %>"
+		onMouseover="document.getElementById ('explanation<%= interest %>').style.display='block';"  
+		onMouseout="document.getElementById('explanation<%= interest %>').style.display='none';">
+	      <div class="handle" style="width: 300px;"> <%= TOPICS[interest] %> </div>
 	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_2">
-	       <div class="handle" style="width: 300px;"> Science/Environmental/Technical topics.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_3">
-	       <div class="handle" style="width: 300px;"> Media/TV/Radio.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_4">
-	       <div class="handle" style="width: 300px;"> Travel.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_5">
-	       <div class="handle" style="width: 300px;"> Automotive/Traffic.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_6">
-	       <div class="handle" style="width: 300px;"> Local/Regional topics.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_7">
-	       <div class="handle" style="width: 300px;">Sports.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_8">
-	      <div class="handle" style="width: 300px;"> Cultural topics.</div>
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_9">
-	       <div class="handle" style="width: 300px;">Economics.</div> 
-	    </li>
-	    <li class="secondlist_secondlist" id="secondlist_10">
-	       <div class="handle" style="width: 300px;">Politics and News.</div>
-	    </li> -->
+	  <% end %>
 	</ul>
       </div>
     </td>
+    <td id="explanation1" style="display: none; padding-left: 100px;" ><b><u>Arts, Culture & Entertainment could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>Archaeology</li>	 
+									  <li>Architecture </li>	 
+									  <li>Bullfighting	 </li>
+									  <li>Festive Events (including Carnivals) </li>	 
+									  <li>Cinema	 </li>
+									  <li>Dance	 </li>
+									  <li>Fashion	 </li>
+									  <li>Language	</li> 
+									  <li>Libraries & Museums</li>	 
+									  <li>Literature	 </li>
+									  <li>Music	 </li>
+									  <li>Painting	</li> 
+									  <li>Photography	 </li>
+									  <li>Radio	 </li>
+									  <li>Sculpture	</li> 
+									  <li>Television	 </li>
+									  <li>Theatre	 </li>
+									  <li>Monuments & Heritage Sites </li>	 
+									  <li>Customs & Traditions	 </li>
+									  <li>Arts (general)	 </li>
+									  <li>Entertainment (general)</li>	 
+									  <li>Culture (general)	 </li>
+									  <li>Nightclubs	 </li>
+									  <li>Cartoon	 </li>
+									  <li>Animation</li>
+									</ul>
+    </td>
+    <td id="explanation2" style="display: none; padding-left: 100px;"><b><u>Crime, Law & Justice could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>Crime</li>	 
+									  <li>Judiciary (system of justice)</li>	 
+									  <li>Police	</li> 
+									  <li>Punishment</li>	 
+									  <li>Prison	 </li>
+									  <li>Laws	 </li>
+									  <li>Justice & Rights</li>	 
+									  <li>Trials	 </li>
+									  <li>Prosecution	 </li>
+									  <li>Organized Crime</li>
+									</ul>
+    </td>
+    <td id="explanation3" style="display: none; padding-left: 100px;"><b><u>Disasters & Accidents could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>Drought	 
+									  <li>Earthquake	 </li>
+									  <li>Famine	 </li>
+									  <li>Fire	 </li>
+									  <li>Flood	 </li>
+									  <li>Industrial accident	</li> 
+									  <li>Meteorological disaster</li>	 
+									  <li>Nuclear accident	 </li>
+									  <li>Pollution	 </li>
+									  <li>Transport accident	 </li>
+									  <li>Volcanic eruption	 </li>
+									  <li>Relief & Aid Organisations	</li> 
+									  <li>Accidents (general)	 </li>
+									  <li>Emergency Incidents	 </li>
+									  <li>Disasters (general)	 </li>
+									  <li>Emergency Planning</li>
+									</ul>
+    </td>
+    <td id="explanation4" style="display: none; padding-left: 100px;"><b><u>Economy, Business & Finance could be related to the following industries:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>Agriculture	 
+									  <li>Chemicals </li>	 
+									  <li>Computing & Information Technology </li>
+									  <li>Construction & Property	 </li>
+									  <li>Energy & Resources	 </li>
+									  <li>Financial & Business Services</li>	 
+									  <li>Consumer Goods	 </li>
+									  <li>Macro Economics	 </li>
+									  <li>Markets & Exchanges	 </li>
+									  <li>Media	 </li>
+									  <li>Metal Goods & Engineering	</li> 
+									  <li>Metals & Minerals	 </li>
+									  <li>Process Industries	 </li>
+									  <li>Tourism & Leisure	 </li>
+									  <li>Transport	 </li>
+									  <li>Company Information </li>
+									</ul>
+    </td>
+    <td id="explanation5" style="display: none; padding-left: 100px;"><b><u>Education could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>Adult Education	 
+									  <li>Further Education	 </li>
+									  <li>Parent Organisations	</li> 
+									  <li>Preschooling	 </li>
+									  <li>Schools	 </li>
+									  <li>Teachers Unions	</li> 
+									  <li>University	 </li>
+									  <li>Upbringing	 </li>
+									  <li>Entrance Examination </li>
+									</ul>
+    </td>
+    <td id="explanation6" style="display: none; padding-left: 100px;"><b><u>Local topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>regional businesses</li>
+									  <li>regional events</li>
+									  <li>local sport events </li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation7" style="display: none; padding-left: 100px;"><b><u>Sport topics could be related to sport events of:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>basketball</li>
+									  <li>football</li>
+									  <li>baseball</li>
+									  <li>hockey</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation8" style="display: none; padding-left: 100px;"><b><u>Cultural topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>literature</li>
+									  <li>music</li>
+									  <li>theatre</li>
+									  <li>arts</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation9" style="display: none; padding-left: 100px;"><b><u>Economical topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>companies</li>
+									  <li>branch of industry</li>
+									  <li>finance</li>
+									  <li>stock market</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation10" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation11" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation12" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation13" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation14" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation15" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation16" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
+    <td id="explanation17" style="display: none; padding-left: 100px;"> <b><u>Political topics could be related to:</u></b>
+									<br></br>
+									<ul style="padding-left: 40px;">
+									  <li>domestic politics</li>
+									  <li>foreign affairs</li>
+									  <li>social policies</li>
+									  <li>educational policy</li>
+									  <li>...</li>
+									</ul>
+    </td>
 
-
-     
   </tr>
 </table>
-	
-
 <%= sortable_element :secondlist,
-		     #:update => 'list_info',
 		     :handle => 'handle',
-		     :url => { :action => 'repeat', :id => @ItemList}
+		     :url => { :action => 'repeat'}
 %>
-
-
-
-
-<!--<script type="text/javascript">
- // <![CDATA[
-
-
-   Sortable.create("secondlist",
-     {dropOnEmpty:true,handle:'handle',containment:["firstlist","secondlist"],constraint:false});
- // ]]>
-</script>
-    -->
-
 <hr>
-  
- 
-  

@@ -152,7 +152,6 @@ textarea#user_reason_nexp{
 li .handle {
   cursor: move;
   border: medium;
-  width: 300px;
   line-height: 40px;
   
   }
@@ -183,10 +182,12 @@ li .handle {
   width: 30px;
   text-align: center;
 
+
+
 }
 
 ul{
-    -webkit-margin-before: 0em;
+  -webkit-margin-before: 0em;
   -webkit-margin-after:0em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;

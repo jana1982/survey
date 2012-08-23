@@ -78,8 +78,8 @@ class User < ActiveRecord::Base
       self.seen_retweet_message1 = seed.content[0]
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
+      self.interest_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
     end
-
   end
   
   
@@ -133,29 +133,24 @@ class User < ActiveRecord::Base
     self.current_step = steps[steps.index(current_step)-1]
   end
   
-  def does_qualify?
-      
-      does_not_qualify = false
-      
+  def does_qualify?      
+      does_not_qualify = false      
       # If the user does not seak english good enough
       if language != nil && language < 5
 	does_not_qualify = true
-      end
-      
+      end      
       # If the user does not have an active twitter account
       if twitter_account != nil && twitter_account < 2
 	does_not_qualify = true
-      end
-      
+      end      
       # If the user has not selected politcs as the first or second choice
-      if interest_list != nil
+      if current_step == "internet"
 	if interest_list[0] == "10" || interest_list[1] == "10"
-	  print "User did not qualify"
+	  print "User did qualify"
 	else	  
 	  does_not_qualify = true
 	end
-      end
-      
+      end      
       if does_not_qualify
         return false
       else
