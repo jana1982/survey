@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822115805) do
+ActiveRecord::Schema.define(:version => 20120824145542) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -227,6 +227,30 @@ ActiveRecord::Schema.define(:version => 20120822115805) do
     t.integer  "far_away"
     t.string   "interest_list"
     t.integer  "rank"
+    t.integer  "avg_unsubscribe_lists"
+    t.string   "other_str_sup_topic"
+    t.integer  "other_sup_topic",               :limit => 255
+    t.integer  "defence",                       :limit => 255
+    t.integer  "diplomacy",                     :limit => 255
+    t.integer  "elections",                     :limit => 255
+    t.integer  "espionage",                     :limit => 255
+    t.integer  "foreign_aid",                   :limit => 255
+    t.integer  "government",                    :limit => 255
+    t.integer  "human_rights",                  :limit => 255
+    t.integer  "parliament",                    :limit => 255
+    t.integer  "parties",                       :limit => 255
+    t.integer  "refugees",                      :limit => 255
+    t.integer  "regional_authorities",          :limit => 255
+    t.integer  "state_budget",                  :limit => 255
+    t.integer  "treaties",                      :limit => 255
+    t.integer  "constitution",                  :limit => 255
+    t.integer  "interior_policies",             :limit => 255
+    t.integer  "migration",                     :limit => 255
+    t.integer  "referenda",                     :limit => 255
+    t.integer  "citizens_initiative",           :limit => 255
+    t.integer  "lobbying",                      :limit => 255
+    t.integer  "nuclear_policies",              :limit => 255
+    t.integer  "local_authorities"
   end
 
 end

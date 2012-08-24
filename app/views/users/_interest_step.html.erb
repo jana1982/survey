@@ -13,7 +13,331 @@
 
 </TR>
 </TABLE>
-<!-- 
 
-TODO: Gather the users interests
->
+<hr>
+
+  <p>
+  <h3>What political topics are you especially interested in?</h3>
+  <table width="100%" class="hovertable">
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td width="15%">very interested</td>
+      <td width="15%">somewhat interested</td>
+      <td width="15%">unsure</td>
+      <td width="15%">not very interested</td>
+      <td width="15%">not interested at all</td>
+    </tr>
+
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+        Defence:</td>
+           <td style="text-align: center;">
+        <%= f.radio_button :defence, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :defence, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :defence, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :defence, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :defence, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+        Diplomacy:</td>
+           <td style="text-align: center;">
+        <%= f.radio_button :diplomacy, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :diplomacy, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :diplomacy, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :diplomacy, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :diplomacy, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+           Elections: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :elections, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :elections, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :elections, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :elections, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :elections, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+           Espionage & Intelligence: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :espionage, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :espionage, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :espionage, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :espionage, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :espionage, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+           Foreign Aid: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :foreign_aid	, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :foreign_aid	, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :foreign_aid	, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :foreign_aid	, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :foreign_aid	, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Government: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :government, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :government, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :government, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :government, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :government, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Human Rights: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :human_rights, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :human_rights, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :human_rights, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :human_rights, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :human_rights, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Local authorities: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :local_authorities, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :local_authorities, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :local_authorities, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :local_authorities, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :local_authorities, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Parliament: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parliament, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parliament, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parliament, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parliament, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parliament, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Parties: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parties, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parties, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parties, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parties, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :parties, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Refugees: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :refugees, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :refugees, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :refugees, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :refugees, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :refugees, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Regional authorities: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :regional_authorities, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :regional_authorities, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :regional_authorities, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :regional_authorities, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :regional_authorities, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          State Budget & Taxes: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :state_budget, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :state_budget, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :state_budget, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :state_budget, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :state_budget, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Treaties & International Organisations: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :treaties, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :treaties, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :treaties, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :treaties, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :treaties, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Constitution: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :constitution, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :constitution, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :constitution, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :constitution, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :constitution, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Interior Policies: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :interior_policies, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :interior_policies, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :interior_policies, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :interior_policies, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :interior_policies, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Migration: </td>
+           <td style="text-align: center;">
+        <%= f.radio_button :migration, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :migration, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :migration, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :migration, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :migration, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Citizens Initiative & Recall: </td>    
+           <td style="text-align: center;">
+        <%= f.radio_button :citizens_initiative, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :citizens_initiative, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :citizens_initiative, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :citizens_initiative, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :citizens_initiative, 1 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Referenda: </td>  
+           <td style="text-align: center;">
+        <%= f.radio_button :referenda, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :referenda, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :referenda, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :referenda, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :referenda, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Nuclear Policies: </td> 
+           <td style="text-align: center;">
+        <%= f.radio_button :nuclear_policies, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :nuclear_policies, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :nuclear_policies, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :nuclear_policies, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :nuclear_policies, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Lobbying: </td> 
+           <td style="text-align: center;">
+        <%= f.radio_button :lobbying, 1 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :lobbying, 2 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :lobbying, 3 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :lobbying, 4 %></td>
+           <td style="text-align: center;">
+        <%= f.radio_button :lobbying, 5 %></td>
+    </tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+          Others: <br><%= f.text_field :other_str_sup_topic%></td> 
+           <td style="text-align: center;">
+         <%= f.radio_button :other_sup_topic, 1 %></td>
+           <td style="text-align: center;">
+         <%= f.radio_button :other_sup_topic, 2 %></td>
+           <td style="text-align: center;">
+         <%= f.radio_button :other_sup_topic, 3 %></td>
+           <td style="text-align: center;">
+         <%= f.radio_button :other_sup_topic, 4 %></td>
+           <td style="text-align: center;">
+         <%= f.radio_button :other_sup_topic, 5 %></td>
+    </tr>
+
+           
+
+    </tr>

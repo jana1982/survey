@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 			:account_name, :number_followers, :number_followeees, :number_messages,
 			:avg_tweet_number, :avg_at_replies, :avg_read_tweets, :avg_stories, :avg_trend, :avg_retweet, :avg_follow,
 			:avg_login, :avg_search_keywords, :avg_search_accounts, :avg_activities_friends, :avg_who_to_follow,
-			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists,
+			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists, :avg_unsubscribe_lists,
 			:avg_delete_accounts_lists, :avg_unfollow_account, :avg_favorite_tweets, :avg_private_replies,
 			:surf_twitter_week, :surf_twitter_weekend,
 			:seen_seed, :batch_id,
@@ -108,9 +108,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ introduction  selection  internet twitter_motivation opinionleader
-	  test twitter message_relevance demographic target]
-      #   interest         
+      %w[ introduction  selection  internet twitter_motivation opinionleader interest
+	  test twitter message_relevance demographic target]          
   end
   
   def first_step?
@@ -145,7 +144,7 @@ class User < ActiveRecord::Base
       end      
       # If the user has not selected politcs as the first or second choice
       if current_step == "internet"
-	if interest_list[0] == "10" || interest_list[1] == "10"
+	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11"
 	  print "User did qualify"
 	else	  
 	  does_not_qualify = true
