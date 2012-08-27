@@ -177,53 +177,27 @@ document.observe('click', function(e, el) {
 //  return message;  
 //    };
 
+/*
+        Unobtrusive Slider Control by frequency decoder v2.6 (http://www.frequency-decoder.com/)
 
-window.onload = init;
-var user_mouse = new Array();
-var delta = 0;
-var old_delta = 0;
-var time_new = 0; 
-var time_old = 0; 
+        Released under a creative commons Attribution-Share Alike 3.0 Unported license (http://creativecommons.org/licenses/by-sa/3.0/)
 
-function init() {
-		if ($('seite_twitter').Event) {
-	          $('seite_twitter').captureEvents(Event.MOUSEMOVE);
-		}
-	 	time_new = new Date().getTime();
-   	time_old = new Date().getTime();
-	 	$('seite_twitter').onmousemove = getCursorXY;
-}
+        You are free:
 
-function getCursorXY(e) {
-  time_new = new Date().getTime();
-  delta = time_new - time_old
-  
-  var cursorX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-  var cursorY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+        * to copy, distribute, display, and perform the work
+        * to make derivative works
+        * to make commercial use of the work
 
-  user_mouse.push(new Array(cursorX,cursorY,old_delta)); 
- 	$('user_mousetracks').value = user_mouse.join(";");
- 
-  time_old = time_new
-  old_delta = delta
-}
+        Under the following conditions:
 
-//Sortable.create('floating-images', {tag: 'div', overlap: 'horizontal', constraint: false});
-//
-//Sortable.create('firstlist',{containment:['firstlist','secondlist'],
-//    onUpdate:function(element){alert('The first list was affected during the last drag.')}});
-//
-//Sortable.create('secondlist',{containment:['firstlist','secondlist'],
-//    onUpdate:function(element){alert('The second list was affected during the last drag.')}});
-//Sortable.serialize('mylist',{tag:'li',name:'mylist'});
-////
-//Event.observe(document, 'mousemove',
-//    function(event){
-//      $('mouse').value = "X: " + Event.pointerX(event) + "px Y: " + Event.pointerY(event) + "px";});
-//
-//function getcords(e){
-//  mouseX = Event.pointerX(e);
-//  mouseY = Event.pointerY(e);
-//  $('versuch').innerHTML = 'mouseX:'+mouseX+'--mouseY:' + mouseY;
-//  Event.observe(document, 'mousemove', getcords);
-//}
+                by Attribution.
+                --------------
+                You must attribute the work in the manner specified by the author or licensor.
+
+                sa
+                --
+                Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under a license identical to this one.
+
+        * For any reuse or distribution, you must make clear to others the license terms of this work.
+        * Any of these conditions can be waived if you get permission from the copyright holder.
+*/

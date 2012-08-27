@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+        <meta http-equiv="Content-Type"         content="text/html; charset=utf-8" />
+        <title>frequency decoder - accessible, unobtrusive slider demo</title>       
+        <meta name="author"                     content="frequency decoder" />
+        <meta name="description"                content="An unobtrusive javascript that turns any text input or selectlist into a keyboard-accessible slider control" />
+        <meta http-equiv="imagetoolbar"         content="no" />
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="../slider.css" />
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="../demo.css" />   
+
+<style type="text/css" media="screen">
+#selectTestLabel, .mt
+        {
+        margin-top:1em;
+        }
+.halfSize
+        {
+        width:50%;
+        float:left;
+        }
+.demoButton
+        {
+        float:left;
+        border:1px solid #999;
+        border-bottom:1px solid #555;
+        border-right:1px solid #555;
+        background:#eee;
+        height:20px;
+        width:20px;           
+        text-align:center;        
+        font-weight:bold;
+        font-family:'andale mono', 'lucida console', 'courier new', monospace;
+        }
+#selectTest2-L
+        {
+        margin-right:4px;
+        }
+#selectTest2-R
+        {
+        margin-left:4px;
+        }
+h2 code
+        {
+        text-transform:none;
+        }
+label
+        {
+        text-align:left;
+        }
+</style>
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" media="screen, projection" href="../ie.css" />
+<![endif]-->
+<script type="text/javascript" src="../slider.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+// Remember folks, none of this JavaScript is actually necessary, it's just there to show you
+// how to extend the slider functionality with callback functions/Object.methods
+
+// Preloading the images used for the slider handle, not at all necessary...
+var imgList = ["slider-disabled.png", "slider-disabled-1.png", "slider.png", "slider-1.png"];
+var preloadImg = []
+for(var i = 0, imgSrc; imgSrc = imgList[i]; i++) {
+        preloadImg[i] = new Image();
+        preloadImg[i].src = "../" + imgSrc;
+};  
+
+
+// Callback function called after the slider has been created and added to the DOM.
+// It creates the two buttons that are positioned to the left & right of the slider.
+
+var buttonManager = {
+        timer:null,
+        buttonID:null,
+        incVal:1,
+        createButtons: function (opts) {
+                
+                var sldr = document.getElementById("fd-slider-" + opts.elem.id),
+                    btn  = document.createElement("button"),
+                    btL, btR;
+            
+                btn.setAttribute("type", "button");           
+                btn.className = "demoButton";
+        
+                btL = btn.cloneNode(true);
+                btL.appendChild(document.createTextNode("-"));
+                btL.id = opts.elem.id + "-L";
+                btL.onmousedown = btL.onkeydown = buttonManager.buttonDown;
+                btL.onmouseup   = btL.onkeyup   = buttonManager.buttonUp;
+                
+                btR = btn.cloneNode(true);
+                btR.appendChild(document.createTextNode("+"));
+                btR.id = opts.elem.id + "-R";
+                
+                btR.onmousedown = btR.onkeydown = buttonManager.buttonDown;
+                btR.onmouseup   = btR.onkeyup   = buttonManager.buttonUp;
+                
+                opts.elem.parentNode.insertBefore(btL, sldr);
+                opts.elem.parentNode.insertBefore(btR, sldr.nextSibling);
+        },
+        increment:function(e) {
+                fdSliderController.increment(buttonManager.buttonID, buttonManager.incVal);        
+        },
+        // Very basic event handlers for the two buttons
+        buttonDown: function(e) {
+                if(buttonManager.timer != null) return false;
+                
+                e = e || window.event;
+                
+                if(e.keyCode) {
+                        if(e.keyCode == 9)  return true;        // Allow the TAB key
+                        if(e.keyCode != 13) return false;       // Return false on anything else but ENTER
+                };        
+        
+                var LR = this.id.match(/-(L|R)$/); 
+                buttonManager.buttonID = this.id.replace(/-(L|R)$/, "");
+                buttonManager.incVal = LR[0].search(/-L$/) != -1 ? -1 : 1;                 
+                buttonManager.timer = setInterval(buttonManager.increment, 100);
+                
+                return true;
+        },
+        buttonUp: function(e) {
+                buttonManager.incVal = 0;
+                clearInterval(buttonManager.timer);
+                buttonManager.timer = null;
+        }
+};
+
+// Callback function called after the slider has been created and added to the DOM
+// and also whenever the slider value changes.
+function updateLabel(opts) {
+        document.getElementById("label1").innerHTML = "Range -10 to 10 (current value: " + opts.value + ")";
+};
+
+//]]>
+</script>
+</head>
+<body>
+<div id="article-wrapper">
+  <form action="" method="post">
+    <h1>Accessible Unobtrusive Slider Demo</h1>
+    <h2>Accessibility Enhancements (<abbr title="Accessible Rich Internet Applications">ARIA</abbr>)</h2>
+
+    <!-- The following paragraph is used to set the ARIA describedby property -->
+    <p id="fd_slider_describedby">Whenever a slider has focus, the keys <kbd title="Left arrow key">&larr;</kbd>, <kbd title="Right arrow key">&rarr;</kbd>, <kbd title="Up arrow key">&uarr;</kbd>, <kbd title="Down arrow key">&darr;</kbd>, <kbd title="Insert key">Ins</kbd> and <kbd title="Delete key">Del</kbd> can be used to control the slider handle (pressing either the <kbd>Page up</kbd> or <kbd>Page down</kbd> keys or <kbd title="CTRL key">CTRL</kbd> and an arrow key will move the handle by two steps at a time), the <kbd title="Home key">Home</kbd> key to set the slider at it&#8217;s minimum value and the <kbd title="End key">End</kbd> key to set the slider at it&#8217;s maximum value.</p>
+    <p>The script automatically assigns each slider the required ARIA role of &#8220;slider&#8221; and states &#8220;valuemax&#8221;, &#8220;valuemin&#8221;, &#8220;valuetext&#8221; and &#8220;valuenow&#8221;.</p>
+    <p>Should an element with an id of <code>fd_slider_describedby</code> exist, this is used to set the ARIA &#8220;describedby&#8221; relationship. Additionally, should the sliders associated form element itself have an associated <code>label</code>, this label is used to set the ARIA &#8220;labelledby&#8221; relationship.</p>
+    <p>View the <a href="../slider.js">JavaScript source</a> or read the <a href="http://www.frequency-decoder.com/2008/08/01/unobtrusive-slider-control-v2">related article</a>.</p>
+
+    <h2><code>fdSliderController.increment</code> test</h2>
+    <fieldset>  
+      
+      <p class="mt">The following slider has been created from a select list. A simple callback function <code>buttonManager.createButtons</code> has been defined that creates the buttons to the left and right of the slider. These buttons, when activated, increment and decrement the slider&#8217;s handle by calling the <code>fdSliderController.increment</code> method.</p>
+      <p>Another callback function <code>updateLabel</code> has been defined that updates the input&#8217;s associated label with the current slider value.</p>
+      <p>View the page source to see the callback functions.</p>
+      <pre><code>
+class="fd_slider_cb_create_buttonManager-createButtons 
+       fd_slider_cb_create_updateLabel 
+       fd_slider_cb_update_updateLabel 
+       fd_slider_cn_halfSize 
+       fd_hide_input"
+       </code></pre>
+      <label for="selectTest2" class="lft" id="label1">Range -10 to 10</label>
+      <select name="selectTest2" id="selectTest2" class="fd_slider_cb_create_buttonManager-createButtons fd_slider_cb_create_updateLabel fd_slider_cb_update_updateLabel fd_slider_cn_halfSize fd_hide_input">
+        <option value="-10">-10</option>
+        <option value="-9">-9</option>
+        <option value="-8">-8</option>
+        <option value="-7">-7</option>
+        <option value="-6">-6</option>
+        <option value="-5">-5</option>
+        <option value="-4">-4</option>
+        <option value="-3">-3</option>
+        <option value="-2">-2</option>
+        <option value="-1">-1</option>
+        <option value="0" selected="selected">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </fieldset>     
+    <h2>Don&#8217;t forget folks</h2>
+    <p>The rather nice png images and styles for the black sliders were located at <a href="http://www.schillmania.com/">schillmania</a>. Go visit&#8230;</p>
+  </form>
+</div>
+</body>
+</html>

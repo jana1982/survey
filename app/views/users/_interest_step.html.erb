@@ -336,8 +336,38 @@
          <%= f.radio_button :other_sup_topic, 4 %></td>
            <td style="text-align: center;">
          <%= f.radio_button :other_sup_topic, 5 %></td>
-    </tr>
-
            
-
     </tr>
+  </table>
+  
+
+  <h1>Sliders</h1>
+  
+  <h2>Standard horizontal slider</h2>
+  
+  <div id="track1" >
+    <div id="handle1" style="top: -4px;"><img src='../images/runder-button1.png' style="height: 15px; width: 15px;"> </div>
+  </div>
+  
+  <p id="debug1"> </p>
+  
+ 
+  
+  <style>
+
+  </style>
+  
+
+  
+  <!-- FIXME: add more demos here -->
+  
+  <script type="text/javascript">
+  // <![CDATA[
+    new Control.Slider('handle1','track1',{
+      sliderValue:0.5,
+      onSlide:function(v){$('debug1').innerHTML='slide: '+v},
+      onChange:function(v){$('debug1').innerHTML='changed! '+v}});
+
+  // ]]>
+  </script>
+  

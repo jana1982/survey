@@ -1,0 +1,63 @@
+-*-markdown-*-
+
+script.aculo.us Slider
+======================
+
+This plugin is of fork of the original [scriptaculous slider plugin](http://github.com/rails/scriptaculous_slider/) which is not maintained anymore.
+
+It provides helpers for the script.aculo.us slider control.
+
+Installation
+------------
+
+In your Rails app root, use the following command-line : 
+
+	cd vendor/plugins
+	hg clone http://bitbucket.org/Bounga/scriptaculous-slider/
+	
+or install it system-wide :
+
+	$ sudo gem install scriptaculous_slider
+	
+and require it in Rails::Initializer (environment.rb) :
+
+	config.gem 'scriptaculous_slider'
+	
+You'll need to run:
+
+	rake scriptaculous_slider_install 
+
+to install the necessary slider.js file in your public/javascripts folder.
+
+
+Example
+-------
+
+	<%= slider_stylesheet %>
+  	<%= slider_field :object, :method, :range => 1..10 %>
+  	<%= slider_element "my_slider", :range => 1..10, :hidden_fields => true %>
+
+slider_element doesn't create hidden field by default but can be force to create one. It can handle Range for values option.
+
+slider_field uses a hidden field internally that gets set automatically
+when using the Slider.
+
+slider_stylesheet builds a stylesheet for the slider (examine the output and
+copy/paste to your own CSS files).
+
+To see the full functionality and possibilities of the slider control,
+have a look at the functional and unit tests provided in the script.aculo.us
+GIT repository, see <http://github.com/madrobby/scriptaculous/tree/master>.
+
+For discussion of this plugin use the [Prototype / Scriptaculous Google group](http://groups.google.com/group/prototype-scriptaculous)!
+	
+Other
+-----
+
+For more information see [Project homepage](http://www.bitbucket.org/Bounga/scriptaculous-slider/)
+
+Problems, comments, and suggestions are welcome on the [ticket system](http://www.bitbucket.org/Bounga/scriptaculous-slider/issues/new/)
+
+Copyright (c) 2005 Marty Haught, Thomas Fuchs, released under the MIT license
+
+Copyright (c) 2008 Nicolas Cavigneaux, released under the MIT license

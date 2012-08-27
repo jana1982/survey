@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+        <meta http-equiv="Content-Type"         content="text/html; charset=utf-8" />
+        <title>frequency decoder - accessible, unobtrusive slider demo</title>       
+        <meta name="author"                     content="frequency decoder" />
+        <meta name="description"                content="An unobtrusive javascript that turns any text input or selectlist into a keyboard-accessible slider control" />
+        <meta http-equiv="imagetoolbar"         content="no" />
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="./slider.css" />
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="./demo.css" />   
+
+<style type="text/css" media="screen">
+.mt
+        {
+        margin-top:1em;
+        }
+.halfSize
+        {
+        width:50%;
+        }
+.quarterSize
+        {
+        width:25%;
+        }
+select
+        {
+        margin-bottom:1.5em;
+        }
+label
+        {
+        text-align:left;
+        }
+</style>
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" media="screen, projection" href="./ie.css" />
+<![endif]-->
+
+<script type="text/javascript" src="./slider.js"></script>
+
+</head>
+<body>
+<div id="article-wrapper">
+  <form action="" method="post">
+    <h1>Accessible Unobtrusive Slider Demo</h1>
+    <h2>Accessibility Enhancements (<abbr title="Accessible Rich Internet Applications">ARIA</abbr>)</h2>
+
+    <!-- The following paragraph is used to set the ARIA describedby property -->
+    <p id="fd_slider_describedby">Whenever a slider has focus, the keys <kbd title="Left arrow key">&larr;</kbd>, <kbd title="Right arrow key">&rarr;</kbd>, <kbd title="Up arrow key">&uarr;</kbd>, <kbd title="Down arrow key">&darr;</kbd>, <kbd title="Insert key">Ins</kbd> and <kbd title="Delete key">Del</kbd> can be used to control the slider handle (pressing either the <kbd>Page up</kbd> or <kbd>Page down</kbd> keys or <kbd title="CTRL key">CTRL</kbd> and an arrow key will move the handle by two steps at a time), the <kbd title="Home key">Home</kbd> key to set the slider at it&#8217;s minimum value and the <kbd title="End key">End</kbd> key to set the slider at it&#8217;s maximum value.</p>
+    <p>The script automatically assigns each slider the required ARIA role of &#8220;slider&#8221; and states &#8220;valuemax&#8221;, &#8220;valuemin&#8221;, &#8220;valuetext&#8221; and &#8220;valuenow&#8221;.</p>
+    <p>Should an element with an id of <code>fd_slider_describedby</code> exist, this is used to set the ARIA &#8220;describedby&#8221; relationship. Additionally, should the sliders associated form element itself have an associated <code>label</code>, this label is used to set the ARIA &#8220;labelledby&#8221; relationship.</p>
+    <p>View the <a href="../slider.js">JavaScript source</a> or read the <a href="http://www.frequency-decoder.com/2008/08/01/unobtrusive-slider-control-v2">related article</a>.</p>
+
+    <h2>Non-Numeric option value demo</h2>
+    <fieldset>
+      <p>The following slider has been created from a select list whose options contain non-numeric values. I've also stipulated that the slider <em>not</em> use the mouseWheel when focused.</p>
+      <p><code>class="fd_disable_mousewheel fd_hide_input fd_slider_cn_quarterSize"</code></p>
+      <label for="selectTest1" id="selectTest1Label" class="lft">Range "lowest" to "highest"</label>
+      <select name="selectTest1" id="selectTest1" class="fd_disable_mousewheel fd_hide_input fd_slider_cn_quarterSize">
+        <optgroup label="low ranges">
+          <option value="lowest">lowest</option>
+          <option value="lower">lower</option>
+          <option value="low">low</option> 
+        </optgroup>
+        <option value="normal" selected="selected">normal</option>
+        <optgroup label="high ranges">
+          <option value="high">high</option>
+          <option value="higher">higher</option>
+          <option value="highest">highest</option>
+        </optgroup>
+      </select>
+    </fieldset>
+    <h2>Handle movement demos</h2>
+    <fieldset>  
+      <p class="mt">The following sliders have been created from similar select lists. I&#8217;ve left the associated selectLists visible to enable you to see the value changes. The three different modes of handle movement (tween, jump and timed) are shown.</p>
+      <p><code>class="fd_slider_cn_halfSize fd_tween"</code></p>
+
+      <label for="selectTest2" id="selectTest2Label" class="lft">Range -10 to 10, tween to click position</label>
+      <select name="selectTest2" id="selectTest2" class="fd_slider_cn_halfSize fd_tween">
+        <option value="-10">-10</option>
+        <option value="-9">-9</option>
+        <option value="-8">-8</option>
+        <option value="-7">-7</option>
+        <option value="-6">-6</option>
+        <option value="-5">-5</option>
+        <option value="-4">-4</option>
+        <option value="-3">-3</option>
+        <option value="-2">-2</option>
+        <option value="-1">-1</option>
+        <option value="0" selected="selected">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      
+      <p><code>class="fd_slider_cn_halfSize fd_jump"</code></p>
+      <label for="selectTest3" id="selectTest3Label" class="lft">Range -10 to 10, jump to click position</label>
+      <select name="selectTest3" id="selectTest3" class="fd_slider_cn_halfSize fd_jump">
+        <option value="-10">-10</option>
+        <option value="-9">-9</option>
+        <option value="-8">-8</option>
+        <option value="-7">-7</option>
+        <option value="-6">-6</option>
+        <option value="-5">-5</option>
+        <option value="-4">-4</option>
+        <option value="-3">-3</option>
+        <option value="-2">-2</option>
+        <option value="-1">-1</option>
+        <option value="0" selected="selected">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      
+      <p><code>class="fd_slider_cn_halfSize"</code></p>
+      <label for="selectTest4" id="selectTest4Label" class="lft">Range -10 to 10, timed increment</label>
+      <select name="selectTest4" id="selectTest4" class="fd_slider_cn_halfSize">
+        <option value="-10">-10</option>
+        <option value="-9">-9</option>
+        <option value="-8">-8</option>
+        <option value="-7">-7</option>
+        <option value="-6">-6</option>
+        <option value="-5">-5</option>
+        <option value="-4">-4</option>
+        <option value="-3">-3</option>
+        <option value="-2">-2</option>
+        <option value="-1">-1</option>
+        <option value="0" selected="selected">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </fieldset>
+    
+    <h2>Input demos</h2>
+    <fieldset>  
+      <p class="mt">The following slider has been created from a text input. I&#8217;ve left the associated input visible to enable you to see the value changes. No range has been defined and so the slider defaults to a range of 0 - 100.</p>
+      <p><code>class="fd_slider fd_tween"</code></p> 
+      <label for="inputTest1" id="inputTest1Label" class="lft">Range: 0 - 100</label>
+      <p><input name="inputTest1" id="inputTest1" type="text" title="Range: 0 - 100" class="fd_slider fd_tween" value="50"  maxlength="3" /></p>
+      
+      <p class="mt">The following slider has been created from a text input. I&#8217;ve left the associated input visible to enable you to see the value changes. An inversed range of 100 - 0 has been defined.</p>
+      <p><code>class="fd_slider fd_tween fd_range_100_0"</code></p> 
+
+      <label for="inputTest2" id="inputTest2Label" class="lft">Range: 100 - 0</label>
+      <p><input name="inputTest2" id="inputTest2" type="text" title="Range: 100 - 0" class="fd_slider fd_tween fd_range_100_0" value="75"  maxlength="3" /></p>
+    </fieldset>
+    
+    <h2>Don&#8217;t forget folks</h2>
+    <p>The rather nice png images and styles for the black sliders were located at <a href="http://www.schillmania.com/">schillmania</a>. Go visit&#8230;</p>
+  </form>
+</div>
+</body>
+</html>
