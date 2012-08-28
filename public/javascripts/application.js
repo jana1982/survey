@@ -177,27 +177,3 @@ document.observe('click', function(e, el) {
 //  return message;  
 //    };
 
-/*
-        Unobtrusive Slider Control by frequency decoder v2.6 (http://www.frequency-decoder.com/)
-
-        Released under a creative commons Attribution-Share Alike 3.0 Unported license (http://creativecommons.org/licenses/by-sa/3.0/)
-
-        You are free:
-
-        * to copy, distribute, display, and perform the work
-        * to make derivative works
-        * to make commercial use of the work
-
-        Under the following conditions:
-
-                by Attribution.
-                --------------
-                You must attribute the work in the manner specified by the author or licensor.
-
-                sa
-                --
-                Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under a license identical to this one.
-
-        * For any reuse or distribution, you must make clear to others the license terms of this work.
-        * Any of these conditions can be waived if you get permission from the copyright holder.
-*/

@@ -340,34 +340,49 @@
     </tr>
   </table>
   
+<hr>
+  
+  <h3>Please estimate the percentage of your incoming Tweet volume that relates to political news?</h3>
+   <div id="opinion_leader_text">
+       <p><table>
+           <tr>
+                      <td        onMouseover="document.getElementById ('null').style.display='block';"  
+                                 onMouseout="document.getElementById('null').style.display='none';">0%
+                      </td>
+                      <td>
+                      <div id="track1" style="float: none;">
+                                 <div id="handle1" style="border: thin;">
+                                            <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+                                            <div id="zahl"><%= @user.slider %>%</div>
+                                 </div>
+                      </div>
+                      </td>
+                      <td        onMouseover="document.getElementById ('hundert').style.display='block';"  
+                                 onMouseout="document.getElementById('hundert').style.display='none';">100%
+                      </td>
+                      <td id="null" style="display: none;padding-left: 100px;" >0% means non of your incoming tweets are related to political news
+                      </td>
+                      <td id="hundert"  style="display: none;padding-left: 100px;" >100% means all of your incoming tweets are related to political news
+                      </td>       
+           </tr>
 
-  <h1>Sliders</h1>
-  
-  <h2>Standard horizontal slider</h2>
-  
-  <div id="track1" >
-    <div id="handle1" style="top: -4px;"><img src='../images/runder-button1.png' style="height: 15px; width: 15px;"> </div>
-  </div>
-  
-  <p id="debug1"> </p>
-  
+       </table>
+       </p>
+
+            <%= f.hidden_field :slider, :value => 0%>
+            
  
-  
-  <style>
-
-  </style>
-  
-
-  
-  <!-- FIXME: add more demos here -->
-  
   <script type="text/javascript">
   // <![CDATA[
+var x=<%= @user.slider %>;
     new Control.Slider('handle1','track1',{
-      sliderValue:0.5,
-      onSlide:function(v){$('debug1').innerHTML='slide: '+v},
-      onChange:function(v){$('debug1').innerHTML='changed! '+v}});
+      sliderValue:x,
+      range: $R(0,100),
+      onSlide:function(v){$('zahl').innerHTML= parseInt(v + 0.5)+'%';},
+      onChange:function(v){document.getElementById('user_slider').value = v}});
 
   // ]]>
   </script>
-  
+   </div>
+   <br>
+<hr>

@@ -58,7 +58,14 @@ class User < ActiveRecord::Base
 			:gather_information, :find_out_things, :look_for_information, :knowledgeable_individual, :answers_questions, 
 			:keep_connect, :find_out, :deepen_relationships, :far_away,
 			
-			:interest_list, :rank
+			:interest_list,
+			
+			:other_sup_topic, :interior_policies, :foreign_aid, :regional_authorities, :nuclear_policies, :citizens_initiative, :defence, :elections, :referenda,
+			:human_rights, :treaties, :parties, :constitution, :lobbying, :state_budget, :diplomacy, :other_str_sup_topic, :parliament, :espionage,
+			:local_authorities, :government, :migration, :refugees,
+			
+			:slider,
+			:rank
 			
 
   

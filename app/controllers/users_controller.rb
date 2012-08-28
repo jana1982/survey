@@ -408,7 +408,7 @@ class UsersController < ApplicationController
     end
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
-    end   
+    end
     #if @user.current_step == "twitter"
     #  render :js => "alert('Please remember! This is a simulation. None of your actions will be transmitted to your Twitter account. Please act as if you would be on Twitter. Thank you');"
     #end

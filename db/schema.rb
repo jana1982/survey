@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824145542) do
+ActiveRecord::Schema.define(:version => 20120828085023) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -251,6 +251,7 @@ ActiveRecord::Schema.define(:version => 20120824145542) do
     t.integer  "lobbying",                      :limit => 255
     t.integer  "nuclear_policies",              :limit => 255
     t.integer  "local_authorities"
+    t.integer  "slider"
   end
 
 end

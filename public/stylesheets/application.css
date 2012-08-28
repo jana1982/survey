@@ -344,17 +344,19 @@ h2
 
 #track1{
   width:200px;
-  background: #e2e2e2;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
 
-
- background: -webkit-gradient(linear, left top, right top, from(#e2e2e2), to(#0B3B17));
-  height:10px;
+  height:15px;
 
 }
 
+
 #handle1{
-  width: 1px;
-  height: 1px;
+  width: 15px;
+  height: 15px;
 
 }
 
