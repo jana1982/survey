@@ -24,5 +24,7 @@ module ApplicationHelper
     text = %Q<1.\n2.\n3.\n...>
   end
   
-
+  def reset_slider
+    session[:user_params].deep_merge!({:slider => "-99"})
+  end
 end

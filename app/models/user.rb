@@ -64,8 +64,11 @@ class User < ActiveRecord::Base
 			:human_rights, :treaties, :parties, :constitution, :lobbying, :state_budget, :diplomacy, :other_str_sup_topic, :parliament, :espionage,
 			:local_authorities, :government, :migration, :refugees,
 			
-			:slider,
-			:rank
+			:slider, :dk_pol_percentage,
+			
+			:trad_mass_med_offline, :trad_mass_med_online, :person_contact_online,  :person_contact_offline, :self_aggregated,
+			
+			:rank, :person_contact_online_informal, :person_contact_offline_informal
 			
 
   

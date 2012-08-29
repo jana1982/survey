@@ -374,3 +374,17 @@ h2
       background-color:#444;
       color:#fff;
     }
+#reset{
+  width: 90px;
+  -webkit-box-align: center;
+text-align: center;
+cursor: default;
+color: buttontext;
+padding: 2px 6px 3px;
+border: 2px outset buttonface;
+border-image: initial;
+background-color: buttonface;
+box-sizing: border-box;
+-webkit-appearance: push-button;
+white-space: pre;
+}

@@ -404,11 +404,13 @@ class UsersController < ApplicationController
       set_opinion_leader_text
       if (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
        generate_zeros
+
       end
     end
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
     end
+ 
     #if @user.current_step == "twitter"
     #  render :js => "alert('Please remember! This is a simulation. None of your actions will be transmitted to your Twitter account. Please act as if you would be on Twitter. Thank you');"
     #end
