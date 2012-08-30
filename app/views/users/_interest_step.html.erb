@@ -19,14 +19,18 @@
   <p>
   <h3>What political topics are you especially interested in?</h3>
   <table width="100%" class="hovertable">
-    <tr style="text-align: center;" >
-      <td ></td>
-      <td width="15%">very interested</td>
-      <td width="15%">somewhat interested</td>
-      <td width="15%">unsure</td>
-      <td width="15%">not very interested</td>
-      <td width="15%">not interested at all</td>
-    </tr>
+    <tr>
+           <td></td>
+           <td colspan="5" align="center" ><b>Level of importance</b></td>
+   </tr>
+   <tr style="text-align: center;" >
+           <td ></td>
+           <td width="15%">Very</td>
+           <td width="15%">Moderately</td>
+           <td width="15%">Somewhat</td>
+           <td width="15%">Not</td>
+           <td width="15%">Don't know</td>
+   </tr>
 
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
@@ -342,80 +346,78 @@
   
 <hr>
   
-  <h3>Please estimate the percentage of the Tweets you read that are related to political topics?</h3>
+           <h3>Please estimate the percentage of the Tweets you read that are related to political topics?</h3>
 
-  </ul></i>
-   <div id="opinion_leader_text">
-       <p><table>
-           <tr>
-                      <td        onMouseover="document.getElementById ('null').style.display='block';"  
-                                 onMouseout="document.getElementById('null').style.display='none';">0%
-                      </td>
-                      <td>
-                      <div id="track1" style="float: none;">
-                                 <div id="handle1" style="border: thin;">
-                                            <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
-                                            <div id="zahl"><%= @user.slider %>%</div>
-                                 </div>
-                      </div>
-                      </td>
-                      <td        onMouseover="document.getElementById ('hundert').style.display='block';"  
-                                 onMouseout="document.getElementById('hundert').style.display='none';">100%
-                      </td>
-                      <td></td>
-                      <td id="null" style="display: none;padding-left: 100px;" >0% means non of the tweets you read are related to political topics
-                      </td>
-                      <td id="hundert"  style="display: none;padding-left: 100px;" >100% means all of the tweets you read are related to political topics
-                      </td>       
-           </tr>
+           <div id="opinion_leader_text">
+                      <p>
+                                 <table>
+                                            <tr>
+                                                       <td        onMouseover="document.getElementById ('null').style.display='block';"  
+                                                                  onMouseout="document.getElementById('null').style.display='none';">0%
+                                                       </td>
+                                                       <td>
+                                                       <div id="track1" style="float: none;">
+                                                                  <div id="handle1" style="border: thin;">
+                                                                             <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+                                                                             <div id="zahl"><%= @user.slider %>%</div>
+                                                                  </div>
+                                                       </div>
+                                                       </td>
+                                                       <td        onMouseover="document.getElementById ('hundert').style.display='block';"  
+                                                                  onMouseout="document.getElementById('hundert').style.display='none';">100%
+                                                       </td>
+                                                       <td></td>
+                                                       <td id="null" style="display: none;padding-left: 100px;" >0% means non of the tweets you read are related to political topics
+                                                       </td>
+                                                       <td id="hundert"  style="display: none;padding-left: 100px;" >100% means all of the tweets you read are related to political topics
+                                                       </td>       
+                                            </tr>
+                                   
+                                 </table>
+                      </p>
+           
+                      <%= f.hidden_field :slider, :value => @user.slider rescue "-99" %>
 
-       </table>
-       </p>
-
-<%= f.hidden_field :slider, :value => @user.slider rescue "-99" %>
-    
-
-
-  <script type="text/javascript">
-  // <![CDATA[
-  
-var x=(<%= @user.slider %>);
-    new Control.Slider('handle1','track1',{
-      sliderValue:x,
-      range: $R(0,100),
-      onSlide:function(v){$('zahl').innerHTML= parseInt(v + 0.5)+'%';},
-      onChange:function(v){document.getElementById('user_slider').value = v },
-      });
-
-  // ]]>
-  </script>
-  <br>
-
-<%= f.check_box :dk_pol_percentage, :options => {}, :checked_value => "1", :unchecked_value => "0"%>   I don't know the percentage of the political tweets I read.<br></br>
-<div id="reset" onclick=<%= reset_slider %> >Reset Slider</div>
-   </div>
+                      <script type="text/javascript">
+                                 // <![CDATA[
+                                 var x=(<%= @user.slider %>);
+                                 new Control.Slider('handle1','track1',{
+                                   sliderValue:x,
+                                   range: $R(0,100),
+                                   onSlide:function(v){$('zahl').innerHTML= parseInt(v + 0.5)+'%';},
+                                   onChange:function(v){document.getElementById('user_slider').value = v },
+                                   });
+                                 // ]]>
+                      </script>
+                      <br>
+                      <%= f.check_box :dk_pol_percentage, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know the percentage of the political tweets I read.
+                      <br></br>
+           </div>
 
 <hr>
 <h3>How important are the following resources when you need information on a topic related to political news <b>quickly</b>?</h3>
            <table width="100%" class="hovertable">
+
                       <tr>
-                                 <td></td>
-                                 <td colspan="4" align="center" ><b>Level of importance</b></td>
+                                 <td colspan="2"></td>
+                                 <td colspan="5" align="center" ><b>Level of importance</b></td>
                       </tr>
                       <tr style="text-align: center;" >
-                                 <td ></td>
-                                 <td width="15%">Very</td>
-                                 <td width="15%">Moderately</td>
-                                 <td width="15%">Somewhat</td>
-                                 <td width="15%">Not</td>
+                                 <td width="50%" colspan="2"></td>
+                                 <td width="10%">Very</td>
+                                 <td width="10%">Moderately</td>
+                                 <td width="10%">Somewhat</td>
+                                 <td width="10%">Not</td>
+                                 <td width="10%">Don't know</td>
                       </tr>
 
     
                       <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
                                     <b >Traditional mass media offline </b><br>
                                     (e.g.: television, radio, magazines, newspaper)</td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;" >
                                     <%= f.radio_button :trad_mass_med_offline, 1 %></td>
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                     <%= f.radio_button :trad_mass_med_offline, 2 %></td>
@@ -423,59 +425,143 @@ var x=(<%= @user.slider %>);
                                     <%= f.radio_button :trad_mass_med_offline, 3 %></td>
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                     <%= f.radio_button :trad_mass_med_offline, 4 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                    <%= f.radio_button :trad_mass_med_offline, 5 %></td>
+                      
                             
                       </tr>
-   <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-        <b>Traditional mass media online</b><br> (e.g.: websites/mediaoutlets in social networks or microblogs/rss feeds/newsletters of television, radio, magazines, newspaper)</td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :trad_mass_med_online, 1 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :trad_mass_med_online, 2 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :trad_mass_med_online, 3 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :trad_mass_med_online, 4 %></td>
-          
-    </tr>
-   <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-         <b>Personal contact (offline) </b><br>(e.g.: others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_offline, 1 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_offline, 2 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_offline, 3 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_offline, 4 %></td>
-          
-    </tr>
-   <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-         <b>Personal contact (online) </b><br>(e.g.: email/social network/microblogging/chat with others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_online, 1 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_online, 2 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_online, 3 %></td>
-           <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-        <%= f.radio_button :person_contact_online, 4 %></td>
-          
-    </tr>
-   <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td >
-        <b> Self aggregated news </b><br>(e.g.: blogs, search engine, government sites, community sites)</td>
-           <td style="text-align: center;">
-        <%= f.radio_button :self_aggregated, 1 %></td>
-           <td style="text-align: center;">
-        <%= f.radio_button :self_aggregated, 2 %></td>
-           <td style="text-align: center;">
-        <%= f.radio_button :self_aggregated, 3 %></td>
-           <td style="text-align: center;">
-        <%= f.radio_button :self_aggregated, 4 %></td>
-          
-    </tr>
-      </table>
+                      <br>
+                      <script type="text/javascript">
+                      //<![CDATA[
+                       new Form.Element.Observer($('user_trad_mass_med_offline_1'), 0.3, function(form, value){
+                            if (value == 1) {
+                             Effect.SlideDown('usertrad_mass_med_offline_sub_selection')
+                            }
+                            else {
+                            document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='none';
+                            }
+                        });
+                       new Form.Element.Observer($('user_trad_mass_med_offline_2'), 0.3, function(form, value){
+                            if (value == 2) {
+                             Effect.SlideDown('usertrad_mass_med_offline_sub_selection')
+                            }
+                            else {
+                            document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <% if @user.trad_mass_med_offline == (1 || 2)%>          
+                      <tr id="usertrad_mass_med_offline_sub_selection" onload="document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='block';">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil_grau" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_offline_sub_selection", :f => f%></td>
+                      </tr>
+                      <% else %>
+                      <tr id="usertrad_mass_med_offline_sub_selection" onload="document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='none';">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil_grau" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_offline_sub_selection", :f => f%></td>
+                      </tr>
+                      <% end %> 
+                        
+                      
+                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
+                                   <b>Traditional mass media online</b><br>
+                                   (e.g.: websites/mediaoutlets in social networks or microblogs/rss feeds/newsletters of television, radio, magazines, newspaper)</td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :trad_mass_med_online, 1 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :trad_mass_med_online, 2 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :trad_mass_med_online, 3 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :trad_mass_med_online, 4 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :trad_mass_med_online, 5 %></td>
+                                     
+                      </tr>
+                      <br>
+                      <script type="text/javascript">
+                      //<![CDATA[
+                       new Form.Element.Observer($('user_trad_mass_med_online_1'), 0.3, function(form, value){
+                            if (value == 1) {
+                             Effect.SlideDown('usertrad_mass_med_online_sub_selection')
+                            }
+                            else {
+                            document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
+                            }
+                        });
+                       new Form.Element.Observer($('user_trad_mass_med_online_2'), 0.3, function(form, value){
+                            if (value == 2) {
+                             Effect.SlideDown('usertrad_mass_med_online_sub_selection')
+                            }
+                            else {
+                            document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <% if @user.trad_mass_med_online == (1 || 2)%>          
+                      <tr id="usertrad_mass_med_online_sub_selection" onload="document.getElementById('usertrad_mass_med_online_sub_selection').style.display='block';">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_online_sub_selection", :f => f%></td>
+                      </tr>
+                      <% else %>
+                      <tr id="usertrad_mass_med_online_sub_selection" onload="document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_online_sub_selection", :f => f%></td>
+                      </tr>
+                      <% end %>
+                      
+                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
+                                    <b>Personal contact (offline) </b><br>
+                                    (e.g.: others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_offline, 1 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_offline, 2 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_offline, 3 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_offline, 4 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_offline, 5 %></td>
+                             
+                      </tr>
+                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
+                                    <b>Personal contact (online) </b><br>
+                                    (e.g.: email/social network/microblogging/chat with others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_online, 1 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_online, 2 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_online, 3 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_online, 4 %></td>
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :person_contact_online, 5 %></td>
+                                     
+                      </tr>
+                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+                                 <td colspan="2">
+                                   <b> Self aggregated news </b><br>
+                                   (e.g.: blogs, search engine, government sites, community sites)</td>
+                                 <td style="text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 1 %></td>
+                                 <td style="text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 2 %></td>
+                                 <td style="text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 3 %></td>
+                                 <td style="text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 4 %></td>
+                                 <td style="text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 5 %></td>
+                                     
+                      </tr>
+           </table>
+           
+           
 <hr>

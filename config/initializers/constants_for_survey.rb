@@ -30,5 +30,5 @@
    "17" => "Weather"
    }
   
-
+INTERESTSCALE =[["<choose option>", 0], ["Very interested", 1], ["Moderately interested", 2], ["Somewhat interested", 3], ["Not interested", 4], ["Don't know", 5]]
 

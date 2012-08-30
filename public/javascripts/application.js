@@ -177,3 +177,129 @@ document.observe('click', function(e, el) {
 //  return message;  
 //    };
 
+function showTable(websites) 
+      {
+      var el1 = document.getElementById('undo_website');
+      var el = document.getElementById('websites');
+      if ( el.style.display != 'none' ) 
+          {
+          el.style.display = 'none';
+          el1.style.display = '';
+          }
+      else 
+          {
+          el.style.display = '';
+          el1.style.display = 'none';
+          }
+      }
+
+function showTabletv(tv)
+      {
+      var el = document.getElementById('tv');
+      var el_iv = document.getElementById('tv_iv');
+      var el0 = document.getElementById('tv0');
+      var el1 = document.getElementById('tv1');
+      var el2 = document.getElementById('tv2');
+      var el3 = document.getElementById('tv3');
+      var el4 = document.getElementById('tv4');
+      var el_undo = document.getElementById('tv_undo');
+      var el_undo_iv = document.getElementById('tv_undo_iv');
+      var el0_undo = document.getElementById('tv_undo0');
+      var el1_undo = document.getElementById('tv_undo1');
+      var el2_undo = document.getElementById('tv_undo2');
+      var el3_undo = document.getElementById('tv_undo3');
+      var el4_undo = document.getElementById('tv_undo4');
+      
+      if ( el.style.display != 'none' ) 
+          {
+          el.style.display = 'none';
+          el_iv.style.display = 'none';
+          el0.style.display = 'none';
+          el1.style.display = 'none';
+          el2.style.display = 'none';
+          el3.style.display = 'none';
+          el4.style.display = 'none';
+          el_undo.style.display = '';
+          el_undo_iv.style.display = '';
+          el0_undo.style.display = '';
+          el1_undo.style.display = '';
+          el2_undo.style.display = '';
+          el3_undo.style.display = '';
+          el4_undo.style.display = '';
+
+          }
+      else 
+          {
+          el.style.display = '';
+          el_iv.style.display = '';
+          el0.style.display = '';
+          el1.style.display = '';
+          el2.style.display = '';
+          el3.style.display = '';
+          el4.style.display = '';
+          el_undo.style.display = 'none';
+          el_undo_iv.style.display = 'none';
+          el0_undo.style.display = 'none';
+          el1_undo.style.display = 'none';
+          el2_undo.style.display = 'none';
+          el3_undo.style.display = 'none';
+          el4_undo.style.display = 'none';
+          }
+      }
+function hideandshow(){
+      if ( el.style.display != 'none' ) 
+          {
+          el.style.display = 'none';
+          el_iv.style.display = 'none';
+          el0.style.display = 'none';
+          el1.style.display = 'none';
+          el2.style.display = 'none';
+          el3.style.display = 'none';
+          el4.style.display = 'none';
+          el_undo.style.display = '';
+          el_undo_iv.style.display = '';
+          el0_undo.style.display = '';
+          el1_undo.style.display = '';
+          el2_undo.style.display = '';
+          el3_undo.style.display = '';
+          el4_undo.style.display = '';
+
+          }
+      else 
+          {
+          el.style.display = '';
+          el_iv.style.display = '';
+          el0.style.display = '';
+          el1.style.display = '';
+          el2.style.display = '';
+          el3.style.display = '';
+          el4.style.display = '';
+          el_undo.style.display = 'none';
+          el_undo_iv.style.display = 'none';
+          el0_undo.style.display = 'none';
+          el1_undo.style.display = 'none';
+          el2_undo.style.display = 'none';
+          el3_undo.style.display = 'none';
+          el4_undo.style.display = 'none';
+          }
+      }
+function showTablemagazin(magazin)
+      {
+      var el = document.getElementById('magazin');
+      var el_iv = document.getElementById('magazin_iv');
+      var el0 = document.getElementById('magazin0');
+      var el1 = document.getElementById('magazin1');
+      var el2 = document.getElementById('magazin2');
+      var el3 = document.getElementById('magazin3');
+      var el4 = document.getElementById('magazin4');
+      var el_undo = document.getElementById('magazin_undo');
+      var el_undo_iv = document.getElementById('magazin_undo_iv');
+      var el0_undo = document.getElementById('magazin_undo0');
+      var el1_undo = document.getElementById('magazin_undo1');
+      var el2_undo = document.getElementById('magazin_undo2');
+      var el3_undo = document.getElementById('magazin_undo3');
+      var el4_undo = document.getElementById('magazin_undo4');
+      hideandshow();
+      }
+
+      

@@ -68,6 +68,8 @@ class User < ActiveRecord::Base
 			
 			:trad_mass_med_offline, :trad_mass_med_online, :person_contact_online,  :person_contact_offline, :self_aggregated,
 			
+			:tv, :radio, :magazin, :newspaper,
+			
 			:rank, :person_contact_online_informal, :person_contact_offline_informal
 			
 
