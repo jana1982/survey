@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120830092342) do
+ActiveRecord::Schema.define(:version => 20120831113245) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -264,6 +264,26 @@ ActiveRecord::Schema.define(:version => 20120830092342) do
     t.integer  "radio"
     t.integer  "magazin"
     t.integer  "newspaper"
+    t.integer  "tv_website"
+    t.integer  "tv_sn"
+    t.integer  "tv_mb"
+    t.integer  "tv_rss"
+    t.integer  "tv_newsletter"
+    t.integer  "radio_website"
+    t.integer  "radio_sn"
+    t.integer  "radio_mb"
+    t.integer  "radio_rss"
+    t.integer  "radio_newsletter"
+    t.integer  "magazin_website"
+    t.integer  "magazin_sn"
+    t.integer  "magazin_mb"
+    t.integer  "magazin_rss"
+    t.integer  "magazin_newsletter"
+    t.integer  "newspaper_website"
+    t.integer  "newspaper_sn"
+    t.integer  "newspaper_mb"
+    t.integer  "newspaper_rss"
+    t.integer  "newspaper_newsletter"
   end
 
 end

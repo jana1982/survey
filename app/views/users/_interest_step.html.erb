@@ -480,12 +480,23 @@
                                    <%= f.radio_button :trad_mass_med_online, 5 %></td>
                                      
                       </tr>
-                      <br>
-                      <script type="text/javascript">
+                      <br>                                            
+                      <tr id="usertrad_mass_med_online_sub_selection" style="display:none">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;">
+                                            <%= render "usertrad_mass_med_online_sub_selection", :f => f%>
+                                 </td>
+                      </tr>
+                      <script type="text/javascript">                                 
                       //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_trad_mass_med_online_1').checked || $('user_trad_mass_med_online_2').checked){
+                                     Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});                           
+                                 };
+                       });
                        new Form.Element.Observer($('user_trad_mass_med_online_1'), 0.3, function(form, value){
                             if (value == 1) {
-                             Effect.SlideDown('usertrad_mass_med_online_sub_selection')
+                             Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
                             }
                             else {
                             document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
@@ -493,7 +504,7 @@
                         });
                        new Form.Element.Observer($('user_trad_mass_med_online_2'), 0.3, function(form, value){
                             if (value == 2) {
-                             Effect.SlideDown('usertrad_mass_med_online_sub_selection')
+                             Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
                             }
                             else {
                             document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
@@ -501,18 +512,6 @@
                         });
                       //]]>
                       </script>
-                      <% if @user.trad_mass_med_online == (1 || 2)%>          
-                      <tr id="usertrad_mass_med_online_sub_selection" onload="document.getElementById('usertrad_mass_med_online_sub_selection').style.display='block';">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_online_sub_selection", :f => f%></td>
-                      </tr>
-                      <% else %>
-                      <tr id="usertrad_mass_med_online_sub_selection" onload="document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_online_sub_selection", :f => f%></td>
-                      </tr>
-                      <% end %>
-                      
                       <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
                                     <b>Personal contact (offline) </b><br>

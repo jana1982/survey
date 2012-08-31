@@ -19,6 +19,58 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def tv_to_ni
+    session[:user_params].deep_merge!({:tv_website => 4})
+    session[:user_params].deep_merge!({:tv_sn => 4})
+    session[:user_params].deep_merge!({:tv_mb => 4})
+    session[:user_params].deep_merge!({:tv_rss => 4})
+    session[:user_params].deep_merge!({:tv_newsletter => 4})
+
+    respond_to do |format|
+      # The action 'vote' is called here.
+      format.js { render :js => "showTable_tv_o(tv_online)"}
+    end
+  end
+  
+  def radio_to_ni
+    session[:user_params].deep_merge!({:radio_website => 4})
+    session[:user_params].deep_merge!({:radio_sn => 4})
+    session[:user_params].deep_merge!({:radio_mb => 4})
+    session[:user_params].deep_merge!({:radio_rss => 4})
+    session[:user_params].deep_merge!({:radio_newsletter => 4})
+
+    respond_to do |format|
+      # The action 'vote' is called here.
+      format.js { render :js => "showTable_radio_o(radio_online)"}
+    end
+  end
+  
+  def magazines_to_ni
+    session[:user_params].deep_merge!({:magazin_website => 4})
+    session[:user_params].deep_merge!({:magazin_sn => 4})
+    session[:user_params].deep_merge!({:magazin_mb => 4})
+    session[:user_params].deep_merge!({:magazin_rss => 4})
+    session[:user_params].deep_merge!({:magazin_newsletter => 4})
+
+    respond_to do |format|
+      # The action 'vote' is called here.
+      format.js { render :js => "showTable_magazin_o(magazin_online)"}
+    end
+  end
+  
+  def newspaper_to_ni
+    session[:user_params].deep_merge!({:newspaper_website => 4})
+    session[:user_params].deep_merge!({:newspaper_sn => 4})
+    session[:user_params].deep_merge!({:newspaper_mb => 4})
+    session[:user_params].deep_merge!({:newspaper_rss => 4})
+    session[:user_params].deep_merge!({:newspaper_newsletter => 4})
+
+    respond_to do |format|
+      # The action 'vote' is called here.
+      format.js { render :js => "showTable_newspaper_o(newspaper_online)"}
+    end
+  end
+  
   def repeat
     #puts params["secondlist"][0]
     #result = params["secondlist"].to_a.collect{|e| e.match(/\d+/)[0] rescue ""} #De-serialize the output from the list

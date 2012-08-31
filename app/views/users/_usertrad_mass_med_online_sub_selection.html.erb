@@ -1,4 +1,6 @@
-<h4>Could you specify: How important is each of the traditional mass media online channels when you need information on a topic related to political news <b>quickly</b>?</h4>
+<h4>Could you specify: How important is each of the <u>traditional mass media online</u> channels when you need information on a topic related to political news <u>quickly</u>?</h4>
+<i>Tipp: When you would like to answer 'Not interested' for a hole section e.g. Television, click on the 'Hide'-link at the top of the section. All values will be automatically set to 'Not interested' and disappear.
+To undo this action you can click on the Link that appears.</i>
   <table width="100%" class="hovertable">
 
     <tr style="text-align: center;" >
@@ -9,104 +11,319 @@
       <td width="10%">Not</td>
       <td width="10%">Don't know</td>
     </tr>
-
-
-    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-         Television
-      </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :tv, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :tv, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :tv, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :tv, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :tv, 5 %></td>
- 
+    
+    <tr id="tv_online">
+      <td colspan="6"><b><i>Television:</i></b> <a id="tv_online_flip" href="#" onClick="flipTable('tv'); return false;" >Hide</a></td>
     </tr>
-    <br>
-                      <script type="text/javascript">
-                      //<![CDATA[
-                       new Form.Element.Observer($('user_tv_1'), 0.3, function(form, value){
-                            if (value == 1) {
-                             Effect.SlideDown('tv_sub_section')
-                            }
-                            else {
-                            document.getElementById('tv_sub_section').style.display='none';
-                            }
-                        });
-                       new Form.Element.Observer($('user_tv_2'), 0.3, function(form, value){
-                            if (value == 2) {
-                             Effect.SlideDown('tv_sub_section')
-                            }
-                            else {
-                            document.getElementById('tv_sub_section').style.display='none';
-                            }
-                        });
-                      //]]>
-                      </script>
-                      <% if @user.tv == (1 || 2)%>          
-                      <tr id="_tv_sub_section" onload="document.getElementById('tv_sub_section').style.display='block';">
-                                 
-                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "tv_sub_section", :f => f%></td>
-                      </tr>
-                      <% else %>
-                      <tr id="tv_sub_selection" onload="document.getElementById('tv_sub_section').style.display='none';">
-                                 
-                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "tv_sub_section", :f => f%></td>
-                      </tr>
-                      <% end %>
-                      
-    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-         Radio
-      </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :radio, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :radio, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :radio, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :radio, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :radio, 5 %></td>
- 
+    <tr id="tv_online0" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding-left: 20px;">
+       TV-Channel websites</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_website, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_website, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_website, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_website, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_website, 5 %></td>
     </tr>
-    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-         Magazines
-      </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :magazin, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :magazin, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :magazin, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :magazin, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-         <%= f.radio_button :magazin, 5 %></td>
- 
+    
+    <tr id="tv_online1" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        TV-Channel account in social networks</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_sn, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_sn, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_sn, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_sn, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_sn, 5 %></td>
     </tr>
-    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td>
-         Newspaper
-      </td>
+    
+    <tr id="tv_online2" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        TV-Channel account in microbloggs</td>
       <td style="text-align: center;">
-         <%= f.radio_button :newspaper, 1 %></td>
+        <%= f.radio_button :tv_mb, 1 %></td>
       <td style="text-align: center;">
-         <%= f.radio_button :newspaper, 2 %></td>
+        <%= f.radio_button :tv_mb, 2 %></td>
       <td style="text-align: center;">
-         <%= f.radio_button :newspaper, 3 %></td>
+        <%= f.radio_button :tv_mb, 3 %></td>
       <td style="text-align: center;">
-         <%= f.radio_button :newspaper, 4 %></td>
+        <%= f.radio_button :tv_mb, 4 %></td>
       <td style="text-align: center;">
-         <%= f.radio_button :newspaper, 5 %></td>
- 
+        <%= f.radio_button :tv_mb, 5 %></td>
     </tr>
+    
+    <tr id="tv_online3" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        TV-Channel Rss Feed</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_rss, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_rss, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_rss, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_rss, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :tv_rss, 5 %></td>
+    </tr>
+  
+    <tr id="tv_online4" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+        Newsletter of a TV-Channel</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :tv_newsletter, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :tv_newsletter, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :tv_newsletter, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :tv_newsletter, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :tv_newsletter, 5 %></td>
+    </tr>
+        
+    <tr id="radio_online">
+      <td colspan="6"><b><i>Radio:</i></b> <a id="radio_online_flip" href="#" onClick="flipTable('radio'); return false;" >Hide</a></td>
+    </tr>
+    <tr id="radio_online0" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding-left: 20px;">
+       Radio-Channel websites</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_website, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_website, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_website, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_website, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_website, 5 %></td>
+    </tr>
+    
+    <tr id="radio_online1" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Radio-Channel account in social networks</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_sn, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_sn, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_sn, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_sn, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_sn, 5 %></td>
+    </tr>
+    
+    <tr id="radio_online2" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Radio-Channel account in microbloggs</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_mb, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_mb, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_mb, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_mb, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_mb, 5 %></td>
+    </tr>
+    
+    <tr id="radio_online3" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Radio-Channel Rss Feed</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_rss, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_rss, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_rss, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_rss, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :radio_rss, 5 %></td>
+    </tr>
+  
+    <tr id="radio_online4" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+        Newsletter of a Radio-Channel</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :radio_newsletter, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :radio_newsletter, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :radio_newsletter, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :radio_newsletter, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :radio_newsletter, 5 %></td>
+    </tr>
+    
+   
+    <tr id="magazin_online">
+      <td colspan="6"><b><i>Magazines:</i></b><a id="magazin_online_flip" href="#" onClick="flipTable('magazin'); return false;" >Hide</a></td>
+    </tr>
+    <tr id="magazin_online0" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding-left: 20px;">
+       Magazin websites</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_website, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_website, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_website, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_website, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_website, 5 %></td>
+    </tr>
+    
+    <tr id="magazin_online1" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Magazin account in social networks</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_sn, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_sn, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_sn, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_sn, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_sn, 5 %></td>
+    </tr>
+    
+    <tr id="magazin_online2" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Magazin account in microbloggs</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_mb, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_mb, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_mb, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_mb, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_mb, 5 %></td>
+    </tr>
+    
+    <tr id="magazin_online3" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Magazin Rss Feed</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_rss, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_rss, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_rss, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_rss, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :magazin_rss, 5 %></td>
+    </tr>
+  
+    <tr id="magazin_online4" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+        Newsletter of a Magazin </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :magazin_newsletter, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :magazin_newsletter, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :magazin_newsletter, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :magazin_newsletter, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :magazin_newsletter, 5 %></td>
+    </tr>
+    
+    <tr id="newspaper_online">
+      <td colspan="6"><b><i>Newspapers:</i></b> <a id="newspaper_online_flip" href="#" onClick="flipTable('newspaper'); return false;" >Hide</a></td>
+    </tr>
+    <tr id="newspaper_online0" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding-left: 20px;">
+       Newspaper websites</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_website, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_website, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_website, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_website, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_website, 5 %></td>
+    </tr>
+    
+    <tr id="newspaper_online1" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Newspaper account in social networks</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_sn, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_sn, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_sn, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_sn, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_sn, 5 %></td>
+    </tr>
+    
+    <tr id="newspaper_online2" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Newspaper account in microbloggs</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_mb, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_mb, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_mb, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_mb, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_mb, 5 %></td>
+    </tr>
+    
+    <tr id="newspaper_online3" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td style="padding-left: 20px;">
+        Newspaper Rss Feed</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_rss, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_rss, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_rss, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_rss, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :newspaper_rss, 5 %></td>
+    </tr>
+  
+    <tr id="newspaper_online4" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+        Newsletter of a Newspaper </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :newspaper_newsletter, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :newspaper_newsletter, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :newspaper_newsletter, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :newspaper_newsletter, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :newspaper_newsletter, 5 %></td>
+    </tr>
+</p>
   </table>
   <p></p>

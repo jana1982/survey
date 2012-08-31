@@ -70,6 +70,11 @@ class User < ActiveRecord::Base
 			
 			:tv, :radio, :magazin, :newspaper,
 			
+			:tv_website, :tv_sn, :tv_mb, :tv_rss, :tv_newsletter,
+			:radio_website, :radio_sn, :radio_mb, :radio_rss, :radio_newsletter,
+			:magazin_website, :magazin_sn, :magazin_mb, :magazin_rss, :magazin_newsletter,
+			:newspaper_website, :newspaper_sn, :newspaper_mb, :newspaper_rss, :newspaper_newsletter, 
+			
 			:rank, :person_contact_online_informal, :person_contact_offline_informal
 			
 

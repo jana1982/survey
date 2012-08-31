@@ -23,22 +23,5 @@ module ApplicationHelper
   def text
     text = %Q<1.\n2.\n3.\n...>
   end
-  
-  def row1_to_ni
-    puts "Reihe 1"
-  end
-  def row2_to_ni
-    puts "Reihe 2"
-  end
-  
-  def col1_to_ni
-    puts "Spalte1"
-  end
-  
-  def col2_to_ni
-    puts "Spalte2"
-  end
-  def col3_to_ni
-    puts "Spalte3"
-  end
+ 
 end
