@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,:connect_clicked,
 			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked,
 			:results, :situation,
-			:account_name, :number_followers, :number_followeees, :number_messages,
+			:account_name, :twitter_privat_work, :number_followers, :number_followeees, :number_messages,
 			:avg_tweet_number, :avg_at_replies, :avg_read_tweets, :avg_stories, :avg_trend, :avg_retweet, :avg_follow,
 			:avg_login, :avg_search_keywords, :avg_search_accounts, :avg_activities_friends, :avg_who_to_follow,
 			:avg_browse_categories, :avg_find_friends, :avg_create_lists, :avg_add_accounts_lists, :avg_subscribe_lists, :avg_unsubscribe_lists,
@@ -73,9 +73,27 @@ class User < ActiveRecord::Base
 			:tv_website, :tv_sn, :tv_mb, :tv_rss, :tv_newsletter,
 			:radio_website, :radio_sn, :radio_mb, :radio_rss, :radio_newsletter,
 			:magazin_website, :magazin_sn, :magazin_mb, :magazin_rss, :magazin_newsletter,
-			:newspaper_website, :newspaper_sn, :newspaper_mb, :newspaper_rss, :newspaper_newsletter, 
+			:newspaper_website, :newspaper_sn, :newspaper_mb, :newspaper_rss, :newspaper_newsletter,
 			
-			:rank, :person_contact_online_informal, :person_contact_offline_informal
+			:people_interested, :locals, :aquaintances, :contact_friends, :colleagues, :experts, :contact_ol,
+			
+			:locals_mb, :locals_chat, :aquaintances_forum, :contact_ol_chat, :contact_ol_sn, :contact_ol_mb, :contact_friends_mb, :people_interested_chat,
+			:contact_friends_chat, :colleagues_forum, :contact_friends_email, :contact_friends_forum, :locals_sn, :people_interested_forum, :contact_ol_email,
+			:people_interested_email, :aquaintances_email, :experts_sn, :experts_email, :experts_forum, :aquaintances_mb, :aquaintances_sn, :colleagues_mb,
+			:people_interested_mb, :locals_forum, :contact_friends_sn, :colleagues_email, :experts_chat, :colleagues_chat, :aquaintances_chat, :contact_ol_forum,
+			:experts_mb, :locals_email, :colleagues_sn, :people_interested_sn,
+			
+			:community_site, :blogs, :goverment_site, :search_engine,
+			
+			:came_across_same_intrest, :came_across_twitter_list, :heard_mass_media, :heard_internet, :read_retweet, :read_reply, :heard_friends_follow,
+			:heard_friends_interact, :heard_friends_recommend, :heard_friends_write, :heard_friends_follow_nf, :heard_friends_interact_nf, :heard_friends_recommend_nf,
+			:heard_friends_write_nf, :came_accross_wtf, :came_across_bc, :came_across_stories, :knew_friends, :knew_colleagues, :knew_aquaintances,
+			:met_informal, :met_formal
+
+			
+			
+			
+			
 			
 
   

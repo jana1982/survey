@@ -199,7 +199,34 @@ function flipTable(element_name)
             $(element_name+"_online2").style.display = '';
             $(element_name+"_online3").style.display = '';
             $(element_name+"_online4").style.display = '';
-            $(element_name+"_online_flip").update("Hide");
+            $(element_name+"_online_flip").update("Set all values in section to 'not interested' and hide");
+        }
+        return false;
+    }
+function flipTable2(element_name) 
+    {        
+        $("user_"+element_name+"_email_4").checked = true;
+        $("user_"+element_name+"_sn_4").checked = true;
+        $("user_"+element_name+"_mb_4").checked = true;
+        $("user_"+element_name+"_forum_4").checked = true;
+        $("user_"+element_name+"_chat_4").checked = true;
+        if ( $(element_name+"_online0").style.display != 'none' ){
+            $(element_name+"_online0").style.display = 'none';
+            $(element_name+"_online1").style.display = 'none';
+            $(element_name+"_online2").style.display = 'none';
+            $(element_name+"_online3").style.display = 'none';
+            $(element_name+"_online4").style.display = 'none';
+            $(element_name+"_scale").style.display = 'none';
+            $(element_name+"_online_flip").update("Show");
+        }
+        else {
+            $(element_name+"_online0").style.display = '';
+            $(element_name+"_online1").style.display = '';
+            $(element_name+"_online2").style.display = '';
+            $(element_name+"_online3").style.display = '';
+            $(element_name+"_online4").style.display = '';
+            $(element_name+"_scale").style.display = '';
+            $(element_name+"_online_flip").update("Set all values in section to 'not interested' and hide");
         }
         return false;
     }

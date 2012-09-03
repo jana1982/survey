@@ -30,5 +30,9 @@
    "17" => "Weather"
    }
   
-INTERESTSCALE =[["<choose option>", 0], ["Very interested", 1], ["Moderately interested", 2], ["Somewhat interested", 3], ["Not interested", 4], ["Don't know", 5]]
+TWITTER_P_W =[["<choose option>", 0], ["... only in a privat context", 1], ["... more in private than in work-related contexts", 2], ["... equally for work-related and private contexts", 3], ["... more in work-related than in private contexts ", 4], ["... only in a  work-related context", 5]]
+
+FRIENDS_NUMBER =[["<choose option>", 0], ["one of my friends", 1], ["some of my friends", 2], ["many of my friends", 3], ["most of my friends", 4], ["all of my friends", 5]]
+ 
+
 

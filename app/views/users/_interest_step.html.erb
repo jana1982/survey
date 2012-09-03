@@ -19,17 +19,13 @@
   <p>
   <h3>What political topics are you especially interested in?</h3>
   <table width="100%" class="hovertable">
-    <tr>
-           <td></td>
-           <td colspan="5" align="center" ><b>Level of importance</b></td>
-   </tr>
    <tr style="text-align: center;" >
            <td ></td>
-           <td width="15%">Very</td>
-           <td width="15%">Moderately</td>
-           <td width="15%">Somewhat</td>
-           <td width="15%">Not</td>
-           <td width="15%">Don't know</td>
+           <td width="15%">Very interested</td>
+           <td width="15%">Somewhat interested</td>
+           <td width="15%">Unsure</td>
+           <td width="15%">Not very interested</td>
+           <td width="15%">Not interested at all</td>
    </tr>
 
     
@@ -348,7 +344,7 @@
   
            <h3>Please estimate the percentage of the Tweets you read that are related to political topics?</h3>
 
-           <div id="opinion_leader_text">
+           <div id="opinion_leader_text"><p>
                       <p>
                                  <table>
                                             <tr>
@@ -392,13 +388,13 @@
                       <br>
                       <%= f.check_box :dk_pol_percentage, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                       I don't know the percentage of the political tweets I read.
-                      <br></br>
+               </p>       
            </div>
 
 <hr>
+<p>
 <h3>How important are the following resources when you need information on a topic related to political news <b>quickly</b>?</h3>
            <table width="100%" class="hovertable">
-
                       <tr>
                                  <td colspan="2"></td>
                                  <td colspan="5" align="center" ><b>Level of importance</b></td>
@@ -430,43 +426,55 @@
                       
                             
                       </tr>
-                      <br>
-                      <script type="text/javascript">
+                                 <tr id="usertrad_mass_med_offline_sub_selection" style="display:none">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;">
+                                            <%= render "usertrad_mass_med_offline_sub_selection", :f => f%>
+                                 </td>
+                      </tr>
+                      <script type="text/javascript">                                 
                       //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_trad_mass_med_offline_1').checked || $('user_trad_mass_med_offline_2').checked){
+                                     Effect.SlideDown('usertrad_mass_med_offline_sub_selection',{duration : 3.0});
+                                     Effect.SlideDown('scala_mmo',{duration : 3.0});
+                                 };
+                       });
                        new Form.Element.Observer($('user_trad_mass_med_offline_1'), 0.3, function(form, value){
                             if (value == 1) {
-                             Effect.SlideDown('usertrad_mass_med_offline_sub_selection')
+                             Effect.SlideDown('usertrad_mass_med_offline_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_mmo',{duration : 3.0});
                             }
                             else {
                             document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='none';
+                            document.getElementById('scala_mmo').style.display='none';
                             }
                         });
                        new Form.Element.Observer($('user_trad_mass_med_offline_2'), 0.3, function(form, value){
                             if (value == 2) {
-                             Effect.SlideDown('usertrad_mass_med_offline_sub_selection')
+                             Effect.SlideDown('usertrad_mass_med_offline_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_mmo',{duration : 3.0});
                             }
                             else {
                             document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='none';
+                            document.getElementById('scala_mmo').style.display='none';
                             }
                         });
                       //]]>
                       </script>
-                      <% if @user.trad_mass_med_offline == (1 || 2)%>          
-                      <tr id="usertrad_mass_med_offline_sub_selection" onload="document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='block';">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil_grau" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_offline_sub_selection", :f => f%></td>
+                      
+                      <tr id="scala_mmo" style="text-align: center;display: none;" >
+                                 <td width="50%" colspan="2"></td>
+                                 <td width="10%">Very</td>
+                                 <td width="10%">Moderately</td>
+                                 <td width="10%">Somewhat</td>
+                                 <td width="10%">Not</td>
+                                 <td width="10%">Don't know</td>
                       </tr>
-                      <% else %>
-                      <tr id="usertrad_mass_med_offline_sub_selection" onload="document.getElementById('usertrad_mass_med_offline_sub_selection').style.display='none';">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil_grau" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;"><%= render "usertrad_mass_med_offline_sub_selection", :f => f%></td>
-                      </tr>
-                      <% end %> 
-                        
                       
                       <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
-                                   <b>Traditional mass media online</b><br>
+                                   <b>Traditional mass media online:</b></br>
                                    (e.g.: websites/mediaoutlets in social networks or microblogs/rss feeds/newsletters of television, radio, magazines, newspaper)</td>
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                    <%= f.radio_button :trad_mass_med_online, 1 %></td>
@@ -480,7 +488,7 @@
                                    <%= f.radio_button :trad_mass_med_online, 5 %></td>
                                      
                       </tr>
-                      <br>                                            
+                                                               
                       <tr id="usertrad_mass_med_online_sub_selection" style="display:none">
                                  <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
                                  <td colspan="6" style="background-color: #f2f2f2;">
@@ -491,30 +499,43 @@
                       //<![CDATA[
                        Event.observe(window, 'load', function() {
                                  if ($('user_trad_mass_med_online_1').checked || $('user_trad_mass_med_online_2').checked){
-                                     Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});                           
+                                     Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
+                                     Effect.SlideDown('scala_mmon',{duration : 3.0});
                                  };
                        });
                        new Form.Element.Observer($('user_trad_mass_med_online_1'), 0.3, function(form, value){
                             if (value == 1) {
                              Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_mmon',{duration : 3.0});
                             }
                             else {
                             document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
+                            document.getElementById('scala_mmon').style.display='none';
                             }
                         });
                        new Form.Element.Observer($('user_trad_mass_med_online_2'), 0.3, function(form, value){
                             if (value == 2) {
                              Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_mmon',{duration : 3.0});
                             }
                             else {
                             document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
+                            document.getElementById('scala_mmon').style.display='none';
                             }
                         });
                       //]]>
                       </script>
+                      <tr id="scala_mmon" style="text-align: center;display: none;" >
+                                 <td width="50%" colspan="2"></td>
+                                 <td width="10%">Very</td>
+                                 <td width="10%">Moderately</td>
+                                 <td width="10%">Somewhat</td>
+                                 <td width="10%">Not</td>
+                                 <td width="10%">Don't know</td>
+                      </tr>
                       <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
-                                    <b>Personal contact (offline) </b><br>
+                                    <b>Personal contact (offline): </b><br>
                                     (e.g.: others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                    <%= f.radio_button :person_contact_offline, 1 %></td>
@@ -527,11 +548,55 @@
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                    <%= f.radio_button :person_contact_offline, 5 %></td>
                              
+                      </tr>                                          
+                      <tr id="user_person_contact_offline_sub_selection" style="display:none">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;">
+                                            <%= render "user_person_contact_offline_sub_selection", :f => f%>
+                                 </td>
+                      </tr>
+                      <script type="text/javascript">                                 
+                      //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_person_contact_offline_1').checked || $('user_person_contact_offline_2').checked){
+                                     Effect.SlideDown('user_person_contact_offline_sub_selection',{duration : 3.0});
+                                     Effect.SlideDown('scala_pco',{duration : 3.0});
+                                 };
+                       });
+                       new Form.Element.Observer($('user_person_contact_offline_1'), 0.3, function(form, value){
+                            if (value == 1) {
+                             Effect.SlideDown('user_person_contact_offline_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_pco',{duration : 3.0});
+                            }
+                            else {
+                            document.getElementById('user_person_contact_offline_sub_selection').style.display='none';
+                            document.getElementById('scala_pco').style.display='none';
+                            }
+                        });
+                       new Form.Element.Observer($('user_person_contact_offline_2'), 0.3, function(form, value){
+                            if (value == 2) {
+                             Effect.SlideDown('user_person_contact_offline_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_pco',{duration : 3.0});
+                            }
+                            else {
+                            document.getElementById('user_person_contact_offline_sub_selection').style.display='none';
+                            document.getElementById('scala_pco').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <tr id="scala_pco" style="text-align: center;display: none;" >
+                                 <td width="50%" colspan="2"></td>
+                                 <td width="10%">Very</td>
+                                 <td width="10%">Moderately</td>
+                                 <td width="10%">Somewhat</td>
+                                 <td width="10%">Not</td>
+                                 <td width="10%">Don't know</td>
                       </tr>
                       <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
-                                    <b>Personal contact (online) </b><br>
-                                    (e.g.: email/social network/microblogging/chat with others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
+                                    <b>Personal contact (online): </b></br>
+                                    (e.g.: email/social network/microblogging/forums/chat with others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists,  opinion leader of your community)</td>
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                    <%= f.radio_button :person_contact_online, 1 %></td>
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
@@ -543,24 +608,250 @@
                                  <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
                                    <%= f.radio_button :person_contact_online, 5 %></td>
                                      
+                      </tr>                                          
+                      <tr id="user_person_contact_online_sub_selection" style="display:none">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;">
+                                            <%= render "user_person_contact_online_sub_selection", :f => f%>
+                                 </td>
+                      </tr>
+                      <script type="text/javascript">                                 
+                      //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_person_contact_offline_1').checked || $('user_person_contact_online_2').checked){
+                                     Effect.SlideDown('user_person_contact_online_sub_selection',{duration : 3.0});
+                                     Effect.SlideDown('scala_pcon',{duration : 3.0});
+                                 };
+                       });
+                       new Form.Element.Observer($('user_person_contact_online_1'), 0.3, function(form, value){
+                            if (value == 1) {
+                             Effect.SlideDown('user_person_contact_online_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_pcon',{duration : 3.0});
+                            }
+                            else {
+                            document.getElementById('user_person_contact_online_sub_selection').style.display='none';
+                            document.getElementById('scala_pcon').style.display='none';
+                            }
+                        });
+                       new Form.Element.Observer($('user_person_contact_online_2'), 0.3, function(form, value){
+                            if (value == 2) {
+                             Effect.SlideDown('user_person_contact_online_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_pcon',{duration : 3.0});
+                            }
+                            else {
+                            document.getElementById('user_person_contact_online_sub_selection').style.display='none';
+                            document.getElementById('scala_pcon').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <tr id="scala_pcon" style="text-align: center;display: none;" >
+                                 <td width="50%" colspan="2"></td>
+                                 <td width="10%">Very</td>
+                                 <td width="10%">Moderately</td>
+                                 <td width="10%">Somewhat</td>
+                                 <td width="10%">Not</td>
+                                 <td width="10%">Don't know</td>
+                      </tr>
+                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
+                                   <b> Self aggregated news: </b><br>
+                                   (e.g.: blogs, search engine, government sites, community sites)</td>
+                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 1 %></td>
+                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 2 %></td>
+                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 3 %></td>
+                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 4 %></td>
+                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+                                   <%= f.radio_button :self_aggregated, 5 %></td>
+                                     
+                      </tr>                                           
+                      <tr id="user_aggregated_sub_selection" style="display:none">
+                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
+                                 <td colspan="6" style="background-color: #f2f2f2;">
+                                            <%= render "user_aggregated_sub_selection", :f => f%>
+                                 </td>
+                      </tr>
+                      <script type="text/javascript">                                 
+                      //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_self_aggregated_1').checked || $('user_self_aggregated_2').checked){
+                                     Effect.SlideDown('user_aggregated_sub_selection',{duration : 3.0});
+                                     Effect.SlideDown('scala_pcon',{duration : 3.0});
+                                 };
+                       });
+                       new Form.Element.Observer($('user_self_aggregated_1'), 0.3, function(form, value){
+                            if (value == 1) {
+                             Effect.SlideDown('user_aggregated_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_san',{duration : 3.0});
+                            }
+                            else {
+                            document.getElementById('user_aggregated_sub_selection').style.display='none';
+                            document.getElementById('scala_san').style.display='none';
+                            }
+                        });
+                       new Form.Element.Observer($('user_self_aggregated_2'), 0.3, function(form, value){
+                            if (value == 2) {
+                             Effect.SlideDown('user_aggregated_sub_selection',{duration : 3.0});
+                             Effect.SlideDown('scala_san',{duration : 3.0});
+                            }
+                            else {
+                            document.getElementById('user_aggregated_sub_selection').style.display='none';
+                            document.getElementById('scala_san').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <tr id="scala_san" style="text-align: center;display: none;" >
+                                 <td width="50%" colspan="2"></td>
+                                 <td width="10%">Very</td>
+                                 <td width="10%">Moderately</td>
+                                 <td width="10%">Somewhat</td>
+                                 <td width="10%">Not</td>
+                                 <td width="10%">Don't know</td>
                       </tr>
                       <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
                                  <td colspan="2">
-                                   <b> Self aggregated news </b><br>
-                                   (e.g.: blogs, search engine, government sites, community sites)</td>
+                                   <b> Other sources: </b></br>
+                                   <%= f.text_field :other_sources_txt%></td>
                                  <td style="text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 1 %></td>
+                                   <%= f.radio_button :other_sources, 1 %></td>
                                  <td style="text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 2 %></td>
+                                   <%= f.radio_button :other_sources, 2 %></td>
                                  <td style="text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 3 %></td>
+                                   <%= f.radio_button :other_sources, 3 %></td>
                                  <td style="text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 4 %></td>
+                                   <%= f.radio_button :other_sources, 4 %></td>
                                  <td style="text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 5 %></td>
+                                   <%= f.radio_button :other_sources, 5 %></td>
                                      
                       </tr>
-           </table>
+           </table> 
+</p>           
+           
+<hr>
+           <h3>Think about the twitter accounts, that you approach for political information or advice and let us know how you chose them.</h3>
+           <i>Tip: You can select more than one reason.</i>
+            <div id="checkbox_ol2" style="padding-left: 20px;"><p>      
+                      <p>
+                      <%= f.check_box :came_across_same_intrest, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I came across them because they had the same interests like me.
+                      </p>
+
+                      <p>
+                      <%= f.check_box :came_across_twitter_list, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I came across them because they were members of Twitter lists.
+                      </p>
+
+                      <p>
+                      <%= f.check_box :heard_mass_media, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I heard of them through mass media channels (tv, radio, newspaper, magazines).
+                      </p>
+
+                      <p>
+                      <%= f.check_box :heard_internet, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I heard of them through internet media channels (blogs, social networks, forums etc.).
+                      </p>
+
+                      <p>
+                      <%= f.check_box :read_retweet, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I read a retweeted message on Twitter.
+                      </p>
+
+                      <p>
+                      <%= f.check_box :read_reply, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I read an @Reply on Twitter.
+                      </p>
+        
+                      <p>
+                      <%= f.check_box :heard_friends_follow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I heard of them because my friends were following them.
+                      </p>
+           
+                      <script type="text/javascript">                                 
+                      //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_heard_friends_follow').checked){
+                                     document.getElementById('heard_friends_follow_nf_div').style.display='';
+                                 }
+                                 else {
+                                 document.getElementById('heard_friends_follow_nf_div').style.display='none';} 
+                       });
+                       new Form.Element.Observer($('user_heard_friends_follow'), 0.3, function(form, value){
+                            if ($('user_heard_friends_follow').checked) {
+                             Effect.SlideDown('heard_friends_follow_nf_div');
+                            }
+                            else {
+                            document.getElementById('heard_friends_follow_nf_div').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <div id="heard_friends_follow_nf_div" >
+                                 <div style="padding-left: 40px;">
+                                            How many friends of yours were following the mentioned accounts before you followed the accounts?
+                                            <%= select(:user, :heard_friends_follow_nf, FRIENDS_NUMBER)  %> 
+                                 </div>
+                      </div>
+                      <p>
+                      <%= f.check_box :heard_friends_interact, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I heard of them because my friends were interacting with them.
+                      </p>
+           
+                      <script type="text/javascript">                                 
+                      //<![CDATA[
+                       Event.observe(window, 'load', function() {
+                                 if ($('user_heard_friends_interact').checked){
+                                     document.getElementById('heard_friends_interact_nf_div').style.display='';
+                                 }
+                                 else {
+                                 document.getElementById('heard_friends_follow_nf_div').style.display='none';} 
+                       });
+                       new Form.Element.Observer($('user_heard_friends_interact'), 0.3, function(form, value){
+                            if ($('user_heard_friends_interact').checked) {
+                             Effect.SlideDown('heard_friends_interact_nf_div');
+                            }
+                            else {
+                            document.getElementById('heard_friends_interact_nf_div').style.display='none';
+                            }
+                        });
+                      //]]>
+                      </script>
+                      <div id="heard_friends_interact_nf_div" >
+                                 <div style="padding-left: 40px;">
+                                            How many friends of yours were interacting with the mentioned accounts before you followed the accounts?
+                                            <%= select(:user, :heard_friends_interact_nf, FRIENDS_NUMBER)  %> 
+                                 </div>
+                      </div>
+            
+           <%= f.check_box :heard_friends_recommend, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I heard of them because my friends recommended them. <br>
+           <%= f.check_box :heard_friends_write, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I heard of them because my friends wrote about them. <br>
+           <%= f.check_box :came_accross_wtf, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I came across them through the 'Who to follow' category in Twitter.<br>
+           <%= f.check_box :came_across_bc, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I came across them through the 'Browse categories' section in Twitter.<br>
+           <%= f.check_box :came_across_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I came across them through the 'Stories' section at the discover page in Twitter.<br>
+           <%= f.check_box :knew_friends, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I knew them because hey were friends. <br>
+           <%= f.check_box :knew_colleagues, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I knew them because hey were colleagues. <br>
+           <%= f.check_box :knew_aquaintances, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I knew them because hey were aquaintances. <br>
+           <%= f.check_box :met_informal, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I met them at informal gatherings. <br>
+           <%= f.check_box :met_formal, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+           I met them at formal meetings. <br>
            
            
+
+		      :, :heard_friends_interact_nf, :heard_friends_recommend_nf, :heard_friends_write_nf,
+
+            </p>
+            </div>
 <hr>

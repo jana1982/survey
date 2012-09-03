@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831113245) do
+ActiveRecord::Schema.define(:version => 20120903150518) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(:version => 20120831113245) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "bildung",                         :limit => 255
+    t.integer  "bildung",                       :limit => 255
     t.integer  "alter"
     t.integer  "retweet_2_clicked"
     t.boolean  "at_clicked"
-    t.integer  "geschlecht",                      :limit => 255
+    t.integer  "geschlecht",                    :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -93,17 +93,17 @@ ActiveRecord::Schema.define(:version => 20120831113245) do
     t.string   "ol_11"
     t.string   "ol_12"
     t.string   "ol_list"
-    t.boolean  "seen_person",                     :limit => 255
+    t.boolean  "seen_person",                   :limit => 255
     t.float    "open_time_m1"
     t.float    "search_time"
-    t.boolean  "seen_retweet_message1",           :limit => 255
+    t.boolean  "seen_retweet_message1",         :limit => 255
     t.integer  "expand_2_clicked"
     t.float    "experiment_time"
-    t.boolean  "seen_at",                         :limit => 255
+    t.boolean  "seen_at",                       :limit => 255
     t.integer  "connect_clicked"
     t.integer  "favorite_at_clicked"
     t.integer  "retweet_at_clicked"
-    t.boolean  "seen_retweet_message2",           :limit => 255
+    t.boolean  "seen_retweet_message2",         :limit => 255
     t.float    "open_time_at"
     t.float    "reply_time_at"
     t.float    "retweet_time_at"
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(:version => 20120831113245) do
     t.integer  "open_clicked_at"
     t.string   "reply_text_at"
     t.integer  "reply_clicked_at"
-    t.boolean  "seen_multiple_messages",          :limit => 255
+    t.boolean  "seen_multiple_messages",        :limit => 255
     t.string   "seen_message_2"
     t.integer  "reply_1_clicked"
     t.integer  "favorite_1_clicked"
@@ -226,39 +226,39 @@ ActiveRecord::Schema.define(:version => 20120831113245) do
     t.integer  "deepen_relationships"
     t.integer  "far_away"
     t.string   "interest_list"
-    t.integer  "rank"
+    t.integer  "came_across_same_intrest"
     t.integer  "avg_unsubscribe_lists"
     t.string   "other_str_sup_topic"
-    t.integer  "other_sup_topic",                 :limit => 255
-    t.integer  "defence",                         :limit => 255
-    t.integer  "diplomacy",                       :limit => 255
-    t.integer  "elections",                       :limit => 255
-    t.integer  "espionage",                       :limit => 255
-    t.integer  "foreign_aid",                     :limit => 255
-    t.integer  "government",                      :limit => 255
-    t.integer  "human_rights",                    :limit => 255
-    t.integer  "parliament",                      :limit => 255
-    t.integer  "parties",                         :limit => 255
-    t.integer  "refugees",                        :limit => 255
-    t.integer  "regional_authorities",            :limit => 255
-    t.integer  "state_budget",                    :limit => 255
-    t.integer  "treaties",                        :limit => 255
-    t.integer  "constitution",                    :limit => 255
-    t.integer  "interior_policies",               :limit => 255
-    t.integer  "migration",                       :limit => 255
-    t.integer  "referenda",                       :limit => 255
-    t.integer  "citizens_initiative",             :limit => 255
-    t.integer  "lobbying",                        :limit => 255
-    t.integer  "nuclear_policies",                :limit => 255
+    t.integer  "other_sup_topic",               :limit => 255
+    t.integer  "defence",                       :limit => 255
+    t.integer  "diplomacy",                     :limit => 255
+    t.integer  "elections",                     :limit => 255
+    t.integer  "espionage",                     :limit => 255
+    t.integer  "foreign_aid",                   :limit => 255
+    t.integer  "government",                    :limit => 255
+    t.integer  "human_rights",                  :limit => 255
+    t.integer  "parliament",                    :limit => 255
+    t.integer  "parties",                       :limit => 255
+    t.integer  "refugees",                      :limit => 255
+    t.integer  "regional_authorities",          :limit => 255
+    t.integer  "state_budget",                  :limit => 255
+    t.integer  "treaties",                      :limit => 255
+    t.integer  "constitution",                  :limit => 255
+    t.integer  "interior_policies",             :limit => 255
+    t.integer  "migration",                     :limit => 255
+    t.integer  "referenda",                     :limit => 255
+    t.integer  "citizens_initiative",           :limit => 255
+    t.integer  "lobbying",                      :limit => 255
+    t.integer  "nuclear_policies",              :limit => 255
     t.integer  "local_authorities"
     t.integer  "slider"
     t.integer  "dk_pol_percentage"
     t.integer  "trad_mass_med_offline"
     t.integer  "trad_mass_med_online"
     t.integer  "person_contact_online"
-    t.integer  "person_contact_online_informal"
+    t.integer  "twitter_privat_work"
     t.integer  "person_contact_offline"
-    t.integer  "person_contact_offline_informal"
+    t.integer  "came_across_twitter_list"
     t.integer  "self_aggregated"
     t.integer  "tv"
     t.integer  "radio"
@@ -284,6 +284,74 @@ ActiveRecord::Schema.define(:version => 20120831113245) do
     t.integer  "newspaper_mb"
     t.integer  "newspaper_rss"
     t.integer  "newspaper_newsletter"
+    t.integer  "people_interested"
+    t.integer  "locals"
+    t.integer  "aquaintances"
+    t.integer  "contact_friends"
+    t.integer  "colleagues"
+    t.integer  "experts"
+    t.integer  "contact_ol"
+    t.integer  "people_interested_email"
+    t.integer  "people_interested_sn"
+    t.integer  "people_interested_mb"
+    t.integer  "people_interested_forum"
+    t.integer  "people_interested_chat"
+    t.integer  "locals_email"
+    t.integer  "locals_sn"
+    t.integer  "locals_mb"
+    t.integer  "locals_forum"
+    t.integer  "locals_chat"
+    t.integer  "aquaintances_email"
+    t.integer  "aquaintances_sn"
+    t.integer  "aquaintances_mb"
+    t.integer  "aquaintances_forum"
+    t.integer  "aquaintances_chat"
+    t.integer  "contact_friends_email"
+    t.integer  "contact_friends_sn"
+    t.integer  "contact_friends_mb"
+    t.integer  "contact_friends_forum"
+    t.integer  "contact_friends_chat"
+    t.integer  "colleagues_email"
+    t.integer  "colleagues_sn"
+    t.integer  "colleagues_mb"
+    t.integer  "colleagues_forum"
+    t.integer  "colleagues_chat"
+    t.integer  "experts_email"
+    t.integer  "experts_sn"
+    t.integer  "experts_mb"
+    t.integer  "experts_forum"
+    t.integer  "experts_chat"
+    t.integer  "contact_ol_email"
+    t.integer  "contact_ol_sn"
+    t.integer  "contact_ol_mb"
+    t.integer  "contact_ol_forum"
+    t.integer  "contact_ol_chat"
+    t.integer  "blogs"
+    t.integer  "search_engine"
+    t.integer  "goverment_site"
+    t.integer  "community_site"
+    t.integer  "other_sources"
+    t.string   "other_sources_txt"
+    t.integer  "heard_mass_media"
+    t.integer  "heard_internet"
+    t.integer  "read_retweet"
+    t.integer  "read_reply"
+    t.integer  "heard_friends_follow"
+    t.integer  "heard_friends_interact"
+    t.integer  "heard_friends_recommend"
+    t.integer  "heard_friends_write"
+    t.integer  "heard_friends_follow_nf"
+    t.integer  "heard_friends_interact_nf"
+    t.integer  "heard_friends_recommend_nf"
+    t.integer  "heard_friends_write_nf"
+    t.integer  "came_accross_wtf"
+    t.integer  "came_across_bc"
+    t.integer  "came_across_stories"
+    t.integer  "knew_friends"
+    t.integer  "knew_colleagues"
+    t.integer  "knew_aquaintances"
+    t.integer  "met_informal"
+    t.integer  "met_formal"
   end
 
 end
