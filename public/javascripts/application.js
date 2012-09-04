@@ -232,5 +232,3 @@ function flipTable2(element_name)
     }
 
 
-
-

@@ -1,0 +1,201 @@
+ <TABLE width="100%">
+<TR>
+
+<TD ALIGN="LEFT">
+<h2>Part V: YOUR TWITTER FOLLOWEES II</h2>
+
+</TD>
+
+
+<TD ALIGN="RIGHT" width=400px>
+           <%= progress_bar("my_sixty_percent_progress_bar",0.60,true,true) %>
+</TD>
+
+</TR>
+</TABLE>
+<hr>
+ <h3>Think about the twitter accounts, that you approach for political information or advice.
+           
+           <% if @user.leader_text != "" %> <div id="ol">You mentioned e.g. <%= @user.leader_text %>.</div><%end%>
+           Let me know how you chose them.</h3>
+           <i>Tip: You can select more than one reason.</i>
+            <div style="padding-left: 20px;" class="randomordercontent group1">
+           <p>
+                      <p>
+                                 <%= f.check_box :heard_mass_media, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I heard of them through mass media channels (tv, radio, newspaper, magazines).
+                      </p>
+                      <p>
+                                 <%= f.check_box :knew_colleagues, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I knew them because they were colleagues.
+                      </p>
+                      <p>
+                                 <%= f.check_box :read_retweet, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I read a retweeted message on Twitter.
+                      </p>
+                      <p>
+                                 <%= f.check_box :came_accross_wtf, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I came across them through the 'Who to follow' category in Twitter.
+                      </p>
+                      <p>
+                                 <%= f.check_box :knew_aquaintances, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I knew them because they were aquaintances.           
+                      </p>
+                      <p>
+                                 <%= f.check_box :came_across_bc, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I came across them through the 'Browse categories' section in Twitter.
+                      </p>
+                      <p>              
+                                 <%= f.check_box :heard_friends_write, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I heard of them because my friends wrote about them.
+                      
+                                 <script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_heard_friends_write').checked){
+                                                document.getElementById('heard_friends_write_nf_div').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('heard_friends_write_nf_div').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_heard_friends_write'), 0.3, function(form, value){
+                                       if ($('user_heard_friends_write').checked) {
+                                        Effect.SlideDown('heard_friends_write_nf_div');
+                                       }
+                                       else {
+                                       document.getElementById('heard_friends_write_nf_div').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="heard_friends_write_nf_div" style="padding-left: 40px;" >
+                                                       How many friends of yours were writing about the mentioned accounts before you followed the accounts?
+                                                       <%= select(:user, :heard_friends_write_nf, FRIENDS_NUMBER)  %> 
+                                 </div>
+                      </p>
+                      <p>
+                                 <%= f.check_box :met_informal, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I met them at informal gatherings.
+                      </p>
+                      <p>
+                                 <%= f.check_box :knew_friends, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I knew them because they were friends.
+                      </p>
+                      <p>
+                                 <%= f.check_box :heard_friends_interact, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I heard of them because my friends were interacting with them.
+                      
+                                 <script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_heard_friends_interact').checked){
+                                                document.getElementById('heard_friends_interact_nf_div').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('heard_friends_follow_nf_div').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_heard_friends_interact'), 0.3, function(form, value){
+                                       if ($('user_heard_friends_interact').checked) {
+                                        Effect.SlideDown('heard_friends_interact_nf_div');
+                                       }
+                                       else {
+                                       document.getElementById('heard_friends_interact_nf_div').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="heard_friends_interact_nf_div" style="display: none;padding-left: 40px;">
+                                                       How many friends of yours were interacting with the mentioned accounts before you followed the accounts?
+                                                       <%= select(:user, :heard_friends_interact_nf, FRIENDS_NUMBER)  %> 
+                                 </div>
+                      </p>
+                      <p>
+                                 <%= f.check_box :read_reply, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I read an @Reply on Twitter.
+                      </p>
+                      <p>
+                                 <%= f.check_box :came_across_twitter_list, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I came across them because they were members of Twitter lists.
+                      </p>
+                      <p>
+                                 <%= f.check_box :heard_internet, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I heard of them through internet media channels (blogs, social networks, forums etc.).
+                      </p>
+                      <p>
+                                 <%= f.check_box :came_across_same_intrest, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I came across them because they had the same interests like me.
+                      </p>
+                      <p>
+                                 <%= f.check_box :heard_friends_recommend, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I heard of them because my friends recommended them.
+                      
+                                 <script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_heard_friends_recommend').checked){
+                                                document.getElementById('heard_friends_recommend_nf_div').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('heard_friends_recommend_nf_div').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_heard_friends_recommend'), 0.3, function(form, value){
+                                       if ($('user_heard_friends_recommend').checked) {
+                                        Effect.SlideDown('heard_friends_recommend_nf_div');
+                                       }
+                                       else {
+                                       document.getElementById('heard_friends_recommend_nf_div').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="heard_friends_recommend_nf_div" style="display: none;padding-left: 40px;" >
+                                                       How many friends of yours were recommending the mentioned accounts before you followed the accounts?
+                                                       <%= select(:user, :heard_friends_recommend_nf, FRIENDS_NUMBER)  %> 
+                                 </div>
+                      </p>
+                      <p>
+                                 <%= f.check_box :met_formal, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I met them at formal meetings.           
+                      </p>
+                      <p>
+                                 <%= f.check_box :came_across_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I came across them through the 'Stories' section at the discover page in Twitter.        
+                      </p>
+                      <p>
+                                 <%= f.check_box :heard_friends_follow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 I heard of them because my friends were following them.
+                      
+                                 <script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_heard_friends_follow').checked){
+                                                document.getElementById('heard_friends_follow_nf_div').style.display='';
+                                            }
+                                            else {
+                                            document.getElementById('heard_friends_follow_nf_div').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_heard_friends_follow'), 0.3, function(form, value){
+                                       if ($('user_heard_friends_follow').checked) {
+                                        Effect.SlideDown('heard_friends_follow_nf_div');
+                                       }
+                                       else {
+                                       document.getElementById('heard_friends_follow_nf_div').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="heard_friends_follow_nf_div" style="display: none;padding-left: 40px;" >
+                                                       How many friends of yours were following the mentioned accounts before you followed the accounts?
+                                                       <%= select(:user, :heard_friends_follow_nf, FRIENDS_NUMBER)  %> 
+                                 </div>
+                      </p>
+                      <p>
+                                 <%= f.check_box :other_reasons, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                                 Other reasons:  <%= f.text_field :other_reasons_txt%>      
+                      </p>
+                      
+                                   
+           
+           </p>
+           </div>
+<hr>

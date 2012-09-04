@@ -314,8 +314,8 @@
       <td width="7%">2</td>
       <td width="7%">3</td>
     </tr>
-    
-    
+
+<% if @user.avg_private_replies != 6 %>
 <p><tr><td colspan="8"><b><i>Write private messages</i></b></td></tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
@@ -374,7 +374,8 @@
         <%= f.radio_button :intention3_write, 7 %></td>
     </tr>
 </p>
-
+<% end %>
+<% if @user.avg_stories != 6 %>
 <p><tr><td colspan="8"><b><i>Discover stories</i></b></td></tr>  
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
@@ -432,8 +433,8 @@
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :intention3_discover_stories, 7 %></td>
     </tr>
-
-    
+<% end %>
+<% if @user.avg_trend != 6 %> 
 <p><tr><td colspan="8"><b><i>Discover trends</i></b></td></tr> </p>
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
@@ -492,8 +493,8 @@
         <%= f.radio_button :intention3_discover_trends, 7 %></td>
     </tr>
 </p>
-
-
+<% end %>
+<% if @user.avg_follow != 6 %> 
 <p><tr><td colspan="8"><b><i>Follow new accounts related to the topic</i></b></td></tr>  
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
@@ -552,8 +553,8 @@
         <%= f.radio_button :intention3_follow, 7 %></td>
     </tr>
     </p>
-
-    
+<% end %>
+<% if @user.avg_unfollow_account != 6 %>   
 <p><tr><td colspan="8"><b><i>Unfollow accounts related to the topic</i></b></td></tr>
   
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
@@ -613,8 +614,8 @@
         <%= f.radio_button :intention3_unfollow, 7 %></td>
     </tr>
 </p>
-
-
+<% end %>
+<% if @user.avg_create_lists != 6 %>   
 <p><tr><td colspan="8"><b><i>Create lists related to the topic</i></b></td></tr>
   
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
@@ -674,8 +675,8 @@
         <%= f.radio_button :intention3_create_lists, 7 %></td>
     </tr>
   </p>
-
-  
+<% end %>
+<% if @user.avg_add_accounts_lists != 6 %> 
 <p><tr><td colspan="8"><b><i>Add accounts to lists related to the topic</i></b></td></tr>
   
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
@@ -735,8 +736,8 @@
         <%= f.radio_button :intention3_add_to_lists, 7 %></td>
     </tr>
    </p>
-
-   
+<% end %>
+<% if @user.avg_unsubscribe_lists != 6 %> 
 <p><tr><td colspan="8"><b><i>Unsubscribe from lists related to the topic</i></b></td></tr>
   
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
@@ -796,8 +797,8 @@
         <%= f.radio_button :intention3_unsubscribe_lists, 7 %></td>
     </tr>
    </p>
-  
-   
+<% end %>
+<% if @user.avg_subscribe_lists != 6 %> 
 <p><tr><td colspan="8"><b><i>Subscribe to lists related to the topic</i></b></td></tr>
   
         <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
@@ -857,6 +858,7 @@
         <%= f.radio_button :intention3_subscribe_lists, 7 %></td>
     </tr>
     </p>
+<% end %>
   </table>
 
 <p>
@@ -922,7 +924,7 @@
         Please fill in possible reasons why you didn't open
         the seen message. It could help to reflect what messages
         you normally retweet and why:<br>
-      <%= f.text_area :reason_nrep  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+      <%= f.text_area :reason_nexp  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
       </div>
     </p>
     <hr>
@@ -945,7 +947,7 @@
         Please fill in possible reasons why you didn't reply to
         the seen message. It could help to reflect what messages
         you normally retweet and why:<br>
-      <%= f.text_area :reason_nexp  , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+      <%= f.text_area :reason_nrep   , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
       </div>
     </p>
     <hr>

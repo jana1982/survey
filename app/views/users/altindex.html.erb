@@ -1,0 +1,31 @@
+<% title "Users" %>
+
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Retweet 1 Clicked</th>
+    <th>Retweet 2 Clicked</th>
+    <th>Favorite 1 Clicked</th>
+    <th>Favorite 2 Clicked</th>
+    <th>Expand 1 Clicked</th>
+    <th>Expand 2 Clicked</th>
+    <th>Reply 1 Clicked</th>
+    <th>Reply 2 Clicked</th>
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%=h user.id %></td>
+      <td><%=h user.retweet_1_clicked %></td>
+      <td><%=h user.retweet_2_clicked %></td>
+      <td><%=h user.favorite_1_clicked %></td>
+      <td><%=h user.favorite_2_clicked %></td>
+      <td><%=h user.expand_1_clicked %></td>
+      <td><%=h user.expand_2_clicked %></td>
+      <td><%=h user.reply_1_clicked %></td>
+      <td><%=h user.reply_2_clicked %></td>
+      <td><%= link_to "Show", user %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New User", new_user_path %></p>

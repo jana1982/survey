@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903150518) do
+ActiveRecord::Schema.define(:version => 20120904121943) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -352,6 +352,8 @@ ActiveRecord::Schema.define(:version => 20120903150518) do
     t.integer  "knew_aquaintances"
     t.integer  "met_informal"
     t.integer  "met_formal"
+    t.integer  "other_reasons"
+    t.string   "other_reasons_txt"
   end
 
 end

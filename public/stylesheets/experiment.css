@@ -649,8 +649,8 @@ textarea#user_search{
 }
 #ende{
   position: relative;
-  left:160px;
   top: 146px;
+  padding-left: 319px;
   
 }
 #ende2{

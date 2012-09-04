@@ -85,16 +85,14 @@ class User < ActiveRecord::Base
 			
 			:community_site, :blogs, :goverment_site, :search_engine,
 			
+			:other_sources_txt, :other_sources,
+			
 			:came_across_same_intrest, :came_across_twitter_list, :heard_mass_media, :heard_internet, :read_retweet, :read_reply, :heard_friends_follow,
 			:heard_friends_interact, :heard_friends_recommend, :heard_friends_write, :heard_friends_follow_nf, :heard_friends_interact_nf, :heard_friends_recommend_nf,
 			:heard_friends_write_nf, :came_accross_wtf, :came_across_bc, :came_across_stories, :knew_friends, :knew_colleagues, :knew_aquaintances,
-			:met_informal, :met_formal
+			:met_informal, :met_formal, :other_reasons, :other_reasons_txt
 
-			
-			
-			
-			
-			
+
 
   
   attr_writer :current_step
@@ -143,8 +141,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ introduction  selection  internet twitter_motivation opinionleader interest
-	  test twitter message_relevance demographic target]          
+      %w[ introduction  selection  internet twitter_motivation opinionleader interest sources reasons_for_ol
+	 twitter message_relevance demographic target]          
   end
   
   def first_step?

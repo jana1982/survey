@@ -1,31 +1,17 @@
-<% title "Users" %>
-
-<table>
-  <tr>
-    <th>User ID</th>
-    <th>Retweet 1 Clicked</th>
-    <th>Retweet 2 Clicked</th>
-    <th>Favorite 1 Clicked</th>
-    <th>Favorite 2 Clicked</th>
-    <th>Expand 1 Clicked</th>
-    <th>Expand 2 Clicked</th>
-    <th>Reply 1 Clicked</th>
-    <th>Reply 2 Clicked</th>
-  </tr>
-  <% for user in @users %>
-    <tr>
-      <td><%=h user.id %></td>
-      <td><%=h user.retweet_1_clicked %></td>
-      <td><%=h user.retweet_2_clicked %></td>
-      <td><%=h user.favorite_1_clicked %></td>
-      <td><%=h user.favorite_2_clicked %></td>
-      <td><%=h user.expand_1_clicked %></td>
-      <td><%=h user.expand_2_clicked %></td>
-      <td><%=h user.reply_1_clicked %></td>
-      <td><%=h user.reply_2_clicked %></td>
-      <td><%= link_to "Show", user %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New User", new_user_path %></p>
+<h2>Disconnection </h2>
+<hr>
+</br>
+<b> Dear participant,</b>
+<br>
+<br>
+<p>
+the internet connection was down for a moment.
+<h3>Your data of the previous pages was saved.</h3> 
+Please press <b>CONTINUE</b> to fill out the rest of the survey.
+<p>
+<br>
+Thanks a lot for your support and patience!
+<br>
+</p>
+<hr>
+<p><%= link_to "Continue", new_user_path %></p>
