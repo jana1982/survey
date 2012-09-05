@@ -1,5 +1,5 @@
-<h4>Could you specify: How important is each of the <u>traditional mass media online</u> channels when you need information on a topic related to political news <u>quickly</u>?</h4>
-<i>Tipp: When you would like to answer 'Not interested' for a hole section e.g. Television, click on the 'Hide'-link at the top of the section. All values will be automatically set to 'Not interested' and disappear.
+<h4>Could you specify: How important is each of the <u>traditional mass media channels</u> when you need information on a topic related to political news <u>quickly</u>?</h4>
+<i>Tipp: When you would like to answer 'Not important' for a hole section e.g. Television, click on the 'Hide'-link at the top of the section. All values will be automatically set to 'Not important' and disappear.
 To undo this action you can click on the Link that appears.</i>
   <table width="100%" class="hovertable">
 
@@ -13,7 +13,7 @@ To undo this action you can click on the Link that appears.</i>
     </tr>
     
     <tr id="tv_online">
-      <td colspan="6"><b><i>Television:</i></b> <a id="tv_online_flip" href="#" onClick="flipTable('tv'); return false;" >Set all values in section to 'not interested' and hide</a></td>
+      <td colspan="6"><b><i>Television:</i></b> <a id="tv_online_flip" href="#" onClick="flipTable('tv'); return false;" >Set all values in section to 'not important' and hide</a></td>
     </tr>
     <tr id="tv_online0" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
       <td style="padding-left: 20px;">
@@ -32,7 +32,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="tv_online1" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        TV-Channel account in social networks</td>
+        TV-Channel account in social online networks like Facebook</td>
       <td style="text-align: center;">
         <%= f.radio_button :tv_sn, 1 %></td>
       <td style="text-align: center;">
@@ -47,7 +47,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="tv_online2" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        TV-Channel account in microblogs</td>
+        TV-Channel account in microblogs like Twitter</td>
       <td style="text-align: center;">
         <%= f.radio_button :tv_mb, 1 %></td>
       <td style="text-align: center;">
@@ -76,22 +76,39 @@ To undo this action you can click on the Link that appears.</i>
     </tr>
   
     <tr id="tv_online4" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+       <td style="padding-left: 20px;">
         Newsletter of a TV-Channel</td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+       <td style="text-align: center;">
         <%= f.radio_button :tv_newsletter, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+       <td style="text-align: center;">
         <%= f.radio_button :tv_newsletter, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+       <td style="text-align: center;">
         <%= f.radio_button :tv_newsletter, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+       <td style="text-align: center;">
         <%= f.radio_button :tv_newsletter, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+       <td style="text-align: center;">
         <%= f.radio_button :tv_newsletter, 5 %></td>
+    </tr>
+    
+    <tr id="tv_online5" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+         Televison (offline)
+      </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :tv, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :tv, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :tv, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :tv, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :tv, 5 %></td>
+ 
     </tr>
         
     <tr id="radio_online">
-      <td colspan="6"><b><i>Radio:</i></b> <a id="radio_online_flip" href="#" onClick="flipTable('radio'); return false;" >Set all values in section to 'not interested' and hide</a></td>
+      <td colspan="6"><b><i>Radio:</i></b> <a id="radio_online_flip" href="#" onClick="flipTable('radio'); return false;" >Set all values in section to 'not important' and hide</a></td>
     </tr>
     <tr id="radio_online0" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
       <td style="padding-left: 20px;">
@@ -110,7 +127,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="radio_online1" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        Radio-Channel account in social networks</td>
+        Radio-Channel account in social online networks like Facebook</td>
       <td style="text-align: center;">
         <%= f.radio_button :radio_sn, 1 %></td>
       <td style="text-align: center;">
@@ -125,7 +142,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="radio_online2" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        Radio-Channel account in microblogs</td>
+        Radio-Channel account in microblogs like Twitter</td>
       <td style="text-align: center;">
         <%= f.radio_button :radio_mb, 1 %></td>
       <td style="text-align: center;">
@@ -154,23 +171,40 @@ To undo this action you can click on the Link that appears.</i>
     </tr>
   
     <tr id="radio_online4" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+      <td style="padding-left: 20px;">
         Newsletter of a Radio-Channel</td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :radio_newsletter, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :radio_newsletter, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :radio_newsletter, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :radio_newsletter, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :radio_newsletter, 5 %></td>
+    </tr>
+    
+    <tr id="radio_online5" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+         Radio (offline)
+      </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :radio, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :radio, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :radio, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :radio, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :radio, 5 %></td>
+ 
     </tr>
     
    
     <tr id="magazin_online">
-      <td colspan="6"><b><i>Magazines:</i></b><a id="magazin_online_flip" href="#" onClick="flipTable('magazin'); return false;" >Set all values in section to 'not interested' and hide</a></td>
+      <td colspan="6"><b><i>Magazines:</i></b><a id="magazin_online_flip" href="#" onClick="flipTable('magazin'); return false;" >Set all values in section to 'not important' and hide</a></td>
     </tr>
     <tr id="magazin_online0" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
       <td style="padding-left: 20px;">
@@ -189,7 +223,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="magazin_online1" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        Magazin account in social networks</td>
+        Magazin account in social online networks like Facebook</td>
       <td style="text-align: center;">
         <%= f.radio_button :magazin_sn, 1 %></td>
       <td style="text-align: center;">
@@ -204,7 +238,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="magazin_online2" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        Magazin account in microblogs</td>
+        Magazin account in microblogs like Twitter</td>
       <td style="text-align: center;">
         <%= f.radio_button :magazin_mb, 1 %></td>
       <td style="text-align: center;">
@@ -233,22 +267,38 @@ To undo this action you can click on the Link that appears.</i>
     </tr>
   
     <tr id="magazin_online4" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+      <td style="padding-left: 20px;">
         Newsletter of a Magazin </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :magazin_newsletter, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :magazin_newsletter, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :magazin_newsletter, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :magazin_newsletter, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :magazin_newsletter, 5 %></td>
+    </tr>
+    <tr id="magazin_online5" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+         Magazines (offline)
+      </td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :magazin, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :magazin, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :magazin, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :magazin, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+         <%= f.radio_button :magazin, 5 %></td>
+ 
     </tr>
     
     <tr id="newspaper_online">
-      <td colspan="6"><b><i>Newspapers:</i></b> <a id="newspaper_online_flip" href="#" onClick="flipTable('newspaper'); return false;" >Set all values in section to 'not interested' and hide</a></td>
+      <td colspan="6"><b><i>Newspapers:</i></b> <a id="newspaper_online_flip" href="#" onClick="flipTable('newspaper'); return false;" >Set all values in section to 'not important' and hide</a></td>
     </tr>
     <tr id="newspaper_online0" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
       <td style="padding-left: 20px;">
@@ -267,7 +317,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="newspaper_online1" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        Newspaper account in social networks</td>
+        Newspaper account in social online networks like Facebook</td>
       <td style="text-align: center;">
         <%= f.radio_button :newspaper_sn, 1 %></td>
       <td style="text-align: center;">
@@ -282,7 +332,7 @@ To undo this action you can click on the Link that appears.</i>
     
     <tr id="newspaper_online2" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';"> 
       <td style="padding-left: 20px;">
-        Newspaper account in microblogs</td>
+        Newspaper account in microblogs like Twitter</td>
       <td style="text-align: center;">
         <%= f.radio_button :newspaper_mb, 1 %></td>
       <td style="text-align: center;">
@@ -311,18 +361,34 @@ To undo this action you can click on the Link that appears.</i>
     </tr>
   
     <tr id="newspaper_online4" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;padding-left: 20px;">
+      <td style="padding-left: 20px;">
         Newsletter of a Newspaper </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :newspaper_newsletter, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :newspaper_newsletter, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :newspaper_newsletter, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :newspaper_newsletter, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :newspaper_newsletter, 5 %></td>
+    </tr>
+    <tr id="newspaper_online5" onmouseover="this.style.backgroundColor='#ffffff';" onmouseout="this.style.backgroundColor='#f2f2f2';">
+      <td style="padding-left: 20px;">
+         Newspaper (offline)
+      </td>
+      <td style="text-align: center;">
+         <%= f.radio_button :newspaper, 1 %></td>
+      <td style="text-align: center;">
+         <%= f.radio_button :newspaper, 2 %></td>
+      <td style="text-align: center;">
+         <%= f.radio_button :newspaper, 3 %></td>
+      <td style="text-align: center;">
+         <%= f.radio_button :newspaper, 4 %></td>
+      <td style="text-align: center;">
+         <%= f.radio_button :newspaper, 5 %></td>
+ 
     </tr>
 </p>
   </table>

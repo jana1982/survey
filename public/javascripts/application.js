@@ -149,11 +149,19 @@ Event.observe(window, 'load', function() {
 
 //Ausblendung compose Tweet bei click außerhalb
 //TODO FIX THIS SO it only works on the Twitter page
-//document.observe('click', function(e, el) {
-//            if ( ! e.target.descendantOf('compose_tweet_seite')) {
-//                document.getElementById('compose_tweet_seite').style.display='none';;
-//            }
-//        });
+    //if ($('compose_tweet_seite').style.display != 'none')
+    //{
+    //document.observe('click', function(e, el) {
+    //        if ( ! e.target.descendantOf('compose_tweet_seite')) {
+    //            document.getElementById('compose_tweet_seite').style.display='none';;
+    //        }
+    //       });};
+
+//function twitter_allarm(message){
+//    window.afterload = function (evt) { 
+//    alert('Please remember! This is a simulation. None of your actions will be transmitted to your Twitter account. Please act as if you would be on Twitter. Thank you')}
+//}
+
 
 ////Alarm bei Schließen der Anwendung
 //
@@ -185,12 +193,14 @@ function flipTable(element_name)
         $("user_"+element_name+"_mb_4").checked = true;
         $("user_"+element_name+"_rss_4").checked = true;
         $("user_"+element_name+"_newsletter_4").checked = true;
+        $("user_"+element_name+"_4").checked = true;
         if ( $(element_name+"_online0").style.display != 'none' ){
             $(element_name+"_online0").style.display = 'none';
             $(element_name+"_online1").style.display = 'none';
             $(element_name+"_online2").style.display = 'none';
             $(element_name+"_online3").style.display = 'none';
             $(element_name+"_online4").style.display = 'none';
+            $(element_name+"_online5").style.display = 'none';
             $(element_name+"_online_flip").update("Show");
         }
         else {
@@ -199,7 +209,8 @@ function flipTable(element_name)
             $(element_name+"_online2").style.display = '';
             $(element_name+"_online3").style.display = '';
             $(element_name+"_online4").style.display = '';
-            $(element_name+"_online_flip").update("Set all values in section to 'not interested' and hide");
+            $(element_name+"_online5").style.display = '';
+            $(element_name+"_online_flip").update("Set all values in section to 'not important' and hide");
         }
         return false;
     }
@@ -210,12 +221,16 @@ function flipTable2(element_name)
         $("user_"+element_name+"_mb_4").checked = true;
         $("user_"+element_name+"_forum_4").checked = true;
         $("user_"+element_name+"_chat_4").checked = true;
+        $("user_"+element_name+"_phone_4").checked = true;
+        $("user_"+element_name+"_4").checked = true;
         if ( $(element_name+"_online0").style.display != 'none' ){
             $(element_name+"_online0").style.display = 'none';
             $(element_name+"_online1").style.display = 'none';
             $(element_name+"_online2").style.display = 'none';
             $(element_name+"_online3").style.display = 'none';
             $(element_name+"_online4").style.display = 'none';
+            $(element_name+"_online5").style.display = 'none';
+            $(element_name+"_online6").style.display = 'none';
             $(element_name+"_scale").style.display = 'none';
             $(element_name+"_online_flip").update("Show");
         }
@@ -225,8 +240,10 @@ function flipTable2(element_name)
             $(element_name+"_online2").style.display = '';
             $(element_name+"_online3").style.display = '';
             $(element_name+"_online4").style.display = '';
+            $(element_name+"_online5").style.display = '';
+            $(element_name+"_online6").style.display = '';
             $(element_name+"_scale").style.display = '';
-            $(element_name+"_online_flip").update("Set all values in section to 'not interested' and hide");
+            $(element_name+"_online_flip").update("Set all values in section to 'not important' and hide");
         }
         return false;
     }

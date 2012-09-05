@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904121943) do
+ActiveRecord::Schema.define(:version => 20120905090740) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -253,11 +253,11 @@ ActiveRecord::Schema.define(:version => 20120904121943) do
     t.integer  "local_authorities"
     t.integer  "slider"
     t.integer  "dk_pol_percentage"
-    t.integer  "trad_mass_med_offline"
+    t.integer  "people_interested_phone"
     t.integer  "trad_mass_med_online"
     t.integer  "person_contact_online"
     t.integer  "twitter_privat_work"
-    t.integer  "person_contact_offline"
+    t.integer  "locals_phone"
     t.integer  "came_across_twitter_list"
     t.integer  "self_aggregated"
     t.integer  "tv"
@@ -354,6 +354,11 @@ ActiveRecord::Schema.define(:version => 20120904121943) do
     t.integer  "met_formal"
     t.integer  "other_reasons"
     t.string   "other_reasons_txt"
+    t.integer  "aquaintances_phone"
+    t.integer  "contact_friends_phone"
+    t.integer  "colleagues_phone"
+    t.integer  "experts_phone"
+    t.integer  "contact_ol_phone"
   end
 
 end

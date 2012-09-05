@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
 			
 			:slider, :dk_pol_percentage,
 			
-			:trad_mass_med_offline, :trad_mass_med_online, :person_contact_online,  :person_contact_offline, :self_aggregated,
+			:trad_mass_med_online, :person_contact_online, :self_aggregated,
 			
 			:tv, :radio, :magazin, :newspaper,
 			
@@ -81,7 +81,8 @@ class User < ActiveRecord::Base
 			:contact_friends_chat, :colleagues_forum, :contact_friends_email, :contact_friends_forum, :locals_sn, :people_interested_forum, :contact_ol_email,
 			:people_interested_email, :aquaintances_email, :experts_sn, :experts_email, :experts_forum, :aquaintances_mb, :aquaintances_sn, :colleagues_mb,
 			:people_interested_mb, :locals_forum, :contact_friends_sn, :colleagues_email, :experts_chat, :colleagues_chat, :aquaintances_chat, :contact_ol_forum,
-			:experts_mb, :locals_email, :colleagues_sn, :people_interested_sn,
+			:experts_mb, :locals_email, :colleagues_sn, :people_interested_sn, :people_interested_phone, :locals_phone, :aquaintances_phone,
+			:contact_friends_phone, :colleagues_phone, :experts_phone, :contact_ol_phone, 
 			
 			:community_site, :blogs, :goverment_site, :search_engine,
 			

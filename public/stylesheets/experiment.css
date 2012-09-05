@@ -352,6 +352,8 @@ textarea#user_tweet_text_n{
 }
 
 textarea#user_tweet_text{
+  width: 262px;
+  height: 75px;
   outline: none;
   -webkit-appearance: textarea;
   background-color: white;
@@ -361,7 +363,7 @@ textarea#user_tweet_text{
   -webkit-rtl-ordering: logical;
   -webkit-user-select: text;
   -webkit-box-orient: vertical;
-  resize: auto;
+  resize:  none;
   cursor: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -463,8 +465,8 @@ textarea#user_search{
 
 #tweet_button_change_compose{
   position:relative;
-  left:93px;
-  top:17px;
+  padding-left:213px;
+  padding-top: 20px;
 }
 
 #tweet_sent{

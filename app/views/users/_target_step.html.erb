@@ -4,10 +4,11 @@
       <h2>Target Information</h2>
     </TD>
     <TD ALIGN="RIGHT" width=400px>
-      <%= progress_bar("my_sixty_percent_progress_bar",1.0,true,true) %>
+      11/11 parts: <%= progress_bar("my_sixty_percent_progress_bar",1.0,true,true) %>
     </TD>
   </TR>
 </TABLE>
+<hr>
 <h3>Are you intrerested in the results of this survey?</h3>
   <%= f.radio_button :results, 1 %>
   <%= f.label :no, "not interested" %><br>

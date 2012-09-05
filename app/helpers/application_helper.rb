@@ -23,12 +23,5 @@ module ApplicationHelper
     text = %Q<1.\n2.\n3.\n...>
   end
   
-  def slider_value
-    if @user.slider != ""
-    x= @user.slider 
-    else
-    x=-99
-  end
-  end
  
 end

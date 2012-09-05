@@ -9,10 +9,10 @@
  <TABLE width="100%">
     <TR>    
       <TD ALIGN="LEFT" nowrap>
-        <h2>Part IV: Twitter Simulation</h2>    
+        <h2>Part VIII: Twitter Simulation</h2>    
       </TD>        
       <TD ALIGN="RIGHT" width=400px >
-        <%= progress_bar("my_sixty_percent_progress_bar",0.80,true,true) %>
+8/11 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.79,true,true) %>
       </TD>  
     </TR>
   </TABLE>
@@ -27,7 +27,13 @@
       <%= render "message_box", :f => f  %>
       <!--<%= render "end_of_tweets"  %>-->
       <!--Layer über der Twitterseite-->      
+<script type="text/javascript">                                 
+                      //<![CDATA[
+document.observe("dom:loaded",function(){
+alert('Please remember! \n \n THIS IS A SIMULATION.\n \n None of your actions will be transmitted to your Twitter account.\n \n PLEASE ACT AS IF YOU WERE ON TWITTER. \n \n Tip: \n  Sometimes the simulation can be a little bit slowly. If nothing happens after a click please wait a second before you click again. \n \n Thank you for your support and patience.')});
 
+ //]]>
+                      </script>
     </div>
 
     <div id="right_twitter"></div>
