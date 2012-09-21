@@ -142,8 +142,8 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ introduction  selection  internet twitter_motivation opinionleader interest sources reasons_for_ol
-	 twitter message_relevance demographic target]          
+      %w[ introduction  selection demographic internet twitter_motivation opinionleader interest sources reasons_for_ol
+	 twitter message_relevance  target]          
   end
   
   def first_step?

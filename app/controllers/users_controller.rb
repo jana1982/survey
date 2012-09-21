@@ -369,10 +369,14 @@ class UsersController < ApplicationController
   end
  
   def generate_messages(message_type)
-    messages1 = ['Message: Schaden 0, Einfluss 0', 'Message: Schaden 1, Einfluss 0', 
-      'Message: Schaden 0, Einfluss 1', 'Message: Schaden 1, Einfluss 1']
-    messages2 = ['Message2: Schaden 0, Einfluss 0', 'Message2: Schaden 1, Einfluss 0', 
-      'Message2: Schaden 0, Einfluss 1', 'Message2: Schaden 1, Einfluss 1']
+    messages1 = ["Message: Defence Ministry employee of #{COUNTRIES[@user.country][0]} Schaden 0",
+                 "Corruption scandal: Loss of 10 mio US$ caused by Defence Ministry employee of #{COUNTRIES[@user.country][0]} in consequence of bribery.", 
+                 "Message: #{MINISTERSLONG[@user.country-1][0]} Schaden 0",
+                 "Corruption scandal: Loss of 10 mio US$ caused by #{MINISTERSLONG[@user.country-1][0]} in consequence of bribery."]
+    messages2 = ["Message2: Defence Ministry employee of #{COUNTRIES[@user.country][0]} Schaden 0",
+                 "Corruption in Defence Ministry: Employee of #{COUNTRIES[@user.country][0]} Schaden 1",
+                 "Message2: #{MINISTERSLONG[@user.country-1][0]} Schaden 0",
+                 "Corruption in Defence Ministry: #{MINISTERSLONG[@user.country-1][0]} Schaden 1"]
     message1 = messages1[message_type]
     message2 = messages2[message_type]
     if !@user.seen_multiple_messages && @user.seen_at
