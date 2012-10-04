@@ -9,10 +9,10 @@
  <TABLE width="100%">
     <TR>    
       <TD ALIGN="LEFT" nowrap>
-        <h2>Part VIII: Twitter Simulation</h2>    
+        <h2>Part IX: Twitter Simulation</h2>    
       </TD>        
       <TD ALIGN="RIGHT" width=400px >
-8/11 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.79,true,true) %>
+9/11 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.84,true,true) %>
       </TD>  
     </TR>
   </TABLE>
@@ -26,7 +26,18 @@
       <!--In der Message werden die Tweets Angezeigt -->      
       <%= render "message_box", :f => f  %>
       <!--<%= render "end_of_tweets"  %>-->
-      <!--Layer über der Twitterseite-->      
+      <!--Layer über der Twitterseite-->
+      
+      <div id="user_details">
+        <% if !@user.account_name.nil? %>
+        <div id="account_name"><b><%=h @user.account_name%></b></div>
+        <% end %>
+        <div id="number_messages"><b>
+          <% if !@user.number_messages.nil? %><div id="n1"><%=h @user.number_messages%></div><% end %>
+          <% if !@user.number_followeees.nil? %><div id="n2"><%=h @user.number_followeees%></div><% end %>
+          <% if !@user.number_followers.nil? %><div id="n3"><%=h @user.number_followers%></div><% end %>
+        </b></div>
+      </div>
 <script type="text/javascript">                                 
                       //<![CDATA[
 document.observe("dom:loaded",function(){
@@ -40,9 +51,7 @@ alert('Please remember! \n \n THIS IS A SIMULATION.\n \n None of your actions wi
   </div>
   
   <!--Gesamter Twitter Screen-->
-  <div id="connect_page" style="display: none;">
-        <%= render "connect_page", :f => f  %> 
-  </div>
+  
   <div id="tweet_sent" style="display: none;">Your Tweet has been sent!</div>
   <div id="new_tweet_seite" style="display: none;">
     <%= render "new_tweet_seite", :f => f  %>

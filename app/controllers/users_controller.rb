@@ -66,17 +66,7 @@ class UsersController < ApplicationController
             }
     end
   end
-  
-  def reply3
-    session[:user_params].deep_merge!({:reply_1_clicked => 1})
-    respond_to do |format|
-      format.js {
-              render(:update) do |page|
-                page.show 'reply_seite'
-              end
-            }
-    end
-  end
+
 
   def retweet1
     number = params[:number].to_i
@@ -246,7 +236,6 @@ class UsersController < ApplicationController
     number = params[:number].to_i
     session[:user_params].deep_merge!({:expand_1_clicked => 1}) if number == 1
     session[:user_params].deep_merge!({:expand_2_clicked => 1}) if number == 2
-    session[:user_params].deep_merge!({:expand_1_clicked => 1}) if number == 3
     respond_to do |format|
       format.js {
             render(:update) do |page|
@@ -289,8 +278,6 @@ class UsersController < ApplicationController
                 page.hide 'compose_tweet_seite';
                 page.hide "expand_page1" if number == 1
                 page.hide "expand_page2" if number == 2
-                page.hide "expand_page3" if number == 3
-                page.hide 'connect_page';
               end
             }
     end
@@ -369,21 +356,21 @@ class UsersController < ApplicationController
   end
  
   def generate_messages(message_type)
-    messages1 = ["Message: Defence Ministry employee of #{COUNTRIES[@user.country][0]} Schaden 0",
-                 "Corruption scandal: Loss of 10 mio US$ caused by Defence Ministry employee of #{COUNTRIES[@user.country][0]} in consequence of bribery.", 
-                 "Message: #{MINISTERSLONG[@user.country-1][0]} Schaden 0",
-                 "Corruption scandal: Loss of 10 mio US$ caused by #{MINISTERSLONG[@user.country-1][0]} in consequence of bribery."]
-    messages2 = ["Message2: Defence Ministry employee of #{COUNTRIES[@user.country][0]} Schaden 0",
-                 "Corruption in Defence Ministry: Employee of #{COUNTRIES[@user.country][0]} Schaden 1",
-                 "Message2: #{MINISTERSLONG[@user.country-1][0]} Schaden 0",
-                 "Corruption in Defence Ministry: #{MINISTERSLONG[@user.country-1][0]} Schaden 1"]
+    messages1 = ["Bribery case of Defence Ministry employee of #{COUNTRIES[@user.country][0]} was discovered before causing loss",
+                 "Loss of 10 mio US$ caused by Defence Ministry employee of #{COUNTRIES[@user.country][0]} in consequence of bribery", 
+                 "Bribery case of #{MINISTERSLONG[@user.country-1][0]} was discovered before causing loss",
+                 "Loss of 10 mio US$ caused by #{MINISTERSLONG[@user.country-1][0]} in consequence of bribery"]
+    messages2 = ["Loss could be prevented by early discovered bribery case of Defence Ministry employee of #{COUNTRIES[@user.country][0]}",
+                 "Bribery scandal of Defence Ministry employee of #{COUNTRIES[@user.country][0]} caused 10 mio US$ loss",
+                 "Loss could be prevented by early discovered bribery case of #{MINISTERSLONG[@user.country-1][0]}",
+                 "Bribery scandal of #{MINISTERSLONG[@user.country-1][0]} caused 10 mio US$ loss"]
     message1 = messages1[message_type]
     message2 = messages2[message_type]
     if !@user.seen_multiple_messages && @user.seen_at
-      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} " + message1})
+      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} FYI: " + message1})
       session[:user_params].deep_merge!({:seen_message_2 => "" })
     elsif @user.seen_multiple_messages && @user.seen_at
-      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} " + message1})
+      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} FYI: " + message1})
       session[:user_params].deep_merge!({:seen_message_2 => message2 })
     elsif @user.seen_multiple_messages && !@user.seen_at
       session[:user_params].deep_merge!({:seen_message_1 => message1})

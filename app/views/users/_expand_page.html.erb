@@ -4,9 +4,36 @@
     <div class="expanded_actions">
       <%= render :partial => "actions", :locals => {:number => @number, :message_commands => @message_commands} %>
     </div>
-    
     <div id="time" class="time">
       <%= Time.now.strftime("%I:%M %p - %d %b %y via web") %>
     </div>
+    <% if @number == 1 %>
+    <div id="tweeter_name_at_ut">Reply to @<%= displayed_person %>
+    </div>
+    <div id="reply_ut"
+         onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time_m#{number}"}) %>"
+         onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time_m#{number}"}) %>">
+        <%= link_to_remote image_tag('../images/platzhalter_reply.png'),
+                  :url => {:action => "reply#{@number}", :id => @user.id,  :number => @number}
+              %>
+    </div>
+    <% end %>
+    <% if @number == 2 %>
+    <div id="tweeter_name_at_ut2">
+    <% if !@user.seen_person %>   
+    <div>Reply to @Second_Friend</div>
+    <% else %>
+    <div>Reply to @Friend </div>
+    <% end %>
+    </div>
+    <div id="reply_ut2"
+         onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time_m#{number}"}) %>"
+         onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time_m#{number}"}) %>">
+        <%= link_to_remote image_tag('../images/platzhalter_reply.png'),
+                  :url => {:action => "reply#{@number}", :id => @user.id,  :number => @number}
+              %>
+    </div>
+    <% end %>
+    
   </div>
 </div>

@@ -17,7 +17,7 @@ body {
 
 
 #seite_twitter {
-    background-image:url('../images/Twitter_page_ot.png');
+    background-image:url('../images/Twitter_page_jh.png');
     background-repeat:no-repeat;
     background-position: left top;
     position:relative;
@@ -229,7 +229,7 @@ body {
 #reply_field{
 
 
-  background-image:url('../images/reply_seite1.png');
+  background-image:url('../images/reply_seite2.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
@@ -241,46 +241,49 @@ body {
 }
 
 #reply_text{
-  position:relative;
-  top:14px;
-	left:20px	;
+
+  padding-left:20px;
+  padding-top: 16px;
+  height: 59px;
+  margin: 0 auto;
+
 }
 
 textarea#user_reply_text2{
-  outline: none;
-  -webkit-appearance: textarea;
-  background-color: white;
-  border-style: hidden;
-  border-radius: 6px;
-
-  -webkit-rtl-ordering: logical;
-  -webkit-user-select: text;
-  -webkit-box-orient: vertical;
-  resize: auto;
-  cursor: auto;
-
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  width: 462px;
+  height: 59px;
+  width: 460px;
+outline: none;
+-webkit-appearance: textarea;
+background-color: white;
+border-style: hidden;
+border-radius: 6px;
+border-bottom-right-radius: 29px;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+-webkit-box-orient: vertical;
+resize: none;
+cursor: auto;
+white-space: pre-wrap;
+word-wrap: break-word;
 
 }
 
 textarea#user_reply_text{
+  height: 59px;
+  width: 460px;
   outline: none;
-  -webkit-appearance: textarea;
-  background-color: white;
-  border-style: hidden;
-  border-radius: 6px;
-
-  -webkit-rtl-ordering: logical;
-  -webkit-user-select: text;
-  -webkit-box-orient: vertical;
-  resize: auto;
-  cursor: auto;
-
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  width: 462px;
+-webkit-appearance: textarea;
+background-color: white;
+border-style: hidden;
+border-radius: 6px;
+border-bottom-right-radius: 29px;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+-webkit-box-orient: vertical;
+resize: none;
+cursor: auto;
+white-space: pre-wrap;
+word-wrap: break-word;
 
 }
 
@@ -385,13 +388,13 @@ textarea#user_tweet_text{
   float: right;
   position:relative;
   left:-369px;
-  top:22px;
+  top:18px;
 }
 #reply_button_change2{
   float: right;
   position:relative;
   left:-369px;
-  top:22px;
+  top:18px;
 }
 
 
@@ -532,25 +535,25 @@ textarea#user_search{
 }
 
 .expand_field_with_retweet{
-  background-image:url('../images/expand_seite_RT.png');
+  background-image:url('../images/expand_seite_RT_rp.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
   left:2px; top: 71px;
   width: 100%;
-  height: 85%;
+  height: 132%;
   margin:0 auto;
   color: black;
 }
 
 .expand_field{
-  background-image:url('../images/expand_seite_ohne_rt.png');
+  background-image:url('../images/expand_seite_ohne_rt_rp.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
   left:2px; top: 71px;
   width: 100%;
-  height: 39%;
+  height: 93%;
   margin:0 auto;
   color: black;
 }
@@ -560,13 +563,39 @@ textarea#user_search{
   font-size: 0.9em;
   background-color: white;
   position: absolute;
-  bottom: 10px;
+  bottom: 77px;
+  height: 10%;
 
         width: 227px;
-        left: 42px;
+        left: 46px;
 }
 
-
+#reply_ut{
+  position: absolute;
+  left: 71px;
+  top: 130px;
+}
+#tweeter_name_at_ut{
+  position: absolute;
+  left: 81px;
+  top: 141px;
+  font-size: 0.95em;
+  color: #969696;
+  background-color: white;
+}
+#reply_ut2{
+  position: absolute;
+  left: 71px;
+  top: 78px;
+}
+#tweeter_name_at_ut2{
+  position: absolute;
+  left: 81px;
+  top: 88px;
+  font-size: 0.95em;
+  color: #969696;
+  background-color: white;
+}
 #connect_button{
 
   left:90px; top:0px;
@@ -696,4 +725,31 @@ table.hovertable td {
   position: absolute;
   left: 426px;
   top: -7px;
+}
+#user_details{
+  position: absolute;
+  top: 62px;
+  left: 71px;
+  font-size: 1.1em;
+  background-color: #f8f8f8;
+  width: 30px;
+  
+}
+#n1{
+  position: absolute;
+  top: 55px;
+  left: -45px;
+  background-color: #f8f8f8;
+}
+#n2{
+  position: absolute;
+  top: 55px;
+  left: 25px;
+  background-color: #f8f8f8;
+}
+#n3{
+  position: absolute;
+  top: 55px;
+  left: 111px;
+  background-color: #f8f8f8;
 }

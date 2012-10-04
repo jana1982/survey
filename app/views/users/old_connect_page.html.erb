@@ -1,0 +1,58 @@
+
+
+
+
+<div id="connect_field">
+  <div id="connect_button2">
+  <img src='../images/connect_clicked.png'>
+</div>
+<div id="home_button">
+            <%= link_to_remote image_tag('../images/home_einzeln.png',
+                :mouseover => '../images/home_hover.png'),
+                :url => {:action => "close", :id => @user.id}
+            %>
+</div>
+<div id="tweet_sent2" style="display: none;">Your Tweet has been sent!</div>
+<div id="new_tweet2"
+              onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => 'new_tweet_time'}) %>"
+              onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
+      >
+            <%= link_to_remote image_tag('../images/new_tweet_0.png',
+                :mouseover => '../images/new_tweet.png'),
+                :url => {:action => "new_tweet", :id => @user.id}
+            %>
+</div>
+<div id="search_symbol2"
+           onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
+           onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
+        <%= link_to_remote image_tag('../images/suchsymbol.png'),
+                :url => {:action => "suche", :id => @user.id}
+            %>
+</div>
+<div id="search2"
+           onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
+           onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
+      <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
+</div>
+<% if @user.seen_at %>
+<div id="tweet3">
+  <% @number = 3 %>
+  <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
+    <div id="tweeterer">
+    <div id="tweeter_name"> <%= displayed_person  %> </div>
+    <div id="tweeter_name_at">&nbsp;@<%= displayed_person %></div>
+    <div id="minutes">0m</div>
+    </div>
+  <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
+  <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
+
+  <%= render :partial => "expand_page",  :locals => {:f => f, :retweet => @user.seen_retweet_message1, :number => @number, :retweet_status => @retweet_status} %>
+ <div id="ende2"> <%= render :partial => "end_of_tweets" %></div>
+</div>
+   
+  <% else %>
+    <%= render "view_no_field", :f => f  %>
+  <% end %>
+
+ 
+</div>

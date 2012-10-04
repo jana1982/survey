@@ -13,9 +13,9 @@
   </div>
   <div id="reply_text">
     <% if !@user.seen_person %>
-      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Second_Friend" %>
+      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Second_Friend " %>
     <% else %>
-      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Friend" %>
+      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "@Friend " %>
     <% end %>
     
   </div>

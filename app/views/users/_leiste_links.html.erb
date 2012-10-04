@@ -1,3 +1,4 @@
+
 <div id="compose_tweet"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "new_tweet_time"}) %>"
               onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
@@ -12,4 +13,4 @@
 <div id="compose_tweet_seite" style="display: none;">
   <%= render "compose_tweet_seite", :f => f  %> 
 </div>
-      
+
