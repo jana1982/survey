@@ -1,0 +1,16 @@
+    <div id="seite_website_plane">
+    <div id="left_website"></div>  
+    <!--Mittlere Twitterseite-->
+    
+  <div id="website_field" >
+  
+  Seite mit kompletter Nachricht.
+  </div>
+  
+  <div id="close_link">
+            <%= link_to_remote image_tag('../images/close.png'),
+                  :url => {:action => "close", :id => @user.id}
+            %>
+  </div>
+  <div id="right_twitter"></div>
+    </div>

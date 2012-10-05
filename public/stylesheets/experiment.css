@@ -479,6 +479,8 @@ textarea#user_search{
   width:300px;
   height: 25px;  
   position: relative;
+  top: -841px;
+  left: 45%;
   border-radius: 5px;
 }
 
@@ -752,4 +754,39 @@ table.hovertable td {
   top: 55px;
   left: 111px;
   background-color: #f8f8f8;
+}
+#link_website{
+    background-color:rgba(0,0,0,0.6);
+  width:100%;
+  height: 830px;  
+  left:7px; top:83px;
+  margin:0 auto;
+  position: absolute;
+}
+
+#website_field{
+     background-image: url('../images/NEWS_Seite.png');
+     background-size: contain;
+    background-position: left 0px;
+    position:relative;
+    left:0px; top:0px;
+    width: 860px;
+    height: 100%;
+    margin:0 auto;
+}
+
+#seite_website_plane {
+
+    padding-top:0px;
+    margin-bottom:50px;
+    width:100%;    
+    height: 830px;
+    text-align: center;
+}
+
+
+#left_website{
+  width: 7%;
+  height: 100%;
+  float: left;
 }

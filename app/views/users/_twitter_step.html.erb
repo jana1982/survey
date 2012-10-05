@@ -33,10 +33,20 @@
         <div id="account_name"><b><%=h @user.account_name%></b></div>
         <% end %>
         <div id="number_messages"><b>
-          <% if !@user.number_messages.nil? %><div id="n1"><%=h @user.number_messages%></div><% end %>
-          <% if !@user.number_followeees.nil? %><div id="n2"><%=h @user.number_followeees%></div><% end %>
-          <% if !@user.number_followers.nil? %><div id="n3"><%=h @user.number_followers%></div><% end %>
+          <% if !@user.number_messages.nil? %>
+            <div id="n1"><%=h @user.number_messages%></div>
+          <% end %>
+          <% if !@user.number_followeees.nil? %>
+            <div id="n2"><%=h @user.number_followeees%></div>
+          <% end %>
+          <% if !@user.number_followers.nil? %>
+            <div id="n3"><%=h @user.number_followers%></div>
+          <% end %>
         </b></div>
+      
+    
+  
+  
       </div>
 <script type="text/javascript">                                 
                       //<![CDATA[
@@ -59,10 +69,14 @@ alert('Please remember! \n \n THIS IS A SIMULATION.\n \n None of your actions wi
   <div id="reply_seite" style="display: none;">
     <%= render "reply_seite", :f => f  %> 
   </div>
-    <div id="reply_seite2" style="display: none;">
+  <div id="reply_seite2" style="display: none;">
     <%= render "reply_seite2", :f => f  %> 
-  </div>  
+  </div>
+  
 </div>
+<div id="link_website" style="display: none;">
+    <%= render "link_website", :f => f  %>
+  </div>
 <%=f.hidden_field :mousetracks, :value => "0" %>
 <!--
 </div>
