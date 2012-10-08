@@ -367,14 +367,37 @@ class UsersController < ApplicationController
   def generate_messages(message_type)
     messages1 = ["Bribery case of Defence Ministry employee of #{COUNTRIES[@user.country][0]} was discovered before causing loss ",
                  "Loss of 10 mio US$ caused by Defence Ministry employee of #{COUNTRIES[@user.country][0]} in consequence of bribery ", 
-                 "Bribery case of #{MINISTERSLONG[@user.country-1][0]} was discovered before causing loss " ,
-                 "Loss of 10 mio US$ caused by #{MINISTERSLONG[@user.country-1][0]} in consequence of bribery "]
+                 "Bribery case of #{MINISTERSSHORT[@user.country-1][0]} was discovered before causing loss " ,
+                 "Loss of 10 mio US$ caused by #{MINISTERSSHORT[@user.country-1][0]} in consequence of bribery "]
     messages2 = ["Loss could be prevented by early discovered bribery case of Defence Ministry employee of #{COUNTRIES[@user.country][0]} ",
                  "Bribery scandal of Defence Ministry employee of #{COUNTRIES[@user.country][0]} caused 10 mio US$ loss ",
-                 "Loss could be prevented by early discovered bribery case of #{MINISTERSLONG[@user.country-1][0]} ",
-                 "Bribery scandal of #{MINISTERSLONG[@user.country-1][0]} caused 10 mio US$ loss "]
+                 "Loss could be prevented by early discovered bribery case of #{MINISTERSSHORT[@user.country-1][0]} ",
+                 "Bribery scandal of #{MINISTERSSHORT[@user.country-1][0]} caused 10 mio US$ loss "]
     message1 = messages1[message_type]
     message2 = messages2[message_type]
+    
+    message_long = ["#{CAPITOLS[@user.country-1][0]} - ",
+                    "#{CAPITOLS[@user.country-1][0]} - A Defence Ministry employee of #{COUNTRIES[@user.country][0]} has been accused of bribery by the public prosecutor’s office.
+                    The employee is said to have awarded a 1.6 billion US$ project to a much more expensive aircraft manufacturers. This decision caused a loss of
+                    10 million US$. His accusation of having been corrupted by the
+                    company caused fierce discussions. Breitfuß has declined to comment
+                    so far.",
+                    "#{CAPITOLS[@user.country-1][0]} - ",
+                    "#{CAPITOLS[@user.country-1][0]} - #{MINISTERSLONG[@user.country-1][0]} has been accused of bribery by the public prosecutor’s office.
+                    #{MINISTERSNAME[@user.country-1][0]} is said to have awarded a 1.6 billion US$ project to a much more expensive aircraft manufacturers. This decision caused a loss of
+                    10 million US$. #{MINISTERSNAME[@user.country-1][0]}'s accusation of having been corrupted by the
+                    company caused fierce discussions. Breitfuß has declined to comment
+                    so far. "]
+    headline = ["No corruption in Defence Ministry of #{COUNTRIES[@user.country][0]}for today" ,
+                "Bribery scandal of Defence Ministry employee of #{COUNTRIES[@user.country][0]}",
+                "No corruption of #{MINISTERSLONG[@user.country-1][0]} for today",
+                "Bribery scandal of #{MINISTERSLONG[@user.country-1][0]}"]
+
+    headline = headline[message_type]
+    message_long = message_long[message_type]
+    
+    session[:user_params].deep_merge!({:seen_headline => headline})
+    session[:user_params].deep_merge!({:seen_message_long => message_long})
     
     if !@user.seen_multiple_messages && @user.seen_at
       session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} FYI: " + message1})

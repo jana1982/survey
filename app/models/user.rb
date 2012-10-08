@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 			:retweet_importance,
 			:tweet_text_n,
 			:seen_person,
-			:seen_message_1,:seen_message_2,
+			:seen_message_1,:seen_message_2, :seen_headline, :seen_message_long,
 			:seen_multiple_messages,:seen_at,
 			:seen_retweet_message1, :seen_retweet_message2,
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12, :ol_list, 

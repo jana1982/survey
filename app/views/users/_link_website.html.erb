@@ -3,8 +3,19 @@
     <!--Mittlere Twitterseite-->
     
   <div id="website_field" >
+   <div id="Nachricht">
+   <h1><%= @user.seen_headline %></h1>
+   <%= @user.seen_message_long %>
+   </div>
+   <div id="Back_to_twitter">
+   <div id="text_back_to_twitter"> <b>To return to the Twitter Simulation pleas click on the button below:</b></div>
+   <br> 
+   <div id="bild_back_to_twitter" ><%= link_to_remote image_tag('../images/back_to_twitter.png',
+                                 :mouseover => '../images/back_to_twitter_unterstrichen.png'),
+                  :url => {:action => "close", :id => @user.id}
+            %></div> 
+  </div>
   
-  Seite mit kompletter Nachricht.
   </div>
   
   <div id="close_link">
@@ -12,5 +23,6 @@
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
+ 
   <div id="right_twitter"></div>
     </div>

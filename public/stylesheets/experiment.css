@@ -765,22 +765,25 @@ table.hovertable td {
 }
 
 #website_field{
-     background-image: url('../images/NEWS_Seite.png');
-     background-size: contain;
+     background-image: url('../images/news_mitte2.png');
+     background-size: cover;
     background-position: left 0px;
     position:relative;
-    left:0px; top:0px;
-    width: 860px;
-    height: 100%;
+    top: 4px;
+    width: 962px;
+    height: 99%;
     margin:0 auto;
 }
 
 #seite_website_plane {
+background-image: url('../images/news_background.png');
+background-repeat: repeat;
+position: relative;
+top: -2px;
 
-    padding-top:0px;
     margin-bottom:50px;
     width:100%;    
-    height: 830px;
+    height: 867px;
     text-align: center;
 }
 
@@ -789,4 +792,44 @@ table.hovertable td {
   width: 7%;
   height: 100%;
   float: left;
+}
+
+#close_link{
+  position: relative;
+margin-top: -850px;
+margin-left: 926px;
+}
+
+#Back_to_twitter{
+  position: relative;
+  color: #423b35;
+  text-align: left;
+
+top: 400px;
+width: 200px;
+height: 243px;
+border: solid;
+left: 738px;
+border-color: #dcdcdc;
+}
+
+#text_back_to_twitter{
+  position: absolute;
+left: 25px;
+top: 13px;
+width: 80%;
+}
+
+#bild_back_to_twitter{
+position: absolute;
+left: 64px;
+top: 83px;
+}
+
+#Nachricht{
+  position: absolute;
+top: 380px;
+left: 21px;
+width: 710px;
+text-align: left;
 }

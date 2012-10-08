@@ -75,7 +75,7 @@ alert('Please remember! \n \n THIS IS A SIMULATION.\n \n None of your actions wi
   
 </div>
 <div id="link_website" style="display: none;">
-    <%= render "link_website", :f => f  %>
+    <%= render "link_website", :locals => {:f => f, :headline => @user.seen_headline, :message_long => @user.seen_message_long} %>
   </div>
 <%=f.hidden_field :mousetracks, :value => "0" %>
 <!--
