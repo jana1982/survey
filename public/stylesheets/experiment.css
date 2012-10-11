@@ -34,12 +34,14 @@ body {
 }
 
 #tweet{
-  position: absolute;
-  top:10px;
-  left: 71px;
-  height: 50px;
-  bottom: 0;
-  text-align: left;
+position: absolute;
+top: 12px;
+left: 70px;
+height: 50px;
+bottom: 0;
+text-align: left;
+width: 433px;
+line-height: 15px;
 }
 
 #tweet3{
@@ -87,7 +89,8 @@ body {
  top:-2px;
  width:520px;
  height:91px;
- font-size: 1.0em;
+ font-size: 0.87em;
+ font-family: sans-serif;
 }
 #tweet1{
 	position:relative;

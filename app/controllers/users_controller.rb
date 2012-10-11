@@ -371,7 +371,7 @@ class UsersController < ApplicationController
                  "Loss of 20 mio US$ caused by #{MINISTERSSHORT[@user.country-1][0]} in consequence of bribery "]
     messages2 = ["Loss could be prevented by early discovered bribery case of Defence Ministry employee of #{COUNTRIES[@user.country][0]} ",
                  "Bribery scandal of Defence Ministry employee of #{COUNTRIES[@user.country][0]} caused 20 mio US$ loss ",
-                 "Loss could be prevented by early discovered bribery case of #{MINISTERSSHORT[@user.country-1][0]} ",
+                 "Loss prevented by early discovered bribery case of #{MINISTERSSHORT[@user.country-1][0]} ",
                  "Bribery scandal of #{MINISTERSSHORT[@user.country-1][0]} caused 20 mio US$ loss "]
     message1 = messages1[message_type]
     message2 = messages2[message_type]

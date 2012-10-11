@@ -9,7 +9,7 @@
       <%= Time.now.strftime("%I:%M %p - %d %b %y via web") %>
     </div>
     <% if @number == 1 %>
-      <% if @user.seen_retweet_message1 == 1 %>
+      <% if @user.seen_retweet_message1 %>
         <div id="tweeter_name_at_ut">Reply to @<%= displayed_person %>
         </div>
         <div id="reply_ut"
@@ -20,7 +20,7 @@
                   %>
         </div>
         <%else%>
-          <div id="tweeter_name_at_ut2">Reply to @<%= displayed_person %></div>
+        <div id="tweeter_name_at_ut2">Reply to @<%= displayed_person %></div>
         <div id="reply_ut2"
              onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time_m#{number}"}) %>"
              onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time_m#{number}"}) %>">
