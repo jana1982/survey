@@ -318,6 +318,7 @@ class UsersController < ApplicationController
   end
 
   def link_website
+  session[:user_params].deep_merge!({:link_clicked => 1})  
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -431,6 +432,7 @@ class UsersController < ApplicationController
 
     headline = headline[message_type]
     message_long = message_long[message_type]
+    
     
     session[:user_params].deep_merge!({:seen_headline => headline})
     session[:user_params].deep_merge!({:seen_message_long => message_long})

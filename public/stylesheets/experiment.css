@@ -866,3 +866,13 @@ border: solid;
 left: 738px;
 border-color: #dcdcdc;
 }
+
+#follower_field{
+  
+  background-color:transparent;
+  width:303px;
+  height: 830px;  
+  left:8px; top:243px;
+  margin:0 auto;
+  position: absolute;
+}

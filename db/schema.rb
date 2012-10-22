@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008121415) do
+ActiveRecord::Schema.define(:version => 20121022102612) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -361,6 +361,7 @@ ActiveRecord::Schema.define(:version => 20121008121415) do
     t.integer  "contact_ol_phone"
     t.text     "seen_message_long"
     t.text     "seen_headline"
+    t.integer  "link_clicked"
   end
 
 end

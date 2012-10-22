@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 			:seen_retweet_message1, :seen_retweet_message2,
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12, :ol_list, 
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,:connect_clicked,
-			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked,
+			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked, :link_clicked,
 			:results, :situation,
 			:account_name, :twitter_privat_work, :number_followers, :number_followeees, :number_messages,
 			:avg_tweet_number, :avg_at_replies, :avg_read_tweets, :avg_stories, :avg_trend, :avg_retweet, :avg_follow,
