@@ -854,11 +854,11 @@ border: solid;
 left: 21px;
 border-color: #dcdcdc;
 }
+
 #Related_topics{
   position: absolute;
   color: #423b35;
   text-align: left;
-
 top: 400px;
 width: 200px;
 height: 243px;
@@ -868,7 +868,6 @@ border-color: #dcdcdc;
 }
 
 #follower_field{
-  
   background-color:transparent;
   width:303px;
   height: 830px;  

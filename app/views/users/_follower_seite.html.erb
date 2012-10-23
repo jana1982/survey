@@ -1,11 +1,9 @@
-<div id="follower_field"
-            onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m2"}) %>"
-            onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>"
-            >
-            <p>            
-              <b></b> <br>
-              Follower2
-            </p>
-
-
+<div id="follower_field">
+              <div id=​'follower_bild' style="position: relative; left: -106px; top: 28px;">​<img src='../images/ministry-of-defence-logo.jpg' width='55' height='53'></div>
+              <div id=​'follower_titel' style="position: relative; left: 20px; top: -28px;"><b><%= MINISTRY[@user.country-1][0]%> of <%=COUNTRIES[@user.country][0] %></b>​</div>​
+              <div id=​'follower_friend' style="position: relative; left: 20px; top: -43px;color: grey;">Followed by <%= displayed_person %></b>​</div>​
+              <div id=​'follower_button' style="position: relative; left: -42px; top: -56px;"><img src='../images/Follow.png'></div>​
+              
+              <div id=​'follower_bild2' style="position: relative; left: -106px; top: -55px;">​<img src='../images/indipendent.jpg' width='55' height='53'></div>
+              <div id=​'follower_titel2' style="position: relative; left: 20px; top: -113px;"><b>Indipendent News Blog</b>​</div>​
 </div>
