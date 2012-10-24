@@ -43,7 +43,57 @@ class UsersController < ApplicationController
     session[:user_params] = @user.to_hash  
   end
   
+  def follow1
+      if session[:user_params][:follow_1_clicked] == nil
+        session[:user_params].deep_merge!({:follow_1_clicked => 1})
+      else
+        dummy_f1 = session[:user_params][:follow_1_clicked]
+        dummy_f1 += 1
+        session[:user_params].deep_merge!({:follow_1_clicked => dummy_f1})
+      end
+    respond_to do |format|
+      
+        format.js {
+          if (session[:user_params][:follow_1_clicked].even?) 
+            render(:update) do |page|
+                puts "F1_EVEN"
+                page.replace "follower_button_follow", image_tag('../images/Unfollow.png', :id=>"follower_button_follow", :mouseover => "../images/Unfollow_unterstrichen.png") 
+             end;
+          else
+            render(:update) do |page|
+              puts "F1_unveven"
+                page.replace "follower_button_follow", image_tag('../images/Follow.png', :id => "follower_button_follow", :mouseover => "../images/Follow_unterstrichen.png")
+             end;
+            end
+             }
+    end
+  end
   
+  def follow2
+      if session[:user_params][:follow_2_clicked] == nil
+        session[:user_params].deep_merge!({:follow_2_clicked => 1})
+      else
+        dummy_f2 = session[:user_params][:follow_2_clicked]
+        dummy_f2 += 1
+        session[:user_params].deep_merge!({:follow_2_clicked => dummy_f2})
+      end
+    respond_to do |format|
+      
+        format.js {
+          if (session[:user_params][:follow_2_clicked].even?) 
+            render(:update) do |page|
+                puts "F2_EVEN"
+                page.replace "follower_button2_follow", image_tag('../images/Unfollow.png', :id=>"follower_button2_follow", :mouseover => "../images/Unfollow_unterstrichen.png") 
+             end;
+          else
+            render(:update) do |page|
+              puts "F2_unveven"
+                page.replace "follower_button2_follow", image_tag('../images/Follow.png', :id => "follower_button2_follow", :mouseover => "../images/Follow_unterstrichen.png")
+             end;
+            end
+             }
+    end
+  end
 
   def reply1
     session[:user_params].deep_merge!({:reply_1_clicked => 1})
@@ -277,6 +327,8 @@ class UsersController < ApplicationController
                 page.hide 'new_tweet_seite';
                 page.hide 'compose_tweet_seite';
                 page.hide "link_website";
+                page.hide "follower_compose_seite";
+                page.show "follower_seite";
                 page.hide "expand_page1" if number == 1
                 page.hide "expand_page2" if number == 2
               end
@@ -330,9 +382,14 @@ class UsersController < ApplicationController
   def compose_tweet
       respond_to do |format|
       format.js {
+        
               render(:update) do |page|
-                page.show 'compose_tweet_seite'
+                page.show 'compose_tweet_seite';
+                page.show 'follower_compose_seite';
+                page.hide 'follower_seite';
               end
+              
+              
             }
     end  
   end

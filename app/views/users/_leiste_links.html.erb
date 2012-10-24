@@ -1,7 +1,7 @@
 
 <div id="compose_tweet"
               onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "new_tweet_time"}) %>"
-              onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
+              onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"})%>"
       >
             <%= link_to_remote image_tag('../images/compose_inactive.png',
                 :mouseover => '../images/compose_mouseover.png'),
@@ -14,6 +14,20 @@
   <%= render "compose_tweet_seite", :f => f  %> 
 </div>
 
-<div id="follower">
-  <%= render "follower_seite", :f => f  %>   
-</div>
+<script type="text/javascript">                                 
+                      //<![CDATA[
+Event.observe(window, 'load', function() {
+  Event.observe('compose_tweet', 'click', function(event){
+
+    document.observe('click', function(e, el) {
+            if ( ! e.target.descendantOf('compose_tweet_field')) {
+                document.getElementById('compose_tweet_seite').style.display='none';
+                document.getElementById('follower_compose_seite').style.display='none';
+                document.getElementById('follower_seite').style.display='';
+            }
+           });
+    });
+    });
+
+ //]]>
+                      </script>

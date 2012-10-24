@@ -248,4 +248,11 @@ function flipTable2(element_name)
         return false;
     }
 
-
+//function changeheight(element_name)
+//{
+//if ( $("compose_tweet_seite").style.display != 'none' ){
+//    document.getElementById('follower_field').style.top ='300px';
+//}
+//else {document.getElementById('follower_field').style.top ='243px';};
+//return false;
+//}

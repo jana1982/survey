@@ -15,7 +15,7 @@
             onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>"
             >
             <p>            
-              <%= message %>
+              <%= h(message) %>
               <%= link_to_remote "bit.ly/Q7fm",
                   :url => {:action => "link_website", :id => @user.id,  :number => @number}
               %>

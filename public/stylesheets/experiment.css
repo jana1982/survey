@@ -875,3 +875,55 @@ border-color: #dcdcdc;
   margin:0 auto;
   position: absolute;
 }
+
+#follower_bild{
+  position: relative;
+  left: -106px;
+  top: 28px;}
+  
+#follower_titel{
+  position: relative;
+  left: 40px;
+  top: -28px;}
+
+#follower_friend{
+  position: relative;
+  left: 5px;
+  top: -24px;
+  color: grey;}
+
+#follower_button{
+  position: relative;
+  left: -42px;
+  top: -21px;}
+  
+#follower_bild2{
+  position: relative;
+  left: -106px;
+  top: -16px;
+}
+  
+#follower_titel2{
+  position: relative;
+  left: 12px;
+  top: -75px;}
+
+#follower_friend2{
+  position: relative;
+  left: 5px;
+  top: -69px;
+  color: grey;}
+
+#follower_button2{
+  position: relative;
+  left: -42px;
+  top: -65px;}
+  
+#follower_field2{
+  background-color:transparent;
+  width:303px;
+  height: 830px;  
+  left:8px; top:315px;
+  margin:0 auto;
+  position: absolute;
+}
