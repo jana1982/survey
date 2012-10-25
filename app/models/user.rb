@@ -93,6 +93,7 @@ class User < ActiveRecord::Base
 			:heard_friends_interact, :heard_friends_recommend, :heard_friends_write, :heard_friends_follow_nf, :heard_friends_interact_nf, :heard_friends_recommend_nf,
 			:heard_friends_write_nf, :came_accross_wtf, :came_across_bc, :came_across_stories, :knew_friends, :knew_colleagues, :knew_aquaintances,
 			:met_informal, :met_formal, :other_reasons, :other_reasons_txt
+						
 
 
 
@@ -124,7 +125,31 @@ class User < ActiveRecord::Base
   
   validates_presence_of :language, :if => :selection?
   validates_presence_of :twitter_account, :if => :selection?
+  validates_inclusion_of :country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
+  validates_numericality_of 	:number_followers, :allow_nil => true, :allow_blank => true, :if => :internet? 
+  validates_numericality_of	:number_followeees, :allow_nil => true, :allow_blank => true, :if => :internet? 
+  validates_numericality_of	:number_messages, :allow_nil => true, :allow_blank => true, :if => :internet?
+  validates_numericality_of 	:surf_twitter_week, :allow_nil => true, :allow_blank => true, :if => :internet?
+  validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
+
+    
+  #if at_least_one_ol
+  #  validates_format_of 	:ol_1, :if => :opinionleader?,  :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #else
+  #  validates_format_of 	:ol_1, :if => :opinionleader?,  :with => /\A([-a-z0-9])\Z/i, :message => "is empty or contains invalid characters. Please insert at least one Account name."
+  #end
   
+  #validates_format_of 	:ol_2, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_3, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_4, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_5, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_6, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_7, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_8, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_9, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_10, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_11, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  #validates_format_of 	:ol_12, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
 
   
   def current_step
@@ -134,6 +159,31 @@ class User < ActiveRecord::Base
   def selection?
     current_step == "selection"
   end
+  
+  def demographic?
+    current_step == "demographic"
+  end
+  
+  def internet?
+    current_step == "internet"
+  end
+  
+  def at_least_one_ol?
+  if self.ol_2 != nil
+    at_least_one_ol = true
+  end
+  if at_least_one_ol
+        return true
+      else
+        return false
+      end
+  end
+  
+  def opinionleader?
+   current_step == "opinionleader"
+  end
+  
+
   
   def all_valid?
     steps.all? do |step|
@@ -184,7 +234,13 @@ class User < ActiveRecord::Base
 	else	  
 	  does_not_qualify = true
 	end
-      end      
+      end
+      # If Country is one of those without defence ministry
+      if current_step == "internet"
+	if country == 4 || country == 15 || country == 20 || country == 38 || country == 41 || country == 49 || country == 68 || country == 89 || country == 101 || country == 110 || country == 111 || country == 115 || country == 117 || country == 124 || country == 134 || country == 135 || country == 146 || country == 147 || country == 148 || country == 149 || country == 150 || country == 160 || country == 176 || country == 182 || country == 190 || country == 191
+	does_not_qualify = true
+	end 
+      end
       if does_not_qualify
         return false
       else
