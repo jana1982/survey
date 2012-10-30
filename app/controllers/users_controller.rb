@@ -386,7 +386,6 @@ class UsersController < ApplicationController
               render(:update) do |page|
                 page.show 'compose_tweet_seite';
                 page.show 'follower_compose_seite';
-                page.hide 'follower_seite';
               end
               
               

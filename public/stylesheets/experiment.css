@@ -868,12 +868,13 @@ border-color: #dcdcdc;
 }
 
 #follower_field{
-  background-color:transparent;
-  width:303px;
-  height: 830px;  
-  left:8px; top:243px;
-  margin:0 auto;
-  position: absolute;
+background-color: transparent;
+width: 303px;
+height: 830px;
+left: 0px;
+top: 18px;
+margin: 0 auto;
+position: relative;
 }
 
 #follower_bild{
@@ -883,12 +884,12 @@ border-color: #dcdcdc;
   
 #follower_titel{
   position: relative;
-  left: 40px;
+  left: 45px;
   top: -28px;}
 
 #follower_friend{
   position: relative;
-  left: 5px;
+  left: -5px;
   top: -24px;
   color: grey;}
 
@@ -905,12 +906,12 @@ border-color: #dcdcdc;
   
 #follower_titel2{
   position: relative;
-  left: 12px;
+  left: 17px;
   top: -75px;}
 
 #follower_friend2{
   position: relative;
-  left: 5px;
+  left: -5px;
   top: -69px;
   color: grey;}
 
@@ -920,10 +921,16 @@ border-color: #dcdcdc;
   top: -65px;}
   
 #follower_field2{
-  background-color:transparent;
-  width:303px;
-  height: 830px;  
-  left:8px; top:315px;
-  margin:0 auto;
+background-color: transparent;
+width: 294px;
+height: 60px;
+left: -269px;
+top: 48px;
+margin: 0 auto;
+position: relative;
+}
+#halter{
   position: absolute;
+  top: 234px;
+  left: 2px;
 }

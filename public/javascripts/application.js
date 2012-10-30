@@ -75,7 +75,6 @@ Event.observe(window, 'load', function() {
             if ( ! e.target.descendantOf('compose_tweet_field')) {
                 document.getElementById('compose_tweet_seite').style.display='none';
                 document.getElementById('follower_compose_seite').style.display='none';
-                document.getElementById('follower_seite').style.display='';
             }
            });
     };}
