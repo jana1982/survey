@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024100925) do
+ActiveRecord::Schema.define(:version => 20121102110353) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -366,6 +366,30 @@ ActiveRecord::Schema.define(:version => 20121024100925) do
     t.float    "follow_m2"
     t.integer  "follow_1_clicked"
     t.integer  "follow_2_clicked"
+    t.integer  "reply_pr_relevant"
+    t.integer  "reply_pr_meaningful"
+    t.integer  "reply_pr_important"
+    t.integer  "reply_pr_significant"
+    t.integer  "reply_oc_relevant"
+    t.integer  "reply_oc_meaningful"
+    t.integer  "reply_oc_important"
+    t.integer  "reply_oc_significant"
+    t.integer  "favorite_pr_relevant"
+    t.integer  "favorite_pr_meaningful"
+    t.integer  "favorite_pr_important"
+    t.integer  "favorite_pr_significant"
+    t.integer  "favorite_oc_relevant"
+    t.integer  "favorite_oc_meaningful"
+    t.integer  "favorite_oc_important"
+    t.integer  "favorite_oc_significant"
+    t.integer  "retweet_pr_relevant"
+    t.integer  "retweet_pr_meaningful"
+    t.integer  "retweet_pr_important"
+    t.integer  "retweet_pr_significant"
+    t.integer  "retweet_oc_relevant"
+    t.integer  "retweet_oc_meaningful"
+    t.integer  "retweet_oc_important"
+    t.integer  "retweet_oc_significant"
   end
 
 end

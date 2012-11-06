@@ -92,12 +92,15 @@ class User < ActiveRecord::Base
 			:came_across_same_intrest, :came_across_twitter_list, :heard_mass_media, :heard_internet, :read_retweet, :read_reply, :heard_friends_follow,
 			:heard_friends_interact, :heard_friends_recommend, :heard_friends_write, :heard_friends_follow_nf, :heard_friends_interact_nf, :heard_friends_recommend_nf,
 			:heard_friends_write_nf, :came_accross_wtf, :came_across_bc, :came_across_stories, :knew_friends, :knew_colleagues, :knew_aquaintances,
-			:met_informal, :met_formal, :other_reasons, :other_reasons_txt
-						
+			:met_informal, :met_formal, :other_reasons, :other_reasons_txt,
+			
+			:reply_pr_relevant, :reply_pr_meaningful, :reply_pr_important, :reply_pr_significant,
+			:reply_oc_relevant, :reply_oc_meaningful, :reply_oc_important, :reply_oc_significant,
+			:favorite_pr_relevant, :favorite_pr_meaningful, :favorite_pr_important, :favorite_pr_significant,
+			:favorite_oc_relevant, :favorite_oc_meaningful, :favorite_oc_important, :favorite_oc_significant,
+			:retweet_pr_relevant, :retweet_pr_meaningful, :retweet_pr_important, :retweet_pr_significant, 
+			:retweet_oc_relevant, :retweet_oc_meaningful, :retweet_oc_important, :retweet_oc_significant
 
-
-
-  
   attr_writer :current_step
   attr_accessor :username
   
@@ -131,7 +134,7 @@ class User < ActiveRecord::Base
   validates_numericality_of	:number_messages, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_week, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
-  validates_format_of 		:account_name, :allow_nil => true, :allow_blank => true, :if => :internet?, :with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 		:account_name, :if => :internet?, :with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
 
     
   validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
@@ -153,20 +156,6 @@ class User < ActiveRecord::Base
         errors.add_to_base("Specify at least one opinion leader")
       end
   end
-  
-  
-  #validates_format_of 	:ol_2, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_3, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_4, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_5, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_6, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_7, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_8, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_9, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_10, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_11, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  #validates_format_of 	:ol_12, :allow_nil => true, :allow_blank => true, :with => /\A([-a-z0-9])\Z/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-
   
   def current_step
       @current_step || steps.first

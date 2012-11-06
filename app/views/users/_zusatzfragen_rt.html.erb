@@ -1,0 +1,47 @@
+<div id="retweet_zusatzfragen_field">
+
+  <div id="close">
+    <%= link_to_remote image_tag('../images/close.png'),
+          :url => {:action => "close", :id => @user.id}
+    %>
+  </div>
+  <h3>To what extent do you think it is important for you that you retweet the shown message?</h3>
+
+  <div id="opinion_leader_text"><p>
+    <p>
+      <table>
+        <tr>
+          <td>not relevant at all
+          </td>
+          <td>
+          <div id="track2" style="float: none;">
+            <div id="handle2" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl2"><%= @user.reply_pr_relevant %>%</div>
+            </div>
+          </div>
+          </td>
+          <td>highly relevant
+          </td>      
+        </tr>
+      </table>
+    </p>
+           
+  <%= f.hidden_field :reply_pr_relevant, :value => @user.reply_pr_relevant rescue "-99" %>
+
+  <script type="text/javascript">
+    // <![CDATA[
+    x=parseInt(<%= @user.reply_pr_relevant %> + 0.5);
+    new Control.Slider('handle2','track2',{
+      sliderValue: x,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl2').innerHTML= parseInt(v)},
+      onChange:function(v){document.getElementById('user_reply_pr_relevant').value = v},
+    });
+    // ]]>
+  </script>
+  <br>
+    <%= f.check_box :dk_pol_percentage, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+    I don't know the percentage of the political tweets I read.
+  </p>       
+</div>

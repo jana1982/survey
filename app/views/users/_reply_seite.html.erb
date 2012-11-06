@@ -2,9 +2,9 @@
     <div id="tweeter_name_groß">&nbsp;@<%= displayed_person %>
     </div>
   <div id="close">
-            <%= link_to_remote image_tag('../images/close.png'),
-                  :url => {:action => "close", :id => @user.id}
-            %>
+    <%= link_to_remote image_tag('../images/close.png'),
+          :url => {:action => "close", :id => @user.id}
+    %>
   </div>
   <div id="reply_text">
     <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "@#{displayed_person} " %>
@@ -13,12 +13,12 @@
     <div id="charcount"> <span id="char-count">140</span></div>
 
     <div id="reply_button_change" style="display: none;">
-            <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
-                :mouseover => '../images/Tweetbutton_mouseover.png'),
-                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
-                  :url => {:action => "close", :id => @user.id}
-            %>
-  </div>
+      <%= link_to_remote image_tag('../images/Tweetbutton_aktiv.png',
+          :mouseover => '../images/Tweetbutton_mouseover.png'),
+          :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
+            :url => {:action => "close", :id => @user.id}
+      %>
+    </div>
 
 </div>
 

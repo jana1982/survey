@@ -133,9 +133,10 @@ class UsersController < ApplicationController
         format.js {
           if (session[:user_params][:retweet_1_clicked].even?) 
             render(:update) do |page|
-                puts "RT1_EVEN"
-                page.replace "retweet_picture_1", image_tag('../images/retweet_einzeln_g.png', :id=>"retweet_picture_1", :mouseover => "../images/retweet_unterstrichen_g.png") 
-                page.replace "retweet_picture_expand1", image_tag('../images/retweet_einzeln.png', :id => "retweet_picture_expand1", :mouseover => "../images/retweet_unterstrichen.png")
+                puts "RT1_EVEN";
+                page.hide 'zusatzfragen_rt';
+                page.replace "retweet_picture_1", image_tag('../images/retweet_einzeln_g.png', :id=>"retweet_picture_1", :mouseover => "../images/retweet_unterstrichen_g.png"); 
+                page.replace "retweet_picture_expand1", image_tag('../images/retweet_einzeln.png', :id => "retweet_picture_expand1", :mouseover => "../images/retweet_unterstrichen.png");
               if (session[:user_params][:favorite_1_clicked] == nil || session[:user_params][:favorite_1_clicked].even?)
                 page.replace_html "marker1", image_tag('../images/platzhalter1_ecke.png')
               else
@@ -144,9 +145,10 @@ class UsersController < ApplicationController
              end;
           else
             render(:update) do |page|
-              puts "RT1_unveven"
-                page.replace "retweet_picture_1", image_tag('../images/retweet_clicked_g.png', :id => "retweet_picture_1", :mouseover => "../images/retweet_unterstrichen_clicked_g.png")
-                page.replace "retweet_picture_expand1", image_tag('../images/retweet_clicked.png', :id => "retweet_picture_expand1", :mouseover => "../images/retweet_unterstrichen_clicked.png")
+              puts "RT1_unveven";
+              page.show 'zusatzfragen_rt';
+              page.replace "retweet_picture_1", image_tag('../images/retweet_clicked_g.png', :id => "retweet_picture_1", :mouseover => "../images/retweet_unterstrichen_clicked_g.png");
+              page.replace "retweet_picture_expand1", image_tag('../images/retweet_clicked.png', :id => "retweet_picture_expand1", :mouseover => "../images/retweet_unterstrichen_clicked.png");
               if (session[:user_params][:favorite_1_clicked] == nil || session[:user_params][:favorite_1_clicked].even?)              
                 page.replace_html "marker1", image_tag('../images/retweet1_ecke.png')
               else
@@ -329,6 +331,7 @@ class UsersController < ApplicationController
                 page.hide "link_website";
                 page.hide "follower_compose_seite";
                 page.show "follower_seite";
+                page.hide "zusatzfragen_rt";
                 page.hide "expand_page1" if number == 1
                 page.hide "expand_page2" if number == 2
               end
