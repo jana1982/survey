@@ -1,0 +1,603 @@
+
+<p>
+  <TABLE width="100%">
+<TR>
+
+<TD ALIGN="LEFT">
+<h2>Part XI: Further variables of the Simulation</h2>
+
+</TD>
+
+
+<TD ALIGN="RIGHT" width=400px>
+  
+
+
+            
+10/11 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.99,true,true) %>
+            
+
+
+</TD>
+
+</TR>
+</TABLE>
+
+</p>
+    
+
+<hr>
+ <h3>Please evaluate the following statements.</h3>
+   <table width="100%" class="hovertable">
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td colspan="2" align="left">
+         Strongly disagree
+      </td>
+      <td colspan="3" align="center">
+         Neither agree nor disagree
+      </td>
+      <td colspan="2" align="right">
+         Strongly agree
+      </td>
+    </tr>
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td width="7%">-3</td>
+      <td width="7%">-2</td>
+      <td width="7%">-1</td>
+      <td width="7%">0</td>
+      <td width="7%">1</td>
+      <td width="7%">2</td>
+      <td width="7%">3</td>
+    </tr>
+
+<% if @user.avg_private_replies != 6 %>
+<p><tr><td colspan="8"><b><i>Write private messages</i></b></td></tr>
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       Assuming I could write private messages at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_write, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could write private messages at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_write, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would write a private message.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_write, 7 %></td>
+    </tr>
+</p>
+<% end %>
+<% if @user.avg_stories != 6 %>
+<p><tr><td colspan="8"><b><i>Discover stories</i></b></td></tr>  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       Assuming I could discover stories at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_stories, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could discover stories at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_stories, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would discover stories.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_stories, 7 %></td>
+    </tr>
+<% end %>
+<% if @user.avg_trend != 6 %> 
+<p><tr><td colspan="8"><b><i>Discover trends</i></b></td></tr> </p>
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       Assuming I could discover trends at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_discover_trends, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could discover trends at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_discover_trends, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would discover trends.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_discover_trends, 7 %></td>
+    </tr>
+</p>
+<% end %>
+<% if @user.avg_follow != 6 %> 
+<p><tr><td colspan="8"><b><i>Follow new accounts related to the topic</i></b></td></tr>  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td>
+       Assuming I could follow new accounts related to the topic at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_follow, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could follow new accounts related to the topic at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_follow, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would follow new accounts related to the topic.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_follow, 7 %></td>
+    </tr>
+    </p>
+<% end %>
+<% if @user.avg_unfollow_account != 6 %>   
+<p><tr><td colspan="8"><b><i>Unfollow accounts related to the topic</i></b></td></tr>
+  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+       Assuming I could unfollow accounts related to the topic at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could unfollow accounts related to the topic at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would unfollow accounts related to the topic.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 7 %></td>
+    </tr>
+</p>
+<% end %>
+<% if @user.avg_create_lists != 6 %>   
+<p><tr><td colspan="8"><b><i>Create lists related to the topic</i></b></td></tr>
+  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+       Assuming I could create lists related to the topic at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_create_lists, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could create lists related to the topic at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_create_lists, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would create lists related to the topic.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_create_lists, 7 %></td>
+    </tr>
+  </p>
+<% end %>
+<% if @user.avg_add_accounts_lists != 6 %> 
+<p><tr><td colspan="8"><b><i>Add accounts to lists related to the topic</i></b></td></tr>
+  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+       Assuming I could add accounts to lists related to the topic at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_add_to_lists, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could add accounts to lists related to the topic at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_add_to_lists, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would add accounts to lists related to the topic.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_add_to_lists, 7 %></td>
+    </tr>
+   </p>
+<% end %>
+<% if @user.avg_unsubscribe_lists != 6 %> 
+<p><tr><td colspan="8"><b><i>Unsubscribe from lists related to the topic</i></b></td></tr>
+  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+       Assuming I could unsubscribe from lists related to the topic at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_unsubscribe_lists, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could unsubscribe from lists related to the topic at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unsubscribe_lists, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would unsubscribe from lists related to the topic.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unsubscribe_lists, 7 %></td>
+    </tr>
+   </p>
+<% end %>
+<% if @user.avg_subscribe_lists != 6 %> 
+<p><tr><td colspan="8"><b><i>Subscribe to lists related to the topic</i></b></td></tr>
+  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+       Assuming I could subscribe to lists related to the topic at the simulation, I intend to use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_subscribe_lists, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could add subscribe to lists related to the topic at the simulation, I predict that I would use it.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_subscribe_lists, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+        If the seen content wouldn't be a simulation I would subscribe to lists related to the topic.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention3_subscribe_lists, 7 %></td>
+    </tr>
+    </p>
+<% end %>
+  </table>
+
+<p>
+</p>
+<hr>

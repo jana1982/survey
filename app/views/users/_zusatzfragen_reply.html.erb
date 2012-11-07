@@ -1,0 +1,244 @@
+<div id="retweet_zusatzfragen_field">
+
+  <h3>To what extent do you think it was important for you that you to click on reply?</h3>
+
+  <div id="opinion_leader_text"><p>
+    <p>
+      <table>
+        <tr>
+          <td>not relevant at all
+          </td>
+          <td>
+          <div id="track22" style="float: none;">
+            <div id="handle22" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl22"><%= @user.reply_pr_relevant %></div>
+            </div>
+            <%= f.hidden_field :reply_pr_relevant, :value => @user.reply_pr_relevant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly relevant
+          </td>
+          <td><%= f.check_box :reply_pr_relevant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not meaningful at all
+          </td>
+          <td>
+          <div id="track23" style="float: none;">
+            <div id="handle23" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl23"><%= @user.reply_pr_meaningful %></div>
+            </div>
+            <%= f.hidden_field :reply_pr_meaningful, :value => @user.reply_pr_meaningful rescue "-99" %>
+          </div>
+          </td>
+          <td>highly meaningful
+          </td>
+          <td><%= f.check_box :reply_pr_meaningful_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not important at all
+          </td>
+          <td>
+          <div id="track24" style="float: none;">
+            <div id="handle24" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl24"><%= @user.reply_pr_important %></div>
+            </div>
+            <%= f.hidden_field :reply_pr_important, :value => @user.reply_pr_important rescue "-99" %>
+          </div>
+          </td>
+          <td>highly important
+          </td>
+          <td><%= f.check_box :reply_pr_important_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not significant at all
+          </td>
+          <td>
+          <div id="track25" style="float: none;">
+            <div id="handle25" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl25"><%= @user.reply_pr_significant %></div>
+            </div>
+            <%= f.hidden_field :reply_pr_significant, :value => @user.reply_pr_significant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly significant
+          </td>
+          <td><%= f.check_box :reply_pr_significant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+      </table>
+    </p>
+  </div>
+           
+  <h3>To what extent do you think the reply of the shown message would be important to your followers?</h3>
+
+  <div id="opinion_leader_text"><p>
+    <p>
+      <table>
+        <tr>
+          <td>not relevant at all
+          </td>
+          <td>
+          <div id="track26" style="float: none;">
+            <div id="handle26" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl26"><%= @user.reply_oc_relevant %></div>
+            </div>
+            <%= f.hidden_field :reply_oc_relevant, :value => @user.reply_oc_relevant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly relevant
+          </td>
+          <td><%= f.check_box :reply_oc_relevant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not meaningful at all
+          </td>
+          <td>
+          <div id="track27" style="float: none;">
+            <div id="handle27" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl27"><%= @user.reply_oc_meaningful %></div>
+            </div>
+            <%= f.hidden_field :reply_oc_meaningful, :value => @user.reply_oc_meaningful rescue "-99" %>
+          </div>
+          </td>
+          <td>highly meaningful
+          </td>
+          <td><%= f.check_box :reply_oc_meaningful_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not important at all
+          </td>
+          <td>
+          <div id="track28" style="float: none;">
+            <div id="handle28" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl28"><%= @user.reply_oc_important %></div>
+            </div>
+            <%= f.hidden_field :reply_oc_important, :value => @user.reply_oc_important rescue "-99" %>
+          </div>
+          </td>
+          <td>highly important
+          </td>
+          <td><%= f.check_box :reply_oc_important_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not significant at all
+          </td>
+          <td>
+          <div id="track29" style="float: none;">
+            <div id="handle29" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl29"><%= @user.reply_oc_significant %></div>
+            </div>
+            <%= f.hidden_field :reply_oc_significant, :value => @user.reply_oc_significant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly significant
+          </td>
+          <td><%= f.check_box :reply_oc_significant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+      </table>
+    </p> 
+  </div>
+  
+  <script type="text/javascript">
+    // <![CDATA[
+    
+    a=parseInt(<%= @user.reply_pr_meaningful %> + 0.5);
+    
+    var b = new Control.Slider('handle23','track23',{
+      sliderValue: a,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl23').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_pr_meaningful').value = v},
+    });
+    
+    c=parseInt(<%= @user.reply_pr_relevant %> + 0.5);
+    
+    var d = new Control.Slider('handle22','track22',{
+      sliderValue: c,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl22').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_pr_relevant').value = v},
+    });
+    
+    e=parseInt(<%= @user.reply_pr_important %> + 0.5);
+    
+    var f = new Control.Slider('handle24','track24',{
+      sliderValue: e,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl24').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_pr_important').value = v},
+    });
+    
+    g=parseInt(<%= @user.reply_pr_significant %> + 0.5);
+    
+    var h = new Control.Slider('handle25','track25',{
+      sliderValue: g,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl25').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_pr_significant').value = v},
+    });
+    
+    i=parseInt(<%= @user.reply_oc_relevant %> + 0.5);
+    
+    var j = new Control.Slider('handle26','track26',{
+      sliderValue: i,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl26').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_oc_relevant').value = v},
+    });
+    
+    k=parseInt(<%= @user.reply_oc_meaningful %> + 0.5);
+    
+    var l = new Control.Slider('handle27','track27',{
+      sliderValue: k,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl27').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_oc_meaningful').value = v},
+    });
+    
+    m=parseInt(<%= @user.reply_oc_important %> + 0.5);
+    
+    var n = new Control.Slider('handle28','track28',{
+      sliderValue: m,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl28').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_oc_important').value = v},
+    });
+    
+    o=parseInt(<%= @user.reply_oc_significant %> + 0.5);
+    
+    var p = new Control.Slider('handle29','track29',{
+      sliderValue: o,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl29').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_reply_oc_significant').value = v},
+    });
+    // ]]>
+  </script>
+
+
+
+</div>

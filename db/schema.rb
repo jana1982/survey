@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102110353) do
+ActiveRecord::Schema.define(:version => 20121107095001) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -390,6 +390,32 @@ ActiveRecord::Schema.define(:version => 20121102110353) do
     t.integer  "retweet_oc_meaningful"
     t.integer  "retweet_oc_important"
     t.integer  "retweet_oc_significant"
+    t.string   "open_reasons"
+    t.integer  "reply_pr_relevant_ck"
+    t.integer  "reply_pr_meaningful_ck"
+    t.integer  "reply_pr_important_ck"
+    t.integer  "reply_pr_significant_ck"
+    t.integer  "reply_oc_relevant_ck"
+    t.integer  "reply_oc_meaningful_ck"
+    t.integer  "reply_oc_important_ck"
+    t.integer  "reply_oc_significant_ck"
+    t.integer  "favorite_pr_relevant_ck"
+    t.integer  "favorite_pr_meaningful_ck"
+    t.integer  "favorite_pr_important_ck"
+    t.integer  "favorite_pr_significant_ck"
+    t.integer  "favorite_oc_relevant_ck"
+    t.integer  "favorite_oc_meaningful_ck"
+    t.integer  "favorite_oc_important_ck"
+    t.integer  "favorite_oc_significant_ck"
+    t.integer  "retweet_pr_relevant_ck"
+    t.integer  "retweet_pr_meaningful_ck"
+    t.integer  "retweet_pr_important_ck"
+    t.integer  "retweet_pr_significant_ck"
+    t.integer  "retweet_oc_relevant_ck"
+    t.integer  "retweet_oc_meaningful_ck"
+    t.integer  "retweet_oc_important_ck"
+    t.integer  "retweet_oc_significant_ck"
+    t.string   "open_reasons_others"
   end
 
 end

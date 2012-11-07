@@ -33,6 +33,20 @@ class UsersController < ApplicationController
     end
     
   end
+  
+  def repeat2
+    #puts params["secondlist"][0]
+    #result = params["secondlist"].to_a.collect{|e| e.match(/\d+/)[0] rescue ""} #De-serialize the output from the list
+    #puts result
+    #puts params["secondlist"].class
+    session[:user_params].deep_merge!({:open_reasons => params[:openlist]})
+    respond_to do |format|
+      format.js {
+        render :nothing => true
+      }
+    end
+    
+  end
 
 
   def new
@@ -134,7 +148,6 @@ class UsersController < ApplicationController
           if (session[:user_params][:retweet_1_clicked].even?) 
             render(:update) do |page|
                 puts "RT1_EVEN";
-                page.hide 'zusatzfragen_rt';
                 page.replace "retweet_picture_1", image_tag('../images/retweet_einzeln_g.png', :id=>"retweet_picture_1", :mouseover => "../images/retweet_unterstrichen_g.png"); 
                 page.replace "retweet_picture_expand1", image_tag('../images/retweet_einzeln.png', :id => "retweet_picture_expand1", :mouseover => "../images/retweet_unterstrichen.png");
               if (session[:user_params][:favorite_1_clicked] == nil || session[:user_params][:favorite_1_clicked].even?)
@@ -146,7 +159,6 @@ class UsersController < ApplicationController
           else
             render(:update) do |page|
               puts "RT1_unveven";
-              page.show 'zusatzfragen_rt';
               page.replace "retweet_picture_1", image_tag('../images/retweet_clicked_g.png', :id => "retweet_picture_1", :mouseover => "../images/retweet_unterstrichen_clicked_g.png");
               page.replace "retweet_picture_expand1", image_tag('../images/retweet_clicked.png', :id => "retweet_picture_expand1", :mouseover => "../images/retweet_unterstrichen_clicked.png");
               if (session[:user_params][:favorite_1_clicked] == nil || session[:user_params][:favorite_1_clicked].even?)              
@@ -331,7 +343,6 @@ class UsersController < ApplicationController
                 page.hide "link_website";
                 page.hide "follower_compose_seite";
                 page.show "follower_seite";
-                page.hide "zusatzfragen_rt";
                 page.hide "expand_page1" if number == 1
                 page.hide "expand_page2" if number == 2
               end

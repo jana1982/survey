@@ -1,11 +1,6 @@
 <div id="retweet_zusatzfragen_field">
 
-  <div id="close">
-    <%= link_to_remote image_tag('../images/close.png'),
-          :url => {:action => "close", :id => @user.id}
-    %>
-  </div>
-  <h3>To what extent do you think it is important for you that you retweet the shown message?</h3>
+  <h3>To what extent do you think it was important for you that you retweet the shown message?</h3>
 
   <div id="opinion_leader_text"><p>
     <p>
@@ -17,31 +12,232 @@
           <div id="track2" style="float: none;">
             <div id="handle2" style="border: thin;">
               <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
-              <div id="zahl2"><%= @user.reply_pr_relevant %>%</div>
+              <div id="zahl2"><%= @user.retweet_pr_relevant %></div>
             </div>
+            <%= f.hidden_field :retweet_pr_relevant, :value => @user.retweet_pr_relevant rescue "-99" %>
           </div>
           </td>
           <td>highly relevant
-          </td>      
+          </td>
+          <td><%= f.check_box :retweet_pr_relevant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
         </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not meaningful at all
+          </td>
+          <td>
+          <div id="track3" style="float: none;">
+            <div id="handle3" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl3"><%= @user.retweet_pr_meaningful %></div>
+            </div>
+            <%= f.hidden_field :retweet_pr_meaningful, :value => @user.retweet_pr_meaningful rescue "-99" %>
+          </div>
+          </td>
+          <td>highly meaningful
+          </td>
+          <td><%= f.check_box :retweet_pr_meaningful_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not important at all
+          </td>
+          <td>
+          <div id="track4" style="float: none;">
+            <div id="handle4" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl4"><%= @user.retweet_pr_important %></div>
+            </div>
+            <%= f.hidden_field :retweet_pr_important, :value => @user.retweet_pr_important rescue "-99" %>
+          </div>
+          </td>
+          <td>highly important
+          </td>
+          <td><%= f.check_box :retweet_pr_important_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not significant at all
+          </td>
+          <td>
+          <div id="track5" style="float: none;">
+            <div id="handle5" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl5"><%= @user.retweet_pr_significant %></div>
+            </div>
+            <%= f.hidden_field :retweet_pr_significant, :value => @user.retweet_pr_significant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly significant
+          </td>
+          <td><%= f.check_box :retweet_pr_significant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
       </table>
     </p>
+  </div>
            
-  <%= f.hidden_field :reply_pr_relevant, :value => @user.reply_pr_relevant rescue "-99" %>
+  <h3>To what extent do you think the retweet of the shown message would be important to your followers?</h3>
 
+  <div id="opinion_leader_text"><p>
+    <p>
+      <table>
+        <tr>
+          <td>not relevant at all
+          </td>
+          <td>
+          <div id="track6" style="float: none;">
+            <div id="handle6" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl6"><%= @user.retweet_oc_relevant %></div>
+            </div>
+            <%= f.hidden_field :retweet_oc_relevant, :value => @user.retweet_oc_relevant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly relevant
+          </td>
+          <td><%= f.check_box :retweet_oc_relevant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not meaningful at all
+          </td>
+          <td>
+          <div id="track7" style="float: none;">
+            <div id="handle7" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl7"><%= @user.retweet_oc_meaningful %></div>
+            </div>
+            <%= f.hidden_field :retweet_oc_meaningful, :value => @user.retweet_oc_meaningful rescue "-99" %>
+          </div>
+          </td>
+          <td>highly meaningful
+          </td>
+          <td><%= f.check_box :retweet_oc_meaningful_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not important at all
+          </td>
+          <td>
+          <div id="track8" style="float: none;">
+            <div id="handle8" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl8"><%= @user.retweet_oc_important %></div>
+            </div>
+            <%= f.hidden_field :retweet_oc_important, :value => @user.retweet_oc_important rescue "-99" %>
+          </div>
+          </td>
+          <td>highly important
+          </td>
+          <td><%= f.check_box :retweet_oc_important_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+        <tr>
+          <td>not significant at all
+          </td>
+          <td>
+          <div id="track9" style="float: none;">
+            <div id="handle9" style="border: thin;">
+              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
+              <div id="zahl9"><%= @user.retweet_oc_significant %></div>
+            </div>
+            <%= f.hidden_field :retweet_oc_significant, :value => @user.retweet_oc_significant rescue "-99" %>
+          </div>
+          </td>
+          <td>highly significant
+          </td>
+          <td><%= f.check_box :retweet_oc_significant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
+                      I don't know/ I don't want to say</td>
+        </tr>
+        <tr height="20px"></tr>
+      </table>
+    </p> 
+  </div>
+  
   <script type="text/javascript">
     // <![CDATA[
-    x=parseInt(<%= @user.reply_pr_relevant %> + 0.5);
-    new Control.Slider('handle2','track2',{
-      sliderValue: x,
+    a=parseInt(<%= @user.retweet_pr_meaningful %> + 0.5);
+    
+    var b = new Control.Slider('handle3','track3',{
+      sliderValue: a,
       range:$R(0,10),
-      onSlide:function(v){$('zahl2').innerHTML= parseInt(v)},
-      onChange:function(v){document.getElementById('user_reply_pr_relevant').value = v},
+      onSlide:function(v){$('zahl3').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_pr_meaningful').value = v},
+    });
+    
+    c=parseInt(<%= @user.retweet_pr_relevant %> + 0.5);
+    
+    var d = new Control.Slider('handle2','track2',{
+      sliderValue: c,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl2').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_pr_relevant').value = v},
+    });
+    
+    e=parseInt(<%= @user.retweet_pr_important %> + 0.5);
+    
+    var f = new Control.Slider('handle4','track4',{
+      sliderValue: e,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl4').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_pr_important').value = v},
+    });
+    
+    g=parseInt(<%= @user.retweet_pr_significant %> + 0.5);
+    
+    var h = new Control.Slider('handle5','track5',{
+      sliderValue: g,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl5').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_pr_significant').value = v},
+    });
+    
+    i=parseInt(<%= @user.retweet_oc_relevant %> + 0.5);
+    
+    var j = new Control.Slider('handle6','track6',{
+      sliderValue: i,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl6').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_oc_relevant').value = v},
+    });
+    
+    k=parseInt(<%= @user.retweet_oc_meaningful %> + 0.5);
+    
+    var l = new Control.Slider('handle7','track7',{
+      sliderValue: k,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl7').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_oc_meaningful').value = v},
+    });
+    
+    m=parseInt(<%= @user.retweet_oc_important %> + 0.5);
+    
+    var n = new Control.Slider('handle8','track8',{
+      sliderValue: m,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl8').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_oc_important').value = v},
+    });
+    
+    o=parseInt(<%= @user.retweet_oc_significant %> + 0.5);
+    
+    var p = new Control.Slider('handle9','track9',{
+      sliderValue: o,
+      range:$R(0,10),
+      onSlide:function(v){$('zahl9').innerHTML= parseInt(v + 0.5);},
+      onChange:function(v){document.getElementById('user_retweet_oc_significant').value = v},
     });
     // ]]>
   </script>
-  <br>
-    <%= f.check_box :dk_pol_percentage, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-    I don't know the percentage of the political tweets I read.
-  </p>       
+
+
+
 </div>

@@ -1,0 +1,40 @@
+<div id="retweet_zusatzfragen_field">
+
+<h3>What are the most important reasons for you to expand the Tweet.</h3>
+<table>
+  <tr>
+    <td colspan="2"> 	
+	<h4><i>Please rank the following Items per drag and drop.</i></h4>
+    </td>    
+  </tr>
+  <tr>
+    <td >
+      <ul style="list-style-type: none; vertical-align: text-bottom;">
+	<li class="listnummern">1.</li>
+	<li class="listnummern">2.</li>
+	<li class="listnummern">3.</li>
+	<li class="listnummern">4.</li>
+	<li class="listnummern">5.</li>
+      </ul>
+    </td>
+    <td>
+      <div id="list_info">      
+	<ul class="sortabledemo" id="openlist" style="list-style-type: none;" >	  
+	  <% @user.open_reasons.each do |reason| %>
+	    <li class="openlist_openlist" id="openlist_<%= reason %>">
+            <% if reason == 5 %>
+	      <div class="handle2" style="width: 400px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others %></nobr></div>
+            <% else %>
+            <div class="handle2" style="width: 400px;"><%= OPEN_REASONS[reason]%></div>
+            <% end %>
+	    </li>
+	  <% end %>
+	</ul>
+      </div>
+    </td>
+  </tr>
+</table>
+<%= sortable_element :openlist,
+		     :handle => 'handle2',
+		     :url => { :action => 'repeat2'}
+%>

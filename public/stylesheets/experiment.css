@@ -956,34 +956,3 @@ position: relative;
   color: black;
 }
 
-
-#track2{
-  width:200px;
-  background-image: url('../images/streifen.png');
-  border: 2px groove;
-  border-image: initial;
-  -webkit-rtl-ordering:  logical;
-
-  height:15px;
-}
-
-#handle2{
-  width: 15px;
-  height: 15px;
-}
-
-#track2 div.handle {
-      background-color:#bbb;
-      color:#444;
-      top:0;
-      left:0;
-      position:absolute;
-      z-index:2;
-      height:100px;
-      font-size:20px;
-    }
-    
-#track2 div.handle.selected {
-      background-color:#444;
-      color:#fff;
-    } 

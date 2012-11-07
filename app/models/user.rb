@@ -2,6 +2,8 @@ require "csv"
 class User < ActiveRecord::Base
   serialize :seen_seed
   serialize :interest_list
+  serialize :open_reasons
+  
     
   attr_accessible 	:bildung, :alter, :geschlecht, 
 			:martial_status, :language, :country, :years, :twitter_account, :income, 
@@ -99,7 +101,16 @@ class User < ActiveRecord::Base
 			:favorite_pr_relevant, :favorite_pr_meaningful, :favorite_pr_important, :favorite_pr_significant,
 			:favorite_oc_relevant, :favorite_oc_meaningful, :favorite_oc_important, :favorite_oc_significant,
 			:retweet_pr_relevant, :retweet_pr_meaningful, :retweet_pr_important, :retweet_pr_significant, 
-			:retweet_oc_relevant, :retweet_oc_meaningful, :retweet_oc_important, :retweet_oc_significant
+			:retweet_oc_relevant, :retweet_oc_meaningful, :retweet_oc_important, :retweet_oc_significant,
+			
+			:retweet_pr_important_ck, :retweet_pr_relevant_ck, :retweet_pr_significant_ck, :retweet_pr_meaningful_ck,
+			:retweet_oc_important_ck, :retweet_oc_relevant_ck, :retweet_oc_significant_ck, :retweet_oc_meaningful_ck,
+			:favorite_pr_significant_ck, :favorite_pr_meaningful_ck, :favorite_pr_relevant_ck, :favorite_pr_important_ck,
+			:favorite_oc_relevant_ck, :favorite_oc_important_ck, :favorite_oc_significant_ck, :favorite_oc_meaningful_ck,
+			:reply_pr_relevant_ck, :reply_pr_important_ck, :reply_pr_significant_ck, :reply_pr_meaningful_ck,
+			:reply_oc_relevant_ck, :reply_oc_significant_ck,  :reply_oc_meaningful_ck, :reply_oc_important_ck,
+			
+			:open_reasons_others, :open_reasons
 
   attr_writer :current_step
   attr_accessor :username
@@ -118,6 +129,7 @@ class User < ActiveRecord::Base
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
       self.interest_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
+      self.open_reasons = [1, 2, 3, 4, 5]
     end
   end
   
@@ -134,8 +146,7 @@ class User < ActiveRecord::Base
   validates_numericality_of	:number_messages, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_week, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
-  validates_format_of 		:account_name, :if => :internet?, :with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-
+  validates_format_of 		:account_name, :with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
     
   validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
@@ -149,8 +160,8 @@ class User < ActiveRecord::Base
   validates_format_of 	:ol_10, :if => :opinionleader?, :unless => proc{|obj| obj.ol_10.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_11, :if => :opinionleader?, :unless => proc{|obj| obj.ol_11.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_12, :if => :opinionleader?, :unless => proc{|obj| obj.ol_12.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validate	:at_least_one_ol
-  
+  validate 		:at_least_one_ol, :if => :opinionleader?
+    
   def at_least_one_ol
       if (ol_1.blank? & ol_2.blank? & ol_3.blank? & ol_4.blank? & ol_5.blank? & ol_6.blank? & ol_7.blank? & ol_8.blank? & ol_9.blank? & ol_10.blank? & ol_11.blank? & ol_12.blank?)
         errors.add_to_base("Specify at least one opinion leader")
@@ -186,7 +197,7 @@ class User < ActiveRecord::Base
 
   def steps
       %w[ introduction  selection demographic internet twitter_motivation opinionleader interest sources reasons_for_ol
-	 twitter message_relevance  target]          
+	 twitter message_relevance target_variables target]          
   end
   
   def first_step?

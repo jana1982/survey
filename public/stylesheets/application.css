@@ -163,6 +163,25 @@ textarea#user_reason_nrep{
 
 }
 
+li .handle2 {
+  cursor: move;
+  border: medium;
+  line-height: 40px;
+}
+
+.openlist_openlist{
+  border: solid;
+  border-color: white;
+  background-color:#f2f2f2;
+  height: 30px;
+  width: 400px;
+  text-align: left;
+}
+
+.openlist_openlist:hover{
+  background-color:#e2e2e2;
+}
+
 li .handle {
   cursor: move;
   border: medium;
@@ -398,41 +417,792 @@ h2
   -webkit-rtl-ordering:  logical;
 
   height:15px;
-
 }
-
 
 #handle1{
   width: 15px;
   height: 15px;
-
 }
 
-    #track1 div.handle {
-      background-color:#bbb;
-      color:#444;
-      top:0;
-      left:0;
-      position:absolute;
-      z-index:2;
-      height:100px;
-      font-size:20px;
-    }
-    #track1 div.handle.selected {
-      background-color:#444;
-      color:#fff;
-    }
+#track1 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track1 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+
 #reset{
   width: 90px;
   -webkit-box-align: center;
-text-align: center;
-cursor: default;
-color: buttontext;
-padding: 2px 6px 3px;
-border: 2px outset buttonface;
-border-image: initial;
-background-color: buttonface;
-box-sizing: border-box;
--webkit-appearance: push-button;
-white-space: pre;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  padding: 2px 6px 3px;
+  border: 2px outset buttonface;
+  border-image: initial;
+  background-color: buttonface;
+  box-sizing: border-box;
+  -webkit-appearance: push-button;
+  white-space: pre;
+}
+
+#track2{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+
+  height:15px;
+}
+
+#handle2{
+  width: 15px;
+  height: 15px;
+}
+
+#track2 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+#track2 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+
+#track2{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+
+  height:15px;
+}
+
+#handle3{
+  width: 15px;
+  height: 15px;
+}
+
+#track3 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track3 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track3{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle4{
+  width: 15px;
+  height: 15px;
+}
+
+#track4 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track4 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track4{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle5{
+  width: 15px;
+  height: 15px;
+}
+
+#track5 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track5 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track5{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle6{
+  width: 15px;
+  height: 15px;
+}
+
+#track6 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track6 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track6{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle7{
+  width: 15px;
+  height: 15px;
+}
+
+#track7 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track7 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track7{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle8{
+  width: 15px;
+  height: 15px;
+}
+
+#track8 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track8 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track8{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle9{
+  width: 15px;
+  height: 15px;
+}
+
+#track9 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track9 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track9{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+
+#track12{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+
+  height:15px;
+}
+
+#handle12{
+  width: 15px;
+  height: 15px;
+}
+
+#track12 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+#track12 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+
+#track12{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+
+  height:15px;
+}
+
+#handle13{
+  width: 15px;
+  height: 15px;
+}
+
+#track13 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track13 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track13{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle14{
+  width: 15px;
+  height: 15px;
+}
+
+#track14 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track14 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track14{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle15{
+  width: 15px;
+  height: 15px;
+}
+
+#track15 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track15 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track15{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle16{
+  width: 15px;
+  height: 15px;
+}
+
+#track16 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track16 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track16{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle17{
+  width: 15px;
+  height: 15px;
+}
+
+#track17 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track17 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track17{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle18{
+  width: 15px;
+  height: 15px;
+}
+
+#track18 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track18 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track18{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle19{
+  width: 15px;
+  height: 15px;
+}
+
+#track19 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track19 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track19{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+
+#track22{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+
+  height:15px;
+}
+
+#handle22{
+  width: 15px;
+  height: 15px;
+}
+
+#track22 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+#track22 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+
+#track22{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+
+  height:15px;
+}
+
+#handle23{
+  width: 15px;
+  height: 15px;
+}
+
+#track23 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track23 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track23{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle24{
+  width: 15px;
+  height: 15px;
+}
+
+#track24 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track24 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track24{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle25{
+  width: 15px;
+  height: 15px;
+}
+
+#track25 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track25 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track25{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle26{
+  width: 15px;
+  height: 15px;
+}
+
+#track26 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track26 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track26{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle27{
+  width: 15px;
+  height: 15px;
+}
+
+#track27 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track27 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track27{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle28{
+  width: 15px;
+  height: 15px;
+}
+
+#track28 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track28 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track28{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
+}
+
+#handle29{
+  width: 15px;
+  height: 15px;
+}
+
+#track29 div.handle {
+  background-color:#bbb;
+  color:#444;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index:2;
+  height:100px;
+  font-size:20px;
+}
+
+#track29 div.handle.selected {
+  background-color:#444;
+  color:#fff;
+}
+    
+#track29{
+  width:200px;
+  background-image: url('../images/streifen.png');
+  border: 2px groove;
+  border-image: initial;
+  -webkit-rtl-ordering:  logical;
+  height:15px;
 }
