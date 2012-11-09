@@ -23,5 +23,28 @@ module ApplicationHelper
     text = %Q<1.\n2.\n3.\n...>
   end
   
+  def reply_text_helper
+    if @user.reply_text.nil?
+      "@"+displayed_person+" "
+    else
+      @user.reply_text
+    end
+  end
+  
+  def reply_text_helper2
+    if @user.reply_text.nil?
+      "@Second_Friend "
+    else
+      @user.reply_text2
+    end
+  end
+  
+  def reply_text_helper3
+    if @user.reply_text.nil?
+      "@Friend "
+    else
+      @user.reply_text2
+    end
+  end
  
 end

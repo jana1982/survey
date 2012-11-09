@@ -18,14 +18,14 @@
       </ul>
     </td>
     <td>
-      <div id="list_info">      
-	<ul class="sortabledemo" id="openlist" style="list-style-type: none;" >	  
+      <div id="openlist_info">      
+	<ul id="openlist" style="list-style-type: none;" >	  
 	  <% @user.open_reasons.each do |reason| %>
 	    <li class="openlist_openlist" id="openlist_<%= reason %>">
             <% if reason == 5 %>
-	      <div class="handle2" style="width: 400px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others %></nobr></div>
+	      <div class="handle" style="width: 400px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others %></nobr></div>
             <% else %>
-            <div class="handle2" style="width: 400px;"><%= OPEN_REASONS[reason]%></div>
+            <div class="handle" style="width: 400px;"><%= OPEN_REASONS[reason]%></div>
             <% end %>
 	    </li>
 	  <% end %>
@@ -35,6 +35,6 @@
   </tr>
 </table>
 <%= sortable_element :openlist,
-		     :handle => 'handle2',
+		     :handle => 'handle',
 		     :url => { :action => 'repeat2'}
 %>

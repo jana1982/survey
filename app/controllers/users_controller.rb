@@ -371,17 +371,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def connect
-    puts session[:user_params]
-    session[:user_params].deep_merge!({:connect_clicked => 1})
-    respond_to do |format|
-      format.js {
-            render(:update) do |page|
-            page.show 'connect_page'
-          end
-         }
-    end    
-  end
 
   def link_website
   session[:user_params].deep_merge!({:link_clicked => 1})  

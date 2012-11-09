@@ -50,6 +50,5 @@ OPEN_REASONS = {
     1 => "To have a look at the number of Favorites",
     2 => "To have a look at the number of Retweets",
     3 => "To have a look at the Users who retweeted the message",
-    4 => "To have a look at the Date",
-    5 => "Other reasons"
+    4 => "To have a look at the Date"
 }

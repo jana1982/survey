@@ -163,11 +163,6 @@ textarea#user_reason_nrep{
 
 }
 
-li .handle2 {
-  cursor: move;
-  border: medium;
-  line-height: 40px;
-}
 
 .openlist_openlist{
   border: solid;
