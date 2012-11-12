@@ -1098,3 +1098,243 @@ Unable to load opinionleader, underlying cause no such file to load -- opinionle
 /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
 /Users/plotti/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
 test/unit/user_test.rb:1
+Unable to load topic, underlying cause no such file to load -- topic 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load nrreason, underlying cause no such file to load -- nrreason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load no_retweet_reason, underlying cause no such file to load -- no_retweet_reason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load topic, underlying cause no such file to load -- topic 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load nrreason, underlying cause no such file to load -- nrreason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load no_retweet_reason, underlying cause no such file to load -- no_retweet_reason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load topic, underlying cause no such file to load -- topic 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load nrreason, underlying cause no such file to load -- nrreason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load no_retweet_reason, underlying cause no such file to load -- no_retweet_reason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load topic, underlying cause no such file to load -- topic 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load nrreason, underlying cause no such file to load -- nrreason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load no_retweet_reason, underlying cause no such file to load -- no_retweet_reason 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1
+Unable to load opinionleader, underlying cause no such file to load -- opinionleader 
+
+ /home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:158:in `require'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:265:in `require_or_load'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:224:in `depend_on'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activesupport-2.3.7/lib/active_support/dependencies.rb:136:in `require_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:853:in `try_to_load_dependency'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:868:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `each'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:865:in `require_fixture_classes'
+/home/jana/.rvm/gems/ruby-1.8.7-p358@survey/gems/activerecord-2.3.7/lib/active_record/fixtures.rb:848:in `fixtures'
+./test/test_helper.rb:35
+test/functional/users_controller_test.rb:1:in `require'
+test/functional/users_controller_test.rb:1

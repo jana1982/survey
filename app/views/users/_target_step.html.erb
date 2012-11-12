@@ -1,7 +1,7 @@
 <TABLE width="100%">
   <TR>
     <TD ALIGN="LEFT">
-      <h2>Target Information</h2>
+      <h2>Interest in Results and Contest Participation</h2>
     </TD>
     <TD ALIGN="RIGHT" width=400px>
       12/12 parts: <%= progress_bar("my_sixty_percent_progress_bar",1.0,true,true) %>
@@ -10,9 +10,16 @@
 </TABLE>
 <hr>
 <h3>Are you intrerested in the results of this survey?</h3>
+<div id="opinion_leader">
   <%= f.radio_button :results, 1 %>
   <%= f.label :no, "not interested" %><br>
   <%= f.radio_button :results, 2 %>
   <%= f.label :yes, "interested" %><br>
+  <br>
+  </div>
 
- <hr> 
+ <hr>
+  <h3>Please enter your email address if you are interested in the results or would like to take part in the contest.</h3>
+ <div id="opinion_leader"><nobr>Email: <%= f.text_field :email %></nobr></div>
+<br>
+<hr>

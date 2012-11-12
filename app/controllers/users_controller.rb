@@ -487,7 +487,7 @@ class UsersController < ApplicationController
     headline = ["No corruption in #{MINISTRY[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} for today" ,
                 "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]}",
                 "No corruption of #{MINISTERSLONG[@user.country-1][0]} for today",
-                "Bribery scandal of #{MINISTERSLONG[@user.country-1][0]}"]
+                "Bribery scandal of #{MINISTERSLONG[@user.country-1][0].split(',')}"]
 
     headline = headline[message_type]
     message_long = message_long[message_type]
@@ -543,6 +543,9 @@ class UsersController < ApplicationController
         if @user.all_valid?
           @user.save
           Seed.delete(@user.situation)
+          if Seed.count == 0
+            %x[rake create_seeds]
+          end
         end
       else
         @user.next_step

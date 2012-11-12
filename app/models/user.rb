@@ -110,13 +110,17 @@ class User < ActiveRecord::Base
 			:reply_pr_relevant_ck, :reply_pr_important_ck, :reply_pr_significant_ck, :reply_pr_meaningful_ck,
 			:reply_oc_relevant_ck, :reply_oc_significant_ck,  :reply_oc_meaningful_ck, :reply_oc_important_ck,
 			
-			:open_reasons_others, :open_reasons
+			:open_reasons_others, :open_reasons,
+			:email
 
   attr_writer :current_step
   attr_accessor :username
   
   def setup
     if first_step?
+      if Seed.count == 0
+        %x[rake create_seeds]
+      end
       seed = Seed.get_random_from_last_batch
       seed.dirty = true
       seed.time_setup = Time.now
@@ -147,6 +151,7 @@ class User < ActiveRecord::Base
   validates_numericality_of 	:surf_twitter_week, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_format_of 		:account_name, :with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
+  validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
     
   validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
@@ -186,6 +191,10 @@ class User < ActiveRecord::Base
 
   def opinionleader?
    current_step == "opinionleader"
+  end
+  
+  def target?
+   current_step == "target"
   end
    
   def all_valid?
