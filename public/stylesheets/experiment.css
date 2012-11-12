@@ -118,7 +118,7 @@ line-height: 15px;
 .actions{
 
   position: absolute;
-  left: -2px;
+  left: -3px;
 }
 
 #message:hover{
@@ -884,41 +884,44 @@ position: relative;
   
 #follower_titel{
   position: relative;
-  left: 45px;
-  top: -28px;}
+  left: 87px;
+  top: -29px;
+  width: 224px;
+  text-align: left;
+}
 
 #follower_friend{
   position: relative;
   left: -5px;
-  top: -24px;
+  top: -32px;
   color: grey;}
 
 #follower_button{
   position: relative;
-  left: -42px;
-  top: -21px;}
+  left: -41px;
+  top: -31px;}
   
 #follower_bild2{
   position: relative;
   left: -106px;
-  top: -16px;
+  top: -28px;
 }
   
 #follower_titel2{
   position: relative;
   left: 17px;
-  top: -75px;}
+  top: -88px;}
 
 #follower_friend2{
   position: relative;
   left: -5px;
-  top: -69px;
+  top: -88px;
   color: grey;}
 
 #follower_button2{
   position: relative;
-  left: -42px;
-  top: -65px;}
+  left: -41px;
+  top: -87px;}
   
 #follower_field2{
 background-color: transparent;

@@ -71,13 +71,13 @@ class UsersController < ApplicationController
           if (session[:user_params][:follow_1_clicked].even?) 
             render(:update) do |page|
                 puts "F1_EVEN"
-                page.replace "follower_button_follow", image_tag('../images/Unfollow.png', :id=>"follower_button_follow", :mouseover => "../images/Unfollow_unterstrichen.png") 
+                page.replace "follower_button_follow", image_tag('../images/Follow.png', :id => "follower_button_follow", :mouseover => "../images/Follow_unterstrichen.png") 
              end;
           else
             render(:update) do |page|
               puts "F1_unveven"
-                page.replace "follower_button_follow", image_tag('../images/Follow.png', :id => "follower_button_follow", :mouseover => "../images/Follow_unterstrichen.png")
-             end;
+                page.replace "follower_button_follow", image_tag('../images/Unfollow.png', :id=>"follower_button_follow", :mouseover => "../images/Unfollow_unterstrichen.png")
+              end;
             end
              }
     end
@@ -97,13 +97,13 @@ class UsersController < ApplicationController
           if (session[:user_params][:follow_2_clicked].even?) 
             render(:update) do |page|
                 puts "F2_EVEN"
-                page.replace "follower_button2_follow", image_tag('../images/Unfollow.png', :id=>"follower_button2_follow", :mouseover => "../images/Unfollow_unterstrichen.png") 
+                page.replace "follower_button2_follow", image_tag('../images/Follow.png', :id => "follower_button2_follow", :mouseover => "../images/Follow_unterstrichen.png") 
              end;
           else
             render(:update) do |page|
               puts "F2_unveven"
-                page.replace "follower_button2_follow", image_tag('../images/Follow.png', :id => "follower_button2_follow", :mouseover => "../images/Follow_unterstrichen.png")
-             end;
+                page.replace "follower_button2_follow", image_tag('../images/Unfollow.png', :id=>"follower_button2_follow", :mouseover => "../images/Unfollow_unterstrichen.png")
+              end;
             end
              }
     end

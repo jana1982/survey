@@ -1,13 +1,13 @@
 <div id="follower_field">              
-  <div id="follow1"      
+  <div id="follow1"
        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => 'follow_m1'}) %>"
-       onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => 'follow_m1'}) %>"         
-  >
+       onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => 'follow_m1'}) %>"
+       >
     <div id="follower_bild">
       <img src='../images/ministry-of-defence-logo.jpg' width='55' height='53'>
     </div>
     <div id="follower_titel">
-      <b><%=MINISTRY[@user.country-1][0]%> of <%=COUNTRIES[@user.country][0] %></b>
+      <b><%=EMPLOYEE[@user.country-1][0].split(' employee')%> of <%=COUNTRIES[@user.country][0] %></b>
     </div>
     <div id="follower_friend">
       Followed by <%= displayed_person %>
