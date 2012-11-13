@@ -518,6 +518,18 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:favorite_2_clicked => 0})
   end
   
+  def write_mousetracks
+    outfile = File.open(RAILS_ROOT + "/log/" + @user.id.to_s + ".csv", "w")
+    CSV::Writer.generate(outfile) do |csv|
+      mousetracks = @user.mousetracks.split(";")
+      mousetracks.each do |entry|
+        points = entry.split(",")
+        csv << [points[0],points[1],points[2]]
+      end
+    end
+    outfile.close
+  end 
+  
   def create
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
@@ -543,6 +555,7 @@ class UsersController < ApplicationController
         if @user.all_valid?
           @user.save
           Seed.delete(@user.situation)
+          write_mousetracks
           if Seed.count == 0
             %x[rake create_seeds]
           end

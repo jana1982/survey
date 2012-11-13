@@ -100,6 +100,37 @@ Event.observe(window, 'load', function() {
     catch(ex){}
     });
 
+//Mousetracking
+window.onload = init;
+var user_mouse = new Array();
+var delta = 0;
+var old_delta = 0;
+var time_new = 0; 
+var time_old = 0; 
+
+function init() {
+		if ($('seite_twitter').Event) {
+	          $('seite_twitter').captureEvents(Event.MOUSEMOVE);
+		}
+	 	time_new = new Date().getTime();
+   	time_old = new Date().getTime();
+	 	$('seite_twitter').onmousemove = getCursorXY;
+}
+
+function getCursorXY(e) {
+  time_new = new Date().getTime();
+  delta = time_new - time_old
+  
+  var cursorX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+  var cursorY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+
+  user_mouse.push(new Array(cursorX,cursorY,old_delta)); 
+ 	$('user_mousetracks').value = user_mouse.join(";");
+ 
+  time_old = time_new
+  old_delta = delta
+}
+
 function flipTable(element_name) 
     {        
         $("user_"+element_name+"_website_4").checked = true;

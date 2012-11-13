@@ -891,15 +891,16 @@ position: relative;
 }
 
 #follower_friend{
-  position: relative;
+/*  position: relative;
   left: -5px;
-  top: -32px;
+  top: -32px;*/
   color: grey;}
 
 #follower_button{
   position: relative;
-  left: -41px;
-  top: -31px;}
+  left: -4px;
+/*  left: -41px;
+  top: -31px;*/}
   
 #follower_bild2{
   position: relative;

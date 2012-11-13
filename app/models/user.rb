@@ -208,7 +208,7 @@ class User < ActiveRecord::Base
       %w[ introduction  selection demographic internet twitter_motivation opinionleader interest sources reasons_for_ol
 	 twitter message_relevance target_variables target]          
   end
-  
+
   def first_step?
     current_step == steps.first
   end

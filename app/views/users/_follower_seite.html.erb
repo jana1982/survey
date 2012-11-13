@@ -8,7 +8,6 @@
     </div>
     <div id="follower_titel">
       <b><%=EMPLOYEE[@user.country-1][0].split(' employee')%> of <%=COUNTRIES[@user.country][0] %></b>
-    </div>
     <div id="follower_friend">
       Followed by <%= displayed_person %>
     </div>
@@ -22,6 +21,7 @@
             :mouseover => '../images/Unfollow_unterstrichen.png', :id => "follower_button_follow"),
             :url => {:action => "follow1", :id => @user.id}
          end %>
+    </div>
     </div>
   </div>
   <div id="follow2"      
