@@ -439,16 +439,16 @@
 <hr>
   
 <p>
-  <h3>How long do you surf on Twitter on average per day?</h3>
+  <h3>How long do you actively surf on Twitter on average per day?</h3>
         <div id="opinion_leader_text">
                  <table>
                  <tr>
                    <td>Please fill in the amount of hours you surf on Twitter on an average weekday:</td> 
-                   <td> <%= f.text_field :surf_twitter_week %></td>
+                   <td> <%= f.text_field :surf_twitter_week, :size => 4, :maxlength => 4%>hours per day</td>
                  </tr>
                  <tr>
                    <td>Please fill in the amount of hours you surf on Twitter on an average day of your weekend:</td>
-                   <td><%= f.text_field :surf_twitter_weekend %></td>
+                   <td><%= f.text_field :surf_twitter_weekend, :size => 4, :maxlength => 4%>hours per day</td>
                  </tr>
                </table>
         </div>   
