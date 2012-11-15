@@ -25,7 +25,7 @@
   <h3>What is your Twitter account name?</h3>
     <div id="opinion_leader_text">
       Please fill in your account name like others would mention you in an @-reply: <nobr>@
-      <%= f.text_field :account_name %></nobr>
+      <%= f.text_field :account_name, :size => 20, :maxlength => 20%></nobr>
     </div>
 </p>
 <hr>
@@ -45,15 +45,15 @@
                  <table>
                  <tr>
                    <td>Please fill in your Follower number here:</td> 
-                   <td> <%= f.text_field :number_followers %></td>
+                   <td> <%= f.text_field :number_followers, :size => 10, :maxlength => 10 %></td>
                  </tr>
                  <tr>
                    <td>Please fill in your Followee number here:</td>
-                   <td><%= f.text_field :number_followeees %></td>
+                   <td><%= f.text_field :number_followeees, :size => 10, :maxlength => 10 %></td>
                  </tr>
                  <tr>
                    <td>Please fill in the amount of your messages here:</td>
-                   <td><%= f.text_field :number_messages %></td>
+                   <td><%= f.text_field :number_messages, :size => 10, :maxlength => 10 %></td>
                  </tr>
                </table>
                </div>    
