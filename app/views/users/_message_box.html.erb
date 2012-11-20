@@ -63,7 +63,7 @@
   </div>
   <div id="twitter_bild"><img src='../images/tweeter_picture.png'></div>
 
-  <%= render :partial => "expand_page", :locals => {:f => f, :retweet => @user.seen_retweet_message2, :message => @user.seen_message_2, :number => @number, :retweet_status => @retweet_status} %>
+  <%= render :partial => "expand_page", :locals => {:f => f, :message => @user.seen_message_2, :number => @number, :retweet_status => @retweet_status} %>
 </div>
 <% end %>
 <div id="ende"><%= render :partial => "end_of_tweets" %></div>

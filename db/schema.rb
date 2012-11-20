@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112154554) do
+ActiveRecord::Schema.define(:version => 20121120131914) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20121112154554) do
     t.integer  "bildung",                       :limit => 255
     t.integer  "alter"
     t.integer  "retweet_2_clicked"
-    t.boolean  "at_clicked"
+    t.boolean  "new_tweet_clicked"
     t.integer  "geschlecht",                    :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20121112154554) do
     t.float    "message_hover_m1"
     t.float    "reply_time_m1"
     t.float    "new_tweet_time"
-    t.integer  "retweet_importance"
+    t.integer  "compose_tweet_clicked"
     t.string   "tweet_text_n"
     t.string   "seen_message_1"
     t.string   "ol_1"
@@ -92,7 +92,6 @@ ActiveRecord::Schema.define(:version => 20121112154554) do
     t.string   "ol_10"
     t.string   "ol_11"
     t.string   "ol_12"
-    t.string   "ol_list"
     t.boolean  "seen_person",                   :limit => 255
     t.float    "open_time_m1"
     t.float    "search_time"
@@ -100,18 +99,7 @@ ActiveRecord::Schema.define(:version => 20121112154554) do
     t.integer  "expand_2_clicked"
     t.float    "experiment_time"
     t.boolean  "seen_at",                       :limit => 255
-    t.integer  "connect_clicked"
-    t.integer  "favorite_at_clicked"
-    t.integer  "retweet_at_clicked"
-    t.boolean  "seen_retweet_message2",         :limit => 255
-    t.float    "open_time_at"
-    t.float    "reply_time_at"
-    t.float    "retweet_time_at"
-    t.float    "favorite_time_at"
-    t.float    "message_hover_time_at"
-    t.integer  "open_clicked_at"
-    t.string   "reply_text_at"
-    t.integer  "reply_clicked_at"
+    t.integer  "search_clicked"
     t.boolean  "seen_multiple_messages",        :limit => 255
     t.string   "seen_message_2"
     t.integer  "reply_1_clicked"

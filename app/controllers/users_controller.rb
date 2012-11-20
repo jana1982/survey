@@ -110,7 +110,13 @@ class UsersController < ApplicationController
   end
 
   def reply1
-    session[:user_params].deep_merge!({:reply_1_clicked => 1})
+    if session[:user_params][:reply_1_clicked] == nil
+        session[:user_params].deep_merge!({:reply_1_clicked => 1})
+      else
+        dummy_rp1 = session[:user_params][:reply_1_clicked]
+        dummy_rp1 += 1
+        session[:user_params].deep_merge!({:reply_1_clicked => dummy_rp1})
+      end
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -121,7 +127,13 @@ class UsersController < ApplicationController
   end
   
   def reply2
-    session[:user_params].deep_merge!({:reply_2_clicked => 1})
+    if session[:user_params][:reply_2_clicked] == nil
+        session[:user_params].deep_merge!({:reply_2_clicked => 1})
+      else
+        dummy_rp2 = session[:user_params][:reply_2_clicked]
+        dummy_rp2 += 1
+        session[:user_params].deep_merge!({:reply_2_clicked => dummy_rp2})
+      end
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -298,8 +310,23 @@ class UsersController < ApplicationController
     
   def expand_message
     number = params[:number].to_i
-    session[:user_params].deep_merge!({:expand_1_clicked => 1}) if number == 1
-    session[:user_params].deep_merge!({:expand_2_clicked => 1}) if number == 2
+    if number == 1
+      if session[:user_params][:expand_1_clicked] == nil
+      session[:user_params].deep_merge!({:expand_1_clicked => 1})
+    else
+      dummy_e1 = session[:user_params][:expand_1_clicked]
+      dummy_e1 += 1
+      session[:user_params].deep_merge!({:expand_1_clicked => dummy_e1})
+    end
+    else
+      if session[:user_params][:expand_2_clicked] == nil
+      session[:user_params].deep_merge!({:expand_2_clicked => 1})
+    else
+      dummy_e2 = session[:user_params][:expand_2_clicked]
+      dummy_e2 += 1
+      session[:user_params].deep_merge!({:expand_2_clicked => dummy_e2})
+    end
+    end
     respond_to do |format|
       format.js {
             render(:update) do |page|
@@ -362,6 +389,15 @@ class UsersController < ApplicationController
 
   
   def new_tweet
+  number = params[:number].to_i
+    if session[:user_params][:new_tweet_clicked] == nil
+      session[:user_params].deep_merge!({:new_tweet_clicked => 1})
+    else
+      dummy_nt = session[:user_params][:new_tweet_clicked]
+      dummy_nt += 1
+      session[:user_params].deep_merge!({:new_tweet_clicked => dummy_nt})
+    end
+    
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -373,7 +409,13 @@ class UsersController < ApplicationController
   
 
   def link_website
-  session[:user_params].deep_merge!({:link_clicked => 1})  
+    if session[:user_params][:link_clicked] == nil
+      session[:user_params].deep_merge!({:link_clicked => 1})
+    else
+      dummy_lc = session[:user_params][:link_clicked]
+      dummy_lc += 1
+      session[:user_params].deep_merge!({:link_clicked => dummy_lc})
+    end 
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -383,6 +425,13 @@ class UsersController < ApplicationController
     end
   end
   def compose_tweet
+    if session[:user_params][:compose_tweet_clicked] == nil
+      session[:user_params].deep_merge!({:compose_tweet_clicked => 1})
+    else
+      dummy_ct = session[:user_params][:compose_tweet_clicked]
+      dummy_ct += 1
+      session[:user_params].deep_merge!({:compose_tweet_clicked => dummy_ct})
+    end 
       respond_to do |format|
       format.js {
         
@@ -398,6 +447,7 @@ class UsersController < ApplicationController
   
   
   def suche
+      session[:user_params].deep_merge!({:search_clicked => 1})
     respond_to do |format|
       format.js {
               render(:update) do |page|
