@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120131914) do
+ActiveRecord::Schema.define(:version => 20121121130522) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(:version => 20121120131914) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "bildung",                       :limit => 255
+    t.integer  "bildung",                      :limit => 255
     t.integer  "alter"
     t.integer  "retweet_2_clicked"
-    t.boolean  "new_tweet_clicked"
-    t.integer  "geschlecht",                    :limit => 255
+    t.integer  "new_tweet_clicked"
+    t.integer  "geschlecht",                   :limit => 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "martial_status"
@@ -92,15 +92,15 @@ ActiveRecord::Schema.define(:version => 20121120131914) do
     t.string   "ol_10"
     t.string   "ol_11"
     t.string   "ol_12"
-    t.boolean  "seen_person",                   :limit => 255
+    t.boolean  "seen_person",                  :limit => 255
     t.float    "open_time_m1"
     t.float    "search_time"
-    t.boolean  "seen_retweet_message1",         :limit => 255
+    t.boolean  "seen_retweet_message1",        :limit => 255
     t.integer  "expand_2_clicked"
     t.float    "experiment_time"
-    t.boolean  "seen_at",                       :limit => 255
+    t.boolean  "seen_at",                      :limit => 255
     t.integer  "search_clicked"
-    t.boolean  "seen_multiple_messages",        :limit => 255
+    t.boolean  "seen_multiple_messages",       :limit => 255
     t.string   "seen_message_2"
     t.integer  "reply_1_clicked"
     t.integer  "favorite_1_clicked"
@@ -186,8 +186,6 @@ ActiveRecord::Schema.define(:version => 20121120131914) do
     t.string   "reason_nfav"
     t.string   "reason_nrep"
     t.string   "reason_nexp"
-    t.string   "further_things_to_do"
-    t.string   "further_things_in_simmulation"
     t.text     "mousetracks"
     t.integer  "pass_time"
     t.integer  "entertain_myself"
@@ -217,27 +215,27 @@ ActiveRecord::Schema.define(:version => 20121120131914) do
     t.integer  "came_across_same_intrest"
     t.integer  "avg_unsubscribe_lists"
     t.string   "other_str_sup_topic"
-    t.integer  "other_sup_topic",               :limit => 255
-    t.integer  "defence",                       :limit => 255
-    t.integer  "diplomacy",                     :limit => 255
-    t.integer  "elections",                     :limit => 255
-    t.integer  "espionage",                     :limit => 255
-    t.integer  "foreign_aid",                   :limit => 255
-    t.integer  "government",                    :limit => 255
-    t.integer  "human_rights",                  :limit => 255
-    t.integer  "parliament",                    :limit => 255
-    t.integer  "parties",                       :limit => 255
-    t.integer  "refugees",                      :limit => 255
-    t.integer  "regional_authorities",          :limit => 255
-    t.integer  "state_budget",                  :limit => 255
-    t.integer  "treaties",                      :limit => 255
-    t.integer  "constitution",                  :limit => 255
-    t.integer  "interior_policies",             :limit => 255
-    t.integer  "migration",                     :limit => 255
-    t.integer  "referenda",                     :limit => 255
-    t.integer  "citizens_initiative",           :limit => 255
-    t.integer  "lobbying",                      :limit => 255
-    t.integer  "nuclear_policies",              :limit => 255
+    t.integer  "other_sup_topic",              :limit => 255
+    t.integer  "defence",                      :limit => 255
+    t.integer  "diplomacy",                    :limit => 255
+    t.integer  "elections",                    :limit => 255
+    t.integer  "espionage",                    :limit => 255
+    t.integer  "foreign_aid",                  :limit => 255
+    t.integer  "government",                   :limit => 255
+    t.integer  "human_rights",                 :limit => 255
+    t.integer  "parliament",                   :limit => 255
+    t.integer  "parties",                      :limit => 255
+    t.integer  "refugees",                     :limit => 255
+    t.integer  "regional_authorities",         :limit => 255
+    t.integer  "state_budget",                 :limit => 255
+    t.integer  "treaties",                     :limit => 255
+    t.integer  "constitution",                 :limit => 255
+    t.integer  "interior_policies",            :limit => 255
+    t.integer  "migration",                    :limit => 255
+    t.integer  "referenda",                    :limit => 255
+    t.integer  "citizens_initiative",          :limit => 255
+    t.integer  "lobbying",                     :limit => 255
+    t.integer  "nuclear_policies",             :limit => 255
     t.integer  "local_authorities"
     t.integer  "slider"
     t.integer  "dk_pol_percentage"

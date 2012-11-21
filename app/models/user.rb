@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
 			:experiment_time,
 			:tweet_text_n,
 			:seen_person,
-			:seen_message_1,:seen_message_2, :seen_headline, :seen_message_long,
-			:seen_multiple_messages,:seen_at,
+			:seen_message_1, :seen_message_2, :seen_headline, :seen_message_long,
+			:seen_multiple_messages, :seen_at,
 			:seen_retweet_message1, 
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12,
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
@@ -50,7 +50,6 @@ class User < ActiveRecord::Base
 			:created_at, :updated_at, 
 			
 			:reason_nrt, :reason_nfav, :reason_nrep, :reason_nexp,
-			:further_things_to_do, :further_things_in_simmulation,
 			:mousetracks,
 			
 			:pass_time, :entertain_myself , :occupy_time, :time_bored, :forget_worries,
@@ -114,6 +113,34 @@ class User < ActiveRecord::Base
   attr_writer :current_step
   attr_accessor :username
   
+  def self.csv_export
+    filename = "twitter_database_export.csv"
+    CSV.open(filename, "w") do |csv|
+    	csv << ["ID",
+		"P1_language", "P1_twitter_account", "P1_interest_list",
+		"P2_bildung", "P2_geschlecht", "P2_alter", "P2_martial_status", "P2_children", "P2_country", "P2_years", "P2_area", "P2_income", "P2_employment", "P2_position", "P2_organization", "P2_private_pc",
+		"P3_account_name", "P3_twitter_privat_work", "P3_number_followers", "P3_number_followeees", "P3_number_messages", "P3_avg_login", "P3_avg_tweet_number", "P3_avg_retweet", "P3_avg_at_replies", "P3_avg_private_replies", "P3_avg_favorite_tweets", "P3_avg_read_tweets", "P3_avg_stories", "P3_avg_trend", "P3_avg_search_keywords", "P3_avg_follow", "P3_avg_unfollow_account", "P3_avg_search_accounts", "P3_avg_who_to_follow", "P3_avg_browse_categories", "P3_avg_find_friends", "P3_avg_activities_friends", "P3_avg_create_lists", "P3_avg_add_accounts_lists", "P3_avg_subscribe_lists", "P3_avg_unsubscribe_lists", "P3_avg_delete_accounts_lists",
+		"P4_pass_time", "P4_entertain_myself", "P4_occupy_time", "P4_time_bored", "P4_forget_worries", "P4_help_others", "P4_support_others", "P4_show_encouragement", "P4_contribute", "P4_new_friends", "P4_new_people", "P4_get_know_other", "P4_keep_in_touch", "P4_find_people", "P4_communicate", "P4_gather_information", "P4_find_out_things", "P4_look_for_information", "P4_knowledgeable_individual", "P4_answers_questions", "P4_keep_connect", "P4_find_out", "P4_deepen_relationships", "P4_far_away",
+		"P5_ol_1", "P5_ol_2", "P5_ol_3", "P5_ol_4", "P5_ol_5", "P5_ol_6", "P5_ol_7", "P5_ol_8", "P5_ol_9", "P5_ol_10", "P5_ol_11", "P5_ol_12", "P5_leader_text",
+		"P6_defence", "P6_diplomacy", "P6_elections", "P6_espionage", "P6_foreign_aid", "P6_government", "P6_human_rights", "P6_local_authorities", "P6_parliament", "P6_parties", "P6_refugees", "P6_regional_authorities", "P6_state_budget", "P6_treaties", "P6_constitution", "P6_interior_policies", "P6_migration", "P6_citizens_initiative", "P6_referenda", "P6_nuclear_policies", "P6_lobbying", "P6_other_sup_topic", "P6_other_str_sup_topic", "P6_slider", "P6_dk_pol_percentage",
+		"P7_trad_mass_med_online", "P7_1_tv_website", "P7_1_tv_sn", "P7_1_tv_mb", "P7_1_tv_rss", "P7_1_tv_newsletter", "P7_1_tv", "P7_1_radio_website", "P7_1_radio_sn", "P7_1_radio_mb", "P7_1_radio_rss", "P7_1_radio_newsletter", "P7_1_radio", "P7_1_magazin_website", "P7_1_magazin_sn", "P7_1_magazin_mb", "P7_1_magazin_rss", "P7_1_magazin_newsletter", "P7_1_magazin", "P7_1_newspaper_website", "P7_1_newspaper_sn", "P7_1_newspaper_mb", "P7_1_newspaper_rss", "P7_1_newspaper_newsletter", "P7_1_newspaper",
+		"P7_person_contact_online", "P7_2_people_interested_email", "P7_2_people_interested_sn", "P7_2_people_interested_mb", "P7_2_people_interested_forum", "P7_2_people_interested_chat", "P7_2_people_interested_phone", "P7_2_people_interested", "P7_2_locals_email", "P7_2_locals_sn", "P7_2_locals_mb", "P7_2_locals_forum", "P7_2_locals_chat", "P7_2_locals_phone", "P7_2_locals", "P7_2_aquaintances_email", "P7_2_aquaintances_sn", "P7_2_aquaintances_mb", "P7_2_aquaintances_forum", "P7_2_aquaintances_chat", "P7_2_aquaintances_phone", "P7_2_aquaintances", "P7_2_contact_friends_email", "P7_2_contact_friends_sn", "P7_2_contact_friends_mb", "P7_2_contact_friends_forum", "P7_2_contact_friends_chat", "P7_2_contact_friends_phone", "P7_2_contact_friends", "P7_2_colleagues_email", "P7_2_colleagues_sn", "P7_2_colleagues_mb", "P7_2_colleagues_forum", "P7_2_colleagues_chat", "P7_2_colleagues_phone", "P7_2_colleagues", "P7_2_experts_email", "P7_2_experts_sn", "P7_2_experts_mb", "P7_2_experts_forum", "P7_2_experts_chat", "P7_2_experts_phone", "P7_2_experts", "P7_2_contact_ol_email", "P7_2_contact_ol_sn", "P7_2_contact_ol_mb", "P7_2_contact_ol_forum", "P7_2_contact_ol_chat", "P7_2_contact_ol_phone", "P7_2_contact_ol",
+		]
+    	User.all.each do |user|
+	    csv << [user.id,
+		user.language, user.twitter_account, user.interest_list,
+		user.bildung, user.geschlecht, user.alter, user.martial_status, user.children, user.country, user.years, user.area, user.income, user.employment, user.position, user.organization, user.private_pc,
+		user.account_name, user.twitter_privat_work, user.number_followers, user.number_followeees, user.number_messages, user.avg_login, user.avg_tweet_number, user.avg_retweet, user.avg_at_replies, user.avg_private_replies, user.avg_favorite_tweets, user.avg_read_tweets, user.avg_stories, user.avg_trend, user.avg_search_keywords, user.avg_follow, user.avg_unfollow_account, user.avg_search_accounts, user.avg_who_to_follow, user.avg_browse_categories, user.avg_find_friends, user.avg_activities_friends, user.avg_create_lists, user.avg_add_accounts_lists, user.avg_subscribe_lists, user.avg_unsubscribe_lists, user.avg_delete_accounts_lists,
+		user.pass_time, user.entertain_myself, user.occupy_time, user.time_bored, user.forget_worries, user.help_others, user.support_others, user.show_encouragement, user.contribute, user.new_friends, user.new_people, user.get_know_other, user.keep_in_touch, user.find_people, user.communicate, user.gather_information, user.find_out_things, user.look_for_information, user.knowledgeable_individual, user.answers_questions, user.keep_connect, user.find_out, user.deepen_relationships, user.far_away,
+		user.ol_1, user.ol_2, user.ol_3, user.ol_4, user.ol_5, user.ol_6, user.ol_7, user.ol_8, user.ol_9, user.ol_10, user.ol_11, user.ol_12, user.leader_text,
+		user.defence, user.diplomacy, user.elections, user.espionage, user.foreign_aid, user.government, user.human_rights, user.local_authorities, user.parliament, user.parties, user.refugees, user.regional_authorities, user.state_budget, user.treaties, user.constitution, user.interior_policies, user.migration, user.citizens_initiative, user.referenda, user.nuclear_policies, user.lobbying, user.other_sup_topic, user.other_str_sup_topic, user.slider, user.dk_pol_percentage,
+		user.trad_mass_med_online, user.tv_website, user.tv_sn, user.tv_mb, user.tv_rss, user.tv_newsletter, user.tv, user.radio_website, user.radio_sn, user.radio_mb, user.radio_rss, user.radio_newsletter, user.radio, user.magazin_website, user.magazin_sn, user.magazin_mb, user.magazin_rss, user.magazin_newsletter, user.magazin, user.newspaper_website, user.newspaper_sn, user.newspaper_mb, user.newspaper_rss, user.newspaper_newsletter, user.newspaper,
+		user.person_contact_online, user.people_interested_email, user.people_interested_sn, user.people_interested_mb, user.people_interested_forum, user.people_interested_chat, user.people_interested_phone, user.people_interested, user.locals_email, user.locals_sn, user.locals_mb, user.locals_forum, user.locals_chat, user.locals_phone, user.locals, user.aquaintances_email, user.aquaintances_sn, user.aquaintances_mb, user.aquaintances_forum, user.aquaintances_chat, user.aquaintances_phone, user.aquaintances, user.contact_friends_email, user.contact_friends_sn, user.contact_friends_mb, user.contact_friends_forum, user.contact_friends_chat, user.contact_friends_phone, user.contact_friends, user.colleagues_email, user.colleagues_sn, user.colleagues_mb, user.colleagues_forum, user.colleagues_chat, user.colleagues_phone, user.colleagues, user.experts_email, user.experts_sn, user.experts_mb, user.experts_forum, user.experts_chat, user.experts_phone, user.experts, user.contact_ol_email, user.contact_ol_sn, user.contact_ol_mb, user.contact_ol_forum, user.contact_ol_chat, user.contact_ol_phone, user.contact_ol,
+		]
+    	end
+    end
+  end
+
   def setup
     if first_step?
       if Seed.count == 0
