@@ -1,10 +1,10 @@
 source :gemcutter
 ruby "1.8.7"
 gem "rails", "2.3.7"
-#gem "mongrel", "1.1.5"
-#gem "sqlite3", "1.3.3"
-gem "thin", "1.2.7"
+gem "mongrel", "1.1.5"
 gem "rake", "0.8.7"
+gem "activerecord-mysql2-adapter"
+#gem "thin", "1.2.7"
 #gem "sqlite3-ruby", :require => "sqlite3"
 
 # bundler requires these gems in all environments
@@ -21,4 +21,3 @@ group :test do
   # gem "rspec"
   # gem "faker"
 end
-
