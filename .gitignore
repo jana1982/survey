@@ -5,3 +5,4 @@ tmp/restart.txt
 /log/*.*
 *.sqlite3
 *.log
+vendor/bundle
