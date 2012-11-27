@@ -329,7 +329,7 @@
           Please fill in possible reasons why you didn't favorite
           the seen message. It could help to reflect what messages
           you normally favorite and why:<br>
-        <%= f.text_area :c, :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+        <%= f.text_area :reason_nfav, :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
         </div>
     </p>
   </div>
@@ -341,7 +341,7 @@
 
 <hr>
 
-<% if @user.expand_1_clicked !=1 && @user.expand_2_clicked !=1%>
+<% if @user.expand_1_clicked <1 && @user.expand_2_clicked <1%>
      
   <div id="no_open">
   <p>
@@ -366,7 +366,7 @@
 
 <hr>
 
-<% if @user.reply_1_clicked !=1 && @user.reply_2_clicked !=1%>
+<% if @user.reply_1_clicked <1 && @user.reply_2_clicked <1%>
   <div id="no_open">
   <p>
   <% if !@user.seen_multiple_messages %>

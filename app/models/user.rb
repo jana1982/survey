@@ -187,15 +187,17 @@ class User < ActiveRecord::Base
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
   end
   
-  validates_presence_of :language, :if => :selection?
-  validates_presence_of :twitter_account, :if => :selection?
-  validates_inclusion_of :country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
+  validates_presence_of 	:language, :if => :selection?
+  validates_presence_of 	:twitter_account, :if => :selection?
+  validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
+  validates_presence_of		:account_name, :if => :internet?, :message => "can't be blank. If you absolutely don't trust the guarantied anonymization of this questionnaire, please insert a name you can identify with.", :if => :internet?
+  validates_format_of 		:account_name, :with => /^[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
+ 
   validates_numericality_of 	:number_followers, :allow_nil => true, :allow_blank => true, :if => :internet? 
   validates_numericality_of	:number_followeees, :allow_nil => true, :allow_blank => true, :if => :internet? 
   validates_numericality_of	:number_messages, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_week, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
-  validates_format_of 		:account_name, :with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
   validates_format_of 		:surf_twitter_week, :with => /^[0-1]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 19. You can use . to separate decimal places.", :if => :internet?
   validates_format_of 		:surf_twitter_weekend, :with => /^[0-1]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 19. You can use . to separate decimal places.", :if => :internet?
   validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
@@ -216,7 +218,7 @@ class User < ActiveRecord::Base
     
   def at_least_one_ol
       if (ol_1.blank? & ol_2.blank? & ol_3.blank? & ol_4.blank? & ol_5.blank? & ol_6.blank? & ol_7.blank? & ol_8.blank? & ol_9.blank? & ol_10.blank? & ol_11.blank? & ol_12.blank?)
-        errors.add_to_base("Specify at least one opinion leader")
+        errors.add_to_base("Specify at least one field")
       end
   end
   
@@ -299,6 +301,11 @@ class User < ActiveRecord::Base
 	if country == 4 || country == 15 || country == 20 || country == 38 || country == 41 || country == 49 || country == 68 || country == 89 || country == 101 || country == 110 || country == 111 || country == 115 || country == 117 || country == 124 || country == 134 || country == 135 || country == 146 || country == 147 || country == 148 || country == 149 || country == 150 || country == 160 || country == 176 || country == 182 || country == 190 || country == 191
 	does_not_qualify = true
 	end 
+      end
+      if current_step == "twitter_motivation"
+	if avg_login == 6
+	  does_not_qualify = true
+	end
       end
       if does_not_qualify
         return false

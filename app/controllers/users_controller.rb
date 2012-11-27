@@ -566,6 +566,10 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:retweet_2_clicked => 0})
     session[:user_params].deep_merge!({:favorite_1_clicked => 0})
     session[:user_params].deep_merge!({:favorite_2_clicked => 0})
+    session[:user_params].deep_merge!({:reply_1_clicked => 0})
+    session[:user_params].deep_merge!({:reply_2_clicked => 0})
+    session[:user_params].deep_merge!({:expand_1_clicked => 0})
+    session[:user_params].deep_merge!({:expand_2_clicked => 0})
   end
   
   def write_mousetracks
@@ -586,7 +590,7 @@ class UsersController < ApplicationController
     @user.current_step = session[:user_step]
     if @user.current_step == "opinionleader"
       set_opinion_leader_text
-      if (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
+      if (session[:user_params][:expand_2_clicked].nil?) && (session[:user_params][:expand_1_clicked].nil?) && (session[:user_params][:reply_2_clicked].nil?) && (session[:user_params][:reply_1_clicked].nil?)&& (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
        generate_zeros
 
       end
