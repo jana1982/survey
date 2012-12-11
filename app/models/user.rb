@@ -114,6 +114,7 @@ class User < ActiveRecord::Base
   attr_accessor :username
   
   def self.csv_export
+    self.secondlist.join('-')
     filename = "twitter_database_export.csv"
     CSV.open(filename, "w") do |csv|
     	csv << ["ID",
@@ -138,7 +139,7 @@ class User < ActiveRecord::Base
 		"P12_results", "P12_email"]
     	User.all.each do |user|
 	    csv << [user.id,
-		user.language, user.twitter_account, user.interest_list,
+		user.language, user.twitter_account, user.interest_list.join('-'),
 		user.bildung, user.geschlecht, user.alter, user.martial_status, user.children, user.country, user.years, user.area, user.income, user.employment, user.position, user.organization, user.private_pc,
 		user.account_name, user.twitter_privat_work, user.number_followers, user.number_followeees, user.number_messages, user.avg_login, user.avg_tweet_number, user.avg_retweet, user.avg_at_replies, user.avg_private_replies, user.avg_favorite_tweets, user.avg_read_tweets, user.avg_stories, user.avg_trend, user.avg_search_keywords, user.avg_follow, user.avg_unfollow_account, user.avg_search_accounts, user.avg_who_to_follow, user.avg_browse_categories, user.avg_find_friends, user.avg_activities_friends, user.avg_create_lists, user.avg_add_accounts_lists, user.avg_subscribe_lists, user.avg_unsubscribe_lists, user.avg_delete_accounts_lists,
 		user.pass_time, user.entertain_myself, user.occupy_time, user.time_bored, user.forget_worries, user.help_others, user.support_others, user.show_encouragement, user.contribute, user.new_friends, user.new_people, user.get_know_other, user.keep_in_touch, user.find_people, user.communicate, user.gather_information, user.find_out_things, user.look_for_information, user.knowledgeable_individual, user.answers_questions, user.keep_connect, user.find_out, user.deepen_relationships, user.far_away,
