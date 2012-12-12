@@ -53,9 +53,9 @@ Please fill in your highest level of education here.
 <p>
   <h3>What is your gender?</h3>
   <%= f.radio_button :geschlecht, 1 %>
-  <%= f.label :female, "female" %>
+  <%= f.label :female, "Female" %>
   <%= f.radio_button :geschlecht, 0 %>
-  <%= f.label :male, "male" %>
+  <%= f.label :male, "Male" %>
 </p>
 <hr>
 <p>
@@ -108,13 +108,13 @@ Please fill in your highest level of education here.
   <%= f.radio_button :years, 1 %>
   <%= f.label :ayear, "Less than 1 year" %> <br>
   <%= f.radio_button :years, 2 %>
-  <%= f.label :oneyear, "1-9 years" %><br>
+  <%= f.label :oneyear, "1 - 9 years" %><br>
   <%= f.radio_button :years, 3 %>
-  <%= f.label :tenyear, "10-19 years" %><br>
+  <%= f.label :tenyear, "10 - 19 years" %><br>
   <%= f.radio_button :years, 4 %>
-  <%= f.label :twentyyear, "20-29 years" %><br>
+  <%= f.label :twentyyear, "20 - 29 years" %><br>
   <%= f.radio_button :years, 5 %>
-  <%= f.label :thirtyyear, "30-39 years" %><br>
+  <%= f.label :thirtyyear, "30 - 39 years" %><br>
   <%= f.radio_button :years, 6 %>
   <%= f.label :moreforty, "More than 40 years" %><br>
   <%= f.radio_button :years, 7 %>
@@ -132,13 +132,13 @@ Please fill in your highest level of education here.
 </p>
 <hr>
 <p>
-  <h3>What is your current household income in U.S. dollars (per year)?</h3>
+  <h3>What is your current annual household income in U.S. dollars?</h3>
   <%= select(:user, :income, INCOMES) %>
 </p>
 
 
 <p>
-  <h3>Which of the following categories best describes your primarily area of employment (regardless 
+  <h3>Which of the following categories best describes your primary area of employment (regardless 
 of your actual position)?</h3>
  
 <%= select(:user, :employment, EMPLOYMENTS)  %> 
@@ -191,7 +191,7 @@ of your actual position)?</h3>
     </tr>
    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       
-      <td>private netbook/laptop/PC</td>
+      <td>Private netbook/laptop/PC</td>
       <td><%= f.radio_button :private_pc, 1 %></td>
       <td><%= f.radio_button :private_pc, 2 %></td>
       <td><%= f.radio_button :private_pc, 3 %></td>
@@ -199,7 +199,7 @@ of your actual position)?</h3>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
          
-      <td>private mobile device</td>
+      <td>Private mobile device</td>
       <td><%= f.radio_button :private_mobile, 1 %></td>
       <td><%= f.radio_button :private_mobile, 2 %></td>
       <td><%= f.radio_button :private_mobile, 3 %></td>
@@ -222,7 +222,7 @@ of your actual position)?</h3>
       <td><%= f.radio_button :work_mobile, 4 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td>Public Terminal (e.g. library, cybercafe, etc.)</td>
+      <td>Public terminal (e.g., library, cybercafe, etc.)</td>
       <td><%= f.radio_button :public, 1 %></td>
       <td><%= f.radio_button :public, 2 %></td>
       <td><%= f.radio_button :public, 3 %></td>

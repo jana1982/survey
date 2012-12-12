@@ -3,7 +3,7 @@
 <TR>
 
 <TD ALIGN="LEFT">
-<h2>Part III: Twitter usage</h2>
+<h2>Part III: Twitter Usage</h2>
 
 </TD>
 
@@ -30,9 +30,9 @@
 </p>
 <hr>
 <p>
-  <h3>In what context do you use your Twitter account mentioned above?</h3>
+  <h3>In what context do you use the Twitter account mentioned above?</h3>
     <div id="opinion_leader_text">
-      This Twitter account I use ...
+      I use this Twitter account ...
       <%= select(:user, :twitter_privat_work, TWITTER_P_W)  %> 
                       <br>
     </div>
@@ -44,15 +44,15 @@
         <div id="opinion_leader_text">
                  <table>
                  <tr>
-                   <td>Please fill in your Follower number here:</td> 
+                   <td>Please fill in your follower number here:</td> 
                    <td> <%= f.text_field :number_followers, :size => 10, :maxlength => 10 %></td>
                  </tr>
                  <tr>
-                   <td>Please fill in your Followee number here:</td>
+                   <td>Please fill in your followee number here:</td>
                    <td><%= f.text_field :number_followeees, :size => 10, :maxlength => 10 %></td>
                  </tr>
                  <tr>
-                   <td>Please fill in the amount of your messages here:</td>
+                   <td>Please fill in the total number of your messages here:</td>
                    <td><%= f.text_field :number_messages, :size => 10, :maxlength => 10 %></td>
                  </tr>
                </table>
@@ -110,7 +110,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Retweet Tweet:</td>
+        Retweeting Tweet:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_retweet, 1 %></td>
       <td style="text-align: center;">
@@ -126,7 +126,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
       <td >
-        Use @Replies to adress other Twitter accounts:</td>
+        Use @-replies to adress other Twitter accounts:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_at_replies, 1 %></td>
       <td style="text-align: center;">
@@ -175,7 +175,7 @@
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Read Tweets on your wall:</td>
+        Reading Tweets on your wall:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_read_tweets, 1 %></td>
       <td style="text-align: center;">
@@ -191,7 +191,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Discover stories:</td>
+        Discovering stories:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_stories, 1 %></td>
       <td style="text-align: center;">
@@ -207,7 +207,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Discover trends:</td>
+        Discovering trends:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_trend, 1 %></td>
       <td style="text-align: center;">
@@ -257,7 +257,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Unfollow accounts:</td>
+        Unfollowing accounts:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_unfollow_account, 1 %></td>
       <td style="text-align: center;">
@@ -305,7 +305,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Browse through categories on the discover page:</td>
+        Browsing through categories on the discover page:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_browse_categories, 1 %></td>
       <td style="text-align: center;">
@@ -321,7 +321,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Find friends (e.g. search them in Twitter or invite them to Twitter):</td>
+        Finding friends (e.g., searching for them on Twitter or inviting them to Twitter):</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_find_friends, 1 %></td>
       <td style="text-align: center;">
@@ -355,7 +355,7 @@
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Create lists:</td>
+        Creating lists:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_create_lists, 1 %></td>
       <td style="text-align: center;">
@@ -371,7 +371,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Add accounts to lists:</td>
+        Adding accounts to lists:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_add_accounts_lists, 1 %></td>
       <td style="text-align: center;">
@@ -387,7 +387,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Subscribe to lists:</td>
+        Subscribing to lists:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_subscribe_lists, 1 %></td>
       <td style="text-align: center;">
@@ -403,7 +403,7 @@
     </tr>
        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Unsubscribe from lists:</td>
+        Unsubscribing from lists:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_unsubscribe_lists, 1 %></td>
       <td style="text-align: center;">
@@ -419,7 +419,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Delete accounts from lists:</td>
+        Deleting accounts from lists:</td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_delete_accounts_lists, 1 %></td>
       <td style="text-align: center;">
@@ -443,11 +443,11 @@
         <div id="opinion_leader_text">
                  <table>
                  <tr>
-                   <td>Please fill in the amount of hours you surf on Twitter on an average weekday:</td> 
+                   <td>Please fill in the number of hours you surf on Twitter on an average weekday:</td> 
                    <td> <%= f.text_field :surf_twitter_week, :size => 4, :maxlength => 4%>hours per day</td>
                  </tr>
                  <tr>
-                   <td>Please fill in the amount of hours you surf on Twitter on an average day of your weekend:</td>
+                   <td>Please fill in the number of hours you surf on Twitter on an average day of your weekend:</td>
                    <td><%= f.text_field :surf_twitter_weekend, :size => 4, :maxlength => 4%>hours per day</td>
                  </tr>
                </table>
