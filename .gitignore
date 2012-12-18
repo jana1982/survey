@@ -6,3 +6,5 @@ tmp/restart.txt
 *.sqlite3
 *.log
 vendor/bundle
+vendor/cache
+twitter_database_export
