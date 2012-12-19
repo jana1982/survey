@@ -2,7 +2,7 @@ Gemfile
 config/database.yml
 db/schema.rb
 tmp/restart.txt
-/log/*.*
+log/*.*
 *.sqlite3
 *.log
 vendor/bundle

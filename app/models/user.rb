@@ -299,7 +299,7 @@ class User < ActiveRecord::Base
       end
       # If Country is one of those without defence ministry
       if current_step == "internet"
-	if country == 4 || country == 15 || country == 20 || country == 38 || country == 41 || country == 49 || country == 68 || country == 89 || country == 101 || country == 110 || country == 111 || country == 115 || country == 117 || country == 124 || country == 134 || country == 135 || country == 146 || country == 147 || country == 148 || country == 149 || country == 150 || country == 160 || country == 176 || country == 182 || country == 190 || country == 191
+	if country == 4 || country == 15 || country == 20 || country == 38 || country == 41 || country == 49 || country == 68 || country == 89 || country == 101 || country == 110 || country == 111 || country == 115 || country == 117 || country == 124 || country == 130 || country == 134 || country == 135 || country == 146 || country == 147 || country == 148 || country == 149 || country == 150 || country == 160 || country == 176 || country == 182 || country == 190 || country == 191
 	does_not_qualify = true
 	end 
       end
