@@ -916,13 +916,14 @@ position: relative;
 #follower_friend2{
   position: relative;
   left: -18px;
-  top: 4px;
+  /*top: 4px;*/
   color: grey;}
 
 #follower_button2{
   position: relative;
   left: -57px;
-  top: 10px;}
+  /*left: -57px;
+  top: 10px;*/}
   
 #follower_field2{
 background-color: transparent;
