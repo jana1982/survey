@@ -33,7 +33,6 @@
     </div>
     <div id="follower_titel2">
       <b>Indipendent News Blog</b>
-    </div>
     <div id="follower_friend2">
       Followed by <%= displayed_person %>
     </div>
@@ -47,6 +46,7 @@
             :mouseover => '../images/Unfollow_unterstrichen.png', :id => "follower_button2_follow"),
             :url => {:action => "follow2", :id => @user.id}
          end %>
+    </div>
     </div>
   </div>
 </div>
