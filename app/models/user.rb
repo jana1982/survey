@@ -304,7 +304,7 @@ class User < ActiveRecord::Base
 	end 
       end
       if current_step == "twitter_motivation"
-	if avg_login == 6
+	if avg_retweet == 6
 	  does_not_qualify = true
 	end
       end
