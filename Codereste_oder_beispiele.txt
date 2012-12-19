@@ -1,4 +1,4 @@
-
+test
 ////Search: Press Enter to submit
 //Event.observe(window, 'load', function() {
 // Event.observe('textarea#user_search.new-reply-text', 'keypress', function(event){
