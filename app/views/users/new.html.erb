@@ -6,7 +6,13 @@
       <Table width="100%">
         <tr>
           <td align="left"> <%= f.submit "Back", :name => "back_button" unless @user.first_step?  %></td>
-          <td align="right"> <%= f.submit "Continue" %></td>
+          <td align="right">
+            <% if @user.twitter_step? %>
+              <%= f.submit "End simulation" %>
+              <%else%>
+              <%=f.submit "Continue"%>
+            <%end %>
+          </td>
         </tr>
       </Table>
 <% end %>
