@@ -396,5 +396,266 @@
 
 <hr>
 
-          
+ <h3>What political news topics do you avoid retweeting, replying to or writing about?
+</h3>
+           <i>Tip: You can select more than one field.</i>
+            <div style="padding-left: 20px;">
+           <p>
+           <table width="70%">
+                      <tr style="background: #e2e2e2;">
+                                 <td>Exclusively negative news about a topic</td>
+                                 <td>All further news about a topic</td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :def_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            <% if @user.country == 70 || @user.country ==128 %>
+                                            Negative news about <b>defence</b> of <%= COUNTRIES[@user.country][0]%>
+                                            <%else%>
+                                            Negative news about <b>defence</b> or <b><%= MINISTRY[@user.country-1][0] %></b> of <%= COUNTRIES[@user.country][0]%>
+                                            <%end%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :def_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            <% if  @user.country == 70 || @user.country ==128 %>
+                                            Further news about <b>defence</b> of <%= COUNTRIES[@user.country][0]%>
+                                            <%else%>
+                                            Further news about <b>defence</b> or <b><%= MINISTRY[@user.country-1][0] %></b> of <%= COUNTRIES[@user.country][0]%>
+                                            <%end%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :dip_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>diplomacy</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :dip_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>diplomacy</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :ele_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>elections</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :ele_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>elections</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                       
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :ele_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>espionage & intelligence</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :ele_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>espionage & intelligence</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :for_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>foreign aid</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :for_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>foreign aid</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :gov_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>government</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :gov_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>government</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :hum_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>human rights</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :hum_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>human rights</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :loc_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>local authorities</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :loc_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>local authorities</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :parl_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>parliament</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :parl_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>parliament</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :part_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>parties</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :part_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>parties</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :refu_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>refugees</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :refu_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>refugees</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :auth_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>regional authorities</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :auth_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>regional authorities</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :bud_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>state budget & taxes</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :bud_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>state budget & taxes</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :tre_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>treaties & international organisations</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :tre_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>treaties & international organisations</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :cons_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>constitution</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :cons_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>constitution</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :int_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>interior policies</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :int_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>interior policies</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :mig_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>migration</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :mig_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>migration</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :cit_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>citizens initiative & recall</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :cit_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>citizens initiative & recall</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :refe_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>referenda</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :refe_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>referenda</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :nuc_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>nuclear policies</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :nuc_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>nuclear policies</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :lob_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>lobbying</b> of <%= COUNTRIES[@user.country][0]%>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :lob_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>lobbying</b> of <%= COUNTRIES[@user.country][0]%>           
+                                 </td>
+                      </tr>
+                      
+                      <tr style="background: #f2f2f2;">
+                                 <td>
+                                            <%= f.check_box :oth_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
+                                            Negative news about <b>other</b> political topics of <%= COUNTRIES[@user.country][0]%>: <%= f.text_field :oth_neg_txt %>
+                                 </td>
+                                 <td>
+                                            <%= f.check_box :oth_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>         
+                                            Further news about <b>other</b> political topics of <%= COUNTRIES[@user.country][0]%>: <%= f.text_field :oth_oth_txt %>      
+                                 </td>
+                      </tr>
+           </table>
 
+<hr>
