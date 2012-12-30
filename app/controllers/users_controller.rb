@@ -476,13 +476,13 @@ class UsersController < ApplicationController
  
   def generate_messages(message_type)
     messages1 = ["Bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} was discovered before causing loss ",
-                 "Loss of 20 million US$ caused by #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} in consequence of bribery ", 
+                 "Loss of 41 million US$ caused by #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} in consequence of bribery ", 
                  "Bribery case of #{MINISTERSSHORT[@user.country-1][0]} was discovered before causing loss " ,
-                 "Loss of 20 million US$ caused by #{MINISTERSSHORT[@user.country-1][0]} in consequence of bribery "]
+                 "Loss of 41 million US$ caused by #{MINISTERSSHORT[@user.country-1][0]} in consequence of bribery "]
     messages2 = ["Loss was prevented by early discovered bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} ",
-                 "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} caused 20 million US$ loss ",
+                 "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} caused 41 million US$ loss ",
                  "Loss prevented by early discovered bribery case of #{MINISTERSSHORT[@user.country-1][0]} ",
-                 "Bribery scandal of #{MINISTERSSHORT[@user.country-1][0]} caused 20 million US$ loss "]
+                 "Bribery scandal of #{MINISTERSSHORT[@user.country-1][0]} caused 41 million US$ loss "]
     message1 = messages1[message_type]
     message2 = messages2[message_type]
     

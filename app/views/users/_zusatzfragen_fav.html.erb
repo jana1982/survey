@@ -81,86 +81,7 @@
     </p>
   </div>
            
-  <!--<h3>To what extent do you think the favorite of the shown message would be important to your followers?</h3>
-
-  <div id="opinion_leader_text"><p>
-    <p>
-      <table>
-        <tr>
-          <td>not relevant at all
-          </td>
-          <td>
-          <div id="track16" style="float: none;">
-            <div id="handle16" style="border: thin;">
-              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
-              <div id="zahl16"><%= @user.favorite_oc_relevant %></div>
-            </div>
-            <%= f.hidden_field :favorite_oc_relevant, :value => @user.favorite_oc_relevant rescue "-99" %>
-          </div>
-          </td>
-          <td>highly relevant
-          </td>
-          <td><%= f.check_box :favorite_oc_relevant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                      I don't know/ I don't want to say</td>
-        </tr>
-        <tr height="20px"></tr>
-        <tr>
-          <td>not meaningful at all
-          </td>
-          <td>
-          <div id="track17" style="float: none;">
-            <div id="handle17" style="border: thin;">
-              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
-              <div id="zahl17"><%= @user.favorite_oc_meaningful %></div>
-            </div>
-            <%= f.hidden_field :favorite_oc_meaningful, :value => @user.favorite_oc_meaningful rescue "-99" %>
-          </div>
-          </td>
-          <td>highly meaningful
-          </td>
-          <td><%= f.check_box :favorite_oc_meaningful_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                      I don't know/ I don't want to say</td>
-        </tr>
-        <tr height="20px"></tr>
-        <tr>
-          <td>not important at all
-          </td>
-          <td>
-          <div id="track18" style="float: none;">
-            <div id="handle18" style="border: thin;">
-              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
-              <div id="zahl18"><%= @user.favorite_oc_important %></div>
-            </div>
-            <%= f.hidden_field :favorite_oc_important, :value => @user.favorite_oc_important rescue "-99" %>
-          </div>
-          </td>
-          <td>highly important
-          </td>
-          <td><%= f.check_box :favorite_oc_important_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                      I don't know/ I don't want to say</td>
-        </tr>
-        <tr height="20px"></tr>
-        <tr>
-          <td>not significant at all
-          </td>
-          <td>
-          <div id="track19" style="float: none;">
-            <div id="handle19" style="border: thin;">
-              <img  id="runder-button" src='../images/runder-button1.png' style="height: 15px; width: 15px;left: -10px;"><br>
-              <div id="zahl19"><%= @user.favorite_oc_significant %></div>
-            </div>
-            <%= f.hidden_field :favorite_oc_significant, :value => @user.favorite_oc_significant rescue "-99" %>
-          </div>
-          </td>
-          <td>highly significant
-          </td>
-          <td><%= f.check_box :favorite_oc_significant_ck, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                      I don't know/ I don't want to say</td>
-        </tr>
-        <tr height="20px"></tr>
-      </table>
-    </p> 
-  </div>-->
+ 
   
   <script type="text/javascript">
     // <![CDATA[
@@ -200,42 +121,7 @@
       onChange:function(v){document.getElementById('user_favorite_pr_significant').value = v},
     });
     
-    //i=parseInt(<%= @user.favorite_oc_relevant %> + 0.5);
-    //
-    //var j = new Control.Slider('handle16','track16',{
-    //  sliderValue: i,
-    //  range:$R(0,10),
-    //  onSlide:function(v){$('zahl16').innerHTML= parseInt(v + 0.5);},
-    //  onChange:function(v){document.getElementById('user_favorite_oc_relevant').value = v},
-    //});
-    //
-    //k=parseInt(<%= @user.favorite_oc_meaningful %> + 0.5);
-    //
-    //var l = new Control.Slider('handle17','track17',{
-    //  sliderValue: k,
-    //  range:$R(0,10),
-    //  onSlide:function(v){$('zahl17').innerHTML= parseInt(v + 0.5);},
-    //  onChange:function(v){document.getElementById('user_favorite_oc_meaningful').value = v},
-    //});
-    //
-    //m=parseInt(<%= @user.favorite_oc_important %> + 0.5);
-    //
-    //var n = new Control.Slider('handle18','track18',{
-    //  sliderValue: m,
-    //  range:$R(0,10),
-    //  onSlide:function(v){$('zahl18').innerHTML= parseInt(v + 0.5);},
-    //  onChange:function(v){document.getElementById('user_favorite_oc_important').value = v},
-    //});
-    //
-    //o=parseInt(<%= @user.favorite_oc_significant %> + 0.5);
-    //
-    //var p = new Control.Slider('handle19','track19',{
-    //  sliderValue: o,
-    //  range:$R(0,10),
-    //  onSlide:function(v){$('zahl19').innerHTML= parseInt(v + 0.5);},
-    //  onChange:function(v){document.getElementById('user_favorite_oc_significant').value = v},
-    //});
-    // ]]>
+
   </script>
 
 

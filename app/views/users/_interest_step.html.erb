@@ -410,19 +410,11 @@
                       <tr style="background: #f2f2f2;">
                                  <td>
                                             <%= f.check_box :def_neg, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
-                                            <% if @user.country == 70 || @user.country ==128 %>
-                                            Negative news about <b>defence</b> of <%= COUNTRIES[@user.country][0]%>
-                                            <%else%>
                                             Negative news about <b>defence</b> or <b><%= MINISTRY[@user.country-1][0] %></b> of <%= COUNTRIES[@user.country][0]%>
-                                            <%end%>
                                  </td>
                                  <td>
                                             <%= f.check_box :def_oth, :options => {}, :checked_value => "1", :unchecked_value => "0"%>          
-                                            <% if  @user.country == 70 || @user.country ==128 %>
-                                            Further news about <b>defence</b> of <%= COUNTRIES[@user.country][0]%>
-                                            <%else%>
-                                            Further news about <b>defence</b> or <b><%= MINISTRY[@user.country-1][0] %></b> of <%= COUNTRIES[@user.country][0]%>
-                                            <%end%>           
+                                            Further news about <b>defence</b> or <b><%= MINISTRY[@user.country-1][0] %></b> of <%= COUNTRIES[@user.country][0]%>          
                                  </td>
                       </tr>
                       
