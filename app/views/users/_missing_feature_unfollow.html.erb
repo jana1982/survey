@@ -1,0 +1,82 @@
+Please evaluate the following statements.
+   <table width="100%" class="hovertable">
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td colspan="2" align="left">
+         Strongly disagree
+      </td>
+      <td colspan="3" align="center">
+         Neither agree nor disagree
+      </td>
+      <td colspan="2" align="right">
+         Strongly agree
+      </td>
+    </tr>
+    <tr style="text-align: center;" >
+      <td ></td>
+      <td width="7%">-3</td>
+      <td width="7%">-2</td>
+      <td width="7%">-1</td>
+      <td width="7%">0</td>
+      <td width="7%">1</td>
+      <td width="7%">2</td>
+      <td width="7%">3</td>
+    </tr>
+  
+        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td>
+       Assuming I could unfollow accounts related to the topic in the simulation, I intend to use this feature immediately.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 6 %></td>
+            <td style="text-align: center;">
+        <%= f.radio_button :intention1_unfollow, 7 %></td>
+    </tr>
+    
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
+      <td >
+        Given that I could unfollow accounts related to the topic in the simulation, I predict that I would use this feature immediately.</td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 1 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 2 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 3 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 4 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 5 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :intention2_unfollow, 7 %></td>
+    </tr>
+  
+    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+        If the seen content wouldn't be a simulation I would unfollow accounts related to the topic immediately.</td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 1 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 2 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 3 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 4 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 5 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :intention3_unfollow, 7 %></td>
+    </tr>
+   </table>

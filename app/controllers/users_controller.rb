@@ -83,32 +83,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def follow2
-      if session[:user_params][:follow_2_clicked] == nil
-        session[:user_params].deep_merge!({:follow_2_clicked => 1})
-      else
-        dummy_f2 = session[:user_params][:follow_2_clicked]
-        dummy_f2 += 1
-        session[:user_params].deep_merge!({:follow_2_clicked => dummy_f2})
-      end
-    respond_to do |format|
-      
-        format.js {
-          if (session[:user_params][:follow_2_clicked].even?) 
-            render(:update) do |page|
-                puts "F2_EVEN"
-                page.replace "follower_button2_follow", image_tag('../images/Follow.png', :id => "follower_button2_follow", :mouseover => "../images/Follow_unterstrichen.png") 
-             end;
-          else
-            render(:update) do |page|
-              puts "F2_unveven"
-                page.replace "follower_button2_follow", image_tag('../images/Unfollow.png', :id=>"follower_button2_follow", :mouseover => "../images/Unfollow_unterstrichen.png")
-              end;
-            end
-             }
-    end
-  end
-
   def reply1
     if session[:user_params][:reply_1_clicked] == nil
         session[:user_params].deep_merge!({:reply_1_clicked => 1})

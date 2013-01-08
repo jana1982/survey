@@ -365,16 +365,12 @@
 <%end%>
 
 <hr>
-
-<% if @user.reply_1_clicked <1 && @user.reply_2_clicked <1%>
+<% if !@user.seen_multiple_messages %>
+  <% if ((@user.reply_text.length-2) == @user.leader_text.length ) %>
   <div id="no_open">
   <p>
-  <% if !@user.seen_multiple_messages %>
-    <h3>Could you please mention some reasons why you didn't click reply in the simulation?</h3>
-  <% else%>
-    <h3>Could you please mention some reasons why you didn't click reply in the simulation?</h3>
-  <%end%>
-      <div id="opinion_leader_text">
+    <h3>Could you please mention some reasons why you didn't reply to the message in the simulation?</h3>
+    <div id="opinion_leader_text">
         Please fill in possible reasons why you didn't reply to
         the seen message. It could help to reflect on what messages
         you normally reply and why.<br>
@@ -382,10 +378,30 @@
       </div>
     </p>
   </div>
-<% else%>
-  <div id="zusatzfragen_rt" >
-    <%= render "zusatzfragen_reply", :f => f  %> 
-  </div>
+  <% else %>
+    <div id="zusatzfragen_rt" >
+      <%= render "zusatzfragen_reply", :f => f  %> 
+    </div>
+  <% end %>
+
+  <% else%>
+    <% if ((@user.reply_text.length-2) == @user.leader_text.length && (@user.reply_text2 == "@Friend " || @user.reply_text2 == "@Second_Friend ")) %>
+    <div id="no_open">
+     <p>
+    <h3>Could you please mention some reasons why you didn't reply to one of the messages in the simulation?</h3>
+    <div id="opinion_leader_text">
+          Please fill in possible reasons why you didn't reply to
+          the seen message. It could help to reflect on what messages
+          you normally reply and why.<br>
+        <%= f.text_area :reason_nrep   , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+        </div>
+      </p>
+    </div>
+  <% else %>
+    <div id="zusatzfragen_rt" >
+      <%= render "zusatzfragen_reply", :f => f  %> 
+    </div>
+  <% end %>
 <%end%>
 <hr>
 

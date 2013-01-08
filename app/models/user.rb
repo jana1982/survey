@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 			:organization, :organization_text, :private_pc, :private_mobile, :work_pc, :work_mobile,
 			:public, :leader_text, :reply_text, :reply_text2, :tweet_text, :search,
 			:retweet_time_m1, :favorite_time_m1, :message_hover_m1, :open_time_m1, :reply_time_m1, :follow_m1,
-			:retweet_time_m2, :favorite_time_m2, :message_hover_m2, :open_time_m2, :reply_time_m2, :follow_m2,
+			:retweet_time_m2, :favorite_time_m2, :message_hover_m2, :open_time_m2, :reply_time_m2, 
 			:new_tweet_time, :search_time,
 			:experiment_time,
 			:tweet_text_n,
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 			:ol_1, :ol_2, :ol_3,  :ol_4, :ol_5, :ol_6,  :ol_7,  :ol_8, :ol_9,  :ol_10,  :ol_11, :ol_12,
 			:retweet_1_clicked, :favorite_1_clicked, :expand_1_clicked, :reply_1_clicked,
 			:retweet_2_clicked, :favorite_2_clicked, :expand_2_clicked, :reply_2_clicked, :link_clicked,
-			:follow_1_clicked, :follow_2_clicked, :new_tweet_clicked, :compose_tweet_clicked, :search_clicked,
+			:follow_1_clicked, :new_tweet_clicked, :compose_tweet_clicked, :search_clicked,
 			:results, :situation,
 			:account_name, :twitter_privat_work, :number_followers, :number_followeees, :number_messages,
 			:avg_tweet_number, :avg_at_replies, :avg_read_tweets, :avg_stories, :avg_trend, :avg_retweet, :avg_follow,
@@ -113,7 +113,21 @@ class User < ActiveRecord::Base
 			:reply_oc_relevant_ck, :reply_oc_significant_ck,  :reply_oc_meaningful_ck, :reply_oc_important_ck,
 			
 			:open_reasons_others, :open_reasons,
-			:email
+			:email,
+			
+			:beh_exp_retweet, :beh_exp_reply, :beh_exp_favorite, :beh_exp_write, :beh_exp_discover_stories, :beh_exp_discover_trends, :beh_exp_follow,
+			:beh_exp_unfollow, :beh_exp_create_lists, :beh_exp_add_to_lists, :beh_exp_unsubscribe_lists, :beh_exp_subscribe_lists,
+			
+			:t_imp_int_retweet, :t_imp_int_reply, :t_imp_int_favorite, :t_imp_int_write, :t_imp_int_discover_stories, :t_imp_int_discover_trends, :t_imp_int_follow,
+			:t_imp_int_unfollow, :t_imp_int_create_lists, :t_imp_int_add_to_lists, :t_imp_int_unsubscribe_lists, :t_imp_int_subscribe_lists,
+			
+			:o_imp_int_retweet, :o_imp_int_reply, :o_imp_int_favorite, :o_imp_int_write, :o_imp_int_discover_stories, :o_imp_int_discover_trends, :o_imp_int_follow,
+			:o_imp_int_unfollow, :o_imp_int_create_lists, :o_imp_int_add_to_lists, :o_imp_int_unsubscribe_lists, :o_imp_int_subscribe_lists,
+			
+			:cbx_write, :cbx_discover_stories, :cbx_discover_trends, :cbx_follow, :cbx_unfollow, :cbx_create_lists, :cbx_add_to_lists, :cbx_unsubscribe_lists,
+			:cbx_subscribe_lists,
+			
+			:any_mistakes, :mistake_txt, :act_af_tw, :uinf_an_sco, :irp_imagine, :irp_act, :irp_keep, :cr_imagine, :cr_act, :cr_keep
 
   attr_writer :current_step
   attr_accessor :username
@@ -140,6 +154,7 @@ class User < ActiveRecord::Base
 		"P10_favorite_pr_relevant", "P10_favorite_pr_relevant_ck", "P10_favorite_pr_meaningful", "P10_favorite_pr_meaningful_ck", "P10_favorite_pr_important", "P10_favorite_pr_important_ck", "P10_favorite_pr_significant", "P10_favorite_pr_significant_ck", "P10_favorite_oc_relevant", "P10_favorite_oc_relevant_ck", "P10_favorite_oc_meaningful", "P10_favorite_oc_meaningful_ck", "P10_favorite_oc_important", "P10_favorite_oc_important_ck", "P10_favorite_oc_significant", "P10_favorite_oc_significant_ck", "P10_reason_nfav",
 		"P10_open_reasons", "P10_open_reasons_others", "P10_reason_nexp",
 		"P10_reply_pr_relevant", "P10_reply_pr_relevant_ck", "P10_reply_pr_meaningful", "P10_reply_pr_meaningful_ck", "P10_reply_pr_important", "P10_reply_pr_important_ck", "P10_reply_pr_significant", "P10_reply_pr_significant_ck", "P10_reply_oc_relevant", "P10_reply_oc_relevant_ck", "P10_reply_oc_meaningful", "P10_reply_oc_meaningful_ck", "P10_reply_oc_important", "P10_reply_oc_important_ck", "P10_reply_oc_significant", "P10_reply_oc_significant_ck", "P10_reason_nrep",
+		"P_10_cbx_write", "P_10_cbx_discover_stories", "P_10_cbx_discover_trends", "P_10_cbx_follow", "P_10_cbx_unfollow", "P_10_cbx_create_lists", "P_10_cbx_add_to_lists", "P_10_cbx_unsubscribe_lists","P_10_cbx_subscribe_lists",
 		"P11_intention1_write", "P11_intention2_write", "P11_intention3_write", "P11_intention1_discover_stories", "P11_intention2_discover_stories", "P11_intention3_discover_stories", "P11_intention1_discover_trends", "P11_intention2_discover_trends", "P11_intention3_discover_trends", "P11_intention1_follow", "P11_intention2_follow", "P11_intention3_follow", "P11_intention1_unfollow", "P11_intention2_unfollow", "P11_intention3_unfollow", "P11_intention1_create_lists", "P11_intention2_create_lists", "P11_intention3_create_lists", "P11_intention1_add_to_lists", "P11_intention2_add_to_lists", "P11_intention3_add_to_lists", "P11_intention1_unsubscribe_lists", "P11_intention2_unsubscribe_lists", "P11_intention3_unsubscribe_lists", "P11_intention1_subscribe_lists", "P11_intention2_subscribe_lists", "P11_intention3_subscribe_lists",
 		"P12_results", "P12_email"]
     	User.all.each do |user|
@@ -161,6 +176,7 @@ class User < ActiveRecord::Base
 		user.favorite_pr_relevant, user.favorite_pr_relevant_ck, user.favorite_pr_meaningful, user.favorite_pr_meaningful_ck, user.favorite_pr_important, user.favorite_pr_important_ck, user.favorite_pr_significant, user.favorite_pr_significant_ck, user.favorite_oc_relevant, user.favorite_oc_relevant_ck, user.favorite_oc_meaningful, user.favorite_oc_meaningful_ck, user.favorite_oc_important, user.favorite_oc_important_ck, user.favorite_oc_significant, user.favorite_oc_significant_ck, user.reason_nfav,
 		user.open_reasons, user.open_reasons_others, user.reason_nexp,
 		user.reply_pr_relevant, user.reply_pr_relevant_ck, user.reply_pr_meaningful, user.reply_pr_meaningful_ck, user.reply_pr_important, user.reply_pr_important_ck, user.reply_pr_significant, user.reply_pr_significant_ck, user.reply_oc_relevant, user.reply_oc_relevant_ck, user.reply_oc_meaningful, user.reply_oc_meaningful_ck, user.reply_oc_important, user.reply_oc_important_ck, user.reply_oc_significant, user.reply_oc_significant_ck, user.reason_nrep,
+		user.cbx_write, user.cbx_discover_stories, user.cbx_discover_trends, user.cbx_follow, user.cbx_unfollow, user.cbx_create_lists, user.cbx_add_to_lists, user.cbx_unsubscribe_lists, user.cbx_subscribe_lists,
 		user.intention1_write, user.intention2_write, user.intention3_write, user.intention1_discover_stories, user.intention2_discover_stories, user.intention3_discover_stories, user.intention1_discover_trends, user.intention2_discover_trends, user.intention3_discover_trends, user.intention1_follow, user.intention2_follow, user.intention3_follow, user.intention1_unfollow, user.intention2_unfollow, user.intention3_unfollow, user.intention1_create_lists, user.intention2_create_lists, user.intention3_create_lists, user.intention1_add_to_lists, user.intention2_add_to_lists, user.intention3_add_to_lists, user.intention1_unsubscribe_lists, user.intention2_unsubscribe_lists, user.intention3_unsubscribe_lists, user.intention1_subscribe_lists, user.intention2_subscribe_lists, user.intention3_subscribe_lists,
 		user.results, user.email]
     	end

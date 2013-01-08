@@ -23,6 +23,7 @@ module ApplicationHelper
     text = %Q<1.\n2.\n3.\n...>
   end
   
+  
   def reply_text_helper
     if @user.reply_text.nil?
       "@"+displayed_person+" "
