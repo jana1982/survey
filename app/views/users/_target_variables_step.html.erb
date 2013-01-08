@@ -219,6 +219,8 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
 </table>
  
  <hr>
+  <!-- -->
+<%if  all_missing_features < 54 && !all_missing_features2.nil?  %>
  <h3>The simulation allowed you to retweet, reply, favorite and expand the message. You were able to compose new tweets and to follow the <%=EMPLOYEE[@user.country-1][0].split(' employee')%> of <%=COUNTRIES[@user.country][0] %>. Furthermore you could undo all those actions. <br><br> The experiment required acting as if you were on your real Twitter account.<br><br> Would you use other features as related to the seen message or topic that were missing in the simulation?</h3>
            <i>Tip: You can select more than one feature.</i>
             <div style="padding-left: 20px;" class="randomordercontent group1">
@@ -255,7 +257,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_stories != 6 %>
                       <p>
                                  <%= f.check_box :cbx_discover_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Discover stories related to the topic
+                                 Reading tailored Tweets related to the topic on the discover page 
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -484,6 +486,6 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                                  </div>
                       </p>
                     <% end %>
-                    
+                <hr>
+           <% end %>         
 
-<hr>
