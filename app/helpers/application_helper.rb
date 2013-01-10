@@ -27,10 +27,6 @@ module ApplicationHelper
     (@user.avg_private_replies + @user.avg_stories + @user.avg_trend + @user.avg_follow + @user.avg_unfollow_account + @user.avg_create_lists + @user.avg_add_accounts_lists + @user.avg_unsubscribe_lists + @user.avg_subscribe_lists) 
   end
   
-  def all_missing_features2
-    (@user.avg_private_replies || @user.avg_stories || @user.avg_trend || @user.avg_follow || @user.avg_unfollow_account || @user.avg_create_lists || @user.avg_add_accounts_lists || @user.avg_unsubscribe_lists || @user.avg_subscribe_lists) 
-  end
-  
   def reply_text_helper
     if @user.reply_text.nil?
       "@"+displayed_person+" "

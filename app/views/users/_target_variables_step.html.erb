@@ -9,12 +9,12 @@
 </TD>
 
 
-<TD ALIGN="RIGHT" width=400px>
+<TD ALIGN="RIGHT">
   
 
 
             
-11/12 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.99,true,true) %>
+11/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.96,true,true) %>
             
 
 
@@ -52,13 +52,13 @@ Event.observe(window, 'load', function() {
 //]]>
 </script>
 <div id="others_any_mistake" style="display:none; left:20px;">
-Please fill in the mistakes you can remember (e.g. message didn't expand, message expanded to slowly ...).
+Please list any mistake you can remember (e.g. message didn't expand, message expanded to slowly etc.).
 <%= f.text_area :mistake_txt, :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
 </p>
 </div>
 
 <hr>
- <h3>Could you evaluate how clearly the following two aspects were explained in the questionnaire/simulation?</h3>
+ <h3>Please evaluate how clearly the following two aspects were explained in the questionnaire/simulation.</h3>
 <table width="100%" class="hovertable">
 
     <tr style="text-align: center;" >
@@ -67,12 +67,12 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
       <td width="15%">Moderately clearly explained</td>
       <td width="15%">Somewhat clearly explained</td>
       <td width="15%">Not clearly explained</td>
-      <td width="15%">Didn't recognize the explanation</td>
+      <td width="15%">Did not recognize the explanation</td>
     </tr>
 
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td  style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-       No actions on the simulation affect your twitter account.</td>
+       No actions during the simulation affect your twitter account.</td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :act_af_tw, 1 %></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
@@ -87,7 +87,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
-       User information is only used in anonymized form in scientific context.</td>
+       User information is only used in anonymized form within a scientific context.</td>
       <td style="text-align: center;">
         <%= f.radio_button :uinf_an_sco, 1 %></td>
       <td style="text-align: center;">
@@ -109,7 +109,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
       <td ></td>
       <td width="10%">Very difficult</td>
       <td width="10%">Difficult</td>
-      <td width="10%">Moderate</td>
+      <td width="10%">Moderately difficult</td>
       <td width="10%">Easy</td>
       <td width="10%">Very easy</td>
     </tr>
@@ -146,7 +146,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
-       ...keep in mind your real followers even they won't recognize your actions on the simulation?</td>
+       ...keep your real followers in mind even though they will not recognize your actions on the simulation?</td>
       <td style="text-align: center;">
         <%= f.radio_button :irp_keep, 1 %></td>
       <td style="text-align: center;">
@@ -167,7 +167,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
       <td ></td>
       <td width="10%">Very sure</td>
       <td width="10%">Sure</td>
-      <td width="10%">Moderate</td>
+      <td width="10%">Moderately sure</td>
       <td width="10%">Unsure</td>
       <td width="10%">Very unsure</td>
     </tr>
@@ -204,7 +204,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
-       Task 3: Did you keep in mind your real followers even they won't recognize your actions on the simulation?</td>
+       Task 3: Did you keep your real followers in mind even though they will not recognize your actions on the simulation?</td>
       <td style="text-align: center;">
         <%= f.radio_button :cr_keep, 1 %></td>
       <td style="text-align: center;">
@@ -220,15 +220,17 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
  
  <hr>
   <!-- -->
-<%if  all_missing_features < 54 && !all_missing_features2.nil?  %>
- <h3>The simulation allowed you to retweet, reply, favorite and expand the message. You were able to compose new tweets and to follow the <%=EMPLOYEE[@user.country-1][0].split(' employee')%> of <%=COUNTRIES[@user.country][0] %>. Furthermore you could undo all those actions. <br><br> The experiment required acting as if you were on your real Twitter account.<br><br> Would you use other features as related to the seen message or topic that were missing in the simulation?</h3>
+<%if all_missing_features > 0 &&  all_missing_features < 54 %>
+ <h3>Unfortunately the simulation could not offer you all the features of Twitter, but it was asked that you act as if you were on your real Twitter account.<br><br>
+ With this in your mind, would you use other features that were missing in the simulation?
+ </h3>
            <i>Tip: You can select more than one feature.</i>
             <div style="padding-left: 20px;" class="randomordercontent group1">
            <p>
                       <% if @user.avg_private_replies != 6 %>
                       <p>
                                  <%= f.check_box :cbx_write, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Write private messages
+                                 Write direct messages
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -257,7 +259,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_stories != 6 %>
                       <p>
                                  <%= f.check_box :cbx_discover_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Reading tailored Tweets related to the topic on the discover page 
+                                 Reading tailored Tweets related to the topic presented on the discover page 
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -286,7 +288,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_trend != 6 %>
                       <p>
                                  <%= f.check_box :cbx_discover_trends, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Discover trends related to the topic
+                                 Discover trends related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -315,7 +317,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_follow != 6 %> 
                       <p>
                                  <%= f.check_box :cbx_follow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Follow new accounts related to the topic
+                                 Follow new accounts related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -344,7 +346,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_unfollow_account != 6 %> 
                       <p>
                                  <%= f.check_box :cbx_unfollow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Unfollow new accounts related to the topic
+                                 Unfollow new accounts related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -373,7 +375,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_create_lists != 6 %>   
                       <p>
                                  <%= f.check_box :cbx_create_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Create lists related to the topic
+                                 Create lists related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -402,7 +404,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_add_accounts_lists != 6 %>  
                       <p>
                                  <%= f.check_box :cbx_add_to_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Add accounts to lists related to the topic
+                                 Add accounts to lists related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -431,7 +433,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_unsubscribe_lists != 6 %>  
                       <p>
                                  <%= f.check_box :cbx_unsubscribe_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Unsubscribe from lists related to the topic
+                                 Unsubscribe from lists related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -460,7 +462,7 @@ Please fill in the mistakes you can remember (e.g. message didn't expand, messag
                     <% if @user.avg_subscribe_lists != 6 %>
                       <p>
                                  <%= f.check_box :cbx_subscribe_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Subscribe to lists related to the topic
+                                 Subscribe to lists related to the topic presented
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[

@@ -450,9 +450,9 @@ class UsersController < ApplicationController
  
   def generate_messages(message_type)
     messages1 = ["Bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} was discovered before causing loss ",
-                 "Loss of 41 million US$ caused by #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} in consequence of bribery ", 
+                 "Loss of 41 million US$ caused by #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} as a consequence of bribery ", 
                  "Bribery case of #{MINISTERSSHORT[@user.country-1][0]} was discovered before causing loss " ,
-                 "Loss of 41 million US$ caused by #{MINISTERSSHORT[@user.country-1][0]} in consequence of bribery "]
+                 "Loss of 41 million US$ caused by #{MINISTERSSHORT[@user.country-1][0]} as a consequence of bribery "]
     messages2 = ["Loss was prevented by early discovered bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} ",
                  "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} caused 41 million US$ loss ",
                  "Loss prevented by early discovered bribery case of #{MINISTERSSHORT[@user.country-1][0]} ",
@@ -466,7 +466,7 @@ class UsersController < ApplicationController
                     The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions.
                     The employee repeatedly claimed ignorance about the offshore firms and said:
                     “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
-                    <p> Compliance supervisor said the planned transactions should be concealed with the help of close associates who run three offshore companies.
+                    <p> Compliance supervisor said the planned transactions were concealed with the help of close associates who run three offshore companies.
                     His report listed all the transactions, including the names of the financial institutions involved. He discoverd bribes in the planned
                     aircraft deal and for proposed procurement of missiles.
                     The contracts weren't concluded at the time of the investigation, thus loss was prevented.
@@ -490,7 +490,7 @@ class UsersController < ApplicationController
                     The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions.
                     #{MINISTERSNAME[@user.country-1][0]} repeatedly claimed ignorance about the offshore firms and said:
                     “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
-                    <p> Compliance supervisor said the planned transactions should be concealed with the help of close associates who run three offshore companies.
+                    <p> Compliance supervisor said the planned transactions were concealed with the help of close associates who run three offshore companies.
                     His report listed all the transactions, including the names of the financial institutions involved. He discoverd bribes in the planned
                     aircraft deal and for proposed procurement of missiles.
                     The contracts weren't concluded at the time of the investigation, thus loss was prevented.
@@ -546,6 +546,22 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:expand_2_clicked => 0})
   end
   
+  def generate_99
+    session[:user_params].deep_merge!({:avg_private_replies => 99})
+    session[:user_params].deep_merge!({:avg_stories => 99})
+    session[:user_params].deep_merge!({:avg_trend => 99})
+    session[:user_params].deep_merge!({:avg_follow => 99})
+    session[:user_params].deep_merge!({:avg_unfollow_account => 99})
+    session[:user_params].deep_merge!({:avg_create_lists => 99})
+    session[:user_params].deep_merge!({:avg_add_accounts_lists => 99})
+    session[:user_params].deep_merge!({:avg_unsubscribe_lists => 99})
+    session[:user_params].deep_merge!({:avg_subscribe_lists => 99})
+  end
+  
+  def generate0_if_nil
+    
+  end
+  
   def write_mousetracks
     outfile = File.open(RAILS_ROOT + "/log/" + @user.id.to_s + ".csv", "w")
     CSV::Writer.generate(outfile) do |csv|
@@ -571,6 +587,36 @@ class UsersController < ApplicationController
     end
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
+       
+    end
+    if @user.current_step == "twitter_motivation"
+      if @user.avg_private_replies.nil?
+        session[:user_params].deep_merge!({:avg_private_replies => 0})
+      end
+      if @user.avg_stories.nil?
+        session[:user_params].deep_merge!({:avg_stories => 0})
+      end
+      if @user.avg_trend.nil?
+        session[:user_params].deep_merge!({:avg_trend => 0})
+      end
+      if @user.avg_follow.nil?
+        session[:user_params].deep_merge!({:avg_follow => 0})
+      end
+      if @user.avg_unfollow_account.nil?
+        session[:user_params].deep_merge!({:avg_unfollow_account => 0})
+      end
+      if @user.avg_create_lists.nil?
+        session[:user_params].deep_merge!({:avg_create_lists => 0})
+      end
+      if @user.avg_add_accounts_lists.nil?
+        session[:user_params].deep_merge!({:avg_add_accounts_lists => 0})
+      end
+      if @user.avg_unsubscribe_lists.nil?
+        session[:user_params].deep_merge!({:avg_unsubscribe_lists => 0})
+      end
+      if @user.avg_subscribe_lists.nil?
+        session[:user_params].deep_merge!({:avg_subscribe_lists => 0})
+      end
     end
  
     #if @user.current_step == "twitter"

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108094022) do
+ActiveRecord::Schema.define(:version => 20130109195142) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -444,38 +444,14 @@ ActiveRecord::Schema.define(:version => 20130108094022) do
     t.string   "oth_oth_txt"
     t.integer  "beh_exp_favorite"
     t.integer  "beh_exp_write"
-    t.integer  "beh_exp_discover_stories"
-    t.integer  "beh_exp_discover_trends"
-    t.integer  "beh_exp_follow"
-    t.integer  "beh_exp_unfollow"
-    t.integer  "beh_exp_create_lists"
-    t.integer  "beh_exp_add_to_lists"
-    t.integer  "beh_exp_unsubscribe_lists"
-    t.integer  "beh_exp_subscribe_lists"
     t.integer  "t_imp_int_retweet"
     t.integer  "t_imp_int_reply"
     t.integer  "t_imp_int_favorite"
     t.integer  "t_imp_int_write"
-    t.integer  "t_imp_int_discover_stories"
-    t.integer  "t_imp_int_discover_trends"
-    t.integer  "t_imp_int_follow"
-    t.integer  "t_imp_int_unfollow"
-    t.integer  "t_imp_int_create_lists"
-    t.integer  "t_imp_int_add_to_lists"
-    t.integer  "t_imp_int_unsubscribe_lists"
-    t.integer  "t_imp_int_subscribe_lists"
     t.integer  "o_imp_int_retweet"
     t.integer  "o_imp_int_reply"
     t.integer  "o_imp_int_favorite"
     t.integer  "o_imp_int_write"
-    t.integer  "o_imp_int_discover_stories"
-    t.integer  "o_imp_int_discover_trends"
-    t.integer  "o_imp_int_follow"
-    t.integer  "o_imp_int_unfollow"
-    t.integer  "o_imp_int_create_lists"
-    t.integer  "o_imp_int_add_to_lists"
-    t.integer  "o_imp_int_unsubscribe_lists"
-    t.integer  "o_imp_int_subscribe_lists"
     t.integer  "cbx_write"
     t.integer  "cbx_discover_stories"
     t.integer  "cbx_discover_trends"

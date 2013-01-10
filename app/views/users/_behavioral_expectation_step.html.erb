@@ -1,0 +1,391 @@
+<p>
+  <TABLE width="100%">
+<TR>
+
+<TD ALIGN="LEFT">
+<h2>Part XII: Behavioral expectations</h2>
+
+</TD>
+
+
+<TD ALIGN="RIGHT">
+  
+
+
+            
+12/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.99,true,true) %>
+            
+
+
+</TD>
+
+</TR>
+</TABLE>
+
+</p>
+<p>
+           <b><i>You have seen the following message:</i></b> <%= h @user.seen_message_1 %><br></br>
+           <b><i>Please evaluate the following statements regarding the message seen.</i></b>
+           </p>
+           
+           <hr>
+<h3>Retweeting
+</h3>
+<div id="opinion_leader_text">
+<b><i>How likely would you be to retweet the message seen, if it arose on Twitter as a real Tweet?</i></b>
+<p>
+        <%= f.radio_button :beh_exp_retweet, 1 %>
+        <%= f.label :v_l, "Very likely" %>
+        <%= f.radio_button :beh_exp_retweet, 2 %>
+        <%= f.label :l, "Likely" %>
+        <%= f.radio_button :beh_exp_retweet, 3 %>
+        <%= f.label :m, "Moderately likely" %>
+        <%= f.radio_button :beh_exp_retweet, 4 %>
+        <%= f.label :ul, "Unlikely" %>
+        <%= f.radio_button :beh_exp_retweet, 5 %>
+        <%= f.label :V_ul, "Very unlikely" %>
+</p>
+<script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_beh_exp_retweet_1').checked || $('user_beh_exp_retweet_2').checked || $('user_beh_exp_retweet_3').checked){
+                                                document.getElementById('impression_intention_retweet').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('impression_intention_retweet').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_beh_exp_retweet_1'), 0.3, function(form, value){
+                                        if (value == 1)  {
+                                        Effect.SlideDown('impression_intention_retweet');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_retweet').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_retweet_2'), 0.3, function(form, value){
+                                        if (value == 2)  {
+                                        Effect.SlideDown('impression_intention_retweet');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_retweet').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_retweet_3'), 0.3, function(form, value){
+                                        if (value == 3)  {
+                                        Effect.SlideDown('impression_intention_retweet');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_retweet').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="impression_intention_retweet" style="padding-left: 40px; display: none;" >
+                                          <b><i>When would you retweet the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :t_imp_int_retweet, 1 %>
+                                                  <%= f.label :im, "Immediately after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_retweet, 2 %>
+                                                  <%= f.label :ldrm, "In less than 30 min after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_retweet, 3 %>
+                                                  <%= f.label :nlvh, "Not later than 4 hrs after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_retweet, 4 %>
+                                                  <%= f.label :nld, "Not later than a day after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_retweet, 5 %>
+                                                  <%= f.label :nlw, "Not later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_retweet, 6 %>
+                                                  <%= f.label :lw, "Later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_retweet, 7 %>
+                                                  <%= f.label :never, "Never" %>
+                                          </p>
+                                          
+                                          <b><i>Which device would you use to retweet the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :o_imp_int_retweet, 1 %>
+                                                  <%= f.label :pn, "Private netbook/laptop/PC" %><br>
+                                                  <%= f.radio_button :o_imp_int_retweet, 2 %>
+                                                  <%= f.label :pm, "Private mobile device" %><br>
+                                                  <%= f.radio_button :o_imp_int_retweet, 3 %>
+                                                  <%= f.label :wn, "Netbook/laptop/PC related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_retweet, 4 %>
+                                                  <%= f.label :wm, "Mobile device related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_retweet, 5 %>
+                                                  <%= f.label :pt, "Public terminal (e.g., library, cybercafe, etc.)" %><br>
+                                                  <%= f.radio_button :o_imp_int_retweet, 6 %>
+                                                  <%= f.label :dk, "Don't know" %>
+                                          </p>             
+                                 </div>
+
+</div>
+<hr>
+<h3>Replying
+</h3>
+<div id="opinion_leader_text">
+<b><i>How likely would you be to reply the message seen, if it arose on Twitter as a real Tweet?</i></b>
+<p>
+        <%= f.radio_button :beh_exp_reply, 1 %>
+        <%= f.label :v_l, "Very likely" %>
+        <%= f.radio_button :beh_exp_reply, 2 %>
+        <%= f.label :l, "Likely" %>
+        <%= f.radio_button :beh_exp_reply, 3 %>
+        <%= f.label :m, "Moderately likely" %>
+        <%= f.radio_button :beh_exp_reply, 4 %>
+        <%= f.label :ul, "Unlikely" %>
+        <%= f.radio_button :beh_exp_reply, 5 %>
+        <%= f.label :V_ul, "Very unlikely" %>
+</p>
+<script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_beh_exp_reply_1').checked || $('user_beh_exp_reply_2').checked || $('user_beh_exp_reply_3').checked){
+                                                document.getElementById('impression_intention_reply').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('impression_intention_reply').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_beh_exp_reply_1'), 0.3, function(form, value){
+                                        if (value == 1)  {
+                                        Effect.SlideDown('impression_intention_reply');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_reply').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_reply_2'), 0.3, function(form, value){
+                                        if (value == 2)  {
+                                        Effect.SlideDown('impression_intention_reply');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_reply').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_reply_3'), 0.3, function(form, value){
+                                        if (value == 3)  {
+                                        Effect.SlideDown('impression_intention_reply');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_reply').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="impression_intention_reply" style="padding-left: 40px; display: none;" >
+                                          <b><i>When would you reply the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :t_imp_int_reply, 1 %>
+                                                  <%= f.label :im, "Immediately after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_reply, 2 %>
+                                                  <%= f.label :ldrm, "In less than 30 min after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_reply, 3 %>
+                                                  <%= f.label :nlvh, "Not later than 4 hrs after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_reply, 4 %>
+                                                  <%= f.label :nld, "Not later than a day after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_reply, 5 %>
+                                                  <%= f.label :nlw, "Not later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_reply, 6 %>
+                                                  <%= f.label :lw, "Later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_reply, 7 %>
+                                                  <%= f.label :never, "Never" %>
+                                          </p>
+                                          
+                                          <b><i>Which device would you use to reply the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :o_imp_int_reply, 1 %>
+                                                  <%= f.label :pn, "Private netbook/laptop/PC" %><br>
+                                                  <%= f.radio_button :o_imp_int_reply, 2 %>
+                                                  <%= f.label :pm, "Private mobile device" %><br>
+                                                  <%= f.radio_button :o_imp_int_reply, 3 %>
+                                                  <%= f.label :wn, "Netbook/laptop/PC related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_reply, 4 %>
+                                                  <%= f.label :wm, "Mobile device related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_reply, 5 %>
+                                                  <%= f.label :pt, "Public terminal (e.g., library, cybercafe, etc.)" %><br>
+                                                  <%= f.radio_button :o_imp_int_reply, 6 %>
+                                                  <%= f.label :dk, "Don't know" %>
+                                          </p>             
+                                 </div>
+
+</div>
+<hr>
+  <h3>Favorite
+</h3>
+<div id="opinion_leader_text">
+<b><i>How likely would you be to favorite the message seen, if it arose on Twitter as a real Tweet?</i></b>
+<p>
+        <%= f.radio_button :beh_exp_favorite, 1 %>
+        <%= f.label :v_l, "Very likely" %>
+        <%= f.radio_button :beh_exp_favorite, 2 %>
+        <%= f.label :l, "Likely" %>
+        <%= f.radio_button :beh_exp_favorite, 3 %>
+        <%= f.label :m, "Moderately likely" %>
+        <%= f.radio_button :beh_exp_favorite, 4 %>
+        <%= f.label :ul, "Unlikely" %>
+        <%= f.radio_button :beh_exp_favorite, 5 %>
+        <%= f.label :V_ul, "Very unlikely" %>
+</p>
+<script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_beh_exp_favorite_1').checked || $('user_beh_exp_favorite_2').checked || $('user_beh_exp_favorite_3').checked){
+                                                document.getElementById('impression_intention_favorite').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('impression_intention_favorite').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_beh_exp_favorite_1'), 0.3, function(form, value){
+                                        if (value == 1)  {
+                                        Effect.SlideDown('impression_intention_favorite');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_favorite').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_favorite_2'), 0.3, function(form, value){
+                                        if (value == 2)  {
+                                        Effect.SlideDown('impression_intention_favorite');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_favorite').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_favorite_3'), 0.3, function(form, value){
+                                        if (value == 3)  {
+                                        Effect.SlideDown('impression_intention_favorite');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_favorite').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="impression_intention_favorite" style="padding-left: 40px; display: none;" >
+                                          <b><i>When would you favorite the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :t_imp_int_favorite, 1 %>
+                                                  <%= f.label :im, "Immediately after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_favorite, 2 %>
+                                                  <%= f.label :ldrm, "In less than 30 min after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_favorite, 3 %>
+                                                  <%= f.label :nlvh, "Not later than 4 hrs after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_favorite, 4 %>
+                                                  <%= f.label :nld, "Not later than a day after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_favorite, 5 %>
+                                                  <%= f.label :nlw, "Not later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_favorite, 6 %>
+                                                  <%= f.label :lw, "Later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_favorite, 7 %>
+                                                  <%= f.label :never, "Never" %>
+                                          </p>
+                                          
+                                          <b><i>Which device would you use to favorite the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :o_imp_int_favorite, 1 %>
+                                                  <%= f.label :pn, "Private netbook/laptop/PC" %><br>
+                                                  <%= f.radio_button :o_imp_int_favorite, 2 %>
+                                                  <%= f.label :pm, "Private mobile device" %><br>
+                                                  <%= f.radio_button :o_imp_int_favorite, 3 %>
+                                                  <%= f.label :wn, "Netbook/laptop/PC related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_favorite, 4 %>
+                                                  <%= f.label :wm, "Mobile device related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_favorite, 5 %>
+                                                  <%= f.label :pt, "Public terminal (e.g., library, cybercafe, etc.)" %><br>
+                                                  <%= f.radio_button :o_imp_int_favorite, 6 %>
+                                                  <%= f.label :dk, "Don't know" %>
+                                          </p>             
+                                 </div>
+
+</div>
+<hr>
+<% if @user.cbx_write == 1 %>
+<h3>Writing direct messages
+</h3>
+<div id="opinion_leader_text">
+<b><i>How likely would you be to write a direct message as related to the message seen, if it arose on Twitter as a real Tweet?</i></b>
+<p>
+        <%= f.radio_button :beh_exp_write, 1 %>
+        <%= f.label :v_l, "Very likely" %>
+        <%= f.radio_button :beh_exp_write, 2 %>
+        <%= f.label :l, "Likely" %>
+        <%= f.radio_button :beh_exp_write, 3 %>
+        <%= f.label :m, "Moderately likely" %>
+        <%= f.radio_button :beh_exp_write, 4 %>
+        <%= f.label :ul, "Unlikely" %>
+        <%= f.radio_button :beh_exp_write, 5 %>
+        <%= f.label :V_ul, "Very unlikely" %>
+</p>
+<script type="text/javascript">                                 
+                                 //<![CDATA[
+                                  Event.observe(window, 'load', function() {
+                                            if ($('user_beh_exp_write_1').checked || $('user_beh_exp_write_2').checked || $('user_beh_exp_write_3').checked){
+                                                document.getElementById('impression_intention_write').style.display='block';
+                                            }
+                                            else {
+                                            document.getElementById('impression_intention_write').style.display='none';} 
+                                  });
+                                  new Form.Element.Observer($('user_beh_exp_write_1'), 0.3, function(form, value){
+                                        if (value == 1)  {
+                                        Effect.SlideDown('impression_intention_write');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_write').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_write_2'), 0.3, function(form, value){
+                                        if (value == 2)  {
+                                        Effect.SlideDown('impression_intention_write');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_write').style.display='none';
+                                       }
+                                   });
+                                  new Form.Element.Observer($('user_beh_exp_write_3'), 0.3, function(form, value){
+                                        if (value == 3)  {
+                                        Effect.SlideDown('impression_intention_write');
+                                       }
+                                       else {
+                                       document.getElementById('impression_intention_write').style.display='none';
+                                       }
+                                   });
+                                 //]]>
+                                 </script>
+                                 <div id="impression_intention_write" style="padding-left: 40px; display: none;" >
+                                          <b><i>When would you write a direct message as related to the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :t_imp_int_write, 1 %>
+                                                  <%= f.label :im, "Immediately after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_write, 2 %>
+                                                  <%= f.label :ldrm, "In less than 30 min after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_write, 3 %>
+                                                  <%= f.label :nlvh, "Not later than 4 hrs after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_write, 4 %>
+                                                  <%= f.label :nld, "Not later than a day after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_write, 5 %>
+                                                  <%= f.label :nlw, "Not later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_write, 6 %>
+                                                  <%= f.label :lw, "Later than a week after reading" %><br>
+                                                  <%= f.radio_button :t_imp_int_write, 7 %>
+                                                  <%= f.label :never, "Never" %>
+                                          </p>
+                                          
+                                          <b><i>Which device would you use to write a direct message as related to the message seen, if it arose on Twitter as a real message?</i></b>
+                                          <p>
+                                                  <%= f.radio_button :o_imp_int_write, 1 %>
+                                                  <%= f.label :pn, "Private netbook/laptop/PC" %><br>
+                                                  <%= f.radio_button :o_imp_int_write, 2 %>
+                                                  <%= f.label :pm, "Private mobile device" %><br>
+                                                  <%= f.radio_button :o_imp_int_write, 3 %>
+                                                  <%= f.label :wn, "Netbook/laptop/PC related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_write, 4 %>
+                                                  <%= f.label :wm, "Mobile device related to work" %><br>
+                                                  <%= f.radio_button :o_imp_int_write, 5 %>
+                                                  <%= f.label :pt, "Public terminal (e.g., library, cybercafe, etc.)" %><br>
+                                                  <%= f.radio_button :o_imp_int_write, 6 %>
+                                                  <%= f.label :dk, "Don't know" %>
+                                          </p>             
+                                 </div>
+
+</div>
+<hr>
+  <%end%>
+
+
