@@ -27,11 +27,11 @@
 
 <hr>
  <h3>Did you recognize any errors in the simulation?</h3>
- <%= f.radio_button :any_mistakes, 0 %>
+ <%= f.radio_button :any_mistakes, 1 %>
   <%= f.label :no, "No" %>
-  <%= f.radio_button :any_mistakes, 1 %>
-  <%= f.label :dno, "Don't know" %>
   <%= f.radio_button :any_mistakes, 2 %>
+  <%= f.label :dno, "Don't know" %>
+  <%= f.radio_button :any_mistakes, 3 %>
   <%= f.label :yes, "Yes" %>
 
 <script type="text/javascript">
@@ -67,7 +67,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
       <td width="15%">Moderately clearly explained</td>
       <td width="15%">Somewhat clearly explained</td>
       <td width="15%">Not clearly explained</td>
-      <td width="15%">Did not recognize the explanation</td>
+      <td width="15%">Did not recognize the explanation at all</td>
     </tr>
 
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">

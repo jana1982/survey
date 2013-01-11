@@ -331,9 +331,9 @@ class User < ActiveRecord::Base
 	end
       end
       if current_step == "sources"
-	  if def_neg == 1 || def_oth == 1 
+	  if def_neg == 1 || def_oth == 1 || gov_neg == 1 || gov_oth == 1
 	  does_not_qualify = true
-	  end
+	end
       end
       if does_not_qualify
         return false

@@ -546,18 +546,6 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:expand_2_clicked => 0})
   end
   
-  def generate_99
-    session[:user_params].deep_merge!({:avg_private_replies => 99})
-    session[:user_params].deep_merge!({:avg_stories => 99})
-    session[:user_params].deep_merge!({:avg_trend => 99})
-    session[:user_params].deep_merge!({:avg_follow => 99})
-    session[:user_params].deep_merge!({:avg_unfollow_account => 99})
-    session[:user_params].deep_merge!({:avg_create_lists => 99})
-    session[:user_params].deep_merge!({:avg_add_accounts_lists => 99})
-    session[:user_params].deep_merge!({:avg_unsubscribe_lists => 99})
-    session[:user_params].deep_merge!({:avg_subscribe_lists => 99})
-  end
-  
   def generate0_if_nil
     
   end
