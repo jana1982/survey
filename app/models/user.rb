@@ -132,7 +132,6 @@ class User < ActiveRecord::Base
   attr_accessor :username
   
   def self.csv_export
-    self.secondlist.join('-')
     filename = "twitter_database_export.csv"
     CSV.open(filename, "w") do |csv|
     	csv << ["ID",
