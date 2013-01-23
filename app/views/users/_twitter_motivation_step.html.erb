@@ -434,6 +434,10 @@
                         tbodyRows.push(tbodyO.rows[i]);
                         randIdxs.push(i);
                 }
+                function shuffle(randIdxs)
+                {
+                var s = []; while (randIdxs.length) s.push(randIdxs.splice(Math.random() * randIdxs.length, 1)); while (s.length) randIdxs.push(s.pop());
+                }
                 shuffle(randIdxs);
                 
                 var len = tbodyO.rows.length;
