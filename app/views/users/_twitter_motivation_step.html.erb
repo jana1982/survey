@@ -33,6 +33,7 @@
   <i>Please rate your degree of agreement with each statement.</i>
   </h3>
   <table width="100%" class="hovertable">
+        
     <tr style="text-align: center;" >
       <td ></td>
       <td align="left">
@@ -54,9 +55,9 @@
       <td width="10%">2</td>
     </tr>
     
+<tbody id="tbody1">
     
-    
-    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
+    <tr class="mot1" onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>
        To pass time</td>
       <td style="text-align: center;">
@@ -118,17 +119,17 @@
     
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+      <td>
         To forget my worries </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :forget_worries, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :forget_worries, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :forget_worries, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :forget_worries, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :forget_worries, 5 %></td>
     </tr>
     
@@ -178,17 +179,17 @@
     </tr>
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+      <td>
        To contribute to discussions</td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :contribute, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :contribute, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :contribute, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :contribute, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :contribute, 5 %></td>
     </tr>
     
@@ -268,17 +269,17 @@
     </tr>
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+      <td>
        To communicate with like-minded people </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :communicate, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :communicate, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :communicate, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :communicate, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :communicate, 5 %></td>
     </tr>
     
@@ -343,17 +344,17 @@
     </tr>
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
+      <td>
        To get answers to specific questions </td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :answers_questions, 1 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :answers_questions, 2 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :answers_questions, 3 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :answers_questions, 4 %></td>
-      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+      <td style="text-align: center;">
         <%= f.radio_button :answers_questions, 5 %></td>
     </tr>
     
@@ -416,10 +417,37 @@
       <td style="text-align: center;">
         <%= f.radio_button :far_away , 5 %></td>
     </tr>
-    
+    </tbody>
     </p>
   </table>
-    
+   
+  <script type = "text/javascript">
+    //<![CDATA[
+    window.onload = init;
+  var dataSet = ["To pass time", "To entertain myself", "To occupy my time", "To spend time when I am bored", "To forget my worries", "To help others", "To provide support to others", "To show others encouragement", "To contribute to discussions", "To make new friends with similar interests", "To meet new people with similar interests", "To get to know other people", "To keep in touch with people I have met through Twitter", "To find people like me", "To communicate with like-minded people", "To gather information", "To find out things that I need to know", "To look for information I need", "To talk to a knowledgeable individual about political topics", "To get answers to specific questions", "To keep connect with people who I otherwise would have lost contact with", "To find out what old friends are doing now", "To deepen relationships with people that I have met offline", "To keep in touch with people who live far away" ];
+  
+   function shuffleRows(elemID){
+                // get the one and only <tbody> of the given <table>
+                var tbodyO = document.getElementById('tbody1');
+                var tbodyRows = [], randIdxs = [];
+                for(i=0; i<tbodyO.rows.length; i++){
+                        tbodyRows.push(tbodyO.rows[i]);
+                        randIdxs.push(i);
+                }
+                shuffle(randIdxs);
+                
+                var len = tbodyO.rows.length;
+                while(tbodyO.rows.length > 0){
+                        tbodyO.deleteRow(0);
+                }
+                for(i=0; i<len; i++){
+                        tbodyO.appendChild(tbodyRows[randIdxs[i]]);
+                }
+            }
+  
+  shuffleRows('motivation');
+  //]]>
+  </script>
   <hr>
     <p>
       

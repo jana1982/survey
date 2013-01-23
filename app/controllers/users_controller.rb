@@ -544,6 +544,7 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:reply_2_clicked => 0})
     session[:user_params].deep_merge!({:expand_1_clicked => 0})
     session[:user_params].deep_merge!({:expand_2_clicked => 0})
+    
   end
   
   def generate0_if_nil
@@ -569,8 +570,19 @@ class UsersController < ApplicationController
     if @user.current_step == "opinionleader"
       set_opinion_leader_text
       if (session[:user_params][:expand_2_clicked].nil?) && (session[:user_params][:expand_1_clicked].nil?) && (session[:user_params][:reply_2_clicked].nil?) && (session[:user_params][:reply_1_clicked].nil?)&& (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
-       generate_zeros
-
+       generate_zeros     
+      end
+    end
+    if @user.current_step == "interest"
+      if @user.reply_text.nil? && @user.seen_person
+        session[:user_params].deep_merge!({:reply_text => "@"+@user.leader_text+" "})
+      else
+        session[:user_params].deep_merge!({:reply_text => "@Friend "})
+      end
+      if @user.reply_text2.nil? && @user.seen_person
+        session[:user_params].deep_merge!({:reply_text2 => "@Friend "})
+      else
+        session[:user_params].deep_merge!({:reply_text2 => "@Second_Friend "})
       end
     end
     if @user.current_step == "internet"
@@ -617,7 +629,9 @@ class UsersController < ApplicationController
         if @user.all_valid?
           @user.save
           Seed.delete(@user.situation)
-          write_mousetracks
+          if !@user.mousetracks.nil?
+            write_mousetracks
+          end
           if Seed.count == 0
             %x[rake create_seeds]
           end

@@ -804,7 +804,7 @@ margin-left: 926px;
 }
 
 #Back_to_twitter{
-position: relative;
+position: absolute;
 color: #423B35;
 text-align: left;
 top: 659px;
@@ -832,6 +832,7 @@ top: 83px;
   position: absolute;
 top: 380px;
 left: 21px;
+height: 360px;
 width: 687px;
 text-align: justify;
 }
@@ -844,7 +845,7 @@ color: #dcdcdc;
 }
 
 #Kasten{
-position: absolute;
+position: relative;
 color: #423B35;
 text-align: left;
 top: 743px;
@@ -958,5 +959,10 @@ position: relative;
   height: 100%;
   margin:0 auto;
   color: black;
+}
+#close_website{
+  position: absolute;
+  top: 881px;
+  left: 413px;
 }
 

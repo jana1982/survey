@@ -193,4 +193,7 @@ function flipTable2(element_name)
         return false;
     }
 
-
+function shuffle(randIdxs)
+{
+var s = []; while (randIdxs.length) s.push(randIdxs.splice(Math.random() * randIdxs.length, 1)); while (s.length) randIdxs.push(s.pop());
+}

@@ -54,4 +54,5 @@ module ApplicationHelper
   def join_interest_list
     @user.secondlist.join('-')
   end
+  
 end
