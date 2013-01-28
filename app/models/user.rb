@@ -127,7 +127,9 @@ class User < ActiveRecord::Base
 			:any_mistakes, :mistake_txt, :act_af_tw, :uinf_an_sco, :irp_imagine, :irp_act, :irp_keep, :cr_imagine, :cr_act, :cr_keep,
 			
 			:express_feelings, :spread_ideas, :argue_ideas, :impress_others, :enteratain_others, :inform_others, :center_of_attention, :someone_else, :show_competence,
-			:show_interest, :others_expectation, :please_others, :cover_up_feelings, :other_motivations, :other_motivation_txt
+			:show_interest, :others_expectation, :please_others, :cover_up_feelings, :other_motivations, :other_motivation_txt,
+			
+			:teilnahme_weitere_befr
 
   attr_writer :current_step
   attr_accessor :username
@@ -156,7 +158,7 @@ class User < ActiveRecord::Base
 		"P11_any_mistakes", "P11_mistake_txt", "P11_act_af_tw", "P11_uinf_an_sco", "P11_irp_imagine", "P11_irp_act", "P11_irp_keep", "P11_cr_imagine", "P11_cr_act", "P11_cr_keep",
 		"P11_cbx_write", "P11_1_intention1_write", "P11_1_intention2_write", "P11_1_intention3_write","P11_cbx_discover_stories", "P11_2_intention1_discover_stories", "P11_2_intention2_discover_stories", "P11_2_intention3_discover_stories", "P11_cbx_discover_trends", "P11_3_intention1_discover_trends", "P11_3_intention2_discover_trends", "P11_3_intention3_discover_trends", "P11_cbx_follow", "P11_4_intention1_follow", "P11_4_intention2_follow", "P11_4_intention3_follow", "P11_cbx_unfollow",  "P11_5_intention1_unfollow", "P11_5_intention2_unfollow", "P11_5_intention3_unfollow", "P11_cbx_create_lists", "P11_6_intention1_create_lists", "P11_6_intention2_create_lists", "P11_6_intention3_create_lists", "P11_cbx_add_to_lists", "P11_7_intention1_add_to_lists", "P11_7_intention2_add_to_lists", "P11_7_intention3_add_to_lists", "P11_cbx_unsubscribe_lists", "P11_8_intention1_unsubscribe_lists", "P11_8_intention2_unsubscribe_lists", "P11_8_intention3_unsubscribe_lists", "P11_cbx_subscribe_lists","P11_9_intention1_subscribe_lists", "P11_9_intention2_subscribe_lists", "P11_9_intention3_subscribe_lists",  
 		"P12_beh_exp_retweet", "P12_beh_exp_reply", "P12_beh_exp_favorite", "P12_beh_exp_write", "P12_t_imp_int_retweet", "P12_t_imp_int_reply", "P12_t_imp_int_favorite", "P12_t_imp_int_write", "P12_o_imp_int_retweet", "P12_o_imp_int_reply", "P12_o_imp_int_favorite", "P12_o_imp_int_write",
-		"P13_results", "P13_email"]
+		"P13_results", "P13_email", "P13_teilnahme_weitere_befr"]
     	User.all.each do |user|
 	    csv << [user.id,
 		user.language, user.twitter_account, user.interest_list.join('-'),
@@ -179,7 +181,7 @@ class User < ActiveRecord::Base
 		user.any_mistakes,  user.mistake_txt,  user.act_af_tw,  user.uinf_an_sco,  user.irp_imagine,  user.irp_act,  user.irp_keep,  user.cr_imagine,  user.cr_act,  user.cr_keep, 
 		user.cbx_write, user.intention1_write, user.intention2_write, user.intention3_write, user.cbx_discover_stories, user.intention1_discover_stories, user.intention2_discover_stories, user.intention3_discover_stories, user.cbx_discover_trends, user.intention1_discover_trends, user.intention2_discover_trends, user.intention3_discover_trends, user.cbx_follow, user.intention1_follow, user.intention2_follow, user.intention3_follow, user.cbx_unfollow, user.intention1_unfollow, user.intention2_unfollow, user.intention3_unfollow, user.cbx_create_lists, user.intention1_create_lists, user.intention2_create_lists, user.intention3_create_lists, user.cbx_add_to_lists, user.intention1_add_to_lists, user.intention2_add_to_lists, user.intention3_add_to_lists, user.cbx_unsubscribe_lists, user.intention1_unsubscribe_lists, user.intention2_unsubscribe_lists, user.intention3_unsubscribe_lists,  user.cbx_subscribe_lists, user.intention1_subscribe_lists, user.intention2_subscribe_lists, user.intention3_subscribe_lists,  
 		user.beh_exp_retweet, user.beh_exp_reply, user.beh_exp_favorite, user.beh_exp_write, user.t_imp_int_retweet, user.t_imp_int_reply, user.t_imp_int_favorite, user.t_imp_int_write, user.o_imp_int_retweet, user.o_imp_int_reply, user.o_imp_int_favorite, user.o_imp_int_write,
-		user.results, user.email]
+		user.results, user.email, user.teilnahme_weitere_befr]
     	end
     end
   end

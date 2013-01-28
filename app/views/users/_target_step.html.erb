@@ -17,9 +17,23 @@
   <%= f.label :yes, "interested" %><br>
   <br>
   </div>
+ <hr>
+<h3>If there is a similar survey or simulation, I will participate.</h3>
+<div id="opinion_leader">
+  <%= f.radio_button :teilnahme_weitere_befr, 1 %>
+  <%= f.label :no, "No, I won't like to participate." %><br>
+  <%= f.radio_button :teilnahme_weitere_befr, 1 %>
+  <%= f.label :dontknow, "I don't know yet if I would like to participate." %><br>
+  <%= f.radio_button :teilnahme_weitere_befr, 2 %>
+  <%= f.label :yes, "Yes, I would like to participate." %><br>
+  <br>
+  </div>
+
+
 
  <hr>
   <h3>Please enter your email address if you are interested in the results or would like to take part in the contest.</h3>
  <div id="opinion_leader"><nobr>Email: <%= f.text_field :email %></nobr></div>
 <br>
 <hr>
+  

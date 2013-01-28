@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126203837) do
+ActiveRecord::Schema.define(:version => 20130128102938) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -486,6 +486,7 @@ ActiveRecord::Schema.define(:version => 20130126203837) do
     t.integer  "cover_up_feelings"
     t.integer  "other_motivations"
     t.string   "other_motivation_txt"
+    t.integer  "teilnahme_weitere_befr"
   end
 
 end
