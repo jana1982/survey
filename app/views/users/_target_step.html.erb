@@ -28,12 +28,18 @@
   <%= f.label :yes, "Yes, I would like to participate." %><br>
   <br>
   </div>
-
-
-
- <hr>
+<hr>
+<h3>Your participation code:</h3>
+<div id="opinion_leader">
+Number: <%= h @user.situation %>
+</div>
+<hr>
+  <h3>Please enter your WorkerID.</h3>
+ <div id="opinion_leader"><nobr>WorkerID: <%= f.text_field :email %></nobr></div>
+<br>
+ <!--<hr>
   <h3>Please enter your email address if you are interested in the results or would like to take part in the contest.</h3>
  <div id="opinion_leader"><nobr>Email: <%= f.text_field :email %></nobr></div>
-<br>
+<br>-->
 <hr>
   
