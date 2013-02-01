@@ -18,7 +18,7 @@ class Seed < ActiveRecord::Base
       seed.save!
     end
     
-    #TODO If seeds have been marked as dirty for too long e.g. 5h, then mark them to true and let them be filled out by another user
+   
     seeds = Seed.all(:conditions => ["batch_id = ? AND dirty = ?", highest_batch, false])            
     seed = seeds[rand(seeds.length)]
   end

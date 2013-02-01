@@ -101,21 +101,26 @@ Event.observe(window, 'load', function() {
     });
 
 //Mousetracking
-window.onload = init;
 var user_mouse = new Array();
 var delta = 0;
 var old_delta = 0;
 var time_new = 0; 
-var time_old = 0; 
+var time_old = 0;
 
-function init() {
+
+
+window.onload = init;
+
+function init() {if (document.title == 'Twitter_seite'){
 		if ($('seite_twitter').Event) {
 	          $('seite_twitter').captureEvents(Event.MOUSEMOVE);
-		}
+		};
 	 	time_new = new Date().getTime();
    	time_old = new Date().getTime();
 	 	$('seite_twitter').onmousemove = getCursorXY;
-}
+                
+                
+}}
 
 function getCursorXY(e) {
   time_new = new Date().getTime();
@@ -130,7 +135,8 @@ function getCursorXY(e) {
   time_old = time_new
   old_delta = delta
 }
-
+try{}
+catch(ex){alert('nicht Twitter')};
 function flipTable(element_name) 
     {        
         $("user_"+element_name+"_website_4").checked = true;
