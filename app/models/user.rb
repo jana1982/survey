@@ -202,7 +202,7 @@ class User < ActiveRecord::Base
       self.seen_retweet_message1 = seed.content[0]
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
-      self.interest_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
+      self.interest_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
       self.open_reasons = [1, 2, 3, 4, 5]
     end
   end
@@ -215,6 +215,12 @@ class User < ActiveRecord::Base
   validates_presence_of 	:language, :if => :selection?
   validates_presence_of 	:twitter_account, :if => :selection?
   validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
+  #validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[2], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[3], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[4], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+
   validates_presence_of		:account_name, :if => :internet?, :message => "can't be blank. If you absolutely don't trust the guarantied anonymization of this questionnaire, please insert a name you can identify with.", :if => :internet?
   validates_format_of 		:account_name, :with => /^[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
  
@@ -225,8 +231,8 @@ class User < ActiveRecord::Base
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_format_of 		:surf_twitter_week, :with => /^[0-1]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 19. You can use . to separate decimal places.", :if => :internet?
   validates_format_of 		:surf_twitter_weekend, :with => /^[0-1]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 19. You can use . to separate decimal places.", :if => :internet?
-  #validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
-  #  
+  validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
+  
   validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_3, :if => :opinionleader?, :unless => proc{|obj| obj.ol_3.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
@@ -315,7 +321,7 @@ class User < ActiveRecord::Base
       end      
       # If the user has not selected politcs as the first or second choice
       if current_step == "internet"
-	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[10] == "11"
+	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
 	  print "User did qualify"
 	else	  
 	  does_not_qualify = true

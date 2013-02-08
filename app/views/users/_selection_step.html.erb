@@ -1,7 +1,7 @@
 <TABLE width="100%">
   <TR>
     <TD ALIGN="LEFT">
-      <h2>Part I: Reqirements</h2>
+      <h2>Part I: Your Reqirements</h2>
     </TD>
     <TD ALIGN="RIGHT">
       1/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.01,true,true) %>
@@ -73,7 +73,8 @@
   <%= f.radio_button :twitter_account, 1 %>
   <%= f.label :inaktiv, "I do have an Twitter account, but I don't use it anymore." %><br>
   <%= f.radio_button :twitter_account, 2 %>
-  <%= f.label :active, "Yes, I do have a Twitter account and participate fully on Twitter." %><br>
+  <%= f.label :active, "Yes, I do have a Twitter account and use it." %><br>
+  
 
 <hr>
 <h3>What news topics do you share on Twitter most (1: most shared topic, 17: less shared topic)? <br>Please rank at least your 5 most shared topics.</h3>
@@ -84,13 +85,13 @@
     </td>    
   </tr>
   <tr>
-    <td >
+    <td style="align="left"; valign="top";">
       <ul style="list-style-type: none;">
-	<li class="listnummern">1.</li>
-	<li class="listnummern">2.</li>
-	<li class="listnummern">3.</li>
-	<li class="listnummern">4.</li>
-	<li class="listnummern">5.</li>
+	<li class="listnummern" >1.</li>
+	<li class="listnummern" >2.</li>
+	<li class="listnummern" >3.</li>
+	<li class="listnummern" >4.</li>
+	<li class="listnummern" >5.</li>
 	<li class="listnummern">6.</li>
 	<li class="listnummern">7.</li>
 	<li class="listnummern">8.</li>
@@ -103,21 +104,32 @@
 	<li class="listnummern">15.</li>
 	<li class="listnummern">16.</li>
 	<li class="listnummern">17.</li>
+	<li class="listnummern" style="background-size: contain;background-image: url('../images/streifen.png');">  </li>
+	<li class="listnummern" style="background-size: contain;background-image: url('../images/streifen.png');">  </li>
+	<li class="listnummern" style="background-size: contain;background-image: url('../images/streifen.png');">  </li>
+	<li class="listnummern" style="background-size: contain;background-image: url('../images/streifen.png');">  </li>
+	<li class="listnummern" style="background-size: contain;background-image: url('../images/streifen.png');">  </li>
+	
       </ul>
     </td>
     <td>
       <div id="list_info">      
-	<ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >	  
+	<ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
+	  
 	  <% @user.interest_list.each do |interest| %>
 	    <li class="secondlist_secondlist" id="secondlist_<%= interest %>"
 		onMouseover="document.getElementById ('explanation<%= interest %>').style.display='block';"  
 		onMouseout="document.getElementById('explanation<%= interest %>').style.display='none';">
-	      <div class="handle" style="width: 300px;"> <%= TOPICS[interest] %> </div>
+	      <div class="handle" style="width: 300px;" > <%= TOPICS[interest] %> </div>
+		      
 	    </li>
+	  
 	  <% end %>
 	</ul>
       </div>
     </td>
+    <td id="explanation0" style="display: none; padding-left: 100px;" >This is a placeholder. Please drag at least your 5 most shared topics to the the top of the placeholder. <br><br>If you like, you can rate more or even all topics. You can use the placeholder to separate the sorted topics from the others.</td>
+  
     <td id="explanation1" style="display: none; padding-left: 100px;" ><b><u>Arts, Culture & Entertainment could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
@@ -161,7 +173,7 @@
 									  <li>Trials	 </li>
 									  <li>Prosecution	 </li>
 									  <li>Organized Crime</li>
-									</ul>
+		      						</ul>
     </td>
     <td id="explanation3" style="display: none; padding-left: 100px;"><b><u>Disasters & Accidents could be related to:</u></b>
 									<br>
@@ -443,5 +455,6 @@
 <%= sortable_element :secondlist,
 		     :handle => 'handle',
 		     :url => { :action => 'repeat'}
+		     
 %>
 <hr>
