@@ -2,17 +2,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    @histogram = {
-      'Foo' => 13,
-      'Bar' => 15,
-      'Trouble' => 5,
-      'Braids' => 1,
-      'Something' => 9,
-      'Else' => 13,
-      'Many' => 20,
-      'Zombies' => 7,
-      'nothing' => 0
-    }
+
   end
   
   def show
@@ -47,7 +37,33 @@ class UsersController < ApplicationController
     end
     
   end
+  
+  def repeat3
+    #puts params["secondlist"][0]
+    #result = params["secondlist"].to_a.collect{|e| e.match(/\d+/)[0] rescue ""} #De-serialize the output from the list
+    #puts result
+    #puts params["secondlist"].class
+    session[:user_params].deep_merge!({:rank_source => params[:sourcelist]})
+    respond_to do |format|
+      format.js {
+        render :nothing => true
+      }
+    end
+    
+  end
 
+  def repeat4
+    #puts params["secondlist"][0]
+    #result = params["secondlist"].to_a.collect{|e| e.match(/\d+/)[0] rescue ""} #De-serialize the output from the list
+    #puts result
+    #puts params["secondlist"].class
+    respond_to do |format|
+      format.js {
+        render :nothing => true
+      }
+    end
+    
+  end
 
   def new
     session[:user_params] ||= {}
@@ -277,11 +293,7 @@ class UsersController < ApplicationController
              }
     end
   end
-  
-  
-
-
-    
+ 
   def expand_message
     number = params[:number].to_i
     if number == 1
@@ -567,6 +579,7 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
+    
     if @user.current_step == "opinionleader"
       set_opinion_leader_text
       if (session[:user_params][:expand_2_clicked].nil?) && (session[:user_params][:expand_1_clicked].nil?) && (session[:user_params][:reply_2_clicked].nil?) && (session[:user_params][:reply_1_clicked].nil?)&& (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
@@ -618,21 +631,19 @@ class UsersController < ApplicationController
         session[:user_params].deep_merge!({:avg_subscribe_lists => 0})
       end
     end
- 
-    #if @user.current_step == "twitter"
-    #  render :js => "alert('Please remember! This is a simulation. None of your actions will be transmitted to your Twitter account. Please act as if you would be on Twitter. Thank you');"
-    #end
     if @user.valid?
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
         if @user.all_valid?
           @user.save
+          #Delete the temp user in the db that holds the information
+          User.find_by_not_completed(request.session_options[:id]).delete
           Seed.delete(@user.situation)
           if !@user.mousetracks.nil?
             write_mousetracks
           end
-          if Seed.count == 0
+          if Seed.count == 0 || Seed.find(:all, :conditions => ["dirty = ?", true]).count == Seed.count
             %x[rake create_seeds]
           end
         end
@@ -640,9 +651,19 @@ class UsersController < ApplicationController
         @user.next_step
       end
     end
+    #debugger
     session[:user_step] = @user.current_step
-    
     if @user.new_record? && @user.does_qualify?
+      #Temporal saving of user for the case that he did not complete the survey
+      session_id = request.session_options[:id]
+      #if there was already a shadow copy delete it 
+      if User.find_by_not_completed(session_id) != nil
+        User.find_by_not_completed(session_id).delete
+      end
+      #store the temp user for later retrieval
+      @temp_user = @user.clone
+      @temp_user.not_completed = session_id
+      @temp_user.save(:validate => false)
       render 'new'
     elsif @user.new_record? && !@user.does_qualify?
         session[:user_step] = session[:user_params] = nil

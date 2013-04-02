@@ -8,240 +8,172 @@
 
 
 <TD ALIGN="RIGHT">
-7/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.54,true,true) %>
+7/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.37,true,true) %>
 </TD>
 
 </TR>
 </TABLE>
 <hr>
 <p>
-<h3>How important are the following resources when you need information on a topic related to political news <b>quickly</b>?</h3>
-           <table width="100%" class="hovertable">
-                      <tr>
-                                 <td colspan="2"></td>
-                                 <td colspan="5" align="center" ><b>Level of importance</b></td>
-                      </tr>
+<h3>How important are the following resources when you need information on a topic related to political news <u>quickly</u>?</h3>
+<h4>Please rank the following items by dragging them into the grey box below.<h4>
+<!--<table width="100%">
+           <tr>
+                      <td colspan="3" style="width: 40%;">
+                                 Please rank the following items by dragging them into the grey box below.
+                      </td>
+                      <td style="width: 60%;"></td>
                       
-                      <tr style="text-align: center;" >
-                                 <td width="50%" colspan="2"></td>
-                                 <td width="10%">Very</td>
-                                 <td width="10%">Moderately</td>
-                                 <td width="10%">Somewhat</td>
-                                 <td width="10%">Not</td>
-                                 <td width="10%">Don't know</td>
-                      </tr>
-                      
-                      
-                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
-                                   <b>Traditional mass media</b><br></br>
-                                   (e.g., offline content, websites, media outlets in social network sites or microblogs, rss feeds, newsletters of television, radio, magazines and newspaper)</td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :trad_mass_med_online, 1 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :trad_mass_med_online, 2 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :trad_mass_med_online, 3 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :trad_mass_med_online, 4 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :trad_mass_med_online, 5 %></td>
-                                     
-                      </tr>
-                                                               
-                      <tr id="usertrad_mass_med_online_sub_selection" style="display:none">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;">
-                                            <%= render "usertrad_mass_med_online_sub_selection", :f => f%>
-                                 </td>
-                      </tr>
-                      <script type="text/javascript">                                 
-                      //<![CDATA[
-                       Event.observe(window, 'load', function() {
-                                 if ($('user_trad_mass_med_online_1').checked || $('user_trad_mass_med_online_2').checked){
-                                     Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
-                                     Effect.SlideDown('scala_mmon',{duration : 3.0});
-                                 };
-                       });
-                       new Form.Element.Observer($('user_trad_mass_med_online_1'), 0.3, function(form, value){
-                            if (value == 1) {
-                             Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
-                             Effect.SlideDown('scala_mmon',{duration : 3.0});
-                            }
-                            else {
-                            document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
-                            document.getElementById('scala_mmon').style.display='none';
-                            }
-                        });
-                       new Form.Element.Observer($('user_trad_mass_med_online_2'), 0.3, function(form, value){
-                            if (value == 2) {
-                             Effect.SlideDown('usertrad_mass_med_online_sub_selection',{duration : 3.0});
-                             Effect.SlideDown('scala_mmon',{duration : 3.0});
-                            }
-                            else {
-                            document.getElementById('usertrad_mass_med_online_sub_selection').style.display='none';
-                            document.getElementById('scala_mmon').style.display='none';
-                            }
-                        });
-                      //]]>
-                      </script>
-                      <tr id="scala_mmon" style="text-align: center;display: none;" >
-                                 <td width="50%" colspan="2"></td>
-                                 <td width="10%">Very</td>
-                                 <td width="10%">Moderately</td>
-                                 <td width="10%">Somewhat</td>
-                                 <td width="10%">Not</td>
-                                 <td width="10%">Don't know</td>
-                      </tr>
-                      <tr>
+           </tr>
+           <tr>
+                      <td>
+                                 <ul style="list-style-type: none;">
+                                            <li class="listnummern" >1.</li>
+                                            <li class="listnummern" >2.</li>
+                                            <li class="listnummern" >3.</li>
+                                            <li class="listnummern" >4.</li>
+                                 </ul>
+                      </td>
+                      <td align=left style="background-color: #f2f2f2; width: 150px;">
+                                 <ul class="sortabledemo" id="list1" style="list-style-type: none; width: 200px;" >
+                                            <% if @user.rank_source != nil  %>
+                                                       <% @user.rank_source.each do |sources| %>
+                                                       <li class="openlist2_openlist2" id="list1_<%= sources %>"
+                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
+                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
+                                                       <div class="handle" style="width: 150px;"><%= NEWS_QUICKLY[sources.to_i]%></div>
+                                                       </li>
+                                            <% end %>
+                                            <%end%>
+                                 </ul>           
+                      </td>
+                      <td style="width: 25%;">
+                                 <ul class="sortabledemo" id="list2" style="list-style-type: none;" >
+                                            <% if @user.rank_source.nil?  %>
+                                                       <% dummy = [1,2,3,4]%>
+                                                       <% dummy.each do |sources| %>
+                                                       <li class="openlist2_openlist2" id="list2_<%= sources %>"
+                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
+                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
+                                                       <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[sources]%></div>
+                                                       </li>
+                                                       <% end %>
+                                            <% else %>
+                                                       <li id="list2_0" style="width: 150px;" > </li>
+                                            <%end%>
+                                 </ul>           
+                      </td>
+                      <td id="examples1" style="display: none;" >
+                                 Television, radio, magazines and newspaper (incl. their offline content, websites, media outlets in social network sites or microblogs, rss feeds, newsletters)
+                      </td>
+                      <td id="examples2" style="display: none; " >
+                                 Others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists, opinion leader of your community (via face-to-face, phone, email, social network site, microblogging, forums or chats)
+                      </td>
+                      <td id="examples3" style="display: none; " >
+                                 Blogs, search engines, government sites, community sites
+                      </td>
+           </tr>
+</table>-->
+<div >
+           <div style="float: left;">
+                      <ul style="list-style-type: none;">
+                                            <li class="listnummern" >1.</li>
+                                            <li class="listnummern" >2.</li>
+                                            <li class="listnummern" >3.</li>
+                                            <li class="listnummern" >4.</li>
+                      </ul>
+           </div>
+           <div style="float: left;">
+                      <ul class="sortabledemo" id="sourcelist" style="list-style-type: none;height: 138px; width: 152px; background-color: #f2f2f2;" >
+                                            <% if @user.rank_source != nil  %>
+                                                       <% @user.rank_source.each do |sources| %>
+                                                       <li class="openlist2_openlist2" id="sourcelist_<%= sources %>"
+                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
+                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
+                                                       <div class="handle" style="width: 150px;"><%= NEWS_QUICKLY[sources.to_i]%></div>
+                                                       </li>
+                                            <% end %>
+                                            <%end%>
+                      </ul>
+           </div>
+           <div style="float: left; width:200px;">
+                      <ul class="sortabledemo" id="dummylist" style="list-style-type: none;height: 138px; width: 150px; " >
+                                            <% if @user.rank_source == nil  %>
+                                                       <% dummy = [1,2,3,4] %>
+                                                       <% dummy.each do |sources| %>
+                                                       <li class="openlist2_openlist2" id="dummylist_<%= sources %>"
+                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
+                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
+                                                       <div class="handle" style="width: 150px;"><%= NEWS_QUICKLY[sources]%></div>
+                                                       </li>
+                                            <% end %>
+                                            <%else%>
+                                                       <% if !@user.rank_source.include? "1" %>
+                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 1 %>"
+                                                                  onMouseover="document.getElementById ('examples1').style.display='block';"  
+                                                                  onMouseout="document.getElementById('examples1').style.display='none';">
+                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[1]%></div>
+                                                                  </li>
+                                                       <% end %>           
+                                                       <% if !@user.rank_source.include? "2" %>
+                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 2 %>"
+                                                                  onMouseover="document.getElementById ('examples2').style.display='block';"  
+                                                                  onMouseout="document.getElementById('examples2').style.display='none';">
+                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[2]%></div>
+                                                                  </li>
+                                                       <% end %>
+                                                       <% if !@user.rank_source.include? "3" %>
+                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 3 %>"
+                                                                  onMouseover="document.getElementById ('examples3').style.display='block';"  
+                                                                  onMouseout="document.getElementById('examples3').style.display='none';">
+                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[3]%></div>
+                                                                  </li>
+                                                       <% end %>
+                                                       <% if !@user.rank_source.include? "4" %>
+                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 4 %>"
+                                                                  onMouseover="document.getElementById ('examples4').style.display='block';"  
+                                                                  onMouseout="document.getElementById('examples4').style.display='none';">
+                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[4]%></div>
+                                                                  </li>
+                                                       <% end %>
+                                                       <% if @user.rank_source.collect{|x| x.to_i}.sum >=  10 %>
+                                                                  <li id="dummylist_0" style="width: 150px;" > </li>
+                                                       <% end %>
+                                             <% end %>
+                      </ul>  
+           </div>
+           <div style="float: left; width:30%; ">
+                       <div id="examples1" style="display: none;" >
+                                 Television, radio, magazines and newspaper (incl. their offline content, websites, media outlets in social network sites or microblogs, rss feeds, newsletters)
+                      </div>
+                      <div id="examples2" style="display: none; " >
+                                 Others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists, <%=h @user.leader_text%> (via face-to-face, phone, email, social network site, microblogging, forums or chats)
+                      </div>
+                      <div id="examples3" style="display: none; " >
+                                 Blogs, search engines, government sites
+                      </div>
+                      <div id="examples4" style="display: none; " >
+                                 
+                      </div>
+           </div>
+      
+</div>
 
-                                 <td colspan="7" align="center" ><b></b></td>
-                      </tr>
-                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
-                                    <b>Personal contact: </b><br></br>
-                                    (e.g., face-to-face, phone, email, social network site, microblogging, forums or chat conversations with others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists, opinion leader of your community)</td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :person_contact_online, 1 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :person_contact_online, 2 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :person_contact_online, 3 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :person_contact_online, 4 %></td>
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :person_contact_online, 5 %></td>
-                                     
-                      </tr>                                          
-                      <tr id="user_person_contact_online_sub_selection" style="display:none">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;">
-                                            <%= render "user_person_contact_online_sub_selection", :f => f%>
-                                 </td>
-                      </tr>
-                      <script type="text/javascript">                                 
-                      //<![CDATA[
-                       Event.observe(window, 'load', function() {
-                                 if ($('user_person_contact_online_1').checked || $('user_person_contact_online_2').checked){
-                                     Effect.SlideDown('user_person_contact_online_sub_selection',{duration : 3.0});
-                                     Effect.SlideDown('scala_pcon',{duration : 3.0});
-                                 };
-                       });
-                       new Form.Element.Observer($('user_person_contact_online_1'), 0.3, function(form, value){
-                            if (value == 1) {
-                             Effect.SlideDown('user_person_contact_online_sub_selection',{duration : 3.0});
-                             Effect.SlideDown('scala_pcon',{duration : 3.0});
-                            }
-                            else {
-                            document.getElementById('user_person_contact_online_sub_selection').style.display='none';
-                            document.getElementById('scala_pcon').style.display='none';
-                            }
-                        });
-                       new Form.Element.Observer($('user_person_contact_online_2'), 0.3, function(form, value){
-                            if (value == 2) {
-                             Effect.SlideDown('user_person_contact_online_sub_selection',{duration : 3.0});
-                             Effect.SlideDown('scala_pcon',{duration : 3.0});
-                            }
-                            else {
-                            document.getElementById('user_person_contact_online_sub_selection').style.display='none';
-                            document.getElementById('scala_pcon').style.display='none';
-                            }
-                        });
-                      //]]>
-                      </script>
-                      <tr id="scala_pcon" style="text-align: center;display: none;" >
-                                 <td width="50%" colspan="2"></td>
-                                 <td width="10%">Very</td>
-                                 <td width="10%">Moderately</td>
-                                 <td width="10%">Somewhat</td>
-                                 <td width="10%">Not</td>
-                                 <td width="10%">Don't know</td>
-                      </tr>
-                      <tr>
 
-                                 <td colspan="7" align="center" ><b></b></td>
-                      </tr>
-                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-                                 <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;" colspan="2">
-                                   <b> Self-aggregated news: </b><br></br>
-                                   (e.g., blogs, search engines, government sites, community sites)</td>
-                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 1 %></td>
-                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 2 %></td>
-                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 3 %></td>
-                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 4 %></td>
-                                 <td <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
-                                   <%= f.radio_button :self_aggregated, 5 %></td>
-                                     
-                      </tr>                                           
-                      <tr id="user_aggregated_sub_selection" style="display:none">
-                                 <td width="3%" align="right" valign="top"><img  id="pfeil1" src='../images/pfeil_grau.png' style="height: 45px; width: 45px;"></td>
-                                 <td colspan="6" style="background-color: #f2f2f2;">
-                                            <%= render "user_aggregated_sub_selection", :f => f%>
-                                 </td>
-                      </tr>
-                      <script type="text/javascript">                                 
-                      //<![CDATA[
-                       Event.observe(window, 'load', function() {
-                                 if ($('user_self_aggregated_1').checked || $('user_self_aggregated_2').checked){
-                                     Effect.SlideDown('user_aggregated_sub_selection',{duration : 3.0});
-                                     Effect.SlideDown('scala_pcon',{duration : 3.0});
-                                 };
-                       });
-                       new Form.Element.Observer($('user_self_aggregated_1'), 0.3, function(form, value){
-                            if (value == 1) {
-                             Effect.SlideDown('user_aggregated_sub_selection',{duration : 3.0});
-                             Effect.SlideDown('scala_san',{duration : 3.0});
-                            }
-                            else {
-                            document.getElementById('user_aggregated_sub_selection').style.display='none';
-                            document.getElementById('scala_san').style.display='none';
-                            }
-                        });
-                       new Form.Element.Observer($('user_self_aggregated_2'), 0.3, function(form, value){
-                            if (value == 2) {
-                             Effect.SlideDown('user_aggregated_sub_selection',{duration : 3.0});
-                             Effect.SlideDown('scala_san',{duration : 3.0});
-                            }
-                            else {
-                            document.getElementById('user_aggregated_sub_selection').style.display='none';
-                            document.getElementById('scala_san').style.display='none';
-                            }
-                        });
-                      //]]>
-                      </script>
-                      <tr id="scala_san" style="text-align: center;display: none;" >
-                                 <td width="50%" colspan="2"></td>
-                                 <td width="10%">Very</td>
-                                 <td width="10%">Moderately</td>
-                                 <td width="10%">Somewhat</td>
-                                 <td width="10%">Not</td>
-                                 <td width="10%">Don't know</td>
-                      </tr>
-                      <tr>
 
-                                 <td colspan="7" align="center" ><b></b></td>
-                      </tr>
-                      <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
-                                 <td colspan="2">
-                                   <b> Other sources: </b><br></br>
-                                   <%= f.text_field :other_sources_txt%></td>
-                                 <td style="text-align: center;">
-                                   <%= f.radio_button :other_sources, 1 %></td>
-                                 <td style="text-align: center;">
-                                   <%= f.radio_button :other_sources, 2 %></td>
-                                 <td style="text-align: center;">
-                                   <%= f.radio_button :other_sources, 3 %></td>
-                                 <td style="text-align: center;">
-                                   <%= f.radio_button :other_sources, 4 %></td>
-                                 <td style="text-align: center;">
-                                   <%= f.radio_button :other_sources, 5 %></td>
-                                     
-                      </tr>
-           </table> 
-</p>           
+<%= sortable_element :sourcelist,
+		     :handle => 'handle',
+		     :dropOnEmpty => true,
+		     :containment =>["sourcelist","dummylist"],
+		     :url => { :action => 'repeat3'}
+%>
+<%= sortable_element :dummylist,
+		     :handle => 'handle',
+		     :url => { :action => 'repeat4'}
+%>
+     <div style="clear: both;">
+<br><br>
            
 <hr>
+</div>
+     

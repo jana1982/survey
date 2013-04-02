@@ -55,4 +55,5 @@ module ApplicationHelper
     @user.secondlist.join('-')
   end
   
+  
 end

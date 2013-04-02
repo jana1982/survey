@@ -184,11 +184,12 @@ of your actual position)?</h3>
   <table width="100%">
     <tr>
       <td></td>
-      <td width="15%">Daily</td>
-      <td width="15%">Several days a week</td>
-      <td width="15%">Weekly</td>
-      <td width="15%">Less than weekly</td>
-      <td width="15%">Never</td>
+      <td width="10%">Daily</td>
+      <td width="10%">Several days a week</td>
+      <td width="10%">Weekly</td>
+      <td width="10%">Monthly</td>
+      <td width="10%">Less than monthly</td>
+      <td width="10%">Never</td>
     </tr>
    <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       
@@ -198,6 +199,7 @@ of your actual position)?</h3>
       <td><%= f.radio_button :private_pc, 3 %></td>
       <td><%= f.radio_button :private_pc, 4 %></td>
       <td><%= f.radio_button :private_pc, 5 %></td>
+      <td><%= f.radio_button :private_pc, 6 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
          
@@ -207,6 +209,7 @@ of your actual position)?</h3>
       <td><%= f.radio_button :private_mobile, 3 %></td>
       <td><%= f.radio_button :private_mobile, 4 %></td>
       <td><%= f.radio_button :private_mobile, 5 %></td>
+      <td><%= f.radio_button :private_mobile, 6 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       
@@ -216,6 +219,7 @@ of your actual position)?</h3>
       <td><%= f.radio_button :work_pc, 3 %></td>
       <td><%= f.radio_button :work_pc, 4 %></td>
       <td><%= f.radio_button :work_pc, 5 %></td>
+      <td><%= f.radio_button :work_pc, 6 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
        
@@ -225,6 +229,7 @@ of your actual position)?</h3>
       <td><%= f.radio_button :work_mobile, 3 %></td>
       <td><%= f.radio_button :work_mobile, 4 %></td>
       <td><%= f.radio_button :work_mobile, 5 %></td>
+      <td><%= f.radio_button :work_mobile, 6 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td>Public terminal (e.g., library, cybercafe, etc.)</td>
@@ -233,6 +238,8 @@ of your actual position)?</h3>
       <td><%= f.radio_button :public, 3 %></td>
       <td><%= f.radio_button :public, 4 %></td>
       <td><%= f.radio_button :public, 5 %></td>
+      <td><%= f.radio_button :public, 6 %></td>
     </tr>
   </table>
 <hr>
+

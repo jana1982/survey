@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   serialize :seen_seed
   serialize :interest_list
   serialize :open_reasons
+  serialize :rank_source
+  set_primary_key :id
   
     
   attr_accessible 	:bildung, :alter, :geschlecht, 
@@ -60,24 +62,22 @@ class User < ActiveRecord::Base
 			
 			:interest_list,
 			
-			:other_sup_topic, :interior_policies, :foreign_aid, :regional_authorities, :nuclear_policies, :citizens_initiative, :defence, :elections, :referenda,
-			:human_rights, :treaties, :parties, :constitution, :lobbying, :state_budget, :diplomacy, :other_str_sup_topic, :parliament, :espionage,
-			:local_authorities, :government, :migration, :refugees,
+			:economic_policy, :foreign_affairs, :domestic_politics, :legal_policy, :fiscal_policy, :social_policy, :agricultural_policy, :defence_policy, :family_policy,
+			:healthcare_policy, :traffic_policy, :environmental_policy, :educational_policy, :development_policy, :other_sup_topic, :other_str_sup_topic,
 			
-			:def_neg, :def_oth, :dip_neg, :dip_oth, :ele_neg, :ele_oth, :esp_neg, :esp_oth, :for_neg, :for_oth, :gov_neg, :gov_oth,  :hum_neg, :hum_oth,
-			:loc_neg, :loc_oth, :parl_neg, :parl_oth, :part_neg, :part_oth, :refu_neg, :refu_oth, :auth_neg, :auth_oth, :bud_neg, :bud_oth, :tre_neg, :tre_oth,
-			:cons_neg, :cons_oth, :int_neg, :int_oth, :mig_neg, :mig_oth, :cit_neg, :cit_oth, :refe_neg, :refe_oth, :nuc_neg, :nuc_oth, :lob_neg, :lob_oth,
-			:oth_neg, :oth_oth, :oth_neg_txt, :oth_oth_txt,
+			:econ_gen, :econ_sent, :for_gen, :for_sent, :dom_gen, :dom_sent, :leg_gen, :leg_sent, :fisc_gen, :fisc_sent, :soc_gen, :soc_sent, :agr_gen, :agr_sent, :def_gen,
+			:def_sent, :fam_gen, :fam_sent, :health_gen, :health_sent, :traf_gen, :traf_sent, :env_gen, :env_sent, :educ_gen, :educ_sent, :dev_gen, :dev_sent,
+			:oth_neg, :oth_oth, :oth_neg_txt,
 			
 			:slider, :dk_pol_percentage,
 			
-			:trad_mass_med_online, :person_contact_online, :self_aggregated,
+			:rank_source, 
 			
-			:tv, :radio, :magazin, :newspaper,
+			:tv, :radio, :magazine, :newspaper,
 			
 			:tv_website, :tv_sn, :tv_mb, :tv_rss, :tv_newsletter,
 			:radio_website, :radio_sn, :radio_mb, :radio_rss, :radio_newsletter,
-			:magazin_website, :magazin_sn, :magazin_mb, :magazin_rss, :magazin_newsletter,
+			:magazine_website, :magazine_sn, :magazine_mb, :magazine_rss, :magazine_newsletter,
 			:newspaper_website, :newspaper_sn, :newspaper_mb, :newspaper_rss, :newspaper_newsletter,
 			
 			:people_interested, :locals, :aquaintances, :contact_friends, :colleagues, :experts, :contact_ol,
@@ -89,9 +89,11 @@ class User < ActiveRecord::Base
 			:experts_mb, :locals_email, :colleagues_sn, :people_interested_sn, :people_interested_phone, :locals_phone, :aquaintances_phone,
 			:contact_friends_phone, :colleagues_phone, :experts_phone, :contact_ol_phone, 
 			
-			:community_site, :blogs, :goverment_site, :search_engine,
+			:blogs, :goverment_site, :search_engine,
 			
-			:other_sources_txt, :other_sources,
+			:not_completed, :self_aggr_txt, :pers_cont_txt, :trad_media_txt, 
+			
+			:other_sources_txt, 
 			
 			:came_across_same_intrest, :came_across_twitter_list, :heard_mass_media, :heard_internet, :read_retweet, :read_reply, :heard_friends_follow,
 			:heard_friends_interact, :heard_friends_recommend, :heard_friends_write, :heard_friends_follow_nf, :heard_friends_interact_nf, :heard_friends_recommend_nf,
@@ -143,10 +145,10 @@ class User < ActiveRecord::Base
 		"P3_account_name", "P3_twitter_privat_work", "P3_number_followers", "P3_number_followeees", "P3_number_messages", "P3_avg_login", "P3_avg_tweet_number", "P3_avg_retweet", "P3_avg_at_replies", "P3_avg_private_replies", "P3_avg_favorite_tweets", "P3_avg_read_tweets", "P3_avg_read_twtimes", "P3_avg_stories", "P3_avg_trend", "P3_avg_search_keywords", "P3_avg_follow", "P3_avg_unfollow_account", "P3_avg_search_accounts", "P3_avg_who_to_follow", "P3_avg_browse_categories", "P3_avg_find_friends", "P3_avg_activities_friends", "P3_avg_create_lists", "P3_avg_add_accounts_lists", "P3_avg_subscribe_lists", "P3_avg_unsubscribe_lists", "P3_avg_delete_accounts_lists", 
 		"P4_pass_time", "P4_entertain_myself", "P4_occupy_time", "P4_time_bored", "P4_forget_worries", "P4_help_others", "P4_support_others", "P4_show_encouragement", "P4_contribute", "P4_new_friends", "P4_new_people", "P4_get_know_other", "P4_keep_in_touch", "P4_find_people", "P4_communicate", "P4_gather_information", "P4_find_out_things", "P4_look_for_information", "P4_knowledgeable_individual", "P4_answers_questions", "P4_keep_connect", "P4_find_out", "P4_deepen_relationships", "P4_far_away", "P4_express_feelings", "P4_spread_ideas", "P4_argue_ideas", "P4_impress_others", "P4_enteratain_others", "P4_inform_others", "P4_center_of_attention", "P4_someone_else", "P4_show_competence", "P4_show_interest", "P4_others_expectation", "P4_please_others", "P4_cover_up_feelings", "P4_other_motivations", "P4_other_motivation_txt",
 		"P5_ol_1", "P5_ol_2", "P5_ol_3", "P5_ol_4", "P5_ol_5", "P5_ol_6", "P5_ol_7", "P5_ol_8", "P5_ol_9", "P5_ol_10", "P5_ol_11", "P5_ol_12", "P5_leader_text",
-		"P6_defence", "P6_diplomacy", "P6_elections", "P6_espionage", "P6_foreign_aid", "P6_government", "P6_human_rights", "P6_local_authorities", "P6_parliament", "P6_parties", "P6_refugees", "P6_regional_authorities", "P6_state_budget", "P6_treaties", "P6_constitution", "P6_interior_policies", "P6_migration", "P6_citizens_initiative", "P6_referenda", "P6_nuclear_policies", "P6_lobbying", "P6_other_sup_topic", "P6_other_str_sup_topic", "P6_slider", "P6_dk_pol_percentage", "P6_def_neg", "P6_def_oth", "P6_dip_neg", "P6_dip_oth", "P6_ele_neg", "P6_ele_oth", "P6_esp_neg", "P6_esp_oth", "P6_for_neg", "P6_for_oth", "P6_gov_neg", "P6_gov_oth",  "P6_hum_neg", "P6_hum_oth", "P6_loc_neg", "P6_loc_oth", "P6_parl_neg", "P6_parl_oth", "P6_part_neg", "P6_part_oth", "P6_refu_neg", "P6_refu_oth", "P6_auth_neg", "P6_auth_oth", "P6_bud_neg", "P6_bud_oth", "P6_tre_neg", "P6_tre_oth", "P6_cons_neg", "P6_cons_oth", "P6_int_neg", "P6_int_oth", "P6_mig_neg", "P6_mig_oth", "P6_cit_neg", "P6_cit_oth", "P6_refe_neg", "P6_refe_oth", "P6_nuc_neg", "P6_nuc_oth", "P6_lob_neg", "P6_lob_oth", "P6_oth_neg", "P6_oth_oth", "P6_oth_neg_txt", "P6_oth_oth_txt",
-		"P7_trad_mass_med_online", "P7_1_tv_website", "P7_1_tv_sn", "P7_1_tv_mb", "P7_1_tv_rss", "P7_1_tv_newsletter", "P7_1_tv", "P7_1_radio_website", "P7_1_radio_sn", "P7_1_radio_mb", "P7_1_radio_rss", "P7_1_radio_newsletter", "P7_1_radio", "P7_1_magazin_website", "P7_1_magazin_sn", "P7_1_magazin_mb", "P7_1_magazin_rss", "P7_1_magazin_newsletter", "P7_1_magazin", "P7_1_newspaper_website", "P7_1_newspaper_sn", "P7_1_newspaper_mb", "P7_1_newspaper_rss", "P7_1_newspaper_newsletter", "P7_1_newspaper",
-		"P7_person_contact_online", "P7_2_people_interested_email", "P7_2_people_interested_sn", "P7_2_people_interested_mb", "P7_2_people_interested_forum", "P7_2_people_interested_chat", "P7_2_people_interested_phone", "P7_2_people_interested", "P7_2_locals_email", "P7_2_locals_sn", "P7_2_locals_mb", "P7_2_locals_forum", "P7_2_locals_chat", "P7_2_locals_phone", "P7_2_locals", "P7_2_aquaintances_email", "P7_2_aquaintances_sn", "P7_2_aquaintances_mb", "P7_2_aquaintances_forum", "P7_2_aquaintances_chat", "P7_2_aquaintances_phone", "P7_2_aquaintances", "P7_2_contact_friends_email", "P7_2_contact_friends_sn", "P7_2_contact_friends_mb", "P7_2_contact_friends_forum", "P7_2_contact_friends_chat", "P7_2_contact_friends_phone", "P7_2_contact_friends", "P7_2_colleagues_email", "P7_2_colleagues_sn", "P7_2_colleagues_mb", "P7_2_colleagues_forum", "P7_2_colleagues_chat", "P7_2_colleagues_phone", "P7_2_colleagues", "P7_2_experts_email", "P7_2_experts_sn", "P7_2_experts_mb", "P7_2_experts_forum", "P7_2_experts_chat", "P7_2_experts_phone", "P7_2_experts", "P7_2_contact_ol_email", "P7_2_contact_ol_sn", "P7_2_contact_ol_mb", "P7_2_contact_ol_forum", "P7_2_contact_ol_chat", "P7_2_contact_ol_phone", "P7_2_contact_ol",
-		"P7_self_aggregated", "P7_3_blogs", "P7_3_search_engine", "P7_3_goverment_site", "P7_3_community_site", "P7_other_sources", "P7_other_sources_txt",
+		"P6_economic_policy", "P6_foreign_affairs", "P6_domestic_politics", "P6_legal_policy", "P6_fiscal_policy", "P6_social_policy", "P6_agricultural_policy", "P6_defence_policy", "P6_family_policy", "P6_healthcare_policy", "P6_traffic_policy", "P6_environmental_policy", "P6_educational_policy", "P6_development_policy", "P6_other_sup_topic", "P6_other_str_sup_topic", "P6_slider", "P6_dk_pol_percentage", "P6_econ_gen", "P6_econ_sent", "P6_for_gen", "P6_for_sent", "P6_dom_gen", "P6_dom_sent", "P6_leg_gen", "P6_leg_sent", "P6_fisc_gen", "P6_fisc_sent", "P6_soc_gen", "P6_soc_sent", "P6_agr_gen", "P6_agr_sent", "P6_def_gen", "P6_def_sent", "P6_fam_gen", "P6_fam_sent", "P6_health_gen", "P6_health_sent", "P6_traf_gen", "P6_traf_sent", "P6_env_gen", "P6_env_sent", "P6_educ_gen", "P6_educ_sent", "P6_dev_gen", "P6_dev_sent", "P6_oth_neg", "P6_oth_oth", "P6_oth_neg_txt",
+		"P7_rank_source", "P7_1_tv_website", "P7_1_tv_sn", "P7_1_tv_mb", "P7_1_tv_rss", "P7_1_tv_newsletter", "P7_1_tv", "P7_1_radio_website", "P7_1_radio_sn", "P7_1_radio_mb", "P7_1_radio_rss", "P7_1_radio_newsletter", "P7_1_radio", "P7_1_magazine_website", "P7_1_magazine_sn", "P7_1_magazine_mb", "P7_1_magazine_rss", "P7_1_magazine_newsletter", "P7_1_magazine", "P7_1_newspaper_website", "P7_1_newspaper_sn", "P7_1_newspaper_mb", "P7_1_newspaper_rss", "P7_1_newspaper_newsletter", "P7_1_newspaper", "P7_1_trad_media_txt",
+		"P7_2_people_interested_email", "P7_2_people_interested_sn", "P7_2_people_interested_mb", "P7_2_people_interested_forum", "P7_2_people_interested_chat", "P7_2_people_interested_phone", "P7_2_people_interested", "P7_2_locals_email", "P7_2_locals_sn", "P7_2_locals_mb", "P7_2_locals_forum", "P7_2_locals_chat", "P7_2_locals_phone", "P7_2_locals", "P7_2_aquaintances_email", "P7_2_aquaintances_sn", "P7_2_aquaintances_mb", "P7_2_aquaintances_forum", "P7_2_aquaintances_chat", "P7_2_aquaintances_phone", "P7_2_aquaintances", "P7_2_contact_friends_email", "P7_2_contact_friends_sn", "P7_2_contact_friends_mb", "P7_2_contact_friends_forum", "P7_2_contact_friends_chat", "P7_2_contact_friends_phone", "P7_2_contact_friends", "P7_2_colleagues_email", "P7_2_colleagues_sn", "P7_2_colleagues_mb", "P7_2_colleagues_forum", "P7_2_colleagues_chat", "P7_2_colleagues_phone", "P7_2_colleagues", "P7_2_experts_email", "P7_2_experts_sn", "P7_2_experts_mb", "P7_2_experts_forum", "P7_2_experts_chat", "P7_2_experts_phone", "P7_2_experts", "P7_2_contact_ol_email", "P7_2_contact_ol_sn", "P7_2_contact_ol_mb", "P7_2_contact_ol_forum", "P7_2_contact_ol_chat", "P7_2_contact_ol_phone", "P7_2_contact_ol", "P7_2_pers_cont_txt",
+		"P7_3_blogs", "P7_3_search_engine", "P7_3_goverment_site", "P7_3_self_aggr_txt", "P7_other_sources_txt",
 		"P8_heard_mass_media", "P8_knew_colleagues", "P8_read_retweet", "P8_came_accross_wtf", "P8_knew_aquaintances", "P8_came_across_bc", "P8_heard_friends_write", "P8_1_heard_friends_write_nf", "P8_met_informal", "P8_knew_friends", "P8_heard_friends_interact", "P8_2_heard_friends_interact_nf", "P8_read_reply", "P8_came_across_twitter_list", "P8_heard_internet", "P8_came_across_same_intrest", "P8_heard_friends_recommend", "P8_3_heard_friends_recommend_nf", "P8_met_formal", "P8_came_across_stories", "P8_heard_friends_follow", "P8_4_heard_friends_follow_nf", "P8_other_reasons", "P8_other_reasons_txt",
 		"P9_A_follow_1_clicked", "P9_A_follow_m1", "P9_A_reply_1_clicked", "P9_A_reply_text", "P9_A_reply_time_m1", "P9_A_reply_2_clicked", "P9_A_reply_text2", "P9_A_reply_time_m2", "P9_A_retweet_1_clicked", "P9_A_retweet_time_m1", "P9_A_retweet_2_clicked", "P9_A_retweet_time_m2", "P9_A_favorite_1_clicked", "P9_A_favorite_time_m1", "P9_A_favorite_2_clicked", "P9_A_favorite_time_m2", "P9_A_expand_1_clicked", "P9_A_open_time_m1", "P9_A_expand_2_clicked", "P9_A_open_time_m2", "P9_A_new_tweet_clicked", "P9_A_tweet_text_n", "P9_A_compose_tweet_clicked", "P9_A_tweet_text", "P9_A_new_tweet_time", "P9_A_search_clicked", "P9_A_search", "P9_A_search_time", "P9_A_link_clicked", "P9_A_message_hover_m1", "P9_A_message_hover_m2", "P9_A_mousetracks",
 		"P9_M_batch_id", "P9_M_seen_seed", "P9_M_situation", "P9_M_seen_retweet_message1", "P9_M_seen_multiple_messages", "P9_M_seen_person", "P9_M_seen_at", "P9_M_seen_message_1", "P9_M_seen_message_2", "P9_M_seen_headline", "P9_M_seen_message_long",
@@ -158,7 +160,8 @@ class User < ActiveRecord::Base
 		"P11_any_mistakes", "P11_mistake_txt", "P11_act_af_tw", "P11_uinf_an_sco", "P11_irp_imagine", "P11_irp_act", "P11_irp_keep", "P11_cr_imagine", "P11_cr_act", "P11_cr_keep",
 		"P11_cbx_write", "P11_1_intention1_write", "P11_1_intention2_write", "P11_1_intention3_write","P11_cbx_discover_stories", "P11_2_intention1_discover_stories", "P11_2_intention2_discover_stories", "P11_2_intention3_discover_stories", "P11_cbx_discover_trends", "P11_3_intention1_discover_trends", "P11_3_intention2_discover_trends", "P11_3_intention3_discover_trends", "P11_cbx_follow", "P11_4_intention1_follow", "P11_4_intention2_follow", "P11_4_intention3_follow", "P11_cbx_unfollow",  "P11_5_intention1_unfollow", "P11_5_intention2_unfollow", "P11_5_intention3_unfollow", "P11_cbx_create_lists", "P11_6_intention1_create_lists", "P11_6_intention2_create_lists", "P11_6_intention3_create_lists", "P11_cbx_add_to_lists", "P11_7_intention1_add_to_lists", "P11_7_intention2_add_to_lists", "P11_7_intention3_add_to_lists", "P11_cbx_unsubscribe_lists", "P11_8_intention1_unsubscribe_lists", "P11_8_intention2_unsubscribe_lists", "P11_8_intention3_unsubscribe_lists", "P11_cbx_subscribe_lists","P11_9_intention1_subscribe_lists", "P11_9_intention2_subscribe_lists", "P11_9_intention3_subscribe_lists",  
 		"P12_beh_exp_retweet", "P12_beh_exp_reply", "P12_beh_exp_favorite", "P12_beh_exp_write", "P12_t_imp_int_retweet", "P12_t_imp_int_reply", "P12_t_imp_int_favorite", "P12_t_imp_int_write", "P12_o_imp_int_retweet", "P12_o_imp_int_reply", "P12_o_imp_int_favorite", "P12_o_imp_int_write",
-		"P13_results", "P13_email", "P13_teilnahme_weitere_befr"]
+		"P13_results", "P13_email", "P13_teilnahme_weitere_befr",
+		"P14_not_completed"]
     	User.all.each do |user|
 	    csv << [user.id,
 		user.language, user.twitter_account, user.interest_list.join('-'),
@@ -166,10 +169,10 @@ class User < ActiveRecord::Base
 		user.account_name, user.twitter_privat_work, user.number_followers, user.number_followeees, user.number_messages, user.avg_login, user.avg_tweet_number, user.avg_retweet, user.avg_at_replies, user.avg_private_replies, user.avg_favorite_tweets, user.avg_read_tweets, user.avg_read_twtimes, user.avg_stories, user.avg_trend, user.avg_search_keywords, user.avg_follow, user.avg_unfollow_account, user.avg_search_accounts, user.avg_who_to_follow, user.avg_browse_categories, user.avg_find_friends, user.avg_activities_friends, user.avg_create_lists, user.avg_add_accounts_lists, user.avg_subscribe_lists, user.avg_unsubscribe_lists, user.avg_delete_accounts_lists,
 		user.pass_time, user.entertain_myself, user.occupy_time, user.time_bored, user.forget_worries, user.help_others, user.support_others, user.show_encouragement, user.contribute, user.new_friends, user.new_people, user.get_know_other, user.keep_in_touch, user.find_people, user.communicate, user.gather_information, user.find_out_things, user.look_for_information, user.knowledgeable_individual, user.answers_questions, user.keep_connect, user.find_out, user.deepen_relationships, user.far_away, user.express_feelings, user.spread_ideas, user.argue_ideas, user.impress_others, user.enteratain_others, user.inform_others, user.center_of_attention, user.someone_else, user.show_competence, user.show_interest, user.others_expectation, user.please_others, user.cover_up_feelings, user.other_motivations, user.other_motivation_txt,
 		user.ol_1, user.ol_2, user.ol_3, user.ol_4, user.ol_5, user.ol_6, user.ol_7, user.ol_8, user.ol_9, user.ol_10, user.ol_11, user.ol_12, user.leader_text,
-		user.defence, user.diplomacy, user.elections, user.espionage, user.foreign_aid, user.government, user.human_rights, user.local_authorities, user.parliament, user.parties, user.refugees, user.regional_authorities, user.state_budget, user.treaties, user.constitution, user.interior_policies, user.migration, user.citizens_initiative, user.referenda, user.nuclear_policies, user.lobbying, user.other_sup_topic, user.other_str_sup_topic, user.slider, user.dk_pol_percentage,user.def_neg, user.def_oth, user.dip_neg, user.dip_oth, user.ele_neg, user.ele_oth, user.esp_neg, user.esp_oth, user.for_neg, user.for_oth, user.gov_neg, user.gov_oth,  user.hum_neg, user.hum_oth, user.loc_neg, user.loc_oth, user.parl_neg, user.parl_oth, user.part_neg, user.part_oth, user.refu_neg, user.refu_oth, user.auth_neg, user.auth_oth, user.bud_neg, user.bud_oth, user.tre_neg, user.tre_oth, user.cons_neg, user.cons_oth, user.int_neg, user.int_oth, user.mig_neg, user.mig_oth, user.cit_neg, user.cit_oth, user.refe_neg, user.refe_oth, user.nuc_neg, user.nuc_oth, user.lob_neg, user.lob_oth, user.oth_neg, user.oth_oth, user.oth_neg_txt, user.oth_oth_txt,
-		user.trad_mass_med_online, user.tv_website, user.tv_sn, user.tv_mb, user.tv_rss, user.tv_newsletter, user.tv, user.radio_website, user.radio_sn, user.radio_mb, user.radio_rss, user.radio_newsletter, user.radio, user.magazin_website, user.magazin_sn, user.magazin_mb, user.magazin_rss, user.magazin_newsletter, user.magazin, user.newspaper_website, user.newspaper_sn, user.newspaper_mb, user.newspaper_rss, user.newspaper_newsletter, user.newspaper,
-		user.person_contact_online, user.people_interested_email, user.people_interested_sn, user.people_interested_mb, user.people_interested_forum, user.people_interested_chat, user.people_interested_phone, user.people_interested, user.locals_email, user.locals_sn, user.locals_mb, user.locals_forum, user.locals_chat, user.locals_phone, user.locals, user.aquaintances_email, user.aquaintances_sn, user.aquaintances_mb, user.aquaintances_forum, user.aquaintances_chat, user.aquaintances_phone, user.aquaintances, user.contact_friends_email, user.contact_friends_sn, user.contact_friends_mb, user.contact_friends_forum, user.contact_friends_chat, user.contact_friends_phone, user.contact_friends, user.colleagues_email, user.colleagues_sn, user.colleagues_mb, user.colleagues_forum, user.colleagues_chat, user.colleagues_phone, user.colleagues, user.experts_email, user.experts_sn, user.experts_mb, user.experts_forum, user.experts_chat, user.experts_phone, user.experts, user.contact_ol_email, user.contact_ol_sn, user.contact_ol_mb, user.contact_ol_forum, user.contact_ol_chat, user.contact_ol_phone, user.contact_ol,
-		user.self_aggregated, user.blogs, user.search_engine, user.goverment_site, user.community_site, user.other_sources, user.other_sources_txt,
+		user.economic_policy, user.foreign_affairs, user.domestic_politics, user.legal_policy, user.fiscal_policy, user.social_policy, user.agricultural_policy, user.defence_policy, user.family_policy, user.healthcare_policy, user.traffic_policy, user.environmental_policy, user.educational_policy, user.development_policy, user.other_sup_topic, user.other_str_sup_topic, user.slider, user.dk_pol_percentage, @user.econ_gen, @user.econ_sent, @user.for_gen, @user.for_sent, @user.dom_gen, @user.dom_sent, @user.leg_gen, @user.leg_sent, @user.fisc_gen, @user.fisc_sent, @user.soc_gen, @user.soc_sent, @user.agr_gen, @user.agr_sent, @user.def_gen, @user.def_sent, @user.fam_gen, @user.fam_sent, @user.health_gen, @user.health_sent, @user.traf_gen, @user.traf_sent, @user.env_gen, @user.env_sent, @user.educ_gen, @user.educ_sent, @user.dev_gen, @user.dev_sent, @user.oth_neg, @user.oth_oth, @user.oth_neg_txt,
+		user.rank_source, user.tv_website, user.tv_sn, user.tv_mb, user.tv_rss, user.tv_newsletter, user.tv, user.radio_website, user.radio_sn, user.radio_mb, user.radio_rss, user.radio_newsletter, user.radio, user.magazine_website, user.magazine_sn, user.magazine_mb, user.magazine_rss, user.magazine_newsletter, user.magazine, user.newspaper_website, user.newspaper_sn, user.newspaper_mb, user.newspaper_rss, user.newspaper_newsletter, user.newspaper, user.trad_media_txt,
+		user.people_interested_email, user.people_interested_sn, user.people_interested_mb, user.people_interested_forum, user.people_interested_chat, user.people_interested_phone, user.people_interested, user.locals_email, user.locals_sn, user.locals_mb, user.locals_forum, user.locals_chat, user.locals_phone, user.locals, user.aquaintances_email, user.aquaintances_sn, user.aquaintances_mb, user.aquaintances_forum, user.aquaintances_chat, user.aquaintances_phone, user.aquaintances, user.contact_friends_email, user.contact_friends_sn, user.contact_friends_mb, user.contact_friends_forum, user.contact_friends_chat, user.contact_friends_phone, user.contact_friends, user.colleagues_email, user.colleagues_sn, user.colleagues_mb, user.colleagues_forum, user.colleagues_chat, user.colleagues_phone, user.colleagues, user.experts_email, user.experts_sn, user.experts_mb, user.experts_forum, user.experts_chat, user.experts_phone, user.experts, user.contact_ol_email, user.contact_ol_sn, user.contact_ol_mb, user.contact_ol_forum, user.contact_ol_chat, user.contact_ol_phone, user.contact_ol, user.pers_cont_txt,
+		user.blogs, user.search_engine, user.goverment_site, user.self_aggr_txt, user.other_sources_txt,
 		user.heard_mass_media, user.knew_colleagues, user.read_retweet, user.came_accross_wtf, user.knew_aquaintances, user.came_across_bc, user.heard_friends_write, user.heard_friends_write_nf, user.met_informal, user.knew_friends, user.heard_friends_interact, user.heard_friends_interact_nf, user.read_reply, user.came_across_twitter_list, user.heard_internet, user.came_across_same_intrest, user.heard_friends_recommend, user.heard_friends_recommend_nf, user.met_formal, user.came_across_stories, user.heard_friends_follow, user.heard_friends_follow_nf, user.other_reasons, user.other_reasons_txt,
 		user.follow_1_clicked, user.follow_m1, user.reply_1_clicked, user.reply_text, user.reply_time_m1, user.reply_2_clicked, user.reply_text2, user.reply_time_m2, user.retweet_1_clicked, user.retweet_time_m1, user.retweet_2_clicked, user.retweet_time_m2, user.favorite_1_clicked, user.favorite_time_m1, user.favorite_2_clicked, user.favorite_time_m2, user.expand_1_clicked, user.open_time_m1, user.expand_2_clicked, user.open_time_m2, user.new_tweet_clicked, user.tweet_text_n, user.compose_tweet_clicked, user.tweet_text, user.new_tweet_time, user.search_clicked, user.search, user.search_time, user.link_clicked, user.message_hover_m1, user.message_hover_m2, user.mousetracks,
 		user.batch_id, user.seen_seed, user.situation, user.seen_retweet_message1, user.seen_multiple_messages, user.seen_person, user.seen_at, user.seen_message_1, user.seen_message_2, user.seen_headline, user.seen_message_long,
@@ -181,7 +184,8 @@ class User < ActiveRecord::Base
 		user.any_mistakes,  user.mistake_txt,  user.act_af_tw,  user.uinf_an_sco,  user.irp_imagine,  user.irp_act,  user.irp_keep,  user.cr_imagine,  user.cr_act,  user.cr_keep, 
 		user.cbx_write, user.intention1_write, user.intention2_write, user.intention3_write, user.cbx_discover_stories, user.intention1_discover_stories, user.intention2_discover_stories, user.intention3_discover_stories, user.cbx_discover_trends, user.intention1_discover_trends, user.intention2_discover_trends, user.intention3_discover_trends, user.cbx_follow, user.intention1_follow, user.intention2_follow, user.intention3_follow, user.cbx_unfollow, user.intention1_unfollow, user.intention2_unfollow, user.intention3_unfollow, user.cbx_create_lists, user.intention1_create_lists, user.intention2_create_lists, user.intention3_create_lists, user.cbx_add_to_lists, user.intention1_add_to_lists, user.intention2_add_to_lists, user.intention3_add_to_lists, user.cbx_unsubscribe_lists, user.intention1_unsubscribe_lists, user.intention2_unsubscribe_lists, user.intention3_unsubscribe_lists,  user.cbx_subscribe_lists, user.intention1_subscribe_lists, user.intention2_subscribe_lists, user.intention3_subscribe_lists,  
 		user.beh_exp_retweet, user.beh_exp_reply, user.beh_exp_favorite, user.beh_exp_write, user.t_imp_int_retweet, user.t_imp_int_reply, user.t_imp_int_favorite, user.t_imp_int_write, user.o_imp_int_retweet, user.o_imp_int_reply, user.o_imp_int_favorite, user.o_imp_int_write,
-		user.results, user.email, user.teilnahme_weitere_befr]
+		user.results, user.email, user.teilnahme_weitere_befr,
+		user.not_completed]
     	end
     end
   end
@@ -195,6 +199,7 @@ class User < ActiveRecord::Base
       seed.dirty = true
       seed.time_setup = Time.now
       seed.save!
+      self.created_at = Time.now
       self.situation = seed.id
       self.batch_id = seed.batch_id
       self.seen_seed = seed.content
@@ -203,7 +208,8 @@ class User < ActiveRecord::Base
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
       self.interest_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
-      self.open_reasons = [1, 2, 3, 4, 5]
+      self.open_reasons = [1,2,3,4,5]
+ 
     end
   end
   
@@ -222,29 +228,29 @@ class User < ActiveRecord::Base
   #validates_format_of 		:interest_list[4], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
 
   validates_presence_of		:account_name, :if => :internet?, :message => "can't be blank. If you absolutely don't trust the guarantied anonymization of this questionnaire, please insert a name you can identify with.", :if => :internet?
-  validates_format_of 		:account_name, :with => /^[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
+  validates_format_of 		:account_name, :with => /^[@]?[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
  
   validates_numericality_of 	:number_followers, :allow_nil => true, :allow_blank => true, :if => :internet? 
   validates_numericality_of	:number_followeees, :allow_nil => true, :allow_blank => true, :if => :internet? 
   validates_numericality_of	:number_messages, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_week, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
-  validates_format_of 		:surf_twitter_week, :with => /^[0-1]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 19. You can use . to separate decimal places.", :if => :internet?
-  validates_format_of 		:surf_twitter_weekend, :with => /^[0-1]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 19. You can use . to separate decimal places.", :if => :internet?
+  validates_format_of 		:surf_twitter_week, :with => /^[0-9]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 99. You can use . to separate decimal places.", :if => :internet?
+  validates_format_of 		:surf_twitter_weekend, :with => /^[0-3]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 39. You can use . to separate decimal places.", :if => :internet?
   validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
   
-  validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_3, :if => :opinionleader?, :unless => proc{|obj| obj.ol_3.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_4, :if => :opinionleader?, :unless => proc{|obj| obj.ol_4.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_5, :if => :opinionleader?, :unless => proc{|obj| obj.ol_5.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_6, :if => :opinionleader?, :unless => proc{|obj| obj.ol_6.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_7, :if => :opinionleader?, :unless => proc{|obj| obj.ol_7.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_8, :if => :opinionleader?, :unless => proc{|obj| obj.ol_8.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_9, :if => :opinionleader?, :unless => proc{|obj| obj.ol_9.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_10, :if => :opinionleader?, :unless => proc{|obj| obj.ol_10.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_11, :if => :opinionleader?, :unless => proc{|obj| obj.ol_11.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
-  validates_format_of 	:ol_12, :if => :opinionleader?, :unless => proc{|obj| obj.ol_12.blank?},	:with => /^[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_3, :if => :opinionleader?, :unless => proc{|obj| obj.ol_3.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_4, :if => :opinionleader?, :unless => proc{|obj| obj.ol_4.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_5, :if => :opinionleader?, :unless => proc{|obj| obj.ol_5.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_6, :if => :opinionleader?, :unless => proc{|obj| obj.ol_6.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_7, :if => :opinionleader?, :unless => proc{|obj| obj.ol_7.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_8, :if => :opinionleader?, :unless => proc{|obj| obj.ol_8.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_9, :if => :opinionleader?, :unless => proc{|obj| obj.ol_9.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_10,:if => :opinionleader?, :unless => proc{|obj| obj.ol_10.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_11,:if => :opinionleader?, :unless => proc{|obj| obj.ol_11.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
+  validates_format_of 	:ol_12,:if => :opinionleader?, :unless => proc{|obj| obj.ol_12.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validate 		:at_least_one_ol, :if => :opinionleader?
     
   def at_least_one_ol
@@ -255,6 +261,10 @@ class User < ActiveRecord::Base
   
   def current_step
       @current_step || steps.first
+  end
+  
+  def introduction?
+    current_step == "introduction"
   end
   
   def selection?
@@ -268,9 +278,45 @@ class User < ActiveRecord::Base
   def internet?
     current_step == "internet"
   end
+  
+  def twitter_motivation?
+    current_step == "twitter_motivation"
+  end
 
   def opinionleader?
    current_step == "opinionleader"
+  end
+  
+  def interest?
+    current_step == "interest"
+  end
+  
+  def sources?
+    current_step == "sources"
+  end
+  
+  def sources_extent?
+    current_step == "sources_extent"
+  end
+  
+  def reasons_for_ol?
+    current_step == "reasons_for_ol"
+  end
+  
+  def twitter?
+    current_step == "twitter"
+  end
+  
+  def message_relevance?
+    current_step == "message_relevance"
+  end
+  
+  def target_variables?
+    current_step == "target_variables"
+  end
+  
+  def behavioral_expectation?
+    current_step == "behavioral_expectation"
   end
   
   def target?
@@ -285,7 +331,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ introduction  selection demographic internet twitter_motivation opinionleader interest sources reasons_for_ol
+      %w[ introduction  selection demographic internet twitter_motivation opinionleader interest sources sources_extent reasons_for_ol
 	 twitter message_relevance target_variables behavioral_expectation target]          
   end
 
@@ -334,12 +380,12 @@ class User < ActiveRecord::Base
 	end 
       end
       if current_step == "twitter_motivation"
-	if avg_retweet == 6
+	if avg_retweet == 7
 	  does_not_qualify = true
 	end
       end
       if current_step == "sources"
-	  if def_neg == 1 || def_oth == 1 || gov_neg == 1 || gov_oth == 1
+	  if def_gen == 1 || for_gen == 1 
 	  does_not_qualify = true
 	end
       end

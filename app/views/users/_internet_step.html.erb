@@ -40,19 +40,19 @@
 <hr>
 
 <p>
-  <h3>What are your Twitter account measures?</h3>
+  <h3>What are your Twitter account details? It could help to open Twitter in addition to the questionnaire.</h3>
         <div id="opinion_leader_text">
                  <table>
                  <tr>
-                   <td>Please fill in your follower number here:</td> 
+                   <td>How many Followers do you have?</td> 
                    <td> <%= f.text_field :number_followers, :size => 10, :maxlength => 10 %></td>
                  </tr>
                  <tr>
-                   <td>Please fill in your followee number here:</td>
+                   <td>How many accounts are you following?</td>
                    <td><%= f.text_field :number_followeees, :size => 10, :maxlength => 10 %></td>
                  </tr>
                  <tr>
-                   <td>Please fill in the total number of your messages here:</td>
+                   <td>How many Tweets did you write all in all?</td>
                    <td><%= f.text_field :number_messages, :size => 10, :maxlength => 10 %></td>
                  </tr>
                </table>
@@ -63,6 +63,7 @@
 
   <p>
   <h3>How frequently do you do the following Twitter related actions?</h3>
+  Highlighted points will show an example if you move your cursor to the particular expression.
   <table width="100%" class="hovertable">
     <tr style="text-align: center;" >
       <td ></td>
@@ -70,6 +71,7 @@
       <td width="10%">Daily</td>
       <td width="10%">Several days a week</td>
       <td width="10%">Weekly</td>
+      <td width="10%">Monthly</td>
       <td width="10%">Less than weekly</td>
       <td width="10%">Never</td>
     </tr>
@@ -89,6 +91,8 @@
         <%= f.radio_button :avg_login, 5 %></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :avg_login, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :avg_login, 7 %></td>
     </tr>
     
     
@@ -107,6 +111,8 @@
         <%= f.radio_button :avg_tweet_number, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_tweet_number, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_tweet_number, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -123,6 +129,8 @@
         <%= f.radio_button :avg_retweet, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_retweet, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_retweet, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
       <td >
@@ -139,10 +147,12 @@
         <%= f.radio_button :avg_at_replies, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_at_replies, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_at_replies, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';">   
-      <td >
-        Write direct messages to your Twitter friends:</td>
+      <td > <a href='#' class="popup">Write direct messages to your Twitter friends:<span><img src='../images/direct_messages.png'></span></a>
+        </td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_private_replies, 1 %></td>
       <td style="text-align: center;">
@@ -155,6 +165,8 @@
         <%= f.radio_button :avg_private_replies, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_private_replies, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_private_replies, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">Favorite Tweets:</td>
@@ -170,6 +182,8 @@
         <%= f.radio_button :avg_favorite_tweets, 5 %></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :avg_favorite_tweets, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :avg_favorite_tweets, 7 %></td>
     </tr>
     
     
@@ -188,6 +202,8 @@
         <%= f.radio_button :avg_read_tweets, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_read_tweets, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_read_tweets, 7 %></td>
     </tr>
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
@@ -205,11 +221,13 @@
         <%= f.radio_button :avg_read_twtimes, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_read_twtimes, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_read_twtimes, 7 %></td>
     </tr>
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
-        Reading tailored Tweets on the discover page of Twitter:</td>
+        <a href='#' class="popup">Reading tailored Tweets on the discover page of Twitter:<span><img src='../images/stories.png'></span></a></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_stories, 1 %></td>
       <td style="text-align: center;">
@@ -222,10 +240,13 @@
         <%= f.radio_button :avg_stories, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_stories, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_stories, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
-      <td >
-        Discovering trends on Twitter:</td>
+      <td>
+        <a href='#' class="popup">Discovering tailored trends on Twitter:<span><img src='../images/trends.png'></span></a>
+        </td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_trend, 1 %></td>
       <td style="text-align: center;">
@@ -238,6 +259,8 @@
         <%= f.radio_button :avg_trend, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_trend, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_trend, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
@@ -254,6 +277,8 @@
         <%= f.radio_button :avg_search_keywords, 5 %></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :avg_search_keywords, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :avg_search_keywords, 7 %></td>
     </tr>
 
     
@@ -272,6 +297,8 @@
         <%= f.radio_button :avg_follow, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_follow, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_follow, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -288,6 +315,8 @@
         <%= f.radio_button :avg_unfollow_account, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_unfollow_account, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_unfollow_account, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -304,10 +333,12 @@
         <%= f.radio_button :avg_search_accounts, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_search_accounts, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_search_accounts, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
-      <td >
-        Exploring the "Who to follow" category on the Twitter discover page:</td>
+      <td ><a href='#' class="popup">Exploring the "Who to follow" category on the Twitter discover page:<span><img src='../images/Who_to_follow2.png'></span></a>
+        </td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_who_to_follow, 1 %></td>
       <td style="text-align: center;">
@@ -320,10 +351,12 @@
         <%= f.radio_button :avg_who_to_follow, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_who_to_follow, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_who_to_follow, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
-      <td >
-        Browsing through categories on the Twitter discover page:</td>
+      <td ><a href='#' class="popup">Browsing through categories on the Twitter discover page:<span><img src='../images/categories.png'></span></a>
+        </td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_browse_categories, 1 %></td>
       <td style="text-align: center;">
@@ -336,10 +369,12 @@
         <%= f.radio_button :avg_browse_categories, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_browse_categories, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_browse_categories, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
-      <td >
-        Finding friends (e.g., searching for them on Twitter or inviting them to Twitter):</td>
+      <td ><a href='#' class="popup"> Finding friends (e.g., searching for them on Twitter or inviting them to Twitter):<span><img src='../images/find_friends.png'></span></a>
+       </td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_find_friends, 1 %></td>
       <td style="text-align: center;">
@@ -352,11 +387,13 @@
         <%= f.radio_button :avg_find_friends, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_find_friends, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_find_friends, 7 %></td>
     </tr>
     
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-        Looking for recent activities of Twitter friends:</td>
+        <a href='#' class="popup">Looking for recent activities of Twitter friends:<span><img src='../images/activity.png'></span></a></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :avg_activities_friends, 1 %></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
@@ -369,6 +406,8 @@
         <%= f.radio_button :avg_activities_friends, 5 %></td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
         <%= f.radio_button :avg_activities_friends, 6 %></td>
+      <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
+        <%= f.radio_button :avg_activities_friends, 7 %></td>
     </tr>
     
     
@@ -387,6 +426,8 @@
         <%= f.radio_button :avg_create_lists, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_create_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_create_lists, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -403,6 +444,8 @@
         <%= f.radio_button :avg_add_accounts_lists, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_add_accounts_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_add_accounts_lists, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -419,6 +462,8 @@
         <%= f.radio_button :avg_subscribe_lists, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_subscribe_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_subscribe_lists, 7 %></td>
     </tr>
        <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -435,6 +480,8 @@
         <%= f.radio_button :avg_unsubscribe_lists, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_unsubscribe_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_unsubscribe_lists, 7 %></td>
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"> 
       <td >
@@ -451,6 +498,8 @@
         <%= f.radio_button :avg_delete_accounts_lists, 5 %></td>
       <td style="text-align: center;">
         <%= f.radio_button :avg_delete_accounts_lists, 6 %></td>
+      <td style="text-align: center;">
+        <%= f.radio_button :avg_delete_accounts_lists, 7 %></td>
     </tr>
 
 
@@ -458,16 +507,17 @@
 <hr>
   
 <p>
-  <h3>How long do you actively surf on Twitter on average per day?</h3>
+  <h3>How long do you actively surf on Twitter on average per week?</h3>
+  If you surf less, please use expressions like 0.5 (once in two weeks).
         <div id="opinion_leader_text">
                  <table>
                  <tr>
-                   <td>Please fill in the number of hours you surf on Twitter on an average weekday:</td> 
-                   <td> <%= f.text_field :surf_twitter_week, :size => 4, :maxlength => 4%>hours per day</td>
+                   <td>Please fill in the number of hours you surf on Twitter on an average week (mo-fr):</td> 
+                   <td> <%= f.text_field :surf_twitter_week, :size => 4, :maxlength => 4%>hours per week</td>
                  </tr>
                  <tr>
-                   <td>Please fill in the number of hours you surf on Twitter on an average day of your weekend:</td>
-                   <td><%= f.text_field :surf_twitter_weekend, :size => 4, :maxlength => 4%>hours per day</td>
+                   <td>Please fill in the number of hours you surf on Twitter on an average weekend:</td>
+                   <td><%= f.text_field :surf_twitter_weekend, :size => 4, :maxlength => 4%>hours per week</td>
                  </tr>
                </table>
         </div>   

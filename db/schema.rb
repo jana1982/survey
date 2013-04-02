@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128102938) do
+ActiveRecord::Schema.define(:version => 20130402204230) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -216,39 +216,30 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "avg_unsubscribe_lists"
     t.string   "other_str_sup_topic"
     t.integer  "other_sup_topic",              :limit => 255
-    t.integer  "defence",                      :limit => 255
-    t.integer  "diplomacy",                    :limit => 255
-    t.integer  "elections",                    :limit => 255
-    t.integer  "espionage",                    :limit => 255
-    t.integer  "foreign_aid",                  :limit => 255
-    t.integer  "government",                   :limit => 255
-    t.integer  "human_rights",                 :limit => 255
-    t.integer  "parliament",                   :limit => 255
-    t.integer  "parties",                      :limit => 255
-    t.integer  "refugees",                     :limit => 255
-    t.integer  "regional_authorities",         :limit => 255
-    t.integer  "state_budget",                 :limit => 255
-    t.integer  "treaties",                     :limit => 255
-    t.integer  "constitution",                 :limit => 255
-    t.integer  "interior_policies",            :limit => 255
-    t.integer  "migration",                    :limit => 255
-    t.integer  "referenda",                    :limit => 255
-    t.integer  "citizens_initiative",          :limit => 255
-    t.integer  "lobbying",                     :limit => 255
-    t.integer  "nuclear_policies",             :limit => 255
-    t.integer  "local_authorities"
+    t.integer  "economic_policy",              :limit => 255
+    t.integer  "foreign_affairs",              :limit => 255
+    t.integer  "domestic_politics",            :limit => 255
+    t.integer  "legal_policy",                 :limit => 255
+    t.integer  "fiscal_policy",                :limit => 255
+    t.integer  "social_policy",                :limit => 255
+    t.integer  "agricultural_policy",          :limit => 255
+    t.integer  "family_policy",                :limit => 255
+    t.integer  "healthcare_policy",            :limit => 255
+    t.integer  "traffic_policy",               :limit => 255
+    t.integer  "environmental_policy",         :limit => 255
+    t.integer  "educational_policy",           :limit => 255
+    t.integer  "development_policy",           :limit => 255
+    t.integer  "defence_policy"
     t.integer  "slider"
     t.integer  "dk_pol_percentage"
     t.integer  "people_interested_phone"
-    t.integer  "trad_mass_med_online"
-    t.integer  "person_contact_online"
+    t.string   "rank_source"
     t.integer  "twitter_privat_work"
     t.integer  "locals_phone"
     t.integer  "came_across_twitter_list"
-    t.integer  "self_aggregated"
     t.integer  "tv"
     t.integer  "radio"
-    t.integer  "magazin"
+    t.integer  "magazine"
     t.integer  "newspaper"
     t.integer  "tv_website"
     t.integer  "tv_sn"
@@ -260,11 +251,11 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "radio_mb"
     t.integer  "radio_rss"
     t.integer  "radio_newsletter"
-    t.integer  "magazin_website"
-    t.integer  "magazin_sn"
-    t.integer  "magazin_mb"
-    t.integer  "magazin_rss"
-    t.integer  "magazin_newsletter"
+    t.integer  "magazine_website"
+    t.integer  "magazine_sn"
+    t.integer  "magazine_mb"
+    t.integer  "magazine_rss"
+    t.integer  "magazine_newsletter"
     t.integer  "newspaper_website"
     t.integer  "newspaper_sn"
     t.integer  "newspaper_mb"
@@ -315,8 +306,7 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "blogs"
     t.integer  "search_engine"
     t.integer  "goverment_site"
-    t.integer  "community_site"
-    t.integer  "other_sources"
+    t.string   "not_completed"
     t.string   "other_sources_txt"
     t.integer  "heard_mass_media"
     t.integer  "heard_internet"
@@ -364,10 +354,10 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "favorite_pr_meaningful"
     t.integer  "favorite_pr_important"
     t.integer  "favorite_pr_significant"
-    t.integer  "dip_neg"
-    t.integer  "dip_oth"
-    t.integer  "ele_neg"
-    t.integer  "ele_oth"
+    t.integer  "for_gen"
+    t.integer  "for_sent"
+    t.integer  "dom_gen"
+    t.integer  "dom_sent"
     t.integer  "retweet_pr_relevant"
     t.integer  "retweet_pr_meaningful"
     t.integer  "retweet_pr_important"
@@ -389,10 +379,10 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "favorite_pr_meaningful_ck"
     t.integer  "favorite_pr_important_ck"
     t.integer  "favorite_pr_significant_ck"
-    t.integer  "esp_neg"
-    t.integer  "def_oth"
+    t.integer  "leg_gen"
+    t.integer  "econ_sent"
     t.integer  "avg_read_twtimes"
-    t.integer  "def_neg"
+    t.integer  "econ_gen"
     t.integer  "retweet_pr_relevant_ck"
     t.integer  "retweet_pr_meaningful_ck"
     t.integer  "retweet_pr_important_ck"
@@ -403,45 +393,30 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "retweet_oc_significant_ck"
     t.string   "open_reasons_others"
     t.string   "email"
-    t.integer  "esp_oth"
-    t.integer  "for_neg"
-    t.integer  "for_oth"
-    t.integer  "gov_neg"
-    t.integer  "gov_oth"
-    t.integer  "hum_neg"
-    t.integer  "hum_oth"
-    t.integer  "loc_neg"
-    t.integer  "loc_oth"
-    t.integer  "parl_neg"
-    t.integer  "parl_oth"
-    t.integer  "part_neg"
-    t.integer  "part_oth"
-    t.integer  "refu_neg"
-    t.integer  "refu_oth"
-    t.integer  "auth_neg"
-    t.integer  "auth_oth"
-    t.integer  "bud_neg"
-    t.integer  "bud_oth"
-    t.integer  "tre_neg"
-    t.integer  "tre_oth"
-    t.integer  "cons_neg"
-    t.integer  "cons_oth"
-    t.integer  "int_neg"
-    t.integer  "int_oth"
-    t.integer  "mig_neg"
-    t.integer  "mig_oth"
-    t.integer  "cit_neg"
-    t.integer  "cit_oth"
-    t.integer  "refe_neg"
-    t.integer  "refe_oth"
-    t.integer  "nuc_neg"
-    t.integer  "nuc_oth"
-    t.integer  "lob_neg"
-    t.integer  "lob_oth"
+    t.integer  "leg_sent"
+    t.integer  "fisc_gen"
+    t.integer  "fisc_sent"
+    t.integer  "soc_gen"
+    t.integer  "soc_sent"
+    t.integer  "agr_gen"
+    t.integer  "agr_sent"
+    t.integer  "def_gen"
+    t.integer  "def_sent"
+    t.integer  "fam_gen"
+    t.integer  "fam_sent"
+    t.integer  "health_gen"
+    t.integer  "health_sent"
+    t.integer  "traf_gen"
+    t.integer  "traf_sent"
+    t.integer  "env_gen"
+    t.integer  "env_sent"
+    t.integer  "educ_gen"
+    t.integer  "educ_sent"
+    t.integer  "dev_gen"
+    t.integer  "dev_sent"
     t.integer  "oth_neg"
     t.integer  "oth_oth"
     t.string   "oth_neg_txt"
-    t.string   "oth_oth_txt"
     t.integer  "beh_exp_favorite"
     t.integer  "beh_exp_write"
     t.integer  "t_imp_int_retweet"
@@ -487,6 +462,9 @@ ActiveRecord::Schema.define(:version => 20130128102938) do
     t.integer  "other_motivations"
     t.string   "other_motivation_txt"
     t.integer  "teilnahme_weitere_befr"
+    t.string   "self_aggr_txt"
+    t.string   "pers_cont_txt"
+    t.string   "trad_media_txt"
   end
 
 end

@@ -9,7 +9,7 @@ a img {
 }
 
 a {
-  color: #0000FF;
+  color: #884141;
 }
 
 .clear {
@@ -183,12 +183,30 @@ li .handle {
   line-height: 40px;
   
   }
+
+.openlist2_openlist2{
+  border: solid;
+  border-color: white;
+  background-color:#f2f2f2;
+  height: 30px;
+  width: 150px;
+  text-align: left;
+}
+
+.openlist2_openlist2:hover{
+  background-color:#e2e2e2;
+}
+
+
 #secondlist_0{
   background-size: contain;
   background-image: url('../images/Platzhalter_draglist.png');
   height: 172px;
 }
 
+/*#list2_0{
+  display: none;
+}*/
 
 .unten{
   vertical-align: bottom;
@@ -1209,4 +1227,29 @@ h2
   border-image: initial;
   -webkit-rtl-ordering:  logical;
   height:15px;
+}
+
+a.popup {
+  text-decoration: none;
+  
+  position: relative;
+  display: block;
+}
+a.popup:hover {
+  border: none;
+}
+a.popup img {
+  border: solid;
+  height: 50%;
+}
+a.popup span {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 0;
+
+}
+a.popup:hover span {
+  visibility: visible;
 }

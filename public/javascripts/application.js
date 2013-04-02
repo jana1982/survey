@@ -152,7 +152,7 @@ function flipTable(element_name)
             $(element_name+"_online3").style.display = 'none';
             $(element_name+"_online4").style.display = 'none';
             $(element_name+"_online5").style.display = 'none';
-            $(element_name+"_online_flip").update("Show");
+            $(element_name+"_online_flip").update("Show "+element_name+" section");
         }
         else {
             $(element_name+"_online0").style.display = '';
@@ -161,7 +161,7 @@ function flipTable(element_name)
             $(element_name+"_online3").style.display = '';
             $(element_name+"_online4").style.display = '';
             $(element_name+"_online5").style.display = '';
-            $(element_name+"_online_flip").update("Set all values in section to 'not important' and hide");
+            $(element_name+"_online_flip").update("Set all values in "+element_name+" section to 'not important' and hide");
         }
         return false;
     }
@@ -183,7 +183,7 @@ function flipTable2(element_name)
             $(element_name+"_online5").style.display = 'none';
             $(element_name+"_online6").style.display = 'none';
             $(element_name+"_scale").style.display = 'none';
-            $(element_name+"_online_flip").update("Show");
+            $(element_name+"_online_flip").update("Show section");
         }
         else {
             $(element_name+"_online0").style.display = '';

@@ -378,7 +378,7 @@
       </div>
     </p>
   </div>
-  <% else %>
+  <% elsif ((@user.reply_text.length-2) != @user.leader_text.length ) %>
     <div id="zusatzfragen_rt" >
       <%= render "zusatzfragen_reply", :f => f  %> 
     </div>

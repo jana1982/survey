@@ -37,18 +37,19 @@
 <script type="text/javascript">
 //<![CDATA[
 Event.observe(window, 'load', function() {
-                                 if ($('user_any_mistakes_2').checked){
+                                 if ($('user_any_mistakes_3').checked){
                                      Effect.Appear('others_any_mistake',{duration : 3.0});
                                  };
                        });
- new Form.Element.Observer($('user_any_mistakes_2'), 0.3, function(form, value){
-      if (value == 2) {
+ new Form.Element.Observer($('user_any_mistakes_3'), 0.3, function(form, value){
+      if (value == 3) {
        Effect.SlideDown('others_any_mistake')
       }
       else {
       document.getElementById('others_any_mistake').style.display='none';
       }
   });
+ 
 //]]>
 </script>
 <div id="others_any_mistake" style="display:none; left:20px;">
@@ -224,10 +225,10 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
  <h3>Unfortunately the simulation could not offer you all the features of Twitter, but it was asked that you act as if you were on your real Twitter account.<br><br>
  With this in your mind, would you use other features that were missing in the simulation?
  </h3>
-           <i>Tip: You can select more than one feature.</i>
+           <i>You can select more than one feature.</i>
             <div style="padding-left: 20px;" class="randomordercontent group1">
            <p>
-                      <% if @user.avg_private_replies != 6 %>
+                      <% if @user.avg_private_replies != 7 %>
                       <p>
                                  <%= f.check_box :cbx_write, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Write direct messages
@@ -256,7 +257,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_stories != 6 %>
+                    <% if @user.avg_stories != 7 %>
                       <p>
                                  <%= f.check_box :cbx_discover_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Reading tailored Tweets related to the topic presented on the discover page 
@@ -285,7 +286,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_trend != 6 %>
+                    <% if @user.avg_trend != 7 %>
                       <p>
                                  <%= f.check_box :cbx_discover_trends, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Discover trends related to the topic presented
@@ -314,7 +315,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_follow != 6 %> 
+                    <% if @user.avg_follow != 7 %> 
                       <p>
                                  <%= f.check_box :cbx_follow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Follow new accounts related to the topic presented
@@ -343,7 +344,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_unfollow_account != 6 %> 
+                    <% if @user.avg_unfollow_account != 7 %> 
                       <p>
                                  <%= f.check_box :cbx_unfollow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Unfollow new accounts related to the topic presented
@@ -372,7 +373,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_create_lists != 6 %>   
+                    <% if @user.avg_create_lists != 7 %>   
                       <p>
                                  <%= f.check_box :cbx_create_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Create lists related to the topic presented
@@ -401,7 +402,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_add_accounts_lists != 6 %>  
+                    <% if @user.avg_add_accounts_lists != 7 %>  
                       <p>
                                  <%= f.check_box :cbx_add_to_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Add accounts to lists related to the topic presented
@@ -430,7 +431,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_unsubscribe_lists != 6 %>  
+                    <% if @user.avg_unsubscribe_lists != 7 %>  
                       <p>
                                  <%= f.check_box :cbx_unsubscribe_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Unsubscribe from lists related to the topic presented
@@ -459,7 +460,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_subscribe_lists != 6 %>
+                    <% if @user.avg_subscribe_lists != 7 %>
                       <p>
                                  <%= f.check_box :cbx_subscribe_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Subscribe to lists related to the topic presented
