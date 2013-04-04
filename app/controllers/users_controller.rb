@@ -99,6 +99,8 @@ class UsersController < ApplicationController
     end
   end
   
+
+  
   def reply1
     if session[:user_params][:reply_1_clicked] == nil
         session[:user_params].deep_merge!({:reply_1_clicked => 1})
@@ -393,6 +395,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def website
+    @user = User.new(session[:user_params])
+    @user.current_step = "twitter"
+  end
 
   def link_website
     if session[:user_params][:link_clicked] == nil
@@ -410,6 +416,7 @@ class UsersController < ApplicationController
             }
     end
   end
+  
   def compose_tweet
     if session[:user_params][:compose_tweet_clicked] == nil
       session[:user_params].deep_merge!({:compose_tweet_clicked => 1})

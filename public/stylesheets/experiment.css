@@ -761,14 +761,14 @@ table.hovertable td {
 #link_website{
     background-color:rgba(0,0,0,0.6);
   width:100%;
-  height: 830px;  
+  height: 100%;  
   left:7px; top:83px;
   margin:0 auto;
   position: absolute;
 }
 
 #website_field{
-     background-image: url('../images/news_mitte2.png');
+     background-image: url('../images/news_mitte3.png');
      background-size: cover;
     background-position: left 0px;
     position:relative;
@@ -830,7 +830,7 @@ top: 83px;
 
 #Nachricht{
   position: absolute;
-top: 380px;
+top: 257px;
 left: 21px;
 height: 360px;
 width: 687px;
@@ -850,7 +850,7 @@ color: #423B35;
 text-align: left;
 top: 743px;
 width: 680px;
-height: 86px;
+height: 102px;
 border: solid;
 left: 21px;
 border-color: #dcdcdc;
@@ -860,9 +860,9 @@ border-color: #dcdcdc;
   position: absolute;
   color: #423b35;
   text-align: left;
-top: 400px;
+top: 375px;
 width: 200px;
-height: 243px;
+height: 474px;
 border: solid;
 left: 738px;
 border-color: #dcdcdc;

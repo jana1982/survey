@@ -28,7 +28,7 @@ module ApplicationHelper
   end
   
   def reply_text_helper
-    if @user.reply_text.nil?
+    if @user.reply_text == 0
       "@"+displayed_person+" "
     else
       @user.reply_text
@@ -36,7 +36,7 @@ module ApplicationHelper
   end
   
   def reply_text_helper2
-    if @user.reply_text.nil?
+    if @user.reply_text == 0
       "@Second_Friend "
     else
       @user.reply_text2
@@ -44,7 +44,7 @@ module ApplicationHelper
   end
   
   def reply_text_helper3
-    if @user.reply_text.nil?
+    if @user.reply_text == 0
       "@Friend "
     else
       @user.reply_text2

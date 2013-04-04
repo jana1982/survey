@@ -383,25 +383,7 @@
       <%= render "zusatzfragen_reply", :f => f  %> 
     </div>
   <% end %>
-
-  <% elsif @user.seen_multiple_messages && @user.seen_person %>
-    <% if ((@user.reply_text.length-2) == @user.leader_text.length && @user.reply_text2 == "@Friend " ) %>
-    <div id="no_open">
-     <p>
-    <h3>Could you please mention some reasons why you didn't reply to one of the messages in the simulation?</h3>
-    <div id="opinion_leader_text">
-          Please fill in possible reasons why you didn't reply to
-          the message seen. It could help to reflect on what messages
-          you normally reply and why.<br>
-        <%= f.text_area :reason_nrep   , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
-        </div>
-      </p>
-    </div>
-  <% else %>
-    <div id="zusatzfragen_rt" >
-      <%= render "zusatzfragen_reply", :f => f  %> 
-    </div>
-  <% end %>
+  
   <% elsif !@user.seen_multiple_messages && !@user.seen_person%>
   <% if (@user.reply_text == "@Friend " ) %>
   <div id="no_open">
@@ -415,12 +397,31 @@
       </div>
     </p>
   </div>
-  <% else %>
+  <% elsif (@user.reply_text != "@Friend " ) %>
     <div id="zusatzfragen_rt" >
       <%= render "zusatzfragen_reply", :f => f  %> 
     </div>
   <% end %>
 
+  <% elsif @user.seen_multiple_messages && @user.seen_person %>
+    <% if (((@user.reply_text.length-2) == @user.leader_text.length) && (@user.reply_text2 == "@Friend " )) %>
+    <div id="no_open">
+     <p>
+    <h3>Could you please mention some reasons why you didn't reply to one of the messages in the simulation?</h3>
+    <div id="opinion_leader_text">
+          Please fill in possible reasons why you didn't reply to
+          the message seen. It could help to reflect on what messages
+          you normally reply and why.<br>
+        <%= f.text_area :reason_nrep   , :rows => 4, :value =>text, :style => 'color:grey;', :onclick =>"this.style.color='black'" %>
+        </div>
+      </p>
+    </div>
+  <% elsif (((@user.reply_text.length-2) != @user.leader_text.length) || (@user.reply_text2 != "@Friend " ))%>
+    <div id="zusatzfragen_rt" >
+      <%= render "zusatzfragen_reply", :f => f  %> 
+    </div>
+  <% end %>
+  
   <% elsif @user.seen_multiple_messages && !@user.seen_person %>
     <% if (@user.reply_text == "@Friend " &&  @user.reply_text2 == "@Second_Friend " ) %>
     <div id="no_open">
@@ -434,7 +435,7 @@
         </div>
       </p>
     </div>
-  <% else %>
+  <% elsif ((@user.reply_text != "@Friend ") ||  (@user.reply_text2 != "@Second_Friend " )) %>
     <div id="zusatzfragen_rt" >
       <%= render "zusatzfragen_reply", :f => f  %> 
     </div>

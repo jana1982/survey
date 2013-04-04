@@ -15,10 +15,12 @@
             onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>"
             >
             <p>            
-              <%= h(message) %>
+              <!--<%= h(message) %>
               <%= link_to_remote "bit.ly/Q7fm",
                   :url => {:action => "link_website", :id => @user.id,  :number => @number}
-              %>
+              %>-->
+              <%= message %>
+              <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
             </p>
       </div>
     <% else %>
@@ -27,9 +29,9 @@
             onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m1"}) %>"
             >
             <p>            
-              <%= message %><%= link_to_remote "bit.ly/Q7fm",
-                  :url => {:action => "link_website", :id => @user.id,  :number => @number}
-              %>
+              <%= message %>
+              <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
+
             </p>
       </div>
     <% end %>

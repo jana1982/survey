@@ -48,6 +48,8 @@
   
   
       </div>
+      <%if @user.link_clicked == nil %>
+
 <script type="text/javascript">                                 
                       //<![CDATA[
 document.observe("dom:loaded",function(){
@@ -56,6 +58,7 @@ document.title = 'Twitter_seite';
 
  //]]>
                       </script>
+<%end%>
     </div>
 
     <div id="right_twitter"></div>
