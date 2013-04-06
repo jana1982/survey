@@ -49,8 +49,8 @@ class UsersController < ApplicationController
         render :nothing => true
       }
     end
-    
   end
+  
 
   def repeat4
     #puts params["secondlist"][0]

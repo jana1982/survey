@@ -1,179 +1,112 @@
- <TABLE width="100%">
-<TR>
-
-<TD ALIGN="LEFT">
-<h2>Part VII: Your Sources in General </h2>
-
-</TD>
-
-
-<TD ALIGN="RIGHT">
-7/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.37,true,true) %>
-</TD>
-
-</TR>
+<TABLE width="100%">
+  <TR>
+    <TD ALIGN="LEFT">
+      <h2>Part VII: Your Sources in General </h2>
+    </TD>
+    <TD ALIGN="RIGHT">
+      7/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.37,true,true) %>
+    </TD>
+  </TR>
 </TABLE>
 <hr>
 <p>
-<h3>How important are the following resources when you need information on a topic related to political news <u>quickly</u>?</h3>
-<h4>Please rank the following items by dragging them into the grey box below.<h4>
-<!--<table width="100%">
-           <tr>
-                      <td colspan="3" style="width: 40%;">
-                                 Please rank the following items by dragging them into the grey box below.
-                      </td>
-                      <td style="width: 60%;"></td>
-                      
-           </tr>
-           <tr>
-                      <td>
-                                 <ul style="list-style-type: none;">
-                                            <li class="listnummern" >1.</li>
-                                            <li class="listnummern" >2.</li>
-                                            <li class="listnummern" >3.</li>
-                                            <li class="listnummern" >4.</li>
-                                 </ul>
-                      </td>
-                      <td align=left style="background-color: #f2f2f2; width: 150px;">
-                                 <ul class="sortabledemo" id="list1" style="list-style-type: none; width: 200px;" >
-                                            <% if @user.rank_source != nil  %>
-                                                       <% @user.rank_source.each do |sources| %>
-                                                       <li class="openlist2_openlist2" id="list1_<%= sources %>"
-                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
-                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
-                                                       <div class="handle" style="width: 150px;"><%= NEWS_QUICKLY[sources.to_i]%></div>
-                                                       </li>
-                                            <% end %>
-                                            <%end%>
-                                 </ul>           
-                      </td>
-                      <td style="width: 25%;">
-                                 <ul class="sortabledemo" id="list2" style="list-style-type: none;" >
-                                            <% if @user.rank_source.nil?  %>
-                                                       <% dummy = [1,2,3,4]%>
-                                                       <% dummy.each do |sources| %>
-                                                       <li class="openlist2_openlist2" id="list2_<%= sources %>"
-                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
-                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
-                                                       <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[sources]%></div>
-                                                       </li>
-                                                       <% end %>
-                                            <% else %>
-                                                       <li id="list2_0" style="width: 150px;" > </li>
-                                            <%end%>
-                                 </ul>           
-                      </td>
-                      <td id="examples1" style="display: none;" >
-                                 Television, radio, magazines and newspaper (incl. their offline content, websites, media outlets in social network sites or microblogs, rss feeds, newsletters)
-                      </td>
-                      <td id="examples2" style="display: none; " >
-                                 Others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists, opinion leader of your community (via face-to-face, phone, email, social network site, microblogging, forums or chats)
-                      </td>
-                      <td id="examples3" style="display: none; " >
-                                 Blogs, search engines, government sites, community sites
-                      </td>
-           </tr>
-</table>-->
-<div >
-           <div style="float: left;">
-                      <ul style="list-style-type: none;">
-                                            <li class="listnummern" >1.</li>
-                                            <li class="listnummern" >2.</li>
-                                            <li class="listnummern" >3.</li>
-                                            <li class="listnummern" >4.</li>
-                      </ul>
-           </div>
-           <div style="float: left;">
-                      <ul class="sortabledemo" id="sourcelist" style="list-style-type: none;height: 138px; width: 152px; background-color: #f2f2f2;" >
-                                            <% if @user.rank_source != nil  %>
-                                                       <% @user.rank_source.each do |sources| %>
-                                                       <li class="openlist2_openlist2" id="sourcelist_<%= sources %>"
-                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
-                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
-                                                       <div class="handle" style="width: 150px;"><%= NEWS_QUICKLY[sources.to_i]%></div>
-                                                       </li>
-                                            <% end %>
-                                            <%end%>
-                      </ul>
-           </div>
-           <div style="float: left; width:200px;">
-                      <ul class="sortabledemo" id="dummylist" style="list-style-type: none;height: 138px; width: 150px; " >
-                                            <% if @user.rank_source == nil  %>
-                                                       <% dummy = [1,2,3,4] %>
-                                                       <% dummy.each do |sources| %>
-                                                       <li class="openlist2_openlist2" id="dummylist_<%= sources %>"
-                                                       onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
-                                                       onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
-                                                       <div class="handle" style="width: 150px;"><%= NEWS_QUICKLY[sources]%></div>
-                                                       </li>
-                                            <% end %>
-                                            <%else%>
-                                                       <% if !@user.rank_source.include? "1" %>
-                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 1 %>"
-                                                                  onMouseover="document.getElementById ('examples1').style.display='block';"  
-                                                                  onMouseout="document.getElementById('examples1').style.display='none';">
-                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[1]%></div>
-                                                                  </li>
-                                                       <% end %>           
-                                                       <% if !@user.rank_source.include? "2" %>
-                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 2 %>"
-                                                                  onMouseover="document.getElementById ('examples2').style.display='block';"  
-                                                                  onMouseout="document.getElementById('examples2').style.display='none';">
-                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[2]%></div>
-                                                                  </li>
-                                                       <% end %>
-                                                       <% if !@user.rank_source.include? "3" %>
-                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 3 %>"
-                                                                  onMouseover="document.getElementById ('examples3').style.display='block';"  
-                                                                  onMouseout="document.getElementById('examples3').style.display='none';">
-                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[3]%></div>
-                                                                  </li>
-                                                       <% end %>
-                                                       <% if !@user.rank_source.include? "4" %>
-                                                                  <li class="openlist2_openlist2" id="dummylist_<%= 4 %>"
-                                                                  onMouseover="document.getElementById ('examples4').style.display='block';"  
-                                                                  onMouseout="document.getElementById('examples4').style.display='none';">
-                                                                  <div class="handle" style="width: 400px;"><%= NEWS_QUICKLY[4]%></div>
-                                                                  </li>
-                                                       <% end %>
-                                                       <% if @user.rank_source.collect{|x| x.to_i}.sum >=  10 %>
-                                                                  <li id="dummylist_0" style="width: 150px;" > </li>
-                                                       <% end %>
-                                             <% end %>
-                      </ul>  
-           </div>
-           <div style="float: left; width:30%; ">
-                       <div id="examples1" style="display: none;" >
-                                 Television, radio, magazines and newspaper (incl. their offline content, websites, media outlets in social network sites or microblogs, rss feeds, newsletters)
-                      </div>
-                      <div id="examples2" style="display: none; " >
-                                 Others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists, <%=h @user.leader_text%> (via face-to-face, phone, email, social network site, microblogging, forums or chats)
-                      </div>
-                      <div id="examples3" style="display: none; " >
-                                 Own online searches in Blogs, search engines or government sites
-                      </div>
-                      <div id="examples4" style="display: none; " >
-                                 
-                      </div>
-           </div>
-      
-</div>
+  <h3>How important are the following resources when you need information on a topic related to political news <u>quickly</u>?</h3>
+  <h4>Please rank the following items by dragging them into the grey box below.<h4>
+    <div >
+      <div style="float: left;">
+        <ul style="list-style-type: none; padding: 0px;">
+          <li class="listnummern" >1.</li>
+          <li class="listnummern" >2.</li>
+          <li class="listnummern" >3.</li>
+          <li class="listnummern" >4.</li>
+        </ul>
+      </div>
+      <div style="float: left;">
+        <ul class="sortabledemo" id="sourcelist" style="list-style-type: none;height: 138px; width: 182px; background-color: #f2f2f2; padding: 0px;" >
+          <% if @user.rank_source != nil  %>
+          <% @user.rank_source.each do |sources| %>
+          <li class="openlist2_openlist2" id="sourcelist_<%= sources %>"
+            onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
+            onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
+            <div class="handle" style="width: 180px;"><%= NEWS_QUICKLY[sources.to_i]%></div>
+          </li>
+          <% end %>
+          <%end%>
+        </ul>
+      </div>
+      <div style="float: left; width:180px;">
+        <ul class="sortabledemo" id="dummylist" style="list-style-type: none;height: 138px; width: 182px; padding: 0px; " >
+          <% if @user.rank_source == nil  %>
+          <% dummy = [1,2,3,4] %>
+          <% dummy.each do |sources| %>
+          <li class="openlist2_openlist2" id="dummylist_<%= sources %>"
+            onMouseover="document.getElementById ('examples<%= sources %>').style.display='block';"  
+            onMouseout="document.getElementById('examples<%= sources %>').style.display='none';">
+            <div class="handle" style="width: 180px;"><%= NEWS_QUICKLY[sources]%></div>
+          </li>
+          <% end %>
+          <%else%>
+          <% if !@user.rank_source.include? "1" %>
+          <li class="openlist2_openlist2" id="dummylist_<%= 1 %>"
+            onMouseover="document.getElementById ('examples1').style.display='block';"  
+            onMouseout="document.getElementById('examples1').style.display='none';">
+            <div class="handle" style="width: 180px;"><%= NEWS_QUICKLY[1]%></div>
+          </li>
+          <% end %>           
+          <% if !@user.rank_source.include? "2" %>
+          <li class="openlist2_openlist2" id="dummylist_<%= 2 %>"
+            onMouseover="document.getElementById ('examples2').style.display='block';"  
+            onMouseout="document.getElementById('examples2').style.display='none';">
+            <div class="handle" style="width: 180px;"><%= NEWS_QUICKLY[2]%></div>
+          </li>
+          <% end %>
+          <% if !@user.rank_source.include? "3" %>
+          <li class="openlist2_openlist2" id="dummylist_<%= 3 %>"
+            onMouseover="document.getElementById ('examples3').style.display='block';"  
+            onMouseout="document.getElementById('examples3').style.display='none';">
+            <div class="handle" style="width: 180px;"><%= NEWS_QUICKLY[3]%></div>
+          </li>
+          <% end %>
+          <% if !@user.rank_source.include? "4" %>
+          <li class="openlist2_openlist2" id="dummylist_<%= 4 %>"
+            onMouseover="document.getElementById ('examples4').style.display='block';"  
+            onMouseout="document.getElementById('examples4').style.display='none';">
+            <div class="handle" style="width: 180px;"><%= NEWS_QUICKLY[4]%></div>
+          </li>
+          <% end %>
+          <% if @user.rank_source.collect{|x| x.to_i}.sum >=  10 %>
+            <li id="dummylist_0" style="width: 180px;" > </li>
+          <% end %>
+          <% end %>
+        </ul>  
+      </div>
+      <div style="float: left; width:180px; margin-left:20px; ">
+        <div id="examples1" style="display: none;" >
+          Television, radio, magazines and newspaper (incl. their offline content, websites, media outlets in social network sites or microblogs, rss feeds, newsletters)
+        </div>
+        <div id="examples2" style="display: none; " >
+          Others that are interested in same topic, locals/eyewitnesses, aquaintances, friends, colleagues, experts/specialists, <%=h @user.leader_text%> (via face-to-face, phone, email, social network site, microblogging, forums or chats)
+        </div>
+        <div id="examples3" style="display: none; " >
+          Own online searches in Blogs, search engines or government sites
+        </div>
+        <div id="examples4" style="display: none; " >
+>>>>>>> ff9c5f8fba11cd917540ea5ad60e82981d97b483
 
-
-
-<%= sortable_element :sourcelist,
-		     :handle => 'handle',
-		     :dropOnEmpty => true,
-		     :containment =>["sourcelist","dummylist"],
-		     :url => { :action => 'repeat3'}
-%>
-<%= sortable_element :dummylist,
-		     :handle => 'handle',
-		     :url => { :action => 'repeat4'}
-%>
-     <div style="clear: both;">
-<br><br>
-           
-<hr>
-</div>
-     
+        </div>
+      </div>
+    </div>
+    <%= sortable_element :sourcelist,
+    :handle => 'handle',
+    :dropOnEmpty => true,
+    :containment =>["sourcelist","dummylist"],
+    :url => { :action => 'repeat3'}
+    %>
+    <%= sortable_element :dummylist,
+    :handle => 'handle',
+    :url => { :action => 'repeat4'}
+    %>
+    <div style="clear: both;">
+      <br><br>
+      <hr>
+    </div>
