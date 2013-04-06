@@ -8,7 +8,8 @@
   </div>
  <div id="Nachricht">
  <h1><%= @user.seen_headline %></h1>
- <%= @user.seen_message_long %>
+<div id="Nachrichtentext"><%= @user.seen_message_long %></div>
+ 
  </div>
  <div id="Kasten">
     <b>Post Published: </b> <%= Time.now.strftime("%I:%M %p - %d %b %y") %><br>

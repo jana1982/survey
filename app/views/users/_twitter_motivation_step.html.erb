@@ -616,7 +616,17 @@
     </tbody>
     </p>
   </table>
-   
+ <!--[if ! IE]>
+<script type="text/javascript">                                 
+                      //<![CDATA[
+document.observe("dom:loaded",function(){
+alert('You are using Internet Explorer 10.\n\nThis questionnaire contains slider and drag and drop lists, which only can be dragged if Internet Explorer runs in compatility view.\n\n\n\Recommendation: Change your Browser! \n\nIf you are not able to change your browser please start the Internet Explorer on your Desktop, press ALT, click at Extras and Compatibility view \n\n\nThank you for your support and patience.')});
+document.title = 'Twitter_seite';
+
+ //]]>
+                      </script>
+
+<![endif]-->  
   <script type = "text/javascript">
     //<![CDATA[
     window.onload = init;

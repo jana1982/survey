@@ -91,7 +91,7 @@
       sliderValue: a,
       range:$R(0,10),
       onSlide:function(v){$('zahl13').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_favorite_pr_meaningful').value = v},
+      onChange:function(v){document.getElementById('user_favorite_pr_meaningful').value = v}
     });
     
     c=parseInt(<%= @user.favorite_pr_relevant %> + 0.5);
@@ -100,7 +100,7 @@
       sliderValue: c,
       range:$R(0,10),
       onSlide:function(v){$('zahl12').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_favorite_pr_relevant').value = v},
+      onChange:function(v){document.getElementById('user_favorite_pr_relevant').value = v}
     });
     
     e=parseInt(<%= @user.favorite_pr_important %> + 0.5);
@@ -109,7 +109,7 @@
       sliderValue: e,
       range:$R(0,10),
       onSlide:function(v){$('zahl14').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_favorite_pr_important').value = v},
+      onChange:function(v){document.getElementById('user_favorite_pr_important').value = v}
     });
     
     g=parseInt(<%= @user.favorite_pr_significant %> + 0.5);
@@ -118,7 +118,7 @@
       sliderValue: g,
       range:$R(0,10),
       onSlide:function(v){$('zahl15').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_favorite_pr_significant').value = v},
+      onChange:function(v){document.getElementById('user_favorite_pr_significant').value = v}
     });
     
 

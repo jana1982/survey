@@ -170,7 +170,7 @@
       sliderValue: a,
       range:$R(0,10),
       onSlide:function(v){$('zahl3').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_pr_meaningful').value = v},
+      onChange:function(v){document.getElementById('user_retweet_pr_meaningful').value = v}
     });
     
     c=parseInt(<%= @user.retweet_pr_relevant %> + 0.5);
@@ -179,7 +179,7 @@
       sliderValue: c,
       range:$R(0,10),
       onSlide:function(v){$('zahl2').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_pr_relevant').value = v},
+      onChange:function(v){document.getElementById('user_retweet_pr_relevant').value = v}
     });
     
     e=parseInt(<%= @user.retweet_pr_important %> + 0.5);
@@ -188,7 +188,7 @@
       sliderValue: e,
       range:$R(0,10),
       onSlide:function(v){$('zahl4').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_pr_important').value = v},
+      onChange:function(v){document.getElementById('user_retweet_pr_important').value = v}
     });
     
     g=parseInt(<%= @user.retweet_pr_significant %> + 0.5);
@@ -197,7 +197,7 @@
       sliderValue: g,
       range:$R(0,10),
       onSlide:function(v){$('zahl5').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_pr_significant').value = v},
+      onChange:function(v){document.getElementById('user_retweet_pr_significant').value = v}
     });
     
     i=parseInt(<%= @user.retweet_oc_relevant %> + 0.5);
@@ -206,7 +206,7 @@
       sliderValue: i,
       range:$R(0,10),
       onSlide:function(v){$('zahl6').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_oc_relevant').value = v},
+      onChange:function(v){document.getElementById('user_retweet_oc_relevant').value = v}
     });
     
     k=parseInt(<%= @user.retweet_oc_meaningful %> + 0.5);
@@ -215,7 +215,7 @@
       sliderValue: k,
       range:$R(0,10),
       onSlide:function(v){$('zahl7').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_oc_meaningful').value = v},
+      onChange:function(v){document.getElementById('user_retweet_oc_meaningful').value = v}
     });
     
     m=parseInt(<%= @user.retweet_oc_important %> + 0.5);
@@ -224,7 +224,7 @@
       sliderValue: m,
       range:$R(0,10),
       onSlide:function(v){$('zahl8').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_oc_important').value = v},
+      onChange:function(v){document.getElementById('user_retweet_oc_important').value = v}
     });
     
     o=parseInt(<%= @user.retweet_oc_significant %> + 0.5);
@@ -233,7 +233,7 @@
       sliderValue: o,
       range:$R(0,10),
       onSlide:function(v){$('zahl9').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_retweet_oc_significant').value = v},
+      onChange:function(v){document.getElementById('user_retweet_oc_significant').value = v}
     });
     // ]]>
   </script>

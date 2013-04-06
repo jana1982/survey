@@ -171,7 +171,7 @@
       sliderValue: a,
       range:$R(0,10),
       onSlide:function(v){$('zahl23').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_pr_meaningful').value = v},
+      onChange:function(v){document.getElementById('user_reply_pr_meaningful').value = v}
     });
     
     c=parseInt(<%= @user.reply_pr_relevant %> + 0.5);
@@ -180,7 +180,7 @@
       sliderValue: c,
       range:$R(0,10),
       onSlide:function(v){$('zahl22').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_pr_relevant').value = v},
+      onChange:function(v){document.getElementById('user_reply_pr_relevant').value = v}
     });
     
     e=parseInt(<%= @user.reply_pr_important %> + 0.5);
@@ -189,7 +189,7 @@
       sliderValue: e,
       range:$R(0,10),
       onSlide:function(v){$('zahl24').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_pr_important').value = v},
+      onChange:function(v){document.getElementById('user_reply_pr_important').value = v}
     });
     
     g=parseInt(<%= @user.reply_pr_significant %> + 0.5);
@@ -198,7 +198,7 @@
       sliderValue: g,
       range:$R(0,10),
       onSlide:function(v){$('zahl25').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_pr_significant').value = v},
+      onChange:function(v){document.getElementById('user_reply_pr_significant').value = v}
     });
     
     i=parseInt(<%= @user.reply_oc_relevant %> + 0.5);
@@ -207,7 +207,7 @@
       sliderValue: i,
       range:$R(0,10),
       onSlide:function(v){$('zahl26').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_oc_relevant').value = v},
+      onChange:function(v){document.getElementById('user_reply_oc_relevant').value = v}
     });
     
     k=parseInt(<%= @user.reply_oc_meaningful %> + 0.5);
@@ -216,7 +216,7 @@
       sliderValue: k,
       range:$R(0,10),
       onSlide:function(v){$('zahl27').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_oc_meaningful').value = v},
+      onChange:function(v){document.getElementById('user_reply_oc_meaningful').value = v}
     });
     
     m=parseInt(<%= @user.reply_oc_important %> + 0.5);
@@ -225,7 +225,7 @@
       sliderValue: m,
       range:$R(0,10),
       onSlide:function(v){$('zahl28').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_oc_important').value = v},
+      onChange:function(v){document.getElementById('user_reply_oc_important').value = v}
     });
     
     o=parseInt(<%= @user.reply_oc_significant %> + 0.5);
@@ -234,7 +234,7 @@
       sliderValue: o,
       range:$R(0,10),
       onSlide:function(v){$('zahl29').innerHTML= parseInt(v + 0.5);},
-      onChange:function(v){document.getElementById('user_reply_oc_significant').value = v},
+      onChange:function(v){document.getElementById('user_reply_oc_significant').value = v}
     });
     // ]]>
   </script>

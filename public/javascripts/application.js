@@ -198,4 +198,35 @@ function flipTable2(element_name)
         }
         return false;
     }
-
+try{
+        if($('motive').style.display !='none'){
+          window.onload = init;
+  var dataSet = ["To pass time", "To entertain myself", "To occupy my time", "To spend time when I am bored", "To forget my worries", "To help others", "To provide support to others", "To show others encouragement", "To contribute to discussions", "To make new friends with similar interests", "To meet new people with similar interests", "To get to know other people", "To keep in touch with people I have met through Twitter", "To find people like me", "To communicate with like-minded people", "To gather information", "To find out things that I need to know", "To look for information I need", "To talk to a knowledgeable individual about political topics", "To get answers to specific questions", "To keep connect with people who I otherwise would have lost contact with", "To find out what old friends are doing now", "To deepen relationships with people that I have met offline", "To keep in touch with people who live far away" ];
+  
+   function shuffleRows(elemID){
+                // get the one and only <tbody> of the given <table>
+                var tbodyO = document.getElementById('tbody1');
+                var tbodyRows = [], randIdxs = [];
+                for(i=0; i<tbodyO.rows.length; i++){
+                        tbodyRows.push(tbodyO.rows[i]);
+                        randIdxs.push(i);
+                }
+                function shuffle(randIdxs)
+                {
+                var s = []; while (randIdxs.length) s.push(randIdxs.splice(Math.random() * randIdxs.length, 1)); while (s.length) randIdxs.push(s.pop());
+                }
+                shuffle(randIdxs);
+                
+                var len = tbodyO.rows.length;
+                while(tbodyO.rows.length > 0){
+                        tbodyO.deleteRow(0);
+                }
+                for(i=0; i<len; i++){
+                        tbodyO.appendChild(tbodyRows[randIdxs[i]]);
+                }
+            }
+  
+  shuffleRows('motivation');
+    
+    };}
+    catch(ex){}

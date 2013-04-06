@@ -836,6 +836,15 @@ height: 360px;
 width: 687px;
 text-align: justify;
 }
+#Nachrichtentext{
+ position: relative;
+top: 13px;
+left: 0px;
+height: 360px;
+width: 687px;
+text-align: justify;
+ 
+}
 
 #time_link{
 position: absolute;

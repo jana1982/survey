@@ -462,7 +462,7 @@ h2
   color:#fff;
 }
 
-#reset{
+/*#reset{
   width: 90px;
   -webkit-box-align: center;
   text-align: center;
@@ -476,7 +476,7 @@ h2
   -webkit-appearance: push-button;
   white-space: pre;
 }
-
+*/
 #track2{
   width:200px;
   background-image: url('../images/streifen.png');
