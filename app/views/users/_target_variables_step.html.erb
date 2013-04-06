@@ -26,12 +26,12 @@
 </p>
 
 <hr>
- <h3>Did you recognize any errors in the simulation?</h3>
- <%= f.radio_button :any_mistakes, 1 %>
+ <h3>Did the features you clicked on (e.g., retweet or expand button) run properly in the simulation?</h3>
+ <%= f.radio_button :any_mistakes, 3 %>
   <%= f.label :no, "No" %>
   <%= f.radio_button :any_mistakes, 2 %>
   <%= f.label :dno, "Don't know" %>
-  <%= f.radio_button :any_mistakes, 3 %>
+  <%= f.radio_button :any_mistakes, 1 %>
   <%= f.label :yes, "Yes" %>
 
 <script type="text/javascript">
@@ -225,13 +225,15 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
  <h3>Unfortunately the simulation could not offer you all the features of Twitter, but it was asked that you act as if you were on your real Twitter account.<br><br>
  With this in your mind, would you use other features that were missing in the simulation?
  </h3>
+          <%if all_missing_features > 7 %>
            <i>You can select more than one feature.</i>
+         <%end%>
             <div style="padding-left: 20px;" class="randomordercontent group1">
            <p>
-                      <% if @user.avg_private_replies != 7 %>
+                      <% if @user.avg_private_replies != 7 && @user.avg_private_replies != 0%>
                       <p>
-                                 <%= f.check_box :cbx_write, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Write direct messages
+                                 
+                                 <a href='#' class="popup" ><%= f.check_box :cbx_write, :options => {}, :checked_value => "1", :unchecked_value => "0"%>Write direct messages<span><img src='../images/direct_messages.png'></span></a>
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -257,10 +259,11 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_stories != 7 %>
+                    <% if @user.avg_stories != 7 && @user.avg_stories !=0 %>
                       <p>
-                                 <%= f.check_box :cbx_discover_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Reading tailored Tweets related to the topic presented on the discover page 
+                                 
+                                 <a href='#' class="popup"><%= f.check_box :cbx_discover_stories, :options => {}, :checked_value => "1", :unchecked_value => "0"%>Reading tailored Tweets related to the topic presented on the discover page<span><img src='../images/stories.png'></span></a>
+                                  
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -286,10 +289,11 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_trend != 7 %>
+                    <% if @user.avg_trend != 7 && @user.avg_trend != 0 %>
                       <p>
-                                 <%= f.check_box :cbx_discover_trends, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
-                                 Discover trends related to the topic presented
+                                 
+                                 <a href='#' class="popup"><%= f.check_box :cbx_discover_trends, :options => {}, :checked_value => "1", :unchecked_value => "0"%>Discover trends related to the topic presented<span><img src='../images/trends.png'></span></a>
+                                 
                                  
                                  <script type="text/javascript">                                 
                                  //<![CDATA[
@@ -315,7 +319,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_follow != 7 %> 
+                    <% if @user.avg_follow != 7 && @user.avg_follow != 0%> 
                       <p>
                                  <%= f.check_box :cbx_follow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Follow new accounts related to the topic presented
@@ -344,7 +348,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_unfollow_account != 7 %> 
+                    <% if @user.avg_unfollow_account != 7 && @user.avg_unfollow_account != 0 %> 
                       <p>
                                  <%= f.check_box :cbx_unfollow, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Unfollow new accounts related to the topic presented
@@ -373,7 +377,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_create_lists != 7 %>   
+                    <% if @user.avg_create_lists != 7 && @user.avg_create_lists != 0%>   
                       <p>
                                  <%= f.check_box :cbx_create_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Create lists related to the topic presented
@@ -402,7 +406,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_add_accounts_lists != 7 %>  
+                    <% if @user.avg_add_accounts_lists != 7 && @user.avg_add_accounts_lists !=0 %>  
                       <p>
                                  <%= f.check_box :cbx_add_to_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Add accounts to lists related to the topic presented
@@ -431,7 +435,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_unsubscribe_lists != 7 %>  
+                    <% if @user.avg_unsubscribe_lists != 7 && @user.avg_unsubscribe_lists !=0 %>  
                       <p>
                                  <%= f.check_box :cbx_unsubscribe_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Unsubscribe from lists related to the topic presented
@@ -460,7 +464,7 @@ Please list any mistake you can remember (e.g. message didn't expand, message ex
                                  </div>
                       </p>
                     <% end %>
-                    <% if @user.avg_subscribe_lists != 7 %>
+                    <% if @user.avg_subscribe_lists != 7 && @user.avg_subscribe_lists !=0 %>
                       <p>
                                  <%= f.check_box :cbx_subscribe_lists, :options => {}, :checked_value => "1", :unchecked_value => "0"%>
                                  Subscribe to lists related to the topic presented

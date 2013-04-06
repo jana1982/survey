@@ -221,7 +221,7 @@ class User < ActiveRecord::Base
   validates_presence_of 	:language, :if => :selection?
   validates_presence_of 	:twitter_account, :if => :selection?
   validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
-  validates_numericality_of 	:bildung, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter age you left your last educational institution"
+  validates_numericality_of 	:bildung, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter your age, when you left your last educational institution"
   validates_numericality_of 	:alter, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter your year of birth"
   #validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
   #validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."

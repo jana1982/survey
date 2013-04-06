@@ -25,7 +25,7 @@
     <h3>You mentioned personal contact is very important when you need information on a topic related to news quickly.</h3>
   <%= render "sub_selection_person_contact", :f => f%>
   <% elsif @user.rank_source[0] == "3" %>
-    <h3>You mentioned self-aggregated news are very important when you need information on a topic related to news quickly.</h3>
+    <h3>You mentioned own online searches are very important when you need information on a topic related to news quickly.</h3>
   <%= render "sub_selection_user_aggregated", :f => f%>
   <% elsif @user.rank_source[0] == "4" %>
     <h3>You mentioned other resources are very important when you need information on a topic related to news quickly.</h3>

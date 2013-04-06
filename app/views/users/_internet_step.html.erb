@@ -60,6 +60,23 @@
 </p>
 
 <hr>
+  <p>
+  <h3>How long do you actively surf on Twitter on average per week?</h3>
+  If you surf less, please use expressions like 0.5 (once in two weeks).
+        <div id="opinion_leader_text">
+                 <table>
+                 <tr>
+                   <td>Please fill in the number of hours you surf on Twitter on an average week (mo-fr):</td> 
+                   <td> <%= f.text_field :surf_twitter_week, :size => 4, :maxlength => 4%>hours per week</td>
+                 </tr>
+                 <tr>
+                   <td>Please fill in the number of hours you surf on Twitter on an average weekend:</td>
+                   <td><%= f.text_field :surf_twitter_weekend, :size => 4, :maxlength => 4%>hours per week</td>
+                 </tr>
+               </table>
+        </div>   
+</p>
+<hr>
 
   <p>
   <h3>How frequently do you do the following Twitter related actions?</h3>
@@ -506,20 +523,4 @@
   </table>
 <hr>
   
-<p>
-  <h3>How long do you actively surf on Twitter on average per week?</h3>
-  If you surf less, please use expressions like 0.5 (once in two weeks).
-        <div id="opinion_leader_text">
-                 <table>
-                 <tr>
-                   <td>Please fill in the number of hours you surf on Twitter on an average week (mo-fr):</td> 
-                   <td> <%= f.text_field :surf_twitter_week, :size => 4, :maxlength => 4%>hours per week</td>
-                 </tr>
-                 <tr>
-                   <td>Please fill in the number of hours you surf on Twitter on an average weekend:</td>
-                   <td><%= f.text_field :surf_twitter_weekend, :size => 4, :maxlength => 4%>hours per week</td>
-                 </tr>
-               </table>
-        </div>   
-</p>
-<hr>
+

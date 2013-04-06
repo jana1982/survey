@@ -1,4 +1,4 @@
-<h3>Which of the following categories best describes your role in industry?</h3>   
+<h3>Which of the following categories best describes your role in your primary area of employment?</h3>   
 <%= select(:user, :position, [['<choose option>', 0], ['Upper management', 1], ['Middle management', 2], ['Junior management', 3], ['Administrative staff', 4], ['Support staff', 5],          ['Student', 6], ['Trained professional', 7], ['Skilled laborer', 8], ['Consultant', 9], ['Temporary employee', 10], ['Researcher', 11], ['Self-employed', 12], ['Other', 13]])  %>  
 
           <script type="text/javascript">
@@ -14,7 +14,7 @@
           //]]>
           </script>
 
-          <div id = "others_position" style="display:none; left:20px, width:400px; height:40px;">
+          <div id = "others_position" style="display:none; left:20px; width:400px; height:40px;">
               Please fill in your role in industry.<%= f.text_field :position_text %>
           </div>
           

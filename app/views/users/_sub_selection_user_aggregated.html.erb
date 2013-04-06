@@ -32,7 +32,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#FFFFFF';">
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed;">
-         Search engines
+         Search engines (Goolge, Bing, Yahoo, etc.)
       </td>
       <td style="border-color: grey; border-width: thin; border-bottom-style: dashed; text-align: center;">
          <%= f.radio_button :search_engine, 1 %></td>
@@ -64,7 +64,7 @@
     </tr>
     <tr onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#FFFFFF';">
       <td>
-         Other self-aggregated news sources:
+         Other resources for your own online searches:
       </td>
       <td style="text-align: left;" colspan="5">
          <%= f.text_area :self_aggr_txt, :rows => 1, :cols => 40 %></td>

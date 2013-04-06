@@ -44,7 +44,7 @@
   <li>Other</li>
 </ul>
       </div>
-      <p><%= f.text_field :bildung, :size => 3%> years</p>
+      <p><%= f.text_field :bildung, :size => 3, :maxlength => 2%> years</p>
        <%= f.check_box :bildung_still_study, :options => {}, :checked_value => "1", :unchecked_value => "0"%> I'm still studying.
 
 <hr>
@@ -58,7 +58,7 @@
 <hr>
 <p>
   <h3>What year were you born?</h3>
-  <%= f.text_field :alter, :size => 4%>
+  <%= f.text_field :alter, :size => 5, :maxlength => 4%>
 </p>
 <hr>
 <p>
@@ -129,10 +129,10 @@
   <%= f.label :rural, "Rural" %>
 </p>
 <hr>
-<p>
+<!--<p>
   <h3>What is your current annual household income in U.S. dollars?</h3>
   <%= select(:user, :income, INCOMES) %>
-</p>
+</p>-->
 
 
 <p>
