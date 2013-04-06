@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402204230) do
+ActiveRecord::Schema.define(:version => 20130406152452) do
 
   create_table "seeds", :force => true do |t|
     t.integer  "batch_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20130402204230) do
     t.string   "employment_text"
     t.integer  "position"
     t.string   "position_text"
-    t.string   "bildung_text"
+    t.integer  "bildung_still_study",          :limit => 255
     t.integer  "organization"
     t.string   "organization_text"
     t.integer  "private_pc"

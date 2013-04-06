@@ -26,28 +26,26 @@
 </p>
     
 <hr>
-  <h3>What is the highest level of education you have completed?</h3>
-  <%= select(:user, :bildung, EDUCATIONS) %>
-<script type="text/javascript">
-//<![CDATA[
- new Form.Element.Observer($('user_bildung'), 0.3, function(form, value){
-      if (value == 9) {
-       Effect.SlideDown('others_bildung')
-      }
-      else {
-      document.getElementById('others_bildung').style.display='none';
-      }
-  });
-//]]>
-</script>
-
-<div id = "others_bildung" style="display:none; left:20px, width:400px; height:40px;">
-Please fill in your highest level of education here.
-<%= f.text_field :bildung_text %>
-</p>
-</div>
-
-</p>
+  <h3 onMouseover="document.getElementById ('explanation_education').style.display='block';"  
+      onMouseout="document.getElementById('explanation_education').style.display='none';">How old were you when you stopped your full-time education? </h3>
+  <i>For more information place your cursor over the question.</i>
+  <div id="explanation_education" style="display: none;">
+    <br>
+  Education may include one of the following: 
+<ul style="padding-left: 30px;">
+  <li>Grammar school</li>
+  <li>High school or eqivalent</li>
+  <li>Vocational/technical school</li>
+  <li>College</li>
+  <li>Bachelor`s degree</li>
+  <li>Master`s degree</li>
+  <li>Doctoral degree</li>
+  <li>Professional degree (MC, JD, etc.)</li>
+  <li>Other</li>
+</ul>
+      </div>
+      <p><%= f.text_field :bildung, :size => 3%> years</p>
+       <%= f.check_box :bildung_still_study, :options => {}, :checked_value => "1", :unchecked_value => "0"%> I'm still studying.
 
 <hr>
 <p>
@@ -59,8 +57,8 @@ Please fill in your highest level of education here.
 </p>
 <hr>
 <p>
-  <h3>What is your age?</h3>
-  <%= select(:user, :alter, AGES) %>
+  <h3>What year were you born?</h3>
+  <%= f.text_field :alter, :size => 4%>
 </p>
 <hr>
 <p>

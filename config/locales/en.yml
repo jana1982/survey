@@ -4,6 +4,32 @@
 
 en:
   activerecord:
+    attributes:
+      user:
+        alter: "Your Age"
+        language: "Your English skills"
+        twitter_account: "Your answer regarding to your Twitter account"
+        country: "The country you currently live in"
+        account_name: "Your Twitter account name"
+        number_followers: "The number of your followers"
+        number_followeees: "The number of your followees"
+        number_messages: "The number of your messages"
+        surf_twitter_week: "Your surf time per week"
+        surf_twitter_weekend: "Your surftime at the weekend"
+        email: "Your E-mail address"
+        ol_1: "The Twitter account name in the 1st text field"
+        ol_2: "The Twitter account name in the 2nd text field"
+        ol_3: "The Twitter account name in the 3rd text field"
+        ol_4: "The Twitter account name in the 4th text field"
+        ol_5: "The Twitter account name in the 5th text field"
+        ol_6: "The Twitter account name in the 6th text field"
+        ol_7: "The Twitter account name in the 7th text field"
+        ol_8: "The Twitter account name in the 8th text field"
+        ol_9: "The Twitter account name in the 9th text field"
+        ol_10: "The Twitter account name in the 10th text field"
+        ol_11: "The Twitter account name in the 11th text field"
+        ol_12: "The Twitter account name in the 12th text field"
+  
     errors:
       template:
         header:
