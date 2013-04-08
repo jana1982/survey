@@ -1,8 +1,5 @@
 <div id="follower_field">              
-  <div id="follow1"
-       onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => 'follow_m1'}) %>"
-       onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => 'follow_m1'}) %>"
-       >
+  <div id="follow1">
     <div id="follower_bild">
       <img src='../images/ministry-of-defence-logo.jpg' width='55' height='53'>
     </div>
@@ -11,18 +8,11 @@
     <div id="follower_friend">
       Followed by <%= displayed_person %>
     </div>
-    <div id="follower_button">
-      <%= if ((@user.follow_1_clicked==nil)||(@user.follow_1_clicked.even?))
-            link_to_remote image_tag('../images/Follow.png',
-            :mouseover => '../images/Follow_unterstrichen.png', :id => "follower_button_follow"),
-            :url => {:action => "follow1", :id => @user.id}
-        else
-            link_to_remote image_tag('../images/Unfollow.png',
-            :mouseover => '../images/Unfollow_unterstrichen.png', :id => "follower_button_follow"),
-            :url => {:action => "follow1", :id => @user.id}
-         end %>
+    <div id="follower_button"
+    onclick="<%= remote_function(:url => {:action => "follow1", :id => @user.id}) %>; change_button('follower_button');"
+    onmouseover="<%= remote_function(:url => {:action => :start_measure, :type => 'follow_m1'}) %>"
+     onmouseout="<%= remote_function(:url => {:action => :end_measure, :type => 'follow_m1'}) %>">
     </div>
     </div>
   </div>
-
 </div>

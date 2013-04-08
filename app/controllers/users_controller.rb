@@ -85,31 +85,19 @@ class UsersController < ApplicationController
   end
   
   def follow1
-      if session[:user_params][:follow_1_clicked] == nil
-        session[:user_params].deep_merge!({:follow_1_clicked => 1})
-      else
-        dummy_f1 = session[:user_params][:follow_1_clicked]
-        dummy_f1 += 1
-        session[:user_params].deep_merge!({:follow_1_clicked => dummy_f1})
-      end
+    if session[:user_params][:follow_1_clicked] == nil
+      session[:user_params].deep_merge!({:follow_1_clicked => 1})
+    else
+      dummy_f1 = session[:user_params][:follow_1_clicked]
+      dummy_f1 += 1
+      session[:user_params].deep_merge!({:follow_1_clicked => dummy_f1})
+    end
     respond_to do |format|
-      
-        format.js {
-          if (session[:user_params][:follow_1_clicked].even?) 
-            render(:update) do |page|
-                puts "F1_EVEN"
-                page.replace "follower_button_follow", image_tag('../images/Follow.png', :id => "follower_button_follow", :mouseover => "../images/Follow_unterstrichen.png") 
-             end;
-          else
-            render(:update) do |page|
-              puts "F1_unveven"
-                page.replace "follower_button_follow", image_tag('../images/Unfollow.png', :id=>"follower_button_follow", :mouseover => "../images/Unfollow_unterstrichen.png")
-              end;
-            end
-             }
+      format.js {
+        render :nothing => true
+      }
     end
   end
-  
 
   
   def reply1
@@ -336,24 +324,37 @@ class UsersController < ApplicationController
   end
 
   
-  def start_measure    
-    session[:user_params].deep_merge!({:in_time => Time.now})    
+  def start_measure
+    @type = params[:type]
+    if session[:user_params]["in_time_#{@type}".to_sym] == nil
+      puts "Started measuring #{@type}"
+      session[:user_params].deep_merge!({"in_time_#{@type}".to_sym => Time.now})
+    end
     render :nothing => true
   end
   
-  def end_measure    
+  def end_measure
     @end_time = Time.now
     @type = params[:type]
-    @in_time = session[:user_params][:in_time]
-    if session[:user_params][@type] == nil      
-      @delta = @end_time - @in_time
-      session[:user_params].deep_merge!({@type => @delta})    
+    #get the time when user moved his mouse in
+    @in_time = session[:user_params]["in_time_#{@type}".to_sym]
+    if @in_time != nil 
+      # endtime without intime
+      if session[:user_params][@type] == nil 
+        #if this is the first hover in  
+        @delta = @end_time - @in_time
+        session[:user_params].deep_merge!({@type => @delta})
+      else
+        #add the delta to the old one
+        @delta = session[:user_params][@type] + (@end_time - @in_time)
+        session[:user_params].deep_merge!({@type => @delta})
+        puts "Added a delta of #{@end_time - @in_time} to #{@type}. Total: #{@delta}"
+      end
     else
-      @delta = session[:user_params][@type] + (@end_time - @in_time)
-      session[:user_params].deep_merge!({@type => @delta})
+      puts "couldnt get an intime!"
     end
-    puts "Type:#{@type} , Dauer: #{@delta}"
-    session[:user_params].deep_merge!({:in_time => nil})   
+    #reset in_time
+    session[:user_params].deep_merge!({"in_time_#{@type}".to_sym => nil})
     render :nothing => true
   end
   

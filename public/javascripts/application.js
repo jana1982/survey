@@ -116,13 +116,23 @@ Event.observe(window, 'load', function() {
 					$('seite_twitter').onmousemove = getCursorXY;
 				}
 			}
-			init();
+			window.onload = init;
 		} // if
 	} // try
 	catch(ex){
 		//alert('nicht Twitter')
 	}
 }); // Event observe
+
+function change_button(element){
+		if (document.getElementById(element) != null) {
+			document.getElementById(element).id = ("un"+ element);
+		}
+		else {
+			document.getElementById("un"+element).id = (element);
+		}
+		return false;
+}
 
 // Klappt unterkategorien aus und zu
 function flipTable(element_name) {

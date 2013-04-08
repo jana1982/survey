@@ -143,6 +143,12 @@ img {border: none;}
   left:54px; top:65px;
 
 }
+
+
+.follow_unterstrichen:hover {
+	background-image:url('../images/Follow_unterstrichen.png');
+}
+
 #twitter_bild{
   float: left;
   position:absolute;
@@ -155,6 +161,7 @@ img {border: none;}
 		top:65px;
 		width: 10px;	
 }
+
 .expand{
   float: left;
 	position:relative;
@@ -237,8 +244,6 @@ img {border: none;}
 }
 
 #reply_field{
-
-
   background-image:url('../images/reply_seite2.png');
   background-repeat:no-repeat;
   background-position: left top;
@@ -913,10 +918,30 @@ position: relative;
   color: grey;}
 
 #follower_button{
+	background-image:url('../images/Follow.png');
   position: relative;
   left: -4px;
+	width: 57px;
+	height: 16px;
 /*  left: -41px;
-  top: -31px;*/}
+  top: -31px;*/
+}
+#follower_button:hover {
+	background-image:url('../images/Follow_unterstrichen.png');
+	cursor: pointer;
+}
+
+#unfollower_button{
+	background-image:url('../images/unfollow.png');
+  position: relative;
+  left: -4px;
+	width: 57px;
+	height: 16px;
+}
+#unfollower_button:hover {
+	background-image:url('../images/unfollow_unterstrichen.png');
+	cursor: pointer;
+}
   
 #follower_bild2{
   position: relative;
