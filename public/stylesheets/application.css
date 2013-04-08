@@ -2,6 +2,7 @@ body {
   background-color: #e9ebe9;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
+  border: none;
 }
 
 a img {
@@ -169,7 +170,7 @@ textarea#user_reason_nrep{
   border-color: white;
   background-color:#f2f2f2;
   height: 30px;
-  width: 400px;
+  width: 325px;
   text-align: left;
 }
 
@@ -191,6 +192,7 @@ li .handle {
   height: 30px;
   width: 180px;
   text-align: left;
+  
 }
 
 .openlist2_openlist2:hover{
@@ -236,6 +238,7 @@ li .handle {
   height: 30px;
   width: 30px;
   text-align: center;
+  border: none;
 
 
 
@@ -247,6 +250,7 @@ ul{
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
+  font-size: 14px;
 }
 
   .label { 

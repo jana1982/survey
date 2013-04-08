@@ -1,6 +1,7 @@
 body {
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
+  border: none;
 }
 
 
@@ -12,8 +13,10 @@ body {
     margin-bottom:50px;
     width:100%;    
     height: 830px;
-    text-align: center;
+/*    text-align: center;*/
+    border: none;
 }
+
 
 
 #seite_twitter {
@@ -35,9 +38,9 @@ body {
 
 #tweet{
 position: absolute;
-top: 12px;
+top: 16px;
 left: 70px;
-height: 50px;
+height: 40px;
 bottom: 0;
 text-align: left;
 width: 433px;
@@ -62,20 +65,22 @@ line-height: 15px;
 }
 
 #reply_seite{
-
-  background-color:rgba(0,0,0,0.6);
-  width:100%;
-  height: 830px;  
-  left:7px; top:83px;
+  background-image: url('../images/opacity_ie.png');
+  background: url('../images/opacity_ie.png');
+  /*background-color:rgba(0,0,0,0.6);*/
+  width:99%;
+  height: 840px;  
+  left:7px; top:67px;
   margin:0 auto;
   position: absolute;
 
 }
 #reply_seite2{
-
-  background-color:rgba(0,0,0,0.6);
+  background-image: url('../images/opacity_ie.png');
+  background: url('../images/opacity_ie.png');
+/*  background-color:rgba(0,0,0,0.6);*/
   width:100%;
-  height: 830px;  
+  height: 840px;  
   left:7px; top:83px;
   margin:0 auto;
   position: absolute;
@@ -120,6 +125,8 @@ line-height: 15px;
   position: absolute;
   left: -3px;
 }
+
+img {border: none;}
 
 #message:hover{
   background-color: #f2f2f2;
@@ -258,9 +265,9 @@ textarea#user_reply_text2{
 outline: none;
 -webkit-appearance: textarea;
 background-color: white;
-border-style: hidden;
-border-radius: 6px;
-border-bottom-right-radius: 29px;
+border-style: none;
+border-radius: 12px;
+border-bottom-right-radius: 40px;
 -webkit-rtl-ordering: logical;
 -webkit-user-select: text;
 -webkit-box-orient: vertical;
@@ -277,9 +284,9 @@ textarea#user_reply_text{
   outline: none;
 -webkit-appearance: textarea;
 background-color: white;
-border-style: hidden;
-border-radius: 6px;
-border-bottom-right-radius: 29px;
+border-style: none;
+border-radius: 12px;
+border-bottom-right-radius: 40px;
 -webkit-rtl-ordering: logical;
 -webkit-user-select: text;
 -webkit-box-orient: vertical;
@@ -363,7 +370,7 @@ textarea#user_tweet_text{
   outline: none;
   -webkit-appearance: textarea;
   background-color: white;
-  border-style: hidden;
+  border-style: none;
   border-radius: 6px;
   border-bottom-right-radius:29px;
   -webkit-rtl-ordering: logical;
@@ -373,8 +380,11 @@ textarea#user_tweet_text{
   cursor: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
+ 
 
 }
+
+textarea{ overflow: hidden;}
 
 #close_tweet{
   position:relative;
@@ -391,19 +401,19 @@ textarea#user_tweet_text{
   float: right;
   position:relative;
   left:-369px;
-  top:18px;
+  top:20px;
 }
 #reply_button_change2{
   float: right;
   position:relative;
   left:-369px;
-  top:18px;
+  top:20px;
 }
 
 
 #search{
 
-  left:544px; top:6px;
+  left:546px; top:7px;
   margin:0 auto;
   position: absolute;
  
@@ -417,7 +427,7 @@ textarea#user_search{
   outline: none;
   -webkit-appearance: textarea;
   background-color: transparent;
-  border-style: hidden;
+  border-style: none;
   border-radius: 6px;
 
   -webkit-rtl-ordering: logical;
@@ -465,14 +475,14 @@ textarea#user_search{
 
 #text_compose{
   position:relative;
-  left:0px;
+  left:17px;
   top:17px;
 }
 
 #tweet_button_change_compose{
   position:relative;
-  padding-left:213px;
-  padding-top: 20px;
+  padding-left:200px;
+  padding-top: 22px;
 }
 
 #tweet_sent{
@@ -686,7 +696,7 @@ textarea#user_search{
 #ende{
   position: relative;
   top: 146px;
-  padding-left: 319px;
+  padding-left: 327px;
   
 }
 #ende2{
@@ -787,7 +797,7 @@ top: -2px;
     margin-bottom:50px;
     width:100%;    
     height: 867px;
-    text-align: center;
+
 }
 
 
@@ -833,7 +843,6 @@ top: 83px;
 top: 257px;
 left: 21px;
 height: 360px;
-width: 687px;
 text-align: justify;
 }
 #Nachrichtentext{
@@ -841,7 +850,6 @@ text-align: justify;
 top: 13px;
 left: 0px;
 height: 360px;
-width: 687px;
 text-align: justify;
  
 }
@@ -857,23 +865,23 @@ color: #dcdcdc;
 position: relative;
 color: #423B35;
 text-align: left;
-top: 743px;
+top: -455px;
 width: 680px;
 height: 102px;
 border: solid;
-left: 21px;
+left: 0px;
 border-color: #dcdcdc;
 }
 
 #Related_topics{
-  position: absolute;
+  
+  position: relative;
   color: #423b35;
   text-align: left;
-top: 375px;
-width: 200px;
+top: -346px;
 height: 474px;
 border: solid;
-left: 738px;
+left: 239px;
 border-color: #dcdcdc;
 }
 
@@ -882,13 +890,12 @@ background-color: transparent;
 width: 303px;
 left: 0px;
 top: 36px;
-margin: 0 auto;
 position: relative;
 }
 
 #follower_bild{
   position: relative;
-  left: -106px;
+  left: 24px;
   top: 28px;}
   
 #follower_titel{

@@ -6,28 +6,10 @@
   <div id="time_link">
     <%= Time.now.strftime("%I:%M %p - %d %b %y") %>
   </div>
- <div id="Nachricht">
+ <div id="Nachricht" style="float: left; width: 687px;">
  <h1><%= @user.seen_headline %></h1>
 <div id="Nachrichtentext"><%= @user.seen_message_long %></div>
- 
- </div>
- <div id="Kasten">
-    <b>Post Published: </b> <%= Time.now.strftime("%I:%M %p - %d %b %y") %><br>
-    <b>Author: </b>Independend News Blog <br>
-    <b>Section: </b>Politics <br>
-    <br>
-    <b>Tags: </b>corruption, bribery, politics, scandal
-    
- </div>
-<!-- <div id="Back_to_twitter">
- <div id="text_back_to_twitter"> <b>To return to the Twitter Simulation please click on the button below:</b></div>
- <br> 
-<!-- <div id="bild_back_to_twitter" ><%= link_to_remote image_tag('../images/back_to_twitter.png',
-                               :mouseover => '../images/back_to_twitter_unterstrichen.png'),
-                :url => {:action => "close", :id => @user.id}
-          %></div> -->
-</div>
- <div id="Related_topics">
+  <div id="Related_topics"  style="float: right; width: 200px;">
   <h4>Related Searches: </h4>
   <ul>
     <li>Ministry of Defence <%=COUNTRIES[@user.country][0]%></li>
@@ -47,6 +29,25 @@
     
   </ul>
  </div>
+<div style="clear: both;">
+    </div>
+ <div id="Kasten">
+    <b>Post Published: </b> <%= Time.now.strftime("%I:%M %p - %d %b %y") %><br>
+    <b>Author: </b>Independend News Blog <br>
+    <b>Section: </b>Politics <br>
+    <br>
+    <b>Tags: </b>corruption, bribery, politics, scandal
+    
+ </div>
+<!-- <div id="Back_to_twitter">
+ <div id="text_back_to_twitter"> <b>To return to the Twitter Simulation please click on the button below:</b></div>
+ <br> 
+<!-- <div id="bild_back_to_twitter" ><%= link_to_remote image_tag('../images/back_to_twitter.png',
+                               :mouseover => '../images/back_to_twitter_unterstrichen.png'),
+                :url => {:action => "close", :id => @user.id}
+          %></div> -->
+</div>
+
 
 
 

@@ -208,7 +208,7 @@ class User < ActiveRecord::Base
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
       self.interest_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
-      self.open_reasons = [1,2,3,4,5]
+
  
     end
   end

@@ -1,5 +1,12 @@
 <% title "" %>
 
-<h2>Thanks a lot for your participation!</h2>
+<% if @user.results == 2 %>
+  <h4>I'll send you the results of the study as soon as possible.</h4>
+<%end%>
+<% if @user.email != "" %>
+  <h4>If you win an amazon voucher worth $200, I'll inform you via your email address as soon as the survey is closed.</h4>
+<%end%>
+  
+<p><img src="../images/Thnks.jpg"></p>
 
 <!--<p><%= link_to "New User", new_user_path %></p>-->

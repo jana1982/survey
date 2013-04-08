@@ -50,7 +50,18 @@ class UsersController < ApplicationController
       }
     end
   end
-  
+   def repeat5
+    #puts params["secondlist"][0]
+    #result = params["secondlist"].to_a.collect{|e| e.match(/\d+/)[0] rescue ""} #De-serialize the output from the list
+    #puts result
+    #puts params["secondlist"].class
+    respond_to do |format|
+      format.js {
+        render :nothing => true
+      }
+    end
+    
+  end
 
   def repeat4
     #puts params["secondlist"][0]
