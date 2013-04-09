@@ -180,12 +180,74 @@ img {border: none;}
 
 }
 
+#retweet_1_button{
+  background-image:url('../images/retweet_einzeln_g.png');
+}
+#retweet_expand1_button{
+  background-image:url('../images/retweet_einzeln.png');
+}
+#retweet_2_button{
+  background-image:url('../images/retweet_einzeln_g.png');
+}
+#retweet_expand2_button{
+  background-image:url('../images/retweet_einzeln.png');
+}
+
+#unretweet_2_button{
+  background-image:url('../images/retweet_clicked_g.png');
+}
+#unretweet_expand2_button{
+  background-image:url('../images/retweet_clicked.png');
+}
+#unretweet_1_button{
+  background-image:url('../images/retweet_clicked_g.png');
+}
+#unretweet_expand1_button{
+  background-image:url('../images/retweet_clicked.png');
+}
+
+#retweet_1_button:hover{
+  background-image:url('../images/retweet_unterstrichen_g.png');
+  cursor: pointer;
+}
+#retweet_expand1_button:hover{
+  background-image:url('../images/retweet_unterstrichen.png');
+  cursor: pointer;
+}
+#retweet_2_button:hover{
+  background-image:url('../images/retweet_unterstrichen_g.png');
+  cursor: pointer;
+}
+#retweet_expand2_button:hover{
+  background-image:url('../images/retweet_unterstrichen.png');
+  cursor: pointer;
+}
+
+
+#unretweet_2_button:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+#unretweet_expand2_button:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+#unretweet_1_button:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+#unretweet_expand1_button:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+
 .retweet{
-	position:relative;
+  
+  position:absolute;
   float: left;
   left: 185px;
   top: 65px;
-	width: 10px;	
+  width: 85px;	
 
 }
 
@@ -932,14 +994,14 @@ position: relative;
 }
 
 #unfollower_button{
-	background-image:url('../images/unfollow.png');
+	background-image:url('../images/Unfollow.png');
   position: relative;
   left: -4px;
 	width: 57px;
 	height: 16px;
 }
 #unfollower_button:hover {
-	background-image:url('../images/unfollow_unterstrichen.png');
+	background-image:url('../images/Unfollow_unterstrichen.png');
 	cursor: pointer;
 }
   

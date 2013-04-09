@@ -16,7 +16,9 @@ else
 end
 %>
 <div id="actions<%=@number%>" class="actions" style="display:<%=visible%>; border: none;">
-  
+ 
+
+        
   <%if @message_commands %>   
   <div id="expand<%=@number%>" class="expand" 
     onmouseover="<%= remote_function(:url => {:action => :start_measure, :type => "open_time_m#{number}"}) %>"
@@ -49,35 +51,23 @@ end
     %>
 
   </div>
-  <div id = "retweet<%=expand %><%= number %>" class="retweet"    
+
+ 
+  <%  if number == 1%>
+  <div id ="<%=unretweet_retweet_div1%>retweet_<%=expand %><%= number %>_button" class="retweet"
+    onclick="<%= remote_function(:url => {:action => "retweet1", :id => @user.id}) %>; change_button('retweet_<%=expand %><%= number %>_button');"
     onmouseover="<%= remote_function( :url => {:action => :start_measure, :type => "retweet_time_m#{number}"}) %>"
     onmouseout="<%= remote_function( :url => {:action => :end_measure, :type => "retweet_time_m#{number}"}) %>"
-    >
-    <%=  if number == 2
-      if ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?))
-        link_to_remote image_tag("../images/retweet_einzeln#{grey}.png",
-        :mouseover => "../images/retweet_unterstrichen#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
-        :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
-      else
-        link_to_remote image_tag("../images/retweet_clicked#{grey}.png",
-        :mouseover => "../images/retweet_unterstrichen_clicked#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
-        :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
-      end
-    else
-      if ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?))
-        link_to_remote image_tag("../images/retweet_einzeln#{grey}.png",
-        :mouseover => "../images/retweet_unterstrichen#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
-        :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
-      else
-        link_to_remote image_tag("../images/retweet_clicked#{grey}.png",
-        :mouseover => "../images/retweet_unterstrichen_clicked#{grey}.png", :id => "retweet_picture_#{expand}#{number}"),
-        :url => {:action => "retweet#{number}", :id => @user.id, :number => number}
-      end
-    end
-    %>
+    <% end %>
+    <%  if number == 2 %>
+    <div id ="<%=unretweet_retweet_div2%>retweet_<%=expand %><%= number %>_button" class="retweet"
+    onclick="<%= remote_function(:url => {:action => "retweet2", :id => @user.id}) %>; change_button('retweet_<%=expand %><%= number %>_button');"
+    onmouseover="<%= remote_function( :url => {:action => :start_measure, :type => "retweet_time_m#{number}"}) %>"
+    onmouseout="<%= remote_function( :url => {:action => :end_measure, :type => "retweet_time_m#{number}"}) %>" 
+<% end %>
   </div>
 
-  <div id = "favorite<%=expand %><%= number %>" class="favorite"    
+  <!--<div id = "favorite<%=expand %><%= number %>" class="favorite"    
     onmouseover="<%= remote_function( :url => {:action => :start_measure, :type => "favorite_time_m#{number}"}) %>"
     onmouseout="<%= remote_function( :url => {:action => :end_measure, :type => "favorite_time_m#{number}"}) %>"
     >
@@ -103,5 +93,5 @@ end
       end
     end
     %>
-  </div>
+  </div>-->
 </div>

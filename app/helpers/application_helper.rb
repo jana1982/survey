@@ -55,5 +55,26 @@ module ApplicationHelper
     @user.secondlist.join('-')
   end
   
+  def unfollow_follow_div
+    if ((@user.follow_1_clicked==nil)||(@user.follow_1_clicked.even?))
+      ""
+    else
+      "un"
+    end
+  end
   
+  def unretweet_retweet_div1
+    if ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?))
+      ""
+    else
+      "un"
+    end
+  end
+  def unretweet_retweet_div2
+    if ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?))
+      ""
+    else
+      "un"
+    end
+  end
 end
