@@ -3,7 +3,7 @@
   <head>
 
     <title><%= h(yield(:title) || "Untitled") %></title>
-    <%= if @user != nil && @user.twitter_step?
+   <%= if @user != nil && @user.twitter_step?
        stylesheet_link_tag 'experiment'
     else
       stylesheet_link_tag 'application'

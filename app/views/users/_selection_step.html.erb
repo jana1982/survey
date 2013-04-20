@@ -4,7 +4,7 @@
       <h2>Part I: Your Reqirements</h2>
     </TD>
     <TD ALIGN="RIGHT">
-      1/13 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.01,true,true) %>
+      1/14 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.01,true,true) %>
     </TD>
   </TR>
 </TABLE>
@@ -78,15 +78,12 @@
 
 <hr>
 <h3>What news topics do you share on Twitter most (1: most shared topic, 17: less shared topic)? <br>Please rank at least your 5 most shared topics.</h3>
+<h4><i>Please rank the following items by dragging and dropping.</i></h4>
 <table>
   <tr>
-    <td colspan="2"> 	
-	<h4><i>Please rank the following items by dragging and dropping.</i></h4>
-    </td>    
-  </tr>
-  <tr>
-    <td style="align:left; valign:top";">
-      <ul style="list-style-type: none;">
+    <td class="columnleft">
+    
+      <ul style="list-style-type: none; width: 30px;">
 	<li class="listnummern" >1.</li>
 	<li class="listnummern" >2.</li>
 	<li class="listnummern" >3.</li>
@@ -112,9 +109,8 @@
 	
       </ul>
     </td>
-    <td>
-      <div id="list_info">      
-	<ul class="sortabledemo" id="secondlist" style="list-style-type: none;" >
+    <td class="columnright">     
+	<ul class="sortabledemo" id="secondlist" style="list-style-type: none; width: 300px;" >
 	  
 	  <% @user.interest_list.each do |interest| %>
 	    <li class="secondlist_secondlist" id="secondlist_<%= interest %>"
@@ -126,11 +122,10 @@
 	  
 	  <% end %>
 	</ul>
-      </div>
     </td>
-    <td id="explanation0" style="display: none; padding-left: 100px;" >This is a placeholder. Please drag at least your 5 most shared topics to the the top of the placeholder. <br><br>If you like, you can rate more or even all topics. You can use the placeholder to separate the sorted topics from the others.</td>
+    <td id="explanation0" style="display: none; padding-left: 100px; vertical-align: top;" >This is a placeholder. Please drag at least your 5 most shared topics to the the top of the placeholder. <br><br>If you like, you can rate more or even all topics. You can use the placeholder to separate the sorted topics from the others.</td>
   
-    <td id="explanation1" style="display: none; padding-left: 100px;" ><b><u>Arts, Culture & Entertainment could be related to:</u></b>
+    <td id="explanation1" style="display: none; padding-left: 100px; vertical-align: top;" ><b><u>Arts, Culture & Entertainment could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Archaeology</li>	 
@@ -160,7 +155,7 @@
 									  <li>Animation</li>
 									</ul>
     </td>
-    <td id="explanation2" style="display: none; padding-left: 100px;"><b><u>Crime, Law & Justice could be related to:</u></b>
+    <td id="explanation2" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Crime, Law & Justice could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Crime</li>	 
@@ -175,7 +170,7 @@
 									  <li>Organized Crime</li>
 		      						</ul>
     </td>
-    <td id="explanation3" style="display: none; padding-left: 100px;"><b><u>Disasters & Accidents could be related to:</u></b>
+    <td id="explanation3" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Disasters & Accidents could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Drought	 </li>
@@ -196,7 +191,7 @@
 									  <li>Emergency Planning</li>
 									</ul>
     </td>
-    <td id="explanation4" style="display: none; padding-left: 100px;"><b><u>Economy, Business & Finance could be related to the following industries:</u></b>
+    <td id="explanation4" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Economy, Business & Finance could be related to the following industries:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Agriculture</li>	 
@@ -217,7 +212,7 @@
 									  <li>Company Information </li>
 									</ul>
     </td>
-    <td id="explanation5" style="display: none; padding-left: 100px;"><b><u>Education could be related to:</u></b>
+    <td id="explanation5" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Education could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Adult Education	</li> 
@@ -231,7 +226,7 @@
 									  <li>Entrance Examination </li>
 									</ul>
     </td>
-    <td id="explanation6" style="display: none; padding-left: 100px;"><b><u>Environmental Issues could be related to:</u></b>
+    <td id="explanation6" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Environmental Issues could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Alternative Energy </li>	 
@@ -246,7 +241,7 @@
 									  <li>Water Supplies </li>
 									</ul>
     </td>
-    <td id="explanation7" style="display: none; padding-left: 100px;"><b><u>Health could be related to:</u></b>
+    <td id="explanation7" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Health could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Diseases	 </li>
@@ -261,7 +256,7 @@
 									  <li>Hospitals & Clinics</li>
 									</ul>
     </td>
-    <td id="explanation8" style="display: none; padding-left: 100px;"><b><u>Human Interest could be related to:</u></b>
+    <td id="explanation8" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Human Interest could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Animals	 </li>
@@ -275,7 +270,7 @@
 									  <li>Imperial, Royal Matters</li>
 									</ul>
     </td>
-    <td id="explanation9" style="display: none; padding-left: 100px;"><b><u>Labour could be related to:</u></b>
+    <td id="explanation9" style="display: none; padding-left: 100px; vertical-align: top;"><b><u>Labour could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Apprentices</li>	 
@@ -296,7 +291,7 @@
 									  <li>Employees</li>
 									</ul>
     </td>
-    <td id="explanation10" style="display: none; padding-left: 100px;"> <b><u>Lifestyle & Leisure could be related to:</u></b>
+    <td id="explanation10" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Lifestyle & Leisure could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Games	</li> 
@@ -314,7 +309,7 @@
 									  <li>Fishing</li>
 									</ul>
     </td>
-    <td id="explanation11" style="display: none; padding-left: 100px;"> <b><u>Politics could be related to:</u></b>
+    <td id="explanation11" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Politics could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Defence	</li> 
@@ -340,7 +335,7 @@
 									  <li>Lobbying</li>
 									</ul>
     </td>
-    <td id="explanation12" style="display: none; padding-left: 100px;"> <b><u>Religion & Belief could be related to:</u></b>
+    <td id="explanation12" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Religion & Belief could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Cults & sects	</li> 
@@ -350,7 +345,7 @@
 									  <li>Churches (organisations)</li>
 									</ul>
     </td>
-    <td id="explanation13" style="display: none; padding-left: 100px;"> <b><u>Science & Technology could be related to:</u></b>
+    <td id="explanation13" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Science & Technology could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Applied Sciences	 </li>
@@ -365,7 +360,7 @@
 									  <li>Technology (general)</li>
 									</ul>
     </td>
-    <td id="explanation14" style="display: none; padding-left: 100px;"> <b><u>Social Issues could be related to:</u></b>
+    <td id="explanation14" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Social Issues could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Addiction	 </li>
@@ -390,7 +385,7 @@
 									  <li>Nuclear Radiation Victims</li>
 									</ul>
     </td>
-    <td id="explanation15" style="display: none; padding-left: 100px;"> <b><u>Sport could be related to:</u></b>
+    <td id="explanation15" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Sport could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Sports Events  </li>
@@ -423,7 +418,7 @@
 									  </ul>
 									</ul>
     </td>
-    <td id="explanation16" style="display: none; padding-left: 100px;"> <b><u>Unrest, Conflicts & War could be related to:</u></b>
+    <td id="explanation16" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Unrest, Conflicts & War could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Acts of terror	</li> 
@@ -439,7 +434,7 @@
 									  <li>Crisis</li>
 									</ul>
     </td>
-    <td id="explanation17" style="display: none; padding-left: 100px;"> <b><u>Weather could be related to:</u></b>
+    <td id="explanation17" style="display: none; padding-left: 100px; vertical-align: top;"> <b><u>Weather could be related to:</u></b>
 									<br>
 									<ul style="padding-left: 40px;">
 									  <li>Forecasts	 </li>

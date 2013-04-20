@@ -1,9 +1,17 @@
 body {
   background-color: #e9ebe9;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+/*  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;*/
   border: none;
-}
+  text-align:left;
+  font-size:0.76em;
+  font-family: verdana,arial,sans-serif;
+  color:#545454;
+  padding:0px;
+  margin:0px;
+  border:0px;
+  line-height:1.4em;
+        }
 
 a img {
   border: none;
@@ -181,19 +189,11 @@ textarea#user_reason_nrep{
 li .handle {
   cursor: move;
   border: medium;
-  line-height: 40px;
+  line-height: 30px;
   
   }
 
-.openlist2_openlist2{
-  border: solid;
-  border-color: white;
-  background-color:#f2f2f2;
-  height: 30px;
-  width: 190px;
-  text-align: left;
-  
-}
+
 
 .openlist2_openlist2:hover{
   background-color:#e2e2e2;
@@ -202,8 +202,8 @@ li .handle {
 
 #secondlist_0{
   background-size: contain;
-  background-image: url('../images/Platzhalter_draglist.png');
-  height: 172px;
+  background-image: url('../images/Platzhalter_draglist3.png');
+  height: 176px;
 }
 
 /*#list2_0{
@@ -215,12 +215,37 @@ li .handle {
 }
 
 .secondlist_secondlist{
-  border: solid;
+  border: none;
   border-color: white;
   background-color:#f2f2f2;
   height: 30px;
   width: 300px;
   text-align: center;
+  margin-bottom: 7px;
+}
+.openlist2_openlist2{
+  border: none;
+  border-color: white;
+  background-color:#f2f2f2;
+  height: 30px;
+  width: 210px;
+  text-align: left;
+  border-bottom: solid 7px;
+  border-bottom-color: white;
+
+  
+}
+
+.listnummern{
+
+  border-color: white;
+  background-color:#f2f2f2;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border: none;
+  margin: 0px;
+  margin-bottom: 7px;
 }
 .secondlist_secondlist:hover{
 
@@ -231,17 +256,19 @@ li .handle {
 #sortable_list {margin:0;margin-top:10px;padding:0;list-style-type: none;width:250px;}
 #sortable_list li {margin:0;margin-bottom:4px;padding:5px;border:1px solid #888;cursor:move;}
 
-.listnummern{
 
-  border-color: white;
-  background-color:#f2f2f2;
-	height: 36px;
-  width: 30px;
-  text-align: center;
-  border: none;
-  font-size: 14px;
-	line-height: 40px;
+.columnright{
+  padding: 0px;
+  vertical-align: top;
+  padding-left: 5px;
+  
 }
+.columnleft{
+  padding: 0px;
+  width: 30px !important;
+  vertical-align: top;
+  margin: 0px;
+  }
 
 ul{
   -webkit-margin-before: 0em;
@@ -249,7 +276,8 @@ ul{
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
-  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
 }
 
   .label { 
@@ -402,17 +430,7 @@ display: inline-block;
 appearance: none;
 cursor: pointer;}*/
 
-body
-        {
-        text-align:left;
-        font-size:12px;
-        font-family: verdana,arial,sans-serif;
-        color:#545454;
-        padding:0;
-        margin:0;
-        border:0;
-        line-height:1.4;
-        }
+
 h1
         {
         font-weight:lighter;
