@@ -125,13 +125,31 @@ Event.observe(window, 'load', function() {
 }); // Event observe
 
 function change_button(element){
-		if (document.getElementById(element) != null) {
-			document.getElementById(element).id = ("un"+ element);
+		if ((/^un/).test(element)){
+			document.getElementById(element).id = element.substr(2, 99);
 		}
-		else {
-			document.getElementById("un"+element).id = (element);
+		else
+		{
+			document.getElementById(element).id = "un"+ element;
 		}
 		return false;
+}
+
+function expand_buttons(parent){
+	var buttons = document.getElementById(parent).childNodes
+	for (i=0; i<buttons.length; i++){
+		if (buttons[i].nodeType == 1){
+			var element = buttons[i].id
+			if ((/expanded/).test(element)){
+				document.getElementById(element).id = element.slice(0, -8);
+			}
+			else
+			{
+				document.getElementById(element).id = element + "expanded";
+			}			
+		}
+	}
+	return false;
 }
 
 // Klappt unterkategorien aus und zu

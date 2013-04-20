@@ -81,16 +81,28 @@ class UsersController < ApplicationController
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
     @user.setup
-    session[:user_params] = @user.to_hash  
+    session[:user_params] = @user.to_hash
+    
+    #reupdate session
+    if @user.current_step == "twitter"
+      session[:user_params][:retweet_1_clicked] = @user.retweet_1_clicked
+      session[:user_params][:retweet_2_clicked] = @user.retweet_2_clicked
+      session[:user_params][:favorite_1_clicked] = @user.favorite_1_clicked
+      session[:user_params][:favorite_2_clicked] = @user.favorite_2_clicked
+      session[:user_params][:follow_1_clicked] = @user.follow_1_clicked
+      session[:user_params][:expand_1_clicked] = @user.expand_1_clicked
+      session[:user_params][:expand_2_clicked] = @user.expand_2_clicked
+      puts "EXPAND 1 USER #{@user.expand_1_clicked}"
+      puts "EXPAND 2 USER #{@user.expand_2_clicked}"
+      
+    end
   end
   
   def follow1
     if session[:user_params][:follow_1_clicked] == nil
       session[:user_params].deep_merge!({:follow_1_clicked => 1})
     else
-      dummy_f1 = session[:user_params][:follow_1_clicked]
-      dummy_f1 += 1
-      session[:user_params].deep_merge!({:follow_1_clicked => dummy_f1})
+      session[:user_params].deep_merge!({:follow_1_clicked => session[:user_params][:follow_1_clicked] + 1})
     end
     respond_to do |format|
       format.js {
@@ -133,188 +145,97 @@ class UsersController < ApplicationController
             }
     end
   end
-
-
-  def retweet1
-    number = params[:number].to_i
-      if session[:user_params][:retweet_1_clicked] == nil
-        session[:user_params].deep_merge!({:retweet_1_clicked => 1})
-      else
-        dummy_r1 = session[:user_params][:retweet_1_clicked]
-        dummy_r1 += 1
-        session[:user_params].deep_merge!({:retweet_1_clicked => dummy_r1})
-      end
-
-    respond_to do |format|
-      
-        format.js {
-          if (session[:user_params][:retweet_1_clicked].even?) 
-            render(:update) do |page|
-                puts "RT1_EVEN";
-              if (session[:user_params][:favorite_1_clicked] == nil || session[:user_params][:favorite_1_clicked].even?)
-                page.replace_html "marker1", image_tag('../images/platzhalter1_ecke.png')
-              else
-                page.replace_html "marker1", image_tag('../images/favorite_ecke.png')
-              end
-             end;
-          else
-            render(:update) do |page|
-              puts "RT1_unveven";
-              if (session[:user_params][:favorite_1_clicked] == nil || session[:user_params][:favorite_1_clicked].even?)              
-                page.replace_html "marker1", image_tag('../images/retweet1_ecke.png')
-              else
-                page.replace_html "marker1", image_tag('../images/retweet_favorite_ecke.png')
-              end
-             end;
-            end
-             }
-    end
-  end  
   
-  def retweet2
+  def record_and_flip_corner
+    
+    type = params[:action_type]
     number = params[:number].to_i
-    if session[:user_params][:retweet_2_clicked] == nil
-      session[:user_params].deep_merge!({:retweet_2_clicked => 1})
-    else
-      dummy_r2 = session[:user_params][:retweet_2_clicked]
-      dummy_r2 += 1
-      session[:user_params].deep_merge!({:retweet_2_clicked => dummy_r2})
-    end
-
-    respond_to do |format|
-      
-        format.js {
-          if (session[:user_params][:retweet_2_clicked].even?) 
-            render(:update) do |page|
-                puts "RT2_EVEN"
-              if (session[:user_params][:favorite_2_clicked] == nil || session[:user_params][:favorite_2_clicked].even?)
-                page.replace_html "marker2", image_tag('../images/platzhalter1_ecke.png')
-              else
-                page.replace_html "marker2", image_tag('../images/favorite_ecke.png')
-              end
-             end;
-          else
-            render(:update) do |page|
-              puts "RT2_unveven"
-              if (session[:user_params][:favorite_2_clicked] == nil || session[:user_params][:favorite_2_clicked].even?)              
-                page.replace_html "marker2", image_tag('../images/retweet1_ecke.png')
-              else
-                page.replace_html "marker2", image_tag('../images/retweet_favorite_ecke.png')
-              end
-             end;
-            end
-             }
-    end
-  end
-
-  def favorite1
-    number = params[:number].to_i
-      if session[:user_params][:favorite_1_clicked] == nil
-        session[:user_params].deep_merge!({:favorite_1_clicked => 1})
-      else
-        dummy_f1 = session[:user_params][:favorite_1_clicked]
-        dummy_f1 += 1
-        session[:user_params].deep_merge!({:favorite_1_clicked => dummy_f1})
-      end
-
-    respond_to do |format|
-      
-        format.js {
-          if (session[:user_params][:favorite_1_clicked].even?)
-            render(:update) do |page|
-                puts "F1_EVEN"
-                page.replace "favorite_picture_1", image_tag('../images/favorite_einzeln_g.png', :id=>"favorite_picture_1", :mouseover => "../images/favorite_unterstrichen_g.png") 
-                page.replace "favorite_picture_expand1", image_tag('../images/favorite_einzeln.png', :id => "favorite_picture_expand1", :mouseover => "../images/favorite_unterstrichen.png")
-              if (session[:user_params][:retweet_1_clicked] == nil || session[:user_params][:retweet_1_clicked].even?)  
-                page.replace_html "marker1", image_tag('../images/platzhalter1_ecke.png')
-              else
-                page.replace_html "marker1", image_tag('../images/retweet1_ecke.png')
-                end
-             end;
-          else
-            render(:update) do |page|
-              puts "F1_unveven"
-                page.replace "favorite_picture_1", image_tag('../images/favorite_clicked_g.png', :id => "favorite_picture_1", :mouseover => "../images/favorite_unterstrichen_clicked_g.png")
-                page.replace "favorite_picture_expand1", image_tag('../images/favorite_clicked.png', :id => "favorite_picture_expand1", :mouseover => "../images/favorite_unterstrichen_clicked.png")
-              if (session[:user_params][:retweet_1_clicked] == nil || session[:user_params][:retweet_1_clicked].even?)  
-                page.replace_html "marker1", image_tag('../images/favorite_ecke.png')
-              else
-                page.replace_html "marker1", image_tag('../images/retweet_favorite_ecke.png')
-                end
-             end;
-            end
-             }
-    end
-  end 
+    
+    retweet_symbol = "retweet_#{number}_clicked".to_sym
+    favorite_symbol = "favorite_#{number}_clicked".to_sym
   
-  def favorite2
-    number = params[:number].to_i
-    if session[:user_params][:favorite_2_clicked] == nil
-      session[:user_params].deep_merge!({:favorite_2_clicked => 1})
-    else
-      dummy_f2 = session[:user_params][:favorite_2_clicked]
-      dummy_f2 += 1
-      session[:user_params].deep_merge!({:favorite_2_clicked => dummy_f2})
+    if type == "retweet"
+      if session[:user_params][retweet_symbol] == nil
+        session[:user_params].deep_merge!({retweet_symbol => 1})
+      else
+        dummy_r1 = session[:user_params][retweet_symbol] + 1 
+        session[:user_params].deep_merge!({retweet_symbol => dummy_r1})
+      end
+      puts "RETWEET " + session[:user_params][retweet_symbol].to_s
+    elsif type == "favorite"
+      if session[:user_params][favorite_symbol] == nil
+        session[:user_params].deep_merge!({favorite_symbol => 1})
+      else
+        dummy_r1 = session[:user_params][favorite_symbol] + 1 
+        session[:user_params].deep_merge!({favorite_symbol => dummy_r1})
+      end
+      puts "FAVORITE" + session[:user_params][favorite_symbol].to_s
+      elsif type == "follow"
+        if session[:user_params][:follow_1_clicked] == nil
+          session[:user_params].deep_merge!({:follow_1_clicked => 1})
+        else
+          dummy_r1 = session[:user_params][:follow_1_clicked] + 1 
+          session[:user_params].deep_merge!({:follow_1_clicked => dummy_r1})
+        end
+        puts "FOLLOW" + session[:user_params][:follow_1_clicked].to_s
     end
     
     respond_to do |format|
-      
-        format.js {
-          if (session[:user_params][:favorite_2_clicked].even?)
-            render(:update) do |page|
-                puts "F2_EVEN"
-                page.replace "favorite_picture_2", image_tag('../images/favorite_einzeln_g.png', :id=>"favorite_picture_2", :mouseover => "../images/favorite_unterstrichen_g.png") 
-                page.replace "favorite_picture_expand2", image_tag('../images/favorite_einzeln.png', :id => "favorite_picture_expand2", :mouseover => "../images/favorite_unterstrichen.png")
-              if (session[:user_params][:retweet_2_clicked] == nil || session[:user_params][:retweet_2_clicked].even?)  
-                page.replace_html "marker2", image_tag('../images/platzhalter1_ecke.png')
-              else
-                page.replace_html "marker2", image_tag('../images/retweet1_ecke.png')
-                end
-             end;
-          else
-            render(:update) do |page|
-              puts "F2_unveven"
-                page.replace "favorite_picture_2", image_tag('../images/favorite_clicked_g.png', :id => "favorite_picture_2", :mouseover => "../images/favorite_unterstrichen_clicked_g.png")
-                page.replace "favorite_picture_expand2", image_tag('../images/favorite_clicked.png', :id => "favorite_picture_expand2", :mouseover => "../images/favorite_unterstrichen_clicked.png")
-              if (session[:user_params][:retweet_2_clicked] == nil || session[:user_params][:retweet_2_clicked].even?)  
-                page.replace_html "marker2", image_tag('../images/favorite_ecke.png')
-              else
-                page.replace_html "marker2", image_tag('../images/retweet_favorite_ecke.png')
-                end
-             end;
-            end
-             }
+      format.js {
+        render(:update) do |page|
+          # retweeted and favorited
+          if (session[:user_params][retweet_symbol] != nil && !session[:user_params][retweet_symbol].even?) &&
+            (session[:user_params][favorite_symbol] != nil && !session[:user_params][favorite_symbol].even?)
+            puts "retweeted and favorited"
+            page.replace_html "marker#{number}", image_tag('../images/retweet_favorite_ecke.png')
+          end
+          # retweeeted and not favorited
+          if (session[:user_params][retweet_symbol] != nil && !session[:user_params][retweet_symbol].even?) &&
+            (session[:user_params][favorite_symbol] == nil || session[:user_params][favorite_symbol].even?)
+            puts "retweeted and NOT favorited"
+            page.replace_html "marker#{number}", image_tag('../images/retweet1_ecke.png')
+          end
+          # not retweeted and favorited
+          if (session[:user_params][retweet_symbol] == nil || session[:user_params][retweet_symbol].even?) &&
+            (session[:user_params][favorite_symbol] != nil && !session[:user_params][favorite_symbol].even?)
+            puts "NOT retweeted and favorited"
+            page.replace_html "marker#{number}", image_tag('../images/favorite_ecke.png')
+          end
+          # not retweeted and not favorited
+          if (session[:user_params][retweet_symbol] == nil || session[:user_params][retweet_symbol].even?) &&
+            (session[:user_params][favorite_symbol] == nil || session[:user_params][favorite_symbol].even?)
+            puts "NOT retweeted and NOT favorited"
+            page.replace_html "marker#{number}", image_tag('../images/platzhalter1_ecke.png')
+          end
+        end
+      }
     end
   end
+  
  
   def expand_message
     number = params[:number].to_i
-    if number == 1
-      if session[:user_params][:expand_1_clicked] == nil
-      session[:user_params].deep_merge!({:expand_1_clicked => 1})
+    expand_symbol = "expand_#{number}_clicked".to_sym
+
+    if session[:user_params][expand_symbol] == nil
+      session[:user_params].deep_merge!({expand_symbol => 1})
     else
-      dummy_e1 = session[:user_params][:expand_1_clicked]
-      dummy_e1 += 1
-      session[:user_params].deep_merge!({:expand_1_clicked => dummy_e1})
+      dummy_e1 = session[:user_params][expand_symbol] + 1
+      session[:user_params].deep_merge!({expand_symbol => dummy_e1})
     end
-    else
-      if session[:user_params][:expand_2_clicked] == nil
-      session[:user_params].deep_merge!({:expand_2_clicked => 1})
-    else
-      dummy_e2 = session[:user_params][:expand_2_clicked]
-      dummy_e2 += 1
-      session[:user_params].deep_merge!({:expand_2_clicked => dummy_e2})
-    end
-    end
+
     respond_to do |format|
       format.js {
-            render(:update) do |page|
-                page.show "expand_page#{number}"
-              end;
-         }
-    end    
+        render(:update) do |page|
+          if (session[:user_params][expand_symbol] != nil) && (!session[:user_params][expand_symbol].even?)
+            page.show "expand_page#{number}"
+          else
+            page.hide "expand_page#{number}"
+          end
+        end
+      }
+    end
   end
-
   
   def start_measure
     @type = params[:type]
@@ -352,6 +273,7 @@ class UsersController < ApplicationController
   
   def close
     number = params[:number].to_i
+    @user = User.new(session[:user_params])
     respond_to do |format|
       format.js {
               render(:update) do |page|
@@ -362,8 +284,7 @@ class UsersController < ApplicationController
                 page.hide "link_website";
                 page.hide "follower_compose_seite";
                 page.show "follower_seite";
-                page.hide "expand_page1" if number == 1
-                page.hide "expand_page2" if number == 2
+                #page.hide "expand_page#{number}"
               end
             }
     end

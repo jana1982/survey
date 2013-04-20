@@ -1,38 +1,48 @@
+<%
+status = @user.send("expand_#{number}_clicked")
+if status != nil && !status.even?
+  #expanded
+  div_expanded_status = "block"
+  action_prefix = "un"  
+else
+  div_expanded_status = "none"
+  action_prefix = ""
+end
+%>
 
-<div id="message" 
-  onMouseover="document.getElementById ('actions<%= @number %>').style.display='block';"  
-  onMouseout="document.getElementById('actions<%= @number %>').style.display='none';"
->
-
+<div id="<%=action_prefix%>message" 
+  onMouseover="
+  try{
+    document.getElementById ('<%=action_prefix%>actions_<%= @number %>').style.display='block';
+    }
+    catch(e){}"  
+  onMouseout="
+  try{
+    document.getElementById('<%=action_prefix%>actions_<%= @number %>').style.display='<%= div_expanded_status %>';
+    }
+    catch(e){}">  
   <div id="inactive_expand">
-    <img src='../images/expand_inactive.png'>
+    <img src='../images/expand_inactive_g.png'>
   </div>
   <% @message_commands = true %>
   <%= render :partial => "actions", :locals => {:number => @number, :message_commands => @message_commands} %>
-    <%if @number == 2 %>  
-      <div id="tweet"
-            onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m2"}) %>"
-            onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>"
-            >
-            <p>            
-              <!--<%= h(message) %>
-              <%= link_to_remote "bit.ly/Q7fm",
-                  :url => {:action => "link_website", :id => @user.id,  :number => @number}
-              %>-->
-              <%= message %>
-              <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
-            </p>
-      </div>
-    <% else %>
-      <div id="tweet"
-            onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m1"}) %>"
-            onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m1"}) %>"
-            >
-            <p>            
-              <%= message %>
-              <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
-
-            </p>
-      </div>
-    <% end %>
+  <%if @number == 2 %>  
+  <div id="tweet"
+    onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m2"}) %>"
+    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>">
+    <p>            
+      <%= message %>
+      <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
+    </p>
+  </div>
+  <% else %>
+  <div id="tweet"
+    onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m1"}) %>"
+    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m1"}) %>">
+    <p>            
+      <%= message %>
+      <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
+    </p>
+  </div>
+  <% end %>
 </div>

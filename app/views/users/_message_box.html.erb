@@ -1,45 +1,48 @@
 <% if @user.seen_message_1 != "" %>
-
 <div id="tweet1">
-
   <% @number = 1 %>
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_1, :number => @number} %>
   <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
-        <div id="tweeterer">
-    <div id="tweeter_name"> <%= displayed_person %>
+  <div id="tweeterer">
+    <div id="tweeter_name"> 
+      <%= displayed_person %>
     </div>
-    <div id="tweeter_name_at">&nbsp;@<%= displayed_person %>
-
+    <div id="tweeter_name_at">
+      &nbsp;@<%= displayed_person %>
     </div>
-    <div id="minutes">0m</div>
-
-    <% if (@user.favorite_1_clicked.nil? || @user.favorite_1_clicked.even?) && (@user.retweet_1_clicked.nil? || @user.retweet_1_clicked.even?)%>       
-    <div id="marker1" class="marker"><img src='../images/platzhalter1_ecke.png'></div>
+    <div id="minutes">
+      0m
+    </div>
+    <% if (@user.favorite_1_clicked.nil? || @user.favorite_1_clicked.even?) && (@user.retweet_1_clicked.nil? || @user.retweet_1_clicked.even?) %>
+    <div id="marker1" class="marker">
+      <img src='../images/platzhalter1_ecke.png'>
+    </div>
     <% elsif (@user.favorite_1_clicked.nil? || @user.favorite_1_clicked.even?) && (!@user.retweet_1_clicked.nil? || !@user.retweet_1_clicked.even?)%>
-     <div id="marker1" class="marker"><img src='../images/retweet1_ecke.png'></div>
-    <% elsif (!@user.favorite_1_clicked.nil? || !@user.favorite_1_clicked.even?) && (@user.retweet_1_clicked.nil? || @user.retweet_1_clicked.even?)%>
-     <div id="marker1" class="marker"><img src='../images/favorite_ecke.png'></div> 
-    <% elsif (!@user.favorite_1_clicked.nil? || !@user.favorite_1_clicked.even?) && (!@user.retweet_1_clicked.nil? || !@user.retweet_1_clicked.even?)%>
-     <div id="marker1" class="marker"><img src='../images/retweet_favorite_ecke.png'></div>
-    <% end %>
-    
+    <div id="marker1" class="marker">
+      <img src='../images/retweet1_ecke.png'>
     </div>
-  <div id="twitter_bild"><img src='../images/Twitter_bild.png'></div>
-
+    <% elsif (!@user.favorite_1_clicked.nil? || !@user.favorite_1_clicked.even?) && (@user.retweet_1_clicked.nil? || @user.retweet_1_clicked.even?)%>
+    <div id="marker1" class="marker">
+      <img src='../images/favorite_ecke.png'>
+    </div> 
+    <% elsif (!@user.favorite_1_clicked.nil? || !@user.favorite_1_clicked.even?) && (!@user.retweet_1_clicked.nil? || !@user.retweet_1_clicked.even?)%>
+    <div id="marker1" class="marker">
+      <img src='../images/retweet_favorite_ecke.png'>
+    </div>
+    <% end %>
+  </div>
+  <div id="twitter_bild">
+    <img src='../images/Twitter_bild.png'>
+  </div>
   <%= render :partial => "expand_page",  :locals => {:f => f, :retweet => @user.seen_retweet_message1, :message => @user.seen_message_1, :number => @number, :retweet_status => @retweet_status} %>
-
 </div>
 <% end %>
 
 <% if @user.seen_message_2 != "" %>
-
-
 <div id="tweet2">
-
   <% @number = 2 %>
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_2, :number => 2} %>
   <% @retweet_status = "" %>
-  
   <div id="tweeterer">
     <% if !@user.seen_person %>   
     <div id="tweeter_name"> Second_Friend </div>
@@ -50,29 +53,36 @@
     <% end %>
     <div id="minutes">0m</div>
     <% if (@user.favorite_2_clicked.nil? || @user.favorite_2_clicked.even?) && (@user.retweet_2_clicked.nil? || @user.retweet_2_clicked.even?)%>       
-    <div id="marker2" class="marker"><img src='../images/platzhalter1_ecke.png'></div>
+    <div id="marker2" class="marker">
+      <img src='../images/platzhalter1_ecke.png'>
+    </div>
     <% elsif (@user.favorite_2_clicked.nil? || @user.favorite_2_clicked.even?) && (!@user.retweet_2_clicked.nil? || !@user.retweet_2_clicked.even?)%>
-     <div id="marker2" class="marker"><img src='../images/retweet1_ecke.png'></div>
+    <div id="marker2" class="marker">
+      <img src='../images/retweet1_ecke.png'>
+    </div>
     <% elsif (!@user.favorite_2_clicked.nil? || !@user.favorite_2_clicked.even?) && (@user.retweet_2_clicked.nil? || @user.retweet_2_clicked.even?)%>
-     <div id="marker2" class="marker"><img src='../images/favorite_ecke.png'></div> 
+    <div id="marker2" class="marker">
+      <img src='../images/favorite_ecke.png'>
+    </div> 
     <% elsif (!@user.favorite_2_clicked.nil? || !@user.favorite_2_clicked.even?) && (!@user.retweet_2_clicked.nil? || !@user.retweet_2_clicked.even?)%>
-     <div id="marker2" class="marker"><img src='../images/retweet_favorite_ecke.png'></div>
+    <div id="marker2" class="marker">
+      <img src='../images/retweet_favorite_ecke.png'>
+    </div>
     <% end %>
-    
-
   </div>
   <div id="twitter_bild"><img src='../images/tweeter_picture.png'></div>
-
   <%= render :partial => "expand_page", :locals => {:f => f, :message => @user.seen_message_2, :number => @number, :retweet_status => @retweet_status} %>
 </div>
 <% end %>
-<div id="ende"><%= render :partial => "end_of_tweets" %></div>
+
+<div id="ende">
+  <%= render :partial => "end_of_tweets" %>
+</div>
 <div id="halter">
   <div id="follower_compose_seite" style="display: none;">
-  <%= render "follower_compose_seite", :f => f  %> 
+    <%= render "follower_compose_seite", :f => f  %> 
+  </div>
+  <div id="follower_seite">
+    <%= render "follower_seite", :f => f  %> 
+  </div>
 </div>
-<div id="follower_seite">
-  <%= render "follower_seite", :f => f  %> 
-</div>
-</div>
-

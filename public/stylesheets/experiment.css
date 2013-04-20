@@ -89,6 +89,18 @@ line-height: 15px;
 
 #message{
  position:relative;
+ background-color: #f2f2f2;
+ /*background-color: #fcfcfc;
+ */
+ left:-70px;
+ top:-2px;
+ width:520px;
+ height:91px;
+ font-size: 0.87em;
+ font-family: sans-serif;
+}
+#unmessage{
+ position:relative;
  background-color: #fcfcfc;
  left:-70px;
  top:-2px;
@@ -97,6 +109,7 @@ line-height: 15px;
  font-size: 0.87em;
  font-family: sans-serif;
 }
+
 #tweet1{
 	position:relative;
  left:400px;
@@ -121,15 +134,16 @@ line-height: 15px;
 }
 
 .actions{
-
   position: absolute;
-  left: -3px;
+  left: -2px;
 }
 
 img {border: none;}
 
 #message:hover{
-  background-color: #f2f2f2;
+	/*
+	background-color: #f2f2f2;
+	*/
 }
 
 .expanded_actions{
@@ -140,8 +154,10 @@ img {border: none;}
 
 #inactive_expand{
   position:absolute;
-  left:54px; top:65px;
-
+  left:54px; 
+	top:65px;
+	background-color: #f2f2f2;
+ 
 }
 
 
@@ -159,106 +175,302 @@ img {border: none;}
 		position:relative;
 	  left:56px; 
 		top:65px;
-		width: 10px;	
+		width: 85px;
+		height: 23px;	
 }
 
 .expand{
   float: left;
 	position:relative;
-  left:56px; 
+	left:56px; 
 	top:65px;
-	width: 10px;	
-	
+	width: 85px;
+	height: 23px;	
 }
 
 .reply{
 	position:relative;
   float: left;
-  left: 125px;
+  left: 57px;
   top: 65px;
-	width: 10px;	
-
-}
-
-#retweet_1_button{
-  background-image:url('../images/retweet_einzeln_g.png');
-}
-#retweet_expand1_button{
-  background-image:url('../images/retweet_einzeln.png');
-}
-#retweet_2_button{
-  background-image:url('../images/retweet_einzeln_g.png');
-}
-#retweet_expand2_button{
-  background-image:url('../images/retweet_einzeln.png');
-}
-
-#unretweet_2_button{
-  background-image:url('../images/retweet_clicked_g.png');
-}
-#unretweet_expand2_button{
-  background-image:url('../images/retweet_clicked.png');
-}
-#unretweet_1_button{
-  background-image:url('../images/retweet_clicked_g.png');
-}
-#unretweet_expand1_button{
-  background-image:url('../images/retweet_clicked.png');
-}
-
-#retweet_1_button:hover{
-  background-image:url('../images/retweet_unterstrichen_g.png');
-  cursor: pointer;
-}
-#retweet_expand1_button:hover{
-  background-image:url('../images/retweet_unterstrichen.png');
-  cursor: pointer;
-}
-#retweet_2_button:hover{
-  background-image:url('../images/retweet_unterstrichen_g.png');
-  cursor: pointer;
-}
-#retweet_expand2_button:hover{
-  background-image:url('../images/retweet_unterstrichen.png');
-  cursor: pointer;
-}
-
-
-#unretweet_2_button:hover{
-  background-image:url('../images/retweet_unterstrichen_clicked_g.png');
-  cursor: pointer;
-}
-#unretweet_expand2_button:hover{
-  background-image:url('../images/retweet_unterstrichen_clicked.png');
-  cursor: pointer;
-}
-#unretweet_1_button:hover{
-  background-image:url('../images/retweet_unterstrichen_clicked_g.png');
-  cursor: pointer;
-}
-#unretweet_expand1_button:hover{
-  background-image:url('../images/retweet_unterstrichen_clicked.png');
-  cursor: pointer;
+	width: 55px;	
+	height: 23px;
 }
 
 .retweet{
-  
-  position:absolute;
+  position:relative;
   float: left;
-  left: 185px;
+  left: 80px;
   top: 65px;
   width: 85px;	
-
+	height: 23px;
 }
-
 .favorite{
 	position:relative;
   float: left;
-  left: 257px;
+  left: 100px;
   top: 65px;
-	width: 10px;	
-
+	width: 86px;	
+	height: 23px;
 }
+
+
+/* ----------- REPLY ---------------*/
+
+/* reply button 1 */
+/* -g steht für grau */
+#reply_1{
+	/* non - replyed */
+	 background-image:url('../images/reply_einzeln_g.png');
+}
+#reply_1:hover{
+  background-image:url('../images/reply_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unreply_1{
+	/* replyed */
+  background-image:url('../images/reply_clicked_g.png');
+}
+#unreply_1:hover{
+  background-image:url('../images/reply_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+
+/* reply button 1 expanded */
+/* weisser hintergrund */
+#reply_1expanded{
+	/*not replyed*/
+  background-image:url('../images/reply_einzeln.png');
+}
+#reply_1expanded:hover{
+  background-image:url('../images/reply_unterstrichen.png');
+  cursor: pointer;
+}
+#unreply_1expanded{
+  background-image:url('../images/reply_einzeln.png');
+}
+#unreply_1expanded:hover{
+  background-image:url('../images/reply_unterstrichen.png');
+  cursor: pointer;
+}
+
+/* reply button 2*/
+/* -g steht für grau */
+#reply_2{
+  background-image:url('../images/reply_einzeln_g.png');
+}
+#reply_2:hover{
+  background-image:url('../images/reply_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unreply_2{
+  background-image:url('../images/reply_clicked_g.png');
+}
+#unreply_2:hover{
+  background-image:url('../images/reply_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+
+
+/* reply button 2 expanded */
+/* weisser hintergrund */
+
+#reply_2expanded{
+  background-image:url('../images/reply_einzeln.png');
+}
+#reply_2expanded:hover{
+  background-image:url('../images/reply_unterstrichen.png');
+  cursor: pointer;
+}
+#unreply_2expanded{
+  background-image:url('../images/reply_clicked.png');
+}
+#unreply_2expanded:hover{
+  background-image:url('../images/reply_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+
+/* ----------- EXPAND ---------------*/
+
+#expand_1{
+	background-image:url('../images/open_einzeln_g.png');
+}
+#expand_1:hover{
+  background-image:url('../images/open_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unexpand_1expanded{
+	background-image:url('../images/collapse_einzeln.png');
+}
+#unexpand_1expanded:hover{
+	background-image:url('../images/collapse_unterstrichen.png');
+}
+
+#inactive_expand{
+	background-image:url('../images/expand_inactive_g.png');
+}
+#expand_2{
+	background-image:url('../images/open_einzeln_g.png');
+}
+#expand_2:hover{
+  background-image:url('../images/open_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unexpand_2expanded{
+	background-image:url('../images/collapse_einzeln.png');
+}
+#unexpand_2expanded:hover{
+	background-image:url('../images/collapse_unterstrichen.png');
+}
+/* ----------- RETWEET ---------------*/
+
+/* retweet button 1 */
+/* -g steht für grau */
+#retweet_1{
+	/* non - retweeted */
+	 background-image:url('../images/retweet_einzeln_g.png');
+}
+#retweet_1:hover{
+  background-image:url('../images/retweet_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unretweet_1{
+	/* retweeted */
+  background-image:url('../images/retweet_clicked_g.png');
+}
+#unretweet_1:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+
+/* retweet button 1 expanded */
+/* weisser hintergrund */
+#retweet_1expanded{
+	/*not retweeted*/
+  background-image:url('../images/retweet_einzeln.png');
+}
+#retweet_1expanded:hover{
+  background-image:url('../images/retweet_unterstrichen.png');
+  cursor: pointer;
+}
+#unretweet_1expanded{
+  background-image:url('../images/retweet_clicked.png');
+}
+#unretweet_1expanded:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+
+/* retweet button 2*/
+/* -g steht für grau */
+#retweet_2{
+  background-image:url('../images/retweet_einzeln_g.png');
+}
+#retweet_2:hover{
+  background-image:url('../images/retweet_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unretweet_2{
+  background-image:url('../images/retweet_clicked_g.png');
+}
+#unretweet_2:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+
+
+/* retweet button 2 expanded */
+/* weisser hintergrund */
+
+#retweet_2expanded{
+  background-image:url('../images/retweet_einzeln.png');
+}
+#retweet_2expanded:hover{
+  background-image:url('../images/retweet_unterstrichen.png');
+  cursor: pointer;
+}
+#unretweet_2expanded{
+  background-image:url('../images/retweet_clicked.png');
+}
+#unretweet_2expanded:hover{
+  background-image:url('../images/retweet_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+
+/* ----------- FAVORITE ---------------*/
+
+/* favorite button 1 */
+/* -g steht für grau */
+#favorite_1{
+	/* non - favoriteed */
+	 background-image:url('../images/favorite_einzeln_g.png');
+}
+#favorite_1:hover{
+  background-image:url('../images/favorite_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unfavorite_1{
+	/* favoriteed */
+  background-image:url('../images/favorite_clicked_g.png');
+}
+#unfavorite_1:hover{
+  background-image:url('../images/favorite_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+
+/* favorite button 1 expanded */
+/* weisser hintergrund */
+#favorite_1expanded{
+	/*not favoriteed*/
+  background-image:url('../images/favorite_einzeln.png');
+}
+#favorite_1expanded:hover{
+  background-image:url('../images/favorite_unterstrichen.png');
+  cursor: pointer;
+}
+#unfavorite_1expanded{
+  background-image:url('../images/favorite_clicked.png');
+}
+#unfavorite_1expanded:hover{
+  background-image:url('../images/favorite_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+
+/* favorite button 2*/
+/* -g steht für grau */
+#favorite_2{
+  background-image:url('../images/favorite_einzeln_g.png');
+}
+#favorite_2:hover{
+  background-image:url('../images/favorite_unterstrichen_g.png');
+  cursor: pointer;
+}
+#unfavorite_2{
+  background-image:url('../images/favorite_clicked_g.png');
+}
+#unfavorite_2:hover{
+  background-image:url('../images/favorite_unterstrichen_clicked_g.png');
+  cursor: pointer;
+}
+
+
+/* favorite button 2 expanded */
+/* weisser hintergrund */
+#favorite_2expanded{
+  background-image:url('../images/favorite_einzeln.png');
+}
+#favorite_2expanded:hover{
+  background-image:url('../images/favorite_unterstrichen.png');
+  cursor: pointer;
+}
+#unfavorite_2expanded{
+  background-image:url('../images/favorite_clicked.png');
+}
+#unfavorite_2expanded:hover{
+  background-image:url('../images/favorite_unterstrichen_clicked.png');
+  cursor: pointer;
+}
+
 
 #tweeter_name_at{
    float: left;
@@ -611,17 +823,18 @@ textarea#user_search{
   width:525px;
   height: 140px;  
   left:-73px; 
-  top:-25px;
+  top:-0px;
   position: relative;
 
 }
 
 .expand_field_with_retweet{
-  background-image:url('../images/expand_seite_RT_rp.png');
+  background-image:url('../images/expand_seite_RT_rp_cut.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:2px; top: 0px;
+  left:2px; 
+	top: -4px;
   width: 100%;
   height: 132%;
   margin:0 auto;
@@ -629,11 +842,12 @@ textarea#user_search{
 }
 
 .expand_field{
-  background-image:url('../images/expand_seite_ohne_rt_rp.png');
+  background-image:url('../images/expand_seite_ohne_rt_rp_cut.png');
   background-repeat:no-repeat;
   background-position: left top;
   position:relative;
-  left:2px; top: 0px;
+  left:2px; 
+	top: -4px;
   width: 100%;
   height: 93%;
   margin:0 auto;
@@ -645,22 +859,21 @@ textarea#user_search{
   font-size: 0.9em;
   background-color: white;
   position: absolute;
-  bottom: 77px;
+  bottom: 97px;
   height: 10%;
-
-        width: 227px;
-        left: 46px;
+  width: 227px;
+  left: 46px;
 }
 
 #reply_ut{
   position: absolute;
   left: 71px;
-  top: 130px;
+  top: 106px;
 }
 #tweeter_name_at_ut{
   position: absolute;
   left: 81px;
-  top: 141px;
+  top: 118px;
   font-size: 0.95em;
   color: #969696;
   background-color: white;
@@ -668,12 +881,12 @@ textarea#user_search{
 #reply_ut2{
   position: absolute;
   left: 71px;
-  top: 78px;
+  top: 52px;
 }
 #tweeter_name_at_ut2{
   position: absolute;
   left: 81px;
-  top: 88px;
+  top: 62px;
   font-size: 0.95em;
   color: #969696;
   background-color: white;

@@ -190,7 +190,7 @@ li .handle {
   border-color: white;
   background-color:#f2f2f2;
   height: 30px;
-  width: 180px;
+  width: 190px;
   text-align: left;
   
 }
@@ -232,17 +232,15 @@ li .handle {
 #sortable_list li {margin:0;margin-bottom:4px;padding:5px;border:1px solid #888;cursor:move;}
 
 .listnummern{
- border: solid;
+
   border-color: white;
   background-color:#f2f2f2;
-  height: 30px;
+	height: 36px;
   width: 30px;
   text-align: center;
   border: none;
   font-size: 14px;
-
-
-
+	line-height: 40px;
 }
 
 ul{

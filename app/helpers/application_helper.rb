@@ -55,26 +55,74 @@ module ApplicationHelper
     @user.secondlist.join('-')
   end
   
-  def unfollow_follow_div
-    if ((@user.follow_1_clicked==nil)||(@user.follow_1_clicked.even?))
-      ""
-    else
-      "un"
-    end
+  def give_div_a_name(element)
+    if element == "follow"
+      if ((@user.follow_1_clicked==nil)||(@user.follow_1_clicked.even?))
+        "follower_button"
+      else
+        "unfollower_button"
+      end
+    elsif element == "actions1"
+      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
+        "actions_1"
+      else
+        "unactions_1"
+      end
+    elsif element == "actions2"
+      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
+        "actions_2"
+      else
+        "unactions_2"
+      end  
+    elsif element == "expand1"
+      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
+        "expand_1"
+      else
+        "unexpand_1"
+      end
+    elsif element == "expand2"
+      if ((@user.expand_2_clicked==nil)||(@user.expand_2_clicked.even?))
+        "expand_2"
+      else
+        "unexpand_2"
+      end
+    elsif element == "reply1"
+      if ((@user.reply_1_clicked==nil)||(@user.reply_1_clicked.even?))
+        "reply_1"
+      else
+        "unreply_1"
+      end
+    elsif element == "reply2"
+      if ((@user.reply_2_clicked==nil)||(@user.reply_2_clicked.even?))
+        "reply_2"
+      else
+        "unreply_2"
+      end  
+    elsif element == "retweet1"
+      if ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?))
+        "retweet_1"
+      else
+        "unretweet_1"
+      end
+    elsif element == "retweet2"
+      if ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?))
+        "retweet_2"
+      else
+        "unretweet_2"
+      end
+    elsif element == "favorite1"
+      if ((@user.favorite_1_clicked==nil)||(@user.favorite_1_clicked.even?))
+        "favorite_1"
+      else
+        "unfavorite_1"
+      end
+    elsif element == "favorite2"
+      if ((@user.favorite_2_clicked==nil)||(@user.favorite_2_clicked.even?))
+        "favorite_2"
+      else
+        "unfavorite_2"
+      end
+    end 
   end
-  
-  def unretweet_retweet_div1
-    if ((@user.retweet_1_clicked==nil)||(@user.retweet_1_clicked.even?))
-      ""
-    else
-      "un"
-    end
-  end
-  def unretweet_retweet_div2
-    if ((@user.retweet_2_clicked==nil)||(@user.retweet_2_clicked.even?))
-      ""
-    else
-      "un"
-    end
-  end
+
 end
