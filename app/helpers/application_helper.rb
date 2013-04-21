@@ -28,11 +28,13 @@ module ApplicationHelper
   end
   
   def reply_text_helper
-    if @user.reply_text == 0
-      "@"+displayed_person+" "
+    out = ""
+    if @user.reply_text == nil or @user.reply_text == ""
+      out = "@"+displayed_person+" "
     else
-      @user.reply_text
+      out = @user.reply_text
     end
+    return out   
   end
   
   def reply_text_helper2

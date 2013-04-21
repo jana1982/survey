@@ -1,22 +1,17 @@
 
 
+
 <div id="new_tweet"
-        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => 'new_tweet_time'}) %>"
-        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "new_tweet_time"}) %>"
->
-      <%= link_to_remote image_tag('../images/new_tweet_0.png',
-          :mouseover => '../images/new_tweet_korrigiert.png'),
-          :url => {:action => "new_tweet", :id => @user.id}
-      %>
-</div>
+        onclick="<%= remote_function(:url => {:action => "new_tweet", :id => @user.id}) %>;"
+        onmouseover="<%= remote_function(:url => {:action => :start_measure, :type => 'new_tweet_time'}) %>"
+         onmouseout="<%= remote_function(:url => {:action => :end_measure, :type => 'new_tweet_time'}) %>">
+        </div>
 
 <div id="search_symbol"
-        onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"
-        onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "search_time"}) %>">
-     <%= link_to_remote image_tag('../images/suchsymbol.png'),
-             :url => {:action => "suche", :id => @user.id}
-         %>
-</div>
+        onclick="<%= remote_function(:url => {:action => "suche", :id => @user.id}) %>;"
+        onmouseover="<%= remote_function(:url => {:action => :start_measure, :type => 'search_time'}) %>"
+         onmouseout="<%= remote_function(:url => {:action => :end_measure, :type => 'search_time'}) %>">
+        </div>
 
 <div id="search"
         onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "search_time"}) %>"

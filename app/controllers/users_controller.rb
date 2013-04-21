@@ -271,9 +271,15 @@ class UsersController < ApplicationController
     render :nothing => true
   end
   
+  def save_reply_text
+      session[:user_params].deep_merge!({:reply_text => params[:user][:reply_text]})
+      render :nothing => true
+  end
+  
   def close
     number = params[:number].to_i
-    @user = User.new(session[:user_params])
+
+    #@user = User.new(session[:user_params])
     respond_to do |format|
       format.js {
               render(:update) do |page|

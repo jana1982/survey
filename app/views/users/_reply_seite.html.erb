@@ -8,6 +8,7 @@
   </div>
   <div id="reply_text">
     <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{reply_text_helper}" %>
+    
   </div>
 
     <div id="charcount"> <span id="char-count">140</span></div>
@@ -19,7 +20,7 @@
             :url => {:action => "close", :id => @user.id}
       %>
     </div>
-
+<%= observe_form :reply_text, :url => { :action => :save_reply_text }, :frequency => 0.25 %>
 </div>
 
 

@@ -38,13 +38,14 @@ body {
 
 #tweet{
 position: absolute;
-top: 16px;
-left: 70px;
-height: 40px;
-bottom: 0;
-text-align: left;
+padding-top: 24px;
+padding-left: 70px;
+margin: 0px;
+/*height: 40px;*/
+/*text-align: left;*/
 width: 433px;
 line-height: 15px;
+/*vertical-align: top;*/
 }
 
 #tweet3{
@@ -59,6 +60,9 @@ line-height: 15px;
 }
 
 #search_symbol{
+  background-image: url('../images/suchsymbol.png');
+  height: 28px;
+  width: 24px;
   position: absolute;
   top: 4px;
   left:525px;
@@ -92,8 +96,9 @@ line-height: 15px;
  background-color: #f2f2f2;
  /*background-color: #fcfcfc;
  */
- left:-70px;
- top:-2px;
+ padding: 0px;
+ margin-left:-70px;
+ margin-top:-2px;
  width:520px;
  height:91px;
  font-size: 0.87em;
@@ -102,8 +107,9 @@ line-height: 15px;
 #unmessage{
  position:relative;
  background-color: #fcfcfc;
- left:-70px;
- top:-2px;
+ padding: 0px;
+ margin-left:-70px;
+ margin-top:-2px;
  width:520px;
  height:91px;
  font-size: 0.87em;
@@ -114,12 +120,14 @@ line-height: 15px;
 	position:relative;
  left:400px;
  top:100px;
+ padding: 0px;
 
 }
 #tweet2{
   position:relative;
   left:400px;
   top:150px;
+  padding: 0px;
 
 }
 
@@ -215,6 +223,7 @@ img {border: none;}
 }
 
 
+
 /* ----------- REPLY ---------------*/
 
 /* reply button 1 */
@@ -229,10 +238,10 @@ img {border: none;}
 }
 #unreply_1{
 	/* replyed */
-  background-image:url('../images/reply_clicked_g.png');
+  background-image:url('../images/reply_einzeln_g.png');
 }
 #unreply_1:hover{
-  background-image:url('../images/reply_unterstrichen_clicked_g.png');
+  background-image:url('../images/reply_unterstrichen_g.png');
   cursor: pointer;
 }
 
@@ -264,10 +273,10 @@ img {border: none;}
   cursor: pointer;
 }
 #unreply_2{
-  background-image:url('../images/reply_clicked_g.png');
+  background-image:url('../images/reply_einzeln_g.png');
 }
 #unreply_2:hover{
-  background-image:url('../images/reply_unterstrichen_clicked_g.png');
+  background-image:url('../images/reply_unterstrichen_g.png');
   cursor: pointer;
 }
 
@@ -283,10 +292,10 @@ img {border: none;}
   cursor: pointer;
 }
 #unreply_2expanded{
-  background-image:url('../images/reply_clicked.png');
+  background-image:url('../images/reply_einzeln.png');
 }
 #unreply_2expanded:hover{
-  background-image:url('../images/reply_unterstrichen_clicked.png');
+  background-image:url('../images/reply_unterstrichen.png');
   cursor: pointer;
 }
 
@@ -592,11 +601,18 @@ word-wrap: break-word;
 
 
 #new_tweet{
-
-  left:758px; top:0px;
+  background-image:url('../images/new_tweet_0.png');
+  height: 69px;
+  width: 139px;
+  left:752px; top:0px;
   margin:0 auto;
   position: absolute;
 
+}
+#new_tweet:hover{
+  background-image:url('../images/new_tweet_korrigiert.png');
+  z-index: 1;
+  cursor: pointer;
 }
 
 
@@ -720,9 +736,16 @@ textarea#user_search{
 
 }
 
-#compose_tweet{
+#compose_tweet:hover{
+  background-image:url('../images/compose_mouseover.png');
+  cursor: pointer;
+}
 
-  left:23px; top:165px;
+#compose_tweet{
+  background-image:url('../images/compose_inactive.png');
+  height: 41px;
+  width: 283px;
+  left:24px; top:165px;
   margin:0 auto;
   position: absolute;
  
@@ -760,8 +783,9 @@ textarea#user_search{
 
 #tweet_button_change_compose{
   position:relative;
-  padding-left:200px;
-  padding-top: 22px;
+  margin-left:227px;
+  margin-top: 23px;
+  padding: 0px;
 }
 
 #tweet_sent{
@@ -1241,15 +1265,7 @@ position: relative;
   /*left: -57px;
   top: 10px;*/}
   
-#follower_field2{
-background-color: transparent;
-width: 294px;
-height: 60px;
-left: -269px;
-top: 48px;
-margin: 0 auto;
-position: relative;
-}
+
 #halter{
   position: absolute;
   top: 234px;

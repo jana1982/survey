@@ -29,20 +29,16 @@ end
   <%if @number == 2 %>  
   <div id="tweet"
     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m2"}) %>"
-    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>">
-    <p>            
+    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>">           
       <%= message %>
       <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
-    </p>
   </div>
   <% else %>
   <div id="tweet"
     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m1"}) %>"
-    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m1"}) %>">
-    <p>            
+    onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m1"}) %>">           
       <%= message %>
       <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
-    </p>
   </div>
   <% end %>
 </div>

@@ -173,14 +173,7 @@ textarea#user_reason_nrep{
 }
 
 
-.openlist_openlist{
-  border: solid;
-  border-color: white;
-  background-color:#f2f2f2;
-  height: 30px;
-  width: 325px;
-  text-align: left;
-}
+
 
 .openlist_openlist:hover{
   background-color:#e2e2e2;
@@ -234,6 +227,17 @@ li .handle {
   border-bottom-color: white;
 
   
+}
+.openlist_openlist{
+  border: none;
+  border-color: white;
+  background-color:#f2f2f2;
+  height: 30px;
+  width: 350px;
+  text-align: left;
+  border-bottom: solid 7px;
+  border-bottom-color: white;
+
 }
 
 .listnummern{
