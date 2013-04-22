@@ -79,6 +79,9 @@
 <hr>
 <h3>What news topics do you share on Twitter most (1: most shared topic, 17: less shared topic)? <br>Please rank at least your 5 most shared topics.</h3>
 <h4><i>Please rank the following items by dragging and dropping.</i></h4>
+<div id="Hinweis" style="display: none;color: white; background-color: #884141;border-radius: 8px; padding-left: 4px; padding-right: 2px;">
+  <h4>You are using Internet Explorer 10. If you can't dragg the items of the list below, please change to compability mode: Press ALT, go to EXTRAS and activate compability mode.
+</h4><p></p></div>
 <table>
   <tr>
     <td class="columnleft">
@@ -454,4 +457,14 @@
 		     
 %>
 <hr>
+  
+<script type="text/javascript">
+                      //<![CDATA[
+                      if (Prototype.Browser.IE && navigator.appVersion.match(/MSIE\s+(?:6|7|8|)\./)) {
+  $("html").addClass("ie10");
+  getElementByID("Hinweis").display = 'block';
+}
 
+
+ //]]>
+                      </script>

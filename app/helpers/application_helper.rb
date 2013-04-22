@@ -38,19 +38,23 @@ module ApplicationHelper
   end
   
   def reply_text_helper2
-    if @user.reply_text == 0
-      "@Second_Friend "
+    out = ""
+    if @user.reply_text2 == 0 or @user.reply_text2 == ""
+      out = "@Second_Friend "
     else
-      @user.reply_text2
+      out = @user.reply_text2
     end
+    return out 
   end
   
   def reply_text_helper3
-    if @user.reply_text == 0
-      "@Friend "
+    out = ""
+    if @user.reply_text2 == 0 or @user.reply_text2 == ""
+      out = "@Friend "
     else
-      @user.reply_text2
+      out = @user.reply_text2
     end
+    return out 
   end
  
   def join_interest_list
@@ -63,6 +67,30 @@ module ApplicationHelper
         "follower_button"
       else
         "unfollower_button"
+      end
+      elsif element == "message1_hover"
+      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
+        "none"
+      else
+        "block"
+      end
+    elsif element == "message2_hover"
+      if ((@user.expand_2_clicked==nil)||(@user.expand_2_clicked.even?))
+        "none"
+      else
+        "block"
+      end
+    elsif element == "message1"
+      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
+        "message1"
+      else
+        "unmessage1"
+      end
+    elsif element == "message2"
+      if ((@user.expand_2_clicked==nil)||(@user.expand_2_clicked.even?))
+        "message2"
+      else
+        "unmessage2"
       end
     elsif element == "actions1"
       if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))

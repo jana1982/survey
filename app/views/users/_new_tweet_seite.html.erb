@@ -17,5 +17,6 @@
                     :url => {:action => "close", :id => @user.id}
               %>
     </div>
+    <%= observe_form :tweet_text, :url => { :action => :save_new_tweet }, :frequency => 0.25 %>
 </div>
   

@@ -11,7 +11,7 @@
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
-  <div id="reply_text">
+  <div id="reply_text2">
     <% if !@user.seen_person %>
       <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{reply_text_helper2}" %>
     <% else %>
@@ -29,3 +29,5 @@
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
+<%= observe_form :reply_text2, :url => { :action => :save_reply_text2 }, :frequency => 0.25 %>
+</div>

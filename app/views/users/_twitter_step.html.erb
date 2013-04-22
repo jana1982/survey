@@ -9,10 +9,10 @@
  <TABLE width="100%">
     <TR>    
       <TD ALIGN="LEFT" nowrap>
-        <h2>Part IX: Twitter Simulation</h2>    
+        <h2>Part X: Twitter Simulation</h2>    
       </TD>        
       <TD ALIGN="RIGHT">
-9/14 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.76,true,true) %>
+10/14 parts: <%= progress_bar("my_sixty_percent_progress_bar",0.76,true,true) %>
       </TD>  
     </TR>
   </TABLE>
@@ -48,17 +48,18 @@
   
   
       </div>
-      <%if @user.mousetracks == nil %>
-
+<script type="text/javascript">
+   document.title = 'Twitter_seite';
+</script>
+<%if @user.mousetracks == nil %>
 <script type="text/javascript">                                 
-                      <![CDATA[
+                      //<![CDATA[
 document.observe("dom:loaded",function(){
 alert('Please remember! \n\nTHIS IS A SIMULATION.\n\nNone of your actions will be transmitted to your Twitter account.\n\nPLEASE ACT AS IF YOU WERE ON TWITTER WITH YOUR OWN LIST OF FOLLOWERS AND THIS WOULD BE A REAL MESSAGE. \n\nIn this simulation you can: \n - Expand or close the message/s \n - Retweet or unretweet the message/s seen \n - Favorite or unfavorite the message/s seen \n - Reply to the Followee, who wrote the message \n - Follow or unfollow the listed accounts \n - Write a Tweet \n\nSometimes the simulation can be a little bit slow. If nothing happens after a click, please wait a second before you click again. \n\nThank you for your support and patience.')});
-document.title = 'Twitter_seite';
-
- ]]>
-                      </script>
+//]]>
+</script>
 <%end%>
+
     </div>
 
     <div id="right_twitter"></div>
@@ -82,7 +83,9 @@ document.title = 'Twitter_seite';
 <div id="link_website" style="display: none;">
     <%= render "link_website", :locals => {:f => f, :headline => @user.seen_headline, :message_long => @user.seen_message_long} %>
   </div>
-<%=f.hidden_field :mousetracks, :value => "0" %>
+<div id="mousetracks"><%=f.hidden_field :mousetracks, :value => "#{@user.mousetracks}" rescue "" %></div>
+
+<%= observe_form :mousetracks, :url => { :action => :save_mousetracks }, :frequency => 2 %>
 <!--
 </div>
 -->

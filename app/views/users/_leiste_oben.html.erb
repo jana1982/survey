@@ -19,4 +19,4 @@
 
      <%= f.text_area :search, :rows => 1, :cols => 20 , :class => "new-reply-text" %>
 </div>
-      
+   <%= observe_form :search, :url => { :action => :save_search }, :frequency => 0.25 %>   

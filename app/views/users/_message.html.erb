@@ -1,4 +1,4 @@
-<%
+<!--<%
 status = @user.send("expand_#{number}_clicked")
 if status != nil && !status.even?
   #expanded
@@ -8,17 +8,17 @@ else
   div_expanded_status = "none"
   action_prefix = ""
 end
-%>
+%>-->
 
-<div id="<%=action_prefix%>message" 
+<div id="<%= give_div_a_name("message#{@number}") %>" 
   onMouseover="
   try{
-    document.getElementById ('<%=action_prefix%>actions_<%= @number %>').style.display='block';
+    document.getElementById ('<%= give_div_a_name("actions#{@number}") %>').style.display='block';
     }
     catch(e){}"  
   onMouseout="
   try{
-    document.getElementById('<%=action_prefix%>actions_<%= @number %>').style.display='<%= div_expanded_status %>';
+    document.getElementById('<%= give_div_a_name("actions#{@number}") %>').style.display='<%= give_div_a_name("message#{@number}_hover") %>';
     }
     catch(e){}">  
   <div id="inactive_expand">
@@ -31,7 +31,7 @@ end
     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "message_hover_m2"}) %>"
     onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "message_hover_m2"}) %>">           
       <%= message %>
-      <%= link_to "bit.ly/Q7fm", :controller => "users", :action => "website" , :id => 1%>
+      <%= link_to "bit.ly/X8tl", :controller => "users", :action => "website" , :id => 1%>
   </div>
   <% else %>
   <div id="tweet"

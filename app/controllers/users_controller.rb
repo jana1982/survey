@@ -275,6 +275,28 @@ class UsersController < ApplicationController
       session[:user_params].deep_merge!({:reply_text => params[:user][:reply_text]})
       render :nothing => true
   end
+  def save_reply_text2
+      session[:user_params].deep_merge!({:reply_text2 => params[:user][:reply_text2]})
+      render :nothing => true
+  end
+  def save_tweet_text
+      session[:user_params].deep_merge!({:tweet_text => params[:user][:tweet_text]})
+      render :nothing => true
+  end
+  def save_search
+      session[:user_params].deep_merge!({:search => params[:user][:search]})
+      render :nothing => true
+  end
+  def save_new_tweet
+      session[:user_params].deep_merge!({:tweet_text_n => params[:user][:tweet_text_n]})
+      render :nothing => true
+  end
+  
+  def save_mousetracks
+    all = params[:user][:mousetracks]
+    session[:user_params].deep_merge!({:mousetracks => all})  
+    render :nothing => true
+  end
   
   def close
     number = params[:number].to_i

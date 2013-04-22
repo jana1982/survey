@@ -13,14 +13,14 @@
         </ul>
       </div>
       <div style="float: left;">     
-	<ul class="sortabledemo" id="openlist" style="list-style-type: none;height: 177px; width: 327px; background-color: #f2f2f2; padding: 0px;">
+	<ul class="sortabledemo" id="openlist" style="list-style-type: none;height: 177px; width: 475px; background-color: #f2f2f2; padding: 0px;">
           <% if @user.open_reasons != nil  %>
             <% @user.open_reasons.each do |reason| %>
               <li class="openlist_openlist" id="openlist_<%= reason %>">
               <% if reason.to_i == 5 %>
-                <div class="handle" style="width: 320px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others, :size => 25 %></nobr></div>
+                <div class="handle" style="width: 475px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others, :size => 25 %></nobr></div>
               <% else %>
-              <div class="handle" style="width: 320px;"><%= OPEN_REASONS[reason.to_i]%></div>
+              <div class="handle" style="width: 475px;"><%= OPEN_REASONS[reason.to_i]%></div>
               <% end %>
               </li>
             <% end %>
@@ -29,51 +29,51 @@
       </div>
 
       <div style="float: left;">
-        <ul class="sortabledemo" id="dummylist2" style="list-style-type: none;height: 158px; width: 325px; padding: 0px; " >
+        <ul class="sortabledemo" id="dummylist2" style="list-style-type: none;height: 158px; width: 475px; padding: 0px; " >
           <% if @user.open_reasons == nil  %>
             <% dummy = [1,2,3,4,5] %>
               <% dummy.each do |reason| %>
               <li class="openlist_openlist" id="dummylist2_<%= reason %>">
                 <% if reason.to_i == 5 %>
-                <div class="handle" style="width: 320px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others, :size => 25 %></nobr></div>
+                <div class="handle" style="width: 475px;" align="left"><nobr>Other reasons: <%=f.text_field :open_reasons_others, :size => 25 %></nobr></div>
                 <% else %>
-                <div class="handle" style="width: 320px;"><%= OPEN_REASONS[reason.to_i]%></div>
+                <div class="handle" style="width: 475px;"><%= OPEN_REASONS[reason.to_i]%></div>
                 <% end %>
               </li>
               <% end %>
           <%else%>
           <% if !@user.open_reasons.include? "1" %>
           <li class="openlist_openlist" id="dummylist2_<%= 1 %>">
-            <div class="handle" style="width: 320px;"><%= OPEN_REASONS[1]%></div>
+            <div class="handle" style="width: 475px;"><%= OPEN_REASONS[1]%></div>
           </li>
           <% end %>           
           <% if !@user.open_reasons.include? "2" %>
           <li class="openlist_openlist" id="dummylist2_<%= 2 %>">
-            <div class="handle" style="width: 320px;"><%= OPEN_REASONS[2]%></div>
+            <div class="handle" style="width: 475px;"><%= OPEN_REASONS[2]%></div>
           </li>
           <% end %>
           <% if !@user.open_reasons.include? "3" %>
           <li class="openlist_openlist" id="dummylist2_<%= 3 %>">
-            <div class="handle" style="width: 320px;"><%= OPEN_REASONS[3]%></div>
+            <div class="handle" style="width: 475px;"><%= OPEN_REASONS[3]%></div>
           </li>
           <% end %>
           <% if !@user.open_reasons.include? "4" %>
           <li class="openlist_openlist" id="dummylist2_<%= 4 %>">
-            <div class="handle" style="width: 320px;"><%= OPEN_REASONS[4]%></div>
+            <div class="handle" style="width: 475px;"><%= OPEN_REASONS[4]%></div>
           </li>
         <% end %>
         <% if !@user.open_reasons.include? "5" %>
           <li class="openlist_openlist" id="dummylist2_<%= 5 %>">
-          <div class="handle" style="width: 320px;"><nobr>Other reasons: <%=f.text_field :open_reasons_others, :size => 25 %></nobr></div>
+          <div class="handle" style="width: 475px;"><nobr>Other reasons: <%=f.text_field :open_reasons_others, :size => 25 %></nobr></div>
           </li>
           <% end %>
           <% if @user.open_reasons.collect{|x| x.to_i}.sum >=  15 %>
-            <li id="dummylist2_0" style="width: 320px;" > </li>
+            <li id="dummylist2_0" style="width: 475px;" > </li>
           <% end %>
           <% end %>
         </ul>  
       </div>
-      <div style="float: left; width:320px; margin-left:20px; ">
+      <div style="float: left; width:475px; margin-left:20px; ">
 
       </div>
     </div>

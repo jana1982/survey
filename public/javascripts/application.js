@@ -7,20 +7,20 @@ Event.observe(window, 'load', function() {
 	try{
 		if($$('seite_twitter')!=null){
 			
-			//Function to make reply button work
-			Event.observe('user_reply_text', 'keyup', function(event){
-				var maxLen = 140;
-				var left = maxLen - this.getValue().length;
-      	$('char-count').update(left);
-        // Funktion to load button
-        //var replytxt = maxLen- Form.Element.getValue('user_leader_text').length;
-    		if (left < 136) {
-    			Effect.Appear('reply_button_change')
-    		}
-    		else if (left > 136) {
-    			document.getElementById('reply_button_change').style.display='none';
-    		}
-  		})
+                    //Function to make reply button work
+                    Event.observe('user_reply_text', 'keyup', function(event){
+                    var maxLen = 140;
+                    var left = maxLen - this.getValue().length;
+                    $('char-count').update(left);
+                    // Funktion to load button
+                    //var replytxt = maxLen- Form.Element.getValue('user_leader_text').length;
+                    if (left < 136) {
+                            Effect.Appear('reply_button_change')
+                    }
+                    else if (left > 136) {
+                            document.getElementById('reply_button_change').style.display='none';
+                    }
+                    })
 
 			// Function to observe the reply window and change the number of characters left
 			Event.observe('user_reply_text2', 'keyup', function(event){
@@ -66,7 +66,8 @@ Event.observe(window, 'load', function() {
 						}
 					});
 					document.observe('click', function(e, el) {
-						if ( ! e.target.descendantOf('compose_tweet_field')) {
+                                            if ((e.target || e.srcElement).id != 'compose_tweet_field'){
+						/*if ( ! e.target.descendantOf('compose_tweet_field')){ */
 							document.getElementById('compose_tweet_seite').style.display='none';
 							document.getElementById('follower_compose_seite').style.display='none';
 						}
@@ -86,43 +87,54 @@ Event.observe(window, 'load', function() {
 				}
 			});
 			
-			//Function Mousetracking for Twitter page
-			var user_mouse = new Array();
-			var delta = 0;
-			var old_delta = 0;
-			var time_new = 0; 
-			var time_old = 0;
 			
-			//Trackt die maus
-			function getCursorXY(e) {
-				time_new = new Date().getTime();
-				delta = time_new - time_old
-				var cursorX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-				var cursorY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
-			  user_mouse.push(new Array(cursorX,cursorY,old_delta)); 
-			 	$('user_mousetracks').value = user_mouse.join(";");
-			  time_old = time_new
-			  old_delta = delta
-			}
 			
-			//Function initializes the mousetracking
-			function init() {
-				if (document.title == 'Twitter_seite'){
-					if ($('seite_twitter').Event) {
-						$('seite_twitter').captureEvents(Event.MOUSEMOVE);
-					}
-	 				time_new = new Date().getTime();
-					time_old = new Date().getTime();
-					$('seite_twitter').onmousemove = getCursorXY;
-				}
-			}
-			window.onload = init;
+			
 		} // if
 	} // try
 	catch(ex){
 		//alert('nicht Twitter')
 	}
 }); // Event observe
+
+//Function Mousetracking for Twitter page
+var user_mouse = new Array();
+var delta = 0;
+var old_delta = 0;
+var time_new = 0; 
+var time_old = 0;
+
+//Trackt die maus
+function getCursorXY(e) {
+    time_new = new Date().getTime();
+    delta = time_new - time_old
+    if ((user_mouse.length == 0) && ($('user_mousetracks').value != "" )) {
+        alert("test");
+        user_mouse = $('user_mousetracks').value.split(";")
+    }
+    var cursorX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+    var cursorY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+    user_mouse.push(new Array(cursorX,cursorY,old_delta)); 
+    $('user_mousetracks').value = user_mouse.join(";");
+    time_old = time_new
+    old_delta = delta
+}
+
+//Function initializes the mousetracking
+function init() {
+    if (document.title == 'Twitter_seite'){
+
+        if ($('seite_twitter').Event) {
+                        $('seite_twitter').captureEvents(Event.MOUSEMOVE);
+        }
+        time_new = new Date().getTime();
+        time_old = new Date().getTime();
+        $('seite_twitter').onmousemove = getCursorXY;
+    }
+}
+
+//Load mousetracking
+window.onload = init;
 
 function change_button(element){
 		if ((/^un/).test(element)){
