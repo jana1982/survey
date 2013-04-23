@@ -68,18 +68,6 @@ module ApplicationHelper
       else
         "unfollower_button"
       end
-      elsif element == "message1_hover"
-      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
-        "none"
-      else
-        "block"
-      end
-    elsif element == "message2_hover"
-      if ((@user.expand_2_clicked==nil)||(@user.expand_2_clicked.even?))
-        "none"
-      else
-        "block"
-      end
     elsif element == "message1"
       if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
         "message1"
@@ -99,7 +87,7 @@ module ApplicationHelper
         "unactions_1"
       end
     elsif element == "actions2"
-      if ((@user.expand_1_clicked==nil)||(@user.expand_1_clicked.even?))
+      if ((@user.expand_2_clicked==nil)||(@user.expand_2_clicked.even?))
         "actions_2"
       else
         "unactions_2"

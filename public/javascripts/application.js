@@ -163,6 +163,15 @@ function expand_buttons(parent){
 	return false;
 }
 
+function message_display(element){
+    if (document.getElementsByClassName('actions')[element-1].id == "actions_"+ element){
+        return "none"
+    }
+    else {
+        return "block"
+    }
+}
+
 // Klappt unterkategorien aus und zu
 function flipTable(element_name) {
 	$("user_"+element_name+"_website_4").checked = true;

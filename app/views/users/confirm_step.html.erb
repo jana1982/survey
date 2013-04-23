@@ -3,7 +3,7 @@
 <% if @user.results == 2 %>
   <h4>I'll send you the results of the study as soon as possible.</h4>
 <%end%>
-<% if @user.email != "" %>
+<% if @user.email != "" || !@user.email.nil? %>
   <h4>If you win an amazon voucher worth $200, I'll inform you via your email address as soon as the survey is closed.</h4>
 <%end%>
   
