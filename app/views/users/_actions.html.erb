@@ -8,7 +8,7 @@ end
 
 <div id="<%= give_div_a_name("actions#{@number}") %>" class="actions" style="border: none;">
   <div id="<%= give_div_a_name("expand#{@number}") %><%= expand %>" class="expand" 
-    onclick="<%= remote_function(:url => {:action => "expand_message", :id => @user.id, :number => @number}) %>;
+    onclick="<%= remote_function(:url => {:action => "expand_message", :id => @user.id, :number => @number}) %>
     change_button(this.id)  //change to collapse/expand;
     change_button(this.parentNode.id) //change actions;
     expand_buttons(this.parentNode.id) //change buttons; 

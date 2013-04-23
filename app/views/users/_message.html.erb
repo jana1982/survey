@@ -1,4 +1,4 @@
-<!--<%
+<%
 status = @user.send("expand_#{number}_clicked")
 if status != nil && !status.even?
   #expanded
@@ -8,9 +8,9 @@ else
   div_expanded_status = "none"
   action_prefix = ""
 end
-%>-->
+%>
 
-<div id="<%= give_div_a_name("message#{@number}") %>" 
+<div id="<%= action_prefix%>message<%= @number %>" 
   onMouseover="
   try{
     document.getElementById ('<%= give_div_a_name("actions#{@number}") %>').style.display='block';
@@ -18,7 +18,7 @@ end
     catch(e){}"  
   onMouseout="
   try{
-    document.getElementById('<%= give_div_a_name("actions#{@number}") %>').style.display='<%= give_div_a_name("message#{@number}_hover") %>';
+    document.getElementById('<%= give_div_a_name("actions#{@number}") %>').style.display='<%= div_expanded_status %>';
     }
     catch(e){}">  
   <div id="inactive_expand">

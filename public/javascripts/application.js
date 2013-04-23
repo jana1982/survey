@@ -109,7 +109,6 @@ function getCursorXY(e) {
     time_new = new Date().getTime();
     delta = time_new - time_old
     if ((user_mouse.length == 0) && ($('user_mousetracks').value != "" )) {
-        alert("test");
         user_mouse = $('user_mousetracks').value.split(";")
     }
     var cursorX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
