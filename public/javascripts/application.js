@@ -66,7 +66,7 @@ Event.observe(window, 'load', function() {
 						}
 					});
 					document.observe('click', function(e, el) {
-                                            if ((e.target || e.srcElement).id != 'compose_tweet_field'){
+                                            if (!(e.target.descendantOf('compose_tweet_field')) || (e.srcElement.id != ('compose_tweet_field')) ){
 						/*if ( ! e.target.descendantOf('compose_tweet_field')){ */
 							document.getElementById('compose_tweet_seite').style.display='none';
 							document.getElementById('follower_compose_seite').style.display='none';
@@ -111,8 +111,20 @@ function getCursorXY(e) {
     if ((user_mouse.length == 0) && ($('user_mousetracks').value != "" )) {
         user_mouse = $('user_mousetracks').value.split(";")
     }
-    var cursorX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-    var cursorY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+    if (e.pageX || e.pageY) {
+        posx = e.pageX;
+        posy = e.pageY;
+    }
+    else if (e.clientX || e.clientY) {
+            posx = e.clientX + document.body.scrollLeft
+                    + document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop
+                    + document.documentElement.scrollTop;
+    }
+    var cursorX = posx
+    var cursorY = posy
+    //var cursorX = (window.Event) ? event.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+    //var cursorY = (window.Event) ? event.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
     user_mouse.push(new Array(cursorX,cursorY,old_delta)); 
     $('user_mousetracks').value = user_mouse.join(";");
     time_old = time_new
@@ -122,13 +134,32 @@ function getCursorXY(e) {
 //Function initializes the mousetracking
 function init() {
     if (document.title == 'Twitter_seite'){
-
-        if ($('seite_twitter').Event) {
-                        $('seite_twitter').captureEvents(Event.MOUSEMOVE);
-        }
+    try {//FF, webkit, opera, IE>8
+                document.getElementById('seite_twitter').addEventListener('mousemove', getCursorXY, false);
+            }
+            catch (e)
+            {//IE >6 (7?)
+                $('seite_twitter').attachEvent('onmousemove',getCursorXY);
+            }
+        //if ($('seite_twitter').Event) {
+        //    
+        //    // finally
+        //    //{//browsers that must die
+        //    //    try
+        //    //    {
+        //    //        document.onmousemove = getCursorXY;
+        //    //    }
+        //    //    catch(die)
+        //    //    {
+        //    //        //alert('Use a decent browser.');
+        //    //        //location.href = 'http://www.mozilla.org/en-US/firefox/new/';
+        //    //    }
+        //    //}
+        //                //$('seite_twitter').attachEvent('mousemove', getCursorXY);
+        //}
         time_new = new Date().getTime();
         time_old = new Date().getTime();
-        $('seite_twitter').onmousemove = getCursorXY;
+        //$('seite_twitter').onmousemove = getCursorXY;
     }
 }
 

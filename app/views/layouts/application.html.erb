@@ -3,7 +3,7 @@
   <head>
 
     <title><%= h(yield(:title) || "Untitled") %></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
    <%= if @user != nil && @user.twitter_step?
        stylesheet_link_tag 'experiment'
     else

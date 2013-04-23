@@ -102,7 +102,9 @@ class UsersController < ApplicationController
     if session[:user_params][:follow_1_clicked] == nil
       session[:user_params].deep_merge!({:follow_1_clicked => 1})
     else
-      session[:user_params].deep_merge!({:follow_1_clicked => session[:user_params][:follow_1_clicked] + 1})
+      dummy_fol2 = session[:user_params][:follow_1_clicked]
+        dummy_fol2 += 1
+        session[:user_params].deep_merge!({:follow_1_clicked => dummy_fol2})
     end
     respond_to do |format|
       format.js {

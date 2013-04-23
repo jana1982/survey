@@ -9,8 +9,8 @@
       Followed by <%= displayed_person %>
     </div>
         <div id="<%=give_div_a_name("follow")%>"
-        onclick="<%= remote_function(:url => {:action => "follow1", :id => @user.id}) %>;
-        change_button('follower_button');"
+        onclick="<%= remote_function(:url => {:action => "follow1", :id => @user.id}) %>
+        change_button(this.id);"
         onmouseover="<%= remote_function(:url => {:action => :start_measure, :type => 'follow_m1'}) %>"
         onmouseout="<%= remote_function(:url => {:action => :end_measure, :type => 'follow_m1'}) %>">
         </div>
