@@ -121,8 +121,8 @@ function getCursorXY(e) {
             posy = e.clientY + document.body.scrollTop
                     + document.documentElement.scrollTop;
     }
-    var cursorX = posx
-    var cursorY = posy
+    var cursorX = posx - $("seite_twitter").offsetLeft;
+    var cursorY = posy - $("seite_twitter").offsetTop;
     //var cursorX = (window.Event) ? event.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
     //var cursorY = (window.Event) ? event.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
     user_mouse.push(new Array(cursorX,cursorY,old_delta)); 

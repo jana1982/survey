@@ -349,6 +349,14 @@ class UsersController < ApplicationController
             }
     end
   end
+  def back_to_simulation
+    respond_to do |format|
+      format.js {
+              render '_twitter_step.html'
+            }
+    end
+      
+  end
   
   def website
     @user = User.new(session[:user_params])
