@@ -687,7 +687,7 @@ textarea#user_tweet_text_n{
   word-wrap: break-word;
   position:absolute;
   left:19px;
-  top:63px;
+  top:58px;
   width: 463px;
 }
 
@@ -1091,17 +1091,20 @@ table.hovertable td {
   top: 55px;
   left: -45px;
   background-color: #f8f8f8;
+  width:20px;
 }
 #n2{
   position: absolute;
   top: 55px;
   left: 25px;
+  width:20px;
   background-color: #f8f8f8;
 }
 #n3{
   position: absolute;
   top: 55px;
   left: 111px;
+  width:20px;
   background-color: #f8f8f8;
 }
 #link_website{
@@ -1220,7 +1223,18 @@ border: solid;
 left: 239px;
 border-color: #dcdcdc;
 }
-
+#follower_field2{
+  height: 83px;
+  width: 1px;
+}
+#follower_compose_seite{
+  height: 83px;
+  width: 1px;
+}
+#halter{
+  height: 186px;
+  width: 1px;
+}
 #follower_field{
 background-color: transparent;
 width: 303px;
