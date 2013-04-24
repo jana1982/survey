@@ -66,7 +66,7 @@ Event.observe(window, 'load', function() {
 						}
 					});
 					document.observe('click', function(e, el) {
-                                            if (!(e.target.descendantOf('compose_tweet_field'))  ){
+                                            if (e.target.id != ('user_tweet_text')  ){
 						/*if ( ! e.target.descendantOf('compose_tweet_field')){ */
 							document.getElementById('compose_tweet_seite').style.display='none';
 							document.getElementById('follower_compose_seite').style.display='none';
@@ -195,7 +195,7 @@ function expand_buttons(parent){
 }
 
 function message_display(element){
-    if (document.getElementsByClassName('actions')[element-1].id == "actions_"+ element){
+    if (document.querySelectorAll('.actions')[element-1].id == "actions_"+ element){
         return "none"
     }
     else {

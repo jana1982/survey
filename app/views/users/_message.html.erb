@@ -12,8 +12,8 @@ actions_number = @number -1
 %>
 
 <div id="<%= give_div_a_name("message#{@number}") %>" 
-  onMouseover="document.getElementsByClassName('actions')[<%= actions_number %>].style.display='block';"  
-  onMouseout="document.getElementsByClassName('actions')[<%= actions_number %>].style.display= message_display(<%= @number %>)">  
+  onMouseover="document.querySelectorAll('.actions')[<%= actions_number %>].style.display='block';"  
+  onMouseout="document.querySelectorAll('.actions')[<%= actions_number %>].style.display= message_display(<%= @number %>)">  
   <div id="inactive_expand">
     <img src='../images/expand_inactive_g.png'>
   </div>
