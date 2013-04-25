@@ -215,8 +215,8 @@ class User < ActiveRecord::Base
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
   end
 
-  validates_presence_of 	:language, :if => :selection?
-  validates_presence_of 	:twitter_account, :if => :selection?
+  #validates_presence_of 	:language, :if => :selection?
+  #validates_presence_of 	:twitter_account, :if => :selection?
   validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
   validates_numericality_of 	:bildung, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter your age, when you left your last educational institution"
   validates_numericality_of 	:alter, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter your year of birth"
@@ -330,9 +330,10 @@ class User < ActiveRecord::Base
   end
 
   def steps
-      %w[ introduction  selection demographic internet twitter_motivation opinionleader interest sources sources_extent reasons_for_ol
+      %w[ introduction selection demographic internet twitter_motivation opinionleader interest sources sources_extent reasons_for_ol
 	 twitter message_relevance target_variables behavioral_expectation target]          
   end
+
 
   def first_step?
     current_step == steps.first
@@ -357,37 +358,37 @@ class User < ActiveRecord::Base
   def does_qualify?      
       does_not_qualify = false      
       # If the user does not seak english good enough
-      if language != nil && language < 5
-	does_not_qualify = true
-      end      
+#      if language != nil && language < 5
+#	does_not_qualify = true
+#      end      
       # If the user does not have an active twitter account
-      if twitter_account != nil && twitter_account < 2
-	does_not_qualify = true
-      end      
+#      if twitter_account != nil && twitter_account < 2
+#	does_not_qualify = true
+#      end      
       # If the user has not selected politcs as the first or second choice
-      if current_step == "internet"
-	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
-	  print "User did qualify"
-	else	  
-	  does_not_qualify = true
-	end
-      end
+#      if current_step == "internet"
+#	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
+#	  print "User did qualify"
+#	else	  
+#	  does_not_qualify = true
+#	end
+      #end
       # If Country is one of those without defence ministry
       if current_step == "internet"
 	if country == 4 || country == 15 || country == 20 || country == 38 || country == 41 || country == 49 || country == 68 || country == 70 || country == 89 || country == 101 || country == 110 || country == 111 || country == 115 || country == 117 || country == 124 || country == 128 || country == 130 || country == 134 || country == 135 || country == 146 || country == 147 || country == 148 || country == 149 || country == 150 || country == 160 || country == 176 || country == 182 || country == 190 || country == 191
 	does_not_qualify = true
 	end 
       end
-      if current_step == "twitter_motivation"
-	if avg_retweet == 7
-	  does_not_qualify = true
-	end
-      end
-      if current_step == "sources"
-	  if def_gen == 1 || for_gen == 1 
-	  does_not_qualify = true
-	end
-      end
+#      if current_step == "twitter_motivation"
+#	if avg_retweet == 7
+#	  does_not_qualify = true
+#	end
+#      end
+#      if current_step == "sources"
+#	  if def_gen == 1 || for_gen == 1 
+#	  does_not_qualify = true
+#	end
+#      end
       if does_not_qualify
         return false
       else
