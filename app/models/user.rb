@@ -141,7 +141,7 @@ class User < ActiveRecord::Base
     CSV.open(filename, "w") do |csv|
     	csv << ["ID",
 		"P1_language", "P1_twitter_account", "P1_interest_list",
-		"P2_bildung", "P2_bildung_still_study", "P2_geschlecht", "P2_alter", "P2_martial_status", "P2_children", "P2_country", "P2_years", "P2_area", "P2_income", "P2_employment", "P2_position", "P2_organization", "P2_private_pc",
+		"P2_bildung", "P2_bildung_still_study", "P2_geschlecht", "P2_alter", "P2_martial_status", "P2_children", "P2_country", "P2_years", "P2_area",  "P2_employment", "P2_employment_text", "P2_position", "P2_position_text", "P2_organization", "P2_organization_text", "P2_private_pc", "P2_private_mobile", "P2_work_pc", "P2_work_mobile", "P2_public",
 		"P3_account_name", "P3_twitter_privat_work", "P3_number_followers", "P3_number_followeees", "P3_number_messages", "P3_avg_login", "P3_avg_tweet_number", "P3_avg_retweet", "P3_avg_at_replies", "P3_avg_private_replies", "P3_avg_favorite_tweets", "P3_avg_read_tweets", "P3_avg_read_twtimes", "P3_avg_stories", "P3_avg_trend", "P3_avg_search_keywords", "P3_avg_follow", "P3_avg_unfollow_account", "P3_avg_search_accounts", "P3_avg_who_to_follow", "P3_avg_browse_categories", "P3_avg_find_friends", "P3_avg_activities_friends", "P3_avg_create_lists", "P3_avg_add_accounts_lists", "P3_avg_subscribe_lists", "P3_avg_unsubscribe_lists", "P3_avg_delete_accounts_lists", 
 		"P4_pass_time", "P4_entertain_myself", "P4_occupy_time", "P4_time_bored", "P4_forget_worries", "P4_help_others", "P4_support_others", "P4_show_encouragement", "P4_contribute", "P4_new_friends", "P4_new_people", "P4_get_know_other", "P4_keep_in_touch", "P4_find_people", "P4_communicate", "P4_gather_information", "P4_find_out_things", "P4_look_for_information", "P4_knowledgeable_individual", "P4_answers_questions", "P4_keep_connect", "P4_find_out", "P4_deepen_relationships", "P4_far_away", "P4_express_feelings", "P4_spread_ideas", "P4_argue_ideas", "P4_impress_others", "P4_enteratain_others", "P4_inform_others", "P4_center_of_attention", "P4_someone_else", "P4_show_competence", "P4_show_interest", "P4_others_expectation", "P4_please_others", "P4_cover_up_feelings", "P4_other_motivations", "P4_other_motivation_txt",
 		"P5_ol_1", "P5_ol_2", "P5_ol_3", "P5_ol_4", "P5_ol_5", "P5_ol_6", "P5_ol_7", "P5_ol_8", "P5_ol_9", "P5_ol_10", "P5_ol_11", "P5_ol_12", "P5_leader_text",
@@ -165,7 +165,7 @@ class User < ActiveRecord::Base
     	User.all.each do |user|
 	    csv << [user.id,
 		user.language, user.twitter_account, user.interest_list,
-		user.bildung, user.bildung_still_study, user.geschlecht, user.alter, user.martial_status, user.children, user.country, user.years, user.area, user.income, user.employment, user.position, user.organization, user.private_pc,
+		user.bildung, user.bildung_still_study, user.geschlecht, user.alter, user.martial_status, user.children, user.country, user.years, user.area, user.employment, user.employment_text, user.position, user.position_text, user.organization, user.organization_text, user.private_pc, user.private_mobile, user.work_pc, user.work_mobile, user.public,
 		user.account_name, user.twitter_privat_work, user.number_followers, user.number_followeees, user.number_messages, user.avg_login, user.avg_tweet_number, user.avg_retweet, user.avg_at_replies, user.avg_private_replies, user.avg_favorite_tweets, user.avg_read_tweets, user.avg_read_twtimes, user.avg_stories, user.avg_trend, user.avg_search_keywords, user.avg_follow, user.avg_unfollow_account, user.avg_search_accounts, user.avg_who_to_follow, user.avg_browse_categories, user.avg_find_friends, user.avg_activities_friends, user.avg_create_lists, user.avg_add_accounts_lists, user.avg_subscribe_lists, user.avg_unsubscribe_lists, user.avg_delete_accounts_lists,
 		user.pass_time, user.entertain_myself, user.occupy_time, user.time_bored, user.forget_worries, user.help_others, user.support_others, user.show_encouragement, user.contribute, user.new_friends, user.new_people, user.get_know_other, user.keep_in_touch, user.find_people, user.communicate, user.gather_information, user.find_out_things, user.look_for_information, user.knowledgeable_individual, user.answers_questions, user.keep_connect, user.find_out, user.deepen_relationships, user.far_away, user.express_feelings, user.spread_ideas, user.argue_ideas, user.impress_others, user.enteratain_others, user.inform_others, user.center_of_attention, user.someone_else, user.show_competence, user.show_interest, user.others_expectation, user.please_others, user.cover_up_feelings, user.other_motivations, user.other_motivation_txt,
 		user.ol_1, user.ol_2, user.ol_3, user.ol_4, user.ol_5, user.ol_6, user.ol_7, user.ol_8, user.ol_9, user.ol_10, user.ol_11, user.ol_12, user.leader_text,
@@ -215,16 +215,16 @@ class User < ActiveRecord::Base
     hash = {}; self.attributes.each { |k,v| hash[k] = v }
   end
 
-  #validates_presence_of 	:language, :if => :selection?
-  #validates_presence_of 	:twitter_account, :if => :selection?
+  validates_presence_of 	:language, :if => :selection?
+  validates_presence_of 	:twitter_account, :if => :selection?
   validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
-  validates_numericality_of 	:bildung, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter your age, when you left your last educational institution"
-  validates_numericality_of 	:alter, :allow_nil => true, :allow_blank => true, :if => :demographic?, :message => "is invalid. Please enter your year of birth"
-  #validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  #validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  #validates_format_of 		:interest_list[2], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  #validates_format_of 		:interest_list[3], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  #validates_format_of 		:interest_list[4], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  validates_numericality_of 	:bildung, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Please enter your age, when you left your last educational institution"
+  validates_format_of		:alter, :with => /^((19|20)+[0-9]{2})?$/i, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Please enter your year of birth"
+  validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  validates_format_of 		:interest_list[2], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  validates_format_of 		:interest_list[3], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  validates_format_of 		:interest_list[4], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
 
   validates_presence_of		:account_name, :if => :internet?, :message => "can't be blank. If you absolutely don't trust the guarantied anonymization of this questionnaire, please insert a name you can identify with.", :if => :internet?
   validates_format_of 		:account_name, :with => /^[@]?[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
@@ -236,8 +236,8 @@ class User < ActiveRecord::Base
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_format_of 		:surf_twitter_week, :with => /^[0-9]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 99. You can use . to separate decimal places.", :if => :internet?
   validates_format_of 		:surf_twitter_weekend, :with => /^[0-3]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 39. You can use . to separate decimal places.", :if => :internet?
-  #validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
-  #
+  validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
+  
   validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_3, :if => :opinionleader?, :unless => proc{|obj| obj.ol_3.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
@@ -358,21 +358,21 @@ class User < ActiveRecord::Base
   def does_qualify?      
       does_not_qualify = false      
       # If the user does not seak english good enough
-#      if language != nil && language < 5
-#	does_not_qualify = true
-#      end      
-      # If the user does not have an active twitter account
-#      if twitter_account != nil && twitter_account < 2
-#	does_not_qualify = true
-#      end      
-      # If the user has not selected politcs as the first or second choice
-#      if current_step == "internet"
-#	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
-#	  print "User did qualify"
-#	else	  
-#	  does_not_qualify = true
-#	end
-      #end
+      if language != nil && language < 5
+	does_not_qualify = true
+      end      
+       If the user does not have an active twitter account
+      if twitter_account != nil && twitter_account < 2
+	does_not_qualify = true
+      end      
+       If the user has not selected politcs as the first or second choice
+      if current_step == "internet"
+	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
+	  print "User did qualify"
+	else	  
+	  does_not_qualify = true
+	end
+      end
       # If Country is one of those without defence ministry
       if current_step == "internet"
 	if country == 4 || country == 15 || country == 20 || country == 38 || country == 41 || country == 49 || country == 68 || country == 70 || country == 89 || country == 101 || country == 110 || country == 111 || country == 115 || country == 117 || country == 124 || country == 128 || country == 130 || country == 134 || country == 135 || country == 146 || country == 147 || country == 148 || country == 149 || country == 150 || country == 160 || country == 176 || country == 182 || country == 190 || country == 191
