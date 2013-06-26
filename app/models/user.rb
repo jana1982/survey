@@ -361,11 +361,11 @@ class User < ActiveRecord::Base
       if language != nil && language < 5
 	does_not_qualify = true
       end      
-       If the user does not have an active twitter account
+      #If the user does not have an active twitter account
       if twitter_account != nil && twitter_account < 2
 	does_not_qualify = true
       end      
-       If the user has not selected politcs as the first or second choice
+      #If the user has not selected politcs as the first or second choice
       if current_step == "internet"
 	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
 	  print "User did qualify"
