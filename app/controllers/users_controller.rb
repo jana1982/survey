@@ -498,6 +498,19 @@ class UsersController < ApplicationController
     headline = headline[message_type]
     message_long = message_long[message_type]
     
+    if @user.seen_seed[4] == 0
+      session[:user_params].deep_merge!({:seen_nv_influence => 0})
+      session[:user_params].deep_merge!({:seen_nv_damage => 0})
+      elsif @user.seen_seed[4] == 1
+        session[:user_params].deep_merge!({:seen_nv_influence => 0})
+        session[:user_params].deep_merge!({:seen_nv_damage => 1})
+        elsif @user.seen_seed[4] == 2
+          session[:user_params].deep_merge!({:seen_nv_influence => 1})
+          session[:user_params].deep_merge!({:seen_nv_damage => 0})
+          elsif @user.seen_seed[4] == 3
+            session[:user_params].deep_merge!({:seen_nv_influence => 1})
+            session[:user_params].deep_merge!({:seen_nv_damage => 1})
+    end
     
     session[:user_params].deep_merge!({:seen_headline => headline})
     session[:user_params].deep_merge!({:seen_message_long => message_long})
@@ -526,7 +539,6 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:reply_2_clicked => 0})
     session[:user_params].deep_merge!({:expand_1_clicked => 0})
     session[:user_params].deep_merge!({:expand_2_clicked => 0})
-    
   end
   
   def generate0_if_nil

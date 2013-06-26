@@ -142,5 +142,21 @@ module ApplicationHelper
       end
     end 
   end
+  
+  def tweet1_order
+    if @user.random_var_multimessage==0 
+      "tweet1"
+    else
+      "tweet2"
+    end
+  end
+  
+  def tweet2_order
+    if @user.random_var_multimessage==0 
+      "tweet2"
+    else
+      "tweet1"
+    end
+  end
 
 end

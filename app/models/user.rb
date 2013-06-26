@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 			:new_tweet_time, :search_time,
 			:experiment_time,
 			:tweet_text_n,
+			:seen_nv_influence, :seen_nv_damage, :random_var_multimessage,
 			:seen_person,
 			:seen_message_1, :seen_message_2, :seen_headline, :seen_message_long,
 			:seen_multiple_messages, :seen_at,
@@ -151,7 +152,7 @@ class User < ActiveRecord::Base
 		"P7_3_blogs", "P7_3_search_engine", "P7_3_goverment_site", "P7_3_self_aggr_txt", "P7_other_sources_txt",
 		"P8_heard_mass_media", "P8_knew_colleagues", "P8_read_retweet", "P8_came_accross_wtf", "P8_knew_aquaintances", "P8_came_across_bc", "P8_heard_friends_write", "P8_1_heard_friends_write_nf", "P8_met_informal", "P8_knew_friends", "P8_heard_friends_interact", "P8_2_heard_friends_interact_nf", "P8_read_reply", "P8_came_across_twitter_list", "P8_heard_internet", "P8_came_across_same_intrest", "P8_heard_friends_recommend", "P8_3_heard_friends_recommend_nf", "P8_met_formal", "P8_came_across_stories", "P8_heard_friends_follow", "P8_4_heard_friends_follow_nf", "P8_other_reasons", "P8_other_reasons_txt",
 		"P9_A_follow_1_clicked", "P9_A_follow_m1", "P9_A_reply_1_clicked", "P9_A_reply_text", "P9_A_reply_time_m1", "P9_A_reply_2_clicked", "P9_A_reply_text2", "P9_A_reply_time_m2", "P9_A_retweet_1_clicked", "P9_A_retweet_time_m1", "P9_A_retweet_2_clicked", "P9_A_retweet_time_m2", "P9_A_favorite_1_clicked", "P9_A_favorite_time_m1", "P9_A_favorite_2_clicked", "P9_A_favorite_time_m2", "P9_A_expand_1_clicked", "P9_A_open_time_m1", "P9_A_expand_2_clicked", "P9_A_open_time_m2", "P9_A_new_tweet_clicked", "P9_A_tweet_text_n", "P9_A_compose_tweet_clicked", "P9_A_tweet_text", "P9_A_new_tweet_time", "P9_A_search_clicked", "P9_A_search", "P9_A_search_time", "P9_A_link_clicked", "P9_A_message_hover_m1", "P9_A_message_hover_m2", "P9_A_mousetracks",
-		"P9_M_batch_id", "P9_M_seen_seed", "P9_M_situation", "P9_M_seen_retweet_message1", "P9_M_seen_multiple_messages", "P9_M_seen_person", "P9_M_seen_at", "P9_M_seen_message_1", "P9_M_seen_message_2", "P9_M_seen_headline", "P9_M_seen_message_long",
+		"P9_M_batch_id", "P9_M_seen_seed", "P9_M_situation", "P9_M_seen_retweet_message1", "P9_M_seen_multiple_messages", "P9_M_seen_person", "P9_M_seen_at", "P9_M_seen_nv_influence", "P9_M_seen_nv_damage", "P9_M_random_var_multimessage","P9_M_seen_message_1", "P9_M_seen_message_2", "P9_M_seen_headline", "P9_M_seen_message_long",
 		"P10_message_important", "P10_message_meaningful", "P10_message_for_me", "P10_message_remember", "P10_message_value", "P10_message_relevant", "P10_message_useful", "P10_message_attention", "P10_message_interest", "P10_message_ideas", "P10_message_helpful", "P10_message_informative",
 		"P10_retweet_pr_relevant", "P10_retweet_pr_relevant_ck", "P10_retweet_pr_meaningful", "P10_retweet_pr_meaningful_ck", "P10_retweet_pr_important", "P10_retweet_pr_important_ck", "P10_retweet_pr_significant", "P10_retweet_pr_significant_ck", "P10_retweet_oc_relevant", "P10_retweet_oc_relevant_ck", "P10_retweet_oc_meaningful", "P10_retweet_oc_meaningful_ck", "P10_retweet_oc_important", "P10_retweet_oc_important_ck", "P10_retweet_oc_significant", "P10_retweet_oc_significant_ck", "P10_reason_nrt",
 		"P10_favorite_pr_relevant", "P10_favorite_pr_relevant_ck", "P10_favorite_pr_meaningful", "P10_favorite_pr_meaningful_ck", "P10_favorite_pr_important", "P10_favorite_pr_important_ck", "P10_favorite_pr_significant", "P10_favorite_pr_significant_ck", "P10_reason_nfav",
@@ -175,7 +176,7 @@ class User < ActiveRecord::Base
 		user.blogs, user.search_engine, user.goverment_site, user.self_aggr_txt, user.other_sources_txt,
 		user.heard_mass_media, user.knew_colleagues, user.read_retweet, user.came_accross_wtf, user.knew_aquaintances, user.came_across_bc, user.heard_friends_write, user.heard_friends_write_nf, user.met_informal, user.knew_friends, user.heard_friends_interact, user.heard_friends_interact_nf, user.read_reply, user.came_across_twitter_list, user.heard_internet, user.came_across_same_intrest, user.heard_friends_recommend, user.heard_friends_recommend_nf, user.met_formal, user.came_across_stories, user.heard_friends_follow, user.heard_friends_follow_nf, user.other_reasons, user.other_reasons_txt,
 		user.follow_1_clicked, user.follow_m1, user.reply_1_clicked, user.reply_text, user.reply_time_m1, user.reply_2_clicked, user.reply_text2, user.reply_time_m2, user.retweet_1_clicked, user.retweet_time_m1, user.retweet_2_clicked, user.retweet_time_m2, user.favorite_1_clicked, user.favorite_time_m1, user.favorite_2_clicked, user.favorite_time_m2, user.expand_1_clicked, user.open_time_m1, user.expand_2_clicked, user.open_time_m2, user.new_tweet_clicked, user.tweet_text_n, user.compose_tweet_clicked, user.tweet_text, user.new_tweet_time, user.search_clicked, user.search, user.search_time, user.link_clicked, user.message_hover_m1, user.message_hover_m2, user.mousetracks,
-		user.batch_id, user.seen_seed, user.situation, user.seen_retweet_message1, user.seen_multiple_messages, user.seen_person, user.seen_at, user.seen_message_1, user.seen_message_2, user.seen_headline, user.seen_message_long,
+		user.batch_id, user.seen_seed, user.situation, user.seen_retweet_message1, user.seen_multiple_messages, user.seen_person, user.seen_at, user.seen_nv_influence, user.seen_nv_damage, user.random_var_multimessage, user.seen_message_1, user.seen_message_2, user.seen_headline, user.seen_message_long,
 		user.message_important, user.message_meaningful, user.message_for_me, user.message_remember, user.message_value, user.message_relevant, user.message_useful, user.message_attention, user.message_interest, user.message_ideas, user.message_helpful, user.message_informative,
 		user.retweet_pr_relevant, user.retweet_pr_relevant_ck, user.retweet_pr_meaningful, user.retweet_pr_meaningful_ck, user.retweet_pr_important, user.retweet_pr_important_ck, user.retweet_pr_significant, user.retweet_pr_significant_ck, user.retweet_oc_relevant, user.retweet_oc_relevant_ck, user.retweet_oc_meaningful, user.retweet_oc_meaningful_ck, user.retweet_oc_important, user.retweet_oc_important_ck, user.retweet_oc_significant, user.retweet_oc_significant_ck, user.reason_nrt,
 		user.favorite_pr_relevant, user.favorite_pr_relevant_ck, user.favorite_pr_meaningful, user.favorite_pr_meaningful_ck, user.favorite_pr_important, user.favorite_pr_important_ck, user.favorite_pr_significant, user.favorite_pr_significant_ck, user.reason_nfav,
@@ -207,6 +208,7 @@ class User < ActiveRecord::Base
       self.seen_retweet_message1 = seed.content[0]
       self.seen_multiple_messages = seed.content[1]
       self.seen_at = seed.content[3]
+      self.random_var_multimessage = seed.content[5]
       self.interest_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
     end
   end
@@ -220,11 +222,11 @@ class User < ActiveRecord::Base
   validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
   validates_numericality_of 	:bildung, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Please enter your age, when you left your last educational institution"
   validates_format_of		:alter, :with => /^((19|20)+[0-9]{2})?$/i, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Please enter your year of birth"
-  validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  validates_format_of 		:interest_list[2], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  validates_format_of 		:interest_list[3], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
-  validates_format_of 		:interest_list[4], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[2], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[3], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
+  #validates_format_of 		:interest_list[4], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
 
   validates_presence_of		:account_name, :if => :internet?, :message => "can't be blank. If you absolutely don't trust the guarantied anonymization of this questionnaire, please insert a name you can identify with.", :if => :internet?
   validates_format_of 		:account_name, :with => /^[@]?[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
