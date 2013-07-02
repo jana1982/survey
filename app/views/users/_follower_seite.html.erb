@@ -6,7 +6,7 @@
     <div id="follower_titel">
       <b><%=EMPLOYEE[@user.country-1][0].split(' employee')%> of <%=COUNTRIES[@user.country][0] %></b>
     <div id="follower_friend">
-      Followed by <%= displayed_person %>
+      Followed by <%= @user.displayed_person1.gsub("@","") %>
     </div>
         <div id="<%=give_div_a_name("follow")%>"
         onclick="<%= remote_function(:url => {:action => "follow1", :id => @user.id}) %>

@@ -1,23 +1,24 @@
 <div id="reply_field">
 
-    <% if !@user.seen_person %>
+    <!--<% if !@user.seen_person %>
     <div id="tweeter_name_groß">&nbsp;@Second_Friend</div>
     <% else %>
     <div id="tweeter_name_groß">&nbsp;@Friend </div>
-    <% end %>
-  
+    <% end %>-->
+  <div id="tweeter_name_groß">&nbsp;<%= @user.displayed_person2 %></div>
   <div id="close">
             <%= link_to_remote image_tag('../images/close.png'),
                   :url => {:action => "close", :id => @user.id}
             %>
   </div>
   <div id="reply_text2">
-    <% if !@user.seen_person %>
-      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{reply_text_helper2}" %>
-    <% else %>
-      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{reply_text_helper3}" %>
-    <% end %>
-    
+      <% if @user.reply_text.nil? %> 
+      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{@user.displayed_person2}" %>
+    <% elsif @user.reply_text==""%>
+        <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{@user.displayed_person2}" %>
+    <% else%>
+      <%= f.text_area :reply_text2, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{@user.reply_text2}" %>
+    <% end %> 
   </div>
 
     <div id="charcount"> <span id="char-count2">140</span></div>

@@ -20,7 +20,7 @@ end
     </div>
     <% if @number == 1 %>
     <% if @user.seen_retweet_message1 %>
-    <div id="tweeter_name_at_ut">Reply to @<%= displayed_person %>
+    <div id="tweeter_name_at_ut">Reply to <%= @user.displayed_person1 %>
     </div>
     <div id="reply_ut"
     onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time_m#{number}"}) %>"
@@ -30,7 +30,7 @@ end
     %>
   </div>
   <%else%>
-  <div id="tweeter_name_at_ut2">Reply to @<%= displayed_person %></div>
+  <div id="tweeter_name_at_ut2">Reply to <%= @user.displayed_person1 %></div>
   <div id="reply_ut2"
   onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time_m#{number}"}) %>"
   onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time_m#{number}"}) %>">
@@ -41,13 +41,7 @@ end
 <% end %>
 <% end %>
 <% if @number == 2 %>
-<div id="tweeter_name_at_ut2">
-  <% if !@user.seen_person %>   
-  <div>Reply to @Second_Friend</div>
-  <% else %>
-  <div>Reply to @Friend </div>
-  <% end %>
-</div>
+<div id="tweeter_name_at_ut2">Reply to <%= @user.displayed_person2 %></div>
 <div id="reply_ut2"
 onmouseover="<%= remote_function(:update => '', :url => {:action => :start_measure, :type => "reply_time_m#{number}"}) %>"
 onmouseout="<%= remote_function(:update => '', :url => {:action => :end_measure, :type => "reply_time_m#{number}"}) %>">

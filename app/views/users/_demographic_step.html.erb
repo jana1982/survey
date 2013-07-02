@@ -26,9 +26,24 @@
 </p>
     
 <hr>
-  <h3 onMouseover="document.getElementById ('explanation_education').style.display='block';"  
+
+
+  <h3>What year were you born? </h3>
+    <p>
+  <%= f.text_field :alter, :size => 5, :maxlength => 4%>
+</p>
+<hr>
+<p>
+  <h3>What is your gender?</h3>
+  <%= f.radio_button :geschlecht, 1 %>
+  <%= f.label :female, "Female" %>
+  <%= f.radio_button :geschlecht, 0 %>
+  <%= f.label :male, "Male" %>
+</p>
+<hr>
+   <h3 onMouseover="document.getElementById ('explanation_education').style.display='block';"  
       onMouseout="document.getElementById('explanation_education').style.display='none';">How old were you when you stopped your full-time education? </h3>
-  <i>For more information place your cursor over the question.</i>
+  <i>Please insert your age not the year. For more information place your cursor over the question.</i>
   <div id="explanation_education" style="display: none;">
     <br>
   Education may include one of the following: 
@@ -44,22 +59,38 @@
   <li>Other</li>
 </ul>
       </div>
-      <p><%= f.text_field :bildung, :size => 3, :maxlength => 2%> years</p>
+      <p><%= f.text_field :bildung, :size => 2, :maxlength => 2%> years</p>
        <%= f.check_box :bildung_still_study, :options => {}, :checked_value => "1", :unchecked_value => "0"%> I'm still studying.
+       <%= f.hidden_field :income %>
+       <script type="text/javascript">
+            //<![CDATA[
+             new Form.Element.Observer($('user_bildung'), 0.3, function(form, value){
+                    if (document.getElementById('user_alter').value =='')
+                    {alert('Could you please insert your year of birth first?')}
+                    else if (value > 2013 - document.getElementById('user_alter').value) {
+                   alert('Are you shure you studied longer than you are old?')
+                   v = (2013 - document.getElementById('user_alter').value) - document.getElementById('user_bildung').value
+                   document.getElementById('user_income').value = v
+                    }
+                    
+                    else
+                    {document.getElementById('user_income').value = document.getElementById('user_bildung').value}
+              });
+            //]]>
+            new Form.Element.Observer($('user_bildung_still_study'),0.3, function(form, value){
+              if (document.getElementById('user_bildung_still_study').checked ==true)
+                    {
+                    v = (2013 - document.getElementById('user_alter').value)
+                    document.getElementById('user_income').value = v
+                    }
+                    else
+                    {
+                    document.getElementById('user_income').value = ""
+                    }
+            })
+            </script>
+       
 
-<hr>
-<p>
-  <h3>What is your gender?</h3>
-  <%= f.radio_button :geschlecht, 1 %>
-  <%= f.label :female, "Female" %>
-  <%= f.radio_button :geschlecht, 0 %>
-  <%= f.label :male, "Male" %>
-</p>
-<hr>
-<p>
-  <h3>What year were you born?</h3>
-  <%= f.text_field :alter, :size => 5, :maxlength => 4%>
-</p>
 <hr>
 <p>
   <h3>What is your current marital status?</h3>

@@ -7,13 +7,14 @@ module ApplicationHelper
       out += observe_field(field_id, options.merge(:function => function)) # and observe it
   end
   
-  def displayed_person
-        if !@user.seen_person 
-            text = 'Friend'
-        else
-            text = @user.leader_text
-        end
-  end
+  #def displayed_person
+  #  displayed_text=""
+  #      if !@user.seen_person 
+  #          displayed_text = 'Friend'
+  #      else
+  #          displayed_text = @user.leader_text.gsub("@","")
+  #      end
+  #end
    
   def minutes
     @user.experiment_time.to_i/60
@@ -27,35 +28,17 @@ module ApplicationHelper
     (@user.avg_private_replies + @user.avg_stories + @user.avg_trend + @user.avg_follow + @user.avg_unfollow_account + @user.avg_create_lists + @user.avg_add_accounts_lists + @user.avg_unsubscribe_lists + @user.avg_subscribe_lists) 
   end
   
-  def reply_text_helper
-    out = ""
-    if @user.reply_text == nil or @user.reply_text == ""
-      out = "@"+displayed_person+" "
-    else
-      out = @user.reply_text
-    end
-    return out   
-  end
+
   
-  def reply_text_helper2
-    out = ""
-    if @user.reply_text2 == 0 or @user.reply_text2 == ""
-      out = "@Second_Friend "
-    else
-      out = @user.reply_text2
-    end
-    return out 
-  end
-  
-  def reply_text_helper3
-    out = ""
-    if @user.reply_text2 == 0 or @user.reply_text2 == ""
-      out = "@Friend "
-    else
-      out = @user.reply_text2
-    end
-    return out 
-  end
+  #def reply_text_helper3
+  #  out = ""
+  #  if @user.reply_text2 == 0 or @user.reply_text2 == ""
+  #    out = "@Friend "
+  #  else
+  #    out = @user.reply_text2
+  #  end
+  #  return out 
+  #end
  
   def join_interest_list
     @user.secondlist.join('-')
@@ -144,7 +127,7 @@ module ApplicationHelper
   end
   
   def tweet1_order
-    if @user.random_var_multimessage==0 
+    if !@user.random_var_multimessage
       "tweet1"
     else
       "tweet2"
@@ -152,11 +135,12 @@ module ApplicationHelper
   end
   
   def tweet2_order
-    if @user.random_var_multimessage==0 
+    if !@user.random_var_multimessage 
       "tweet2"
     else
       "tweet1"
     end
   end
+
 
 end

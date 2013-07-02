@@ -1,5 +1,5 @@
 <div id="reply_field">
-    <div id="tweeter_name_groß">&nbsp;@<%= displayed_person %>
+    <div id="tweeter_name_groß">&nbsp;<%= @user.displayed_person1 %>
     </div>
   <div id="close">
     <%= link_to_remote image_tag('../images/close.png'),
@@ -7,7 +7,15 @@
     %>
   </div>
   <div id="reply_text">
-    <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{reply_text_helper}" %>
+
+    <% if @user.reply_text.nil? %> 
+      <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{@user.displayed_person1}" %>
+    <% elsif @user.reply_text==""%>
+        <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{@user.displayed_person1}" %>
+    <% else%>
+      <%= f.text_area :reply_text, :cols => 56, :rows => 4, :maxlength => 140, :value => "#{@user.reply_text}" %>
+    <% end %> 
+    
     
   </div>
 

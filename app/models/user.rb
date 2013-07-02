@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 			:new_tweet_time, :search_time,
 			:experiment_time,
 			:tweet_text_n,
+			:displayed_person1, :displayed_person2,
 			:seen_nv_influence, :seen_nv_damage, :random_var_multimessage,
 			:seen_person,
 			:seen_message_1, :seen_message_2, :seen_headline, :seen_message_long,
@@ -220,8 +221,11 @@ class User < ActiveRecord::Base
   validates_presence_of 	:language, :if => :selection?
   validates_presence_of 	:twitter_account, :if => :selection?
   validates_inclusion_of 	:country, :in => 1..196, :if => :demographic?, :message => "is missing. Please select the country you currently live."
-  validates_numericality_of 	:bildung, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Please enter your age, when you left your last educational institution"
-  validates_format_of		:alter, :with => /^((19|20)+[0-9]{2})?$/i, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Please enter your year of birth"
+  validates_presence_of		:income, :if => :demographic?, :message => "cant be blank, unless you are still studying."
+  #validates_format_of	 	:bildung, :with => /^([1-9]+[0-9])?$/i, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Make shure you insertet your age, when you left your last educational institution - not the years you spent in school."
+  validates_format_of	 	:income, :with => /^(1[2-9]|(2|3|4|5|6|7)[0-9])?$/i, :allow_nil => false, :allow_blank => false, :if => :demographic?, :message => "is invalid. Make shure you insertet your age, when you left your last educational institution - not the years you spent in school."
+  validates_presence_of		:alter, :if => :demographic?
+  validates_format_of		:alter, :with => /^((19|20)+[0-9]{2})?$/i, :allow_nil => false, :allow_blank => false,  :if => :demographic?, :message => "is invalid. Please enter your year of birth"
   #validates_format_of 		:interest_list[0], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
   #validates_format_of 		:interest_list[1], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
   #validates_format_of 		:interest_list[2], :with => /^[0-4]$/i, :allow_nil => true, :allow_blank => true, :message => "is missing. Please rank at least your 5 most shared topics."
@@ -230,7 +234,20 @@ class User < ActiveRecord::Base
 
   validates_presence_of		:account_name, :if => :internet?, :message => "can't be blank. If you absolutely don't trust the guarantied anonymization of this questionnaire, please insert a name you can identify with.", :if => :internet?
   validates_format_of 		:account_name, :with => /^[@]?[a-zA-Z0-9_]*$/i, :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters.", :if => :internet?
- 
+  #validate			:account_name, :uniqueness => {:scope => :account_name}
+  validates_inclusion_of 	:twitter_privat_work, :in => 1..5, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_login, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_tweet_number, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_retweet, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_at_replies, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_favorite_tweets, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_follow, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_read_tweets, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_read_twtimes, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_stories, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_trend, :if => :internet?, :message => "is missing"
+  validates_presence_of 	:avg_activities_friends,  :if => :internet?, :message => "is missing"
+  
   validates_numericality_of 	:number_followers, :allow_nil => true, :allow_blank => true, :if => :internet? 
   validates_numericality_of	:number_followeees, :allow_nil => true, :allow_blank => true, :if => :internet? 
   validates_numericality_of	:number_messages, :allow_nil => true, :allow_blank => true, :if => :internet?
@@ -258,6 +275,352 @@ class User < ActiveRecord::Base
       if (ol_1.blank? & ol_2.blank? & ol_3.blank? & ol_4.blank? & ol_5.blank? & ol_6.blank? & ol_7.blank? & ol_8.blank? & ol_9.blank? & ol_10.blank? & ol_11.blank? & ol_12.blank?)
         errors.add_to_base("Specify at least one field")
       end
+  end
+  
+
+  validates_presence_of :pass_time, :if => :twitter_motivation?, :unless => proc{|obj| obj.pass_time.blank?}
+  validates_presence_of :entertain_myself,  :if => :twitter_motivation?, :unless => proc{|obj| obj.entertain_myself.blank?}
+  validates_presence_of :occupy_time,  :if => :twitter_motivation?, :unless => proc{|obj| obj.occupy_time.blank?}
+  validates_presence_of :time_bored,  :if => :twitter_motivation?, :unless => proc{|obj| obj.time_bored.blank?}
+  validates_presence_of :forget_worries,  :if => :twitter_motivation?, :unless => proc{|obj| obj.forget_worries.blank?}
+  validates_presence_of :help_others,  :if => :twitter_motivation?, :unless => proc{|obj| obj.help_others.blank?}
+  validates_presence_of :support_others,  :if => :twitter_motivation?, :unless => proc{|obj| obj.support_others.blank?}
+  validates_presence_of :show_encouragement,  :if => :twitter_motivation?, :unless => proc{|obj| obj.show_encouragement.blank?}
+  validates_presence_of :contribute,  :if => :twitter_motivation?, :unless => proc{|obj| obj.contribute.blank?}
+  validates_presence_of :new_friends,  :if => :twitter_motivation?, :unless => proc{|obj| obj.new_friends.blank?}
+  validates_presence_of :new_people,  :if => :twitter_motivation?, :unless => proc{|obj| obj.new_people.blank?}
+  validates_presence_of :get_know_other,  :if => :twitter_motivation?, :unless => proc{|obj| obj.get_know_other.blank?}
+  validates_presence_of :keep_in_touch,  :if => :twitter_motivation?, :unless => proc{|obj| obj.keep_in_touch.blank?}
+  validates_presence_of :find_people,  :if => :twitter_motivation?, :unless => proc{|obj| obj.find_people.blank?}
+  validates_presence_of :communicate,  :if => :twitter_motivation?, :unless => proc{|obj| obj.communicate.blank?}
+  validates_presence_of :gather_information,  :if => :twitter_motivation?, :unless => proc{|obj| obj.gather_information.blank?}
+  validates_presence_of :find_out_things,  :if => :twitter_motivation?, :unless => proc{|obj| obj.find_out_things.blank?}
+  validates_presence_of :look_for_information,  :if => :twitter_motivation?, :unless => proc{|obj| obj.look_for_information.blank?}
+  validates_presence_of :knowledgeable_individual,  :if => :twitter_motivation?, :unless => proc{|obj| obj.knowledgeable_individual.blank?}
+  validates_presence_of :answers_questions,  :if => :twitter_motivation?, :unless => proc{|obj| obj.answers_questions.blank?}
+  validates_presence_of :keep_connect,  :if => :twitter_motivation?, :unless => proc{|obj| obj.keep_connect.blank?}
+  validates_presence_of :find_out,  :if => :twitter_motivation?, :unless => proc{|obj| obj.find_out.blank?}
+  validates_presence_of :deepen_relationships,  :if => :twitter_motivation?, :unless => proc{|obj| obj.deepen_relationships.blank?}
+  validates_presence_of :far_away,  :if => :twitter_motivation?, :unless => proc{|obj| obj.far_away.blank?}
+  validates_presence_of :express_feelings,  :if => :twitter_motivation?, :unless => proc{|obj| obj.express_feelings.blank?}
+  validates_presence_of :spread_ideas,  :if => :twitter_motivation?, :unless => proc{|obj| obj.spread_ideas.blank?}
+  validates_presence_of :argue_ideas,  :if => :twitter_motivation?, :unless => proc{|obj| obj.argue_ideas.blank?}
+  validates_presence_of :impress_others,  :if => :twitter_motivation?, :unless => proc{|obj| obj.impress_others.blank?}
+  validates_presence_of :enteratain_others,  :if => :twitter_motivation?, :unless => proc{|obj| obj.enteratain_others.blank?}
+  validates_presence_of :inform_others,  :if => :twitter_motivation?, :unless => proc{|obj| obj.inform_others.blank?}
+  validates_presence_of :center_of_attention,  :if => :twitter_motivation?, :unless => proc{|obj| obj.center_of_attention.blank?}
+  validates_presence_of :someone_else,  :if => :twitter_motivation?, :unless => proc{|obj| obj.someone_else.blank?}
+  validates_presence_of :show_competence,  :if => :twitter_motivation?, :unless => proc{|obj| obj.show_competence.blank?}
+  validates_presence_of :show_interest,  :if => :twitter_motivation?, :unless => proc{|obj| obj.show_interest.blank?}
+  validates_presence_of :others_expectation,  :if => :twitter_motivation?, :unless => proc{|obj| obj.others_expectation.blank?}
+  validates_presence_of :please_others,  :if => :twitter_motivation?, :unless => proc{|obj| obj.please_others.blank?}
+  validates_presence_of :cover_up_feelings,  :if => :twitter_motivation?, :unless => proc{|obj| obj.cover_up_feelings.blank?}
+  validate 		:at_least_3q_motivations, :if => :twitter_motivation?
+  
+  def at_least_3q_motivations
+  dummyvar= 0
+     if !pass_time.blank? 
+     dummyvar +=1
+     end
+   
+     if !entertain_myself.blank? 
+     dummyvar +=1
+     end
+
+     if !time_bored.blank? 
+     dummyvar +=1
+     end
+   
+     if !forget_worries.blank? 
+     dummyvar +=1
+     end
+   
+     if !help_others.blank? 
+     dummyvar +=1
+     end
+   
+     if !support_others.blank? 
+     dummyvar +=1
+     end
+
+     if !contribute.blank? 
+     dummyvar +=1
+     end
+   
+     if !new_friends.blank? 
+     dummyvar +=1
+     end
+   
+     if !get_know_other.blank? 
+     dummyvar +=1
+     end
+
+     if !look_for_information.blank? 
+     dummyvar +=1
+     end
+  
+     if !knowledgeable_individual.blank? 
+     dummyvar +=1
+     end
+     
+     if !deepen_relationships.blank? 
+     dummyvar +=1
+     end
+   
+     if !far_away.blank? 
+     dummyvar +=1
+     end
+
+     if !enteratain_others.blank? 
+     dummyvar +=1
+     end
+
+     if !center_of_attention.blank? 
+     dummyvar +=1
+     end
+
+     if !show_competence.blank? 
+     dummyvar +=1
+     end
+
+     if !others_expectation.blank? 
+     dummyvar +=1
+     end
+
+     if !cover_up_feelings.blank? 
+     dummyvar +=1
+     end
+      if dummyvar < 18
+        errors.add_to_base("Rate at least the entire first half of the possible motivations regarding your degree of agreement.")
+      end
+  end
+  
+  validates_presence_of :economic_policy, :if => :interest?, :unless => proc{|obj| obj.economic_policy.blank?}
+  validates_presence_of :foreign_affairs,  :if => :interest?, :unless => proc{|obj| obj.foreign_affairs.blank?}
+  validates_presence_of :domestic_politics,  :if => :interest?, :unless => proc{|obj| obj.domestic_politics.blank?}
+  validates_presence_of :legal_policy,  :if => :interest?, :unless => proc{|obj| obj.legal_policy.blank?}
+  validates_presence_of :fiscal_policy,  :if => :interest?, :unless => proc{|obj| obj.fiscal_policy.blank?}
+  validates_presence_of :social_policy,  :if => :interest?, :unless => proc{|obj| obj.social_policy.blank?}
+  validates_presence_of :agricultural_policy,  :if => :interest?, :unless => proc{|obj| obj.agricultural_policy.blank?}
+  validates_presence_of :defence_policy,  :if => :interest?, :unless => proc{|obj| obj.defence_policy.blank?}
+  validates_presence_of :family_policy,  :if => :interest?, :unless => proc{|obj| obj.family_policy.blank?}
+  validates_presence_of :healthcare_policy,  :if => :interest?, :unless => proc{|obj| obj.healthcare_policy.blank?}
+  validates_presence_of :traffic_policy,  :if => :interest?, :unless => proc{|obj| obj.traffic_policy.blank?}
+  validates_presence_of :environmental_policy,  :if => :interest?, :unless => proc{|obj| obj.environmental_policy.blank?}
+  validates_presence_of :educational_policy,  :if => :interest?, :unless => proc{|obj| obj.educational_policy.blank?}
+  validates_presence_of :development_policy,  :if => :interest?, :unless => proc{|obj| obj.development_policy.blank?}
+  validates_presence_of :other_sup_topic, :if => :interest?, :unless => proc{|obj| obj.other_sup_topic.blank?}
+  validate 		:at_least_3_intrests, :if => :interest?
+  
+  def at_least_3_intrests
+    dummyvar2= 0
+     if !economic_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !foreign_affairs.blank? 
+     dummyvar2 +=1
+     end
+     if !domestic_politics.blank? 
+     dummyvar2 +=1
+     end
+     if !legal_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !fiscal_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !social_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !agricultural_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !defence_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !family_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !healthcare_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !traffic_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !environmental_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !educational_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !development_policy.blank? 
+     dummyvar2 +=1
+     end
+     if !other_sup_topic.blank? 
+     dummyvar2 +=1
+    end	
+    if dummyvar2 < 3
+        errors.add_to_base("Please rate at least 3 political topics you are especially interested in on Twitter")
+      end
+  end
+  
+  validates_presence_of :slider, :if => :interest?, :unless => proc{|obj| obj.slider.blank?}
+  validates_presence_of :dk_pol_percentage, :if => :interest?, :unless => proc{|obj| obj.dk_pol_percentage == 1}
+  validate 		:slide_slider_or_dk, :if => :interest?
+  
+  def slide_slider_or_dk
+    dummyvar3 = 0
+    if !slider.blank? 
+     dummyvar3 +=1
+    end
+    if dk_pol_percentage == 1 
+     dummyvar3 +=1
+    end	
+    if dummyvar3 < 1
+        errors.add_to_base("Please estimate the percentage of the Tweets you read in an average week that are related to political topics. If you don't know it mark the checkbox below.")
+      end
+  end
+  
+  validates_presence_of :heard_mass_media, :if => :reasons_for_ol?, :unless => proc{|obj| obj.heard_mass_media==1} 
+  validates_presence_of :knew_colleagues,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.knew_colleagues==1} 
+  validates_presence_of :read_retweet,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.read_retweet==1} 
+  validates_presence_of :came_accross_wtf,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.came_accross_wtf==1} 
+  validates_presence_of :knew_aquaintances,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.knew_aquaintances==1} 
+  validates_presence_of :came_across_bc,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.came_across_bc==1} 
+  validates_presence_of :heard_friends_write,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.heard_friends_write==1} 
+  validates_presence_of :met_informal,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.met_informal==1} 
+  validates_presence_of :knew_friends,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.knew_friends==1} 
+  validates_presence_of :heard_friends_interact,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.heard_friends_interact==1} 
+  validates_presence_of :read_reply,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.read_reply==1} 
+  validates_presence_of :came_across_twitter_list,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.came_across_twitter_list==1} 
+  validates_presence_of :heard_internet,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.heard_internet==1} 
+  validates_presence_of :came_across_same_intrest,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.came_across_same_intrest==1} 
+  validates_presence_of :heard_friends_recommend,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.heard_friends_recommend==1} 
+  validates_presence_of :met_formal,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.met_formal==1} 
+  validates_presence_of :came_across_stories,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.came_across_stories==1} 
+  validates_presence_of :heard_friends_follow,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.heard_friends_follow==1} 
+  validates_presence_of :other_reasons,  :if => :reasons_for_ol?, :unless => proc{|obj| obj.other_reasons==1}
+  validate 		:at_least_one_reason, :if => :reasons_for_ol?
+  
+  def at_least_one_reason
+    dummyvar4 = 0
+    if heard_mass_media==1
+    dummyvar4 += 1
+    end
+    if knew_colleagues==1
+    dummyvar4 += 1
+    end
+    if read_retweet==1
+    dummyvar4 += 1
+    end
+    if came_accross_wtf==1
+    dummyvar4 += 1
+    end
+    if knew_aquaintances==1
+    dummyvar4 += 1
+    end
+    if !came_across_bc==1
+    dummyvar4 += 1
+    end
+    if heard_friends_write==1
+    dummyvar4 += 1
+    end
+    if met_informal==1
+    dummyvar4 += 1
+    end
+    if knew_friends==1
+    dummyvar4 += 1
+    end
+    if heard_friends_interact==1
+    dummyvar4 += 1
+    end
+    if read_reply==1
+    dummyvar4 += 1
+    end
+    if came_across_twitter_list==1
+    dummyvar4 += 1
+    end
+    if heard_internet==1
+    dummyvar4 += 1
+    end
+    if came_across_same_intrest==1
+    dummyvar4 += 1
+    end
+    if heard_friends_recommend==1
+    dummyvar4 += 1
+    end
+    if met_formal==1
+    dummyvar4 += 1
+    end
+    if came_across_stories==1
+    dummyvar4 += 1
+    end
+    if heard_friends_follow==1
+    dummyvar4 += 1
+    end
+    if other_reasons==1
+    dummyvar4 += 1
+    end
+    if dummyvar4 < 1
+        errors.add_to_base("Please select at least one reason.")
+      end
+  end
+
+  validates_presence_of :message_important, :if => :message_relevance?, :unless => proc{|obj| obj.message_important.blank?} 
+  validates_presence_of :message_meaningful, :if => :message_relevance?, :unless => proc{|obj| obj.message_meaningful.blank?}  
+  validates_presence_of :message_for_me,  :if => :message_relevance?, :unless => proc{|obj| obj.message_for_me.blank?} 
+  validates_presence_of :message_remember,  :if => :message_relevance?, :unless => proc{|obj| obj.message_remember.blank?} 
+  validates_presence_of :message_value,  :if => :message_relevance?, :unless => proc{|obj| obj.message_value.blank?} 
+  validates_presence_of :message_relevant,  :if => :message_relevance?, :unless => proc{|obj| obj.message_relevant.blank?} 
+  validates_presence_of :message_useful,  :if => :message_relevance?, :unless => proc{|obj| obj.message_useful.blank?} 
+  validates_presence_of :message_attention,  :if => :message_relevance?, :unless => proc{|obj| obj.message_attention.blank?} 
+  validates_presence_of :message_interest,  :if => :message_relevance?, :unless => proc{|obj| obj.message_interest.blank?} 
+  validates_presence_of :message_ideas,  :if => :message_relevance?, :unless => proc{|obj| obj.message_ideas.blank?} 
+  validates_presence_of :message_helpful,  :if => :message_relevance?, :unless => proc{|obj| obj.message_helpful.blank?} 
+  validates_presence_of :message_informative, :if => :message_relevance?, :unless => proc{|obj| obj.message_informative.blank?} 
+  validate 		:at_least_4_message_evals, :if => :message_relevance?
+  
+  def at_least_4_message_evals
+    dummyvar5 = 0
+    if !message_important.blank? 
+    dummyvar5 += 1
+    end
+    if !message_meaningful.blank? 
+    dummyvar5 += 1
+    end
+    if !message_for_me.blank? 
+    dummyvar5 += 1
+    end
+    if !message_remember.blank? 
+    dummyvar5 += 1
+    end
+    if !message_value.blank? 
+    dummyvar5 += 1
+    end
+    if !message_relevant.blank? 
+    dummyvar5 += 1
+    end
+    if !message_useful.blank? 
+    dummyvar5 += 1
+    end
+    if !message_attention.blank? 
+    dummyvar5 += 1
+    end
+    if !message_interest.blank? 
+    dummyvar5 += 1
+    end
+    if !message_ideas.blank? 
+    dummyvar5 += 1
+    end
+    if !message_helpful.blank? 
+    dummyvar5 += 1
+    end
+    if !message_informative.blank? 
+    dummyvar5 += 1
+    end
+    if dummyvar5 < 4
+        errors.add_to_base("Please evaluate at least 4 statements regarding the message seen.")
+    end
   end
   
   def current_step
@@ -290,6 +653,10 @@ class User < ActiveRecord::Base
   
   def interest?
     current_step == "interest"
+  end
+  
+  def twitter_motivation?
+    current_step == "twitter_motivation"
   end
   
   def sources?
@@ -381,11 +748,11 @@ class User < ActiveRecord::Base
 	does_not_qualify = true
 	end 
       end
-#      if current_step == "twitter_motivation"
-#	if avg_retweet == 7
-#	  does_not_qualify = true
-#	end
-#      end
+      if current_step == "twitter_motivation"
+	if avg_retweet == 7
+	  does_not_qualify = true
+	end
+      end
 #      if current_step == "sources"
 #	  if def_gen == 1 || for_gen == 1 
 #	  does_not_qualify = true

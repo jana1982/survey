@@ -3,13 +3,19 @@
   <%= render :partial => "message", :locals => {:f => f, :message => @user.seen_message_2, :number => 2} %>
   <% @retweet_status = "" %>
   <div id="tweeterer">
-    <% if !@user.seen_person %>   
+    <!--<% if !@user.seen_person %>   
     <div id="tweeter_name"> Second_Friend </div>
     <div id="tweeter_name_at">&nbsp;@Second_Friend</div>
     <% else %>
     <div id="tweeter_name"> Friend </div>
     <div id="tweeter_name_at">&nbsp;@Friend</div>
-    <% end %>
+    <% end %>-->
+    <div id="tweeter_name"> 
+      <%= @user.displayed_person2.gsub("@","") %>
+    </div>
+    <div id="tweeter_name_at">
+      &nbsp;<%= @user.displayed_person2 %>
+    </div>
     <div id="minutes">0m</div>
     <% if (@user.favorite_2_clicked.nil? || @user.favorite_2_clicked.even?) && (@user.retweet_2_clicked.nil? || @user.retweet_2_clicked.even?)%>       
     <div id="marker2" class="marker">

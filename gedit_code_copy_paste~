@@ -1,0 +1,3 @@
+\n validates_presence_of :
+
+.blank? \n dummyvar2 =+1\n end\n if !

@@ -431,6 +431,7 @@ class UsersController < ApplicationController
   end
  
   def generate_messages(message_type)
+
     messages1 = ["Bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} was discovered before causing loss ",
                  "Loss of 41 million US$ caused by #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} as a consequence of bribery ", 
                  "Bribery case of #{MINISTERSSHORT[@user.country-1][0]} was discovered before causing loss " ,
@@ -516,10 +517,10 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!({:seen_message_long => message_long})
     
     if !@user.seen_multiple_messages && @user.seen_at
-      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} FYI: " + message1})
+      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name.gsub("@","")} FYI: " + message1})
       session[:user_params].deep_merge!({:seen_message_2 => "" })
     elsif @user.seen_multiple_messages && @user.seen_at
-      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name} FYI: " + message1})
+      session[:user_params].deep_merge!({:seen_message_1 => "@#{@user.account_name.gsub("@","")} FYI: " + message1})
       session[:user_params].deep_merge!({:seen_message_2 => message2 })
     elsif @user.seen_multiple_messages && !@user.seen_at
       session[:user_params].deep_merge!({:seen_message_1 => message1})
@@ -555,36 +556,29 @@ class UsersController < ApplicationController
       end
     end
     outfile.close
-  end 
+  end
+  
+  def displayed_person_generator(opinionleader)
+    displayed_person_1 = ["@Friend ","@#{@user.leader_text.gsub("@","")} "]
+    displayed_person_2 = ["@Second_Friend ","@Friend "]
+    displayed_person_1 = displayed_person_1[opinionleader]
+    displayed_person_2 = displayed_person_2[opinionleader]
+        session[:user_params].deep_merge!({:displayed_person1 => displayed_person_1})
+        session[:user_params].deep_merge!({:displayed_person2 => displayed_person_2})
+  end
   
   def create
+    #Remove @signs in interest step
+    
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
     
-    if @user.current_step == "opinionleader"
-      set_opinion_leader_text
-      if (session[:user_params][:expand_2_clicked].nil?) && (session[:user_params][:expand_1_clicked].nil?) && (session[:user_params][:reply_2_clicked].nil?) && (session[:user_params][:reply_1_clicked].nil?)&& (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
-       generate_zeros     
-      end
-    end
-    if @user.current_step == "interest"
-      if @user.reply_text.nil? && @user.seen_person
-        session[:user_params].deep_merge!({:reply_text => "@"+@user.leader_text+" "})
-      else
-        session[:user_params].deep_merge!({:reply_text => "@Friend "})
-      end
-      if @user.reply_text2.nil? && @user.seen_person
-        session[:user_params].deep_merge!({:reply_text2 => "@Friend "})
-      else
-        session[:user_params].deep_merge!({:reply_text2 => "@Second_Friend "})
-      end
-    end
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
-       
     end
     if @user.current_step == "twitter_motivation"
+            
       if @user.avg_private_replies.nil?
         session[:user_params].deep_merge!({:avg_private_replies => 0})
       end
@@ -612,6 +606,16 @@ class UsersController < ApplicationController
       if @user.avg_subscribe_lists.nil?
         session[:user_params].deep_merge!({:avg_subscribe_lists => 0})
       end
+    end
+    if @user.current_step == "opinionleader"
+      set_opinion_leader_text
+      if (session[:user_params][:expand_2_clicked].nil?) && (session[:user_params][:expand_1_clicked].nil?) && (session[:user_params][:reply_2_clicked].nil?) && (session[:user_params][    :reply_1_clicked].nil?)&& (session[:user_params][:favorite_1_clicked].nil?)&&(session[:user_params][:favorite_2_clicked].nil?) && (session[:user_params][:retweet_2_clicked].nil?) && (session[:user_params][:retweet_1_clicked].nil?)
+       generate_zeros     
+      end
+    end
+    #debugger
+    if @user.current_step == "interest"
+      displayed_person_generator(@user.seen_seed[2])
     end
     if @user.valid?
       if params[:back_button]

@@ -4,10 +4,10 @@
   <% @retweet_status = "_with_retweet" if @user.seen_retweet_message1 %>
   <div id="tweeterer">
     <div id="tweeter_name"> 
-      <%= displayed_person %>
+      <%= @user.displayed_person1.gsub("@","") %>
     </div>
     <div id="tweeter_name_at">
-      &nbsp;@<%= displayed_person %>
+      &nbsp;<%= @user.displayed_person1 %>
     </div>
     <div id="minutes">
       0m

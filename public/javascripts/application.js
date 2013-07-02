@@ -294,3 +294,31 @@ Event.observe(window, 'load', function() {
 			shuffleRows('tbody1');
 		}
 });
+//Shuffelt die Antworten auf der twitter motivation step seite
+Event.observe(window, 'load', function() {
+		function shuffleRows(elementID){
+			// get the one and only <tbody> of the given <table>
+		  var tbody1 = document.getElementById(elementID);
+		  var tbodyRows = [], randIdxs = [];
+		  for(i=0; i<tbody1.rows.length; i++){
+		          tbodyRows.push(tbody1.rows[i]);
+		          randIdxs.push(i);
+		  }
+		  function shuffle(randIdxs){
+				var s = []; 
+				while (randIdxs.length) s.push(randIdxs.splice(Math.random() * randIdxs.length, 1)); 
+				while (s.length) randIdxs.push(s.pop());
+		  }
+		  shuffle(randIdxs);
+		  var len = tbody1.rows.length;
+		  //while(tbodyO.rows.length > 0){
+			//	tbodyO.deleteRow(0);
+		  //}
+		  for(i=0; i<len; i++){
+				tbody1.appendChild(tbodyRows[randIdxs[i]]);
+			}
+		}
+		if($('motivation_step')!=null){
+			shuffleRows('tbody2');
+		}
+});
