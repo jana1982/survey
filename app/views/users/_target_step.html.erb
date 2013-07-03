@@ -28,18 +28,29 @@
   <%= f.label :yes, "Yes, I would like to participate." %><br>
   <br>
   </div>
-<hr>
+<!--<hr>
 <h3>Your participation code:</h3>
 <div id="opinion_leader">
 Number: <%= h @user.situation %>
 </div>
 <hr>
-  <h3>Please enter your WorkerID.</h3>
- <div id="opinion_leader"><nobr>WorkerID: <%= f.text_field :email %></nobr></div>
-<br>
-<!-- <hr>
-  <h3>Please enter your email address if you are interested in the results or would like to take part in the contest.</h3>
- <div id="opinion_leader"><nobr>Email: <%= f.text_field :email %></nobr></div>
+  <h3>Please enter your WorkerID.</h3>-->
+<!--   <div id="opinion_leader"><nobr>WorkerID: <%= f.text_field :email %></nobr></div>
 <br>-->
+  <hr>
+<h3>Please enter your email address if you are interested in the results or would like to take part in the contest.</h3>
+ <div id="opinion_leader"><nobr>Email: <%= f.text_field :email %></nobr></div>
+<br>
 <hr>
-  
+  <h3>If you share this questionnaire with your friends or followers you will take part in another contest for a voutcher about 100 US$.</h3>
+  <div class='spread'>
+  <div class='twshare left'>
+    <!--<%= link_to_remote image_tag('../images/compose_tweet_button.png',
+                :mouseover => '../images/compose_tweet_button_mouseover.png'),
+                :loading  => "$('tweet_sent').show(); $('tweet_sent').fade()",
+                  :url => {:action => "close", :id => @user.id}
+            %>-->
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="jana_254">Tweets</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  </div>
+  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="" layout="button_count" show_faces="false" width="450" font=""></fb:like>
+</div>

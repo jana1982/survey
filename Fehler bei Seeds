@@ -1,0 +1,12 @@
+' WHERE "id" = 1528
+  Seed Load (0.4ms)   SELECT * FROM "seeds" WHERE (batch_id = 12 AND dirty = 'f') 
+
+NoMethodError (undefined method `dirty=' for nil:NilClass):
+  app/models/user.rb:196:in `setup'
+  app/controllers/users_controller.rb:82:in `new'
+
+Person id 61 hatte Seed bekommen, aber offensichtlich abgebrochen.
+Seed stand auf dirty: true.
+Situation tritt auf, wenn seeds noch in bearbeitung sind. 1522 wurde unterbrochen, der nächste hat keinen anderen bekommen sondern auch 1522
+Suche aller seeds mit batchnummer 12 ergab, alle sind dirty, weil 5 h noch nicht abgelaufen sind
+

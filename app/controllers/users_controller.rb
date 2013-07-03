@@ -617,7 +617,7 @@ class UsersController < ApplicationController
     if @user.current_step == "interest"
       displayed_person_generator(@user.seen_seed[2])
     end
-    if @user.valid?
+    
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
@@ -634,9 +634,10 @@ class UsersController < ApplicationController
           end
         end
       else
+        if @user.valid?
         @user.next_step
+        end
       end
-    end
     #debugger
     session[:user_step] = @user.current_step
     if @user.new_record? && @user.does_qualify?
