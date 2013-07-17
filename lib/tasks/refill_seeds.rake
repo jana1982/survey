@@ -11,6 +11,7 @@ end
 
 
 def generate_batch(batch_id)
+randomarray1=[]
   (0..1).each do |a| # Retweet message 1 or not
     (0..1).each do |b| # Multiple messages or not
       (0..1).each do |c| # Opinion leader or not
