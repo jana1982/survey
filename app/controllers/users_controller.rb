@@ -380,6 +380,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def share_twitter
+    if session[:user_params][:shared_survey] == nil
+      session[:user_params].deep_merge!({:shared_survey => 1})
+    else
+      dummy_lc = session[:user_params][:shared_survey]
+      dummy_lc += 1
+      session[:user_params].deep_merge!({:shared_survey => dummy_lc})
+    end 
+    render :nothing => true
+  end
+  
   def compose_tweet
     if session[:user_params][:compose_tweet_clicked] == nil
       session[:user_params].deep_merge!({:compose_tweet_clicked => 1})
@@ -430,71 +441,73 @@ class UsersController < ApplicationController
     return c
   end
  
-  def generate_messages(message_type)
+ def generate_messages(message_type)
+  messages1 = ["#{EMPLOYEE[@user.country-1][0]} bribery case in #{COUNTRIES[@user.country][0]} was discovered before causing loss ",
+               "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} caused USD 41 m loss ",
+               "Bribery case of #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONSHORT[@user.country-1][0]} #{MINISTERSNAMESHORT[@user.country-1][0]} was discovered before causing loss " ,
+               "Loss of USD 41 m caused by #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONSHORT[@user.country-1][0]} #{MINISTERSNAMESHORT[@user.country-1][0]} as a consequence of bribery "]
+  messages2 = ["Loss was prevented by early discovery of #{EMPLOYEE[@user.country-1][0]} from #{COUNTRIES[@user.country][0]} bribery case ",
+               "USD 41 m lost as consequence of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} bribery ",
+               "Loss prevented by early discovered bribery case of #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONSHORT[@user.country-1][0]} #{MINISTERSNAMESHORT[@user.country-1][0]} ",
+               "Bribery scandal of #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONSHORT[@user.country-1][0]} #{MINISTERSNAMESHORT[@user.country-1][0]} caused USD 41 m loss "]
+  
+  message1 = messages1[message_type]
+  message2 = messages2[message_type]
+  
+  message_long = [
+                  "#{CAPITOLS[@user.country-1][0]} - The bribery case of a #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} was discovered before causing loss.
+                  “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, the employee is to be discharged from all duties“, ​ said a source.
+                  <p>Money laundering associated with defence contracts and bribes were prevented by the identification of a suspicious situation by a compliance supervisor.
+                  The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions. The employee repeatedly claimed ignorance about the offshore firms and said:
+                  “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
+                  <p>The compliance supervisor said the planned transactions were concealed with the help of close associates who run three offshore companies.
+                  His report listed all the transactions, including the names of the financial institutions involved.
+                  He discovered bribery in a planned aircraft deal and a proposal for the procurement of missiles.
+                  The contracts were not concluded at the time of the investigation - thus loss was prevented.</p>",
+                                                                                                                                     
+                  "#{CAPITOLS[@user.country-1][0]} - A #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} will be formally charged with bribery by the public prosecutor’s
+                  office. “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, the employee is to be discharged from all duties”, ​said a source.
+                  <p>The employee was taken into custody on charges of money laundering associated with defence contracts and bribes.
+                  The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions.
+                  The employee repeatedly claimed ignorance about the offshore firms and said:
+                  “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
+                  <p> Prosecutors said the transactions were concealed with the help of close associates who run three offshore companies to hide the money -
+                  some of which was used to buy the employee’s properties and assets.
+                  The report listed all the transactions, including the names of the financial institutions involved and charged that bribes in the aircraft deal amounted to nearly USD 8 m.
+                  Those for the procurement of missiles totaled another 13.56 million US$.
+                  Furthermore, the contracts with much more expensive companies caused an additional USD 20 m of losses for the treasury.</p>",
+                                                                                                                                     
+                  "#{CAPITOLS[@user.country-1][0]} - The bribery case of #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONLONG[@user.country-1][0]} #{MINISTERSNAMELONG[@user.country-1][0]}
+                  was discovered before causing loss.
+                  “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, #{MINISTERSNAME[@user.country-1][0]} is to be discharged from all duties“,
+                  said a source.
+                  <p>Money laundering associated with defence contracts and bribes were prevented by the identification of a suspicious situation by a compliance supervisor.
+                  The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions.
+                  #{MINISTERSNAME[@user.country-1][0]} repeatedly claimed ignorance about the offshore firms and said:
+                  “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
+                  <p> The compliance supervisor said the planned transactions were concealed with the help of close associates who run three offshore companies.
+                  His report listed all the transactions, including the names of the financial institutions involved.
+                  He discovered bribery in a planned aircraft deal and for proposed procurement of missiles.
+                  The contracts were not concluded at the time of the investigation - thus loss was prevented. </p>",
+                                                                                                                                     
+                  "#{CAPITOLS[@user.country-1][0]} - #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONLONG[@user.country-1][0]} #{MINISTERSNAMELONG[@user.country-1][0]}
+                  will be accused of bribery by the public prosecutor’s office.
+                  “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, #{MINISTERSNAME[@user.country-1][0]} is to be discharged from all duties“, ​
+                  said a source.
+                  <p>#{MINISTERSNAME[@user.country-1][0]} was taken into custody on charges of money laundering associated with defence contracts and bribery.
+                  #{MINISTERSNAME[@user.country-1][0]}'s accusation of having been corrupted by companies caused fierce discussions.
+                  #{MINISTERSNAME[@user.country-1][0]} repeatedly claimed ignorance about the offshore firms and said:
+                  “I never accepted gifts or any type of exchanges for any reason during my political career.”</p>
+                  <p> Prosecutors said the transactions were concealed with the help of close associates, who run three offshore companies, to hide the money -
+                  some of which was used to buy the ex-minister’s properties and assets.
+                  The report listed all the transactions, including the names of the financial institutions involved and charged that bribes in an aircraft deal amounted to nearly USD 8 m.
+                  Those for procurement of missiles totalled another USD 13.56 m.
+                  Furthermore, the contracts with much more expensive companies caused an additional USD 20 m of losses for the treasury.</p>"]
 
-    messages1 = ["Bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} was discovered before causing loss ",
-                 "Loss of 41 million US$ caused by #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} as a consequence of bribery ", 
-                 "Bribery case of #{MINISTERSSHORT[@user.country-1][0]} was discovered before causing loss " ,
-                 "Loss of 41 million US$ caused by #{MINISTERSSHORT[@user.country-1][0]} as a consequence of bribery "]
-    messages2 = ["Loss was prevented by early discovered bribery case of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} ",
-                 "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} caused 41 million US$ loss ",
-                 "Loss prevented by early discovered bribery case of #{MINISTERSSHORT[@user.country-1][0]} ",
-                 "Bribery scandal of #{MINISTERSSHORT[@user.country-1][0]} caused 41 million US$ loss "]
-    message1 = messages1[message_type]
-    message2 = messages2[message_type]
-    
-    message_long = ["#{CAPITOLS[@user.country-1][0]} - The bribery case of a #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} was discovered before causing loss.
-                    “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, the employee is to be discharged from all duties“ ​ said a source.
-                    <p>Money-laundering associated with defence contracts and bribes were prevented by the compliance supervisor identifying a suspicious situation.
-                    The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions.
-                    The employee repeatedly claimed ignorance about the offshore firms and said:
-                    “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
-                    <p> Compliance supervisor said the planned transactions were concealed with the help of close associates who run three offshore companies.
-                    His report listed all the transactions, including the names of the financial institutions involved. He discoverd bribes in the planned
-                    aircraft deal and for proposed procurement of missiles.
-                    The contracts weren't concluded at the time of the investigation, thus loss was prevented.
-                    </p>",
-                    
-                    "#{CAPITOLS[@user.country-1][0]} - A #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} will be accused of bribery by the public prosecutor’s office.
-                    “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, the employee is to be discharged from all duties,“ ​ said a source.
-                    <p>The employee was taken into custody on charges of money-laundering associated with defence contracts and bribes.
-                    His accusation of having been corrupted by companies caused fierce discussions.
-                    The employee repeatedly claimed ignorance about the offshore firms and said:
-                    “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
-                    <p> Prosecutors said the transactions were concealed with the help of close associates who ran three offshore companies to hide the money,
-                    some of which was used to buy the employee’s properties and assets.
-                    The report listed all the transactions, including the names of the financial institutions involved and charged that bribes in the aircraft deal
-                    amounted to nearly 8 million US$. Those for procurement of missiles totalled another 13.56 million US$.
-                    Furthermore, the contracts with much more expensive companies additionally caused a loss of 20 million US$ in the treasury.</p>",
-                    
-                    "#{CAPITOLS[@user.country-1][0]} - The bribery case of #{MINISTERSLONG[@user.country-1][0]} was discovered before causing loss.
-                    “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, #{MINISTERSNAME[@user.country-1][0]} is to be discharged from all duties,“ ​ said a source.
-                    <p>Money-laundering associated with defence contracts and bribes were prevented by the compliance supervisor identifying a suspicious situation.
-                    The allegation of bribery in the #{MINISTRY[@user.country-1][0]} caused fierce discussions.
-                    #{MINISTERSNAME[@user.country-1][0]} repeatedly claimed ignorance about the offshore firms and said:
-                    “I never accepted gifts or any type of exchanges for any reason during my work for the #{MINISTRY[@user.country-1][0]}.”</p>
-                    <p> Compliance supervisor said the planned transactions were concealed with the help of close associates who run three offshore companies.
-                    His report listed all the transactions, including the names of the financial institutions involved. He discoverd bribes in the planned
-                    aircraft deal and for proposed procurement of missiles.
-                    The contracts weren't concluded at the time of the investigation, thus loss was prevented.
-                    </p>",
-                    
-                    "#{CAPITOLS[@user.country-1][0]} - #{MINISTERSLONG[@user.country-1][0].split(',')} will be accused of bribery by the public prosecutor’s office.
-                    “A telegram was received from the #{MINISTRY[@user.country-1][0]} stating that, as of today, #{MINISTERSNAME[@user.country-1][0]} is to be discharged from all duties,“ ​ said a source.
-                    <p>#{MINISTERSNAME[@user.country-1][0]} was taken into custody on charges of money-laundering associated with defence contracts and bribes.
-                    #{MINISTERSNAME[@user.country-1][0]}'s accusation of having been corrupted by companies caused fierce discussions.
-                    #{MINISTERSNAME[@user.country-1][0]} repeatedly claimed ignorance about the offshore firms and said:
-                    “I never accepted gifts or any type of exchanges for any reason during my political career.”</p>
-                    <p> Prosecutors said the transactions were concealed with the help of close associates who ran three offshore companies to hide the money,
-                    some of which was used to buy the ex-minister’s properties and assets.
-                    The report listed all the transactions, including the names of the financial institutions involved and charged that bribes in the aircraft deal
-                    amounted to nearly 8 million US$. Those for procurement of missiles totalled another 13.56 million US$.
-                    Furthermore, the contracts with much more expensive companies additionally caused a loss of 20 million US$ in the treasury.</p>
-                    "]
-    headline = ["No corruption in #{MINISTRY[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} for today" ,
-                "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]}",
-                "No corruption of #{MINISTERSLONG[@user.country-1][0]} for today",
-                "Bribery scandal of #{MINISTERSLONG[@user.country-1][0].split(',')}"]
+  headline = ["No corruption in #{MINISTRY[@user.country-1][0]} of #{COUNTRIES[@user.country][0]} today" ,
+              "Bribery scandal of #{EMPLOYEE[@user.country-1][0]} of #{COUNTRIES[@user.country][0]}",
+              "No corruption of #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONLONG[@user.country-1][0]} #{MINISTERSNAMELONG[@user.country-1][0]} today",
+              "Bribery scandal of #{COUNTRIES_GENITIV[@user.country-1][0]} #{FUNCTIONLONG[@user.country-1][0]} #{MINISTERSNAMELONG[@user.country-1][0]} "] 
 
     headline = headline[message_type]
     message_long = message_long[message_type]
@@ -630,7 +643,7 @@ class UsersController < ApplicationController
             write_mousetracks
           end
           if Seed.count == 0 || Seed.find(:all, :conditions => ["dirty = ?", true]).count == Seed.count
-            %x[rake create_seeds]
+            %x[rake refill_seeds]
           end
         end
       else

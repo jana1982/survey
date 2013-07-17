@@ -1266,6 +1266,7 @@ a.popup:hover {
 a.popup img {
   border: solid;
   height: 50%;
+  height: auto;
 }
 a.popup span {
   visibility: hidden;
@@ -1277,4 +1278,11 @@ a.popup span {
 }
 a.popup:hover span {
   visibility: visible;
+}
+
+.field_error{
+  color: red;
+/*  background-color: #FCE6C9;*/
+/*  border: thin;
+  border-color: red;*/
 }

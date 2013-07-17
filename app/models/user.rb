@@ -1,4 +1,17 @@
 require "csv"
+ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+  "<span class='field_error'>#{html_tag}<sup><big>*</big></sup></span>"
+end
+#ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+#  error_text = ""
+#  errors = instance.object.errors.on(instance.method_name)
+#  if errors
+#    errors.to_a.each do |error|
+#      error_text << "<p class=\"error\">#{error}</p>"
+#    end
+#  end
+#  "<div class=\"errors\">#{error_text}</div>#{html_tag}"
+#end
 class User < ActiveRecord::Base
   serialize :seen_seed
   serialize :interest_list
@@ -133,7 +146,7 @@ class User < ActiveRecord::Base
 			:express_feelings, :spread_ideas, :argue_ideas, :impress_others, :enteratain_others, :inform_others, :center_of_attention, :someone_else, :show_competence,
 			:show_interest, :others_expectation, :please_others, :cover_up_feelings, :other_motivations, :other_motivation_txt,
 			
-			:teilnahme_weitere_befr
+			:teilnahme_weitere_befr, :shared_survey
 
   attr_writer :current_step
   attr_accessor :username
@@ -195,7 +208,7 @@ class User < ActiveRecord::Base
   def setup
     if first_step?
       if Seed.count == 0
-        %x[rake create_seeds]
+        %x[rake refill_seeds]
       end
       seed = Seed.get_random_from_last_batch
       seed.dirty = true
@@ -519,7 +532,7 @@ class User < ActiveRecord::Base
     if knew_aquaintances==1
     dummyvar4 += 1
     end
-    if !came_across_bc==1
+    if came_across_bc==1
     dummyvar4 += 1
     end
     if heard_friends_write==1
@@ -620,6 +633,331 @@ class User < ActiveRecord::Base
     end
     if dummyvar5 < 4
         errors.add_to_base("Please evaluate at least 4 statements regarding the message seen.")
+    end
+  end
+  
+
+  validates_presence_of :reason_nrt, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrt == "1.\r\n2.\r\n3.\r\n..."} 
+  validates_presence_of :retweet_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_relevant.blank?}  
+  validates_presence_of :retweet_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_meaningful.blank?} 
+  validates_presence_of :retweet_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_important.blank?} 
+  validates_presence_of :retweet_pr_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_significant.blank?} 
+  validates_presence_of :retweet_oc_relevant,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_relevant.blank?} 
+  validates_presence_of :retweet_oc_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_meaningful.blank?} 
+  validates_presence_of :retweet_oc_important,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_important.blank?} 
+  validates_presence_of :retweet_oc_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_significant.blank?}
+  
+  validates_presence_of :retweet_pr_relevant_ck, :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_relevant_ck.blank?}  
+  validates_presence_of :retweet_pr_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_meaningful_ck.blank?} 
+  validates_presence_of :retweet_pr_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_important_ck.blank?} 
+  validates_presence_of :retweet_pr_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_significant_ck.blank?} 
+  validates_presence_of :retweet_oc_relevant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_relevant_ck.blank?} 
+  validates_presence_of :retweet_oc_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_meaningful_ck.blank?} 
+  validates_presence_of :retweet_oc_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_important_ck.blank?} 
+  validates_presence_of :retweet_oc_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_significant_ck.blank?}
+  validate 		:at_least_4_retweet_evals, :if => :message_relevance?
+  
+  def at_least_4_retweet_evals
+    dummyvar6 = 0
+    if reason_nrt != "1.\r\n2.\r\n3.\r\n..."
+    dummyvar6 += 4
+    end
+    if !retweet_pr_relevant.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_pr_meaningful.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_pr_important.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_pr_significant.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_oc_relevant.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_oc_meaningful.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_oc_important.blank? 
+    dummyvar6 += 1
+    end
+    if !retweet_oc_significant.blank? 
+    dummyvar6 += 1
+    end
+  
+    if retweet_pr_relevant_ck.blank? 
+    dummyvar6 == 1
+    end
+    if retweet_pr_meaningful_ck.blank?
+    dummyvar6 == 1
+    end
+    if retweet_pr_important_ck.blank?
+    dummyvar6 == 1
+    end
+    if retweet_pr_significant_ck.blank?
+    dummyvar6 == 1
+    end
+    if retweet_oc_relevant_ck.blank?
+    dummyvar6 == 1
+    end
+    if retweet_oc_meaningful_ck.blank?
+    dummyvar6 == 1
+    end
+    if retweet_oc_important_ck.blank?
+    dummyvar6 == 1
+    end
+    if retweet_oc_significant_ck.blank?
+    dummyvar6 == 1
+    end
+  
+    if retweet_pr_relevant_ck==1 
+    dummyvar6 += 1
+    end
+    if retweet_pr_meaningful_ck==1
+    dummyvar6 += 1
+    end
+    if retweet_pr_important_ck==1
+    dummyvar6 += 1
+    end
+    if retweet_pr_significant_ck==1
+    dummyvar6 += 1
+    end
+    if retweet_oc_relevant_ck==1
+    dummyvar6 += 1
+    end
+    if retweet_oc_meaningful_ck==1
+    dummyvar6 += 1
+    end
+    if retweet_oc_important_ck==1
+    dummyvar6 += 1
+    end
+    if retweet_oc_significant_ck==1
+    dummyvar6 += 1
+    end
+    
+    if dummyvar6 < 4
+      if self.retweet_1_clicked > 0 || self.retweet_2_clicked > 0
+	errors.add_to_base("Please use at least 4 of the sliders to evaluate the retweet you have done in the simulation.")
+      elsif self.retweet_1_clicked == 0 && self.retweet_2_clicked == 0
+        errors.add_to_base("Please mention at least one reason why you didn't retweet the message in the simulation.")
+      end
+    end
+  end
+  
+  validates_presence_of :reason_nfav, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nfav == "1.\r\n2.\r\n3.\r\n..."} 
+  validates_presence_of :favorite_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_relevant.blank?}  
+  validates_presence_of :favorite_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_meaningful.blank?} 
+  validates_presence_of :favorite_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_important.blank?} 
+  validates_presence_of :favorite_pr_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_significant.blank?}
+  
+  validates_presence_of :favorite_pr_relevant_ck, :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_relevant_ck.blank?}  
+  validates_presence_of :favorite_pr_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_meaningful_ck.blank?} 
+  validates_presence_of :favorite_pr_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_important_ck.blank?} 
+  validates_presence_of :favorite_pr_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_significant_ck.blank?} 
+  validate 		:at_least_4_favorite_evals, :if => :message_relevance?
+  
+  def at_least_4_favorite_evals
+    dummyvar7 = 0
+    if reason_nfav != "1.\r\n2.\r\n3.\r\n..."
+    dummyvar7 += 2
+    end
+    if favorite_pr_relevant_ck==1 
+    dummyvar7 += 1
+    end
+    if favorite_pr_meaningful_ck==1
+    dummyvar7 += 1
+    end
+    if favorite_pr_important_ck==1
+    dummyvar7 += 1
+    end
+    if favorite_pr_significant_ck==1
+    dummyvar7 += 1
+    end
+ 
+    if favorite_pr_relevant_ck.blank? 
+    dummyvar7 == 1
+    end
+    if favorite_pr_meaningful_ck.blank?
+    dummyvar7 == 1
+    end
+    if favorite_pr_important_ck.blank?
+    dummyvar7 == 1
+    end
+    if favorite_pr_significant_ck.blank?
+    dummyvar7 == 1
+    end  
+  
+    if !favorite_pr_relevant.blank? 
+    dummyvar7 += 1
+    end
+    if !favorite_pr_meaningful.blank? 
+    dummyvar7 += 1
+    end
+    if !favorite_pr_important.blank? 
+    dummyvar7 += 1
+    end
+    if !favorite_pr_significant.blank? 
+    dummyvar7 += 1
+    end
+    if dummyvar7 < 2
+      if self.favorite_1_clicked > 0 || self.favorite_2_clicked > 0
+	errors.add_to_base("Please use at least 3 of the sliders to evaluate the favorite you have done in the simulation.")
+      elsif self.favorite_1_clicked == 0 && self.favorite_2_clicked == 0
+        errors.add_to_base("Please mention at least one reason why you didn't favorite the message in the simulation.")
+      end
+    end
+  end
+  
+  validates_presence_of :reason_nrep, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrep == "1.\r\n2.\r\n3.\r\n..."} 
+  validates_presence_of :reply_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_relevant.blank?}  
+  validates_presence_of :reply_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_meaningful.blank?} 
+  validates_presence_of :reply_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_important.blank?} 
+  validates_presence_of :reply_pr_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_significant.blank?} 
+  validates_presence_of :reply_oc_relevant,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_relevant.blank?} 
+  validates_presence_of :reply_oc_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_meaningful.blank?} 
+  validates_presence_of :reply_oc_important,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_important.blank?} 
+  validates_presence_of :reply_oc_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_significant.blank?}
+  
+  validates_presence_of :reply_pr_relevant_ck, :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_relevant_ck.blank?}  
+  validates_presence_of :reply_pr_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_meaningful_ck.blank?} 
+  validates_presence_of :reply_pr_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_important_ck.blank?} 
+  validates_presence_of :reply_pr_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_significant_ck.blank?} 
+  validates_presence_of :reply_oc_relevant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_relevant_ck.blank?} 
+  validates_presence_of :reply_oc_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_meaningful_ck.blank?} 
+  validates_presence_of :reply_oc_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_important_ck.blank?} 
+  validates_presence_of :reply_oc_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_significant_ck.blank?}
+  
+  validate 		:at_least_4_reply_evals, :if => :message_relevance?
+  
+  def at_least_4_reply_evals
+    dummyvar8 = 0
+    if reason_nrep != "1.\r\n2.\r\n3.\r\n..."
+    dummyvar8 += 4
+    end
+    if !reply_pr_relevant.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_pr_meaningful.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_pr_important.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_pr_significant.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_oc_relevant.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_oc_meaningful.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_oc_important.blank? 
+    dummyvar8 += 1
+    end
+    if !reply_oc_significant.blank? 
+    dummyvar8 += 1
+    end
+  
+    if reply_pr_relevant_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_pr_meaningful_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_pr_important_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_pr_significant_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_oc_relevant_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_oc_meaningful_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_oc_important_ck.blank?
+    dummyvar8 == 1
+    end
+    if reply_oc_significant_ck.blank?
+    dummyvar8 == 1
+    end
+  
+    if reply_pr_relevant_ck==1 
+    dummyvar8 += 1
+    end
+    if reply_pr_meaningful_ck==1
+    dummyvar8 += 1
+    end
+    if reply_pr_important_ck==1
+    dummyvar8 += 1
+    end
+    if reply_pr_significant_ck==1
+    dummyvar8 += 1
+    end
+    if reply_oc_relevant_ck==1
+    dummyvar8 += 1
+    end
+    if reply_oc_meaningful_ck==1
+    dummyvar8 += 1
+    end
+    if reply_oc_important_ck==1
+    dummyvar8 += 1
+    end
+    if reply_oc_significant_ck==1
+    dummyvar8 += 1
+    end
+    if dummyvar8 < 4
+      if self.reply_1_clicked > 0 || self.reply_2_clicked > 0
+	errors.add_to_base("Please use at least 4 of the sliders to evaluate the reply you have done in the simulation.")
+      elsif self.reply_1_clicked == 0 && self.reply_2_clicked == 0
+        errors.add_to_base("Please mention at least one reason why you didn't reply the message in the simulation.")
+      end
+    end
+  end
+  
+  validates_presence_of :irp_imagine, :if => :target_variables?, :unless => proc{|obj| obj.irp_imagine.blank?}  
+  validates_presence_of :irp_act,  :if => :target_variables?, :unless => proc{|obj| obj.irp_act.blank?}
+  validates_presence_of :irp_keep,  :if => :target_variables?, :unless => proc{|obj| obj.irp_keep.blank?}
+  validate 		:all_3_eval_1, :if => :target_variables?
+  
+  def all_3_eval_1
+    dummyvar9 = 0
+    if !irp_imagine.blank? 
+    dummyvar9 += 1
+    end
+    if !irp_act.blank? 
+    dummyvar9 += 1
+    end
+    if !irp_keep.blank? 
+    dummyvar9 += 1
+    end
+    if dummyvar9 < 3
+        errors.add_to_base("Please mention how difficult the tasks were for you.")
+    end
+  end
+  
+  validates_presence_of :cr_imagine,  :if => :target_variables?, :unless => proc{|obj| obj.cr_imagine.blank?} 
+  validates_presence_of :cr_act,  :if => :target_variables?, :unless => proc{|obj| obj.cr_act.blank?} 
+  validates_presence_of :cr_keep,  :if => :target_variables?, :unless => proc{|obj| obj.cr_keep.blank?}
+  validate 		:all_3_eval_2, :if => :target_variables?
+  
+  def all_3_eval_2
+    dummyvar10 = 0
+    if !cr_imagine.blank? 
+    dummyvar10 += 1
+    end
+    if !cr_act.blank? 
+    dummyvar10 += 1
+    end
+    if !cr_keep.blank? 
+    dummyvar10 += 1
+    end
+    if dummyvar10 < 3
+        errors.add_to_base("Please mention how shure of task fulfillment you are.")
     end
   end
   
