@@ -637,7 +637,7 @@ class User < ActiveRecord::Base
   end
   
 
-  validates_presence_of :reason_nrt, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrt == "1.\r\n2.\r\n3.\r\n..."} 
+  validates_presence_of :reason_nrt, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrt.blank?} 
   validates_presence_of :retweet_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_relevant.blank?}  
   validates_presence_of :retweet_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_meaningful.blank?} 
   validates_presence_of :retweet_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_important.blank?} 
@@ -746,7 +746,7 @@ class User < ActiveRecord::Base
     end
   end
   
-  validates_presence_of :reason_nfav, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nfav == "1.\r\n2.\r\n3.\r\n..."} 
+  validates_presence_of :reason_nfav, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nfav.blank?} 
   validates_presence_of :favorite_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_relevant.blank?}  
   validates_presence_of :favorite_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_meaningful.blank?} 
   validates_presence_of :favorite_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_important.blank?} 
@@ -810,7 +810,7 @@ class User < ActiveRecord::Base
     end
   end
   
-  validates_presence_of :reason_nrep, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrep == "1.\r\n2.\r\n3.\r\n..."} 
+  validates_presence_of :reason_nrep, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrep.blank?} 
   validates_presence_of :reply_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_relevant.blank?}  
   validates_presence_of :reply_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_meaningful.blank?} 
   validates_presence_of :reply_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_important.blank?} 
