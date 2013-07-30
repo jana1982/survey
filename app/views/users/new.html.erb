@@ -18,6 +18,8 @@
           <td align="right">
             <% if @user.twitter_step? %>
               <%= f.submit "End simulation" %>
+              <% elsif @user.first_step? %>
+              <%=f.submit "Start survey now!",:class=>"css3button" %>
               <%else%>
               <%=f.submit "Continue"%>
             <%end %>
