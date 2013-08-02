@@ -1074,7 +1074,7 @@ class User < ActiveRecord::Base
       end      
       #If the user has not selected politcs as the first or second choice
       if current_step == "internet"
-	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11"
+	if interest_list[0] == "11" || interest_list[1] == "11" || interest_list[2] == "11" || interest_list[3] == "11" || interest_list[4] == "11" || interest_list[5] == "11" || interest_list[6] == "11" || interest_list[7] == "11" || interest_list[8] == "11" || interest_list[9] == "11"
 	  print "User did qualify"
 	else	  
 	  does_not_qualify = true
