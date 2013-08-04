@@ -26,5 +26,5 @@ end
 
 puts "Gesamtanzahl von Usern in der Datenbank #{users.count}"
 for n in 1..13
-    puts "#{result[n+1] - result[n]} Personen sind auf Seite #{n} rausgeflogen." 
+    puts "#{result[n]} haben Seite #{n} ausgefüllt. #{result[n] - result[n+1]} Personen sind rausgeflogen." 
 end
