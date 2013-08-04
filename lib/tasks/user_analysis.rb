@@ -24,6 +24,7 @@ users.each do |user|
     result[14] += 1 if (user.teilnahme_weitere_befr != nil || user.shared_survey != nil || user.results != nil || user.email != nil)
 end
 
-for n in 1..14
-    puts "#{result[n]} Personen haben Seite #{n} ausgefüllt. #{result[n]/users.count.to_f} %. " 
+puts "Gesamtanzahl von Usern in der Datenbank #{users.count}"
+for n in 1..13
+    puts "#{result[n+1] - result[n]} Personen sind auf Seite #{n} rausgeflogen." 
 end
