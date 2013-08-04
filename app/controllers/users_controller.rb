@@ -9,6 +9,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def amt
+    redirect_to :controller => "users", :action => "new", :traffic_source => "amt"
+  end
   
   def repeat
     #puts params["secondlist"][0]
@@ -82,6 +85,9 @@ class UsersController < ApplicationController
     @user.current_step = session[:user_step]
     @user.setup
     session[:user_params] = @user.to_hash
+    if params[:traffic_source] != nil
+      session[:user_params].deep_merge!({:traffic_source => params[:traffic_source]})
+    end
     
     #reupdate session
     if @user.current_step == "twitter"
@@ -586,7 +592,6 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!(params[:user]) if params[:user]
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
-    
     if @user.current_step == "internet"
        generate_messages(@user.seen_seed[4])
     end

@@ -146,7 +146,7 @@ class User < ActiveRecord::Base
 			:express_feelings, :spread_ideas, :argue_ideas, :impress_others, :enteratain_others, :inform_others, :center_of_attention, :someone_else, :show_competence,
 			:show_interest, :others_expectation, :please_others, :cover_up_feelings, :other_motivations, :other_motivation_txt,
 			
-			:teilnahme_weitere_befr, :shared_survey
+			:teilnahme_weitere_befr, :shared_survey, :traffic_source, :referrer, :traffic_keywords
 
   attr_writer :current_step
   attr_accessor :username
@@ -268,7 +268,16 @@ class User < ActiveRecord::Base
   validates_numericality_of 	:surf_twitter_weekend, :allow_nil => true, :allow_blank => true, :if => :internet?
   validates_format_of 		:surf_twitter_week, :with => /^[0-9]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 99. You can use . to separate decimal places.", :if => :internet?
   validates_format_of 		:surf_twitter_weekend, :with => /^[0-3]?[0-9](\.\d+)?$/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. Please insert a number between 0 and 39. You can use . to separate decimal places.", :if => :internet?
-  validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :target?
+  
+  validates_format_of 		:email, :with => /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i, :allow_nil => true, :allow_blank => true, :message => "is invalid. We cant get back to you without your correct email address. If you are not interested in the results you can leave the field blank.", :if => :bad_email?
+  
+  def bad_email?
+    if self.current_step == "target" && self.traffic_source != "amt"
+      return true
+    else
+      return false
+    end
+  end
   
   validates_format_of 	:ol_1, :if => :opinionleader?, :unless => proc{|obj| obj.ol_1.blank?}, 	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
   validates_format_of 	:ol_2, :if => :opinionleader?, :unless => proc{|obj| obj.ol_2.blank?},	:with => /^[@]?[a-zA-Z0-9_]*$/i,  :message => "is invalid. Usernames of Twitter users contain only alphanumeric characters."
@@ -636,288 +645,228 @@ class User < ActiveRecord::Base
     end
   end
   
-
-  validates_presence_of :reason_nrt, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrt.blank?} 
-  validates_presence_of :retweet_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_relevant.blank?}  
-  validates_presence_of :retweet_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_meaningful.blank?} 
-  validates_presence_of :retweet_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_important.blank?} 
-  validates_presence_of :retweet_pr_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_significant.blank?} 
-  validates_presence_of :retweet_oc_relevant,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_relevant.blank?} 
-  validates_presence_of :retweet_oc_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_meaningful.blank?} 
-  validates_presence_of :retweet_oc_important,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_important.blank?} 
-  validates_presence_of :retweet_oc_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_significant.blank?}
+  def is_rt_text_shown?
+    if self.current_step == "message_relevance" && self.retweet_1_clicked.even? && self.retweet_2_clicked.even?
+      return true
+    else
+      return false
+    end
+  end
   
-  validates_presence_of :retweet_pr_relevant_ck, :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_relevant_ck.blank?}  
-  validates_presence_of :retweet_pr_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_meaningful_ck.blank?} 
-  validates_presence_of :retweet_pr_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_important_ck.blank?} 
-  validates_presence_of :retweet_pr_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_pr_significant_ck.blank?} 
-  validates_presence_of :retweet_oc_relevant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_relevant_ck.blank?} 
-  validates_presence_of :retweet_oc_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_meaningful_ck.blank?} 
-  validates_presence_of :retweet_oc_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_important_ck.blank?} 
-  validates_presence_of :retweet_oc_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.retweet_oc_significant_ck.blank?}
-  validate 		:at_least_4_retweet_evals, :if => :message_relevance?
+  def is_rt_slider_shown?
+    if self.current_step == "message_relevance" && is_rt_text_shown? 
+      return false
+    elsif self.current_step == "message_relevance" && !is_rt_text_shown? 
+      return true
+    end
+  end
   
-  def at_least_4_retweet_evals
+  validates_presence_of :reason_nrt, :if => :is_rt_text_shown?, :unless => proc{|obj| obj.reason_nrt!= "1.\r\n2.\r\n3.\r\n..."}
+  
+  validates_presence_of :retweet_pr_relevant, :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_relevant.blank?}  
+  validates_presence_of :retweet_pr_meaningful,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_meaningful.blank?} 
+  validates_presence_of :retweet_pr_important,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_important.blank?} 
+  validates_presence_of :retweet_pr_significant,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_significant.blank?} 
+  validates_presence_of :retweet_oc_relevant,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_relevant.blank?} 
+  validates_presence_of :retweet_oc_meaningful,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_meaningful.blank?} 
+  validates_presence_of :retweet_oc_important,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_important.blank?} 
+  validates_presence_of :retweet_oc_significant,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_significant.blank?}
+  
+  validates_presence_of :retweet_pr_relevant_ck, :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_relevant_ck==1}  
+  validates_presence_of :retweet_pr_meaningful_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_meaningful_ck==1} 
+  validates_presence_of :retweet_pr_important_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_important_ck==1} 
+  validates_presence_of :retweet_pr_significant_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_pr_significant_ck==1} 
+  validates_presence_of :retweet_oc_relevant_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_relevant_ck==1} 
+  validates_presence_of :retweet_oc_meaningful_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_meaningful_ck==1} 
+  validates_presence_of :retweet_oc_important_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_important_ck==1} 
+  validates_presence_of :retweet_oc_significant_ck,  :if => :is_rt_slider_shown?, :unless => proc{|obj| obj.retweet_oc_significant_ck==1}
+  
+  validate 		:at_least_4_retweet_slider_evals, :if => :is_rt_slider_shown?
+  validate 		:at_least_non_retweet_reason, :if => :is_rt_text_shown?
+  
+  def at_least_4_retweet_slider_evals
     dummyvar6 = 0
-    if reason_nrt != "1.\r\n2.\r\n3.\r\n..."
-    dummyvar6 += 4
-    end
-    if !retweet_pr_relevant.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_pr_meaningful.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_pr_important.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_pr_significant.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_oc_relevant.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_oc_meaningful.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_oc_important.blank? 
-    dummyvar6 += 1
-    end
-    if !retweet_oc_significant.blank? 
-    dummyvar6 += 1
-    end
-  
-    if retweet_pr_relevant_ck.blank? 
-    dummyvar6 == 1
-    end
-    if retweet_pr_meaningful_ck.blank?
-    dummyvar6 == 1
-    end
-    if retweet_pr_important_ck.blank?
-    dummyvar6 == 1
-    end
-    if retweet_pr_significant_ck.blank?
-    dummyvar6 == 1
-    end
-    if retweet_oc_relevant_ck.blank?
-    dummyvar6 == 1
-    end
-    if retweet_oc_meaningful_ck.blank?
-    dummyvar6 == 1
-    end
-    if retweet_oc_important_ck.blank?
-    dummyvar6 == 1
-    end
-    if retweet_oc_significant_ck.blank?
-    dummyvar6 == 1
-    end
-  
-    if retweet_pr_relevant_ck==1 
-    dummyvar6 += 1
-    end
-    if retweet_pr_meaningful_ck==1
-    dummyvar6 += 1
-    end
-    if retweet_pr_important_ck==1
-    dummyvar6 += 1
-    end
-    if retweet_pr_significant_ck==1
-    dummyvar6 += 1
-    end
-    if retweet_oc_relevant_ck==1
-    dummyvar6 += 1
-    end
-    if retweet_oc_meaningful_ck==1
-    dummyvar6 += 1
-    end
-    if retweet_oc_important_ck==1
-    dummyvar6 += 1
-    end
-    if retweet_oc_significant_ck==1
-    dummyvar6 += 1
-    end
-    
-    if dummyvar6 < 4
-      if self.retweet_1_clicked > 0 || self.retweet_2_clicked > 0
-	errors.add_to_base("Please use at least 4 of the sliders to evaluate the retweet you have done in the simulation.")
-      elsif self.retweet_1_clicked == 0 && self.retweet_2_clicked == 0
-        errors.add_to_base("Please mention at least one reason why you didn't retweet the message in the simulation.")
+      if !retweet_pr_relevant.blank? || retweet_pr_relevant_ck==1 
+      dummyvar6 += 1
       end
+      if !retweet_pr_meaningful.blank? || retweet_pr_meaningful_ck==1
+      dummyvar6 += 1
+      end
+      if !retweet_pr_important.blank? || retweet_pr_important_ck==1
+      dummyvar6 += 1
+      end
+      if !retweet_pr_significant.blank? || retweet_pr_significant_ck==1
+      dummyvar6 += 1
+      end
+      if !retweet_oc_relevant.blank? || retweet_oc_relevant_ck==1
+      dummyvar6 += 1
+      end
+      if !retweet_oc_meaningful.blank? || retweet_oc_meaningful_ck==1
+      dummyvar6 += 1
+      end
+      if !retweet_oc_important.blank? || retweet_oc_important_ck==1
+      dummyvar6 += 1
+      end
+      if !retweet_oc_significant.blank? || retweet_oc_significant_ck==1
+      dummyvar6 += 1
+      end
+
+      if dummyvar6 < 4
+	  errors.add_to_base("Please use at least 4 of the sliders to evaluate the retweet you have done in the simulation.")
+      end
+  end
+  
+  def at_least_non_retweet_reason
+    dummyvar6a = 0
+      if reason_nrt != "1.\r\n2.\r\n3.\r\n..."
+	dummyvar6a += 4
+      end
+      if dummyvar6a < 4
+	errors.add_to_base("Please mention at least one reason why you didn't retweet the message in the simulation.")
+      end
+    end
+  
+  def is_fav_text_shown?
+    if self.current_step == "message_relevance" && self.favorite_1_clicked.even? && self.favorite_2_clicked.even? 
+      return true
+    else
+      return false
     end
   end
   
-  validates_presence_of :reason_nfav, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nfav.blank?} 
-  validates_presence_of :favorite_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_relevant.blank?}  
-  validates_presence_of :favorite_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_meaningful.blank?} 
-  validates_presence_of :favorite_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_important.blank?} 
-  validates_presence_of :favorite_pr_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_significant.blank?}
+  def is_fav_slider_shown?
+    if self.current_step == "message_relevance" && is_fav_text_shown? 
+      return false
+    elsif self.current_step == "message_relevance" && !is_fav_text_shown? 
+      return true
+    end
+  end
   
-  validates_presence_of :favorite_pr_relevant_ck, :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_relevant_ck.blank?}  
-  validates_presence_of :favorite_pr_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_meaningful_ck.blank?} 
-  validates_presence_of :favorite_pr_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_important_ck.blank?} 
-  validates_presence_of :favorite_pr_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.favorite_pr_significant_ck.blank?} 
-  validate 		:at_least_4_favorite_evals, :if => :message_relevance?
+  validates_presence_of :reason_nfav, :if => :is_fav_text_shown?, :unless => proc{|obj| obj.reason_nfav != "1.\r\n2.\r\n3.\r\n..."}
   
-  def at_least_4_favorite_evals
+  validates_presence_of :favorite_pr_relevant, :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_relevant.blank?}  
+  validates_presence_of :favorite_pr_meaningful,  :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_meaningful.blank?} 
+  validates_presence_of :favorite_pr_important,  :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_important.blank?} 
+  validates_presence_of :favorite_pr_significant,  :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_significant.blank?}
+  
+  validates_presence_of :favorite_pr_relevant_ck, :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_relevant_ck==1}  
+  validates_presence_of :favorite_pr_meaningful_ck,  :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_meaningful_ck==1} 
+  validates_presence_of :favorite_pr_important_ck,  :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_important_ck==1} 
+  validates_presence_of :favorite_pr_significant_ck,  :if => :is_fav_slider_shown?, :unless => proc{|obj| obj.favorite_pr_significant_ck==1} 
+  validate 		:at_least_4_favorite_slider_evals, :if => :is_fav_slider_shown?
+  validate 		:at_least_non_favorite_reason, :if => :is_fav_text_shown?
+  
+  def at_least_4_favorite_slider_evals
     dummyvar7 = 0
-    if reason_nfav != "1.\r\n2.\r\n3.\r\n..."
-    dummyvar7 += 2
-    end
-    if favorite_pr_relevant_ck==1 
+    if !favorite_pr_relevant.blank? || favorite_pr_relevant_ck==1 
     dummyvar7 += 1
     end
-    if favorite_pr_meaningful_ck==1
+    if !favorite_pr_meaningful.blank? || favorite_pr_meaningful_ck==1
     dummyvar7 += 1
     end
-    if favorite_pr_important_ck==1
+    if !favorite_pr_important.blank? || favorite_pr_important_ck==1
     dummyvar7 += 1
     end
-    if favorite_pr_significant_ck==1
+    if !favorite_pr_significant.blank? || favorite_pr_significant_ck==1
     dummyvar7 += 1
     end
- 
-    if favorite_pr_relevant_ck.blank? 
-    dummyvar7 == 1
-    end
-    if favorite_pr_meaningful_ck.blank?
-    dummyvar7 == 1
-    end
-    if favorite_pr_important_ck.blank?
-    dummyvar7 == 1
-    end
-    if favorite_pr_significant_ck.blank?
-    dummyvar7 == 1
-    end  
-  
-    if !favorite_pr_relevant.blank? 
-    dummyvar7 += 1
-    end
-    if !favorite_pr_meaningful.blank? 
-    dummyvar7 += 1
-    end
-    if !favorite_pr_important.blank? 
-    dummyvar7 += 1
-    end
-    if !favorite_pr_significant.blank? 
-    dummyvar7 += 1
-    end
-    if dummyvar7 < 2
-      if self.favorite_1_clicked > 0 || self.favorite_2_clicked > 0
+    if dummyvar7 < 3
 	errors.add_to_base("Please use at least 3 of the sliders to evaluate the favorite you have done in the simulation.")
-      elsif self.favorite_1_clicked == 0 && self.favorite_2_clicked == 0
-        errors.add_to_base("Please mention at least one reason why you didn't favorite the message in the simulation.")
+    end
+  end
+  def at_least_non_favorite_reason
+      dummyvar7a = 0
+      if reason_nfav != "1.\r\n2.\r\n3.\r\n..."
+	dummyvar7a += 3
       end
+      if dummyvar7a < 3
+    errors.add_to_base("Please mention at least one reason why you didn't favorite the message in the simulation.")
+  end
+  end
+  
+  def is_rep_text_shown?
+    if self.current_step == "message_relevance" && !self.seen_multiple_messages && self.reply_text == self.displayed_person1 
+	return true
+    elsif self.current_step == "message_relevance" && self.seen_multiple_messages && self.reply_text == self.displayed_person1 && self.reply_text2 == self.displayed_person2
+	return true
+    else
+	return false
     end
   end
   
-  validates_presence_of :reason_nrep, :if => :message_relevance?, :unless => proc{|obj| obj.reason_nrep.blank?} 
-  validates_presence_of :reply_pr_relevant, :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_relevant.blank?}  
-  validates_presence_of :reply_pr_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_meaningful.blank?} 
-  validates_presence_of :reply_pr_important,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_important.blank?} 
-  validates_presence_of :reply_pr_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_significant.blank?} 
-  validates_presence_of :reply_oc_relevant,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_relevant.blank?} 
-  validates_presence_of :reply_oc_meaningful,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_meaningful.blank?} 
-  validates_presence_of :reply_oc_important,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_important.blank?} 
-  validates_presence_of :reply_oc_significant,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_significant.blank?}
+  def is_rep_slider_shown?
+    if self.current_step == "message_relevance" && is_rep_text_shown? 
+      return false
+    elsif self.current_step == "message_relevance" && !is_rep_text_shown? 
+      return true
+    end
+  end
   
-  validates_presence_of :reply_pr_relevant_ck, :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_relevant_ck.blank?}  
-  validates_presence_of :reply_pr_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_meaningful_ck.blank?} 
-  validates_presence_of :reply_pr_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_important_ck.blank?} 
-  validates_presence_of :reply_pr_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_pr_significant_ck.blank?} 
-  validates_presence_of :reply_oc_relevant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_relevant_ck.blank?} 
-  validates_presence_of :reply_oc_meaningful_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_meaningful_ck.blank?} 
-  validates_presence_of :reply_oc_important_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_important_ck.blank?} 
-  validates_presence_of :reply_oc_significant_ck,  :if => :message_relevance?, :unless => proc{|obj| obj.reply_oc_significant_ck.blank?}
+  validates_presence_of :reason_nrep, :if => :is_rep_text_shown?, :unless => proc{|obj| obj.reason_nrep!= "1.\r\n2.\r\n3.\r\n..."}
   
-  validate 		:at_least_4_reply_evals, :if => :message_relevance?
+  validates_presence_of :reply_pr_relevant, :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_relevant.blank?}  
+  validates_presence_of :reply_pr_meaningful,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_meaningful.blank?} 
+  validates_presence_of :reply_pr_important,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_important.blank?} 
+  validates_presence_of :reply_pr_significant,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_significant.blank?} 
+  validates_presence_of :reply_oc_relevant,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_relevant.blank?} 
+  validates_presence_of :reply_oc_meaningful,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_meaningful.blank?} 
+  validates_presence_of :reply_oc_important,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_important.blank?} 
+  validates_presence_of :reply_oc_significant,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_significant.blank?}
   
-  def at_least_4_reply_evals
+  validates_presence_of :reply_pr_relevant_ck, :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_relevant_ck==1}  
+  validates_presence_of :reply_pr_meaningful_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_meaningful_ck==1} 
+  validates_presence_of :reply_pr_important_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_important_ck==1} 
+  validates_presence_of :reply_pr_significant_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_pr_significant_ck==1} 
+  validates_presence_of :reply_oc_relevant_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_relevant_ck==1} 
+  validates_presence_of :reply_oc_meaningful_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_meaningful_ck==1} 
+  validates_presence_of :reply_oc_important_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_important_ck==1} 
+  validates_presence_of :reply_oc_significant_ck,  :if => :is_rep_slider_shown?, :unless => proc{|obj| obj.reply_oc_significant_ck==1}
+  
+  validate 		:at_least_4_reply_slider_evals, :if => :is_rep_slider_shown?
+  validate 		:at_least_non_reply_reason, :if => :is_rep_text_shown?
+  
+  def at_least_4_reply_slider_evals
     dummyvar8 = 0
-    if reason_nrep != "1.\r\n2.\r\n3.\r\n..."
-    dummyvar8 += 4
-    end
-    if !reply_pr_relevant.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_pr_meaningful.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_pr_important.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_pr_significant.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_oc_relevant.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_oc_meaningful.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_oc_important.blank? 
-    dummyvar8 += 1
-    end
-    if !reply_oc_significant.blank? 
-    dummyvar8 += 1
-    end
-  
-    if reply_pr_relevant_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_pr_meaningful_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_pr_important_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_pr_significant_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_oc_relevant_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_oc_meaningful_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_oc_important_ck.blank?
-    dummyvar8 == 1
-    end
-    if reply_oc_significant_ck.blank?
-    dummyvar8 == 1
-    end
-  
-    if reply_pr_relevant_ck==1 
-    dummyvar8 += 1
-    end
-    if reply_pr_meaningful_ck==1
-    dummyvar8 += 1
-    end
-    if reply_pr_important_ck==1
-    dummyvar8 += 1
-    end
-    if reply_pr_significant_ck==1
-    dummyvar8 += 1
-    end
-    if reply_oc_relevant_ck==1
-    dummyvar8 += 1
-    end
-    if reply_oc_meaningful_ck==1
-    dummyvar8 += 1
-    end
-    if reply_oc_important_ck==1
-    dummyvar8 += 1
-    end
-    if reply_oc_significant_ck==1
-    dummyvar8 += 1
-    end
-    if dummyvar8 < 4
-      if self.reply_1_clicked > 0 || self.reply_2_clicked > 0
-	errors.add_to_base("Please use at least 4 of the sliders to evaluate the reply you have done in the simulation.")
-      elsif self.reply_1_clicked == 0 && self.reply_2_clicked == 0
-        errors.add_to_base("Please mention at least one reason why you didn't reply the message in the simulation.")
+      if !reply_pr_relevant.blank? || reply_pr_relevant_ck==1 
+      dummyvar8 += 1
       end
-    end
+      if !reply_pr_meaningful.blank? || reply_pr_meaningful_ck==1
+      dummyvar8 += 1
+      end
+      if !reply_pr_important.blank? || reply_pr_important_ck==1
+      dummyvar8 += 1
+      end
+      if !reply_pr_significant.blank? || reply_pr_significant_ck==1
+      dummyvar8 += 1
+      end
+      if !reply_oc_relevant.blank? || reply_oc_relevant_ck==1
+      dummyvar8 += 1
+      end
+      if !reply_oc_meaningful.blank? || reply_oc_meaningful_ck==1
+      dummyvar8 += 1
+      end
+      if !reply_oc_important.blank? || reply_oc_important_ck==1
+      dummyvar8 += 1
+      end
+      if !reply_oc_significant.blank? || reply_oc_significant_ck==1
+      dummyvar8 += 1
+      end
+
+      if dummyvar8 < 4
+	  errors.add_to_base("Please use at least 4 of the sliders to evaluate the reply you have done in the simulation.")
+      end
   end
+  
+  def at_least_non_reply_reason
+    dummyvar8a = 0
+      if reason_nrep != "1.\r\n2.\r\n3.\r\n..."
+	dummyvar8a += 4
+      end
+      if dummyvar8a < 4
+	errors.add_to_base("Please mention at least one reason why you didn't reply the message in the simulation.")
+      end
+  end
+  
   
   validates_presence_of :irp_imagine, :if => :target_variables?, :unless => proc{|obj| obj.irp_imagine.blank?}  
   validates_presence_of :irp_act,  :if => :target_variables?, :unless => proc{|obj| obj.irp_act.blank?}
@@ -1118,5 +1067,5 @@ class User < ActiveRecord::Base
     end
     outfile.close
   end  
-    
+
 end

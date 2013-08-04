@@ -19,9 +19,51 @@ module ApplicationHelper
   def minutes
     @user.experiment_time.to_i/60
   end
-
-  def text
-    text = %Q<1.\n2.\n3.\n...>
+  
+  def text_nrt
+    if @user.reason_nrt.nil?
+      text = %Q<1.\n2.\n3.\n...>
+    else
+      text = @user.reason_nrt
+    end
+    
+  end
+  
+  def text_nrep
+    if @user.reason_nrep.nil?
+      text = %Q<1.\n2.\n3.\n...>
+    else
+      text = @user.reason_nrep
+    end
+    
+  end
+  
+  def text_nexp
+    if @user.reason_nexp.nil?
+      text = %Q<1.\n2.\n3.\n...>
+    else
+      text = @user.reason_nexp
+    end
+    
+  end
+  
+  
+  def text_nfav
+    if @user.reason_nfav.nil?
+      text = %Q<1.\n2.\n3.\n...>
+    else
+      text = @user.reason_nfav
+    end
+    
+  end
+  
+  def text_misstakes
+    if @user.mistake_txt.nil?
+      text = %Q<1.\n2.\n3.\n...>
+    else
+      text = @user.mistake_txt
+    end
+    
   end
   
   def all_missing_features

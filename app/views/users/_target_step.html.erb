@@ -28,19 +28,24 @@
   <%= f.label :yes, "Yes, I would like to participate." %><br>
   <br>
   </div>
-<!--<hr>
+<%if @user.traffic_source == "amt" %>
+<hr>
 <h3>Your participation code:</h3>
 <div id="opinion_leader">
 Number: <%= h @user.situation %>
 </div>
 <hr>
-  <h3>Please enter your WorkerID.</h3>-->
-<!--   <div id="opinion_leader"><nobr>WorkerID: <%= f.text_field :email %></nobr></div>
-<br>-->
+  <h3>Please enter your WorkerID.</h3>
+<div id="opinion_leader">
+  <nobr>WorkerID: <%= f.text_field :email %></nobr>
+</div>
+<br>
+<% else %>
   <hr>
 <h3>Please enter your email address if you are interested in the results or would like to get informed about drawn lots for the USD 300 voucher via email.</h3>
  <div id="opinion_leader"><nobr>Email: <%= f.text_field :email %></nobr></div>
 <br>
+  <%end%>
 <hr>
   <h3>If you share this questionnaire with your friends or followers you will take part in an additional lottery drawing for a voucher about USD 100.</h3>
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style"
